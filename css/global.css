@@ -1,0 +1,80 @@
+/* global.css · Estilos comunes para todas las páginas */
+
+/* Ampliar el ancho del card */
+.card-wrapper {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+/* ── Card redondeada (igual que academia.css) ── */
+.card {
+    max-width: 100%;
+    border-radius: 32px;
+    box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    border: none;
+}
+
+/* ── Fondo del body alineado con academia ── */
+body {
+    background: #eef2f5;
+}
+
+/* ── Línea azul superior más gruesa ── */
+.accent-bar {
+    height: 8px;
+}
+
+/* Mejorar el grid de artículos (si existe) */
+.articles-grid {
+    gap: 24px !important;
+}
+
+/* Ajustes responsivos comunes */
+@media (max-width: 720px) {
+    .articles-grid {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* ── BOTÓN COMPARTIR LINKEDIN (estilo igual que artículos) ── */
+.share-block {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px 24px;
+    border-top: 1px solid var(--border-soft);
+    border-bottom: 1px solid var(--border-soft);
+    margin: 20px 0;
+}
+
+.share-label {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.share-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #0077B5;
+    text-decoration: none;
+    border: 1px solid #0077B5;
+    padding: 7px 14px;
+    border-radius: 3px;
+    transition: all 0.15s;
+}
+
+.share-btn:hover {
+    background: #0077B5;
+    color: #fff;
+}
+

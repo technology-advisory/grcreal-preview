@@ -1,0 +1,241 @@
+{
+  "sections": [
+    {
+      "title": "Contexto y Gobernanza · Cláusulas 4-5",
+      "pymeTitle": "Las bases — quién manda y qué reglas hay",
+      "items": [
+        {
+          "code": "4.1",
+          "difficulty": "complejo",
+          "text": "Contexto de la organización en relación con la IA analizado",
+          "pymeText": "¿Habéis analizado cómo afecta la IA a vuestra empresa y qué riesgos conlleva?",
+          "tooltip": "Identificar cómo afecta la IA a la organización. Evidencia: análisis de contexto, factores internos y externos documentados."
+        },
+        {
+          "code": "4.2",
+          "difficulty": "medio",
+          "text": "Partes interesadas y sus necesidades respecto a la IA identificadas",
+          "pymeText": "¿Sabéis qué esperan clientes, empleados y reguladores de cómo usáis la IA?",
+          "tooltip": "Clientes, reguladores, empleados y sociedad. Evidencia: registro de partes interesadas, requisitos documentados."
+        },
+        {
+          "code": "4.3",
+          "difficulty": "complejo",
+          "text": "Alcance del sistema de gestión de IA definido",
+          "pymeText": "¿Habéis definido a qué sistemas de IA se aplican vuestras reglas de gobernanza?",
+          "tooltip": "Qué sistemas y usos de IA están dentro del SGAI. Evidencia: documento de alcance firmado."
+        },
+        {
+          "code": "5.1",
+          "difficulty": "facil",
+          "text": "Liderazgo y compromiso de la dirección con el SGAI",
+          "pymeText": "¿La dirección apoya activamente el uso responsable de la IA?",
+          "tooltip": "La dirección apoya y dirige el SGAI. Evidencia: política de IA aprobada, recursos asignados."
+        },
+        {
+          "code": "5.2",
+          "difficulty": "medio",
+          "text": "Política de IA responsable documentada y comunicada",
+          "pymeText": "¿Tenéis una política escrita sobre cómo usáis la IA de forma responsable?",
+          "tooltip": "Política que define los principios de uso de IA. Evidencia: política publicada, comunicación al personal."
+        },
+        {
+          "code": "5.3",
+          "difficulty": "medio",
+          "text": "Roles y responsabilidades de IA asignados",
+          "pymeText": "¿Hay alguien responsable de que la IA se use bien en vuestra empresa?",
+          "tooltip": "Responsable de IA o AI Officer designado. Evidencia: nombramiento, descripción de funciones."
+        }
+      ]
+    },
+    {
+      "title": "Evaluación de riesgos y oportunidades · Cláusula 6",
+      "pymeTitle": "¿Qué puede salir mal con la IA?",
+      "items": [
+        {
+          "code": "6.1",
+          "difficulty": "medio",
+          "text": "Riesgos y oportunidades de los sistemas de IA evaluados",
+          "pymeText": "¿Habéis evaluado qué puede salir mal con los sistemas de IA que usáis?",
+          "tooltip": "Análisis de riesgos específico para IA. Evidencia: metodología de riesgos IA, inventario de sistemas con evaluación."
+        },
+        {
+          "code": "6.1",
+          "difficulty": "complejo",
+          "text": "Evaluación de impacto en derechos fundamentales realizada",
+          "pymeText": "¿Habéis evaluado si vuestros sistemas de IA pueden afectar negativamente a personas?",
+          "tooltip": "DPIA o evaluación equivalente. Evidencia: evaluaciones de impacto por sistema de IA, medidas de mitigación."
+        },
+        {
+          "code": "6.2",
+          "difficulty": "medio",
+          "text": "Objetivos del SGAI definidos y medibles",
+          "pymeText": "¿Tenéis objetivos concretos sobre cómo queréis gestionar la IA?",
+          "tooltip": "KPIs de gobernanza de IA establecidos. Evidencia: objetivos documentados, métricas de seguimiento."
+        }
+      ]
+    },
+    {
+      "title": "Inventario y clasificación de sistemas de IA · Anexo A",
+      "pymeTitle": "¿Qué sistemas de IA tenéis?",
+      "items": [
+        {
+          "code": "A.2.2",
+          "difficulty": "facil",
+          "text": "Inventario de sistemas de IA actualizado",
+          "pymeText": "¿Tenéis una lista de todos los sistemas de IA que usáis — propios y de proveedores?",
+          "tooltip": "Todos los sistemas de IA identificados y documentados. Evidencia: inventario con: nombre, proveedor, uso, datos que procesa, riesgo."
+        },
+        {
+          "code": "A.2.3",
+          "difficulty": "complejo",
+          "text": "Sistemas de IA clasificados según su nivel de riesgo",
+          "pymeText": "¿Sabéis qué riesgo tiene cada sistema de IA? ¿Cuáles son de alto riesgo según el AI Act?",
+          "tooltip": "Clasificación según AI Act (inaceptable/alto/limitado/mínimo). Evidencia: clasificación documentada por sistema."
+        },
+        {
+          "code": "A.2.4",
+          "difficulty": "medio",
+          "text": "Ciclo de vida de los sistemas de IA gestionado",
+          "pymeText": "¿Tenéis un proceso para dar de alta y de baja sistemas de IA?",
+          "tooltip": "Alta, operación, modificación y baja de sistemas. Evidencia: procedimiento de ciclo de vida, registros."
+        }
+      ]
+    },
+    {
+      "title": "Datos y calidad · Anexo A",
+      "pymeTitle": "Los datos que alimentan la IA",
+      "items": [
+        {
+          "code": "A.5.1",
+          "difficulty": "medio",
+          "text": "Política de gestión de datos para IA documentada",
+          "pymeText": "¿Tenéis reglas claras sobre qué datos se pueden usar para entrenar o alimentar la IA?",
+          "tooltip": "Reglas sobre qué datos se usan y cómo. Evidencia: política de datos, alineación con RGPD."
+        },
+        {
+          "code": "A.5.2",
+          "difficulty": "complejo",
+          "text": "Calidad de los datos de entrenamiento verificada",
+          "pymeText": "¿Los datos que usa vuestra IA son correctos, completos y representativos?",
+          "tooltip": "Los datos usados son representativos y precisos. Evidencia: proceso de validación de datos, documentación de datasets."
+        },
+        {
+          "code": "A.5.3",
+          "difficulty": "complejo",
+          "text": "Datos de entrenamiento libres de sesgos injustificados",
+          "pymeText": "¿Habéis comprobado si vuestros sistemas de IA pueden discriminar a ciertos grupos?",
+          "tooltip": "Proceso de detección y mitigación de sesgos. Evidencia: análisis de sesgo, métricas de equidad."
+        },
+        {
+          "code": "A.5.4",
+          "difficulty": "medio",
+          "text": "Datos personales tratados conforme al RGPD en sistemas de IA",
+          "pymeText": "¿El uso de datos personales en vuestros sistemas de IA cumple el RGPD?",
+          "tooltip": "Cumplimiento RGPD verificado para datos de IA. Evidencia: DPIA, base jurídica de tratamiento, derechos de los interesados."
+        }
+      ]
+    },
+    {
+      "title": "Transparencia y explicabilidad · Anexo A",
+      "pymeTitle": "¿Podéis explicar lo que hace la IA?",
+      "items": [
+        {
+          "code": "A.6.1",
+          "difficulty": "complejo",
+          "text": "Los sistemas de IA documentan cómo toman decisiones",
+          "pymeText": "¿Podéis explicar, aunque sea de forma básica, cómo toman decisiones vuestros sistemas de IA?",
+          "tooltip": "Documentación de la lógica de los modelos. Evidencia: documentación técnica, nivel de explicabilidad por sistema."
+        },
+        {
+          "code": "A.6.2",
+          "difficulty": "facil",
+          "text": "Los usuarios son informados cuando interactúan con IA",
+          "pymeText": "¿Los usuarios saben cuándo están interactuando con IA?",
+          "tooltip": "Comunicación clara del uso de IA. Evidencia: avisos en interfaces, política de transparencia."
+        },
+        {
+          "code": "A.6.3",
+          "difficulty": "medio",
+          "text": "Existe proceso de revisión humana para decisiones automatizadas de alto impacto",
+          "pymeText": "¿En las decisiones importantes que toma la IA, hay un humano que las revisa?",
+          "tooltip": "Human-in-the-loop implementado. Evidencia: procedimiento de revisión, registro de decisiones revisadas."
+        }
+      ]
+    },
+    {
+      "title": "Seguridad y robustez · Anexo A",
+      "pymeTitle": "¿Qué pasa si alguien intenta engañar a la IA?",
+      "items": [
+        {
+          "code": "A.7.1",
+          "difficulty": "complejo",
+          "text": "Los sistemas de IA han sido evaluados frente a ataques adversariales",
+          "pymeText": "¿Habéis probado si vuestros sistemas de IA pueden ser engañados o manipulados?",
+          "tooltip": "Pruebas de robustez realizadas. Evidencia: resultados de pruebas, medidas de mitigación."
+        },
+        {
+          "code": "A.7.2",
+          "difficulty": "medio",
+          "text": "Monitorización del rendimiento de los modelos en producción",
+          "pymeText": "¿Alguien revisa si los sistemas de IA siguen funcionando bien después de ponerlos en marcha?",
+          "tooltip": "Los modelos se monitorizan tras el despliegue. Evidencia: sistema de monitorización, alertas de degradación."
+        },
+        {
+          "code": "A.7.3",
+          "difficulty": "medio",
+          "text": "Proceso de actualización y retirada de modelos obsoletos o sesgados",
+          "pymeText": "¿Tenéis un proceso para actualizar o retirar sistemas de IA que ya no funcionan bien?",
+          "tooltip": "Los modelos se actualizan y retiran cuando es necesario. Evidencia: criterios de actualización, registro de versiones."
+        }
+      ]
+    },
+    {
+      "title": "Proveedores de IA · Anexo A",
+      "pymeTitle": "Los proveedores que os dan herramientas de IA",
+      "items": [
+        {
+          "code": "A.8.1",
+          "difficulty": "medio",
+          "text": "Proveedores de IA evaluados antes de su adopción",
+          "pymeText": "¿Antes de adoptar una herramienta de IA de un proveedor, evaluáis su seguridad y sus condiciones?",
+          "tooltip": "Due diligence de proveedores IA. Evidencia: proceso de evaluación, cuestionario de seguridad, resultados."
+        },
+        {
+          "code": "A.8.2",
+          "difficulty": "medio",
+          "text": "Contratos con proveedores de IA incluyen requisitos de gobernanza",
+          "pymeText": "¿Los contratos con proveedores de IA incluyen cómo deben tratar vuestros datos?",
+          "tooltip": "Cláusulas de IA responsable en contratos. Evidencia: contratos revisados, cláusulas específicas de IA."
+        },
+        {
+          "code": "A.8.3",
+          "difficulty": "medio",
+          "text": "Ubicación y tratamiento de datos en sistemas de IA de terceros verificados",
+          "pymeText": "¿Sabéis dónde procesan los datos vuestros proveedores de IA? ¿Dentro de la UE?",
+          "tooltip": "Se sabe dónde procesan los datos los proveedores IA. Evidencia: inventario de ubicaciones, acuerdos de procesamiento."
+        }
+      ]
+    },
+    {
+      "title": "Mejora continua · Cláusula 10",
+      "pymeTitle": "¿Aprendéis y mejoráis?",
+      "items": [
+        {
+          "code": "10.1",
+          "difficulty": "facil",
+          "text": "No conformidades del SGAI gestionadas con acciones correctivas",
+          "pymeText": "Cuando algo falla en vuestros sistemas de IA, ¿lo corregís y documentáis?",
+          "tooltip": "Las desviaciones se corrigen. Evidencia: registro de no conformidades, acciones correctivas."
+        },
+        {
+          "code": "10.2",
+          "difficulty": "medio",
+          "text": "Revisión por la dirección del SGAI realizada periódicamente",
+          "pymeText": "¿La dirección revisa periódicamente cómo va la gobernanza de la IA?",
+          "tooltip": "Revisión anual del sistema. Evidencia: actas de revisión, decisiones adoptadas."
+        }
+      ]
+    }
+  ]
+}

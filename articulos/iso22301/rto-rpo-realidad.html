@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0">
+<title>RTO y RPO: dos siglas que salvan empresas o las hunden · GRCreal</title>
+<meta name="description" content="RTO y RPO aparecen en todos los planes de continuidad. Pero en la mayoría de organizaciones son estimaciones, no mediciones. La diferencia importa.">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="RTO y RPO: dos siglas que salvan empresas o las hunden">
+<meta property="og:description" content="RTO y RPO en papel vs realidad. Por qué la diferencia puede significar la supervivencia del negocio.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://grcreal.com/articulos/rto-rpo-realidad.html">
+<meta property="og:image" content="https://grcreal.com/grcreal.png">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="stylesheet" href="../../css/marca.css">
+<link rel="stylesheet" href="../../css/articles.css">
+<link rel="stylesheet" href="../../css/global.css">
+</head>
+<body class="article-page">
+<div class="card-wrapper">
+<div class="card">
+<div class="accent-bar"></div>
+
+<div class="header">
+  <div class="tag">Continuidad · RTO · RPO · Resiliencia</div>
+  <div class="article-date">21 Abril 2026</div>
+  <div class="headline">
+    RTO y RPO:<br>
+    <span class="accent">dos siglas</span><br>
+    <span class="dim">que salvan empresas</span><br>
+    <span class="accent">o las hunden</span>
+  </div>
+  <p class="subline">
+    Están en todos los planes de continuidad.<br>
+    <strong>En la mayoría, son estimaciones. No mediciones.</strong>
+  </p>
+</div>
+
+<div class="body">
+
+  <div class="block">
+    <div class="block-label">Qué significan</div>
+    <div class="block-title">Definiciones que importan</div>
+    <div class="block-text">
+      <strong>RTO — Recovery Time Objective.</strong> El tiempo máximo que puede estar caído un sistema o proceso crítico antes de que el impacto en el negocio sea inaceptable. Si el sistema de pedidos cae, ¿cuántas horas puedes permitirte sin que empiece a haber consecuencias graves?
+      <br><br>
+      <strong>RPO — Recovery Point Objective.</strong> La cantidad máxima de datos que puedes permitirte perder. Si haces backup cada 24 horas y el sistema falla justo antes del backup, puedes perder hasta 24 horas de datos. ¿Es eso aceptable para tu negocio?
+      <br><br>
+      Estos dos valores deberían definir toda tu estrategia de continuidad y recuperación. Son los requisitos de negocio que la arquitectura técnica debe satisfacer.
+      <br><br>
+      <strong>El problema es que en la mayoría de organizaciones, nadie los ha medido. Los han estimado.</strong>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="block">
+    <div class="block-label">El error de origen</div>
+    <div class="block-title">Estimados en papel, desconocidos en producción</div>
+
+    <div class="quote-block">
+      <div class="quote-text">
+        &ldquo;RTO: 4 horas. RPO: 24 horas.&rdquo;<br>
+        Nadie había comprobado si era posible.
+      </div>
+      <div class="quote-attr">&mdash; Lo que pone el BCP vs lo que ocurrió en el incidente real</div>
+    </div>
+
+    <div class="block-text">
+      Los valores de RTO y RPO suelen definirse en una reunión, basándose en intuición o en lo que "parece razonable". Nadie ha medido cuánto tarda realmente la restauración completa del sistema de facturación. Nadie ha comprobado si la frecuencia de backup es suficiente para el RPO declarado.
+      <br><br>
+      Y cuando llega el incidente real, esos valores teóricos se convierten en compromisos imposibles de cumplir.
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="block">
+    <div class="block-label">Cómo se definen bien</div>
+    <div class="block-title">El proceso correcto</div>
+
+    <table class="tension" style="margin-top:20px;">
+      <tr>
+        <td class="tension-who">Negocio primero</td>
+        <td class="tension-says">RTO y RPO los define el negocio, no IT. ¿Cuánto tiempo de caída puede asumir cada proceso crítico? ¿Cuántos datos puede permitirse perder?</td>
+      </tr>
+      <tr>
+        <td class="tension-who">Por sistema</td>
+        <td class="tension-says">Cada sistema crítico tiene sus propios RTO y RPO. No todos los sistemas son iguales — el ERP no es lo mismo que el servidor de impresión.</td>
+      </tr>
+      <tr>
+        <td class="tension-who">Medidos</td>
+        <td class="tension-says">Los RTO deben validarse con pruebas reales de restauración. Si no has medido el tiempo real, no conoces tu RTO.</td>
+      </tr>
+      <tr class="hi-row">
+        <td class="tension-who">Revisados</td>
+        <td class="tension-says"><span class="hi">Cuando cambia la infraestructura, los RTO y RPO pueden cambiar. Una migración a cloud, un nuevo sistema crítico o un cambio en la estrategia de backup puede invalidar los valores anteriores.</span></td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="block">
+    <div class="block-label">La pregunta que cambia todo</div>
+    <div class="block-title">De requisito a arquitectura</div>
+    <div class="block-text">
+      Un RTO de 4 horas para el sistema de facturación no es solo un número en un documento. Es un requisito de arquitectura que determina qué tecnología de recuperación necesitas, qué frecuencia de backup es suficiente, si necesitas alta disponibilidad o es suficiente con recuperación, y cuánto tiempo necesitas para el procedimiento manual mientras se restaura el sistema.
+      <br><br>
+      Si la arquitectura no está diseñada para cumplir el RTO — si la restauración real tarda 12 horas pero el RTO declarado es 4 — tienes un problema que ningún documento puede resolver.
+      <br><br>
+      <strong>O ajustas la arquitectura para cumplir el RTO, o ajustas el RTO para reflejar la capacidad real. Pero vivir con la contradicción entre los dos es la receta del desastre.</strong>
+    </div>
+  </div>
+
+  <div class="cta-block">
+    <div class="cta-headline">
+      ¿Tus RTO y RPO están medidos<br>
+      <span>o solo estimados?</span>
+    </div>
+    <div class="cta-sub">
+      La diferencia importa cuando el incidente ocurre de verdad.<br>
+      <strong>Medirlo antes evita improvisar después.</strong>
+    </div>
+  </div>
+
+</div>
+
+<!-- FINAL DEL BODY -->
+<div id="footer-placeholder"></div>
+<script>
+    fetch('/includes/footer.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('footer-placeholder').innerHTML = data;
+        });
+</script>
+
+</div>
+</div>
+<a href="/articulos" class="home-btn">⌂ Home Artículos</a>
+</body>
+<script src="/js/global.js"></script>
+</html>

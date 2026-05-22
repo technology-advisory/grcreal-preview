@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0">
+<title>Active Directory: el objetivo favorito del atacante · GRCreal</title>
+<meta name="description" content="Active Directory es el sistema de identidad más atacado en entornos corporativos. Por qué es el objetivo favorito y cómo protegerlo de verdad.">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Active Directory: el objetivo favorito del atacante que nadie protege bien">
+<meta property="og:description" content="AD es el objetivo favorito. Quien controla el AD controla todo. Cómo protegerlo de verdad.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://grcreal.com/articulos/active-directory-seguridad.html">
+<meta property="og:image" content="https://grcreal.com/grcreal.png">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="../../css/marca.css">
+<link rel="stylesheet" href="../../css/articles.css">
+<link rel="stylesheet" href="../../css/global.css">
+</head>
+<body class="article-page">
+<div class="card-wrapper">
+<div class="card">
+<div class="accent-bar"></div>
+
+<div class="header">
+  <div class="tag">Active Directory · Identidad · Seguridad Técnica</div>
+  <div class="article-date">24 Abril 2026</div>
+  <div class="headline">
+    Active Directory:<br>
+    <span class="accent">el objetivo</span><br>
+    <span class="dim">que nadie</span><br>
+    <span class="accent">protege bien</span>
+  </div>
+  <p class="subline">
+    Quien controla el AD controla todo.<br>
+    <strong>Y los atacantes lo saben mejor que muchos administradores.</strong>
+  </p>
+</div>
+
+<div class="body">
+
+  <div class="block">
+    <div class="block-label">Por qué el AD es el objetivo</div>
+    <div class="block-title">El sistema nervioso central de la organización</div>
+    <div class="block-text">
+      Active Directory gestiona las identidades, los accesos y las políticas de toda la organización. Quien controla el AD puede acceder a cualquier sistema, suplantar cualquier usuario, desplegar software en cualquier equipo y borrar cualquier traza.
+      <br><br>
+      Por eso es el objetivo final en la mayoría de ataques avanzados. No es el punto de entrada — es el destino.
+      <br><br>
+      El atacante entra por un equipo de usuario, escala privilegios, se mueve lateralmente y eventualmente llega a comprometer un Domain Admin o el propio Domain Controller. Desde ahí, el juego ha terminado.
+      <br><br>
+      <strong>Y en la mayoría de organizaciones que audito, el camino desde un equipo de usuario hasta Domain Admin es más corto de lo que debería ser.</strong>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="block">
+    <div class="block-label">Los problemas más frecuentes</div>
+    <div class="block-title">Lo que veo en producción</div>
+
+    <table class="tension" style="margin-top:20px;">
+      <tr>
+        <td class="tension-who">Privilegios</td>
+        <td class="tension-says">Cuentas de Domain Admin usadas para tareas cotidianas. Administradores que usan su cuenta privilegiada para navegar por internet o leer el correo.</td>
+      </tr>
+      <tr>
+        <td class="tension-who">Cuentas</td>
+        <td class="tension-says">Cuentas de servicio con privilegios excesivos. Cuentas de usuarios que ya no están en la empresa pero siguen activas.</td>
+      </tr>
+      <tr>
+        <td class="tension-who">Contraseñas</td>
+        <td class="tension-says">Políticas de contraseñas débiles o antiguas. NTLM habilitado cuando no hace falta. Kerberoasting posible por cuentas de servicio mal configuradas.</td>
+      </tr>
+      <tr>
+        <td class="tension-who">DCs</td>
+        <td class="tension-says">Domain Controllers sin parchear. Accesibles desde redes de usuarios sin restricciones. Sin monitorización de eventos críticos.</td>
+      </tr>
+      <tr class="hi-row">
+        <td class="tension-who">Tier 0</td>
+        <td class="tension-says"><span class="hi">Sin modelo de administración por niveles. Los activos más críticos administrados con las mismas cuentas que el resto de la infraestructura.</span></td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="block">
+    <div class="block-label">Cómo se protege bien</div>
+    <div class="block-title">El modelo de administración por niveles</div>
+    <div class="block-text">
+      Microsoft lleva años recomendando el modelo de administración por niveles — Tier 0, Tier 1, Tier 2 — para limitar el movimiento lateral hacia los activos más críticos.
+      <br><br>
+      <strong>Tier 0</strong> — Domain Controllers, PKI, ADFS, sistemas de gestión de identidad. Solo administrables desde cuentas y sistemas dedicados exclusivamente a este nivel.
+      <br><br>
+      <strong>Tier 1</strong> — Servidores de aplicaciones, bases de datos, infraestructura crítica. Administrados con cuentas distintas a las de Tier 0 y Tier 2.
+      <br><br>
+      <strong>Tier 2</strong> — Equipos de usuario, dispositivos móviles. Administrados con cuentas que no tienen acceso a niveles superiores.
+      <br><br>
+      El principio es simple: una cuenta comprometida en Tier 2 no puede escalar a Tier 0. El movimiento lateral tiene límites.
+      <br><br>
+      Además: deshabilitar protocolos legacy como NTLM donde no sean necesarios, implementar Credential Guard, monitorizar eventos críticos de AD — creación de cuentas privilegiadas, cambios en grupos sensibles, accesos a DCs — y revisar periódicamente las cuentas con privilegios elevados.
+      <br><br>
+      <strong>Y sobre todo: nunca usar cuentas privilegiadas para tareas cotidianas. Nunca.</strong>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="block">
+    <div class="block-label">Lo que pediría un auditor serio</div>
+    <div class="block-title">Evidencias concretas</div>
+    <div class="block-text">
+      Inventario actualizado de cuentas privilegiadas con justificación de negocio para cada una.
+      <br><br>
+      Política de contraseñas que cumpla con las recomendaciones actuales — longitud mínima, sin caducidad periódica forzada, con detección de contraseñas comprometidas.
+      <br><br>
+      Revisión periódica de cuentas inactivas y cuentas de servicio.
+      <br><br>
+      Monitorización activa de eventos críticos de AD con alertas configuradas.
+      <br><br>
+      <strong>Y un modelo de administración por niveles documentado e implementado — no solo en papel.</strong>
+    </div>
+  </div>
+
+  <div class="cta-block">
+    <div class="cta-headline">
+      ¿Cuántos pasos hay<br>
+      <span>de un usuario a Domain Admin?</span>
+    </div>
+    <div class="cta-sub">
+      Si no lo sabes con certeza — <strong>ya es un riesgo.</strong>
+    </div>
+  </div>
+
+</div>
+
+<!-- FINAL DEL BODY -->
+<div id="footer-placeholder"></div>
+<script>
+    fetch('/includes/footer.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('footer-placeholder').innerHTML = data;
+        });
+</script>
+
+</div>
+</div>
+<a href="/articulos" class="home-btn">⌂ Home Artículos</a>
+</body>
+<script src="/js/global.js"></script>
+</html>

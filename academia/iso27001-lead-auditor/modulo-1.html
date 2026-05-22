@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0">
+
+<title>Introducción a la Auditoría · ISO 27001 Lead Auditor · GRCreal Academy</title>
+
+<meta name="description" content="Modulo 1 ISO 27001 Lead Auditor. Fundamentos de la auditoría de sistemas de gestión de seguridad de la información. ISO 19011 y conceptos clave.">
+
+<meta name="robots" content="index, follow">
+
+<meta property="og:title" content="Introducción a la Auditoría · ISO 27001 Lead Auditor · GRCreal Academy">
+<meta property="og:description" content="Fundamentos de auditoría ISO 27001. ISO 19011, términos clave y el rol del auditor.">
+<meta property="og:type" content="article">
+
+<link rel="icon" href="/favicon.ico" sizes="any">
+
+<link rel="stylesheet" href="../../css/academia.css">
+
+<style>
+.cta-buttons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    margin-top: 8px;
+    flex-wrap: wrap;
+}
+.cta-button {
+    display: inline-block;
+    background: var(--brand, #0077B5);
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 12px 28px;
+    border-radius: 40px;
+    font-size: 1rem;
+    transition: 0.2s background;
+    box-shadow: 0 5px 12px rgba(0,0,0,0.05);
+}
+.cta-button:hover {
+    background: var(--brand-dark, #005a8e);
+}
+.cta-button.disabled {
+    background: var(--ghost, #b0c4d4);
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+.course-home-btn {
+    background: var(--brand-light, #e8f3fa);
+    color: var(--brand, #0077B5);
+    padding: 6px 14px;
+    border-radius: 40px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-left: 12px;
+    transition: 0.2s;
+}
+.course-home-btn:hover {
+    background: var(--brand-mid, #cce4f0);
+}
+</style>
+
+</head>
+
+<body class="article-page">
+
+<div class="card-wrapper">
+<div class="card">
+
+<div class="accent-bar"></div>
+
+<nav class="academy-module-menu">
+
+<a href="/academia/iso27001-lead-auditor/index.html" class="academy-course-logo">
+ISO 27001 <span>Lead Auditor</span>
+</a>
+
+<div class="academy-course-links">
+<span class="module-badge">Módulo 1 · Introducción</span></div>
+<a href="/academia/iso27001-lead-auditor/index.html" class="course-home-btn">⌂ Curso</a>
+</nav>
+
+<div class="header">
+
+<div class="tag">
+ISO 27001 · AUDITORÍA · ISO 19011
+</div>
+
+<div class="article-date">
+Módulo 1
+</div>
+
+<div class="headline">
+Introducción<br>
+<span class="accent">a la Auditoría</span>
+</div>
+
+<p class="subline">
+
+Auditar no es buscar errores.<br>
+<strong>Es verificar que el SGSI funciona como debe.</strong>
+
+</p>
+
+</div>
+
+<div class="body">
+
+<!-- BLOQUE 1 · QUÉ ES UNA AUDITORÍA -->
+
+<div class="block">
+
+<div class="block-label">
+Definición
+</div>
+
+<div class="block-title">
+Qué es una auditoría
+</div>
+
+<div class="block-text">
+
+Una auditoría es un proceso <strong>sistemático, independiente y documentado</strong> para obtener evidencias objetivas y evaluarlas de manera imparcial, con el fin de determinar el grado de cumplimiento de los criterios de auditoría.
+
+</div>
+
+<div class="quote-block">
+
+<div class="quote-text">
+&ldquo;Auditar no es fiscalizar. Es verificar, evaluar y aportar valor.&rdquo;
+</div>
+
+<div class="quote-attr">
+ISO 19011:2018
+</div>
+
+</div>
+
+<div class="block-text">
+
+El propósito de una auditoría no es encontrar no conformidades por encontrar. Es proporcionar a la dirección información objetiva sobre el estado real del SGSI, para que pueda tomar decisiones informadas.
+
+</div>
+
+</div>
+
+<div class="divider"></div>
+
+<!-- BLOQUE 2 · TIPOS DE AUDITORÍA -->
+
+<div class="block">
+
+<div class="block-label">
+Clasificación
+</div>
+
+<div class="block-title">
+Tipos de auditoría
+</div>
+
+<table class="tension" style="margin-top:20px;">
+
+<tr>
+<td class="tension-who">1ª Parte</td>
+<td class="tension-says"><strong>Auditoría interna.</strong> Realizada por o en nombre de la propia organización. Evalúa el SGSI contra sus propios requisitos y los de ISO 27001.</td>
+</tr>
+
+<tr>
+<td class="tension-who">2ª Parte</td>
+<td class="tension-says"><strong>Auditoría externa de proveedores.</strong> Realizada por clientes o interesados sobre sus proveedores. Evalúa la capacidad de cumplir con requisitos contractuales.</td>
+</tr>
+
+<tr class="hi-row">
+<td class="tension-who">3ª Parte</td>
+<td class="tension-says"><span class="hi">Auditoría de certificación. Realizada por organismos independientes (ej: AENOR, BSI, DNV). Evalúa la conformidad con ISO 27001 para obtener o mantener la certificación.</span></td>
+</tr>
+
+</table>
+
+</div>
+
+<div class="divider"></div>
+
+<!-- BLOQUE 3 · ISO 19011:2018 -->
+
+<div class="block">
+
+<div class="block-label">
+Marco normativo
+</div>
+
+<div class="block-title">
+ISO 19011: Directrices para la auditoría
+</div>
+
+<div class="block-text">
+
+ISO 19011:2018 es la norma que proporciona <strong>directrices para auditar sistemas de gestión</strong>. No es certificable, pero es la referencia obligada para cualquier auditor, independientemente de la norma que audite.
+
+</div>
+
+<table class="tension" style="margin-top:20px;">
+
+<tr>
+<td class="tension-who">1</td>
+<td class="tension-says"><strong>Principios de auditoría.</strong> Integridad, presentación justa, diligencia profesional, confidencialidad, independencia, enfoque basado en evidencia, enfoque basado en riesgos.</td>
+</tr>
+
+<tr>
+<td class="tension-who">2</td>
+<td class="tension-says"><strong>Gestión del programa de auditoría.</strong> Cómo planificar, implementar, monitorear y mejorar el programa de auditorías.</td>
+</tr>
+
+<tr>
+<td class="tension-who">3</td>
+<td class="tension-says"><strong>Realización de la auditoría.</strong> Desde la reunión de apertura hasta el informe de cierre.</td>
+</tr>
+
+<tr class="hi-row">
+<td class="tension-who">4</td>
+<td class="tension-says"><span class="hi">Competencia y evaluación de auditores. Qué habilidades y conocimientos debe tener un auditor, y cómo evaluarlas.</span></td>
+</tr>
+
+</table>
+
+</div>
+
+<div class="divider"></div>
+
+<!-- BLOQUE 4 · AUDITOR VS IMPLEMENTADOR -->
+
+<div class="block">
+
+<div class="block-label">
+Perfiles
+</div>
+
+<div class="block-title">
+Diferencias clave: Auditor vs Implementador
+</div>
+
+<table class="tension" style="margin-top:20px;">
+
+<tr>
+<td class="tension-who">Implementador</td>
+<td class="tension-says"><strong>Construye</strong> el SGSI. Diseña procesos, define controles, documenta. Su enfoque es <strong>crear y mantener</strong>.</td>
+</tr>
+
+<tr class="hi-row">
+<td class="tension-who">Auditor</td>
+<td class="tension-says"><span class="hi">Verifica el SGSI. Evalúa si lo que se ha construido funciona y cumple. Su enfoque es <strong>evaluar y reportar</strong>.</span></td>
+</tr>
+
+</table>
+
+<div class="block-text" style="margin-top:20px;">
+
+Un buen auditor <strong>no necesita ser un experto en implementación</strong>, pero debe entender cómo funciona un SGSI para poder evaluarlo. Por eso este curso parte de los fundamentos de ISO 27001.
+
+</div>
+
+</div>
+
+<div class="divider"></div>
+
+<!-- BLOQUE 5 · ERROR TÍPICO -->
+
+<div class="block">
+
+<div class="block-label">
+Error típico
+</div>
+
+<div class="block-title">
+Auditar buscando culpables
+</div>
+
+<div class="quote-block">
+
+<div class="quote-text">
+&ldquo;El auditor ha encontrado tres no conformidades. Ahora tenemos que buscar a quién echarle la culpa.&rdquo;
+</div>
+
+<div class="quote-attr">
+Mentalidad incorrecta en una organización auditada.
+</div>
+
+</div>
+
+<div class="block-text">
+
+El error más frecuente en auditoría es confundir el propósito: <strong>no se audita para castigar, se audita para mejorar</strong>.
+
+Una auditoría bien hecha:
+- Identifica desviaciones (no conformidades) para que se corrijan.
+- Detecta buenas prácticas para que se compartan.
+- Aporta información objetiva a la dirección para la toma de decisiones.
+
+El auditor no es un policía. Es un <strong>evaluador imparcial</strong> que aporta valor a la organización.
+
+</div>
+
+</div>
+
+<div class="divider"></div>
+
+<!-- BLOQUE 6 · RESUMEN EJECUTIVO -->
+
+<div class="block">
+
+<div class="block-label">
+Resumen del módulo
+</div>
+
+<div class="block-title">
+Lo que debes llevarte de aquí
+</div>
+
+<table class="tension" style="margin-top:16px;">
+
+<tr>
+<td class="tension-who">1</td>
+<td class="tension-says">Una auditoría es un proceso sistemático, independiente y documentado para obtener y evaluar evidencias.</td>
+</tr>
+
+<tr>
+<td class="tension-who">2</td>
+<td class="tension-says">Hay tres tipos: 1ª parte (interna), 2ª parte (proveedores), 3ª parte (certificación).</td>
+</tr>
+
+<tr>
+<td class="tension-who">3</td>
+<td class="tension-says">ISO 19011 es la norma de referencia para auditar cualquier sistema de gestión.</td>
+</tr>
+
+<tr class="hi-row">
+<td class="tension-who">4</td>
+<td class="tension-says"><span class="hi">El auditor no busca culpables. Verifica, evalúa y aporta valor a la organización.</span></td>
+</tr>
+
+</table>
+
+</div>
+
+<!-- CTA -->
+
+<div class="cta-block">
+
+<div class="cta-headline">
+El siguiente paso es entender<br>
+<span>los principios de la auditoría</span>
+</div>
+
+<div class="cta-sub">
+Siguiente módulo: <strong>ISO 19011 · Principios de Auditoría</strong>
+</div>
+
+<div class="cta-buttons">
+    <span class="cta-button disabled">← Anterior</span>
+    <a href="modulo-2.html" class="cta-button">Continuar →</a>
+</div>
+
+</div>
+
+</div>
+
+<!-- FOOTER -->
+
+<div class="footer">
+
+<div class="footer-inner">
+
+<div class="author-block">
+<div class="author-avatar">MA</div>
+<div>
+<div class="author-name">Miguel Angel Carriazo · <span>vCISO</span></div>
+<div class="author-title">Cybersecurity & Infrastructure Architect</div>
+</div>
+</div>
+
+<a href="https://www.linkedin.com/in/macarriazo/" target="_blank" rel="noopener noreferrer" class="li-btn">
+<svg class="li-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#0077B5">
+<path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+</svg>
+<div>
+<span class="li-main">"Merece la pena la experiencia..."</span>
+<span class="li-sub">Hablemos en LinkedIn →</span>
+</div>
+</a>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</body>
+<script>
+(function() {
+    // Buscar el badge y añadir la bombilla automáticamente
+    var badge = document.querySelector('.module-badge');
+    if (badge && !badge.parentElement.querySelector('.copyright-hint-auto')) {
+        var wrapper = document.createElement('div');
+        wrapper.style.display = 'inline-flex';
+        wrapper.style.alignItems = 'center';
+        wrapper.style.gap = '8px';
+        
+        // Mover el badge dentro del wrapper
+        badge.parentNode.insertBefore(wrapper, badge);
+        wrapper.appendChild(badge);
+        
+        // Crear botón bombilla
+        var btn = document.createElement('button');
+        btn.innerHTML = 'ℹ️';
+        btn.className = 'copyright-hint-auto';
+        btn.style.cssText = 'background: var(--brand-light, #e8f3fa); border: none; font-size: 1rem; cursor: pointer; padding: 4px 8px; border-radius: 20px; color: var(--brand, #0077B5); transition: all 0.2s ease;';
+        btn.onclick = function() { document.getElementById('copyrightPopupAuto').style.display = 'flex'; };
+        wrapper.appendChild(btn);
+        
+        // Estilo hover
+        btn.onmouseover = function() { this.style.transform = 'scale(1.05)'; };
+        btn.onmouseout = function() { this.style.transform = 'scale(1)'; };
+    }
+    
+    // Crear popup si no existe
+    if (!document.getElementById('copyrightPopupAuto')) {
+        var popup = document.createElement('div');
+        popup.id = 'copyrightPopupAuto';
+        popup.style.cssText = 'display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 1000; align-items: center; justify-content: center;';
+        popup.innerHTML = `
+            <div style="background: white; max-width: 400px; margin: 20px; padding: 28px; border-radius: 20px; position: relative; box-shadow: 0 20px 35px rgba(0,0,0,0.2);">
+                <button onclick="document.getElementById('copyrightPopupAuto').style.display='none'" style="position: absolute; top: 12px; right: 16px; background: none; border: none; font-size: 24px; cursor: pointer; color: #888;">&times;</button>
+                <p style="margin-bottom: 16px;"><strong>📄 Sobre este material</strong></p>
+                <p style="margin-bottom: 12px;">Este contenido ha sido elaborado por <strong>Miguel Angel Carriazo</strong> basado en:</p>
+                <ul style="margin-bottom: 16px; margin-left: 20px;">
+                    <li>Experiencia directa en auditorías ISO 27001</li>
+                    <li>ISO 19011:2018 (Directrices de auditoría)</li>
+                    <li>ISO/IEC 27001:2022</li>
+                </ul>
+                <p style="margin-bottom: 8px;">© GRCreal Academy · Prohibida la reproducción sin autorización.</p>
+                <p style="font-size: 11px; color: #888;">Para uso personal o formación interna · <a href="/legal/index.html" target="_blank" style="color: var(--brand, #0077B5); text-decoration: none;">Más información legal →</a></p>
+            </div>
+        `;
+        document.body.appendChild(popup);
+        
+        // Cerrar al hacer clic fuera
+        popup.addEventListener('click', function(e) {
+            if (e.target === this) this.style.display = 'none';
+        });
+    }
+})();
+</script>
+<script src="/js/modulo-check.js"></script>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>GRCreal | Seguridad, Riesgo y Cumplimiento</title>
+
+<meta name="description" content="Cumplir no siempre significa estar preparado. GRCreal ayuda a organizaciones a operar con seguridad real: visibilidad, control y resiliencia desde la operación.">
+
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph -->
+<meta property="og:title" content="GRCreal · Seguridad, Riesgo y Cumplimiento">
+<meta property="og:description" content="Seguridad real desde la operación.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://grcreal.com/">
+<meta property="og:image" content="https://grcreal.com/images/grcreal.png">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="GRCreal · Seguridad, Riesgo y Cumplimiento">
+<meta name="twitter:description" content="Seguridad real. No solo cumplimiento.">
+<meta name="twitter:image" content="https://grcreal.com/images/grcreal.png">
+
+<!-- FAVICON -->
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+<!-- DATOS ESTRUCTURADOS -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "GRCreal",
+  "url": "https://grcreal.com/"
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "GRCreal",
+  "url": "https://grcreal.com/",
+  "logo": "https://grcreal.com/favicon-32x32.png"
+}
+</script>
+
+<!-- CSS -->
+<link rel="stylesheet" href="css/marca.css">
+<link rel="stylesheet" href="css/global.css">
+<link rel="stylesheet" href="css/menu.css">
+
+</head>
+<body>
+
+<!-- SEO -->
+<h1 style="display:none;">
+GRCreal · Seguridad, Riesgo y Cumplimiento. Cumplir no siempre significa estar preparado.
+</h1>
+
+<div class="wrapper">
+  <div class="container">
+
+    <!-- NAV MENÚ -->
+    <nav class="nav">
+      <div class="nav-logo">GRC<span>real</span></div>
+      <div class="nav-menu-wrapper" id="navMenuWrapper">
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="/enfoque/index.html">Enfoque</a></li>
+          <li><a href="/metodologia/index.html">Metodología</a></li>
+          <li><a href="/articulos/index.html">Artículos</a></li>
+          <li><a href="/checklists/index.html">CheckLists</a></li>
+          <li><a href="/versus/index.html">Versus</a></li>
+          <li><a href="/academia/index.html">Academia</a></li>
+          <li><a href="/quiz/index.html">Quiz</a></li>
+          <li><a href="/sobre-mi/index.html">Sobre mí</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+          <li><a href="/legal/index.html">Legal</a></li>
+        </ul>
+      </div>
+      <div class="nav-toggle" onclick="this.classList.toggle('open'); document.getElementById('navMenuWrapper').classList.toggle('open')">
+        <span></span><span></span><span></span>
+      </div>
+    </nav>
+
+    <!-- BARRA DE NOVEDADES (se carga desde JSON) -->
+	<div class="novedades-line">
+	  📢 <a href="/novedades/index.html">Novedades GRCreal</a>
+	</div>
+
+	<!-- PNG -->
+	<div class="hero-image">
+	  <img src="images/grcreal.png" alt="GRCreal · Seguridad, Riesgo y Cumplimiento" class="main-png">
+	</div>
+
+
+    <!-- FOOTER desde includes/ -->
+    <div id="footer-container"></div>
+
+  </div>
+</div>
+
+<!-- POPUP -->
+<script src="/js/popup-welcome.js"></script>
+
+<!-- Cargar el footer -->
+<script>
+  fetch('/includes/footer-no-share.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('footer-container').innerHTML = data;
+    })
+    .catch(error => console.error('Error cargando el footer:', error));
+</script>
+
+<!-- Cargar novedades desde JSON -->
+<script>
+  fetch('/data/notices.json')
+    .then(response => response.json())
+    .then(data => {
+      const noticeText = document.getElementById('noticeText');
+      if (data.active && data.message) {
+        noticeText.innerHTML = data.message;
+        if (data.link) {
+          const link = document.createElement('a');
+          link.href = data.link;
+          link.textContent = data.linkText || 'Saber más →';
+          link.classList.add('notice-link');
+          noticeText.appendChild(document.createTextNode(' '));
+          noticeText.appendChild(link);
+        }
+      } else {
+        document.getElementById('noticeBar').style.display = 'none';
+      }
+    })
+    .catch(error => {
+      console.error('Error cargando novedades:', error);
+      document.getElementById('noticeBar').style.display = 'none';
+    });
+</script>
+
+</body>
+</html>

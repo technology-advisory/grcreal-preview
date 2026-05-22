@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0">
+<title>Defensa real contra ransomware: más allá del antivirus · GRCreal</title>
+<meta name="description" content="El ransomware sigue siendo la amenaza más devastadora para las organizaciones. Por qué el antivirus no es suficiente y qué controles realmente reducen el riesgo.">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Defensa real contra ransomware: más allá del antivirus">
+<meta property="og:description" content="El ransomware sigue siendo la amenaza más devastadora para las organizaciones. Por qué el antivirus no es suficiente y qué controles realmente reducen el riesgo.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://grcreal.com/articulos/ransomware-defensa-real.html">
+<meta property="og:image" content="https://grcreal.com/grcreal.png">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="../../css/marca.css">
+<link rel="stylesheet" href="../../css/articles.css">
+<link rel="stylesheet" href="../../css/global.css">
+</head>
+<body class="article-page">
+<div class="card-wrapper">
+<div class="card">
+<div class="accent-bar"></div>
+<div class="header">
+  <div class="tag">Técnico · Ransomware · Defensa</div>
+  <div class="article-date">28 Abril 2026</div>
+  <div class="headline">
+    Defensa real<br>
+    <span class="accent">contra</span><br>
+    <span class="dim">ransomware:</span><br>
+    <span class="accent">más allá del antivirus</span><br>
+  </div>
+  <p class="subline">El antivirus es necesario.<br><strong>Pero no es suficiente. Nunca lo fue.</strong></p>
+</div>
+<div class="body">
+
+  <div class="block">
+    <div class="block-label">Por qué el ransomware sigue funcionando</div>
+    <div class="block-title">La cadena de ataque</div>
+    <div class="block-text">
+      El ransomware moderno no es un programa que se instala y cifra inmediatamente. Es un proceso que puede durar semanas o meses desde el acceso inicial hasta el cifrado. Los grupos de ransomware profesionales siguen una cadena de ataque sistemática: acceso inicial (phishing, VPN vulnerable, credenciales robadas), establecimiento de persistencia, movimiento lateral, escalada de privilegios, exfiltración de datos y finalmente el cifrado.<br><br>Esta secuencia ofrece múltiples oportunidades de detección y contención — si existen los controles adecuados. Pero también significa que cuando el cifrado se activa, el atacante ya lleva semanas dentro de la red.<br><br><strong>El antivirus detecta el ejecutable de cifrado. No detecta las semanas de actividad previa que lo hicieron posible.</strong>
+    </div>
+  </div>
+  <div class="divider"></div>
+
+  <div class="block">
+    <div class="block-label">Los controles que realmente importan</div>
+    <div class="block-title">La defensa en profundidad</div>
+    <div class="block-text">
+      Identidad: MFA en todos los accesos externos. Credenciales comprometidas son el vector de acceso inicial más frecuente. Con MFA, una credencial robada no es suficiente para acceder.<br><br>Parcheo: la mayoría de accesos iniciales explotan vulnerabilidades conocidas y parcheadas. VPNs sin parchear, servidores web obsoletos, aplicaciones con vulnerabilidades públicas. Parchear sistemáticamente elimina este vector.<br><br>Backup inmutable: la medida de recuperación más efectiva. Copias que el ransomware no puede cifrar porque están aisladas de la red principal y no pueden modificarse. Sin backup inmutable, pagar el rescate puede ser la única opción de recuperación.<br><br>Segmentación: limita el alcance del movimiento lateral. Un ransomware que entra por un equipo de usuario no debería poder llegar a los servidores de producción si la red está correctamente segmentada.<br><br><strong>Privilegios mínimos: si el usuario comprometido no tiene acceso a los sistemas críticos, el ransomware tampoco. Limitar los privilegios limita el daño potencial.</strong>
+    </div>
+  </div>
+  <div class="divider"></div>
+
+  <div class="block">
+    <div class="block-label">El backup que no te salva</div>
+    <div class="block-title">El error más costoso</div>
+    <div class="block-text">
+      Tener backup no es suficiente. Necesitas backup que el ransomware no pueda cifrar y que puedas restaurar en el tiempo que el negocio puede soportar.<br><br>Los grupos de ransomware modernos buscan activamente los sistemas de backup antes de activar el cifrado. Si el backup está conectado a la misma red que los sistemas que protege y accesible con las mismas credenciales, será cifrado junto con todo lo demás.<br><br>El backup inmutable — almacenado en un sistema que no permite modificaciones una vez escrito, o en una ubicación completamente aislada — es la única garantía real. Y debe probarse periódicamente: saber que el backup existe no es lo mismo que saber que se puede restaurar.<br><br><strong>He visto organizaciones que tardaron semanas en recuperarse porque su backup existía pero no había sido probado, estaba parcialmente corrupto o el proceso de restauración era tan lento que el RTO declarado era ficción.</strong>
+    </div>
+  </div>
+  <div class="divider"></div>
+
+  <div class="block">
+    <div class="block-label">El plan de respuesta</div>
+    <div class="block-title">Qué hacer cuando ocurre</div>
+    <div class="block-text">
+      La pregunta no es si sufrirás un intento de ransomware — es cuándo y si estarás preparado. El plan de respuesta debe existir antes del incidente, no improvisarse durante.<br><br>Quién toma las decisiones. A quién se notifica primero. Cómo se aíslan los sistemas afectados sin destruir evidencias. Cuándo y cómo se comunica a clientes y reguladores. Quién gestiona la relación con los atacantes si se plantea negociar.<br><br>Y los contactos preestablecidos: empresa de respuesta a incidentes, aseguradora de ciberseguridad, asesor legal especializado, contacto en las fuerzas de seguridad.<br><br><strong>En las primeras horas de un incidente de ransomware, el coste de no tener un plan es enorme. Cada hora de improvisación es tiempo que el negocio no puede permitirse perder.</strong>
+    </div>
+  </div>
+  <div class="cta-block">
+  <div class="cta-headline">¿Vuestros controles actuales<br><span>limitarían el daño de un ransomware?</span></div>
+  <div class="cta-sub">No si podrían evitarlo — si limitarían el daño cuando ocurra.<br><strong>La diferencia está en lo que pasa después del primer impacto.</strong></div>
+</div>
+  <!-- FINAL DEL BODY -->
+<div id="footer-placeholder"></div>
+<script>
+    fetch('/includes/footer.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('footer-placeholder').innerHTML = data;
+        });
+</script>
+
+</div>
+</div>
+<a href="/articulos" class="home-btn">⌂ Home Artículos</a>
+</body>
+<script src="/js/global.js"></script>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0">
+<title>Zero Trust en on-prem: más allá del marketing · GRCreal</title>
+<meta name="description" content="Zero Trust no es solo cloud. Cómo aplicar los principios de Zero Trust en entornos on-premise sin caer en el marketing vacío.">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Zero Trust en on-prem: más allá del marketing">
+<meta property="og:description" content="Zero Trust no es un producto ni es solo para cloud. Cómo aplicarlo en entornos on-premise de verdad.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://grcreal.com/articulos/zero-trust-on-prem.html">
+<meta property="og:image" content="https://grcreal.com/grcreal.png">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="../../css/marca.css">
+<link rel="stylesheet" href="../../css/articles.css">
+<link rel="stylesheet" href="../../css/global.css">
+</head>
+<body class="article-page">
+<div class="card-wrapper">
+<div class="card">
+<div class="accent-bar"></div>
+
+<div class="header">
+  <div class="tag">Zero Trust · Arquitectura · On-Premise</div>
+  <div class="article-date">24 Abril 2026</div>
+  <div class="headline">
+    Zero Trust<br>
+    <span class="accent">en on-prem:</span><br>
+    <span class="dim">más allá del</span><br>
+    <span class="accent">marketing</span>
+  </div>
+  <p class="subline">
+    Zero Trust no es un producto.<br>
+    <strong>Y no es solo para cloud.</strong>
+  </p>
+</div>
+
+<div class="body">
+
+  <div class="block">
+    <div class="block-label">El problema con Zero Trust</div>
+    <div class="block-title">Lo que te venden vs lo que es</div>
+    <div class="block-text">
+      Zero Trust se ha convertido en uno de los términos más usados — y más mal usados — en ciberseguridad. Cada fabricante tiene su "solución Zero Trust". Cada consultor habla de transformación Zero Trust.
+      <br><br>
+      El resultado es que muchas organizaciones asocian Zero Trust con un producto concreto, con la nube, o con una transformación que solo pueden permitirse las grandes corporaciones.
+      <br><br>
+      Ninguna de estas tres cosas es cierta.
+      <br><br>
+      <strong>Zero Trust es un modelo de arquitectura basado en un principio simple: no confíes en nada ni nadie por defecto, independientemente de si está dentro o fuera de la red.</strong>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="block">
+    <div class="block-label">El modelo perimetral que ya no funciona</div>
+    <div class="block-title">Por qué el castillo con foso ya no sirve</div>
+    <div class="block-text">
+      El modelo de seguridad perimetral clásico asume que todo lo que está dentro de la red es de confianza y todo lo que está fuera no lo es. El firewall como muralla, la VPN como puente levadizo.
+      <br><br>
+      Ese modelo tenía sentido cuando los usuarios estaban siempre en la oficina, las aplicaciones en el CPD y los datos nunca salían del perímetro.
+      <br><br>
+      Hoy, los usuarios trabajan desde cualquier lugar, las aplicaciones están en cloud, los datos se mueven entre sistemas constantemente y los atacantes llevan años demostrando que entrar al perímetro es solo el primer paso — no el objetivo final.
+      <br><br>
+      <strong>Cuando un atacante o un insider malicioso está dentro de la red, el modelo perimetral no ofrece resistencia.</strong>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="block">
+    <div class="block-label">Cómo se aplica en on-prem</div>
+    <div class="block-title">Los principios que funcionan sin cloud</div>
+
+    <table class="tension" style="margin-top:20px;">
+      <tr>
+        <td class="tension-who">Verificación</td>
+        <td class="tension-says">Autenticar y autorizar cada acceso, cada vez. MFA en todos los accesos a sistemas críticos — no solo en el perímetro.</td>
+      </tr>
+      <tr>
+        <td class="tension-who">Mínimo privilegio</td>
+        <td class="tension-says">Cada usuario, servicio y sistema tiene acceso solo a lo que necesita para su función. Nada más. Revisado periódicamente.</td>
+      </tr>
+      <tr>
+        <td class="tension-who">Microsegmentación</td>
+        <td class="tension-says">Dividir la red en zonas pequeñas con controles de acceso explícitos entre ellas. El movimiento lateral se convierte en un problema del atacante.</td>
+      </tr>
+      <tr>
+        <td class="tension-who">Visibilidad</td>
+        <td class="tension-says">Monitorizar y registrar todo el tráfico relevante. No puedes detectar lo que no ves.</td>
+      </tr>
+      <tr class="hi-row">
+        <td class="tension-who">Asumir brecha</td>
+        <td class="tension-says"><span class="hi">Diseñar asumiendo que el atacante ya está dentro. ¿Hasta dónde puede llegar? ¿Cuándo lo detectarías?</span></td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="block">
+    <div class="block-label">Por dónde empezar</div>
+    <div class="block-title">Zero Trust es un camino, no un destino</div>
+    <div class="block-text">
+      No hace falta una transformación completa para empezar a aplicar principios Zero Trust en un entorno on-premise.
+      <br><br>
+      El primer paso es conocer el entorno real: qué sistemas existen, quién accede a qué, cómo fluyen los datos, qué dependencias hay. Sin este inventario, no hay arquitectura posible.
+      <br><br>
+      El segundo es identificar los activos más críticos y empezar por protegerlos con los controles más estrictos: autenticación fuerte, acceso mínimo necesario, monitorización activa.
+      <br><br>
+      El tercero es ir extendiendo esos controles al resto del entorno de forma gradual, priorizando por riesgo.
+      <br><br>
+      <strong>Zero Trust no se compra. Se construye. Y se puede empezar hoy, con la infraestructura que ya tienes.</strong>
+    </div>
+  </div>
+
+  <div class="cta-block">
+    <div class="cta-headline">
+      ¿Sabes qué pasaría si un atacante<br>
+      <span>ya está dentro de tu red?</span>
+    </div>
+    <div class="cta-sub">
+      Si la respuesta no es tranquilizadora — <strong>es momento de actuar.</strong>
+    </div>
+  </div>
+
+</div>
+
+<!-- FINAL DEL BODY -->
+<div id="footer-placeholder"></div>
+<script>
+    fetch('/includes/footer.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('footer-placeholder').innerHTML = data;
+        });
+</script>
+
+</div>
+</div>
+<a href="/articulos" class="home-btn">⌂ Home Artículos</a>
+</body>
+<script src="/js/global.js"></script>
+</html>

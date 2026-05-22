@@ -1,0 +1,30 @@
+{
+  "items": [
+    {
+      "fecha": "24 Mayo 2026",
+      "titulo": "🎓 Nueva sección: Academia GRCreal",
+      "descripcion": "Formación práctica en Seguridad, Riesgo y Cumplimiento. Recursos para profesionales que quieren pasar del cumplimiento al control real.",
+      "enlace": "/academia",
+      "enlace_texto": "Explorar Academia",
+      "tipo_enlace": "primary"
+    },
+    {
+      "fecha": "24 Mayo 2026",
+      "titulo": "✅ Checklist: Preparación para auditorías",
+      "descripcion": "Nueva interfaz: Lista de verificación para auditorías de seguridad. Lista de verificación actualizada para afrontar auditorías de seguridad. Punto por punto, no te dejes nada. Informe PDF más detallado disponible.",
+      "enlace": "/checklists",
+      "enlace_texto": "Ver checklist",
+      "tipo_enlace": "outline"
+    },
+	{
+	  "fecha": "24 Mayo 2026",
+	  "titulo": "🖥️ Nueva interfaz gráfica del portal",
+	  "descripcion": "Hemos renovado completamente la interfaz del portal. Más intuitiva, más rápida y con una experiencia de usuario mejorada para la gestión de riesgos y cumplimiento."
+	},
+    {
+      "fecha": "Próximamente",
+      "titulo": "❓ Quiz GRCreal",
+      "descripcion": "Nueva sección interactiva para evaluar tus conocimientos en Seguridad, Riesgo y Cumplimiento. Preguntas prácticas, casos reales y resultados inmediatos."
+    }
+  ]
+}

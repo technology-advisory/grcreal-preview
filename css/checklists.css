@@ -1,0 +1,660 @@
+/* checklists.css · Estilos completos para checklist ISO 22301 */
+
+:root {
+    --brand: #1a5f7a;
+    --brand-mid: #2c9b6e;
+    --brand-light: #eef5f0;
+    --border: #cbd5e1;
+    --border-soft: #e2e8f0;
+    --surface: #ffffff;
+    --white: #ffffff;
+    --muted: #6c7a8e;
+    --green: #27ae60;
+    --green-light: #e8f5e9;
+    --red: #e74c3c;
+    --red-light: #fdeaea;
+    --mono: 'SF Mono', 'Menlo', monospace;
+}
+
+/* MODO CARD */
+.modo-card {
+    margin-bottom: 24px;
+    padding: 16px 20px;
+    border: 1px solid var(--border-soft);
+    border-radius: 12px;
+    background: #f9fbfd;
+}
+
+.modo-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.modo-icon { font-size: 18px; }
+.modo-title {
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--brand);
+}
+
+.modo-desc {
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 12px;
+}
+
+.modo-buttons {
+    display: flex;
+    gap: 0;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    overflow: hidden;
+    width: fit-content;
+}
+
+.modo-btn {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding: 8px 20px;
+    border: none;
+    background: var(--surface);
+    color: var(--muted);
+    cursor: pointer;
+    transition: all 0.15s;
+}
+
+.modo-btn.active {
+    background: var(--brand);
+    color: #fff;
+}
+
+.modo-btn:first-child { border-right: 1px solid var(--border); }
+
+/* SECCIONES */
+.checklist-section { margin-bottom: 32px; }
+.checklist-section-title {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--brand);
+    border-bottom: 1px solid var(--border-soft);
+    padding-bottom: 8px;
+    margin-bottom: 16px;
+}
+
+/* ITEMS */
+.checklist-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 14px 0;
+    border-bottom: 1px solid #e2e8f0;
+    transition: background 0.2s;
+}
+
+.checklist-item:hover {
+    background: #f8fafc;
+    margin: 0 -12px;
+    padding: 14px 12px;
+    border-radius: 10px;
+}
+
+/* Columna izquierda: código + badge */
+.item-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 110px;
+    flex-shrink: 0;
+}
+
+.checklist-code {
+    font-family: monospace;
+    font-size: 12px;
+    font-weight: 700;
+    color: #1a5f7a;
+    background: #eef5f0;
+    padding: 4px 10px;
+    border-radius: 20px;
+    min-width: 55px;
+    text-align: center;
+}
+
+.pyme-badge {
+    font-size: 10px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-weight: 600;
+}
+
+.pyme-badge.facil { background: #e8f5e9; color: #2e7d32; }
+.pyme-badge.medio { background: #fff3e0; color: #e65100; }
+.pyme-badge.complejo { background: #fdeaea; color: #c62828; }
+
+/* Columna centro: texto */
+.item-text {
+    flex: 1;
+    font-size: 14px;
+    color: #2c3e4e;
+    line-height: 1.4;
+}
+
+/* Columna derecha: selector de estado */
+.item-selector {
+    display: flex;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+.sel-btn {
+    padding: 8px 16px;
+    border-radius: 40px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    border: 1px solid #cbd5e1;
+    background: white;
+    color: #555;
+}
+
+.sel-si.active {
+    background: #27ae60;
+    border-color: #27ae60;
+    color: white;
+}
+
+.sel-no.active {
+    background: #e74c3c;
+    border-color: #e74c3c;
+    color: white;
+}
+
+.sel-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* Tooltip principal (icono i) */
+.tooltip-wrap {
+    position: relative;
+    flex-shrink: 0;
+}
+
+.info-icon {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: #eef5f0;
+    color: #1a5f7a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: help;
+    transition: 0.2s;
+}
+
+.info-icon:hover {
+    background: #1a5f7a;
+    color: white;
+}
+
+.tooltip {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 32px;
+    width: 260px;
+    background: #1a1a1a;
+    color: #eee;
+    font-size: 11px;
+    padding: 10px 14px;
+    border-radius: 10px;
+    z-index: 100;
+}
+
+.tooltip-wrap:hover .tooltip,
+.tooltip-wrap.open .tooltip {
+    display: block;
+}
+
+/* LEYENDA DE SELECCIÓN */
+.leyenda-selector {
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+    margin-bottom: 20px;
+    padding: 10px 16px;
+    background: #f8fafc;
+    border-radius: 50px;
+    font-size: 12px;
+}
+
+.leyenda-selector span {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.leyenda-selector .si-badge {
+    background: #27ae60;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 40px;
+}
+
+.leyenda-selector .no-badge {
+    background: #e74c3c;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 40px;
+}
+
+/* PROGRESO */
+.progress-bar-wrap {
+    background: #e2e8f0;
+    border-radius: 8px;
+    height: 10px;
+    margin-bottom: 8px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    border-radius: 8px;
+    transition: width 0.4s ease;
+    width: 0%;
+    background-color: #e74c3c;
+}
+
+.progress-bar.green { background-color: #27ae60; }
+.progress-bar.yellow { background-color: #f1c40f; }
+.progress-bar.orange { background-color: #e67e22; }
+
+.progress-label {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+    margin-bottom: 6px;
+}
+
+.progress-label span { 
+    color: var(--brand); 
+    font-weight: bold; 
+    font-size: 14px;
+}
+
+.progress-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.progress-status {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-weight: 600;
+}
+
+.progress-status.red    { background: #fde; color: #c0392b; border: 1px solid #fab; }
+.progress-status.orange { background: #fef3e2; color: #d35400; border: 1px solid #f5cba7; }
+.progress-status.yellow { background: #fefde2; color: #9a7d0a; border: 1px solid #f9e79f; }
+.progress-status.green  { background: #eafaf1; color: #1e8449; border: 1px solid #a9dfbf; }
+
+.reset-btn {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding: 6px 16px;
+    border: 1px solid var(--border);
+    background: var(--white);
+    color: var(--muted);
+    cursor: pointer;
+    transition: all 0.15s;
+    border-radius: 30px;
+}
+
+.reset-btn:hover { border-color: var(--brand); color: var(--brand); }
+.pdf-btn { border-color: var(--brand); color: var(--brand); }
+.pdf-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+/* AVISO */
+.aviso {
+    background: var(--brand-light);
+    border-left: 3px solid var(--brand);
+    padding: 12px 16px;
+    font-size: 13px;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 28px;
+    border-radius: 0 8px 8px 0;
+}
+
+/* LEYENDA DE COLORES */
+.leyenda {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 28px;
+    align-items: center;
+}
+
+.leyenda-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+}
+
+.leyenda-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 3px;
+    flex-shrink: 0;
+}
+
+.leyenda-info { margin-left: auto; }
+
+/* CTA */
+.cta-block {
+    background: linear-gradient(135deg, #eef5f0, white);
+    padding: 24px;
+    border-radius: 16px;
+    text-align: center;
+    margin: 32px 0 16px;
+}
+
+.cta-headline {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.cta-headline span { color: var(--brand); }
+
+.cta-sub {
+    font-size: 13px;
+    color: #555;
+}
+
+/* ============================================
+   MODO PYME - OCULTAR/MOSTRAR TEXTOS
+   ============================================ */
+/* Modo auditor (por defecto): muestra solo texto auditor */
+.checklist-text {
+    display: block;
+}
+.pyme-text {
+    display: none;
+}
+
+/* Modo pyme activo: muestra solo texto pyme */
+body.modo-pyme .checklist-text {
+    display: none !important;
+}
+body.modo-pyme .pyme-text {
+    display: block !important;
+}
+
+/* Ajustes adicionales para modo pyme */
+body.modo-pyme .checklist-code {
+    display: none !important;
+}
+
+body.modo-pyme .pyme-badge {
+    display: inline-flex !important;
+}
+
+body.modo-pyme .info-icon {
+    display: flex !important;
+}
+
+body.modo-pyme .checklist-section-title {
+    font-size: 13px;
+    letter-spacing: 0.1em;
+}
+
+/* FOOTER */
+#footer-placeholder .footer-inner {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    flex-wrap: wrap !important;
+    gap: 20px !important;
+}
+
+/* ============================================
+   BOTÓN HOME - CORREGIDO (arriba derecha, pequeño)
+   ============================================ */
+.home-btn {
+    position: fixed;
+    top: 12px;
+    right: 12px;
+    bottom: auto;
+    left: auto;
+    background: #1a5f7a;
+    color: white;
+    padding: 5px 12px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 500;
+    font-family: system-ui, -apple-system, sans-serif;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+    transition: 0.2s;
+    z-index: 999;
+    width: auto;
+    height: auto;
+    line-height: normal;
+}
+
+.home-btn:hover {
+    background: #0e4357;
+    transform: translateY(-1px);
+}
+
+/* RESPONSIVE */
+@media (max-width: 800px) {
+    .checklist-item {
+        flex-wrap: wrap;
+    }
+    
+    .item-left {
+        width: 100%;
+    }
+    
+    .item-text {
+        width: 100%;
+        order: 2;
+    }
+    
+    .item-selector {
+        order: 1;
+    }
+    
+    .tooltip-wrap {
+        order: 3;
+    }
+    
+    .sel-btn {
+        padding: 6px 12px;
+        font-size: 10px;
+    }
+    
+    .leyenda-selector {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+}
+
+/* ============================================
+   POPUP PARA BOTÓN EXPORTAR DESHABILITADO
+   ============================================ */
+.btn-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.btn-wrapper .pdf-btn:disabled {
+    cursor: not-allowed;
+}
+
+.btn-wrapper .popup {
+    visibility: hidden;
+    background-color: #1a1a1a;
+    color: #fff;
+    text-align: center;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 11px;
+    font-weight: normal;
+    font-family: system-ui, sans-serif;
+    position: absolute;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    z-index: 100;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.btn-wrapper .popup::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #1a1a1a transparent transparent transparent;
+}
+
+.btn-wrapper:hover .popup {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Popup para botón Reiniciar */
+.btn-wrapper-reset {
+    position: relative;
+    display: inline-block;
+}
+
+.btn-wrapper-reset .popup-reset {
+    visibility: hidden;
+    background-color: #e74c3c;
+    color: #fff;
+    text-align: center;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 11px;
+    font-weight: normal;
+    font-family: system-ui, sans-serif;
+    position: absolute;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    z-index: 100;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.btn-wrapper-reset .popup-reset::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #e74c3c transparent transparent transparent;
+}
+
+.btn-wrapper-reset:hover .popup-reset {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* ============================================
+   ETIQUETAS DE MAPEO (NIS2, ISO, ENS, DORA)
+   ============================================ */
+.marcos-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.marco-tag {
+    font-family: var(--mono, 'SF Mono', monospace);
+    font-size: 9px;
+    letter-spacing: 0.05em;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-weight: 600;
+    display: inline-block;
+    cursor: help;
+}
+
+.marco-tag.nis2 {
+    background: #e8f4fd;
+    color: #1a5276;
+    border: 1px solid #aed6f1;
+}
+
+.marco-tag.iso {
+    background: #eafaf1;
+    color: #1e8449;
+    border: 1px solid #a9dfbf;
+}
+
+.marco-tag.ens {
+    background: #fef9e7;
+    color: #9a7d0a;
+    border: 1px solid #f9e79f;
+}
+
+.marco-tag.dora {
+    background: #fde8e8;
+    color: #922b21;
+    border: 1px solid #f5b7b1;
+}
+
+/* Tooltip móvil */
+.tooltip-expanded {
+    display: none;
+    background: #f8fafc;
+    border-left: 3px solid var(--brand);
+    padding: 10px 12px;
+    margin-top: 8px;
+    font-size: 12px;
+    line-height: 1.5;
+    color: #333;
+    border-radius: 0 6px 6px 0;
+    width: 100%;
+}
+
+.tooltip-expanded.visible {
+    display: block;
+}

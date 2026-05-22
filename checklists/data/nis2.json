@@ -1,0 +1,230 @@
+{
+  "sections": [
+    {
+      "title": "Paso previo · Determinación del alcance",
+      "pymeTitle": "¿Os aplica NIS2?",
+      "items": [
+        {
+          "code": "Art.3",
+          "difficulty": "medio",
+          "text": "Se ha determinado si la organización es entidad esencial o importante",
+          "pymeText": "¿Sabéis si vuestra empresa está obligada por NIS2? Depende del tamaño y del sector.",
+          "tooltip": "Evaluar tamaño (10+ empleados o 2M+ facturación) y sector. Evidencia: análisis documentado, sectores del Anexo I y II revisados."
+        },
+        {
+          "code": "Art.3",
+          "difficulty": "medio",
+          "text": "Se ha evaluado si los proveedores están afectados por NIS2 (cadena de suministro)",
+          "pymeText": "¿Habéis evaluado si vuestros proveedores clave también están sujetos a NIS2?",
+          "tooltip": "Los proveedores críticos también pueden estar sujetos a NIS2. Evidencia: inventario de proveedores con evaluación de alcance."
+        },
+        {
+          "code": "Art.27",
+          "difficulty": "facil",
+          "text": "La organización se ha registrado ante la autoridad competente si es preceptivo",
+          "pymeText": "¿Os habéis registrado ante el organismo regulador correspondiente?",
+          "tooltip": "Registro obligatorio para entidades esenciales. Evidencia: confirmación de registro, fecha."
+        }
+      ]
+    },
+    {
+      "title": "Gobernanza y responsabilidad · Art. 20",
+      "pymeTitle": "Quién manda y quién responde",
+      "items": [
+        {
+          "code": "Art.20",
+          "difficulty": "facil",
+          "text": "Los órganos de dirección han aprobado las medidas de gestión de riesgos",
+          "pymeText": "¿Alguien con poder en vuestra empresa ha revisado y aprobado el plan de ciberseguridad?",
+          "tooltip": "La dirección aprueba formalmente las medidas. Evidencia: actas de aprobación, fecha."
+        },
+        {
+          "code": "Art.20",
+          "difficulty": "facil",
+          "text": "Los miembros de dirección han recibido formación en ciberseguridad",
+          "pymeText": "¿Los directivos han recibido formación básica en ciberseguridad?",
+          "tooltip": "Formación obligatoria para la dirección. Evidencia: registros de formación, contenido cubierto."
+        },
+        {
+          "code": "Art.20",
+          "difficulty": "facil",
+          "text": "Existe un responsable de seguridad (CISO o equivalente) con mandato definido",
+          "pymeText": "¿Hay alguien responsable de la seguridad con autoridad real para decidir?",
+          "tooltip": "CISO designado con responsabilidades claras. Evidencia: nombramiento formal, descripción de funciones."
+        },
+        {
+          "code": "Art.20",
+          "difficulty": "medio",
+          "text": "La dirección supervisa periódicamente el estado de la ciberseguridad",
+          "pymeText": "¿La dirección revisa periódicamente cómo está la seguridad?",
+          "tooltip": "Revisión periódica por dirección. Evidencia: actas de revisión, KPIs de seguridad reportados."
+        }
+      ]
+    },
+    {
+      "title": "Gestión de riesgos · Art. 21",
+      "pymeTitle": "Qué medidas tenéis que tener",
+      "items": [
+        {
+          "code": "21.2.a",
+          "difficulty": "medio",
+          "text": "Políticas de análisis de riesgos documentadas",
+          "pymeText": "¿Tenéis documentado qué riesgos corre vuestra empresa en materia de ciberseguridad?",
+          "tooltip": "Metodología de riesgos definida y aprobada. Evidencia: política de riesgos, metodología usada."
+        },
+        {
+          "code": "21.2.a",
+          "difficulty": "medio",
+          "text": "Análisis de riesgos realizado y actualizado periódicamente",
+          "pymeText": "¿Ese análisis se actualiza cuando cambia algo importante en la empresa?",
+          "tooltip": "Riesgos identificados y evaluados. Evidencia: último análisis de riesgos, fecha de revisión."
+        },
+        {
+          "code": "21.2.b",
+          "difficulty": "medio",
+          "text": "Gestión de incidentes — procedimiento de detección, análisis, contención y recuperación",
+          "pymeText": "Si os hackean, ¿sabéis qué hacer? ¿Quién actúa, en qué orden, a quién se avisa?",
+          "tooltip": "Proceso de respuesta a incidentes. Evidencia: procedimiento documentado, equipo designado."
+        },
+        {
+          "code": "21.2.c",
+          "difficulty": "facil",
+          "text": "Continuidad de negocio — BCP/DRP documentado y probado",
+          "pymeText": "¿Podéis seguir operando si caen vuestros sistemas principales?",
+          "tooltip": "Plan de continuidad y recuperación. Evidencia: BCP/DRP documentado, registro de pruebas."
+        },
+        {
+          "code": "21.2.c",
+          "difficulty": "medio",
+          "text": "Gestión de copias de seguridad con pruebas de restauración",
+          "pymeText": "¿Hacéis copias de seguridad y las habéis probado de verdad?",
+          "tooltip": "Backup verificado. Evidencia: política de backup, registros de copias y restauraciones."
+        },
+        {
+          "code": "21.2.c",
+          "difficulty": "medio",
+          "text": "Plan de comunicación ante incidentes graves",
+          "pymeText": "¿Tenéis preparado cómo comunicar una crisis a clientes, empleados y medios?",
+          "tooltip": "Protocolo de comunicación de crisis. Evidencia: plan de comunicación, portavoz designado, plantillas."
+        },
+        {
+          "code": "21.2.d",
+          "difficulty": "complejo",
+          "text": "Seguridad de la cadena de suministro — requisitos en contratos con proveedores",
+          "pymeText": "¿Los contratos con proveedores clave incluyen obligaciones de seguridad?",
+          "tooltip": "Requisitos de seguridad en contratos. Evidencia: cláusulas de seguridad en contratos, evaluación de proveedores."
+        },
+        {
+          "code": "21.2.e",
+          "difficulty": "complejo",
+          "text": "Seguridad en adquisición y desarrollo de sistemas — Security by Design",
+          "pymeText": "¿Habéis evaluado qué tan seguros son vuestros proveedores más críticos?",
+          "tooltip": "Seguridad integrada desde el diseño. Evidencia: requisitos de seguridad en proyectos, revisión de código."
+        },
+        {
+          "code": "21.2.f",
+          "difficulty": "complejo",
+          "text": "Políticas para evaluar la eficacia de las medidas de seguridad",
+          "pymeText": "Cuando compráis o desarrolláis software, ¿la seguridad se tiene en cuenta desde el principio?",
+          "tooltip": "Medición de la efectividad. Evidencia: KPIs definidos, informes de métricas, revisión periódica."
+        },
+        {
+          "code": "21.2.g",
+          "difficulty": "facil",
+          "text": "Higiene informática básica — actualizaciones, contraseñas, concienciación",
+          "pymeText": "¿Medís si las medidas de seguridad que tenéis realmente funcionan?",
+          "tooltip": "Controles básicos de higiene. Evidencia: política de actualizaciones, gestión de contraseñas, formación."
+        },
+        {
+          "code": "21.2.h",
+          "difficulty": "medio",
+          "text": "Uso de criptografía — cifrado de datos en tránsito y en reposo",
+          "pymeText": "¿Los empleados saben lo básico de ciberseguridad? ¿Reciben formación periódica?",
+          "tooltip": "Cifrado implementado. Evidencia: política de criptografía, TLS en comunicaciones, cifrado en disco."
+        },
+        {
+          "code": "21.2.i",
+          "difficulty": "facil",
+          "text": "Control de acceso — mínimo privilegio implementado",
+          "pymeText": "¿Los datos importantes van cifrados — en internet, en el correo, en los discos?",
+          "tooltip": "Acceso mínimo necesario. Evidencia: matriz de roles, revisión periódica de accesos."
+        },
+        {
+          "code": "21.2.j",
+          "difficulty": "facil",
+          "text": "Autenticación multifactor (MFA) en todos los accesos sensibles",
+          "pymeText": "¿Cada empleado accede solo a lo que necesita para su trabajo?",
+          "tooltip": "MFA implantado. Evidencia: MFA en correo, VPN y sistemas críticos, política documentada."
+        }
+      ]
+    },
+    {
+      "title": "Notificación de incidentes · Art. 23",
+      "pymeTitle": "Qué hacer si os atacan",
+      "items": [
+        {
+          "code": "Art.23",
+          "difficulty": "complejo",
+          "text": "Procedimiento para detectar y evaluar el impacto de incidentes significativos",
+          "pymeText": "¿Usáis doble factor — contraseña más código en el móvil — en accesos importantes?",
+          "tooltip": "Criterios de significatividad definidos. Evidencia: umbrales definidos, proceso de clasificación."
+        },
+        {
+          "code": "Art.23",
+          "difficulty": "complejo",
+          "text": "Alerta temprana a la autoridad competente en menos de 24 horas",
+          "pymeText": "¿Sabéis identificar un incidente 'significativo' que obliga a notificar al regulador?",
+          "tooltip": "Notificación inicial en 24h. Evidencia: procedimiento con plazos, contacto de la autoridad identificado."
+        },
+        {
+          "code": "Art.23",
+          "difficulty": "complejo",
+          "text": "Notificación completa del incidente en menos de 72 horas",
+          "pymeText": "¿Sabéis que tenéis 24 horas para hacer una alerta inicial al regulador tras un incidente grave?",
+          "tooltip": "Informe detallado en 72h. Evidencia: plantilla de notificación, proceso documentado."
+        },
+        {
+          "code": "Art.23",
+          "difficulty": "complejo",
+          "text": "Informe final del incidente en el plazo de un mes",
+          "pymeText": "La notificación completa debe enviarse en 72 horas. ¿Tenéis la plantilla preparada?",
+          "tooltip": "Informe post-incidente en 30 días. Evidencia: plantilla de informe final, registro de incidentes previos."
+        },
+        {
+          "code": "Art.23",
+          "difficulty": "medio",
+          "text": "Se conoce cuál es la autoridad competente para notificar en España",
+          "pymeText": "El informe final debe entregarse en un mes. ¿Sabéis cómo hacerlo?",
+          "tooltip": "INCIBE (entidades importantes) o CCN-CERT (sector público/esencial). Evidencia: contacto identificado y documentado."
+        }
+      ]
+    },
+    {
+      "title": "Cumplimiento y supervisión",
+      "pymeTitle": "Demostrar que lo cumplís",
+      "items": [
+        {
+          "code": "Art.32",
+          "difficulty": "medio",
+          "text": "Preparada para auditorías e inspecciones de la autoridad supervisora",
+          "pymeText": "¿Sabéis a quién notificar en España? INCIBE o CCN-CERT según vuestro sector.",
+          "tooltip": "Documentación organizada y accesible. Evidencia: repositorio de evidencias, índice de documentación."
+        },
+        {
+          "code": "Art.21",
+          "difficulty": "medio",
+          "text": "Las medidas de seguridad son proporcionales al riesgo y están documentadas",
+          "pymeText": "¿Tenéis la documentación ordenada por si viene una inspección?",
+          "tooltip": "Proporcionalidad justificada. Evidencia: análisis de riesgos alineado con las medidas implementadas."
+        },
+        {
+          "code": "Art.21",
+          "difficulty": "complejo",
+          "text": "Revisión periódica de la eficacia de las medidas implementadas",
+          "pymeText": "¿Podéis demostrar con evidencias que tenéis las medidas implementadas?",
+          "tooltip": "Mejora continua documentada. Evidencia: revisiones periódicas, plan de mejora con seguimiento."
+        }
+      ]
+    }
+  ]
+}

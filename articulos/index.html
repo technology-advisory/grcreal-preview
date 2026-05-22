@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0">
+
+<title>Artículos · GRCReal</title>
+
+<meta name="description" content="Artículos sobre ciberseguridad, GRC y realidad operativa. Sin teoría vacía. Contenido práctico de Miguel Ángel Carriazo, vCISO.">
+
+<meta name="robots" content="index, follow">
+
+<meta property="og:title" content="Artículos · GRCReal">
+<meta property="og:description" content="Artículos sobre GRC, ISO 27001, ENS, NIS2, continuidad y ciberseguridad desde la realidad operativa.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://grcreal.com/articulos/">
+<meta property="og:image" content="https://grcreal.com/grcreal.png">
+
+<link rel="canonical" href="https://grcreal.com/articulos/">
+
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+<link rel="stylesheet" href="../css/marca.css">
+<link rel="stylesheet" href="../css/global.css">
+<link rel="stylesheet" href="/css/articulos-index.css">
+
+
+</head>
+<body class="article-page">
+<div class="card-wrapper">
+<div class="card">
+  <div class="accent-bar"></div>
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="tag">Contenido</div>
+    <div class="headline">
+      Artículos <span class="accent">GRCReal</span>
+    </div>
+    <p class="subline">
+      Sin teoría vacía. Sin copy-paste regulatorio.<br>
+      <strong>Realidad operativa.</strong>
+    </p>
+  </div>
+
+  <!-- BODY -->
+  <div class="body">
+
+    <div id="filters">
+      <!-- CATEGORÍAS -->
+      <button class="filter-btn active" data-filter="all" onclick="filterArticles('all', this)">Todo</button>
+      <button class="filter-btn" data-filter="vciso" onclick="filterArticles('vciso', this)">vCISO</button>
+      <button class="filter-btn" data-filter="grc" onclick="filterArticles('grc', this)">GRC</button>
+      <button class="filter-btn" data-filter="ai" onclick="filterArticles('ai', this)">EU AI Act</button>
+      <button class="filter-btn" data-filter="ia" onclick="filterArticles('ia', this)">IA</button>
+      <button class="filter-btn" data-filter="tecnico" onclick="filterArticles('tecnico', this)">Técnico</button>
+      <button class="filter-btn" data-filter="ens" onclick="filterArticles('ens', this)">ENS</button>
+      <button class="filter-btn" data-filter="iso27001" onclick="filterArticles('iso27001', this)">ISO 27001</button>
+      <button class="filter-btn" data-filter="iso22301" onclick="filterArticles('iso22301', this)">ISO 22301</button>
+      <button class="filter-btn" data-filter="iso42001" onclick="filterArticles('iso42001', this)">ISO 42001</button>
+      <button class="filter-btn" data-filter="nis2" onclick="filterArticles('nis2', this)">NIS2</button>
+      <button class="filter-btn" data-filter="iso45003" onclick="filterArticles('iso45003', this)">ISO 45003</button>
+	  <button class="filter-btn" data-filter="compliance" onclick="filterArticles('compliance', this)">Compliance</button>
+
+      <div style="width:100%; height:0; margin:0; padding:0;"></div>
+
+      <!-- CONTROLES -->
+      <div style="display:flex; gap:6px; align-items:center;">
+        <span style="font-family:var(--mono); font-size:10px;">Más filtros:</span>
+        <select id="monthFilter" class="ctrl-btn" onchange="applyFilters()">
+          <option value="all">Mes</option>
+          <option value="2026-05">Mayo 2026</option>
+          <option value="2026-04">Abril 2026</option>
+        </select>
+        <button class="ctrl-btn" id="sortBtn" onclick="toggleSort()">↓ Nuevos</button>
+      </div>
+    </div>
+
+    <!-- GRID (se llena con JavaScript desde JSON) -->
+    <div class="articles-grid" id="articlesGrid">
+      <div class="no-results" id="noResults">
+        No hay artículos en esta categoría todavía.
+      </div>
+    </div>
+
+  </div><!-- /body -->
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-inner">
+      <div class="author-block">
+        <div class="author-avatar">MA</div>
+        <div>
+          <div class="author-name">Miguel Ángel Carriazo · <span>vCISO</span></div>
+          <div class="author-title">Cybersecurity & Infrastructure Architect</div>
+        </div>
+      </div>
+      <a href="https://www.linkedin.com/in/macarriazo/" target="_blank" class="li-btn">
+        <svg class="li-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#0077B5">
+          <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+        </svg>
+        <div>
+          <span class="li-main">"Merece la pena la experiencia..."</span>
+          <span class="li-sub">Hablemos en LinkedIn →</span>
+        </div>
+      </a>
+    </div>
+  </div>
+
+</div><!-- /card -->
+</div><!-- /card-wrapper -->
+
+<a href="/index.html" class="home-btn">⌂ Home</a>
+
+<script>
+// ==============================
+// DATOS (se cargan desde JSON)
+// ==============================
+let articulosData = [];
+let currentCategory = "all";
+let sortMode = "newest";
+
+// ==============================
+// PARSEAR FECHA EN ESPAÑOL
+// ==============================
+function parseSpanishDate(text) {
+  const months = {
+    enero: 0, febrero: 1, marzo: 2, abril: 3,
+    mayo: 4, junio: 5, julio: 6, agosto: 7,
+    septiembre: 8, octubre: 9, noviembre: 10, diciembre: 11
+  };
+  const parts = text.toLowerCase().split(' ');
+  const day = parseInt(parts[0]);
+  const month = months[parts[1]];
+  const year = parseInt(parts[2]);
+  return new Date(year, month, day);
+}
+
+// ==============================
+// RENDERIZAR ARTÍCULOS
+// ==============================
+function renderArticles() {
+  const selectedMonth = document.getElementById("monthFilter")?.value || "all";
+  const grid = document.getElementById("articlesGrid");
+  
+  // Filtrar
+  let filtered = articulosData.filter(articulo => {
+    const matchCategory = currentCategory === "all" || articulo.cat.includes(currentCategory);
+    const date = parseSpanishDate(articulo.date);
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const cardMonth = `${year}-${month}`;
+    const matchMonth = selectedMonth === "all" || cardMonth === selectedMonth;
+    return matchCategory && matchMonth;
+  });
+  
+  // Ordenar
+  filtered.sort((a, b) => {
+    const dateA = parseSpanishDate(a.date);
+    const dateB = parseSpanishDate(b.date);
+    return sortMode === "newest" ? dateB - dateA : dateA - dateB;
+  });
+  
+  // Generar HTML
+  if (filtered.length === 0) {
+    grid.innerHTML = '<div class="no-results" style="display:block;">No hay artículos en esta categoría todavía.</div>';
+    return;
+  }
+  
+  grid.innerHTML = filtered.map(articulo => `
+    <div class="article-card" data-cat="${articulo.cat}" onclick="location.href='${articulo.url}'">
+      <div class="article-meta">${articulo.meta}</div>
+      <div class="article-title">${articulo.title}${articulo.badge ? `<span class="article-badge">${articulo.badge}</span>` : ''}</div>
+      <div class="article-date">${articulo.date}</div>
+      <div class="article-desc">${articulo.desc}</div>
+      <a href="${articulo.url}" class="article-link">Leer artículo →</a>
+    </div>
+  `).join('');
+}
+
+// ==============================
+// FILTRAR POR CATEGORÍA
+// ==============================
+function filterArticles(cat, btn) {
+  currentCategory = cat;
+  document.querySelectorAll('#filters .filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  const url = new URL(window.location);
+  if (cat === 'all') url.searchParams.delete('cat');
+  else url.searchParams.set('cat', cat);
+  history.replaceState(null, '', url);
+  renderArticles();
+}
+
+// ==============================
+// ORDEN (toggle)
+// ==============================
+function toggleSort() {
+  const btn = document.getElementById("sortBtn");
+  sortMode = sortMode === "newest" ? "oldest" : "newest";
+  btn.innerText = sortMode === "newest" ? "↓ Nuevos" : "↑ Más antiguos";
+  renderArticles();
+}
+
+// ==============================
+// APLICAR FILTROS (mes + orden)
+// ==============================
+function applyFilters() {
+  renderArticles();
+}
+
+// ==============================
+// CARGAR DATOS DESDE JSON
+// ==============================
+async function cargarArticulos() {
+  try {
+    const response = await fetch('articulos.json');
+    const todos = await response.json();
+
+    // Solo artículos publicados
+    articulosData = todos.filter(a => a.published === true);
+    
+    // Actualizar contadores en botones
+    const counts = {};
+    articulosData.forEach(articulo => {
+      const cats = articulo.cat.split(' ');
+      cats.forEach(cat => { counts[cat] = (counts[cat] || 0) + 1; });
+    });
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      const cat = btn.dataset.filter;
+      if (cat === 'all') btn.innerText = `Todo (${articulosData.length})`;
+      else if (counts[cat]) btn.innerText = `${btn.innerText.split(' (')[0]} (${counts[cat]})`;
+    });
+    
+    renderArticles();
+  } catch (error) {
+    console.error('Error cargando artículos:', error);
+  }
+}
+
+// ==============================
+// INICIO
+// ==============================
+window.addEventListener('DOMContentLoaded', () => {
+  const params = new URLSearchParams(window.location.search);
+  const cat = params.get('cat') || 'all';
+  const btn = document.querySelector(`[data-filter="${cat}"]`);
+  if (btn) {
+    currentCategory = cat;
+    btn.classList.add('active');
+  }
+  cargarArticulos();
+});
+</script>
+
+</body>
+</html>

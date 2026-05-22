@@ -1,0 +1,353 @@
+{
+  "sections": [
+    {
+      "title": "Art. 5-6 · Gobernanza y Marco de Gestión del Riesgo TIC",
+      "pymeTitle": "Gobernanza — quién manda y quién responde",
+      "items": [
+        {
+          "code": "Art.5(1)",
+          "difficulty": "facil",
+          "text": "Marco interno de gobernanza y control que garantice una gestión efectiva y prudente del riesgo relacionado con las TIC",
+          "pymeText": "¿Tenéis un marco formal aprobado que garantice una gestión efectiva del riesgo tecnológico a todos los niveles de la entidad?",
+          "tooltip": "Art.5(1): «Las entidades financieras dispondrán de un marco interno de gobernanza y control que garantice una gestión efectiva y prudente del riesgo relacionado con las TIC». Evidencia: marco de gobernanza TIC documentado, aprobado por el órgano de dirección, con políticas, procedimientos y funciones de control definidas."
+        },
+        {
+          "code": "Art.5(2)(a)",
+          "difficulty": "facil",
+          "text": "Órgano de dirección que asume la responsabilidad última de gestionar el riesgo relacionado con las TIC",
+          "pymeText": "¿Está claro y documentado que el Consejo o la dirección es la última responsable de los riesgos tecnológicos — no solo el equipo de IT?",
+          "tooltip": "Art.5(2)(a): El órgano de dirección «asumirá la responsabilidad última de gestionar el riesgo relacionado con las TIC de la entidad financiera». Evidencia: actas del Consejo con aprobación del marco, política de riesgos TIC firmada por la dirección, informes periódicos de riesgos TIC al órgano de gobierno."
+        },
+        {
+          "code": "Art.5(2)(b)",
+          "difficulty": "facil",
+          "text": "Políticas adoptadas para garantizar niveles elevados de disponibilidad, autenticidad, integridad y confidencialidad de los datos",
+          "pymeText": "¿Tenéis políticas aprobadas que protejan que vuestros datos estén disponibles, sean auténticos, íntegros y confidenciales?",
+          "tooltip": "Art.5(2)(b): El órgano de dirección «adoptará políticas encaminadas a garantizar el mantenimiento de unos niveles elevados de disponibilidad, autenticidad, integridad y confidencialidad de los datos». Evidencia: política de seguridad de la información aprobada, controles de protección de datos implementados, métricas de disponibilidad de sistemas críticos."
+        },
+        {
+          "code": "Art.5(2)(d)",
+          "difficulty": "medio",
+          "text": "Estrategia de resiliencia operativa digital aprobada por el órgano de dirección con nivel de tolerancia al riesgo TIC definido",
+          "pymeText": "¿Tiene la dirección aprobada una estrategia que define hasta qué nivel de riesgo tecnológico estáis dispuestos a asumir?",
+          "tooltip": "Art.5(2)(d): El órgano de dirección «asumirá la responsabilidad general de establecer y aprobar la estrategia de resiliencia operativa digital, lo que incluye determinar el nivel adecuado de tolerancia al riesgo relacionado con las TIC». Evidencia: estrategia de resiliencia digital aprobada, apetito de riesgo TIC documentado, alineación con el plan de negocio."
+        },
+        {
+          "code": "Art.5(4)",
+          "difficulty": "medio",
+          "text": "Miembros del órgano de dirección con conocimientos suficientes del riesgo TIC y formación específica periódica",
+          "pymeText": "¿Los directivos han recibido formación concreta sobre ciberriesgos y la actualizan periódicamente? No basta con delegar todo al equipo técnico.",
+          "tooltip": "Art.5(4): «Los miembros del órgano de dirección mantendrán al día de manera activa conocimientos y capacidades suficientes para comprender y evaluar el riesgo relacionado con las TIC, también siguiendo periódicamente una formación específica que sea acorde al riesgo relacionado con las TIC que se esté gestionando». Evidencia: plan de formación directiva, registros de asistencia, evaluación de competencias."
+        },
+        {
+          "code": "Art.6(1)",
+          "difficulty": "medio",
+          "text": "Marco de gestión del riesgo TIC sólido, completo y bien documentado como parte del sistema global de gestión de riesgos",
+          "pymeText": "¿Tenéis un documento formal y completo que describe cómo gestionáis todos los riesgos tecnológicos de la entidad?",
+          "tooltip": "Art.6(1): «Las entidades financieras contarán con un marco de gestión del riesgo relacionado con las TIC sólido, completo y bien documentado como parte de su sistema global de gestión de riesgos, que les permita hacer frente al riesgo relacionado con las TIC de forma rápida, eficiente y exhaustiva». Evidencia: marco documentado y aprobado, integrado en el sistema global de riesgos, revisado al menos anualmente."
+        },
+        {
+          "code": "Art.6(4)",
+          "difficulty": "complejo",
+          "text": "Función de control independiente para gestión y supervisión del riesgo TIC con separación adecuada de funciones operativas",
+          "pymeText": "¿Hay alguien que controla los riesgos tecnológicos de forma independiente, sin depender de quien gestiona IT día a día?",
+          "tooltip": "Art.6(4): «Las entidades financieras que no sean microempresas encomendarán a una función de control la gestión y la supervisión del riesgo relacionado con las TIC y garantizarán un nivel adecuado de independencia de dicha función para evitar conflictos de intereses». Modelo de tres líneas de defensa aplicado. Evidencia: función de control designada, independencia jerárquica, informes al Consejo."
+        },
+        {
+          "code": "Art.6(5)",
+          "difficulty": "medio",
+          "text": "Marco de gestión del riesgo TIC revisado al menos anualmente y tras incidentes graves o instrucciones de supervisión",
+          "pymeText": "¿Revisáis formalmente al menos una vez al año vuestro marco de riesgos tecnológicos y lo mejoráis con lo aprendido?",
+          "tooltip": "Art.6(5): «El marco de gestión del riesgo relacionado con las TIC se documentará y revisará al menos una vez al año, o periódicamente en el caso de las microempresas, así como cuando se produzcan incidentes graves relacionados con las TIC, y siguiendo las instrucciones de supervisión». Evidencia: acta de revisión anual, informe de la revisión presentable al supervisor, mejoras implementadas."
+        }
+      ]
+    },
+    {
+      "title": "Art. 8-9 · Identificación, Protección y Prevención",
+      "pymeTitle": "Activos y protección — saber qué tienes y cómo protegerlo",
+      "items": [
+        {
+          "code": "Art.8(1)",
+          "difficulty": "medio",
+          "text": "Identificación, clasificación y documentación de todas las funciones empresariales sustentadas por TIC, activos de información y activos TIC",
+          "pymeText": "¿Tenéis identificados y clasificados todos los sistemas, aplicaciones y datos que son esenciales para el funcionamiento del negocio?",
+          "tooltip": "Art.8(1): «Las entidades financieras identificarán, clasificarán y documentarán adecuadamente todas las funciones, cometidos y responsabilidades empresariales sustentados por las TIC, los activos de información y activos de TIC que sustenten dichas funciones». Revisión al menos anual. Evidencia: inventario de activos (CMDB), clasificación por criticidad, propietario por activo."
+        },
+        {
+          "code": "Art.8(2)",
+          "difficulty": "medio",
+          "text": "Identificación continua de fuentes de riesgo TIC y evaluación de ciberamenazas y vulnerabilidades, revisada al menos anualmente",
+          "pymeText": "¿Analizáis regularmente de dónde pueden venir los problemas tecnológicos, incluyendo amenazas externas y vulnerabilidades internas?",
+          "tooltip": "Art.8(2): «Las entidades financieras identificarán de forma continua todas las fuentes de riesgo relacionado con las TIC y evaluarán las ciberamenazas y vulnerabilidades en materia de TIC pertinentes para sus funciones empresariales sustentadas por TIC, activos de información y activos de TIC». Revisión de escenarios de riesgo al menos anual. Evidencia: registro de riesgos TIC, threat intelligence integrada."
+        },
+        {
+          "code": "Art.8(4)",
+          "difficulty": "medio",
+          "text": "Inventario de todos los activos TIC incluyendo emplazamientos remotos, con cartografía de configuraciones e interdependencias",
+          "pymeText": "¿Tenéis un inventario completo de todos vuestros equipos y sistemas, incluyendo los remotos, con sus conexiones mapeadas?",
+          "tooltip": "Art.8(4): «Las entidades financieras identificarán todos los activos de información y activos de TIC, incluidos los que se encuentren en emplazamientos remotos, recursos de red y equipos de hardware, y cartografiarán aquellos considerados esenciales. Cartografiarán la configuración de los activos y los vínculos e interdependencias entre los distintos activos». Evidencia: CMDB actualizada, mapa de dependencias."
+        },
+        {
+          "code": "Art.9(2)",
+          "difficulty": "medio",
+          "text": "Políticas, procedimientos y herramientas de seguridad TIC para asegurar resiliencia, continuidad y disponibilidad de sistemas que sustentan funciones esenciales",
+          "pymeText": "¿Protegéis activamente vuestros sistemas críticos para que estén siempre disponibles, sean fiables y los datos estén seguros?",
+          "tooltip": "Art.9(2): «Las entidades financieras diseñarán, adquirirán y aplicarán políticas, procedimientos, protocolos y herramientas en materia de seguridad de las TIC que tengan por objeto asegurar la resiliencia, la continuidad y la disponibilidad de los sistemas de TIC, en particular aquellos que sustentan funciones esenciales o importantes, así como mantener elevados niveles de disponibilidad, autenticidad, integridad y confidencialidad de los datos». Evidencia: política de seguridad TIC, controles implementados."
+        },
+        {
+          "code": "Art.9(4)(c)",
+          "difficulty": "medio",
+          "text": "Políticas que limiten el acceso físico o lógico a activos TIC a lo estrictamente necesario para funciones legítimas y aprobadas",
+          "pymeText": "¿Solo puede acceder a cada sistema quien realmente lo necesita para su trabajo? ¿Los permisos se gestionan de forma ordenada y revisada?",
+          "tooltip": "Art.9(4)(c): Las entidades financieras deberán «aplicar políticas que limiten el acceso físico o lógico a los activos de información y activos de TIC a lo que sea necesario únicamente para funciones y actividades legítimas y aprobadas, y establecer a tal fin un conjunto de políticas, procedimientos y controles que se centren en los derechos de acceso y garanticen una buena administración de estos». Evidencia: IAM/PAM implementado, revisión periódica de permisos, MFA."
+        },
+        {
+          "code": "Art.9(4)(d)",
+          "difficulty": "facil",
+          "text": "Políticas y protocolos de autenticación fuerte basados en estándares pertinentes implementados",
+          "pymeText": "¿Para acceder a los sistemas importantes se requiere más que solo una contraseña? ¿Hay doble verificación activada en accesos críticos?",
+          "tooltip": "Art.9(4)(d): Las entidades financieras deberán «aplicar políticas y protocolos para mecanismos de autenticación fuerte, basados en estándares pertinentes y sistemas de control específicos». Evidencia: MFA activo en VPN, correo corporativo, aplicaciones críticas y accesos de administración, política de contraseñas robusta, SSO con MFA integrado."
+        },
+        {
+          "code": "Art.9(4)(e)",
+          "difficulty": "medio",
+          "text": "Políticas de gestión de cambios TIC orientadas al riesgo con líneas base de configuración documentadas",
+          "pymeText": "¿Cualquier cambio en los sistemas pasa por un proceso de aprobación que evalúa los riesgos antes de aplicarlo en producción?",
+          "tooltip": "Art.9(4)(e): Las entidades financieras deberán aplicar «políticas que documenten los cambios en los sistemas de TIC siguiendo un enfoque normalizado de la gestión de cambios en las TIC con vistas a registrar, probar, evaluar, aprobar, aplicar y revisar todos los cambios en los sistemas de TIC». Evidencia: proceso CAB, líneas base de configuración (CIS Benchmarks), registro de cambios aprobados, procedimiento de rollback."
+        },
+        {
+          "code": "Art.9(4)(f)",
+          "difficulty": "medio",
+          "text": "Programa de gestión de vulnerabilidades y parches con parcheo priorizado por nivel de criticidad",
+          "pymeText": "¿Buscáis activamente fallos de seguridad en vuestros sistemas y los corregís en plazos concretos según su gravedad?",
+          "tooltip": "Art.9(4)(f): Las entidades financieras deberán «aplicar políticas y procedimientos relativos a la gestión de las vulnerabilidades y los parches de los sistemas de TIC». Evidencia: escaneos de vulnerabilidades periódicos, proceso de parcheo con SLA por criticidad (crítico ≤72h, alto ≤7 días), registro de vulnerabilidades abiertas y remediadas, métricas de MTTR, excepciones documentadas con mitigaciones."
+        }
+      ]
+    },
+    {
+      "title": "Art. 10 · Detección",
+      "pymeTitle": "Detección — saber qué pasa en tus sistemas en tiempo real",
+      "items": [
+        {
+          "code": "Art.10(1)",
+          "difficulty": "medio",
+          "text": "Mecanismos para detectar rápidamente actividades anómalas, problemas de rendimiento de redes TIC e incidentes, sometidos a pruebas periódicas",
+          "pymeText": "¿Tenéis sistemas que detectan automáticamente comportamientos raros o problemas en vuestra red y aplicaciones y os avisan?",
+          "tooltip": "Art.10(1): «Las entidades financieras dispondrán de mecanismos para detectar rápidamente las actividades anómalas, incluidos los problemas de rendimiento de las redes de TIC y los incidentes relacionados con las TIC, y para identificar los posibles puntos únicos de fallo significativos. Todos los mecanismos de detección se someterán a pruebas periódicas». Evidencia: SIEM, IDS/IPS, alertas configuradas, pruebas documentadas."
+        },
+        {
+          "code": "Art.10(2)",
+          "difficulty": "medio",
+          "text": "Mecanismos de detección con múltiples niveles de control, umbrales de alerta definidos y mecanismos automáticos de notificación al personal responsable",
+          "pymeText": "¿Tenéis definido a partir de qué nivel de anomalía se activa una alerta, y esa alerta llega automáticamente a quien debe responder?",
+          "tooltip": "Art.10(2): «Los mecanismos de detección permitirán múltiples niveles de control, definirán criterios y umbrales de alerta para activar e iniciar procesos de respuesta a incidentes relacionados con las TIC, incluidos mecanismos automáticos de alerta para el personal responsable de la respuesta a incidentes». Evidencia: reglas de correlación en SIEM, escalado automático, responsable de guardia definido."
+        },
+        {
+          "code": "Art.10(3)",
+          "difficulty": "complejo",
+          "text": "Recursos y capacidades suficientes dedicados al seguimiento de actividad de usuarios, anomalías TIC e incidentes, incluidos ciberataques",
+          "pymeText": "¿Tenéis personas y herramientas suficientes dedicadas a vigilar lo que pasa en vuestros sistemas, incluidos posibles ataques?",
+          "tooltip": "Art.10(3): «Las entidades financieras dedicarán recursos y capacidades suficientes al seguimiento de la actividad de los usuarios y la aparición de anomalías en las TIC y de incidentes relacionados con las TIC, en particular de ciberataques». Evidencia: equipo SOC o servicio MSSP, cobertura de monitorización documentada (% activos críticos), ausencia de puntos ciegos en activos críticos."
+        }
+      ]
+    },
+    {
+      "title": "Art. 17-20 · Gestión y Notificación de Incidentes TIC",
+      "pymeTitle": "Incidentes — qué haces cuando algo va mal",
+      "items": [
+        {
+          "code": "Art.17(1)",
+          "difficulty": "facil",
+          "text": "Proceso de gestión de incidentes TIC definido, establecido y aplicado para detectar, gestionar y notificar incidentes",
+          "pymeText": "¿Sabéis exactamente qué hacer paso a paso cuando hay un problema grave en los sistemas? ¿Y quién hace cada cosa?",
+          "tooltip": "Art.17(1): «Las entidades financieras definirán, establecerán y aplicarán un proceso de gestión de incidentes relacionados con las TIC para detectar, gestionar y notificar dichos incidentes». Art.17(2): Registro de todos los incidentes y ciberamenazas importantes. Evidencia: procedimiento de gestión de incidentes aprobado, equipo de respuesta (CSIRT/IRT) con roles definidos, playbooks por tipo de incidente."
+        },
+        {
+          "code": "Art.17(3)(b)",
+          "difficulty": "medio",
+          "text": "Procedimientos para identificar, rastrear, registrar, categorizar y clasificar incidentes TIC según prioridad y gravedad",
+          "pymeText": "¿Tenéis definido cómo categorizáis un incidente según su gravedad e impacto, y cómo priorizáis la respuesta?",
+          "tooltip": "Art.17(3)(b): El proceso de gestión de incidentes «establecerá procedimientos para identificar, rastrear, registrar, categorizar y clasificar los incidentes relacionados con las TIC en función de su prioridad y gravedad y en función del carácter esencial de los servicios perjudicados, conforme a los criterios establecidos en el artículo 18». Evidencia: matriz de clasificación alineada con criterios Art.18."
+        },
+        {
+          "code": "Art.18(1)",
+          "difficulty": "medio",
+          "text": "Clasificación de incidentes TIC con arreglo a criterios DORA: clientes afectados, duración, extensión geográfica, pérdida de datos, carácter esencial y consecuencias económicas",
+          "pymeText": "¿Usáis criterios concretos para decidir si un incidente es 'grave'? ¿Evaluáis clientes afectados, duración, impacto en datos y pérdidas económicas?",
+          "tooltip": "Art.18(1): Los criterios de clasificación son: a) número/pertinencia de clientes afectados; b) duración del incidente; c) extensión geográfica; d) pérdidas de datos; e) carácter esencial de servicios afectados; f) consecuencias económicas. Evidencia: matriz de clasificación con los 6 criterios del Art.18, alineada con los RTS publicados por las ESA."
+        },
+        {
+          "code": "Art.19(1)",
+          "difficulty": "complejo",
+          "text": "Notificación de incidentes graves TIC a la autoridad competente: notificación inicial, informe intermedio e informe final según plazos RTS",
+          "pymeText": "¿Sabéis cuándo y cómo debéis comunicar un incidente grave al Banco de España, CNMV o DGSFP y en qué plazos?",
+          "tooltip": "Art.19(1): Las entidades financieras notificarán los incidentes graves a la autoridad competente. Los plazos (fijados por RTS): notificación inicial (4h desde clasificación), informe intermedio (72h), informe final (1 mes). Evidencia: procedimiento de notificación con plazos, contactos del regulador (BdE, CNMV, DGSFP según aplique), plantillas de notificación, registro de notificaciones realizadas."
+        },
+        {
+          "code": "Art.19(2)",
+          "difficulty": "facil",
+          "text": "Posibilidad de notificación voluntaria de ciberamenazas importantes a la autoridad competente cuando se consideren pertinentes para el sistema financiero",
+          "pymeText": "¿Conocéis la posibilidad de notificar voluntariamente al regulador amenazas importantes aunque no hayan causado un incidente grave?",
+          "tooltip": "Art.19(2): «Las entidades financieras podrán notificar, de manera voluntaria, ciberamenazas importantes a la autoridad competente pertinente cuando consideren que la amenaza es pertinente para el sistema financiero, los usuarios del servicio o los clientes». Evidencia: conocimiento del procedimiento, contactos del regulador, proceso interno de decisión sobre notificación voluntaria."
+        }
+      ]
+    },
+    {
+      "title": "Art. 11-12 · Continuidad del Negocio y Recuperación TIC",
+      "pymeTitle": "Continuidad — seguir funcionando aunque algo falle",
+      "items": [
+        {
+          "code": "Art.11(1)",
+          "difficulty": "medio",
+          "text": "Política global de continuidad de la actividad en materia de TIC implementada mediante disposiciones, planes y mecanismos específicos y documentados",
+          "pymeText": "¿Tenéis por escrito y aprobado cómo vais a mantener el negocio funcionando si falla la tecnología, con planes concretos por escenario?",
+          "tooltip": "Art.11(1-2): «Las entidades financieras pondrán en práctica una política global de continuidad de la actividad en materia de TIC mediante disposiciones, planes, procedimientos y mecanismos específicos, adecuados y documentados». Debe garantizar: continuidad de funciones esenciales, respuesta rápida a incidentes, activación de planes de contención, estimación de impacto y comunicación de crisis. Evidencia: BCP/DRP aprobado."
+        },
+        {
+          "code": "Art.11(5)",
+          "difficulty": "medio",
+          "text": "Análisis de impacto en el negocio (BIA) con criterios cuantitativos y cualitativos, incluyendo análisis de escenarios de perturbaciones graves",
+          "pymeText": "¿Sabéis cuánto tiempo podría estar parada cada función importante del negocio antes de causar un daño grave, y lo tenéis medido?",
+          "tooltip": "Art.11(5): «Las entidades financieras llevarán a cabo un análisis de impacto en el negocio de sus exposiciones a perturbaciones graves de la actividad. Evaluarán el impacto potencial mediante criterios cuantitativos y cualitativos, utilizando datos internos y externos y análisis de escenarios». Evidencia: BIA documentado con RTO, RPO, MTPD definidos por función crítica, revisión anual."
+        },
+        {
+          "code": "Art.11(3)",
+          "difficulty": "complejo",
+          "text": "Planes conexos de respuesta y recuperación TIC, sujetos a auditorías internas independientes en entidades no microempresas",
+          "pymeText": "¿Tenéis planes detallados de recuperación por tipo de crisis, y alguien independiente los revisa y audita periódicamente?",
+          "tooltip": "Art.11(3): «Las entidades financieras aplicarán planes conexos de respuesta y recuperación en materia de TIC que, en el caso de entidades financieras que no sean microempresas, estarán sujetos a auditorías internas independientes». Evidencia: DRP por sistema/servicio crítico, procedimientos de activación, informe de auditoría interna del plan."
+        },
+        {
+          "code": "Art.11(6)",
+          "difficulty": "complejo",
+          "text": "Pruebas periódicas de los planes de continuidad TIC, en particular para funciones esenciales externalizadas a proveedores terceros",
+          "pymeText": "¿Comprobáis al menos una vez al año que vuestros planes de recuperación realmente funcionan, incluidos los de vuestros proveedores críticos?",
+          "tooltip": "Art.11(4-6): «Las entidades financieras establecerán, mantendrán y someterán a prueba periódicamente planes adecuados de continuidad de las actividades de TIC, en particular en lo que se refiere a las funciones esenciales o importantes externalizadas». Evidencia: calendario de ejercicios, actas con resultados, plan de mejora post-ejercicio, cobertura de proveedores críticos."
+        },
+        {
+          "code": "Art.12(1)",
+          "difficulty": "facil",
+          "text": "Políticas y procedimientos de respaldo documentados con alcance, frecuencia mínima y procedimientos de restablecimiento y recuperación",
+          "pymeText": "¿Hacéis copias de seguridad de todo lo importante, con frecuencia definida, y tenéis procedimientos concretos para recuperarlas?",
+          "tooltip": "Art.12(1): «Las entidades financieras desarrollarán y documentarán: a) políticas y procedimientos de respaldo que especifiquen el alcance de los datos objeto de respaldo y la frecuencia mínima; b) procedimientos y métodos de restablecimiento y recuperación». Art.12(2): Pruebas periódicas de los procedimientos de respaldo. Evidencia: política de backup, registros de copias, pruebas de restauración documentadas."
+        },
+        {
+          "code": "Art.12(2)",
+          "difficulty": "medio",
+          "text": "Sistemas de respaldo separados físicamente y lógicamente del sistema TIC de origen, protegidos contra acceso no autorizado",
+          "pymeText": "¿Vuestras copias de seguridad están guardadas en un lugar completamente separado de los sistemas principales, y protegidas de ataques?",
+          "tooltip": "Art.12(3): «Al restablecer los datos de seguridad mediante sus propios sistemas, las entidades financieras utilizarán sistemas de TIC que estén separados, física y lógicamente, del sistema de TIC de origen. Los sistemas estarán protegidos de forma segura contra cualquier acceso no autorizado o corrupción». Evidencia: almacenamiento offsite o cloud separado, cifrado de backups, controles de acceso específicos para entorno de backup."
+        },
+        {
+          "code": "Art.12(4)",
+          "difficulty": "complejo",
+          "text": "Capacidades de TIC redundantes para satisfacer las necesidades empresariales en caso de interrupción (entidades no microempresas)",
+          "pymeText": "¿Los sistemas más importantes tienen un respaldo que entra automáticamente si el principal falla, con capacidad suficiente para seguir operando?",
+          "tooltip": "Art.12(4): «Las entidades financieras que no sean microempresas mantendrán capacidades de TIC redundantes provistas de recursos, medios y funciones adecuados para satisfacer las necesidades empresariales». Evidencia: arquitectura HA para sistemas críticos, redundancia de conectividad, SAI/generadores en CPD, failover automatizado documentado y probado, redundancia geográfica donde aplique."
+        }
+      ]
+    },
+    {
+      "title": "Art. 24-27 · Pruebas de Resiliencia Operativa Digital",
+      "pymeTitle": "Pruebas — comprueba que tus defensas funcionan de verdad",
+      "items": [
+        {
+          "code": "Art.24(1)",
+          "difficulty": "medio",
+          "text": "Programa de pruebas de resiliencia operativa digital sólido y completo integrado en el marco de gestión del riesgo TIC (entidades no microempresas)",
+          "pymeText": "¿Tenéis un programa formal de pruebas anuales que evalúe vuestro estado de preparación y detecte carencias en la resiliencia digital?",
+          "tooltip": "Art.24(1): «Las entidades financieras que no sean microempresas establecerán, mantendrán y revisarán un programa de pruebas de resiliencia operativa digital sólido y completo que forme parte del marco de gestión del riesgo relacionado con las TIC, a fin de evaluar el estado de preparación para gestionar incidentes y detectar debilidades, deficiencias y carencias». Evidencia: programa aprobado, alcance y frecuencia definidos."
+        },
+        {
+          "code": "Art.24(4)",
+          "difficulty": "medio",
+          "text": "Pruebas realizadas por partes independientes, internas o externas, garantizando ausencia de conflictos de interés",
+          "pymeText": "¿Las pruebas de seguridad las hacen personas independientes de quienes gestionan los sistemas que se prueban?",
+          "tooltip": "Art.24(4): «Las entidades financieras que no sean microempresas garantizarán que las pruebas sean realizadas por partes independientes, ya sean internas o externas. Cuando un probador interno se encargue de realizar las pruebas, las entidades financieras dedicarán recursos suficientes y garantizarán que se evitan los conflictos de intereses». Evidencia: política de pruebas con requisito de independencia, separación de funciones documentada."
+        },
+        {
+          "code": "Art.25(1)",
+          "difficulty": "medio",
+          "text": "Pruebas de herramientas y sistemas TIC: evaluaciones de vulnerabilidad, análisis de código fuente, pruebas de red, pruebas de penetración y pruebas de compatibilidad",
+          "pymeText": "¿Hacéis análisis técnicos periódicos de vuestros sistemas buscando vulnerabilidades con herramientas específicas?",
+          "tooltip": "Art.25(1): El programa incluirá «evaluaciones y exploraciones de vulnerabilidad, análisis del software de código abierto, evaluaciones de seguridad de la red, análisis de carencias, exámenes de la seguridad física, cuestionarios y soluciones de software de detección, revisiones del código fuente cuando sea posible, pruebas basadas en escenarios, pruebas de compatibilidad, pruebas de rendimiento, pruebas de extremo a extremo y pruebas de penetración». Evidencia: plan de pruebas anual, informes de resultados, remediación documentada."
+        },
+        {
+          "code": "Art.26(1)",
+          "difficulty": "complejo",
+          "text": "Pruebas de penetración basadas en amenazas (TLPT) al menos cada tres años sobre funciones esenciales en sistemas de producción activos — entidades determinadas",
+          "pymeText": "¿Contratáis hackers éticos externos para que intenten atacar vuestros sistemas de producción reales y encontrar puntos débiles cada tres años?",
+          "tooltip": "Art.26(1): Las entidades determinadas «llevarán a cabo al menos cada tres años pruebas avanzadas consistentes en pruebas de penetración basadas en amenazas». Art.26(2): Abarcarán funciones esenciales o importantes sobre sistemas de producción activos. Evidencia: proveedor cualificado contratado (acreditado según Art.27), alcance validado por el regulador, informe completo, plan de remediación."
+        },
+        {
+          "code": "Art.27(1)",
+          "difficulty": "complejo",
+          "text": "Probadores TLPT con el más alto grado de idoneidad, capacidades técnicas en inteligencia de amenazas y acreditación por órgano de certificación de un Estado miembro",
+          "pymeText": "¿Los proveedores de pruebas avanzadas que contratáis cumplen los requisitos DORA de cualificación, acreditación y seguro de responsabilidad civil?",
+          "tooltip": "Art.27(1): Los probadores deberán: a) tener el más alto grado de idoneidad y prestigio; b) poseer capacidades técnicas en inteligencia sobre amenazas, pruebas de penetración y equipo rojo; c) estar acreditados por un órgano de certificación de un Estado miembro o adherirse a códigos de conducta oficiales; d) proporcionar garantía independiente sobre gestión de riesgos; e) estar cubiertos por seguros de responsabilidad civil profesional. Evidencia: acreditación del proveedor, póliza de seguro."
+        }
+      ]
+    },
+    {
+      "title": "Art. 28-30 · Gestión del Riesgo de Terceros TIC",
+      "pymeTitle": "Proveedores — los riesgos de depender de otros",
+      "items": [
+        {
+          "code": "Art.28(1)",
+          "difficulty": "medio",
+          "text": "Gestión del riesgo TIC de terceros como elemento integrante del marco de gestión del riesgo TIC, con plena responsabilidad de la entidad financiera",
+          "pymeText": "¿Gestionáis el riesgo de vuestros proveedores tecnológicos como parte del riesgo propio de la entidad, asumiendo que sois los últimos responsables?",
+          "tooltip": "Art.28(1)(a): «Las entidades financieras que tengan acuerdos contractuales en vigor para utilizar servicios de TIC serán, en todo momento, plenamente responsables del cumplimiento y observancia de todas las obligaciones con arreglo al presente Reglamento». Evidencia: política de gestión de riesgo de terceros TIC, integrada en el marco de riesgos, con criterios de proporcionalidad según Art.28(1)(b)."
+        },
+        {
+          "code": "Art.28(2)",
+          "difficulty": "medio",
+          "text": "Estrategia sobre riesgo TIC derivado de terceros revisada periódicamente, con política sobre uso de servicios TIC que sustenten funciones esenciales",
+          "pymeText": "¿Tenéis una estrategia formal para gestionar la dependencia de proveedores tecnológicos, incluyendo los que sustentan vuestras funciones más críticas?",
+          "tooltip": "Art.28(2): Las entidades no microempresas «adoptarán una estrategia, que revisarán periódicamente, sobre el riesgo relacionado con las TIC derivado de terceros, teniendo en cuenta la estrategia de múltiples proveedores. Esa estrategia incluirá una política sobre el uso de servicios de TIC que sustenten funciones esenciales o importantes prestados por proveedores terceros». Evidencia: estrategia aprobada, política de proveedores críticos."
+        },
+        {
+          "code": "Art.28(3)",
+          "difficulty": "medio",
+          "text": "Registro de información actualizado de todos los acuerdos contractuales con proveedores terceros de servicios TIC, distinguiendo los que sustentan funciones esenciales",
+          "pymeText": "¿Tenéis un listado completo y actualizado de todos los contratos con proveedores tecnológicos, identificando cuáles son críticos para el negocio?",
+          "tooltip": "Art.28(3): «Las entidades financieras mantendrán y actualizarán un registro de información en relación con todos los acuerdos contractuales sobre el uso de servicios de TIC, distinguiendo entre los que comprendan servicios de TIC que sustenten funciones esenciales o importantes y los restantes». Este registro debe reportarse a la autoridad competente. Evidencia: inventario de contratos TIC con clasificación de criticidad."
+        },
+        {
+          "code": "Art.29(1)",
+          "difficulty": "complejo",
+          "text": "Evaluación del riesgo de concentración TIC: análisis de proveedores no fácilmente sustituibles y coexistencia de múltiples acuerdos con el mismo proveedor",
+          "pymeText": "¿Analizáis si dependéis demasiado de un solo proveedor tecnológico y tenéis alternativas si ese proveedor falla o desaparece?",
+          "tooltip": "Art.29(1): Las entidades financieras tendrán en cuenta si el acuerdo podría dar lugar a: a) contrato con proveedor no fácilmente sustituible; b) coexistencia de múltiples acuerdos con el mismo proveedor. Deben ponderarse beneficios y costes de soluciones alternativas. Evidencia: análisis de concentración por proveedor, estrategias de salida (exit plans), plazos de transición estimados."
+        },
+        {
+          "code": "Art.30(2)",
+          "difficulty": "medio",
+          "text": "Cláusulas contractuales mínimas DORA incluidas en todos los contratos con proveedores TIC: SLA, auditoría, notificación de incidentes, terminación y localización de datos",
+          "pymeText": "¿Los contratos con vuestros proveedores tecnológicos incluyen todas las garantías que exige DORA: niveles de servicio, auditoría, notificación de incidentes y condiciones de salida?",
+          "tooltip": "Art.30(2): Los acuerdos contractuales incluirán como mínimo: a) descripción completa de servicios; b) localización de datos y países; c) disponibilidad, autenticidad, integridad y confidencialidad; d) acceso y recuperación de datos; e) niveles de servicio; f) asistencia en incidentes; g) cooperación con autoridades; h) derechos de terminación y plazos; i) participación en formaciones de seguridad. Evidencia: plantilla de contrato actualizada con cláusulas Art.30."
+        }
+      ]
+    },
+    {
+      "title": "Art. 45 · Intercambio de Información sobre Ciberamenazas",
+      "pymeTitle": "Información — compartir para protegerse mejor",
+      "items": [
+        {
+          "code": "Art.45(1)",
+          "difficulty": "medio",
+          "text": "Participación en acuerdos de intercambio de información e inteligencia sobre ciberamenazas dentro de comunidades de entidades financieras de confianza",
+          "pymeText": "¿Participáis en grupos del sector donde se comparte información sobre ataques y amenazas para protegerse mutuamente?",
+          "tooltip": "Art.45(1): «Las entidades financieras podrán intercambiar entre sí información e inteligencia sobre ciberamenazas, incluidos indicadores de compromiso, tácticas, técnicas y procedimientos, alertas de ciberseguridad y herramientas de configuración» cuando tenga por objeto mejorar la resiliencia operativa digital, se realice dentro de comunidades de confianza y bajo acuerdos que protejan el carácter sensible de la información. Art.45(3): Obligación de notificar al regulador la participación."
+        },
+        {
+          "code": "Art.45(3)",
+          "difficulty": "facil",
+          "text": "Notificación a la autoridad competente de la participación en acuerdos de intercambio de información en el momento de la incorporación o cese",
+          "pymeText": "¿Habéis notificado al regulador que participáis en grupos de intercambio de inteligencia sobre ciberamenazas?",
+          "tooltip": "Art.45(3): «Las entidades financieras notificarán a las autoridades competentes su participación en los acuerdos de intercambio de información a que se refiere el apartado 1 en el momento en que se valide su incorporación a ellos o, en su caso, el cese de su participación, una vez que se haga efectivo». Evidencia: comunicación al regulador registrada, acuerdos de confidencialidad firmados."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0">
+<title>Versus · GRCreal</title>
+<meta name="description" content="Frameworks, normas y herramientas comparadas sin filtro. Para que puedas decidir con criterio.">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Versus — GRCreal">
+<meta property="og:description" content="Frameworks, normas y herramientas comparadas sin filtro. Para que puedas decidir con criterio.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://grcreal.com/versus">
+<meta property="og:image" content="https://grcreal.com/grcreal.png">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="stylesheet" href="../css/marca.css">
+<link rel="stylesheet" href="/css/global.css">
+
+<style>
+.versus-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-top: 8px;
+}
+
+.versus-card {
+  border: 1px solid var(--border);
+  padding: 28px 24px;
+  background: var(--surface);
+  display: flex;
+  flex-direction: column;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.versus-card:hover {
+  border-color: var(--brand);
+  background: var(--brand-light);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,119,181,0.08);
+}
+
+.versus-card-tag {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--brand);
+  margin-bottom: 12px;
+}
+
+.versus-card-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+
+.versus-card-desc {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.65;
+  flex: 1;
+  margin-bottom: 16px;
+}
+
+.versus-card-link {
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: bold;
+  color: var(--brand);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 620px) {
+  .versus-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<div class="card-wrapper">
+<div class="card">
+  <div class="accent-bar"></div>
+
+  <div class="header">
+    <div class="tag">GRCreal · Versus</div>
+    <div class="headline">
+      <span class="accent">Versus</span>
+    </div>
+    <p class="subline">
+      Frameworks, normas y herramientas comparadas sin filtro.<br>
+      <strong>Para que puedas decidir con criterio.</strong>
+    </p>
+  </div>
+
+  <div class="body">
+
+    <div class="versus-grid">
+
+      <a href="iso27001-vs-iso42001.html" class="versus-card">
+        <div class="versus-card-tag">ISO/IEC 27001 · ISO/IEC 42001</div>
+        <div class="versus-card-title">ISO 27001 vs ISO 42001</div>
+        <div class="versus-card-desc">No son alternativas. No compiten. El error es creer que con una tienes la otra — y en 2026 ese error ya tiene coste.</div>
+        <div class="versus-card-link">Leer análisis →</div>
+      </a>
+
+      <a href="nis2-vs-iso27001.html" class="versus-card">
+        <div class="versus-card-tag">NIS2 · ISO/IEC 27001</div>
+        <div class="versus-card-title">NIS2 vs ISO 27001</div>
+        <div class="versus-card-desc">El certificado no es cumplimiento. NIS2 te obliga. ISO 27001 te ayuda a cumplirla. Confundirlos tiene consecuencias legales.</div>
+        <div class="versus-card-link">Leer análisis →</div>
+      </a>
+
+      <a href="ens-vs-iso27001.html" class="versus-card">
+        <div class="versus-card-tag">ENS · ISO/IEC 27001</div>
+        <div class="versus-card-title">ENS vs ISO 27001</div>
+        <div class="versus-card-desc">La batalla que solo importa en España. ISO 27001 es global. ENS es obligatorio si trabajas con el sector público. La pregunta es cuál te exige tu cliente.</div>
+        <div class="versus-card-link">Leer análisis →</div>
+      </a>
+
+      <a href="ens-vs-nis2.html" class="versus-card">
+        <div class="versus-card-tag">ENS · NIS2 · España</div>
+        <div class="versus-card-title">ENS vs NIS2</div>
+        <div class="versus-card-desc">Dos obligaciones que en España conviven. Una nacional, una europea. El error es creer que con una tienes la otra — el CCN tiene el puente oficial.</div>
+        <div class="versus-card-link">Leer análisis →</div>
+      </a>
+
+      <a href="dora-vs-iso27001.html" class="versus-card">
+        <div class="versus-card-tag">DORA · ISO/IEC 27001</div>
+        <div class="versus-card-title">DORA vs ISO 27001</div>
+        <div class="versus-card-desc">Sector financiero: resiliencia operativa digital obligatoria desde enero 2025. Qué cubre DORA que ISO 27001 no contempla — y qué pasa si eres proveedor TIC de una entidad financiera.</div>
+        <div class="versus-card-link">Leer análisis →</div>
+      </a>
+
+      <a href="iso27001-vs-soc2.html" class="versus-card">
+        <div class="versus-card-tag">ISO/IEC 27001 · SOC 2</div>
+        <div class="versus-card-title">ISO 27001 vs SOC 2</div>
+        <div class="versus-card-desc">Europa vs EE.UU. Certificación vs informe de auditoría. La respuesta fácil es: el que te pide tu cliente. La respuesta útil es entender por qué.</div>
+        <div class="versus-card-link">Leer análisis →</div>
+      </a>
+
+      <a href="iso22301-vs-bia.html" class="versus-card">
+        <div class="versus-card-tag">ISO 22301 · Continuidad · BIA</div>
+        <div class="versus-card-title">ISO 22301 vs BIA propia</div>
+        <div class="versus-card-desc">La norma no hace la continuidad. El proceso sí. Pero hay situaciones donde la norma es lo único que convence — y situaciones donde es un coste innecesario.</div>
+        <div class="versus-card-link">Leer análisis →</div>
+      </a>
+
+      <a href="pentest-vs-auditoria.html" class="versus-card">
+        <div class="versus-card-tag">Pentest · Auditoría · Ciberseguridad</div>
+        <div class="versus-card-title">Pentest vs Auditoría de seguridad</div>
+        <div class="versus-card-desc">No son lo mismo. No se sustituyen. Y pedir uno cuando necesitas el otro es el error más frecuente en proyectos de ciberseguridad.</div>
+        <div class="versus-card-link">Leer análisis →</div>
+      </a>
+
+      <a href="vciso-vs-ciso.html" class="versus-card">
+        <div class="versus-card-tag">vCISO · CISO · Modelo operativo</div>
+        <div class="versus-card-title">vCISO vs CISO interno</div>
+        <div class="versus-card-desc">No es un debate de frameworks — es un debate de modelo operativo. Cuándo necesitas uno fijo, cuándo uno externo, y por qué muchas empresas pagan el doble por la mitad.</div>
+        <div class="versus-card-link">Leer análisis →</div>
+      </a>
+
+    </div><!-- /versus-grid -->
+
+    <div class="cta-block" style="margin-top: 40px;">
+      <div class="cta-headline">
+        ¿Necesitas más que<br>
+        <span>una comparativa?</span>
+      </div>
+      <div class="cta-sub">
+        Una comparativa dice qué diferencia a cada marco. Un gap analysis dice dónde está exactamente tu brecha.<br><br>
+      </div>
+    </div>
+
+  </div>
+
+<!-- FINAL DEL BODY -->
+<div id="footer-placeholder"></div>
+<script>
+    fetch('/includes/footer-no-share.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('footer-placeholder').innerHTML = data;
+        });
+</script>
+
+</div>
+</div>
+<a href="../index.html" class="home-btn">⌂ Home</a>
+</body>
+<script src="/js/global.js"></script>
+</html>
+

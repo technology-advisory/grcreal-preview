@@ -1,0 +1,712 @@
+/* ═══════════════════════════════════════════════════════════════
+   ACADEMIA.CSS · ISO 27001 Lead Implementer
+   Basado en marca.css (variables, colores, tipografías)
+   No depende de articles.css — estilos propios del curso
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ---------------------------------------------
+   1. RESET Y BASE (depende de marca.css)
+   --------------------------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #eef2f5;
+    font-family: var(--sans, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif);
+    line-height: 1.4;
+    color: var(--ink, #1a2c3e);
+    padding: 40px 24px;
+}
+
+/* ---------------------------------------------
+   2. TARJETA PRINCIPAL (CARD)
+   --------------------------------------------- */
+.card-wrapper {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.card {
+    background: var(--white, #ffffff);
+    border-radius: 32px;
+    box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: relative;
+}
+
+.accent-bar {
+    height: 6px;
+    background: var(--brand, #0077B5);
+}
+
+/* ---------------------------------------------
+   3. NAVEGACION (MENU HORIZONTAL DEL CURSO)
+   --------------------------------------------- */
+.academy-module-menu {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 20px 32px 12px 32px;
+    border-bottom: 1px solid var(--border-soft, #eae7e2);
+    background: var(--white, #ffffff);
+}
+
+.academy-course-logo {
+    font-weight: 700;
+    font-size: 1.3rem;
+    letter-spacing: -0.3px;
+    text-decoration: none;
+    color: var(--ink, #0f2b3b);
+}
+
+.academy-course-logo span {
+    font-weight: 400;
+    color: var(--brand, #0077B5);
+    font-size: 0.9rem;
+}
+
+.academy-course-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 16px;
+}
+
+.academy-course-links a {
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-decoration: none;
+    color: var(--muted, #4a627a);
+    padding: 6px 0;
+    border-bottom: 2px solid transparent;
+    transition: 0.2s;
+}
+
+.academy-course-links a.active {
+    color: var(--brand, #0077B5);
+    border-bottom-color: var(--brand, #0077B5);
+}
+
+.academy-course-links a:hover:not(.active) {
+    color: var(--brand-dark, #005a8e);
+    border-bottom-color: var(--brand-mid, #cce4f0);
+}
+
+.module-badge {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--brand, #0077B5);
+    background: var(--brand-light, #e8f3fa);
+    padding: 6px 16px;
+    border-radius: 40px;
+    display: inline-block;
+}
+
+/* ---------------------------------------------
+   4. HEADER / TITULAR DEL CURSO
+   --------------------------------------------- */
+.header {
+    padding: 40px 48px 24px 48px;
+    background: var(--white, #ffffff);
+}
+
+.tag {
+    display: inline-block;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    color: var(--brand, #0077B5);
+    background: var(--brand-light, #e8f3fa);
+    padding: 4px 12px;
+    border-radius: 40px;
+    margin-bottom: 20px;
+}
+
+.article-date {
+    font-size: 0.8rem;
+    color: var(--faint, #6b8a9e);
+    margin-bottom: 20px;
+    font-family: var(--mono, monospace);
+    letter-spacing: 0.04em;
+}
+
+.headline {
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    color: var(--ink, #0f2b3b);
+    margin-bottom: 24px;
+}
+
+.headline .accent {
+    color: var(--brand, #0077B5);
+}
+
+.headline .dim {
+    color: var(--ghost, #c8c8c8);
+}
+
+.subline {
+    font-size: 1.2rem;
+    color: var(--muted, #335a73);
+    border-left: 4px solid var(--brand, #0077B5);
+    padding-left: 20px;
+    max-width: 85%;
+}
+
+.subline strong {
+    color: var(--brand-dark, #005a8e);
+}
+
+/* ---------------------------------------------
+   5. BLOQUES DE CONTENIDO
+   --------------------------------------------- */
+.body {
+    padding: 0 48px 40px 48px;
+}
+
+.block {
+    margin-bottom: 48px;
+}
+
+.block-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--brand, #0077B5);
+    margin-bottom: 12px;
+    font-family: var(--mono, monospace);
+}
+
+.block-title {
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: var(--ink, #1a3a4f);
+    margin-bottom: 20px;
+}
+
+.block-text {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--muted, #2c475c);
+    margin-bottom: 16px;
+}
+
+.block-text strong {
+    color: var(--ink, #111);
+    font-weight: bold;
+}
+
+.block-text a {
+    color: var(--brand, #0077B5);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.block-text a:hover {
+    text-decoration: underline;
+}
+
+.divider {
+    height: 2px;
+    background: var(--border-soft, #eae7e2);
+    margin: 40px 0;
+}
+
+/* ---------------------------------------------
+   6. TABLAS DE TENSIÓN (para el curso)
+   --------------------------------------------- */
+.tension {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--surface, #faf9f7);
+    border: 1px solid var(--border, #dedad4);
+    margin: 20px 0;
+}
+
+.tension tr {
+    border-bottom: 1px solid var(--border-soft, #eae7e2);
+}
+
+.tension tr:last-child {
+    border-bottom: none;
+}
+
+.tension td {
+    padding: 16px 12px;
+    vertical-align: top;
+}
+
+.tension-who {
+    font-weight: 700;
+    font-size: 1.2rem;
+    width: 60px;
+    color: var(--brand, #0077B5);
+    font-family: var(--mono, monospace);
+    padding: 14px 12px 14px 20px;
+}
+
+.tension-says {
+    color: var(--muted, #555);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    padding: 14px 20px 14px 8px;
+}
+
+.tension-says strong {
+    color: var(--ink, #111);
+    font-weight: bold;
+}
+
+.hi-row {
+    background: var(--brand-light, #e8f3fa);
+}
+
+.hi {
+    color: var(--brand, #0077B5);
+    font-weight: bold;
+}
+
+/* hover en filas */
+.tension tr:hover {
+    background: var(--brand-light, #e8f3fa);
+    cursor: pointer;
+}
+
+/* enlaces dentro de tablas */
+.tension-says a {
+    color: var(--brand, #0077B5);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.tension-says a:hover {
+    text-decoration: underline;
+}
+
+/* ---------------------------------------------
+   7. CITAS (QUOTE BLOCK)
+   --------------------------------------------- */
+.quote-block {
+    background: var(--brand-light, #e8f3fa);
+    border-left: 6px solid var(--brand, #0077B5);
+    padding: 24px 28px;
+    margin: 28px 0;
+    border-radius: 8px;
+}
+
+.quote-text {
+    font-size: 1.2rem;
+    font-style: italic;
+    color: var(--ink, #124257);
+    font-weight: 450;
+    margin-bottom: 12px;
+    font-family: var(--mono, monospace);
+}
+
+.quote-attr {
+    font-size: 0.8rem;
+    color: var(--faint, #6d8eaa);
+    letter-spacing: 0.2px;
+    font-family: var(--mono, monospace);
+}
+
+/* ---------------------------------------------
+   8. CTA (LLAMADA A LA ACCIÓN)
+   --------------------------------------------- */
+.cta-block {
+    background: var(--brand-light, #e8f3fa);
+    border: 2px solid var(--brand, #0077B5);
+    border-radius: 16px;
+    padding: 40px 40px;
+    margin: 56px 0 32px 0;
+    text-align: center;
+}
+
+.cta-headline {
+    font-size: 1.9rem;
+    font-weight: 700;
+    color: var(--ink, #174155);
+    margin-bottom: 12px;
+}
+
+.cta-headline span {
+    color: var(--brand, #0077B5);
+}
+
+.cta-sub {
+    font-size: 1rem;
+    margin: 16px 0 24px;
+    color: var(--muted, #2a6a5c);
+}
+
+.cta-sub a {
+    color: var(--brand, #0077B5);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.cta-sub a:hover {
+    text-decoration: underline;
+}
+
+.cta-button {
+    display: inline-block;
+    background: var(--brand, #0077B5);
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 12px 36px;
+    border-radius: 40px;
+    font-size: 1rem;
+    transition: 0.2s background;
+    box-shadow: 0 5px 12px rgba(0,0,0,0.05);
+}
+
+.cta-button:hover {
+    background: var(--brand-dark, #005a8e);
+}
+
+.cta-button.disabled {
+    background: var(--ghost, #b0c4d4);
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+/* ---------------------------------------------
+   9. FOOTER (AUTOR + LINKEDIN)
+   --------------------------------------------- */
+.footer {
+    margin-top: 32px;
+    border-top: 1px solid var(--border-soft, #eae7e2);
+    background: var(--white, #ffffff);
+    padding: 20px 48px 28px;
+}
+
+.footer-inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.author-block {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+}
+
+.author-avatar {
+    width: 48px;
+    height: 48px;
+    background: var(--brand, #0077B5);
+    border-radius: 100px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.author-name {
+    font-weight: 700;
+    color: var(--ink, #1a3f50);
+    font-size: 0.9rem;
+}
+
+.author-name span {
+    font-weight: 400;
+    color: var(--brand, #0077B5);
+}
+
+.author-title {
+    font-size: 0.75rem;
+    color: var(--faint, #6b8dac);
+}
+
+.li-btn {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--brand-light, #e8f3fa);
+    border: 1px solid var(--brand-mid, #cce4f0);
+    padding: 8px 20px;
+    border-radius: 60px;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.li-icon {
+    width: 28px;
+    height: 28px;
+}
+
+.li-main {
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: var(--brand, #0077B5);
+    display: block;
+}
+
+.li-sub {
+    font-size: 0.7rem;
+    color: var(--faint, #3682a4);
+}
+
+.li-btn:hover {
+    background: var(--brand-mid, #dbeef8);
+}
+
+/* ---------------------------------------------
+   10. BOTÓN HOME FLOTANTE
+   --------------------------------------------- */
+.home-btn {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    background: var(--brand, #0077B5);
+    color: white;
+    text-decoration: none;
+    padding: 12px 18px;
+    border-radius: 40px;
+    font-weight: 500;
+    font-size: 0.85rem;
+    box-shadow: 0 8px 18px rgba(0,0,0,0.1);
+    transition: 0.2s;
+    z-index: 100;
+}
+
+.home-btn:hover {
+    background: var(--brand-dark, #005a8e);
+    transform: scale(1.02);
+}
+
+/* ---------------------------------------------
+   11. BOTÓN COMPARTIR (opcional para artículos)
+   --------------------------------------------- */
+.share-block {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px 24px;
+    border-top: 1px solid var(--border-soft, #eae7e2);
+    border-bottom: 1px solid var(--border-soft, #eae7e2);
+    margin: 20px 0;
+}
+
+.share-label {
+    font-family: var(--mono, monospace);
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--faint, #8ba3b5);
+}
+
+.share-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--mono, monospace);
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--brand, #0077B5);
+    text-decoration: none;
+    border: 1px solid var(--brand, #0077B5);
+    padding: 7px 14px;
+    border-radius: 3px;
+    transition: all 0.15s;
+}
+
+.share-btn:hover {
+    background: var(--brand, #0077B5);
+    color: #fff;
+}
+
+/* ---------------------------------------------
+   12. RESPONSIVE
+   --------------------------------------------- */
+@media (max-width: 800px) {
+    body {
+        padding: 16px;
+    }
+
+    .headline {
+        font-size: 2.2rem;
+    }
+
+    .subline {
+        max-width: 100%;
+        font-size: 1rem;
+    }
+
+    .header {
+        padding: 24px 24px 16px 24px;
+    }
+
+    .body {
+        padding: 0 24px 32px 24px;
+    }
+
+    .academy-module-menu {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 16px 20px;
+    }
+
+    .academy-course-links {
+        width: 100%;
+        overflow-x: auto;
+        padding-bottom: 6px;
+    }
+
+    .block-title {
+        font-size: 1.6rem;
+    }
+
+    .cta-headline {
+        font-size: 1.4rem;
+    }
+
+    .footer {
+        padding: 16px 24px;
+    }
+
+    .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .tension td {
+        padding: 12px 8px;
+    }
+}
+
+@media (max-width: 520px) {
+    .tension-who {
+        width: 45px;
+        font-size: 0.9rem;
+        padding: 12px 8px 12px 12px;
+    }
+
+    .tension-says {
+        padding: 12px 12px 12px 4px;
+        font-size: 0.85rem;
+    }
+
+    .quote-text {
+        font-size: 1rem;
+    }
+
+    .cta-block {
+        padding: 24px 20px;
+    }
+}
+
+
+/* ---------------------------------------------
+   13. COPYRIGHT HINT (bombilla animada)
+   --------------------------------------------- */
+
+/* ESTILOS BASE (siempre necesarios) */
+.copyright-hint-auto {
+    background: var(--brand-light, #e8f3fa);
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 20px;
+    color: var(--brand, #0077B5);
+    transition: all 0.2s ease;
+}
+
+/* =============================================
+   OPCIÓN 1 · Parpadeo solo al hacer hover (elegida)
+   ============================================= */
+.copyright-hint-auto:hover {
+    animation: pulse 0.6s ease-in-out 2;
+    transform: scale(1.05);
+}
+
+@keyframes pulse {
+    0% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(1.1); background: var(--brand, #0077B5); color: white; }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+/* =============================================
+   OPCIÓN 2 · Parpadeo suave continuo (siempre)
+   ============================================= */
+/*
+.copyright-hint-auto {
+    animation: softBlink 2s ease-in-out infinite;
+}
+
+@keyframes softBlink {
+    0% { opacity: 1; }
+    50% { opacity: 0.6; }
+    100% { opacity: 1; }
+}
+*/
+
+/* =============================================
+   OPCIÓN 3 · Parpadeo rápido continuo (llamativo)
+   ============================================= */
+/*
+.copyright-hint-auto {
+    animation: fastBlink 0.8s step-end infinite;
+}
+
+@keyframes fastBlink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+}
+*/
+
+/* =============================================
+   OPCIÓN 4 · Combinada: parpadeo suave continuo + hover más intenso
+   ============================================= */
+
+.copyright-hint-auto {
+    animation: softBlink 2s ease-in-out infinite;
+}
+
+.copyright-hint-auto:hover {
+    animation: pulse 0.6s ease-in-out 2;
+    transform: scale(1.05);
+}
+
+@keyframes softBlink {
+    0% { opacity: 1; }
+    50% { opacity: 0.7; }
+    100% { opacity: 1; }
+}
+
+@keyframes pulse {
+    0% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(1.1); background: var(--brand, #0077B5); color: white; }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+
+/* =============================================
+   OPCIÓN 5 · Sin animación, solo cambio de color al hover
+   ============================================= */
+/*
+.copyright-hint-auto:hover {
+    background: var(--brand, #0077B5);
+    color: white;
+    transform: scale(1.05);
+}
+*/

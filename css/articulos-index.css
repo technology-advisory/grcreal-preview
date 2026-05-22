@@ -1,0 +1,193 @@
+/* ============================================
+   ARTICULOS-INDEX.CSS
+   Estilos para el index de artículos (igual que módulos)
+   ============================================ */
+
+/* ── FILTROS ── */
+#filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 32px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border-soft);
+}
+
+.filter-btn {
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    padding: 8px 20px;
+    border-radius: 40px;
+    border: 1px solid var(--border);
+    background: var(--white);
+    color: var(--muted);
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.filter-btn:hover {
+    border-color: var(--brand);
+    color: var(--brand);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,119,181,0.1);
+}
+
+.filter-btn.active {
+    background: var(--brand);
+    border-color: var(--brand);
+    color: var(--white);
+    box-shadow: 0 2px 6px rgba(0,119,181,0.2);
+}
+
+/* ── CONTROLES DE ORDEN ── */
+.ctrl-btn {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 7px 14px;
+    border-radius: 40px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    color: var(--muted);
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.ctrl-btn:hover {
+    background: var(--brand-light);
+    border-color: var(--brand);
+    color: var(--brand);
+}
+
+/* ── GRID DE TARJETAS ── */
+.articles-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+/* ── TARJETAS (estilo módulos) ── */
+.article-card {
+    border: 1px solid var(--border);
+    padding: 28px;
+    background: var(--surface);
+    transition: all 0.25s ease;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    border-radius: 16px;
+}
+
+.article-card:hover {
+    border-color: var(--brand);
+    background: var(--brand-light);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.08);
+}
+
+.article-card.hidden {
+    display: none;
+}
+
+/* ── META ── */
+.article-meta {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    color: var(--brand);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+/* ── TÍTULO ── */
+.article-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 12px;
+    line-height: 1.4;
+}
+
+/* ── DESCRIPCIÓN ── */
+.article-desc {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.65;
+    margin-bottom: 12px;
+    flex: 1;
+}
+
+/* ── FECHA ── */
+.article-date {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    color: var(--ghost);
+    text-transform: uppercase;
+    margin-bottom: 14px;
+}
+
+/* ── LINK ── */
+.article-link {
+    display: inline-block;
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--brand);
+    text-decoration: none;
+    margin-top: auto;
+    transition: all 0.2s;
+}
+
+.article-link:hover {
+    transform: translateX(4px);
+    text-decoration: none;
+}
+
+/* ── BADGE NUEVO ── */
+.article-badge {
+    display: inline-block;
+    font-family: var(--mono);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    background: var(--brand);
+    color: white;
+    padding: 2px 10px;
+    margin-left: 8px;
+    vertical-align: middle;
+    border-radius: 20px;
+}
+
+/* ── SIN RESULTADOS ── */
+.no-results {
+    display: none;
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 48px 24px;
+    font-family: var(--mono);
+    font-size: 13px;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 720px) {
+    .articles-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .filter-btn {
+        padding: 6px 14px;
+        font-size: 10px;
+    }
+}

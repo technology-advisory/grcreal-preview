@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0">
+<title>Segmentación de red: VLANs no es seguridad real · GRCreal</title>
+<meta name="description" content="Tener VLANs no significa tener segmentación real. La diferencia entre segmentar para cumplir y segmentar para proteger de verdad.">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Segmentación de red: la diferencia entre tener VLANs y tener seguridad real">
+<meta property="og:description" content="VLANs no es segmentación real. Cómo diseñar una arquitectura de red que realmente contenga los ataques.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://grcreal.com/articulos/segmentacion-red-real.html">
+<meta property="og:image" content="https://grcreal.com/grcreal.png">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="../../css/marca.css">
+<link rel="stylesheet" href="../../css/articles.css">
+<link rel="stylesheet" href="../../css/global.css">
+</head>
+<body class="article-page">
+<div class="card-wrapper">
+<div class="card">
+<div class="accent-bar"></div>
+
+<div class="header">
+  <div class="tag">Red · Arquitectura · Seguridad Técnica</div>
+  <div class="article-date">24 Abril 2026</div>
+  <div class="headline">
+    Segmentación<br>
+    <span class="accent">de red:</span><br>
+    <span class="dim">VLANs no es</span><br>
+    <span class="accent">seguridad real</span>
+  </div>
+  <p class="subline">
+    Tener VLANs y tener segmentación real<br>
+    <strong>no son lo mismo.</strong>
+  </p>
+</div>
+
+<div class="body">
+
+  <div class="block">
+    <div class="block-label">El malentendido</div>
+    <div class="block-title">«Tenemos VLANs, estamos segmentados»</div>
+    <div class="block-text">
+      Es una de las frases que más escucho en revisiones de arquitectura. Y cada vez que la escucho, sé que hay trabajo por hacer.
+      <br><br>
+      Las VLANs son una herramienta de segmentación lógica de red. Son necesarias. Pero por sí solas no constituyen segmentación de seguridad — son segmentación de tráfico.
+      <br><br>
+      La diferencia es crítica. Una VLAN separa el tráfico de broadcast. No impide que un atacante que ha comprometido un sistema en una VLAN se mueva lateralmente a otra si no hay controles adicionales que lo impidan.
+      <br><br>
+      <strong>Sin políticas de firewall entre VLANs, sin inspección de tráfico, sin control de acceso granular — las VLANs son una ilusión de segmentación.</strong>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="block">
+    <div class="block-label">Lo que veo en producción</div>
+    <div class="block-title">Los errores más frecuentes</div>
+
+    <table class="tension" style="margin-top:20px;">
+      <tr>
+        <td class="tension-who">Inter-VLAN</td>
+        <td class="tension-says">Routing entre VLANs sin políticas de firewall. Todo se puede alcanzar desde cualquier sitio.</td>
+      </tr>
+      <tr>
+        <td class="tension-who">Backup</td>
+        <td class="tension-says">El servidor de backup en la misma VLAN que producción — o peor, sin VLAN propia. Cuando el ransomware llega, también cifra el backup.</td>
+      </tr>
+      <tr>
+        <td class="tension-who">Management</td>
+        <td class="tension-says">Interfaces de gestión de switches, firewalls y servidores accesibles desde la red de usuarios. Sin VLAN de management dedicada.</td>
+      </tr>
+      <tr>
+        <td class="tension-who">Wifi</td>
+        <td class="tension-says">Red wifi de invitados con acceso a recursos internos. O red wifi corporativa sin separación del segmento de servidores.</td>
+      </tr>
+      <tr class="hi-row">
+        <td class="tension-who">Tier 0</td>
+        <td class="tension-says"><span class="hi">Controladores de dominio, PKI y sistemas de identidad en el mismo segmento que el resto de servidores. El objetivo más valioso sin protección diferenciada.</span></td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="block">
+    <div class="block-label">Cómo se hace bien</div>
+    <div class="block-title">Segmentación que contiene ataques</div>
+    <div class="block-text">
+      La segmentación real parte de una pregunta: <em>si este sistema se compromete, ¿a qué puede llegar el atacante desde ahí?</em>
+      <br><br>
+      El objetivo es minimizar el radio de explosión — limitar hasta dónde puede llegar un ataque antes de ser detectado y contenido.
+      <br><br>
+      Eso requiere diseñar la red por zonas de seguridad, no por función de negocio. La zona de servidores críticos — controladores de dominio, sistemas de identidad, backup — debe estar aislada con políticas explícitas de qué puede acceder a qué y desde dónde.
+      <br><br>
+      El tráfico entre zonas debe pasar obligatoriamente por un firewall con inspección real. No un router con ACLs — un firewall con políticas definidas, logged y revisadas.
+      <br><br>
+      La red de gestión de infraestructura debe ser una zona separada, accesible solo desde jump servers o bastion hosts con autenticación fuerte.
+      <br><br>
+      <strong>Y la segmentación debe probarse. No basta con configurarla — hay que verificar que los controles funcionan como se espera.</strong>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="block">
+    <div class="block-label">Por qué importa ahora</div>
+    <div class="block-title">El movimiento lateral es el estándar del atacante moderno</div>
+    <div class="block-text">
+      Los ataques modernos no entran directamente al sistema que quieren comprometer. Entran por el eslabón más débil — un equipo de usuario, un servidor poco crítico, una credencial robada — y desde ahí se mueven lateralmente hasta llegar al objetivo real.
+      <br><br>
+      Una segmentación bien diseñada no impide necesariamente la entrada inicial. Pero sí impide o dificulta significativamente ese movimiento lateral.
+      <br><br>
+      En los incidentes de ransomware que he analizado, la diferencia entre una organización que pierde tres servidores y una que pierde toda la infraestructura suele ser una sola cosa: <strong>la calidad de su segmentación.</strong>
+    </div>
+  </div>
+
+  <div class="cta-block">
+    <div class="cta-headline">
+      ¿Sabes hasta dónde llegaría<br>
+      <span>un atacante desde tu red?</span>
+    </div>
+    <div class="cta-sub">
+      Si no tienes respuesta clara — <strong>conviene revisar la arquitectura.</strong>
+    </div>
+  </div>
+
+</div>
+
+<!-- FINAL DEL BODY -->
+<div id="footer-placeholder"></div>
+<script>
+    fetch('/includes/footer.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('footer-placeholder').innerHTML = data;
+        });
+</script>
+
+</div>
+</div>
+<a href="/articulos" class="home-btn">⌂ Home Artículos</a>
+</body>
+<script src="/js/global.js"></script>
+</html>

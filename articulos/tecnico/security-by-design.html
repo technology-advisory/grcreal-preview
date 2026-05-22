@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0">
+<title>Security by Design: la seguridad no puede ser un parche · GRCreal</title>
+<meta name="description" content="Añadir seguridad al final de un proyecto cuesta diez veces más que diseñarla desde el principio. Por qué Security by Design no es una opción sino una necesidad.">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Security by Design: por qué la seguridad no puede ser un parche al final">
+<meta property="og:description" content="La seguridad añadida al final cuesta diez veces más y funciona diez veces peor. Cómo diseñarla desde el principio.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://grcreal.com/articulos/security-by-design.html">
+<meta property="og:image" content="https://grcreal.com/grcreal.png">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="stylesheet" href="../../css/marca.css">
+<link rel="stylesheet" href="../../css/articles.css">
+<link rel="stylesheet" href="../../css/global.css">
+</head>
+
+<body class="article-page">
+<div class="card-wrapper">
+<div class="card">
+<div class="accent-bar"></div>
+
+<div class="header">
+  <div class="tag">Arquitectura · Security by Design · Infraestructura</div>
+  <div class="article-date">24 Abril 2026</div>
+  <div class="headline">
+    Security<br>
+    <span class="accent">by Design:</span><br>
+    <span class="dim">la seguridad no puede</span><br>
+    <span class="accent">ser un parche</span>
+  </div>
+  <p class="subline">
+    Añadir seguridad al final cuesta diez veces más<br>
+    <strong>y funciona diez veces peor.</strong>
+  </p>
+</div>
+
+<div class="body">
+
+  <div class="block">
+    <div class="block-label">El patrón que se repite</div>
+    <div class="block-title">Seguridad como afterthought</div>
+    <div class="block-text">
+      El proyecto se diseña, se desarrolla y se despliega. Cuando ya está en producción, alguien recuerda que hay que "revisar la seguridad".
+      <br><br>
+      Se llama a un consultor, se hace un análisis, se encuentran problemas. Y entonces empieza el trabajo más caro y más frustrante de la seguridad: intentar añadir controles a un sistema que no fue diseñado para tenerlos.
+      <br><br>
+      Parches sobre parches. Configuraciones que compensan decisiones de arquitectura que no se pueden cambiar fácilmente. Controles que funcionan a medias porque el sistema subyacente no los soporta bien.
+      <br><br>
+      <strong>Este patrón no es infrecuente. Es la norma en la mayoría de organizaciones que no aplican Security by Design desde el principio.</strong>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="block">
+    <div class="block-label">Qué es Security by Design</div>
+    <div class="block-title">No es una metodología — es una mentalidad</div>
+    <div class="block-text">
+      Security by Design significa integrar los requisitos y controles de seguridad desde el inicio del diseño de cualquier sistema, aplicación o infraestructura — no al final.
+      <br><br>
+      No es una fase del proyecto. Es una forma de pensar que impregna todas las fases.
+      <br><br>
+      <strong>La diferencia está en diseñar sistemas seguros, no en intentar protegerlos después.</strong>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="block">
+    <div class="block-label">Los principios</div>
+    <div class="block-title">Lo que guía un diseño seguro</div>
+
+    <table class="tension" style="margin-top:20px;">
+      <tr>
+        <td class="tension-who">Mínimo privilegio</td>
+        <td class="tension-says">Acceso solo a lo necesario.</td>
+      </tr>
+      <tr>
+        <td class="tension-who">Defensa en profundidad</td>
+        <td class="tension-says">Capas de protección.</td>
+      </tr>
+      <tr>
+        <td class="tension-who">Fail secure</td>
+        <td class="tension-says">Fallar de forma segura.</td>
+      </tr>
+      <tr>
+        <td class="tension-who">Superficie mínima</td>
+        <td class="tension-says">Exponer solo lo necesario.</td>
+      </tr>
+      <tr class="hi-row">
+        <td class="tension-who">Trazabilidad</td>
+        <td class="tension-says"><span class="hi">Diseñar para auditar.</span></td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="block">
+    <div class="block-label">En la práctica</div>
+    <div class="block-title">Cómo se aplica</div>
+    <div class="block-text">
+      Infraestructura, software y cloud deben diseñarse con seguridad desde el inicio.
+      <br><br>
+      <strong>El coste es menor. El resultado es infinitamente mejor.</strong>
+    </div>
+  </div>
+
+  <div class="cta-block">
+    <div class="cta-headline">
+      ¿Tus proyectos incorporan<br>
+      <span>seguridad desde el diseño?</span>
+    </div>
+    <div class="cta-sub">
+    </div>
+  </div>
+
+</div>
+
+<!-- FINAL DEL BODY -->
+<div id="footer-placeholder"></div>
+<script>
+    fetch('/includes/footer.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('footer-placeholder').innerHTML = data;
+        });
+</script>
+
+</div>
+</div>
+<a href="/articulos" class="home-btn">⌂ Home Artículos</a>
+</body>
+<script src="/js/global.js"></script>
+</html>

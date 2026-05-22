@@ -1,0 +1,615 @@
+{
+  "sections": [
+    {
+      "title": "1 · Gobernanza y Política de Seguridad",
+      "items": [
+        {
+          "code": "GOB-01",
+          "difficulty": "medio",
+          "text": "Política de seguridad de redes y sistemas de información aprobada por dirección",
+          "pymeText": "¿Tenéis una política de seguridad firmada por la dirección? ¿Se revisa y comunica?",
+          "tooltip": "NIS2: 1.1 Política de seguridad de redes y sistemas\nISO 27001: A.5.1 Políticas para la seguridad de la información\nENS: 3.1 Política de seguridad [org.1]\nDORA: Art.5(1) Marco de gobernanza y control",
+          "tags": [
+            { "name": "nis2", "text": "NIS2 1.1", "tooltip": "Política de seguridad de redes y sistemas de información" },
+            { "name": "iso", "text": "ISO A.5.1", "tooltip": "Políticas para la seguridad de la información" },
+            { "name": "ens", "text": "ENS 3.1", "tooltip": "Política de seguridad [org.1]" },
+            { "name": "dora", "text": "DORA Art.5(1)", "tooltip": "Marco de gobernanza y control del riesgo TIC" }
+          ]
+        },
+        {
+          "code": "GOB-02",
+          "difficulty": "medio",
+          "text": "Funciones, responsabilidades y autoridades de seguridad definidas y asignadas",
+          "pymeText": "¿Hay un responsable de seguridad (CISO) con autoridad real? ¿Están claras las funciones?",
+          "tooltip": "NIS2: 1.2 Funciones, responsabilidades y autoridades\nISO 27001: A.5.4 Responsabilidades de la dirección\nENS: Art.11 Diferenciación de responsabilidades\nDORA: Art.5(2) Responsabilidad de la dirección",
+          "tags": [
+            { "name": "nis2", "text": "NIS2 1.2", "tooltip": "Funciones, responsabilidades y autoridades de seguridad" },
+            { "name": "iso", "text": "ISO A.5.4", "tooltip": "Responsabilidades de la dirección" },
+            { "name": "ens", "text": "ENS Art.11", "tooltip": "Diferenciación de responsabilidades" },
+            { "name": "dora", "text": "DORA Art.5(2)", "tooltip": "Responsabilidad última de la dirección" }
+          ]
+        },
+        {
+          "code": "GOB-03",
+          "difficulty": "medio",
+          "text": "Control de cumplimiento normativo con revisión y documentación periódica",
+          "pymeText": "¿Revisáis periódicamente que seguís cumpliendo las leyes de seguridad? ¿Lo documentáis?",
+          "tooltip": "NIS2: 2.2 Control del cumplimiento\nISO 27001: A.5.36 Cumplimiento de políticas y normas\nENS: Art.28 Cumplimiento de requisitos mínimos\nDORA: Art.6(5) Documentación y revisión regular",
+          "tags": [
+            { "name": "nis2", "text": "NIS2 2.2", "tooltip": "Control del cumplimiento normativo" },
+            { "name": "iso", "text": "ISO A.5.36", "tooltip": "Cumplimiento de políticas y normas" },
+            { "name": "ens", "text": "ENS Art.28", "tooltip": "Cumplimiento de requisitos mínimos" },
+            { "name": "dora", "text": "DORA Art.6(5)", "tooltip": "Documentación y revisión regular del marco TIC" }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "2 · Gestión de Riesgos",
+      "items": [
+        {
+          "code": "RSK-01",
+          "difficulty": "medio",
+          "text": "Marco formal de gestión de riesgos documentado e implementado",
+          "pymeText": "¿Tenéis un proceso documentado para identificar y analizar los riesgos de seguridad?",
+          "tooltip": "NIS2: 2.1 Marco de gestión de riesgos\nISO 27001: 6.1.2 Evaluación de riesgos\nENS: Art.7 Gestión basada en riesgos\nDORA: Art.6(1-3) Marco de gestión de riesgos TIC",
+          "tags": [
+            { "name": "nis2", "text": "NIS2 2.1", "tooltip": "Marco de gestión de riesgos de seguridad" },
+            { "name": "iso", "text": "ISO 6.1.2", "tooltip": "Evaluación de riesgos del SGSI" },
+            { "name": "ens", "text": "ENS Art.7", "tooltip": "Gestión basada en riesgos" },
+            { "name": "dora", "text": "DORA Art.6(1-3)", "tooltip": "Marco de gestión de riesgos TIC" }
+          ]
+        },
+        {
+          "code": "RSK-02",
+          "difficulty": "medio",
+          "text": "Análisis y tratamiento de riesgos con planes de acción documentados",
+          "pymeText": "¿Una vez identificados los riesgos, los tratáis con un plan de acción con responsables?",
+          "tooltip": "NIS2: 2.1 Política de gestión de riesgos\nISO 27001: 6.1.3 Tratamiento de riesgos\nENS: Art.14 Análisis y gestión de riesgos\nDORA: Art.8(2) Identificación continua de riesgos TIC",
+          "tags": [
+            { "name": "nis2", "text": "NIS2 2.1", "tooltip": "Política de gestión de riesgos" },
+            { "name": "iso", "text": "ISO 6.1.3", "tooltip": "Tratamiento de riesgos" },
+            { "name": "ens", "text": "ENS Art.14", "tooltip": "Análisis y gestión de riesgos" },
+            { "name": "dora", "text": "DORA Art.8(2)", "tooltip": "Identificación continua de riesgos TIC" }
+          ]
+        },
+        {
+          "code": "RSK-03",
+          "difficulty": "complejo",
+          "text": "Programa de inteligencia de amenazas activo con fuentes estructuradas",
+          "pymeText": "¿Recibís información actualizada sobre amenazas que afectan a empresas como la vuestra?",
+          "tooltip": "NIS2: 2.1 Inteligencia de amenazas\nISO 27001: A.5.7 Inteligencia de amenazas\nENS: Art.10 Vigilancia continua\nDORA: Art.45 Intercambio de información sobre amenazas",
+          "tags": [
+            { "name": "nis2", "text": "NIS2 2.1", "tooltip": "Inteligencia de amenazas" },
+            { "name": "iso", "text": "ISO A.5.7", "tooltip": "Inteligencia de amenazas" },
+            { "name": "ens", "text": "ENS Art.10", "tooltip": "Vigilancia continua" },
+            { "name": "dora", "text": "DORA Art.45", "tooltip": "Intercambio de información sobre amenazas" }
+          ]
+        },
+        {
+          "code": "RSK-04",
+          "difficulty": "complejo",
+          "text": "Función de control independiente de seguridad con reporte a dirección",
+          "pymeText": "¿Hay una función independiente que audita la seguridad y reporta directamente a dirección?",
+          "tooltip": "NIS2: 2.3.1\nISO 27001: A.5.2 Roles de seguridad · A.5.3 Segregación de funciones\nENS: Art.13 Organización del proceso de seguridad\nDORA: Art.6(4) Función de control independiente",
+          "tags": [
+            { "name": "nis2", "text": "NIS2 2.3.1", "tooltip": "Función de control independiente" },
+            { "name": "iso", "text": "ISO A.5.2", "tooltip": "Roles de seguridad y segregación de funciones" },
+            { "name": "ens", "text": "ENS Art.13", "tooltip": "Organización del proceso de seguridad" },
+            { "name": "dora", "text": "DORA Art.6(4)", "tooltip": "Función de control independiente TIC" }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "3 · Gestión de Incidentes",
+      "items": [
+        {
+          "code": "INC-01",
+          "difficulty": "medio",
+          "text": "Política y procedimiento de gestión de incidentes de seguridad documentados",
+          "pymeText": "¿Sabéis qué hacer paso a paso cuando ocurre un incidente de seguridad?",
+          "tooltip": "NIS2: 3.1 Política de gestión de incidentes\nISO 27001: A.5.24 Planificación gestión incidentes\nENS: 4.3.7 Gestión de incidentes [op.exp.7]\nDORA: Art.17 Gestión de incidentes TIC",
+          "tags": [
+            { "name": "nis2", "text": "NIS2 3.1", "tooltip": "Política de gestión de incidentes" },
+            { "name": "iso", "text": "ISO A.5.24", "tooltip": "Planificación gestión incidentes" },
+            { "name": "ens", "text": "ENS 4.3.7", "tooltip": "Gestión de incidentes [op.exp.7]" },
+            { "name": "dora", "text": "DORA Art.17", "tooltip": "Gestión de incidentes TIC" }
+          ]
+        },
+        {
+          "code": "INC-02",
+          "difficulty": "medio",
+          "text": "Capacidades de supervisión, detección y registro de eventos de seguridad",
+          "pymeText": "¿Tenéis sistemas que monitorizan lo que pasa en vuestra red y detectan anomalías?",
+          "tooltip": "NIS2: 3.2 Supervisión y registro\nISO 27001: A.8.15 Registros de eventos\nENS: 4.7.1 Detección de intrusión [op.mon.1]\nDORA: Art.10 Monitorización y detección",
+          "tags": [
+            { "name": "nis2", "text": "NIS2 3.2", "tooltip": "Supervisión y registro de eventos" },
+            { "name": "iso", "text": "ISO A.8.15", "tooltip": "Registros de eventos" },
+            { "name": "ens", "text": "ENS 4.7.1", "tooltip": "Detección de intrusión [op.mon.1]" },
+            { "name": "dora", "text": "DORA Art.10", "tooltip": "Monitorización y detección" }
+          ]
+        },
+        {
+          "code": "INC-03",
+          "difficulty": "complejo",
+          "text": "Procedimiento de notificación de incidentes significativos a autoridades competentes",
+          "pymeText": "¿Sabéis a quién y en qué plazo notificar un incidente grave al regulador?",
+          "tooltip": "NIS2: 3.3 Informes de eventos — plazos 24h/72h/1 mes\nISO 27001: A.6.8 Notificación de eventos\nENS: Art.33 Capacidad de respuesta\nDORA: Art.19 Notificación de incidentes TIC graves",
+          "tags": [
+            { "name": "nis2", "text": "NIS2 3.3", "tooltip": "Informes de eventos (plazos 24h/72h/1 mes)" },
+            { "name": "iso", "text": "ISO A.6.8", "tooltip": "Notificación de eventos" },
+            { "name": "ens", "text": "ENS Art.33", "tooltip": "Capacidad de respuesta" },
+            { "name": "dora", "text": "DORA Art.19", "tooltip": "Notificación de incidentes TIC graves" }
+          ]
+        },
+        {
+          "code": "INC-04",
+          "difficulty": "medio",
+          "text": "Proceso de evaluación, clasificación y decisión de respuesta a incidentes",
+          "pymeText": "¿Clasificáis los incidentes por gravedad y tenéis criterios para decidir cómo actuar?",
+          "tooltip": "NIS2: 3.4 Evaluación y decisión\nISO 27001: A.5.25 Evaluación de eventos de seguridad\nENS: 4.3.7 Gestión de incidentes\nDORA: Art.18 Clasificación de incidentes TIC",
+          "tags": [
+            { "name": "nis2", "text": "NIS2 3.4", "tooltip": "Evaluación y decisión" },
+            { "name": "iso", "text": "ISO A.5.25", "tooltip": "Evaluación de eventos de seguridad" },
+            { "name": "ens", "text": "ENS 4.3.7", "tooltip": "Gestión de incidentes" },
+            { "name": "dora", "text": "DORA Art.18", "tooltip": "Clasificación de incidentes TIC" }
+          ]
+        },
+        {
+          "code": "INC-05",
+          "difficulty": "medio",
+          "text": "Capacidad de respuesta y recuperación ante incidentes con lecciones aprendidas",
+          "pymeText": "¿Cuando ocurre un incidente, analizáis qué falló y mejoráis para que no se repita?",
+          "tooltip": "NIS2: 3.5 Respuesta a incidentes\nISO 27001: A.5.26 Respuesta a incidentes de seguridad\nENS: Art.33 Capacidad de respuesta\nDORA: Art.14 Comunicación y responsabilidades",
+          "tags": [
+            { "name": "nis2", "text": "NIS2 3.5", "tooltip": "Respuesta a incidentes" },
+            { "name": "iso", "text": "ISO A.5.26", "tooltip": "Respuesta a incidentes de seguridad" },
+            { "name": "ens", "text": "ENS Art.33", "tooltip": "Capacidad de respuesta" },
+            { "name": "dora", "text": "DORA Art.14", "tooltip": "Comunicación y responsabilidades" }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "4 · Continuidad del Negocio y Resiliencia",
+      "items": [
+        {
+          "code": "BCM-01",
+          "difficulty": "medio",
+          "text": "Plan de continuidad de negocio (BCP) aprobado y actualizado",
+          "pymeText": "¿Tenéis un plan para seguir operando si fallan vuestros sistemas críticos?",
+          "tooltip": "NIS2: 4.1 Plan de continuidad\nISO 27001: A.5.29 Seguridad durante interrupción\nENS: 4.6.1 Análisis del impacto [op.cont.1]\nDORA: Art.11(1,2,4,8) Gestión de continuidad del negocio",
+          "tags": [
+            { "name": "nis2", "text": "NIS2 4.1", "tooltip": "Plan de continuidad de negocio" },
+            { "name": "iso", "text": "ISO A.5.29", "tooltip": "Seguridad durante interrupción" },
+            { "name": "ens", "text": "ENS 4.6.1", "tooltip": "Análisis del impacto [op.cont.1]" },
+            { "name": "dora", "text": "DORA Art.11", "tooltip": "Gestión de continuidad del negocio TIC" }
+          ]
+        },
+        {
+          "code": "BCM-02",
+          "difficulty": "complejo",
+          "text": "Plan de recuperación ante desastres (DRP) con RTO/RPO definidos y verificados",
+          "pymeText": "¿Tenéis un plan técnico para recuperar los sistemas y tiempos objetivo definidos?",
+          "tooltip": "NIS2: 4.1 Plan de recuperación\nISO 27001: A.5.30 Preparación TIC para continuidad\nENS: 4.6.2 Plan de continuidad [op.cont.2]\nDORA: Art.11(3,8) Planes de respuesta y recuperación",
+          "tags": [
+            { "name": "nis2", "text": "NIS2 4.1", "tooltip": "Plan de recuperación ante desastres" },
+            { "name": "iso", "text": "ISO A.5.30", "tooltip": "Preparación TIC para continuidad" },
+            { "name": "ens", "text": "ENS 4.6.2", "tooltip": "Plan de continuidad [op.cont.2]" },
+            { "name": "dora", "text": "DORA Art.11", "tooltip": "Planes de respuesta y recuperación" }
+          ]
+        },
+        {
+          "code": "BCM-03",
+          "difficulty": "medio",
+          "text": "Análisis de impacto empresarial (BIA) con identificación de procesos críticos y dependencias",
+          "pymeText": "¿Sabéis cuánto tiempo podéis estar sin cada proceso crítico sin causar daño grave?",
+          "tooltip": "NIS2: 4.1.3\nISO 27001: Sin control directo, implícito en A.5.29\nENS: 4.6.1 Análisis del impacto [op.cont.1]\nDORA: Art.11(5) Análisis de impacto empresarial",
+          "tags": [
+            { "name": "nis2", "text": "NIS2 4.1.3", "tooltip": "Análisis de impacto" },
+            { "name": "ens", "text": "ENS 4.6.1", "tooltip": "Análisis del impacto [op.cont.1]" },
+            { "name": "dora", "text": "DORA Art.11(5)", "tooltip": "Análisis de impacto empresarial (BIA)" }
+          ]
+        },
+        {
+          "code": "BCM-04",
+          "difficulty": "medio",
+          "text": "Ejercicios y pruebas periódicas de continuidad con resultados documentados",
+          "pymeText": "¿Probáis el plan de continuidad al menos una vez al año con simulacros?",
+          "tooltip": "NIS2: 4.1.4 Pruebas\nISO 27001: A.5.30\nENS: 4.6.3 Pruebas periódicas [op.cont.3]\nDORA: Art.11(6) Pruebas de continuidad regulares",
+          "tags": [
+            { "name": "nis2", "text": "NIS2 4.1.4", "tooltip": "Pruebas periódicas" },
+            { "name": "iso", "text": "ISO A.5.30", "tooltip": "Preparación TIC" },
+            { "name": "ens", "text": "ENS 4.6.3", "tooltip": "Pruebas periódicas [op.cont.3]" },
+            { "name": "dora", "text": "DORA Art.11(6)", "tooltip": "Pruebas de continuidad regulares" }
+          ]
+        },
+        {
+          "code": "BCM-05",
+          "difficulty": "medio",
+          "text": "Política de copias de seguridad con pruebas de restauración documentadas",
+          "pymeText": "¿Hacéis copias de seguridad y las probáis para asegurar que se pueden restaurar?",
+          "tooltip": "NIS2: 4.2 Copias de seguridad\nISO 27001: A.8.13 Gestión copias de seguridad\nENS: 5.7.6 Copias de seguridad [mp.info.6]\nDORA: Art.12(1-3,6,7) Copias de seguridad y recuperación",
+          "tags": [
+            { "name": "nis2", "text": "NIS2 4.2", "tooltip": "Copias de seguridad" },
+            { "name": "iso", "text": "ISO A.8.13", "tooltip": "Gestión copias de seguridad" },
+            { "name": "ens", "text": "ENS 5.7.6", "tooltip": "Copias de seguridad [mp.info.6]" },
+            { "name": "dora", "text": "DORA Art.12", "tooltip": "Copias de seguridad y recuperación" }
+          ]
+        },
+        {
+          "code": "BCM-06",
+          "difficulty": "complejo",
+          "text": "Redundancias lógicas y físicas para sistemas críticos implementadas",
+          "pymeText": "¿Los sistemas críticos tienen redundancia (HA) para que no fallen si algo se rompe?",
+          "tooltip": "NIS2: 4.2.4 Redundancias\nISO 27001: A.8.14 Redundancia de instalaciones de procesamiento de información\nENS: 5.1.3-5.1.4 Energía eléctrica [mp.if.4]\nDORA: Art.12(4,5) Redundancias lógicas y físicas",
+          "tags": [
+            { "name": "nis2", "text": "NIS2 4.2.4", "tooltip": "Redundancias" },
+            { "name": "iso", "text": "ISO A.8.14", "tooltip": "Redundancia de instalaciones" },
+            { "name": "ens", "text": "ENS 5.1.3", "tooltip": "Energía eléctrica [mp.if.4]" },
+            { "name": "dora", "text": "DORA Art.12(4-5)", "tooltip": "Redundancias lógicas y físicas" }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "5 · Pruebas de Resiliencia Digital (específico DORA)",
+      "items": [
+        {
+          "code": "RES-01",
+          "difficulty": "complejo",
+          "text": "Programa de pruebas de resiliencia digital definido y aprobado",
+          "pymeText": "¿Tenéis un programa formal de pruebas de resiliencia para sistemas críticos?",
+          "tooltip": "DORA: Art.24 Programa de pruebas de resiliencia digital — solo entidades financieras significativas",
+          "tags": [
+            { "name": "dora", "text": "DORA Art.24", "tooltip": "Programa de pruebas de resiliencia digital" }
+          ]
+        },
+        {
+          "code": "RES-02",
+          "difficulty": "medio",
+          "text": "Pruebas de herramientas y sistemas TIC incluyendo análisis de vulnerabilidades",
+          "pymeText": "¿Hacéis análisis de vulnerabilidades y pruebas de penetración periódicamente?",
+          "tooltip": "NIS2: 6.5.1-6.5.2 Gestión de vulnerabilidades\nISO 27001: A.8.29 Pruebas de seguridad en desarrollo · A.8.33-A.8.34 Pruebas y protección\nENS: 5.6.1-5.6.2 Desarrollo de aplicaciones\nDORA: Art.25 Pruebas de herramientas y sistemas TIC",
+          "tags": [
+            { "name": "nis2", "text": "NIS2 6.5", "tooltip": "Gestión de vulnerabilidades" },
+            { "name": "iso", "text": "ISO A.8.29", "tooltip": "Pruebas de seguridad en desarrollo" },
+            { "name": "ens", "text": "ENS 5.6.1", "tooltip": "Desarrollo de aplicaciones" },
+            { "name": "dora", "text": "DORA Art.25", "tooltip": "Pruebas de herramientas y sistemas TIC" }
+          ]
+        },
+        {
+          "code": "RES-03",
+          "difficulty": "complejo",
+          "text": "Pruebas de penetración basadas en amenazas (TLPT) realizadas por terceros",
+          "pymeText": "¿Contratáis hackers éticos externos para probar vuestros sistemas cada cierto tiempo?",
+          "tooltip": "NIS2: 7.2 Pruebas de penetración\nISO 27001: Sin equivalente directo — A.8.8 cubre gestión de vulnerabilidades\nENS: Sin equivalente directo\nDORA: Art.26-27 Pruebas de penetración basadas en amenazas (TLPT)",
+          "tags": [
+            { "name": "nis2", "text": "NIS2 7.2", "tooltip": "Pruebas de penetración" },
+            { "name": "dora", "text": "DORA Art.26-27", "tooltip": "Pruebas de penetración basadas en amenazas (TLPT)" }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "6 · Gestión de Terceros y Proveedores TIC",
+      "items": [
+        {
+          "code": "TPM-01",
+          "difficulty": "medio",
+          "text": "Política y proceso de gestión de proveedores TIC con evaluación de riesgos",
+          "pymeText": "¿Evaluáis el riesgo de vuestros proveedores tecnológicos antes de contratarles?",
+          "tooltip": "NIS2: 5.1.2-5.1.7 Gestión de proveedores\nISO 27001: A.5.19-A.5.23 Seguridad en relaciones con proveedores\nENS: 4.4.1-4.4.4 Contratación y acuerdos [op.ext.1]\nDORA: Art.28-30 Gestión de proveedores TIC",
+          "tags": [
+            { "name": "nis2", "text": "NIS2 5.1", "tooltip": "Gestión de proveedores" },
+            { "name": "iso", "text": "ISO A.5.19", "tooltip": "Seguridad en relaciones con proveedores" },
+            { "name": "ens", "text": "ENS 4.4.1", "tooltip": "Contratación y acuerdos [op.ext.1]" },
+            { "name": "dora", "text": "DORA Art.28", "tooltip": "Gestión de proveedores TIC" }
+          ]
+        },
+        {
+          "code": "TPM-02",
+          "difficulty": "medio",
+          "text": "Supervisión continua de terceros con revisiones periódicas de cumplimiento",
+          "pymeText": "¿Revisáis periódicamente que vuestros proveedores siguen cumpliendo la seguridad?",
+          "tooltip": "NIS2: 5.1.6-5.1.7 Supervisión de terceros\nISO 27001: A.5.2 Roles · A.5.19 Seguridad en cadena de suministro\nENS: Art.19 Adquisición de productos de seguridad\nDORA: Art.5(3) Supervisión de terceros TIC",
+          "tags": [
+            { "name": "nis2", "text": "NIS2 5.1", "tooltip": "Supervisión de terceros" },
+            { "name": "iso", "text": "ISO A.5.19", "tooltip": "Seguridad en cadena de suministro" },
+            { "name": "ens", "text": "ENS Art.19", "tooltip": "Adquisición de productos de seguridad" },
+            { "name": "dora", "text": "DORA Art.5(3)", "tooltip": "Supervisión de terceros TIC" }
+          ]
+        },
+        {
+          "code": "TPM-03",
+          "difficulty": "complejo",
+          "text": "Evaluación de riesgo de concentración en proveedores TIC críticos",
+          "pymeText": "¿Habéis analizado si dependéis demasiado de un único proveedor tecnológico?",
+          "tooltip": "NIS2: 5.1.3-5.1.4 Evaluación de riesgos cadena suministro\nISO 27001: A.5.20-A.5.21 Acuerdos y seguridad en cadena TIC\nENS: 4.4.2 Gestión diaria [op.ext.2]\nDORA: Art.29 Evaluación del riesgo de concentración TIC",
+          "tags": [
+            { "name": "nis2", "text": "NIS2 5.1", "tooltip": "Evaluación de riesgos cadena suministro" },
+            { "name": "iso", "text": "ISO A.5.20", "tooltip": "Acuerdos y seguridad en cadena TIC" },
+            { "name": "ens", "text": "ENS 4.4.2", "tooltip": "Gestión diaria [op.ext.2]" },
+            { "name": "dora", "text": "DORA Art.29", "tooltip": "Evaluación del riesgo de concentración TIC" }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "7 · Seguridad en el Desarrollo y Adquisición",
+      "items": [
+        {
+          "code": "DEV-01",
+          "difficulty": "medio",
+          "text": "Proceso de adquisición segura de sistemas, productos y servicios TIC",
+          "pymeText": "Cuando compráis software o hardware, ¿evaluáis su seguridad antes de comprar?",
+          "tooltip": "NIS2: 6.1 Seguridad adquisición TIC\nISO 27001: A.5.21 Gestión seguridad cadena TIC\nENS: 4.1.3 Adquisición nuevos componentes\nDORA: Art.9(2) Objetivos de protección para la adquisición",
+          "tags": [
+            { "name": "nis2", "text": "NIS2 6.1", "tooltip": "Seguridad adquisición TIC" },
+            { "name": "iso", "text": "ISO A.5.21", "tooltip": "Gestión seguridad cadena TIC" },
+            { "name": "ens", "text": "ENS 4.1.3", "tooltip": "Adquisición nuevos componentes" },
+            { "name": "dora", "text": "DORA Art.9(2)", "tooltip": "Objetivos de protección para la adquisición" }
+          ]
+        },
+        {
+          "code": "DEV-02",
+          "difficulty": "complejo",
+          "text": "Ciclo de vida de desarrollo seguro (SDLC/DevSecOps) implementado",
+          "pymeText": "Si desarrolláis software, ¿la seguridad se tiene en cuenta desde el diseño?",
+          "tooltip": "NIS2: 6.2 Ciclo vida desarrollo seguro\nISO 27001: A.8.25 Seguridad ciclo de vida del desarrollo\nENS: 5.6.1 Desarrollo de aplicaciones\nDORA: Art.9(2) Objetivos de protección para desarrollo",
+          "tags": [
+            { "name": "nis2", "text": "NIS2 6.2", "tooltip": "Ciclo vida desarrollo seguro" },
+            { "name": "iso", "text": "ISO A.8.25", "tooltip": "Seguridad ciclo de vida del desarrollo" },
+            { "name": "ens", "text": "ENS 5.6.1", "tooltip": "Desarrollo de aplicaciones" },
+            { "name": "dora", "text": "DORA Art.9(2)", "tooltip": "Objetivos de protección para desarrollo" }
+          ]
+        },
+        {
+          "code": "DEV-03",
+          "difficulty": "medio",
+          "text": "Gestión de la configuración de seguridad con líneas base documentadas",
+          "pymeText": "¿Los servidores y equipos están configurados según estándares de seguridad?",
+          "tooltip": "NIS2: 6.3 Gestión de la configuración\nISO 27001: A.8.9 Gestión de la configuración\nENS: 4.3.2 Configuración de seguridad\nDORA: Art.9(4)(e) Gestión de cambios orientada al riesgo",
+          "tags": [
+            { "name": "nis2", "text": "NIS2 6.3", "tooltip": "Gestión de la configuración" },
+            { "name": "iso", "text": "ISO A.8.9", "tooltip": "Gestión de la configuración" },
+            { "name": "ens", "text": "ENS 4.3.2", "tooltip": "Configuración de seguridad" },
+            { "name": "dora", "text": "DORA Art.9(4)(e)", "tooltip": "Gestión de cambios orientada al riesgo" }
+          ]
+        },
+        {
+          "code": "DEV-04",
+          "difficulty": "medio",
+          "text": "Programa de gestión de vulnerabilidades con parcheo prioritizado por riesgo",
+          "pymeText": "¿Tenéis un proceso para identificar vulnerabilidades y parchearlas por orden de gravedad?",
+          "tooltip": "NIS2: 6.5 Gestión de vulnerabilidades\nISO 27001: A.8.8 Gestión de vulnerabilidades técnicas\nENS: 4.3.4 Mantenimiento y actualizaciones\nDORA: Art.9(4)(f) Gestión de parches y actualizaciones",
+          "tags": [
+            { "name": "nis2", "text": "NIS2 6.5", "tooltip": "Gestión de vulnerabilidades" },
+            { "name": "iso", "text": "ISO A.8.8", "tooltip": "Gestión de vulnerabilidades técnicas" },
+            { "name": "ens", "text": "ENS 4.3.4", "tooltip": "Mantenimiento y actualizaciones" },
+            { "name": "dora", "text": "DORA Art.9(4)(f)", "tooltip": "Gestión de parches y actualizaciones" }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "8 · Criptografía",
+      "items": [
+        {
+          "code": "CRY-01",
+          "difficulty": "medio",
+          "text": "Política criptográfica con algoritmos, longitudes de clave y uso definidos",
+          "pymeText": "¿Tenéis una política que especifica cómo y cuándo usar cifrado en la empresa?",
+          "tooltip": "NIS2: 7 Criptografía\nISO 27001: A.8.24 Uso de la criptografía\nENS: 5.5.2 Criptografía [mp.si.2]\nDORA: Implícito en Art.9(4) medidas de protección",
+          "tags": [
+            { "name": "nis2", "text": "NIS2 7", "tooltip": "Criptografía" },
+            { "name": "iso", "text": "ISO A.8.24", "tooltip": "Uso de la criptografía" },
+            { "name": "ens", "text": "ENS 5.5.2", "tooltip": "Criptografía [mp.si.2]" },
+            { "name": "dora", "text": "DORA Art.9(4)", "tooltip": "Medidas de protección" }
+          ]
+        },
+        {
+          "code": "CRY-02",
+          "difficulty": "medio",
+          "text": "Gestión del ciclo de vida de claves criptográficas y certificados digitales",
+          "pymeText": "¿Controláis la caducidad de los certificados y las claves de cifrado?",
+          "tooltip": "NIS2: 7 Políticas y procedimientos criptográficos\nISO 27001: A.5.31 Requisitos legales y contractuales de criptografía\nENS: 4.3.10 Protección de claves criptográficas\nDORA: Implícito en gestión de seguridad",
+          "tags": [
+            { "name": "nis2", "text": "NIS2 7", "tooltip": "Políticas y procedimientos criptográficos" },
+            { "name": "iso", "text": "ISO A.5.31", "tooltip": "Requisitos legales y contractuales de criptografía" },
+            { "name": "ens", "text": "ENS 4.3.10", "tooltip": "Protección de claves criptográficas" },
+            { "name": "dora", "text": "DORA Art.9", "tooltip": "Medidas de protección" }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "9 · Recursos Humanos y Concienciación",
+      "items": [
+        {
+          "code": "HRS-01",
+          "difficulty": "medio",
+          "text": "Programa de formación en seguridad con evidencia de completado por rol",
+          "pymeText": "¿Los empleados reciben formación en seguridad según su puesto y se documenta?",
+          "tooltip": "NIS2: 8.2 Formación en seguridad\nISO 27001: A.6.3 Concienciación y formación\nENS: 5.2.4 Formación [mp.per.4]\nDORA: Art.13(6,7) Sensibilización y formación",
+          "tags": [
+            { "name": "nis2", "text": "NIS2 8.2", "tooltip": "Formación en seguridad" },
+            { "name": "iso", "text": "ISO A.6.3", "tooltip": "Concienciación y formación" },
+            { "name": "ens", "text": "ENS 5.2.4", "tooltip": "Formación [mp.per.4]" },
+            { "name": "dora", "text": "DORA Art.13", "tooltip": "Sensibilización y formación" }
+          ]
+        },
+        {
+          "code": "HRS-02",
+          "difficulty": "facil",
+          "text": "Programa de concienciación en ciberseguridad continuo para toda la organización",
+          "pymeText": "¿Los empleados saben identificar correos de phishing y reportar incidentes?",
+          "tooltip": "NIS2: 8.1 Concienciación en seguridad\nISO 27001: A.6.3 Concienciación y formación\nENS: 5.2.3 Concienciación [mp.per.3]\nDORA: Art.13(6,7) Sensibilización y formación",
+          "tags": [
+            { "name": "nis2", "text": "NIS2 8.1", "tooltip": "Concienciación en seguridad" },
+            { "name": "iso", "text": "ISO A.6.3", "tooltip": "Concienciación y formación" },
+            { "name": "ens", "text": "ENS 5.2.3", "tooltip": "Concienciación [mp.per.3]" },
+            { "name": "dora", "text": "DORA Art.13", "tooltip": "Sensibilización y formación" }
+          ]
+        },
+        {
+          "code": "HRS-03",
+          "difficulty": "facil",
+          "text": "Verificación de antecedentes para personal con acceso a sistemas críticos",
+          "pymeText": "¿Verificáis los antecedentes de los empleados que acceden a sistemas sensibles?",
+          "tooltip": "NIS2: 10.2 Comprobación de antecedentes\nISO 27001: A.6.1 Verificación de antecedentes\nENS: 5.2.1 Caracterización del puesto [mp.per.1]",
+          "tags": [
+            { "name": "nis2", "text": "NIS2 10.2", "tooltip": "Comprobación de antecedentes" },
+            { "name": "iso", "text": "ISO A.6.1", "tooltip": "Verificación de antecedentes" },
+            { "name": "ens", "text": "ENS 5.2.1", "tooltip": "Caracterización del puesto [mp.per.1]" }
+          ]
+        },
+        {
+          "code": "HRS-04",
+          "difficulty": "medio",
+          "text": "Formación específica en ciberseguridad para la alta dirección y órganos de gobierno",
+          "pymeText": "¿La dirección recibe formación específica sobre ciberseguridad y sus responsabilidades?",
+          "tooltip": "NIS2: 8.2.2 Competencias directivas\nISO 27001: 7.2 Competencia · 7.3 Toma de conciencia · A.6.3 Formación\nENS: 5.2.3-5.2.4 Concienciación y formación\nDORA: Art.5(4) Capacidades y formación de dirección",
+          "tags": [
+            { "name": "nis2", "text": "NIS2 8.2.2", "tooltip": "Competencias directivas" },
+            { "name": "iso", "text": "ISO 7.2", "tooltip": "Competencia y concienciación" },
+            { "name": "ens", "text": "ENS 5.2.3", "tooltip": "Concienciación y formación" },
+            { "name": "dora", "text": "DORA Art.5(4)", "tooltip": "Capacidades y formación de dirección" }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "10 · Control de Accesos",
+      "items": [
+        {
+          "code": "ACC-01",
+          "difficulty": "facil",
+          "text": "Política de control de acceso basada en necesidad de conocer y mínimo privilegio",
+          "pymeText": "¿Los empleados acceden solo a lo que necesitan para su trabajo y no a todo?",
+          "tooltip": "NIS2: 11.1 Política de control de acceso\nISO 27001: A.5.15 Control de acceso\nENS: 4.2.2 Requisitos de acceso [op.acc.2]\nDORA: Art.9(4)(c) Gestión de accesos",
+          "tags": [
+            { "name": "nis2", "text": "NIS2 11.1", "tooltip": "Política de control de acceso" },
+            { "name": "iso", "text": "ISO A.5.15", "tooltip": "Control de acceso" },
+            { "name": "ens", "text": "ENS 4.2.2", "tooltip": "Requisitos de acceso [op.acc.2]" },
+            { "name": "dora", "text": "DORA Art.9(4)(c)", "tooltip": "Gestión de accesos" }
+          ]
+        },
+        {
+          "code": "ACC-02",
+          "difficulty": "complejo",
+          "text": "Gestión de cuentas privilegiadas (PAM) con monitorización de actividad",
+          "pymeText": "¿Los administradores tienen cuentas especiales y se monitoriza lo que hacen?",
+          "tooltip": "NIS2: 11.3 Gestión de privilegios de acceso\nISO 27001: A.8.2 Gestión de privilegios de acceso\nENS: 4.2.4 Proceso de gestión de derechos [op.acc.4]\nDORA: Art.9(4)(c) Gestión de accesos",
+          "tags": [
+            { "name": "nis2", "text": "NIS2 11.3", "tooltip": "Gestión de privilegios de acceso" },
+            { "name": "iso", "text": "ISO A.8.2", "tooltip": "Gestión de privilegios de acceso" },
+            { "name": "ens", "text": "ENS 4.2.4", "tooltip": "Proceso de gestión de derechos [op.acc.4]" },
+            { "name": "dora", "text": "DORA Art.9(4)(c)", "tooltip": "Gestión de accesos" }
+          ]
+        },
+        {
+          "code": "ACC-03",
+          "difficulty": "facil",
+          "text": "Autenticación multifactor (MFA) implementada para accesos críticos y remotos",
+          "pymeText": "¿El acceso remoto y a sistemas críticos requiere doble factor de autenticación?",
+          "tooltip": "NIS2: 11.7 Autenticación segura — MFA\nISO 27001: A.8.5 Autenticación segura\nENS: 4.2.6 Mecanismo de autenticación [op.acc.6]\nDORA: Art.9(4)(d) Autenticación fuerte",
+          "tags": [
+            { "name": "nis2", "text": "NIS2 11.7", "tooltip": "Autenticación segura — MFA" },
+            { "name": "iso", "text": "ISO A.8.5", "tooltip": "Autenticación segura" },
+            { "name": "ens", "text": "ENS 4.2.6", "tooltip": "Mecanismo de autenticación [op.acc.6]" },
+            { "name": "dora", "text": "DORA Art.9(4)(d)", "tooltip": "Autenticación fuerte" }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "11 · Gestión de Activos",
+      "items": [
+        {
+          "code": "AST-01",
+          "difficulty": "facil",
+          "text": "Inventario completo y actualizado de activos de información y TIC",
+          "pymeText": "¿Tenéis una lista actualizada de todos vuestros equipos, sistemas y aplicaciones?",
+          "tooltip": "NIS2: 12.4 Inventario de activos\nISO 27001: A.5.9 Inventario de activos\nENS: 4.3.1 Inventario de activos [op.exp.1]\nDORA: Art.8(4,6) Gestión de activos",
+          "tags": [
+            { "name": "nis2", "text": "NIS2 12.4", "tooltip": "Inventario de activos" },
+            { "name": "iso", "text": "ISO A.5.9", "tooltip": "Inventario de activos" },
+            { "name": "ens", "text": "ENS 4.3.1", "tooltip": "Inventario de activos [op.exp.1]" },
+            { "name": "dora", "text": "DORA Art.8", "tooltip": "Gestión de activos TIC" }
+          ]
+        },
+        {
+          "code": "AST-02",
+          "difficulty": "facil",
+          "text": "Clasificación y etiquetado de información según nivel de confidencialidad",
+          "pymeText": "¿Clasificáis la información (pública, interna, confidencial, secreta)?",
+          "tooltip": "NIS2: 12.1 Clasificación de activos\nISO 27001: A.5.12 Clasificación de la información\nENS: Art.40 Categorías de seguridad\nDORA: Art.8(1,6) Identificación y clasificación",
+          "tags": [
+            { "name": "nis2", "text": "NIS2 12.1", "tooltip": "Clasificación de activos" },
+            { "name": "iso", "text": "ISO A.5.12", "tooltip": "Clasificación de la información" },
+            { "name": "ens", "text": "ENS Art.40", "tooltip": "Categorías de seguridad" },
+            { "name": "dora", "text": "DORA Art.8", "tooltip": "Identificación y clasificación" }
+          ]
+        },
+        {
+          "code": "AST-03",
+          "difficulty": "facil",
+          "text": "Política de uso aceptable y manejo de activos de información implementada",
+          "pymeText": "¿Los empleados han firmado políticas de uso aceptable de sistemas y datos?",
+          "tooltip": "NIS2: 12.2 Manejo de activos\nISO 27001: A.5.10 Uso aceptable de la información y activos\nENS: 5.7.2 Calificación de la información [mp.info.2]",
+          "tags": [
+            { "name": "nis2", "text": "NIS2 12.2", "tooltip": "Manejo de activos" },
+            { "name": "iso", "text": "ISO A.5.10", "tooltip": "Uso aceptable de la información y activos" },
+            { "name": "ens", "text": "ENS 5.7.2", "tooltip": "Calificación de la información [mp.info.2]" }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "12 · Seguridad Física y Ambiental",
+      "items": [
+        {
+          "code": "PHY-01",
+          "difficulty": "facil",
+          "text": "Perímetro físico de seguridad definido con zonas separadas y controles de acceso",
+          "pymeText": "¿Las zonas sensibles (servidores, CPD) tienen acceso físico restringido?",
+          "tooltip": "NIS2: 13.3 Perímetro de seguridad física\nISO 27001: A.7.1 Perímetro de seguridad física\nENS: 5.1.1 Áreas separadas y control [mp.if.1]\nDORA: Art.33(3)(b) para proveedores críticos",
+          "tags": [
+            { "name": "nis2", "text": "NIS2 13.3", "tooltip": "Perímetro de seguridad física" },
+            { "name": "iso", "text": "ISO A.7.1", "tooltip": "Perímetro de seguridad física" },
+            { "name": "ens", "text": "ENS 5.1.1", "tooltip": "Áreas separadas y control [mp.if.1]" },
+            { "name": "dora", "text": "DORA Art.33", "tooltip": "Seguridad física para proveedores críticos" }
+          ]
+        },
+        {
+          "code": "PHY-02",
+          "difficulty": "medio",
+          "text": "Control de acceso físico a instalaciones críticas con registro de entradas y salidas",
+          "pymeText": "¿El acceso al CPD y zonas restringidas requiere identificación y queda registrado?",
+          "tooltip": "NIS2: 13.3 Control de acceso físico\nISO 27001: A.7.2 Controles físicos de entrada\nENS: 5.1.2 Identificación de personas [mp.if.2]\nDORA: Art.33(3)(b) Seguridad física\n⚠️ RGPD: Si se utiliza biometría, es obligatoria una EIPD/DPIA (Art. 35 RGPD). La retención de CCTV superior a 30 días requiere justificación documentada.",
+          "tags": [
+            { "name": "nis2", "text": "NIS2 13.3", "tooltip": "Control de acceso físico" },
+            { "name": "iso", "text": "ISO A.7.2", "tooltip": "Controles físicos de entrada" },
+            { "name": "ens", "text": "ENS 5.1.2", "tooltip": "Identificación de personas [mp.if.2]" },
+            { "name": "dora", "text": "DORA Art.33", "tooltip": "Seguridad física" }
+          ]
+        },
+        {
+          "code": "PHY-03",
+          "difficulty": "medio",
+          "text": "Protección frente a amenazas ambientales (incendio, inundación, temperatura)",
+          "pymeText": "¿El CPD tiene protección contra incendios, inundaciones y control de temperatura?",
+          "tooltip": "NIS2: 13.2 Protección ante amenazas físicas\nISO 27001: A.7.5 Protección frente a amenazas ambientales\nENS: 5.1.5 Protección frente a incendios [mp.if.5]\nDORA: Art.33(3)(b) Seguridad física",
+          "tags": [
+            { "name": "nis2", "text": "NIS2 13.2", "tooltip": "Protección ante amenazas físicas" },
+            { "name": "iso", "text": "ISO A.7.5", "tooltip": "Protección frente a amenazas ambientales" },
+            { "name": "ens", "text": "ENS 5.1.5", "tooltip": "Protección frente a incendios [mp.if.5]" },
+            { "name": "dora", "text": "DORA Art.33", "tooltip": "Seguridad física" }
+          ]
+        }
+      ]
+    }
+  ]
+}

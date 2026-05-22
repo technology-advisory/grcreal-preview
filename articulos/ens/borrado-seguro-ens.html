@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0">
+<title>Borrado seguro en el ENS: una obligación que nadie cumple bien · GRCreal</title>
+<meta name="description" content="El borrado seguro es un control obligatorio del ENS que la mayoría de organizaciones no implementa correctamente. Qué exige y cómo hacerlo bien.">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Borrado seguro en el ENS: una obligación que nadie cumple bien">
+<meta property="og:description" content="El borrado seguro es obligatorio en el ENS. La mayoría no lo implementa correctamente. Qué exige y cómo hacerlo.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://grcreal.com/articulos/borrado-seguro-ens.html">
+<meta property="og:image" content="https://grcreal.com/grcreal.png">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="../../css/marca.css">
+<link rel="stylesheet" href="../../css/articles.css">
+<link rel="stylesheet" href="../../css/global.css">
+</head>
+<body class="article-page">
+<div class="card-wrapper">
+<div class="card">
+<div class="accent-bar"></div>
+
+<div class="header">
+  <div class="tag">ENS · Borrado Seguro · Cumplimiento</div>
+  <div class="article-date">18 Mayo 2026</div>
+  <div class="headline">
+    Borrado seguro<br>
+    <span class="accent">en el ENS:</span><br>
+    <span class="dim">una obligación</span><br>
+    <span class="accent">que nadie cumple bien</span>
+  </div>
+  <p class="subline">
+    Borrar un archivo no significa que los datos desaparezcan.<br>
+    <strong>Y el ENS lo sabe.</strong>
+  </p>
+</div>
+
+<div class="body">
+
+  <div class="block">
+    <div class="block-label">El malentendido</div>
+    <div class="block-title">«Lo hemos borrado» no significa nada</div>
+    <div class="block-text">
+      Cuando un usuario borra un archivo, el sistema operativo marca el espacio como disponible. Los datos siguen físicamente en el disco hasta que algo los sobreescribe. Con las herramientas adecuadas — ampliamente disponibles — esos datos son perfectamente recuperables.
+      <br><br>
+      Esto aplica a discos duros, SSDs, memorias USB, cintas de backup, smartphones y cualquier dispositivo que almacene información. Y aplica también a entornos virtualizados y cloud, donde el concepto de "borrado" es aún más complejo.
+      <br><br>
+      <strong>En el contexto del ENS, donde se manejan datos de ciudadanos, servicios públicos e infraestructuras críticas, este malentendido tiene consecuencias regulatorias y de seguridad muy serias.</strong>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="block">
+    <div class="block-label">Qué exige el ENS</div>
+    <div class="block-title">El control mp.si.elem.3</div>
+    <div class="block-text">
+      El Esquema Nacional de Seguridad, en su medida de seguridad mp.si.elem.3, establece la obligación de borrado seguro de la información cuando los soportes van a ser reutilizados, cedidos o desechados.
+      <br><br>
+      No es una recomendación. Es un control obligatorio cuya exigencia varía según la categoría del sistema — Básica, Media o Alta — pero que en todos los casos requiere un procedimiento documentado y evidenciable.
+      <br><br>
+      En categoría Media y Alta, los requisitos son más estrictos: no basta con sobreescritura estándar para soportes que han manejado información clasificada o especialmente sensible — puede requerirse destrucción física certificada.
+      <br><br>
+      <strong>Y un auditor ENS serio pedirá evidencia de que el procedimiento se aplica, no solo que existe en papel.</strong>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="block">
+    <div class="block-label">Métodos y cuándo aplicar cada uno</div>
+    <div class="block-title">No todos los soportes se borran igual</div>
+
+    <table class="tension" style="margin-top:20px;">
+      <tr>
+        <td class="tension-who">HDD</td>
+        <td class="tension-says">Sobreescritura con estándares reconocidos (DoD 5220.22-M, Gutmann). Múltiples pasadas para información sensible. Verificación posterior.</td>
+      </tr>
+      <tr>
+        <td class="tension-who">SSD</td>
+        <td class="tension-says">La sobreescritura tradicional no funciona bien por la gestión interna del almacenamiento. Usar el comando Secure Erase del fabricante o cifrado previo al borrado.</td>
+      </tr>
+      <tr>
+        <td class="tension-who">Cintas</td>
+        <td class="tension-says">Sobreescritura o desmagnetización certificada. Para información de alta sensibilidad, destrucción física.</td>
+      </tr>
+      <tr>
+        <td class="tension-who">Cloud</td>
+        <td class="tension-says">Verificar las garantías de borrado del proveedor. Exigir certificación contractual. El cifrado previo de los datos es la mejor garantía adicional.</td>
+      </tr>
+      <tr class="hi-row">
+        <td class="tension-who">Alta sensibilidad</td>
+        <td class="tension-says"><span class="hi">Destrucción física certificada por empresa autorizada, con certificado de destrucción que incluya número de serie del dispositivo.</span></td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="block">
+    <div class="block-label">Lo que falla en la práctica</div>
+    <div class="block-title">Los errores más frecuentes</div>
+    <div class="block-text">
+      Equipos dados de baja sin proceso de borrado documentado. El portátil que se entrega a otro usuario, la impresora multifunción que se devuelve al proveedor con su disco lleno de documentos escaneados, el servidor virtualizado que se elimina sin limpiar el almacenamiento subyacente.
+      <br><br>
+      Procedimientos que existen en papel pero que nadie sigue en la práctica. Sin registro de qué dispositivos han pasado por el proceso, cuándo y con qué método.
+      <br><br>
+      Confundir formateo con borrado seguro. Un formateo estándar no borra los datos — los hace inaccesibles para el sistema operativo, pero no para un atacante con las herramientas adecuadas.
+      <br><br>
+      Ignorar los dispositivos periféricos: memorias USB, discos externos, tarjetas SD, módulos de impresoras. Son soportes de información tan relevantes como un servidor.
+      <br><br>
+      <strong>Y en entornos virtualizados: asumir que borrar una máquina virtual borra los datos del almacenamiento físico subyacente. No siempre es así.</strong>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="block">
+    <div class="block-label">Cómo hacerlo bien</div>
+    <div class="block-title">Lo mínimo que debe existir</div>
+    <div class="block-text">
+      Un inventario de soportes que incluya todos los dispositivos que almacenan información — no solo servidores y PCs, también periféricos, dispositivos móviles y soportes removibles.
+      <br><br>
+      Un procedimiento de baja documentado que incluya el proceso de borrado seguro como paso obligatorio antes de cualquier reutilización, cesión o desecho.
+      <br><br>
+      Registros de cada operación de borrado: dispositivo, número de serie, método utilizado, fecha y responsable. Si no está documentado, para el auditor no ha ocurrido.
+      <br><br>
+      Para destrucción física: certificados emitidos por la empresa de destrucción, con identificación de cada dispositivo destruido.
+      <br><br>
+      <strong>Y formación al personal técnico: el proceso de borrado seguro no puede depender de que alguien lo recuerde — debe estar integrado en el procedimiento de baja de equipos.</strong>
+    </div>
+  </div>
+
+  <div class="cta-block">
+    <div class="cta-headline">
+      ¿Tu organización tiene documentado<br>
+      <span>el proceso de borrado seguro?</span>
+    </div>
+    <div class="cta-sub">
+      Si la respuesta es no — o no estás seguro —<br>
+      <strong>el problema ya existe antes de la auditoría.</strong>
+    </div>
+  </div>
+
+</div>
+
+<!-- FINAL DEL BODY -->
+<div id="footer-placeholder"></div>
+<script>
+    fetch('/includes/footer.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('footer-placeholder').innerHTML = data;
+        });
+</script>
+
+</div>
+</div>
+<a href="/articulos" class="home-btn">⌂ Home Artículos</a>
+</body>
+<script src="/js/global.js"></script>
+</html>

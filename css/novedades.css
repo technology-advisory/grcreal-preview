@@ -1,0 +1,262 @@
+/* ========== NOVEDADES.CSS ========== */
+/* Estilos específicos para la página de novedades */
+
+/* Cabecera */
+.novedades-header {
+  padding: 2rem 2rem 1rem 2rem;
+  background: #ffffff;
+}
+
+.novedades-tag {
+  display: inline-block;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #3b82f6;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.novedades-titulo {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.novedades-titulo span {
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.novedades-subtitulo {
+  color: #64748b;
+  font-size: 1rem;
+  margin-top: 0.75rem;
+  max-width: 600px;
+}
+
+/* Lista de novedades */
+.novedades-list {
+  padding: 0 2rem 2rem 2rem;
+  background: #ffffff;
+}
+
+.novedad-item {
+  padding: 2rem 0;
+  border-bottom: 1px solid #eef2ff;
+  transition: all 0.2s ease;
+}
+
+.novedad-item:last-child {
+  border-bottom: none;
+}
+
+.novedad-item:hover {
+  padding-left: 0.75rem;
+}
+
+/* Fecha */
+.novedad-fecha {
+  display: inline-block;
+  font-size: 0.7rem;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.75rem;
+  background: #f1f5f9;
+  padding: 0.2rem 0.6rem;
+  border-radius: 20px;
+}
+
+/* Título */
+.novedad-titulo {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #0f172a;
+  margin: 0 0 0.75rem 0;
+}
+
+/* Descripción */
+.novedad-descripcion {
+  color: #475569;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 0 0 1rem 0;
+  max-width: 800px;
+}
+
+/* ========== ENLACES BONITOS ========== */
+
+/* Opción 1: Botón primario (azul sólido) */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.85rem;
+  padding: 0.5rem 1.2rem;
+  border-radius: 40px;
+  transition: all 0.25s ease;
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.25);
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary::after {
+  content: "→";
+  transition: transform 0.2s ease;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(59, 130, 246, 0.35);
+}
+
+.btn-primary:hover::after {
+  transform: translateX(4px);
+}
+
+/* Opción 2: Botón outline (borde) */
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: transparent;
+  color: #3b82f6;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.85rem;
+  padding: 0.5rem 1.2rem;
+  border-radius: 40px;
+  border: 1.5px solid #3b82f6;
+  transition: all 0.25s ease;
+}
+
+.btn-outline::after {
+  content: "→";
+  transition: transform 0.2s ease;
+}
+
+.btn-outline:hover {
+  background: #3b82f6;
+  color: white;
+  transform: translateX(4px);
+}
+
+.btn-outline:hover::after {
+  transform: translateX(4px);
+}
+
+/* Opción 3: Enlace simple con flecha animada */
+.link-arrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  color: #3b82f6;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+  background: transparent;
+  padding: 0;
+}
+
+.link-arrow::after {
+  content: "→";
+  transition: transform 0.2s ease;
+}
+
+.link-arrow:hover {
+  color: #2563eb;
+  gap: 0.6rem;
+}
+
+/* Opción 4: Botón con icono (más moderno) */
+.btn-icon {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: #f8fafc;
+  color: #1e293b;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.85rem;
+  padding: 0.5rem 1.2rem;
+  border-radius: 40px;
+  transition: all 0.25s ease;
+  border: 1px solid #e2e8f0;
+}
+
+.btn-icon svg {
+  width: 16px;
+  height: 16px;
+  transition: transform 0.2s ease;
+}
+
+.btn-icon:hover {
+  background: #3b82f6;
+  color: white;
+  border-color: #3b82f6;
+  transform: translateY(-2px);
+}
+
+.btn-icon:hover svg {
+  transform: translateX(3px);
+  filter: brightness(0) invert(1);
+}
+
+/* Separador */
+.novedades-divider {
+  height: 1px;
+  background: linear-gradient(90deg, #e2e8f0, #cbd5e1, #e2e8f0);
+  margin: 0 2rem;
+}
+
+/* Estilos para los bloques tipo metodología */
+.block-cta {
+  margin-top: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  .novedades-header {
+    padding: 1.5rem;
+  }
+  
+  .novedades-titulo {
+    font-size: 1.8rem;
+  }
+  
+  .novedades-list {
+    padding: 0 1.5rem 1.5rem 1.5rem;
+  }
+  
+  .novedad-titulo {
+    font-size: 1.2rem;
+  }
+  
+  .novedad-descripcion {
+    font-size: 0.85rem;
+  }
+  
+  .btn-primary,
+  .btn-outline,
+  .btn-icon {
+    font-size: 0.75rem;
+    padding: 0.4rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .novedad-item:hover {
+    padding-left: 0;
+  }
+}

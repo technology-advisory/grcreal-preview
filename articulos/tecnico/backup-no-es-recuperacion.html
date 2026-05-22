@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0">
+<title>Backup no es recuperación · GRCreal</title>
+<meta name="description" content="Tener backup y poder recuperar son dos cosas completamente distintas. El error que sigue costando millones y cómo evitarlo.">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Backup no es recuperación: el error que sigue costando millones">
+<meta property="og:description" content="Empresas con backup OK que fallan en el restore. RTO/RPO en papel vs realidad. Qué deberías estar haciendo.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://grcreal.com/articulos/backup-no-es-recuperacion.html">
+<meta property="og:image" content="https://grcreal.com/grcreal.png">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="../../css/marca.css">
+<link rel="stylesheet" href="../../css/articles.css">
+<link rel="stylesheet" href="../../css/global.css">
+</head>
+
+<body class="article-page">
+
+<div class="card-wrapper">
+<div class="card">
+<div class="accent-bar"></div>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="tag">BACKUP · RECUPERACIÓN · CONTINUIDAD</div>
+    <div class="article-date">24 abril 2026</div>
+  <div class="headline">
+    Backup<br>
+    <span class="accent">no es</span><br>
+    <span class="accent">recuperación</span>
+  </div>
+  <p class="subline">
+    Si hay una frase que más me preocupa escuchar es:<br>
+    <strong>«Tenemos backup.»</strong>
+  </p>
+</div>
+
+<div class="body">
+
+  <!-- BLOQUE 1 -->
+  <div class="block">
+    <div class="block-label">El problema</div>
+    <div class="block-title">El «todo OK» de Veeam</div>
+    <div class="block-text">
+      Veeam, Acronis, Commvault, Azure Backup. Herramientas sólidas, bien configuradas, con dashboards en verde. Alertas de éxito todos los días.
+      <br><br>
+      El problema no está en la herramienta. Está en lo que nadie comprueba.
+      <br><br>
+      ¿Cuándo fue la última vez que se hizo una restauración completa de un sistema crítico? No una restauración de un fichero. Una restauración real, de un servidor completo, en un entorno de prueba, midiendo el tiempo real que tarda.
+      <br><br>
+      <strong>En la mayoría de empresas que he auditado, la respuesta es la misma: nunca, o hace tanto tiempo que nadie lo recuerda.</strong>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- BLOQUE 2 -->
+  <div class="block">
+    <div class="block-label">RTO y RPO</div>
+    <div class="block-title">En papel y en producción</div>
+
+    <div class="quote-block">
+      <div class="quote-text">
+        &ldquo;El RTO documentado era de 4 horas.<br>
+        La realidad fueron 48.&rdquo;
+      </div>
+      <div class="quote-attr">&mdash; Lo que descubrieron cuando activaron el plan de recuperación</div>
+    </div>
+
+    <div class="block-text">
+      El RTO y el RPO aparecen en todos los planes de continuidad. Lo que rara vez aparece es cómo se calcularon.
+      <br><br>
+      En la mayoría de los casos se calculan sobre el papel, basándose en estimaciones teóricas. Nadie los ha medido en una prueba real.
+      <br><br>
+      Y cuando llega el incidente real — el ransomware, el fallo de almacenamiento, el error humano — descubres que los tiempos documentados no tienen nada que ver con la realidad.
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- BLOQUE 3 -->
+  <div class="block">
+    <div class="block-label">Errores frecuentes</div>
+    <div class="block-title">Los que siguen apareciendo</div>
+
+    <table class="tension" style="margin-top:20px;">
+      <tr>
+        <td class="tension-who">Red</td>
+        <td class="tension-says">Repositorio de backup en el mismo segmento que producción. Cuando el ransomware cifra producción, también cifra el backup.</td>
+      </tr>
+      <tr>
+        <td class="tension-who">Offsite</td>
+        <td class="tension-says">Sin copias offsite ni air-gap. Todo en el mismo CPD. Un incendio o corte de luz lo pierde todo.</td>
+      </tr>
+      <tr>
+        <td class="tension-who">Inmutabilidad</td>
+        <td class="tension-says">Backups que pueden ser borrados o cifrados por el mismo atacante que comprometió los sistemas.</td>
+      </tr>
+      <tr>
+        <td class="tension-who">Pruebas</td>
+        <td class="tension-says">Sin restauraciones documentadas. Si el proceso no se ha ejecutado y validado, no existe.</td>
+      </tr>
+      <tr class="hi-row">
+        <td class="tension-who">Personas</td>
+        <td class="tension-says"><span class="hi">Sin plan de escalado humano. ¿Quién ejecuta la recuperación si el técnico que diseñó el sistema no está disponible?</span></td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- BLOQUE 4 -->
+  <div class="block">
+    <div class="block-label">Qué deberías hacer</div>
+    <div class="block-title">La estrategia que funciona</div>
+    <div class="block-text">
+      <strong>Pruebas de restauración reales</strong>, al menos trimestrales, documentadas con tiempos reales y resultado. No "hemos comprobado que el backup existe" — restauración completa de sistemas críticos.
+      <br><br>
+      <strong>Estrategia 3-2-1-1.</strong> Tres copias, en dos medios distintos, una offsite, una offline o inmutable. No es una recomendación nueva, pero sigue sin aplicarse en la mayoría de entornos que veo.
+      <br><br>
+      <strong>RTO y RPO medidos, no estimados.</strong> Si no los has probado, no los conoces.
+      <br><br>
+      <strong>Segmentación del repositorio.</strong> Debe estar aislado de la red de producción. Si no lo está, no tienes backup — tienes una copia que el atacante también puede alcanzar.
+      <br><br>
+      <strong>Procedimientos ejecutables por más de una persona.</strong> El conocimiento crítico no puede depender de una sola persona.
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- BLOQUE 5 -->
+  <div class="block">
+    <div class="block-label">La pregunta correcta</div>
+    <div class="block-title">La que debería hacerse cualquier directivo</div>
+    <div class="block-text">
+      No es <em>«¿tenemos backup?»</em>
+      <br><br>
+      Es <em>«¿cuánto tardamos en recuperar este sistema si falla ahora mismo, y cómo lo sabemos?»</em>
+      <br><br>
+      Si no hay una respuesta concreta y basada en una prueba real, el backup es una ilusión de seguridad.
+      <br><br>
+      <strong>Y las ilusiones de seguridad son más peligrosas que no tener seguridad — porque dan una falsa sensación de control que impide tomar las decisiones correctas.</strong>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-block">
+    <div class="cta-headline">
+      ¿Sabes cuánto tardas<br>
+      <span>en recuperar de verdad?</span>
+    </div>
+    <div class="cta-sub">
+      Si no lo has probado, no lo sabes.<br>
+      <strong>Probarlo antes del incidente marca la diferencia.</strong>
+    </div>
+  </div>
+
+</div>
+
+<!-- FINAL DEL BODY -->
+<div id="footer-placeholder"></div>
+<script>
+    fetch('/includes/footer.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('footer-placeholder').innerHTML = data;
+        });
+</script>
+
+</div>
+</div>
+<a href="/articulos" class="home-btn">⌂ Home Artículos</a>
+</body>
+<script src="/js/global.js"></script>
+</html>

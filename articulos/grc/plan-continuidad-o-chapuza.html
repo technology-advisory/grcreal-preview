@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0">
+<title>Plan de continuidad o chapuza temporal · GRCreal</title>
+<meta name="description" content="En IT sabemos improvisar muy bien. Tan bien que a veces confundimos la improvisación con un plan. La diferencia entre un parche rápido y una solución de continuidad real.">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Plan de continuidad o chapuza temporal">
+<meta property="og:description" content="En IT sabemos improvisar muy bien. Tan bien que a veces confundimos la improvisación con un plan. La diferencia entre un parche rápido y una solución de continuidad real.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://grcreal.com/articulos/plan-continuidad-o-chapuza.html">
+<meta property="og:image" content="https://grcreal.com/grcreal.png">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="../../css/marca.css">
+<link rel="stylesheet" href="../../css/articles.css">
+<link rel="stylesheet" href="../../css/global.css">
+</head>
+<body class="article-page">
+<div class="card-wrapper">
+<div class="card">
+<div class="accent-bar"></div>
+<div class="header">
+  <div class="tag">IT · Infraestructura · Continuidad</div>
+  <div class="article-date">9 Diciembre 9999</div>
+  <div class="headline">
+    Plan de continuidad<br>
+    <span class="accent">o</span><br>
+    <span class="dim">chapuza</span><br>
+    <span class="accent">temporal?</span><br>
+  </div>
+  <p class="subline">En IT sabemos improvisar muy bien.<br><strong>Tan bien que a veces confundimos la improvisación con un plan.</strong></p>
+</div>
+<div class="body">
+
+  <div class="block">
+    <div class="block-label">El problema de fondo</div>
+    <div class="block-title">IT resuelve. Eso es el problema.</div>
+    <div class="block-text">
+      Los equipos de IT son buenos resolviendo problemas. Cuando algo falla, buscan la solución más rápida posible para volver a la operativa. Es un instinto sano — y en un incidente agudo, es exactamente lo que se necesita.<br><br>
+      Pero ese mismo instinto tiene un efecto secundario peligroso: la solución temporal que nadie retira. El script que alguien escribió a las 2 de la mañana durante una crisis y que tres años después sigue en producción. La VM que se levantó "mientras tanto" y se convirtió en infraestructura permanente. El acceso VPN que se abrió de emergencia para un proveedor y nunca se cerró.<br><br>
+      <strong>La chapuza temporal no es un fallo de IT. Es una consecuencia natural de priorizar la disponibilidad inmediata sobre la solidez estructural. El problema es cuando la organización — o el propio equipo de IT — confunde esa chapuza con un plan de continuidad.</strong>
+    </div>
+  </div>
+  <div class="divider"></div>
+
+  <div class="block">
+    <div class="block-label">Cómo se distinguen</div>
+    <div class="block-title">La prueba del papel y la prueba del fuego</div>
+    <div class="block-text">
+      Un plan de continuidad real tiene dos características que la chapuza temporal no tiene:<br><br>
+      <strong>Está documentado antes del incidente, no reconstruido después.</strong> La chapuza existe porque alguien resolvió un problema sin tiempo para documentar. El plan existe porque alguien pensó en el escenario de fallo antes de que ocurriera y decidió cómo responder. La diferencia no es técnica — es temporal. Una es reactiva, la otra es proactiva.<br><br>
+      <strong>Ha sido probado deliberadamente.</strong> La chapuza se prueba en el peor momento posible: cuando el sistema real ha fallado y el negocio está parado. El plan se prueba en condiciones controladas, con tiempo, con el equipo preparado, y con margen para descubrir que algo no funciona sin que cueste dinero real.<br><br>
+      Hay una pregunta sencilla para distinguirlos: ¿si el técnico que implementó esto no está disponible mañana, puede otra persona ejecutarlo siguiendo instrucciones escritas?<br><br>
+      <strong>Si la respuesta es no — o "habría que preguntarle a Javi" — no es un plan. Es conocimiento tribal con fecha de caducidad.</strong>
+    </div>
+  </div>
+  <div class="divider"></div>
+
+  <div class="block">
+    <div class="block-label">Un ejemplo concreto</div>
+    <div class="block-title">El failover de Azure que no era un failover</div>
+    <div class="block-text">
+      Una empresa con infraestructura híbrida: servidores on-premise para sistemas legacy y Azure para las aplicaciones más modernas. El equipo de IT había configurado Azure Site Recovery para replicar las VMs críticas. En el dashboard de Azure, todo verde. Replicación activa, RPO dentro del objetivo, sin alertas.<br><br>
+      Cuando les pregunté por su plan de continuidad, me enseñaron la consola de ASR. "Si los servidores caen, hacemos failover a Azure y en dos horas estamos operativos."<br><br>
+      Entonces pregunté: ¿habéis hecho alguna vez un failover de prueba? No. ¿Sabéis cuánto tiempo tarda realmente en completarse el failover con la carga de producción actual? No. ¿Las aplicaciones legacy on-premise que dependen de esas VMs saben comunicarse con las réplicas en Azure cuando están en failover? Silencio.<br><br>
+      El problema real era que la red on-premise y la red de failover en Azure no compartían el mismo esquema de direccionamiento. En un failover real, las aplicaciones legacy habrían intentado conectar a IPs que ya no existían. El tiempo de recuperación estimado "de dos horas" no incluía el tiempo de diagnóstico y reconfiguración de red — que nadie había calculado porque nadie había probado el escenario completo.<br><br>
+      <strong>Azure Site Recovery estaba correctamente configurado. El plan de continuidad no existía. Son dos cosas distintas.</strong>
+    </div>
+  </div>
+  <div class="divider"></div>
+
+  <div class="block">
+    <div class="block-label">Otro patrón frecuente</div>
+    <div class="block-title">El backup en GCP que nadie había restaurado</div>
+    <div class="block-text">
+      Otro caso: una empresa con backups automáticos a Google Cloud Storage. Política de retención configurada, versioning activado, alertas de fallo por email. Aparentemente impecable.<br><br>
+      Lo que nadie había hecho nunca: restaurar. No una restauración de producción — ni siquiera una prueba en un entorno aislado. El equipo asumía que si el backup existía y no había alertas de error, la restauración funcionaría.<br><br>
+      El día que necesitaron restaurar una base de datos crítica tras una migración fallida descubrieron que el proceso de restauración desde GCS a su entorno on-premise tardaba entre 6 y 9 horas por el volumen de datos — no las 2 horas que figuraban en su "plan". Además, el script de restauración había sido escrito para una versión anterior del motor de base de datos. Funcionó, pero con intervención manual que nadie había documentado.<br><br>
+      <strong>El backup era real. El plan de recuperación era ficción. Y la diferencia se midió en horas de producción perdida y en un equipo trabajando de madrugada para resolver algo que debería haber sido un procedimiento rutinario.</strong>
+    </div>
+  </div>
+  <div class="divider"></div>
+
+  <div class="block">
+    <div class="block-label">La conversación que hay que tener</div>
+    <div class="block-title">Lo que IT necesita de la organización</div>
+    <div class="block-text">
+      IT puede implementar la mejor arquitectura de recuperación del mundo — y seguir sin tener un plan de continuidad si la organización no ha hecho su parte.<br><br>
+      Porque un plan de continuidad técnico necesita respuestas que IT no puede dar solo: ¿qué sistema recuperamos primero si no podemos recuperar todo a la vez? ¿Cuánto tiempo puede estar caída la plataforma de ventas antes de que el impacto sea inaceptable para el negocio? ¿Quién autoriza gastar en capacidad de cómputo adicional en Azure durante una crisis si el presupuesto estándar no lo cubre?<br><br>
+      Esas respuestas vienen del negocio, no de IT. Y sin ellas, lo que IT construye — aunque técnicamente sea excelente — es infraestructura de recuperación sin contexto de prioridades. Cuando llegue la crisis, alguien tomará esas decisiones improvisando bajo presión. Que es exactamente lo que el plan debería evitar.<br><br>
+      <strong>La chapuza temporal no siempre es culpa de IT. A veces es la consecuencia de que nadie por encima de IT hizo las preguntas correctas a tiempo.</strong>
+    </div>
+  </div>
+  <div class="divider"></div>
+
+  <div class="block">
+    <div class="block-label">El criterio práctico</div>
+    <div class="block-title">Cinco señales de que tienes una chapuza, no un plan</div>
+    <div class="block-text">
+      <strong>No hay fecha de la última prueba.</strong> Si no puedes decir cuándo fue la última vez que probaste la recuperación completa — no solo el backup, sino el proceso entero hasta tener el servicio operativo — no tienes un plan probado.<br><br>
+      <strong>El procedimiento vive en la cabeza de alguien.</strong> Si el equipo sabe cómo hacerlo pero no está escrito de forma que otro pueda ejecutarlo, es conocimiento personal, no un procedimiento de continuidad.<br><br>
+      <strong>El RTO declarado nunca ha sido medido.</strong> "Dos horas" escritas en un documento sin una prueba que lo respalde es una estimación optimista, no un objetivo validado.<br><br>
+      <strong>La arquitectura de recuperación no se actualiza cuando cambia la infraestructura.</strong> Si en los últimos 12 meses has migrado servicios a cloud, cambiado proveedores o añadido sistemas y el plan de recuperación no refleja esos cambios, el plan describe una infraestructura que ya no existe.<br><br>
+      <strong>Nadie fuera de IT sabe que existe ni qué implica activarlo.</strong> Un plan de continuidad que solo conoce IT es un plan de recuperación técnica, no de continuidad de negocio. Son cosas distintas.<br><br>
+      <strong>Si reconoces tres o más de estas señales, el trabajo pendiente no es técnico. Es de proceso.</strong>
+    </div>
+  </div>
+
+  <div class="cta-block">
+    <div class="cta-headline">La diferencia entre un plan y una chapuza<br><span>se descubre en el peor momento posible.</span></div>
+    <div class="cta-sub">O antes, deliberadamente, en una prueba controlada.<br><strong>Una de las dos opciones es mucho más barata.</strong></div>
+  </div>
+</div>
+
+<!-- FINAL DEL BODY -->
+<div id="footer-placeholder"></div>
+<script>
+    fetch('/includes/footer.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('footer-placeholder').innerHTML = data;
+        });
+</script>
+
+</div>
+</div>
+<a href="/articulos" class="home-btn">⌂ Home Artículos</a>
+</body>
+<script src="/js/global.js"></script>
+</html>

@@ -1,0 +1,625 @@
+[
+  {
+    "id": 1,
+    "cat": "grc",
+    "meta": "GRC · Cumplimiento",
+    "title": "Cumplir no significa estar preparado",
+    "date": "26 Abril 2026",
+    "desc": "Certificado no es sinónimo de protegido.",
+    "url": "grc/cumplir-no-es-estar-preparado.html",
+    "published": true
+  },
+  {
+    "id": 2,
+    "cat": "vciso",
+    "meta": "vCISO · Estrategia",
+    "title": "vCISO: qué es y cuándo lo necesitas",
+    "date": "24 Abril 2026",
+    "desc": "Dirección de seguridad sin CISO a jornada completa.",
+    "url": "vciso/vciso-que-es.html",
+    "published": true
+  },
+  {
+    "id": 3,
+    "cat": "tecnico",
+    "meta": "Backup · Continuidad",
+    "title": "Backup no es recuperación",
+    "date": "24 Abril 2026",
+    "desc": "El error que sigue costando millones.",
+    "url": "tecnico/backup-no-es-recuperacion.html",
+    "published": true
+  },
+  {
+    "id": 4,
+    "cat": "grc",
+    "meta": "GRC · Gobierno",
+    "title": "El mayor fallo en ciberseguridad no es técnico",
+    "date": "24 Abril 2026",
+    "desc": "No falla la tecnología. Falla el gobierno.",
+    "url": "grc/el-fallo-es-de-gobierno.html",
+    "published": true
+  },
+  {
+    "id": 5,
+    "cat": "ens",
+    "meta": "ENS · Auditoría",
+    "title": "Auditoría ENS: lo que nadie te cuenta",
+    "date": "24 Abril 2026",
+    "desc": "El ENS es más exigente de lo que parece.",
+    "url": "ens/auditoria-ens.html",
+    "published": true
+  },
+  {
+    "id": 6,
+    "cat": "ai",
+    "meta": "AI Act · Compliance",
+    "title": "El reloj corre y muchas empresas aún duermen",
+    "date": "23 Abril 2026",
+    "desc": "La IA ya está. La gobernanza no.",
+    "url": "ai/aiact.html",
+    "published": true
+  },
+  {
+    "id": 7,
+    "cat": "vciso",
+    "meta": "vCISO · Estrategia",
+    "title": "Hay empresas que no ven el riesgo",
+    "date": "24 Abril 2026",
+    "desc": "Dos realidades, mismo problema.",
+    "url": "vciso/vciso-dos-realidades.html",
+    "published": true
+  },
+  {
+    "id": 8,
+    "cat": "grc",
+    "meta": "GRC · Riesgos",
+    "title": "El análisis de riesgos que nadie lee",
+    "date": "24 Abril 2026",
+    "desc": "El documento más importante… ignorado.",
+    "url": "grc/analisis-de-riesgos-util.html",
+    "published": true
+  },
+  {
+    "id": 9,
+    "cat": "nis2",
+    "meta": "NIS2 · Cumplimiento",
+    "title": "NIS2: quién aplica",
+    "date": "24 Abril 2026",
+    "desc": "Muchas empresas no saben que les aplica.",
+    "url": "nis2/nis2-quien-aplica.html",
+    "published": true
+  },
+  {
+    "id": 10,
+    "cat": "tecnico",
+    "meta": "Red · Arquitectura",
+    "title": "Segmentación de red real",
+    "date": "24 Abril 2026",
+    "desc": "VLANs no es seguridad.",
+    "url": "tecnico/segmentacion-red-real.html",
+    "published": true
+  },
+  {
+    "id": 11,
+    "cat": "tecnico",
+    "meta": "Active Directory · Identidad",
+    "title": "Active Directory: el objetivo que nadie protege bien",
+    "date": "24 Abril 2026",
+    "desc": "Quien controla el AD controla todo.",
+    "url": "tecnico/active-directory-seguridad.html",
+    "published": true
+  },
+  {
+    "id": 12,
+    "cat": "tecnico",
+    "meta": "Zero Trust · Arquitectura",
+    "title": "Zero Trust en on-prem: más allá del marketing",
+    "date": "24 Abril 2026",
+    "desc": "No es cloud. No es producto. Es modelo.",
+    "url": "tecnico/zero-trust-on-prem.html",
+    "published": true
+  },
+  {
+    "id": 13,
+    "cat": "iso22301",
+    "meta": "Continuidad · RTO · RPO",
+    "title": "RTO y RPO: dos siglas que salvan empresas o las hunden",
+    "date": "21 Abril 2026",
+    "desc": "En la mayoría, son estimaciones. No mediciones.",
+    "url": "iso22301/rto-rpo-realidad.html",
+    "published": true
+  },
+  {
+    "id": 14,
+    "cat": "grc",
+    "meta": "Gobierno · Organización",
+    "title": "Por qué IT no puede ser responsable de la seguridad",
+    "date": "24 Abril 2026",
+    "desc": "No es un problema técnico. Es estructural.",
+    "url": "grc/it-no-es-responsable-seguridad.html",
+    "published": true
+  },
+  {
+    "id": 15,
+    "cat": "vciso",
+    "meta": "Estrategia · Dirección",
+    "title": "Ciberseguridad para el consejo: cómo hablar su idioma",
+    "date": "24 Abril 2026",
+    "desc": "El consejo no necesita firewalls.",
+    "url": "vciso/ciberseguridad-consejo-administracion.html",
+    "published": true
+  },
+  {
+    "id": 16,
+    "cat": "tecnico",
+    "meta": "Arquitectura · Security by Design",
+    "title": "Security by Design: la seguridad no puede ser un parche",
+    "date": "24 Abril 2026",
+    "desc": "Diseñar seguridad desde el inicio cambia todo.",
+    "url": "tecnico/security-by-design.html",
+    "published": true
+  },
+  {
+    "id": 17,
+    "cat": "tecnico",
+    "meta": "Incidentes · Respuesta",
+    "title": "El incidente ocurrió. ¿Y ahora qué?",
+    "date": "25 Abril 2026",
+    "desc": "Las primeras horas son críticas.",
+    "url": "tecnico/el-incidente-ocurrio.html",
+    "published": true
+  },
+  {
+    "id": 18,
+    "cat": "iso22301",
+    "meta": "ISO 22301 · Auditoría",
+    "title": "Qué revisa un auditor de continuidad de negocio",
+    "date": "25 Abril 2026",
+    "desc": "Todo lo que te van a pedir y por qué importa.",
+    "url": "iso22301/auditoria-continuidad-que-revisa.html",
+    "published": true
+  },
+  {
+    "id": 19,
+    "cat": "iso42001",
+    "meta": "ISO 42001 · Gobernanza IA",
+    "title": "ISO 42001: gobernar la IA no es opcional. Es Urgente",
+    "date": "25 Abril 2026",
+    "desc": "La IA ya está en tu organización.",
+    "url": "iso42001/iso42001-gestion-ia.html",
+    "published": true
+  },
+  {
+    "id": 20,
+    "cat": "grc",
+    "meta": "ISO 27001 · GRC",
+    "title": "La Declaración de Aplicabilidad: el documento más malinterpretado",
+    "date": "26 Abril 2026",
+    "desc": "Es el documento central del SGSI.",
+    "url": "grc/iso27001-declaracion-aplicabilidad.html",
+    "published": true
+  },
+  {
+    "id": 21,
+    "cat": "iso27001",
+    "meta": "ISO 27001 · Auditoría",
+    "title": "Auditoría ISO 27001: qué pasa en el Stage 1 y en el Stage 2",
+    "date": "27 Abril 2026",
+    "desc": "Muchas organizaciones llegan a la auditoría sin saber qué va a pasar.",
+    "url": "iso27001/iso27001-auditoria-stage1-stage2.html",
+    "published": true
+  },
+  {
+    "id": 22,
+    "cat": "iso27001",
+    "meta": "ISO 27001 · GRC",
+    "title": "ISO 27001: conseguir el certificado es lo fácil — mantenerlo es lo difícil",
+    "date": "26 Abril 2026",
+    "desc": "El SGSI debe mantenerse vivo cada día.",
+    "url": "iso27001/iso27001-mantenimiento-sgsi.html",
+    "published": true
+  },
+  {
+    "id": 23,
+    "cat": "iso42001",
+    "meta": "ISO 42001 · AI Act",
+    "title": "ISO 42001 y AI Act: no son lo mismo y se necesitan los dos",
+    "date": "26 Abril 2026",
+    "desc": "Son complementarios, no equivalentes.",
+    "url": "iso42001/iso42001-ai-act-diferencias.html",
+    "published": true
+  },
+  {
+    "id": 24,
+    "cat": "iso42001",
+    "meta": "ISO 42001 · Gobernanza IA",
+    "title": "El inventario de sistemas de IA: el primer paso que nadie da",
+    "date": "27 Abril 2026",
+    "desc": "Antes de gobernar la IA, hay que saber qué IA se usa.",
+    "url": "iso42001/iso42001-inventario-sistemas-ia.html",
+    "published": true
+  },
+  {
+    "id": 25,
+    "cat": "iso42001",
+    "meta": "ISO 42001 · Ética IA",
+    "title": "Sesgos en la IA empresarial: el riesgo que nadie mide",
+    "date": "27 Abril 2026",
+    "desc": "Los sistemas de IA pueden discriminar sin que nadie lo haya diseñado así.",
+    "url": "iso42001/iso42001-sesgos-ia-empresas.html",
+    "published": true
+  },
+  {
+    "id": 26,
+    "cat": "grc",
+    "meta": "ENS · ISO 27001",
+    "title": "ENS vs ISO 27001: parecidos pero no iguales",
+    "date": "27 Abril 2026",
+    "desc": "Comparten filosofía pero tienen diferencias importantes.",
+    "url": "grc/ens-vs-iso27001-diferencias.html",
+    "published": true
+  },
+  {
+    "id": 27,
+    "cat": "ens",
+    "meta": "ENS · Auditoría",
+    "title": "Las medidas ENS que más fallan en auditoría",
+    "date": "27 Abril 2026",
+    "desc": "Siempre son las mismas.",
+    "url": "ens/ens-medidas-seguridad-criticas.html",
+    "published": true
+  },
+  {
+    "id": 28,
+    "cat": "ens",
+    "meta": "ENS · Proveedores",
+    "title": "ENS para empresas privadas: cuándo os aplica y qué implica",
+    "date": "27 Abril 2026",
+    "desc": "El ENS no es solo para la Administración Pública.",
+    "url": "ens/ens-proveedores-privados.html",
+    "published": true
+  },
+  {
+    "id": 29,
+    "cat": "nis2",
+    "meta": "NIS2 · Incidentes",
+    "title": "NIS2 y la notificación de incidentes: 24 horas que no perdonan",
+    "date": "27 Abril 2026",
+    "desc": "Sin el proceso preparado, es imposible cumplir el plazo.",
+    "url": "nis2/nis2-notificacion-incidentes.html",
+    "published": true
+  },
+  {
+    "id": 30,
+    "cat": "tecnico",
+    "meta": "Ransomware · Defensa",
+    "title": "Ransomware: la defensa que casi nadie tiene",
+    "date": "28 Abril 2026",
+    "desc": "No es si te atacan. Es si puedes seguir operando.",
+    "url": "tecnico/ransomware-defensa-real.html",
+    "published": true
+  },
+  {
+    "id": 31,
+    "cat": "tecnico",
+    "meta": "Phishing · Amenazas",
+    "title": "Phishing 2026: ya no es lo que crees",
+    "date": "5 Mayo 2026",
+    "desc": "Los ataques han cambiado. Tus controles no.",
+    "url": "tecnico/phishing-2026.html",
+    "published": true
+  },
+  {
+    "id": 32,
+    "cat": "grc",
+    "meta": "RGPD · Compliance",
+    "title": "RGPD en la práctica",
+    "date": "5 Mayo 2026",
+    "desc": "Lo que el regulador realmente revisa.",
+    "url": "grc/rgpd-en-la-practica.html",
+    "published": true
+  },
+  {
+    "id": 33,
+    "cat": "iso45003",
+    "meta": "ISO 45003 · GRC · Personas",
+    "title": "El riesgo que no aparece en el firewall",
+    "date": "7 Mayo 2026",
+    "desc": "Riesgos psicosociales y ISO 45003:2021.",
+    "url": "iso45003/iso-45003-riesgos-psicosociales.html",
+    "published": true
+  },
+  {
+    "id": 34,
+    "cat": "ia",
+    "meta": "IA · RGPD · ISO 42001 · vCISO",
+    "title": "IA en despachos profesionales: productividad sí, pero con criterio",
+    "date": "12 Mayo 2026",
+    "desc": "Nadie habla de lo que pasa con los datos cuando pulsas 'enviar'.",
+    "url": "ia/ia-despachos-profesionales-rgpd-vciso.html",
+    "published": true
+  },
+  {
+    "id": 35,
+    "cat": "grc",
+    "meta": "Continuidad · Dirección",
+    "title": "¿Sabe dirección qué es un SGCN?",
+    "date": "13 Mayo 2026",
+    "desc": "La continuidad empieza arriba.",
+    "url": "grc/sgcn-comite-direccion.html",
+    "published": true
+  },
+  {
+    "id": 36,
+    "cat": "grc",
+    "meta": "Auditoría · ISO 27001",
+    "title": "Auditoría interna de seguridad",
+    "date": "13 Mayo 2026",
+    "desc": "Donde se ve la madurez real.",
+    "url": "grc/auditoria-interna-seguridad.html",
+    "published": true
+  },
+  {
+    "id": 37,
+    "cat": "grc",
+    "meta": "Dirección · Compliance",
+    "title": "Director, tú también eres responsable",
+    "date": "13 Mayo 2026",
+    "desc": "Delegar no te protege.",
+    "url": "grc/CEO_y_compliance.html",
+    "published": true
+  },
+  {
+    "id": 38,
+    "cat": "compliance",
+    "meta": "Compliance · Código de Conducta",
+    "title": "El código de conducta que firmas sin leer no sirve",
+    "date": "23 Abril 2025",
+    "desc": "50 páginas que nadie recuerda. El compliance de papel no previene nada.",
+    "url": "compliance/codigo_conducta.html",
+    "published": false
+  },
+  {
+    "id": 39,
+    "cat": "compliance",
+    "meta": "Compliance · Introducción",
+    "title": "Compliance: no es cosa de abogados (ni solo para grandes)",
+    "date": "23 Abril 2025",
+    "desc": "Cumplir la ley no es solo evitar multas.",
+    "url": "compliance/Compliance_para_principiantes.html",
+    "published": false
+  },
+  {
+    "id": 40,
+    "cat": "compliance",
+    "meta": "Compliance · PYME",
+    "title": "La PYME que no cumple: un riesgo evitable",
+    "date": "18 Mayo 2026",
+    "desc": "Pequeño no significa invisible.",
+    "url": "compliance/Compliance_para_PYMEs.html",
+    "published": true,
+    "badge": "Nuevo"
+  },
+  {
+    "id": 41,
+    "cat": "compliance",
+    "meta": "Compliance · PRL",
+    "title": "La LPRL no basta: lo que el inspector ya sabe",
+    "date": "23 Abril 2025",
+    "desc": "Los cascos y las señales ya no son suficientes.",
+    "url": "compliance/LPRL_compliance.html",
+    "published": false
+  },
+  {
+    "id": 42,
+    "cat": "ens",
+    "meta": "ENS · Borrado Seguro",
+    "title": "Borrado seguro en el ENS: una obligación que nadie cumple bien",
+    "date": "18 Mayo 2026",
+    "desc": "El borrado seguro es obligatorio en el ENS.",
+    "url": "ens/borrado-seguro-ens.html",
+    "published": true,
+    "badge": "Nuevo"
+  },
+  {
+    "id": 43,
+    "cat": "ens",
+    "meta": "ENS · Categorías",
+    "title": "Niveles y compromisos del ENS: Básico, Medio y Alto",
+    "date": "23 Abril 2025",
+    "desc": "El ENS tiene tres categorías con obligaciones muy distintas.",
+    "url": "ens/niveles-ens.html",
+    "published": false
+  },
+  {
+    "id": 44,
+    "cat": "ai",
+    "meta": "AI Act · Artículos",
+    "title": "Desglose del AI Act: Artículo 1",
+    "date": "9 Diciembre 9999",
+    "desc": "Análisis detallado del artículo 1 del Reglamento Europeo de IA.",
+    "url": "ai/aiact_art1.html",
+    "published": false
+  },
+  {
+    "id": 45,
+    "cat": "ai",
+    "meta": "AI Act · Artículos",
+    "title": "Desglose del AI Act: Artículo 2",
+    "date": "9 Diciembre 9999",
+    "desc": "Análisis detallado del artículo 2 del Reglamento Europeo de IA.",
+    "url": "ai/aiact_art2.html",
+    "published": false
+  },
+  {
+    "id": 46,
+    "cat": "ai",
+    "meta": "AI Act · Artículos",
+    "title": "Desglose del AI Act: Artículo 3",
+    "date": "9 Diciembre 9999",
+    "desc": "Análisis detallado del artículo 3 del Reglamento Europeo de IA.",
+    "url": "ai/aiact_art3.html",
+    "published": false
+  },
+  {
+    "id": 47,
+    "cat": "ai",
+    "meta": "AI Act · Artículos",
+    "title": "Desglose del AI Act: Artículo 4",
+    "date": "9 Diciembre 9999",
+    "desc": "Análisis detallado del artículo 4 del Reglamento Europeo de IA.",
+    "url": "ai/aiact_art4.html",
+    "published": false
+  },
+  {
+    "id": 48,
+    "cat": "ai",
+    "meta": "AI Act · Artículos",
+    "title": "Desglose del AI Act: Artículo 5",
+    "date": "9 Diciembre 9999",
+    "desc": "Análisis detallado del artículo 5 del Reglamento Europeo de IA.",
+    "url": "ai/aiact_art5.html",
+    "published": false
+  },
+  {
+    "id": 49,
+    "cat": "grc",
+    "meta": "GRC · Pymes",
+    "title": "GRC para pymes: ciberseguridad sin expertos internos",
+    "date": "18 Mayo 2026",
+    "desc": "Las pymes también tienen obligaciones de seguridad.",
+    "url": "grc/grc-pymes-sin-expertos.html",
+    "published": true,
+    "badge": "Nuevo"
+  },
+  {
+    "id": 50,
+    "cat": "grc",
+    "meta": "Continuidad · IT",
+    "title": "Plan de continuidad o chapuza temporal",
+    "date": "23 Abril 2025",
+    "desc": "En IT sabemos improvisar muy bien.",
+    "url": "grc/plan-continuidad-o-chapuza.html",
+    "published": false
+  },
+  {
+    "id": 51,
+    "cat": "grc",
+    "meta": "Continuidad · Normativa",
+    "title": "Sin Disaster Recovery no hay NIS2, ENS ni ISO 27001",
+    "date": "23 Abril 2025",
+    "desc": "La continuidad no es un módulo opcional del cumplimiento.",
+    "url": "grc/disaster-recovery-nis2-ens-iso27001.html",
+    "published": false
+  },
+  {
+    "id": 52,
+    "cat": "grc",
+    "meta": "Continuidad · Resiliencia",
+    "title": "El plan de continuidad que nadie ha probado",
+    "date": "23 Abril 2025",
+    "desc": "Tener un BCP y tener un BCP que funciona son dos cosas distintas.",
+    "url": "grc/plan-continuidad-probado.html",
+    "published": false
+  },
+  {
+    "id": 53,
+    "cat": "grc",
+    "meta": "ISO 22301 · Continuidad",
+    "title": "ISO 22301 vs BCP casero: las diferencias que importan",
+    "date": "23 Abril 2025",
+    "desc": "Muchas organizaciones tienen un plan de continuidad hecho internamente.",
+    "url": "grc/iso22301-vs-bcp-casero.html",
+    "published": false
+  },
+  {
+    "id": 54,
+    "cat": "grc",
+    "meta": "ISO 27001 · Cumplimiento",
+    "title": "ISO 27001: lo que nadie te explica antes de empezar",
+    "date": "23 Abril 2025",
+    "desc": "El certificado no es el objetivo. El control es el objetivo.",
+    "url": "grc/iso27001-lo-que-nadie-te-explica.html",
+    "published": false
+  },
+  {
+    "id": 55,
+    "cat": "grc",
+    "meta": "IA · Datos",
+    "title": "Datos de la IA: dónde van y por qué deberías preocuparte",
+    "date": "23 Abril 2025",
+    "desc": "Cuando usas una herramienta de IA, ¿sabes dónde se procesan tus datos?",
+    "url": "grc/datos-ia-ubicacion-tratamiento.html",
+    "published": false
+  },
+  {
+    "id": 56,
+    "cat": "nis2",
+    "meta": "NIS2 · Medidas Técnicas",
+    "title": "NIS2 Art. 21: las medidas técnicas que el regulador espera ver",
+    "date": "23 Abril 2025",
+    "desc": "No basta con decir que tenéis medidas de seguridad.",
+    "url": "nis2/nis2-medidas-tecnicas-articulo21.html",
+    "published": false
+  },
+  {
+    "id": 57,
+    "cat": "nis2",
+    "meta": "NIS2 · Regulación",
+    "title": "NIS2: entidades esenciales vs importantes",
+    "date": "23 Abril 2025",
+    "desc": "No todas las entidades sujetas a NIS2 tienen las mismas obligaciones.",
+    "url": "nis2/nis2-entidades-esenciales-importantes.html",
+    "published": false
+  },
+  {
+    "id": 58,
+    "cat": "tecnico",
+    "meta": "Cloud · Arquitectura",
+    "title": "Cloud y seguridad: la responsabilidad compartida",
+    "date": "23 Abril 2025",
+    "desc": "Ir a la nube no significa que el proveedor se encarga de la seguridad.",
+    "url": "tecnico/cloud-seguridad-responsabilidad-compartida.html",
+    "published": false
+  },
+  {
+    "id": 59,
+    "cat": "tecnico",
+    "meta": "Documentación · Infraestructura",
+    "title": "Documentación técnica: el conocimiento que vive en una sola cabeza",
+    "date": "23 Abril 2025",
+    "desc": "El conocimiento crítico vive en la cabeza de una o dos personas.",
+    "url": "tecnico/documentacion-tecnica-infraestructura.html",
+    "published": false
+  },
+  {
+    "id": 60,
+    "cat": "tecnico",
+    "meta": "Identidad · IAM",
+    "title": "Gestión de identidades: el control que más se descuida",
+    "date": "23 Abril 2025",
+    "desc": "La identidad es el nuevo perímetro.",
+    "url": "tecnico/gestion-identidades.html",
+    "published": false
+  },
+  {
+    "id": 61,
+    "cat": "tecnico",
+    "meta": "Windows · Hardening",
+    "title": "Hardening en Windows: GPO no es suficiente",
+    "date": "23 Abril 2025",
+    "desc": "Tener GPOs aplicadas no significa tener hardening real.",
+    "url": "tecnico/hardening-windows-gpo.html",
+    "published": false
+  },
+  {
+    "id": 62,
+    "cat": "grc",
+    "meta": "",
+    "title": "",
+    "date": "9 Diciembre 9999",
+    "desc": "",
+    "url": "grc/dpo-delegado-proteccion-datos.html",
+    "published": false
+  }
+]

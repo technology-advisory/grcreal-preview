@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ISO 27001 Lead Implementer · GRCreal Academy</title>
+
+<meta name="description" content="Guia practica de ISO 27001 Lead Implementer. Aprende a implementar realmente un SGSI desde el GAP Analysis hasta la mejora continua.">
+
+<meta name="robots" content="index, follow">
+
+<meta property="og:title" content="ISO 27001 Lead Implementer · GRCreal Academy">
+<meta property="og:description" content="Implementacion real de ISO 27001. Sin teoria vacia. Sin compliance de PowerPoint.">
+<meta property="og:type" content="website">
+
+<link rel="stylesheet" href="../../css/marca.css">
+<link rel="icon" href="/favicon.ico" sizes="any">
+
+<style>
+
+/* ── HERO ── */
+
+.course-hero {
+padding: 48px 0 36px;
+border-bottom: 1px solid var(--border);
+margin-bottom: 40px;
+}
+
+.course-eyebrow {
+font-family: var(--mono);
+font-size: 10px;
+letter-spacing: .2em;
+text-transform: uppercase;
+color: var(--brand);
+margin-bottom: 14px;
+}
+
+.course-title {
+    font-size: 66px;
+    font-weight: bold;
+    line-height: 1.05;
+    color: var(--ink);
+    letter-spacing: -0.5px;
+    margin-bottom: 20px;
+}
+
+.course-title .accent {
+    color: var(--brand, #0077B5);
+}
+
+.course-desc {
+font-size: 16px;
+line-height: 1.85;
+color: var(--muted);
+max-width: 100%;
+margin-bottom: 28px;
+}
+
+.course-meta {
+display: flex;
+gap: 24px;
+flex-wrap: wrap;
+}
+
+.meta-item {
+display: flex;
+align-items: center;
+gap: 8px;
+font-family: var(--mono);
+font-size: 11px;
+letter-spacing: .1em;
+text-transform: uppercase;
+color: var(--muted);
+}
+
+.meta-dot {
+width: 6px;
+height: 6px;
+border-radius: 50%;
+background: var(--brand);
+flex-shrink: 0;
+}
+
+/* ── NAVIGATION PATH ── */
+
+.nav-path {
+display: flex;
+align-items: center;
+gap: 0;
+flex-wrap: wrap;
+margin-bottom: 48px;
+padding: 28px;
+background: var(--surface);
+border: 1px solid var(--border);
+overflow-x: auto;
+}
+
+.nav-step {
+display: flex;
+align-items: center;
+gap: 0;
+}
+
+.nav-step-label {
+font-family: var(--mono);
+font-size: 10px;
+letter-spacing: .14em;
+text-transform: uppercase;
+color: var(--muted);
+padding: 8px 16px;
+border: 1px solid var(--border);
+background: #fff;
+white-space: nowrap;
+}
+
+.nav-step-label.active {
+background: var(--brand);
+color: #fff;
+border-color: var(--brand);
+}
+
+.nav-step-label.cycle {
+background: var(--ink);
+color: #fff;
+border-color: var(--ink);
+}
+
+.nav-arrow {
+font-size: 14px;
+color: var(--muted);
+padding: 0 6px;
+}
+
+/* ── MODULE GRID ── */
+
+.module-section-title {
+font-family: var(--mono);
+font-size: 10px;
+letter-spacing: .2em;
+text-transform: uppercase;
+color: var(--muted);
+margin-bottom: 20px;
+padding-bottom: 12px;
+border-bottom: 1px solid var(--border);
+}
+
+.module-grid {
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+gap: 2px;
+background: var(--border);
+border: 1px solid var(--border);
+margin-bottom: 48px;
+}
+
+.module-card {
+background: #fff;
+padding: 28px 30px;
+text-decoration: none;
+display: flex;
+align-items: flex-start;
+gap: 20px;
+transition: all .2s ease;
+position: relative;
+}
+
+.module-card:hover {
+background: var(--brand-light);
+}
+
+.module-card:hover .module-arrow {
+transform: translateX(4px);
+color: var(--brand);
+}
+
+/* Estilo para módulos bloqueados */
+.module-card.locked {
+opacity: 0.7;
+cursor: not-allowed;
+background: #fafafa;
+}
+
+.module-card.locked:hover {
+background: #fafafa;
+}
+
+.module-card.locked .module-arrow {
+color: var(--ghost);
+transform: none;
+}
+
+.lock-badge {
+position: absolute;
+top: 12px;
+right: 16px;
+font-size: 11px;
+color: var(--ghost);
+font-family: var(--mono);
+}
+
+.locked-message {
+font-size: 11px;
+color: var(--brand);
+margin-top: 6px;
+font-family: var(--mono);
+letter-spacing: 0.5px;
+display: flex;
+align-items: center;
+gap: 4px;
+}
+
+
+
+.module-number {
+font-family: var(--mono);
+font-size: 11px;
+font-weight: 700;
+color: var(--brand);
+background: var(--brand-light);
+border: 1px solid rgba(0,119,181,0.15);
+width: 36px;
+height: 36px;
+display: flex;
+align-items: center;
+justify-content: center;
+flex-shrink: 0;
+}
+
+.module-card.locked .module-number {
+opacity: 0.5;
+}
+
+.module-content {
+flex: 1;
+}
+
+.module-tag {
+font-family: var(--mono);
+font-size: 9px;
+letter-spacing: .16em;
+text-transform: uppercase;
+color: var(--muted);
+margin-bottom: 6px;
+}
+
+.module-name {
+font-size: 15px;
+font-weight: 700;
+color: var(--ink);
+margin-bottom: 6px;
+line-height: 1.3;
+}
+
+.module-desc {
+font-size: 13px;
+line-height: 1.7;
+color: var(--muted);
+}
+
+.module-arrow {
+font-size: 16px;
+color: var(--muted);
+transition: all .2s ease;
+margin-top: 2px;
+}
+
+/* ── WHAT YOU LEARN ── */
+
+.learn-grid {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 16px;
+margin-bottom: 48px;
+}
+
+.learn-card {
+padding: 24px;
+border: 1px solid var(--border);
+background: var(--surface);
+}
+
+.learn-icon {
+font-size: 22px;
+margin-bottom: 12px;
+}
+
+.learn-title {
+font-size: 13px;
+font-weight: 700;
+color: var(--ink);
+margin-bottom: 8px;
+}
+
+.learn-text {
+font-size: 13px;
+line-height: 1.7;
+color: var(--muted);
+}
+
+/* ── DISCLAIMER ── */
+
+.disclaimer-box {
+padding: 24px 28px;
+border-left: 4px solid var(--ink);
+background: var(--surface);
+margin-bottom: 40px;
+}
+
+.disclaimer-box p {
+font-size: 13px;
+line-height: 1.8;
+color: var(--muted);
+margin: 0;
+}
+
+.disclaimer-box strong {
+color: var(--ink);
+}
+
+/* ── START CTA ── */
+
+.start-block {
+padding: 40px;
+background: var(--ink);
+color: #fff;
+display: flex;
+align-items: center;
+justify-content: space-between;
+gap: 32px;
+flex-wrap: wrap;
+margin-bottom: 0;
+}
+
+.start-text .start-title {
+font-size: 22px;
+font-weight: 700;
+margin-bottom: 8px;
+}
+
+.start-text .start-sub {
+font-size: 14px;
+opacity: .6;
+}
+
+.start-btn {
+display: inline-block;
+background: var(--brand);
+color: #fff;
+text-decoration: none;
+padding: 14px 32px;
+font-family: var(--mono);
+font-size: 11px;
+font-weight: 700;
+letter-spacing: .12em;
+text-transform: uppercase;
+transition: opacity .2s;
+white-space: nowrap;
+}
+
+.start-btn:hover {
+opacity: .85;
+}
+
+/* ── RESPONSIVE ── */
+
+@media(max-width: 720px) {
+
+.module-grid {
+grid-template-columns: 1fr;
+}
+
+.learn-grid {
+grid-template-columns: 1fr;
+}
+
+.start-block {
+flex-direction: column;
+text-align: center;
+}
+
+.nav-path {
+gap: 4px;
+}
+
+}
+
+/* Ampliar el ancho del card como en los módulos */
+.card-wrapper {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.card {
+    max-width: 100%;
+}
+
+/* Mejorar el grid de módulos */
+.module-grid {
+    gap: 16px;
+    background: transparent;
+    border: none;
+}
+
+.module-card {
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 24px;
+}
+
+/* Ajustar la ruta de auditoría */
+.nav-path {
+    justify-content: center;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="card-wrapper">
+<div class="card">
+
+<div class="accent-bar"></div>
+
+<!-- HERO -->
+
+<div class="header">
+
+<div class="course-hero">
+
+<div class="course-eyebrow">
+GRCreal Academy · ISO/IEC 27001
+</div>
+
+<div class="course-title">
+    Lead<br>
+    <span class="accent">Implementer</span>
+</div>
+
+<p class="course-desc">
+Como implementar realmente un Sistema de Gestion de Seguridad de la Informacion.
+Desde el GAP Analysis inicial hasta la operacion continua y la mejora medible.
+Sin teoria vacia. Sin compliance de PowerPoint.
+</p>
+
+<div class="course-meta">
+<div class="meta-item">
+<div class="meta-dot"></div>
+12 modulos
+</div>
+<div class="meta-item">
+<div class="meta-dot"></div>
+ISO/IEC 27001:2022
+</div>
+<div class="meta-item">
+<div class="meta-dot"></div>
+Enfoque operacional
+</div>
+<div class="meta-item">
+<div class="meta-dot"></div>
+Por Miguel Angel Carriazo · vCISO
+</div>
+</div>
+
+</div>
+
+</div>
+
+<div class="body">
+
+<!-- NAVIGATION PATH -->
+
+<div class="module-section-title">
+Ruta de implementacion
+</div>
+
+<div class="nav-path">
+
+<div class="nav-step">
+<div class="nav-step-label">Business Case</div>
+<div class="nav-arrow">→</div>
+</div>
+
+<div class="nav-step">
+<div class="nav-step-label">GAP Analysis</div>
+<div class="nav-arrow">→</div>
+</div>
+
+<div class="nav-step">
+<div class="nav-step-label cycle">PLAN</div>
+<div class="nav-arrow">→</div>
+</div>
+
+<div class="nav-step">
+<div class="nav-step-label cycle">DO</div>
+<div class="nav-arrow">→</div>
+</div>
+
+<div class="nav-step">
+<div class="nav-step-label cycle">CHECK</div>
+<div class="nav-arrow">→</div>
+</div>
+
+<div class="nav-step">
+<div class="nav-step-label cycle">ACT</div>
+</div>
+
+</div>
+
+<!-- MODULE GRID -->
+
+<div class="module-section-title">
+Modulos del curso
+</div>
+
+<div class="module-grid">
+
+<a href="modulo-1.html" class="module-card">
+<div class="module-number">01</div>
+<div class="module-content">
+<div class="module-tag">Fundamentos</div>
+<div class="module-name">Introduccion a ISO 27001</div>
+<div class="module-desc">CIA, SGSI real vs SGSI de papel, estructura de la norma y el error mas comun.</div>
+</div>
+<div class="module-arrow">→</div>
+</a>
+
+<a href="modulo-2.html" class="module-card">
+<div class="module-number">02</div>
+<div class="module-content">
+<div class="module-tag">Justificacion</div>
+<div class="module-name">Business Case</div>
+<div class="module-desc">Por que implementar ISO 27001. Como argumentarlo ante la direccion con datos reales.</div>
+</div>
+<div class="module-arrow">→</div>
+</a>
+
+<a href="modulo-3.html" class="module-card">
+<div class="module-number">03</div>
+<div class="module-content">
+<div class="module-tag">Diagnostico</div>
+<div class="module-name">GAP Analysis</div>
+<div class="module-desc">Como evaluar el punto de partida. Modelos de madurez y plan de accion realista.</div>
+</div>
+<div class="module-arrow">→</div>
+</a>
+
+<a href="modulo-4.html" class="module-card">
+<div class="module-number">04</div>
+<div class="module-content">
+<div class="module-tag">Clausula 4</div>
+<div class="module-name">Contexto de la Organizacion</div>
+<div class="module-desc">Partes interesadas, issues internos y externos, alcance del SGSI.</div>
+</div>
+<div class="module-arrow">→</div>
+</a>
+
+<a href="modulo-5.html" class="module-card">
+<div class="module-number">05</div>
+<div class="module-content">
+<div class="module-tag">Clausula 5</div>
+<div class="module-name">Liderazgo</div>
+<div class="module-desc">El papel de la alta direccion. Politica de seguridad. Roles y responsabilidades reales.</div>
+</div>
+<div class="module-arrow">→</div>
+</a>
+
+<a href="modulo-6.html" class="module-card">
+<div class="module-number">06</div>
+<div class="module-content">
+<div class="module-tag">Clausula 6</div>
+<div class="module-name">Planificacion</div>
+<div class="module-desc">Gestion de riesgos, SoA, objetivos de seguridad medibles.</div>
+</div>
+<div class="module-arrow">→</div>
+</a>
+
+<a href="modulo-7.html" class="module-card">
+<div class="module-number">07</div>
+<div class="module-content">
+<div class="module-tag">Clausula 7</div>
+<div class="module-name">Soporte</div>
+<div class="module-desc">Recursos, competencias, concienciacion, comunicacion, informacion documentada.</div>
+</div>
+<div class="module-arrow">→</div>
+</a>
+
+<a href="modulo-8.html" class="module-card">
+<div class="module-number">08</div>
+<div class="module-content">
+<div class="module-tag">Clausula 8</div>
+<div class="module-name">Operacion</div>
+<div class="module-desc">Controles en marcha. Gestion de cambios. Proveedores externos. Evaluacion operativa del riesgo.</div>
+</div>
+<div class="module-arrow">→</div>
+</a>
+
+<a href="modulo-9.html" class="module-card">
+<div class="module-number">09</div>
+<div class="module-content">
+<div class="module-tag">Clausula 9</div>
+<div class="module-name">Evaluacion del Desempeno</div>
+<div class="module-desc">Metricas, auditorias internas, revision por la direccion. Como medir lo que importa.</div>
+</div>
+<div class="module-arrow">→</div>
+</a>
+
+<a href="modulo-10.html" class="module-card">
+<div class="module-number">10</div>
+<div class="module-content">
+<div class="module-tag">Clausula 10</div>
+<div class="module-name">Mejora Continua</div>
+<div class="module-desc">No conformidades, acciones correctivas, y como hacer que el SGSI evolucione de verdad.</div>
+</div>
+<div class="module-arrow">→</div>
+</a>
+
+<!-- MODULO 11 · RESUMEN (BLOQUEADO) -->
+<div class="module-card locked">
+<div class="lock-badge">🔒</div>
+<div class="module-number">11</div>
+<div class="module-content">
+<div class="module-tag">Repaso</div>
+<div class="module-name">Resumen del Curso</div>
+<div class="module-desc">Tabla compacta, hilo conductor, errores tipicos, checklist final y lecciones clave.</div>
+<div class="locked-message">Completa los 10 módulos para acceder</div>
+</div>
+<div class="module-arrow">→</div>
+</div>
+
+<!-- MODULO 12 · CONSEJOS EXAMEN (BLOQUEADO) -->
+<div class="module-card locked">
+<div class="lock-badge">🔒</div>
+<div class="module-number">12</div>
+<div class="module-content">
+<div class="module-tag">Certificacion</div>
+<div class="module-name">Consejos para el Examen</div>
+<div class="module-desc">8 consejos practicos para superar la certificacion ISO 27001 Lead Implementer.</div>
+<div class="locked-message">Completa los 10 módulos para acceder</div>
+</div>
+<div class="module-arrow">→</div>
+</div>
+
+</div>
+
+<!-- QUE APRENDERAS -->
+
+<div class="module-section-title">
+Que vas a aprender
+</div>
+
+<div class="learn-grid">
+
+<div class="learn-card">
+<div class="learn-icon">⚙️</div>
+<div class="learn-title">Implementacion real</div>
+<div class="learn-text">No como aprobar un examen. Como construir un SGSI que funcione cuando llega un incidente real.</div>
+</div>
+
+<div class="learn-card">
+<div class="learn-icon">🔍</div>
+<div class="learn-title">Evidencias de auditoria</div>
+<div class="learn-text">Que documentacion necesitas realmente, cuales son obligatorias y cuales solo te complican la vida.</div>
+</div>
+
+<div class="learn-card">
+<div class="learn-icon">⚠️</div>
+<div class="learn-title">Errores tipicos</div>
+<div class="learn-text">Los patrones de fallo mas frecuentes: SGSI que nadie mantiene, alcances imposibles, controles sin riesgo.</div>
+</div>
+
+<div class="learn-card">
+<div class="learn-icon">📊</div>
+<div class="learn-title">Gestion de riesgos</div>
+<div class="learn-text">Metodologia practica. Como identificar, analizar y tratar riesgos de forma proporcional y sostenible.</div>
+</div>
+
+<div class="learn-card">
+<div class="learn-icon">📋</div>
+<div class="learn-title">SoA que tiene sentido</div>
+<div class="learn-text">Declaracion de Aplicabilidad como herramienta real, no como documento que solo existe para el auditor.</div>
+</div>
+
+<div class="learn-card">
+<div class="learn-icon">🔄</div>
+<div class="learn-title">Ciclo PDCA operativo</div>
+<div class="learn-text">Como hacer que Plan-Do-Check-Act sea una practica real y no un esquema en una presentacion.</div>
+</div>
+
+</div>
+
+<!-- DISCLAIMER -->
+
+<div class="disclaimer-box">
+<p>
+<strong>Nota sobre este contenido.</strong> Esta guia de estudio esta elaborada a partir de la experiencia directa en implementacion y auditoria ISO 27001 en entornos reales.
+No reproduce contenido de ningun material de terceros. Los conceptos, ejemplos y estructuras son de elaboracion propia.
+Para obtener la certificacion oficial necesitaras completar el examen de un organismo acreditado.
+Esta guia te ayudara a llegar preparado de verdad.
+</p>
+</div>
+
+<!-- START CTA -->
+
+<div class="start-block">
+<div class="start-text">
+<div class="start-title">Empieza por el principio.</div>
+<div class="start-sub">Modulo 1 · Introduccion a ISO 27001</div>
+</div>
+<a href="modulo-1.html" class="start-btn">
+Comenzar →
+</a>
+</div>
+
+</div>
+
+<!-- FOOTER -->
+
+<div class="footer">
+
+<div class="footer-inner">
+
+<div class="author-block">
+<div class="author-avatar">MA</div>
+<div>
+<div class="author-name">Miguel Angel Carriazo · <span>vCISO</span></div>
+<div class="author-title">Cybersecurity & Infrastructure Architect</div>
+</div>
+</div>
+
+<a href="https://www.linkedin.com/in/macarriazo/" target="_blank" class="li-btn">
+<svg class="li-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#0077B5">
+<path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+</svg>
+<div>
+<span class="li-main">"Merece la pena la experiencia."</span>
+<span class="li-sub">Hablemos en LinkedIn →</span>
+</div>
+</a>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+<a href="/academia/index.html" class="home-btn">⌂ Academia</a>
+
+</body>
+<script src="/js/modulo-check.js"></script>
+</html>

@@ -1,0 +1,83 @@
+{
+  "features": [
+    {
+      "icono": "🎯",
+      "titulo": "Enfoque operacional",
+      "texto": "No teoría académica. Escenarios que ocurren en auditorías reales."
+    },
+    {
+      "icono": "📋",
+      "titulo": "Errores típicos",
+      "texto": "Identificamos los fallos más comunes y cómo evitarlos."
+    },
+    {
+      "icono": "🔍",
+      "titulo": "Evidencias reales",
+      "texto": "Qué documentación necesitas y qué es solo ruido."
+    },
+    {
+      "icono": "🔄",
+      "titulo": "Mejora continua",
+      "texto": "Contenido actualizado con las últimas versiones normativas."
+    }
+  ],
+  "nota": {
+    "texto": "La mayoría de cursos preparan para aprobar exámenes.<br><br>GRCreal Academy busca algo diferente:<br><br><strong>entender cómo funcionan realmente estos marcos cuando llegan auditorías, incidentes y presión operacional.</strong><br><br>Porque cumplir no siempre significa estar preparado."
+  },
+  "hoja_ruta": {
+    "items": [
+      { "nombre": "ISO 27001 Lead Implementer", "descripcion": "12 módulos + resumen + examen", "estado": "activo" },
+      { "nombre": "ISO 27001 Lead Auditor", "descripcion": "Auditoría basada en ISO 19011 y casos reales", "estado": "proximo" },
+      { "nombre": "ISO 22301 Lead Auditor", "descripcion": "Continuidad de negocio y gestión de crisis", "estado": "proximo" },
+      { "nombre": "ISO 42001 AI Governance", "descripcion": "Gobierno de IA y relación con el AI Act", "estado": "proximo" }
+    ]
+  },
+  "cursos": [
+    {
+      "id": "iso27001-implementer",
+      "titulo": "ISO 27001<br>Lead Implementer",
+      "tag": "ISO/IEC 27001 · Implementación",
+      "descripcion": "Cómo implementar realmente un SGSI. Desde el GAP Analysis hasta la mejora continua: riesgos, alcance, políticas, objetivos, SoA, operación y evidencias reales de auditoría.",
+      "badges": ["ISMS", "Risk", "SoA", "Annex A", "PDCA"],
+      "enlace": "iso27001-lead-implementer/index.html",
+      "bloqueado": false,
+      "proximamente": false,
+      "estado": "activo"
+    },
+	{
+	  "id": "iso27001-auditor",
+	  "titulo": "ISO 27001<br>Lead Auditor",
+	  "tag": "ISO/IEC 27001 · Auditoría",
+	  "descripcion": "Auditoría ISO 27001 explicada desde la práctica. Cómo preparar auditorías, obtener evidencias, detectar no conformidades y evaluar controles más allá del simple checklist documental.",
+	  "badges": ["ISO 19011", "Audits", "Findings", "Evidence", "ISO 27005"],
+	  "enlace": "iso27001-lead-auditor/index.html",
+	  "bloqueado": false,
+	  "proximamente": false,
+	  "estado": "activo"
+	},
+    {
+      "id": "iso22301-auditor",
+      "titulo": "ISO 22301<br>Lead Auditor",
+      "tag": "ISO 22301 · Continuidad",
+      "descripcion": "Continuidad de negocio desde la realidad operacional. Planes, ejercicios, auditorías, resiliencia y errores que aparecen continuamente cuando los incidentes dejan de ser teoría.",
+      "badges": ["BCMS", "BIA", "RTO/RPO", "Crisis", "Resilience"],
+      "enlace": null,
+      "bloqueado": true,
+      "proximamente": true,
+      "estado": "proximo",
+      "mensaje_bloqueo": "Próximo lanzamiento"
+    },
+    {
+      "id": "iso42001-governance",
+      "titulo": "ISO 42001<br>AI Governance",
+      "tag": "ISO/IEC 42001 · IA",
+      "descripcion": "Gobierno de inteligencia artificial desde un enfoque operativo y regulatorio. Riesgos, supervisión humana, IA de alto riesgo, controles, cumplimiento y relación real con el AI Act europeo.",
+      "badges": ["AI Act", "AIMS", "Governance", "Risk", "Compliance"],
+      "enlace": null,
+      "bloqueado": true,
+      "proximamente": true,
+      "estado": "proximo",
+      "mensaje_bloqueo": "Próximo lanzamiento"
+    }
+  ]
+}

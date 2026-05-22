@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0">
+<title>Checklist DORA · GRCreal</title>
+<meta name="description" content="Checklist interactivo del Reglamento DORA (UE 2022/2554) para autoevaluación de resiliencia operativa digital. Sin registro ni almacenamiento de datos.">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Checklist DORA — Autoevaluación interactiva">
+<meta property="og:description" content="Checklist interactivo del Reglamento DORA con explicaciones por control. Gratuito y sin registro.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://grcreal.com/checklists/dora.html">
+<meta property="og:image" content="https://grcreal.com/grcreal.png">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="../css/marca.css">
+<link rel="stylesheet" href="../css/global.css">
+<link rel="stylesheet" href="../css/checklists.css">
+<script src="/js/jspdf.umd.min.js"></script>
+</head>
+<body>
+<div class="card-wrapper">
+<div class="card">
+  <div class="accent-bar"></div>
+  <div class="header">
+    <div class="tag">DORA · Reglamento UE 2022/2554 · Checklist Interactivo</div>
+    <div class="headline">Checklist<br><span class="accent">DORA</span><br><span class="dim">Autoevaluación</span></div>
+    <p class="subline">Requisitos de resiliencia operativa digital del sector financiero.<br><strong>Sin registro. Sin almacenamiento de datos.</strong></p>
+  </div>
+  <div class="body">
+    <div class="aviso">Este checklist cubre los requisitos principales del Reglamento DORA (UE 2022/2554). Pasa el ratón sobre el icono <strong>i</strong> para ver la explicación de cada control. Aplica a entidades financieras: bancos, aseguradoras, empresas de inversión, entidades de pago y proveedores TIC críticos designados. No sustituye a una auditoría formal.</div>
+
+    <!-- MODO TOGGLE -->
+    <div class="modo-card">
+      <div class="modo-header">
+        <span class="modo-icon">🔄</span>
+        <span class="modo-title">¿Cómo quieres ver este checklist?</span>
+      </div>
+      <div class="modo-desc">Elige el enfoque según tu realidad: <strong>Auditor</strong> (cumplimiento y evidencia) · <strong>Pyme</strong> (lenguaje claro y práctico)</div>
+      <div class="modo-buttons">
+        <button class="modo-btn active" id="btn-auditor" onclick="setModo('auditor')">🧾 Auditor</button>
+        <button class="modo-btn" id="btn-pyme" onclick="setModo('pyme')">🏢 Pyme</button>
+      </div>
+    </div>
+
+    <!-- PROGRESO -->
+    <div class="progress-bar-wrap">
+      <div class="progress-bar" id="progress-bar"></div>
+    </div>
+    <div class="progress-label" id="progress-label">0 de 0 controles evaluados (0%)</div>
+    <div class="progress-actions">
+      <span class="progress-status red" id="progress-status">🚀 0% evaluado — Marca cada control</span>
+      <div class="btn-wrapper-reset">
+        <button class="reset-btn" onclick="confirmReset()">↻ Reiniciar</button>
+        <span class="popup-reset">⚠️ Esta acción borrará todos los datos marcados</span>
+      </div>
+      <div class="btn-wrapper">
+        <button class="reset-btn pdf-btn" onclick="exportPDF()">⬇ Exportar PDF</button>
+        <span class="popup">⚠️ Completa todos los controles antes de exportar</span>
+      </div>
+    </div>
+
+    <!-- LEYENDA DE COLORES (madurez) -->
+    <div class="leyenda">
+      <div class="leyenda-item"><div class="leyenda-dot" style="background:#e74c3c"></div>0-30% Inicial</div>
+      <div class="leyenda-item"><div class="leyenda-dot" style="background:#e67e22"></div>30-60% Básica</div>
+      <div class="leyenda-item"><div class="leyenda-dot" style="background:#f1c40f"></div>60-80% Intermedia</div>
+      <div class="leyenda-item"><div class="leyenda-dot" style="background:#27ae60"></div>80-100% Avanzada</div>
+      <div class="leyenda-item leyenda-info"><div class="info-icon">i</div><span>= explicación</span></div>
+    </div>
+
+    <!-- CONTENEDOR DINÁMICO (se llena con JSON) -->
+    <div id="checklist-container"></div>
+
+    <!-- CTA -->
+    <div class="cta-block">
+      <div class="cta-headline">¿Necesitas implementar<br><span>DORA en tu entidad?</span></div>
+      <div class="cta-sub">DORA es más que un checklist — requiere un gap analysis formal, priorización de brechas y una hoja de ruta realista.</div>
+    </div>
+
+    <!-- FOOTER -->
+    <div id="footer-placeholder"></div>
+    <script>
+        fetch('/includes/footer-no-share.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            })
+            .catch(() => {
+                document.getElementById('footer-placeholder').innerHTML = '<div class="footer-mini">© GRCreal · Checklist DORA · Sin almacenamiento de datos</div>';
+            });
+    </script>
+
+  </div><!-- /.body -->
+</div><!-- /.card -->
+</div><!-- /.card-wrapper -->
+
+<script src="/js/checklists.js"></script>
+<script src="/js/pdf-export.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        cargarChecklist('/checklists/data/dora.json');
+    });
+    
+    function confirmReset() {
+        if (confirm('⚠️ ¿Estás seguro? Esta acción borrará TODOS los datos marcados. No podrás recuperarlos.')) {
+            resetAll();
+        }
+    }
+</script>
+<a href="/checklists" class="home-btn">⌂ Home Checklists</a>
+</body>
+</html>

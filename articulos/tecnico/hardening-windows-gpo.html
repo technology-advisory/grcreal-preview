@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0">
+<title>Hardening en Windows: GPO no es suficiente · GRCreal</title>
+<meta name="description" content="Tener GPOs aplicadas no significa tener hardening real. Los errores más frecuentes en el hardening de sistemas Windows y cómo hacerlo bien.">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Hardening en Windows: por qué tener GPO no significa estar seguro">
+<meta property="og:description" content="GPO no es hardening. Los errores más frecuentes en sistemas Windows y cómo hacerlo bien de verdad.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://grcreal.com/articulos/hardening-windows-gpo.html">
+<meta property="og:image" content="https://grcreal.com/grcreal.png">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="../../css/marca.css">
+<link rel="stylesheet" href="../../css/articles.css">
+<link rel="stylesheet" href="../../css/global.css">
+</head>
+<body class="article-page">
+<div class="card-wrapper">
+<div class="card">
+<div class="accent-bar"></div>
+
+<div class="header">
+  <div class="tag">Técnico · Windows · Hardening</div>
+  <div class="article-date">9 Diciembre 9999</div>
+  <div class="headline">
+    Hardening<br>
+    <span class="accent">en Windows:</span><br>
+    <span class="dim">GPO no es</span><br>
+    <span class="accent">suficiente</span>
+  </div>
+  <p class="subline">
+    «Tenemos GPOs aplicadas» no es lo mismo<br>
+    <strong>que tener hardening real.</strong>
+  </p>
+</div>
+
+<div class="body">
+
+  <div class="block">
+    <div class="block-label">El malentendido</div>
+    <div class="block-title">GPO ≠ Hardening</div>
+    <div class="block-text">
+      Las Políticas de Grupo — GPOs — son una herramienta poderosa para gestionar configuraciones en entornos Windows. Pero tener GPOs aplicadas no garantiza que los sistemas estén correctamente hardenizados.
+      <br><br>
+      El hardening es el proceso de reducir la superficie de ataque de un sistema eliminando funcionalidades innecesarias, deshabilitando protocolos inseguros, aplicando configuraciones seguras y limitando los privilegios al mínimo necesario.
+      <br><br>
+      Una GPO puede hacer todo eso — pero solo si está correctamente configurada, aplicada a los sistemas correctos y verificada periódicamente. Una GPO por defecto o mal configurada puede dar una falsa sensación de seguridad.
+      <br><br>
+      <strong>He auditado entornos donde había cientos de GPOs y los sistemas críticos tenían NTLM habilitado, SMBv1 activo y cuentas de administrador local con contraseñas idénticas en todos los equipos.</strong>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="block">
+    <div class="block-label">Los errores más frecuentes</div>
+    <div class="block-title">Lo que veo en entornos Windows reales</div>
+
+    <table class="tension" style="margin-top:20px;">
+      <tr>
+        <td class="tension-who">NTLM</td>
+        <td class="tension-says">NTLM habilitado cuando no es necesario. Permite ataques Pass-the-Hash y facilita el movimiento lateral. Deshabilitar NTLMv1 como mínimo, evaluar NTLMv2 según el entorno.</td>
+      </tr>
+      <tr>
+        <td class="tension-who">SMB</td>
+        <td class="tension-says">SMBv1 activo — el protocolo detrás de WannaCry, que se propagó en 2017 y sigue encontrándose activo en 2026. Sin excusa para tenerlo habilitado.</td>
+      </tr>
+      <tr>
+        <td class="tension-who">Admin local</td>
+        <td class="tension-says">Cuenta de administrador local activa con la misma contraseña en todos los equipos. Un atacante que la compromete en un equipo tiene acceso a todos. LAPS resuelve esto.</td>
+      </tr>
+      <tr>
+        <td class="tension-who">PowerShell</td>
+        <td class="tension-says">PowerShell sin restricciones en equipos de usuario. Execution Policy bypasseable trivialmente. Sin logging de comandos ejecutados.</td>
+      </tr>
+      <tr class="hi-row">
+        <td class="tension-who">Credential Guard</td>
+        <td class="tension-says"><span class="hi">Credential Guard deshabilitado o no configurado en sistemas que lo soportan. Deja las credenciales en memoria accesibles para herramientas como Mimikatz.</span></td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="block">
+    <div class="block-label">Los estándares de referencia</div>
+    <div class="block-title">De dónde partir</div>
+    <div class="block-text">
+      Microsoft Security Baselines — configuraciones recomendadas por Microsoft para cada versión de Windows, disponibles a través del Security Compliance Toolkit. Es el punto de partida más razonable para cualquier entorno Windows.
+      <br><br>
+      CIS Benchmarks — los benchmarks del Center for Internet Security para Windows son uno de los estándares más reconocidos internacionalmente. Disponibles en niveles L1 y L2 según el grado de restricción deseado.
+      <br><br>
+      STIG de la DISA — los Security Technical Implementation Guides del Departamento de Defensa americano. Muy exigentes, más orientados a entornos de alta seguridad, pero una referencia técnica excelente.
+      <br><br>
+      <strong>Ninguno de estos estándares se aplica directamente sin adaptación al entorno. El hardening siempre requiere balance entre seguridad y operatividad — y ese balance lo determina el riesgo real de cada organización.</strong>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="block">
+    <div class="block-label">Cómo verificarlo</div>
+    <div class="block-title">El hardening que no se verifica no existe</div>
+    <div class="block-text">
+      Aplicar una GPO de hardening y asumir que está funcionando correctamente es uno de los errores más frecuentes. Las GPOs pueden no aplicarse por conflictos, por excepciones mal gestionadas o por el orden de precedencia entre políticas.
+      <br><br>
+      La verificación debe hacerse con herramientas específicas que comprueben el estado real de la configuración en los sistemas — no solo que la GPO está vinculada.
+      <br><br>
+      Microsoft Policy Analyzer, herramientas de CIS como CIS-CAT, o scripts de auditoría propios pueden comparar la configuración real del sistema contra la línea base deseada e identificar desviaciones.
+      <br><br>
+      <strong>Y esa verificación debe repetirse cuando hay cambios en los sistemas, cuando se actualizan las políticas o periódicamente como parte del mantenimiento de seguridad.</strong>
+    </div>
+  </div>
+
+  <div class="cta-block">
+    <div class="cta-headline">
+      ¿Sabes qué configuraciones<br>
+      <span>tienen realmente tus sistemas Windows?</span>
+    </div>
+    <div class="cta-sub">
+      No lo que dice la GPO — lo que hay en producción.<br>
+      <strong>Verificarlo es el único camino.</strong>
+    </div>
+  </div>
+
+</div>
+
+<!-- FINAL DEL BODY -->
+<div id="footer-placeholder"></div>
+<script>
+    fetch('/includes/footer.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('footer-placeholder').innerHTML = data;
+        });
+</script>
+
+</div>
+</div>
+<a href="/articulos" class="home-btn">⌂ Home Artículos</a>
+</body>
+<script src="/js/global.js"></script>
+</html>

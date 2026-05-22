@@ -1,0 +1,329 @@
+{
+  "sections": [
+    {
+      "title": "A.5 · Controles Organizacionales",
+      "pymeTitle": "Organización y gestión — las reglas del juego",
+      "items": [
+        {
+          "code": "A.5.1",
+          "difficulty": "facil",
+          "text": "Políticas de seguridad de la información documentadas, aprobadas y comunicadas",
+          "pymeText": "¿Tienes un documento firmado por el jefe que diga cómo protegéis la información? ¿Lo conocen todos?",
+          "tooltip": "Debe existir una política de seguridad aprobada por la dirección, comunicada a todo el personal y revisada periódicamente. Evidencia: documento de política firmado, actas de comunicación, registro de revisión."
+        },
+        {
+          "code": "A.5.2",
+          "difficulty": "facil",
+          "text": "Roles y responsabilidades de seguridad definidos y asignados",
+          "pymeText": "¿Hay alguien responsable de la seguridad? ¿Sabe que lo es y qué implica?",
+          "tooltip": "Cada función de seguridad debe tener un responsable designado. Evidencia: organigrama de seguridad, descripciones de puesto con responsabilidades de seguridad, nombramiento del CISO o equivalente."
+        },
+        {
+          "code": "A.5.3",
+          "difficulty": "medio",
+          "text": "Segregación de funciones implementada en tareas críticas",
+          "pymeText": "¿Alguien puede hacer transferencias Y aprobarlas solo? ¿O siempre hay dos personas en tareas importantes?",
+          "tooltip": "Ninguna persona debe controlar un proceso crítico de principio a fin sin supervisión. Evidencia: matriz de roles y permisos, controles en sistemas que impidan acciones sin doble aprobación en tareas sensibles."
+        },
+        {
+          "code": "A.5.7",
+          "difficulty": "complejo",
+          "text": "Inteligencia de amenazas — recopilación y análisis de información",
+          "pymeText": "¿Estáis al tanto de los ciberataques que afectan a empresas como la vuestra? ¿Alguien os avisa?",
+          "tooltip": "La organización debe estar al tanto de las amenazas relevantes para su sector. Evidencia: suscripción a fuentes de threat intelligence (INCIBE, CCN-CERT, ISACs sectoriales), registros de análisis de amenazas."
+        },
+        {
+          "code": "A.5.8",
+          "difficulty": "medio",
+          "text": "Seguridad de la información integrada en la gestión de proyectos",
+          "pymeText": "Cuando lanzáis un proyecto nuevo, ¿alguien pregunta qué datos manejará y cómo los protegeréis?",
+          "tooltip": "Todo proyecto que afecte a sistemas de información debe incluir requisitos de seguridad desde el inicio. Evidencia: plantillas de proyecto con sección de seguridad, revisiones de seguridad en hitos del proyecto."
+        },
+        {
+          "code": "A.5.9",
+          "difficulty": "facil",
+          "text": "Inventario de activos de información actualizado",
+          "pymeText": "¿Tenéis una lista de todos los sistemas, ordenadores y aplicaciones que usáis? ¿Está actualizada?",
+          "tooltip": "Debe existir un inventario de todos los activos que procesan o almacenan información. Evidencia: listado actualizado con propietario, clasificación y ubicación de cada activo. Sin inventario no hay seguridad real."
+        },
+        {
+          "code": "A.5.12",
+          "difficulty": "facil",
+          "text": "Clasificación de la información según esquema definido",
+          "pymeText": "¿Sabéis qué información es confidencial y cuál no? ¿Los empleados lo saben también?",
+          "tooltip": "La información debe clasificarse por sensibilidad (ej. Pública, Interna, Confidencial, Secreta). Evidencia: política de clasificación, etiquetado de documentos y sistemas, formación al personal sobre cómo clasificar."
+        },
+        {
+          "code": "A.5.15",
+          "difficulty": "facil",
+          "text": "Control de acceso basado en necesidad de negocio y mínimo privilegio",
+          "pymeText": "¿Cada empleado accede solo a lo que necesita para su trabajo? ¿O todo el mundo puede ver todo?",
+          "tooltip": "Cada usuario accede solo a lo que necesita para su función. Evidencia: política de control de acceso, matriz de permisos por rol, evidencia de que no hay accesos genéricos o excesivos."
+        },
+        {
+          "code": "A.5.16",
+          "difficulty": "facil",
+          "text": "Gestión de identidades con ciclo de vida completo",
+          "pymeText": "Cuando alguien entra a trabajar, ¿le creáis los accesos? Y cuando se va, ¿los elimináis el mismo día?",
+          "tooltip": "Proceso formal para crear, modificar y eliminar cuentas de usuario. Evidencia: procedimiento de altas/bajas/modificaciones, registros de solicitudes, evidencia de que las cuentas se eliminan al cesar la relación laboral."
+        },
+        {
+          "code": "A.5.18",
+          "difficulty": "medio",
+          "text": "Derechos de acceso revisados y revocados cuando no son necesarios",
+          "pymeText": "¿Revisáis una vez al año si los accesos que tiene cada empleado siguen siendo los correctos?",
+          "tooltip": "Los accesos deben revisarse al menos anualmente. Evidencia: registros de revisiones periódicas firmados por responsables, evidencia de revocaciones realizadas tras cambios de rol o baja del personal."
+        },
+        {
+          "code": "A.5.19",
+          "difficulty": "medio",
+          "text": "Seguridad de la información en las relaciones con proveedores",
+          "pymeText": "¿Los proveedores que acceden a vuestros sistemas tienen obligaciones de seguridad firmadas?",
+          "tooltip": "Los proveedores que acceden a información deben cumplir requisitos de seguridad. Evidencia: política de proveedores, listado de proveedores con acceso a información, evaluación de riesgos por proveedor."
+        },
+        {
+          "code": "A.5.20",
+          "difficulty": "medio",
+          "text": "Requisitos de seguridad incluidos en contratos con proveedores",
+          "pymeText": "¿Vuestros contratos con proveedores incluyen cláusulas sobre cómo deben proteger vuestra información?",
+          "tooltip": "Los contratos con proveedores deben incluir cláusulas de seguridad, confidencialidad y derechos de auditoría. Evidencia: contratos revisados con cláusulas de seguridad, DPA firmados cuando aplica el RGPD."
+        },
+        {
+          "code": "A.5.24",
+          "difficulty": "medio",
+          "text": "Planificación y preparación de la gestión de incidentes",
+          "pymeText": "Si os hackean mañana, ¿sabéis qué hacer? ¿Quién decide, quién llama a quién, en qué orden?",
+          "tooltip": "Debe existir un procedimiento de respuesta a incidentes antes de que ocurran. Evidencia: plan de respuesta a incidentes documentado, roles definidos, canal de notificación interno, formación del equipo de respuesta."
+        },
+        {
+          "code": "A.5.26",
+          "difficulty": "medio",
+          "text": "Respuesta a incidentes de seguridad documentada y ejecutada",
+          "pymeText": "Cuando ocurre un problema de seguridad, ¿lo documentáis y aprendéis de él para que no se repita?",
+          "tooltip": "Los incidentes deben gestionarse, documentarse y analizarse para aprender. Evidencia: registro de incidentes, informes post-incidente, lecciones aprendidas aplicadas a mejoras del sistema."
+        },
+        {
+          "code": "A.5.29",
+          "difficulty": "complejo",
+          "text": "Seguridad de la información durante una interrupción",
+          "pymeText": "Si caen vuestros sistemas por un incidente, ¿tenéis un plan para seguir operando mientras los recuperáis?",
+          "tooltip": "La seguridad debe mantenerse durante una crisis o interrupción. Evidencia: plan de continuidad que contempla la seguridad de la información, procedimientos de emergencia con controles de seguridad integrados."
+        },
+        {
+          "code": "A.5.31",
+          "difficulty": "medio",
+          "text": "Requisitos legales, estatutarios y contractuales identificados",
+          "pymeText": "¿Sabéis qué leyes de seguridad y privacidad os aplican? ¿RGPD, ENS, NIS2, sector específico?",
+          "tooltip": "La organización debe conocer todas sus obligaciones legales en materia de información. Evidencia: registro de requisitos legales (RGPD, ENS, NIS2, sector específico), responsable de cumplimiento designado."
+        },
+        {
+          "code": "A.5.36",
+          "difficulty": "medio",
+          "text": "Cumplimiento de políticas verificado periódicamente",
+          "pymeText": "¿Comprobáis periódicamente que las normas de seguridad que tenéis escritas se cumplen de verdad?",
+          "tooltip": "No basta con tener políticas — hay que verificar que se cumplen. Evidencia: registros de auditorías internas, revisiones técnicas de configuraciones, informes de cumplimiento con plan de mejora."
+        }
+      ]
+    },
+    {
+      "title": "A.6 · Controles de Personas",
+      "pymeTitle": "Personas — quién hace qué y cómo",
+      "items": [
+        {
+          "code": "A.6.1",
+          "difficulty": "facil",
+          "text": "Verificación de antecedentes antes de la contratación",
+          "pymeText": "¿Cuando contratáis a alguien para un puesto con acceso a información sensible, verificáis sus referencias?",
+          "tooltip": "Para puestos con acceso a información sensible debe verificarse la identidad, historial laboral y en algunos casos antecedentes penales. Evidencia: proceso documentado de verificación, registros de comprobaciones realizadas."
+        },
+        {
+          "code": "A.6.2",
+          "difficulty": "facil",
+          "text": "Responsabilidades de seguridad en los contratos de empleo",
+          "pymeText": "¿Los contratos de trabajo incluyen que el empleado debe proteger la información de la empresa?",
+          "tooltip": "Los empleados deben conocer y aceptar sus obligaciones de seguridad. Evidencia: contratos que incluyen cláusulas de confidencialidad y seguridad, acuses de recibo de políticas firmados."
+        },
+        {
+          "code": "A.6.3",
+          "difficulty": "facil",
+          "text": "Concienciación, educación y formación en seguridad",
+          "pymeText": "¿Los empleados reciben formación sobre cómo proteger la información? ¿Al menos una vez al año?",
+          "tooltip": "Todo el personal debe recibir formación en seguridad adecuada a su rol. Evidencia: plan de formación, registros de asistencia o completación, simulaciones de phishing, evaluaciones de conocimiento."
+        },
+        {
+          "code": "A.6.5",
+          "difficulty": "facil",
+          "text": "Responsabilidades de seguridad tras la terminación del empleo",
+          "pymeText": "Cuando alguien deja la empresa, ¿le quitáis todos los accesos ese mismo día y le pedís que devuelva el equipo?",
+          "tooltip": "Al finalizar la relación laboral deben revocarse todos los accesos y recuperarse los activos. Evidencia: checklist de offboarding con seguridad, registro de revocaciones, devolución de equipos documentada."
+        },
+        {
+          "code": "A.6.6",
+          "difficulty": "facil",
+          "text": "Acuerdos de confidencialidad firmados",
+          "pymeText": "¿Todos los empleados y colaboradores externos han firmado un acuerdo de confidencialidad?",
+          "tooltip": "Todo el personal y colaboradores externos con acceso a información deben firmar NDA. Evidencia: NDAs firmados archivados, proceso para nuevas contrataciones y proveedores externos."
+        },
+        {
+          "code": "A.6.7",
+          "difficulty": "medio",
+          "text": "Controles para el trabajo remoto implementados",
+          "pymeText": "¿Los que trabajan desde casa tienen normas claras? ¿VPN obligatoria, equipo cifrado, sin wifi pública?",
+          "tooltip": "El trabajo remoto introduce riesgos adicionales que deben controlarse. Evidencia: política de teletrabajo, VPN obligatoria, cifrado de equipos portátiles, prohibición de redes wifi públicas sin VPN."
+        },
+        {
+          "code": "A.6.8",
+          "difficulty": "facil",
+          "text": "Canal de notificación de eventos de seguridad disponible",
+          "pymeText": "¿Saben vuestros empleados a quién avisar si sospechan que algo raro está pasando con la seguridad?",
+          "tooltip": "El personal debe saber cómo y a quién reportar un incidente o sospecha. Evidencia: canal de reporte conocido (email, helpdesk, formulario), formación sobre qué reportar, cultura de notificación sin represalias."
+        }
+      ]
+    },
+    {
+      "title": "A.7 · Controles Físicos",
+      "pymeTitle": "Seguridad física — lo que se puede tocar",
+      "items": [
+        {
+          "code": "A.7.1",
+          "difficulty": "facil",
+          "text": "Perímetros de seguridad física definidos y protegidos",
+          "pymeText": "¿Las zonas donde guardáis información importante tienen acceso restringido? ¿Solo entra quien debe?",
+          "tooltip": "Las áreas donde se procesa información sensible deben estar físicamente delimitadas y protegidas. Evidencia: planos con zonas de seguridad definidas, controles de acceso físico en cada zona, política de acceso a instalaciones."
+        },
+        {
+          "code": "A.7.2",
+          "difficulty": "medio",
+          "text": "Controles de entrada física — solo personal autorizado",
+          "pymeText": "¿Para entrar a la sala de servidores o zonas sensibles hace falta identificarse o tener tarjeta?",
+          "tooltip": "El acceso a áreas seguras debe requerir identificación y autorización. Evidencia: tarjetas de acceso, registros de entradas/salidas, visitantes siempre acompañados, CCTV en zonas críticas."
+        },
+        {
+          "code": "A.7.7",
+          "difficulty": "facil",
+          "text": "Política de mesa limpia y pantalla limpia implementada",
+          "pymeText": "¿Los empleados bloquean el ordenador cuando se levantan? ¿Y no dejan papeles con información sensible en la mesa?",
+          "tooltip": "La información sensible no debe quedar visible o accesible cuando el puesto está desatendido. Evidencia: política documentada, bloqueo automático de pantalla configurado, ausencia de documentos sensibles en mesas desatendidas."
+        },
+        {
+          "code": "A.7.9",
+          "difficulty": "facil",
+          "text": "Seguridad de activos fuera de las instalaciones",
+          "pymeText": "¿Tenéis normas para los portátiles que salen de la oficina? ¿Qué pasa si se pierde o roban uno?",
+          "tooltip": "Los equipos que salen de la organización deben estar protegidos. Evidencia: política de uso de equipos fuera de instalaciones, cifrado de portátiles, prohibición de dejar equipos en vehículos, gestión de pérdidas y robos."
+        },
+        {
+          "code": "A.7.10",
+          "difficulty": "medio",
+          "text": "Soportes de almacenamiento gestionados durante su ciclo de vida",
+          "pymeText": "¿Controláis los USB y discos externos que se usan en la empresa? ¿O cualquiera puede conectar cualquier cosa?",
+          "tooltip": "USB, discos externos, cintas y otros soportes deben controlarse. Evidencia: inventario de soportes, política de uso de medios removibles, controles técnicos que limiten su uso no autorizado."
+        },
+        {
+          "code": "A.7.14",
+          "difficulty": "facil",
+          "text": "Eliminación o reutilización segura de equipos",
+          "pymeText": "Cuando dais de baja un ordenador o disco, ¿borráis los datos de forma que no se puedan recuperar?",
+          "tooltip": "Antes de desechar o reutilizar equipos, los datos deben destruirse de forma segura. Evidencia: procedimiento de borrado seguro, registros de equipos dados de baja con método de borrado aplicado, certificados de destrucción cuando aplique."
+        }
+      ]
+    },
+    {
+      "title": "A.8 · Controles Tecnológicos",
+      "pymeTitle": "Tecnología — sistemas, redes y datos",
+      "items": [
+        {
+          "code": "A.8.2",
+          "difficulty": "complejo",
+          "text": "Gestión de accesos privilegiados con controles específicos",
+          "pymeText": "¿Las personas que administran vuestros sistemas tienen una cuenta especial para eso, separada de su cuenta normal?",
+          "tooltip": "Las cuentas con privilegios elevados (administradores) requieren controles adicionales. Evidencia: cuentas privilegiadas separadas de las cuentas de uso diario, MFA obligatorio, registro de todas las acciones privilegiadas, revisión periódica de quién tiene privilegios."
+        },
+        {
+          "code": "A.8.5",
+          "difficulty": "facil",
+          "text": "Autenticación segura — MFA en accesos críticos",
+          "pymeText": "¿Para acceder al correo, la VPN y los sistemas importantes se necesita algo más que la contraseña — como un código en el móvil?",
+          "tooltip": "El acceso a sistemas críticos debe requerir más de un factor de autenticación. Evidencia: MFA implementado en correo, VPN, sistemas de administración y aplicaciones críticas. Política de contraseñas con longitud mínima y sin reutilización."
+        },
+        {
+          "code": "A.8.7",
+          "difficulty": "facil",
+          "text": "Protección contra malware implementada y actualizada",
+          "pymeText": "¿Todos los ordenadores tienen antivirus instalado y actualizado?",
+          "tooltip": "Todos los sistemas deben estar protegidos contra código malicioso. Evidencia: antimalware instalado y actualizado en todos los endpoints, gestión centralizada, alertas activas, escaneos periódicos."
+        },
+        {
+          "code": "A.8.8",
+          "difficulty": "facil",
+          "text": "Gestión de vulnerabilidades técnicas con proceso de parcheo",
+          "pymeText": "¿Actualizáis el software regularmente? ¿Tenéis alguien pendiente de los parches de seguridad?",
+          "tooltip": "Las vulnerabilidades conocidas deben identificarse y corregirse sistemáticamente. Evidencia: proceso de gestión de vulnerabilidades, escaneos periódicos, SLA para aplicación de parches por criticidad, registro de vulnerabilidades pendientes."
+        },
+        {
+          "code": "A.8.9",
+          "difficulty": "medio",
+          "text": "Gestión de la configuración — línea base de seguridad",
+          "pymeText": "¿Los ordenadores y servidores están configurados de forma segura — sin programas innecesarios, sin puertos abiertos que no usáis?",
+          "tooltip": "Los sistemas deben configurarse según estándares de seguridad documentados. Evidencia: líneas base de configuración por tipo de sistema, proceso de hardening, control de cambios de configuración, verificación periódica de desviaciones."
+        },
+        {
+          "code": "A.8.10",
+          "difficulty": "facil",
+          "text": "Eliminación de información — borrado seguro de datos",
+          "pymeText": "¿Cuando eliminéis un archivo con datos sensibles, lo hacéis de forma que no se pueda recuperar?",
+          "tooltip": "Cuando la información ya no es necesaria, debe eliminarse de forma que no sea recuperable. Evidencia: procedimiento de borrado seguro, herramientas certificadas, registros de eliminación, consideración especial para entornos cloud y virtualizados."
+        },
+        {
+          "code": "A.8.13",
+          "difficulty": "facil",
+          "text": "Copias de seguridad con pruebas de restauración documentadas",
+          "pymeText": "¿Hacéis copias de seguridad? ¿Las habéis probado alguna vez para ver si se pueden recuperar de verdad?",
+          "tooltip": "Tener backup no es suficiente — debe verificarse que se puede restaurar. Evidencia: política de backup, registros de copias realizadas, registros de pruebas de restauración con tiempos reales, RTO y RPO definidos y verificados."
+        },
+        {
+          "code": "A.8.15",
+          "difficulty": "medio",
+          "text": "Registro de actividad de sistemas y aplicaciones críticas",
+          "pymeText": "¿Los sistemas guardan un registro de quién ha accedido a qué y cuándo?",
+          "tooltip": "Los eventos de seguridad deben registrarse para permitir su análisis. Evidencia: logs activados en sistemas críticos, política de retención de logs, protección de integridad de registros, revisión periódica."
+        },
+        {
+          "code": "A.8.16",
+          "difficulty": "complejo",
+          "text": "Monitorización de actividades y eventos de seguridad",
+          "pymeText": "¿Alguien revisa esos registros de actividad? ¿O solo están ahí por si pasa algo?",
+          "tooltip": "Los registros deben analizarse activamente para detectar amenazas. Evidencia: SIEM o herramienta equivalente, alertas configuradas para eventos críticos, procedimiento de respuesta a alertas, responsable de monitorización designado."
+        },
+        {
+          "code": "A.8.20",
+          "difficulty": "medio",
+          "text": "Seguridad de redes — segmentación y controles de tráfico",
+          "pymeText": "¿Vuestra red está dividida? ¿Los ordenadores de oficina están separados de los servidores y del wifi de visitas?",
+          "tooltip": "La red debe estar segmentada para limitar el movimiento lateral. Evidencia: diagrama de red actualizado, VLANs con políticas de firewall entre segmentos, separación de redes de usuario, servidores, backup y gestión."
+        },
+        {
+          "code": "A.8.22",
+          "difficulty": "complejo",
+          "text": "Segregación de redes — separación de entornos críticos",
+          "pymeText": "¿El entorno de desarrollo o pruebas está separado del sistema que usan los clientes?",
+          "tooltip": "Los entornos de producción, desarrollo y pruebas deben estar separados. Evidencia: redes separadas físicamente o lógicamente, controles que impidan el acceso cruzado no autorizado, no usar datos reales en entornos de prueba."
+        },
+        {
+          "code": "A.8.24",
+          "difficulty": "medio",
+          "text": "Uso de criptografía — política y gestión de claves",
+          "pymeText": "¿Las comunicaciones importantes van cifradas? ¿HTTPS en la web, cifrado en el correo si manejáis datos sensibles?",
+          "tooltip": "El cifrado debe usarse sistemáticamente para proteger información sensible. Evidencia: política de criptografía, algoritmos y longitudes de clave definidas, proceso de gestión del ciclo de vida de claves, cifrado en tránsito (TLS) y en reposo."
+        },
+        {
+          "code": "A.8.25",
+          "difficulty": "complejo",
+          "text": "Ciclo de vida de desarrollo seguro",
+          "pymeText": "Si desarrolláis software, ¿la seguridad se tiene en cuenta desde el principio, no como un añadido al final?",
+          "tooltip": "La seguridad debe integrarse en el desarrollo de software desde el inicio. Evidencia: requisitos de seguridad en el análisis, revisiones de código, pruebas de seguridad antes del despliegue, gestión de dependencias de terceros."
+        }
+      ]
+    }
+  ]
+}

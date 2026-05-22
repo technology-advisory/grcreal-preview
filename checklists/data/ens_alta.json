@@ -1,0 +1,188 @@
+{
+  "sections": [
+    {
+      "title": "Control de Acceso — Nivel Alta",
+      "pymeTitle": "Acceso de máxima seguridad",
+      "items": [
+        {
+          "code": "op.acc.4",
+          "difficulty": "medio",
+          "text": "MFA obligatorio para TODOS los accesos, no solo privilegiados",
+          "pymeText": "¿El doble factor es obligatorio para TODOS los accesos, sin excepciones?",
+          "tooltip": "Doble factor en todos los accesos a sistemas. Evidencia: MFA desplegado en todos los sistemas, sin excepciones.",
+          "tags": [
+            { "name": "ens", "text": "ENS op.acc.4", "tooltip": "MFA obligatorio para todos" }
+          ]
+        },
+        {
+          "code": "op.acc.5",
+          "difficulty": "complejo",
+          "text": "Modelo de administración por niveles implementado y documentado",
+          "pymeText": "¿Tenéis separación de niveles de administración según el nivel de riesgo?",
+          "tooltip": "Separación de Tier 0/1/2. Evidencia: arquitectura de administración documentada, controles técnicos implementados.",
+          "tags": [
+            { "name": "ens", "text": "ENS op.acc.5", "tooltip": "Administración por niveles" }
+          ]
+        },
+        {
+          "code": "op.acc.6",
+          "difficulty": "complejo",
+          "text": "Grabación de sesiones privilegiadas con revisión periódica",
+          "pymeText": "¿Las sesiones de administración se graban y se revisan periódicamente?",
+          "tooltip": "Las sesiones de administración quedan grabadas. Evidencia: herramienta de grabación, política de revisión, registros.",
+          "tags": [
+            { "name": "ens", "text": "ENS op.acc.6", "tooltip": "Grabación de sesiones" }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Explotación — Nivel Alta",
+      "pymeTitle": "Operación de máxima exigencia",
+      "items": [
+        {
+          "code": "op.exp.4",
+          "difficulty": "complejo",
+          "text": "Parches críticos aplicados en menos de 24 horas",
+          "pymeText": "¿Los parches críticos se aplican en menos de 24 horas?",
+          "tooltip": "SLA extremo para vulnerabilidades críticas. Evidencia: proceso de emergencia, registros de cumplimiento.",
+          "tags": [
+            { "name": "ens", "text": "ENS op.exp.4", "tooltip": "Parches críticos < 24h" }
+          ]
+        },
+        {
+          "code": "op.exp.7",
+          "difficulty": "complejo",
+          "text": "Microsegmentación de red con inspección profunda de paquetes (DPI)",
+          "pymeText": "¿Tenéis microsegmentación de red con inspección profunda de paquetes?",
+          "tooltip": "Segmentación granular con DPI. Evidencia: arquitectura de red, políticas de microsegmentación, herramienta DPI.",
+          "tags": [
+            { "name": "ens", "text": "ENS op.exp.7", "tooltip": "Microsegmentación" }
+          ]
+        },
+        {
+          "code": "op.exp.8",
+          "difficulty": "complejo",
+          "text": "SIEM con correlación de eventos y alertas en tiempo real",
+          "pymeText": "¿Tenéis un SIEM con correlación de eventos y alertas en tiempo real?",
+          "tooltip": "SIEM desplegado y operativo. Evidencia: plataforma SIEM, reglas de correlación, procedimiento de respuesta.",
+          "tags": [
+            { "name": "ens", "text": "ENS op.exp.8", "tooltip": "SIEM" }
+          ]
+        },
+        {
+          "code": "op.exp.9",
+          "difficulty": "complejo",
+          "text": "Copias de seguridad inmutables con almacenamiento air-gap o cloud aislado",
+          "pymeText": "¿Las copias de seguridad son inmutables y están aisladas de la red principal?",
+          "tooltip": "Backup protegido contra ransomware. Evidencia: arquitectura de backup inmutable, pruebas de restauración.",
+          "tags": [
+            { "name": "ens", "text": "ENS op.exp.9", "tooltip": "Backup inmutable" }
+          ]
+        },
+        {
+          "code": "op.mon.1",
+          "difficulty": "complejo",
+          "text": "SOC propio o externalizado con cobertura 24x7",
+          "pymeText": "¿Tenéis un SOC con cobertura 24x7, propio o externalizado?",
+          "tooltip": "Monitorización continua. Evidencia: contrato SOC o equipo propio, SLA de respuesta, registros.",
+          "tags": [
+            { "name": "ens", "text": "ENS op.mon.1", "tooltip": "SOC 24x7" }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Medidas de Protección — Nivel Alta",
+      "pymeTitle": "Protecciones de máximo nivel",
+      "items": [
+        {
+          "code": "mp.if.4",
+          "difficulty": "complejo",
+          "text": "CPD con control de acceso biométrico y CCTV con retención máxima 30 días (RGPD)",
+          "pymeText": "¿El CPD tiene control de acceso biométrico y CCTV con retención no superior a 30 días?",
+          "tooltip": "Seguridad física de máximo nivel. Evidencia: sistema biométrico, CCTV con retención, registros de acceso. ⚠️ RGPD: La retención de grabaciones CCTV tiene un límite máximo de 30 días salvo justificación documentada (Art. 5.1.e RGPD; criterio AEPD). Si se supera ese plazo, debe acreditarse la necesidad específica. ⚠️ RGPD: El control de acceso biométrico implica tratamiento de datos de categoría especial (Art. 9 RGPD). Es obligatorio realizar una Evaluación de Impacto (EIPD/DPIA) conforme al Art. 35 RGPD antes de su implantación.",
+          "tags": [
+            { "name": "ens", "text": "ENS mp.if.4", "tooltip": "Seguridad física avanzada" }
+          ]
+        },
+        {
+          "code": "mp.if.5",
+          "difficulty": "medio",
+          "text": "Alimentación eléctrica redundante con SAI y grupo electrógeno",
+          "pymeText": "¿Tenéis SAI y grupo electrógeno con pruebas periódicas?",
+          "tooltip": "Continuidad eléctrica garantizada. Evidencia: SAI instalado, grupo electrógeno, pruebas periódicas.",
+          "tags": [
+            { "name": "ens", "text": "ENS mp.if.5", "tooltip": "Alimentación redundante" }
+          ]
+        },
+        {
+          "code": "mp.com.4",
+          "difficulty": "complejo",
+          "text": "Cifrado de grado alto en comunicaciones — algoritmos aprobados por CCN",
+          "pymeText": "¿El cifrado de comunicaciones usa algoritmos aprobados por el CCN?",
+          "tooltip": "Cifrado con algoritmos del CCN. Evidencia: lista de algoritmos usados, conformidad con guías CCN-STIC.",
+          "tags": [
+            { "name": "ens", "text": "ENS mp.com.4", "tooltip": "Cifrado CCN" }
+          ]
+        },
+        {
+          "code": "mp.si.4",
+          "difficulty": "complejo",
+          "text": "Cifrado de grado alto para datos en reposo — algoritmos aprobados por CCN",
+          "pymeText": "¿El cifrado de datos en reposo usa algoritmos aprobados por el CCN?",
+          "tooltip": "Cifrado fuerte en disco y bases de datos. Evidencia: herramientas y algoritmos, conformidad CCN.",
+          "tags": [
+            { "name": "ens", "text": "ENS mp.si.4", "tooltip": "Cifrado CCN datos reposo" }
+          ]
+        },
+        {
+          "code": "mp.cont.4",
+          "difficulty": "medio",
+          "text": "Plan de continuidad probado anualmente con simulacro completo documentado",
+          "pymeText": "¿El plan de continuidad se prueba anualmente con un simulacro completo?",
+          "tooltip": "Ejercicio anual completo. Evidencia: informe de ejercicio, participantes, resultados, plan de mejora.",
+          "tags": [
+            { "name": "ens", "text": "ENS mp.cont.4", "tooltip": "Prueba anual de continuidad" }
+          ]
+        },
+        {
+          "code": "mp.cont.5",
+          "difficulty": "complejo",
+          "text": "RTO y RPO verificados mediante pruebas reales, no estimados",
+          "pymeText": "¿Los tiempos de recuperación se han medido en pruebas reales, no estimados?",
+          "tooltip": "Tiempos de recuperación medidos en producción. Evidencia: registros de pruebas con tiempos reales vs objetivos.",
+          "tags": [
+            { "name": "ens", "text": "ENS mp.cont.5", "tooltip": "RTO/RPO verificados" }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Auditoría — Nivel Alta",
+      "pymeTitle": "Verificación de máximo rigor",
+      "items": [
+        {
+          "code": "aud.1",
+          "difficulty": "complejo",
+          "text": "Auditoría de seguridad anual por entidad acreditada por ENAC",
+          "pymeText": "¿La auditoría es anual y la realiza una entidad acreditada por ENAC?",
+          "tooltip": "Auditoría anual por entidad ENAC. Evidencia: informe anual, acreditación de la entidad.",
+          "tags": [
+            { "name": "ens", "text": "ENS aud.1", "tooltip": "Auditoría anual ENAC" }
+          ]
+        },
+        {
+          "code": "aud.4",
+          "difficulty": "complejo",
+          "text": "Informe de estado de seguridad remitido al CCN-CERT",
+          "pymeText": "¿Se envía el informe de estado de seguridad al CCN-CERT?",
+          "tooltip": "Reporte al CCN-CERT según procedimiento. Evidencia: último informe enviado, acuse de recibo.",
+          "tags": [
+            { "name": "ens", "text": "ENS aud.4", "tooltip": "Reporte al CCN-CERT" }
+          ]
+        }
+      ]
+    }
+  ]
+}

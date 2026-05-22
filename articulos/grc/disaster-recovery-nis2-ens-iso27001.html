@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0">
+<title>Sin Disaster Recovery no hay NIS2, ENS ni ISO 27001 · GRCreal</title>
+<meta name="description" content="La continuidad no es un módulo opcional del cumplimiento. Sin un Disaster Recovery real y probado, ningún marco normativo está realmente implantado.">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Sin Disaster Recovery no hay NIS2, ENS ni ISO 27001">
+<meta property="og:description" content="La continuidad no es un módulo opcional del cumplimiento. Sin un Disaster Recovery real y probado, ningún marco normativo está realmente implantado.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://grcreal.com/articulos/disaster-recovery-nis2-ens-iso27001.html">
+<meta property="og:image" content="https://grcreal.com/grcreal.png">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="../../css/marca.css">
+<link rel="stylesheet" href="../../css/articles.css">
+</head>
+<body class="article-page">
+<div class="card-wrapper">
+<div class="card">
+<div class="accent-bar"></div>
+<div class="header">
+  <div class="tag">GRC · Continuidad · Normativa</div>
+  <div class="article-date">9 Diciembre 9999</div>
+  <div class="headline">
+    Sin Disaster Recovery<br>
+    <span class="accent">no tienes</span><br>
+    <span class="dim">NIS2,</span><br>
+    <span class="accent">ENS ni ISO 27001</span><br>
+  </div>
+  <p class="subline">El cumplimiento normativo exige recuperación real.<br><strong>No declaraciones. No documentos. Recuperación.</strong></p>
+</div>
+<div class="body">
+
+  <div class="block">
+    <div class="block-label">El error de partida</div>
+    <div class="block-title">El DR como "sección del dossier"</div>
+    <div class="block-text">
+      Hay un patrón que se repite constantemente en los proyectos de cumplimiento: la organización produce una política de continuidad, un BIA, un plan de recuperación ante desastres — y lo archiva como evidencia para la auditoría. El auditor lo revisa. La casilla se marca. Se certifica.<br><br>Nadie ha probado si ese plan funciona. Nadie sabe si los backups se restauran en el tiempo declarado. Nadie ha ejecutado un failover en condiciones de emergencia real.<br><br><strong>Un DR que no se ha probado no es un DR. Es un documento de esperanza.</strong>
+    </div>
+  </div>
+  <div class="divider"></div>
+
+  <div class="block">
+    <div class="block-label">Lo que exige NIS2</div>
+    <div class="block-title">NIS2: continuidad como obligación legal</div>
+    <div class="block-text">
+      La Directiva NIS2 — transpuesta en España mediante el Real Decreto-ley 7/2022 y en proceso de consolidación normativa — impone a las entidades esenciales e importantes la obligación de implementar medidas técnicas y organizativas para gestionar los riesgos en materia de seguridad de las redes y sistemas de información. Entre ellas, de forma explícita: la continuidad de las actividades, la gestión de copias de seguridad y la recuperación en caso de catástrofe.<br><br>El artículo 21 de NIS2 no habla de "documentar la continuidad". Habla de <em>garantizarla</em>. La distinción no es semántica — tiene consecuencias sancionadoras directas.<br><br>Las autoridades competentes pueden exigir pruebas de que los mecanismos de recuperación funcionan. No el documento que dice que funcionan. La prueba de que funcionan.<br><br><strong>NIS2 convierte el DR en una obligación de resultado, no de proceso. Si tu infraestructura no se recupera en el tiempo comprometido, incumples — independientemente de lo completo que sea tu dossier.</strong>
+    </div>
+  </div>
+  <div class="divider"></div>
+
+  <div class="block">
+    <div class="block-label">Lo que exige ENS</div>
+    <div class="block-title">ENS RD 311/2022: continuidad sin excepción</div>
+    <div class="block-text">
+      El Esquema Nacional de Seguridad establece en su Anexo II una familia de controles específicamente dedicada a continuidad del servicio. No es opcional según la categoría del sistema — es obligatoria en sistemas de categoría Media y Alta, y parcialmente aplicable en Básica.<br><br>Las medidas op.cont.1 (análisis de impacto), op.cont.2 (plan de continuidad) y op.cont.3 (pruebas periódicas) forman una triada indisoluble. La tercera es la que más frecuentemente se incumple: las pruebas.<br><br>Una entidad pública que declara conformidad con ENS sin haber ejecutado pruebas documentadas de recuperación no cumple op.cont.3 — y por tanto no tiene ENS. Tiene una certificación que en algún momento fallará ante un incidente real o una auditoría de supervisión.<br><br><strong>El CCN-CERT lo advierte en sus guías de auditoría: la ausencia de pruebas de continuidad es una no conformidad mayor. No hay categoría de sistema donde esto sea aceptable.</strong>
+    </div>
+  </div>
+  <div class="divider"></div>
+
+  <div class="block">
+    <div class="block-label">Lo que exige ISO 27001</div>
+    <div class="block-title">ISO 27001:2022 y la continuidad integrada</div>
+    <div class="block-text">
+      La revisión de 2022 integró de forma más explícita la continuidad de la seguridad de la información dentro del SGSI. Los controles del Anexo A relevantes son claros: 5.29 (seguridad de la información durante la interrupción), 5.30 (preparación de las TIC para la continuidad del negocio), 8.13 (backup de información) y 8.14 (redundancia de las instalaciones de procesamiento de información).<br><br>ISO 27001 exige que estos controles no solo existan — exige que sean efectivos. La cláusula 9.1 obliga a medir si los controles consiguen sus objetivos. Para DR esto significa métricas: RTO declarado vs RTO real medido en pruebas, RPO declarado vs RPO real, tasa de éxito de restauraciones.<br><br>Un auditor de ISO 27001 competente pedirá evidencias de pruebas de recuperación, no solo el plan. Pedirá el registro de la última prueba, los resultados, las desviaciones encontradas y las acciones correctivas tomadas.<br><br><strong>Si no tienes ese registro — con fechas, resultados reales y lecciones aprendidas — tu SGSI tiene una brecha de efectividad. Y las brechas de efectividad son no conformidades.</strong>
+    </div>
+  </div>
+  <div class="divider"></div>
+
+  <div class="block">
+    <div class="block-label">La realidad operativa</div>
+    <div class="block-title">Lo que he visto en campo</div>
+    <div class="block-text">
+      En más de dos décadas implementando y auditando infraestructuras, el patrón de fallo en DR es siempre el mismo. No es que no haya backups — casi siempre los hay. El problema es lo que nadie ha comprobado:<br><br>Backups que se ejecutan sin verificar integridad. Copias que llevan meses fallando silenciosamente porque nadie revisa las alertas. Procedimientos de restauración documentados para un entorno que ya no existe porque la infraestructura evolucionó sin actualizar el plan. RTOs declarados en el papel que nadie ha medido nunca en una prueba real.<br><br>Y el escenario que más se repite: la organización sufre un incidente, activa el plan de recuperación, y descubre que el proceso que teóricamente tarda 4 horas tarda 3 días. Porque nadie lo había probado.<br><br><strong>El coste de una prueba de DR fallida es bajo. El coste de descubrirlo durante un incidente real puede ser existencial para la organización.</strong>
+    </div>
+  </div>
+  <div class="divider"></div>
+
+  <div class="block">
+    <div class="block-label">Qué necesita un DR real</div>
+    <div class="block-title">Los cinco elementos no negociables</div>
+    <div class="block-text">
+      <strong>RTO y RPO medidos, no declarados.</strong> Saber cuánto tardas en recuperarte no es lo que dice el plan — es lo que tardaste la última vez que lo probaste. Si nunca lo has probado, no sabes tu RTO real.<br><br>
+      <strong>Backups aislados y verificados.</strong> Inmutables o air-gapped. Con verificación de integridad automática. Con alertas que alguien revisa. Sin esto, no tienes backup — tienes la ilusión de un backup.<br><br>
+      <strong>Pruebas periódicas documentadas.</strong> Al menos una vez al año para sistemas críticos. Con registro de lo que funcionó, lo que falló y qué se corrigió. La prueba sin documentación no existe para un auditor.<br><br>
+      <strong>Plan actualizado y coherente con la infraestructura real.</strong> Si tu infraestructura está en cloud híbrido y tu plan de recuperación habla de restaurar desde cinta, hay un problema. El plan debe reflejar la arquitectura que realmente tienes hoy.<br><br>
+      <strong>Responsables claros y con autoridad real.</strong> En el momento del incidente, alguien debe poder tomar decisiones sin esperar aprobaciones en cadena. El DR que requiere tres firmas para activarse en una crisis no se activa a tiempo.<br><br>
+      <strong>Sin estos cinco elementos, el cumplimiento normativo es papel. Funciona hasta que hay un incidente — y entonces deja de funcionar exactamente cuando más lo necesitas.</strong>
+    </div>
+  </div>
+
+  <div class="cta-block">
+    <div class="cta-headline">¿Cuándo fue la última vez<br><span>que probasteis vuestro DR?</span></div>
+    <div class="cta-sub">Si la respuesta es "no lo recuerdo" o "nunca", hay trabajo que hacer.<br><strong><a href="/contacto.html">Hablemos antes de que haya que activarlo en serio.</a></strong></div>
+  </div>
+</div>
+
+  <div class="share-block">
+    <span class="share-label">¿Te ha resultado útil?</span>
+    <a id="share-linkedin" href="#" target="_blank" class="share-btn">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#0077B5" width="16" height="16">
+        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+      </svg>
+      Compartir en LinkedIn
+    </a>
+  </div>
+
+  <style>
+  .share-block { display:flex; align-items:center; gap:14px; padding:16px 24px; border-top:1px solid var(--border-soft); border-bottom:1px solid var(--border-soft); }
+  .share-label { font-family:var(--mono); font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--muted); }
+  .share-btn { display:inline-flex; align-items:center; gap:8px; font-family:var(--mono); font-size:11px; font-weight:bold; letter-spacing:0.1em; text-transform:uppercase; color:#0077B5; text-decoration:none; border:1px solid #0077B5; padding:7px 14px; border-radius:3px; transition:all 0.15s; }
+  .share-btn:hover { background:#0077B5; color:#fff; }
+  </style>
+
+  <script>
+  document.getElementById('share-linkedin').href =
+    'https://www.linkedin.com/sharing/share-offsite/?url=' +
+    encodeURIComponent(window.location.href);
+  </script>
+
+  <div class="footer">
+    <div class="footer-inner">
+      <div class="author-block">
+        <div class="author-avatar">MA</div>
+        <div>
+          <div class="author-name">Miguel &Aacute;ngel Carriazo &middot; <span>vCISO</span></div>
+          <div class="author-title">Cybersecurity &amp; Infrastructure Architect</div>
+        </div>
+      </div>
+      <a href="https://www.linkedin.com/in/macarriazo/" target="_blank" class="li-btn">
+        <svg class="li-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#0077B5">
+          <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+        </svg>
+        <div>
+          <span class="li-main">&ldquo;Merece la pena la experiencia...&rdquo;</span>
+          <span class="li-sub">Hablemos en LinkedIn &rarr;</span>
+        </div>
+      </a>
+    </div>
+  </div>
+
+</div>
+</div>
+<a href="/articulos/index.html" class="home-btn">&#8962; Home Art&iacute;culos</a>
+</body>
+</html>

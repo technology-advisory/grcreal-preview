@@ -1,0 +1,279 @@
+{
+  "title": "Checklist ISO 22301",
+  "subtitle": "Continuidad de Negocio — SGCN",
+  "sections": [
+    {
+      "title": "Contexto y Gobernanza · Cláusulas 4-5",
+      "pymeTitle": "Las bases — quién manda y qué cubre el plan",
+      "items": [
+        {
+          "code": "4.1",
+          "difficulty": "medio",
+          "text": "Contexto interno y externo de la organización analizado para el SGCN",
+          "pymeText": "¿Habéis analizado qué factores externos e internos pueden afectar a la continuidad de vuestro negocio?",
+          "tooltip": "Factores que pueden afectar la continuidad. Evidencia: análisis DAFO o equivalente, factores internos y externos documentados."
+        },
+        {
+          "code": "4.2",
+          "difficulty": "medio",
+          "text": "Partes interesadas y sus requisitos de continuidad identificados",
+          "pymeText": "¿Sabéis qué esperan clientes, reguladores y proveedores en términos de continuidad?",
+          "tooltip": "Clientes, reguladores y proveedores con SLAs. Evidencia: registro de partes interesadas, requisitos documentados."
+        },
+        {
+          "code": "4.3",
+          "difficulty": "medio",
+          "text": "Alcance del SGCN definido y documentado",
+          "pymeText": "¿Tenéis claro qué parte de la empresa cubre vuestro plan de continuidad?",
+          "tooltip": "Qué procesos y ubicaciones cubre el SGCN. Evidencia: documento de alcance firmado por dirección."
+        },
+        {
+          "code": "5.1",
+          "difficulty": "facil",
+          "text": "Compromiso y liderazgo de la dirección con la continuidad",
+          "pymeText": "¿La dirección apoya activamente el plan de continuidad y dedica recursos a él?",
+          "tooltip": "La dirección aprueba recursos y revisa el SGCN. Evidencia: política de continuidad firmada, actas de revisión."
+        },
+        {
+          "code": "5.2",
+          "difficulty": "facil",
+          "text": "Política de continuidad de negocio documentada y comunicada",
+          "pymeText": "¿Tenéis una política escrita de continuidad de negocio firmada por la dirección?",
+          "tooltip": "Política que establece el compromiso. Evidencia: política publicada, comunicación al personal."
+        },
+        {
+          "code": "5.3",
+          "difficulty": "facil",
+          "text": "Roles y responsabilidades del SGCN asignados",
+          "pymeText": "¿Hay un equipo de continuidad designado que sabe qué hacer cuando pasa algo?",
+          "tooltip": "Equipo de continuidad designado. Evidencia: organigrama del equipo, descripción de funciones."
+        }
+      ]
+    },
+    {
+      "title": "Análisis de Impacto en el Negocio · Cláusula 8",
+      "pymeTitle": "¿Qué pasa si algo falla?",
+      "items": [
+        {
+          "code": "8.2.1",
+          "difficulty": "facil",
+          "text": "BIA — Procesos críticos identificados y priorizados",
+          "pymeText": "¿Sabéis cuáles son los procesos más críticos de vuestra empresa — sin los que no podéis operar?",
+          "tooltip": "Análisis de Impacto en el Negocio realizado. Evidencia: documento BIA con todos los procesos evaluados, propietarios asignados."
+        },
+        {
+          "code": "8.2.2",
+          "difficulty": "medio",
+          "text": "Impacto de la interrupción evaluado para cada proceso crítico",
+          "pymeText": "¿Habéis calculado cuánto dinero o daño os costaría que cada proceso crítico se pare?",
+          "tooltip": "Impacto económico, reputacional y regulatorio cuantificado. Evidencia: matriz de impacto por proceso, escalas de valoración definidas."
+        },
+        {
+          "code": "8.2.3",
+          "difficulty": "medio",
+          "text": "RTO definido para cada proceso crítico",
+          "pymeText": "¿Sabéis cuánto tiempo máximo podéis estar sin cada proceso crítico antes de que sea catastrófico?",
+          "tooltip": "Tiempo máximo de recuperación por proceso. Evidencia: RTO documentado por proceso, aprobado por dirección."
+        },
+        {
+          "code": "8.2.3",
+          "difficulty": "medio",
+          "text": "RPO definido para cada proceso crítico",
+          "pymeText": "¿Sabéis cuántos datos máximo podéis perder de cada sistema crítico?",
+          "tooltip": "Pérdida máxima de datos aceptable. Evidencia: RPO documentado por proceso, alineado con política de backup."
+        },
+        {
+          "code": "8.2.4",
+          "difficulty": "complejo",
+          "text": "MTPD — tiempo máximo tolerable de interrupción definido",
+          "pymeText": "¿Sabéis cuándo un incidente es tan grave que ya no hay marcha atrás?",
+          "tooltip": "Límite a partir del cual el impacto es irreversible. Evidencia: MTPD por proceso, base para definir el RTO."
+        },
+        {
+          "code": "8.2.5",
+          "difficulty": "medio",
+          "text": "Dependencias de recursos identificadas para cada proceso crítico",
+          "pymeText": "¿Tenéis mapeado de qué sistemas, personas y proveedores depende cada proceso crítico?",
+          "tooltip": "Personal clave, sistemas y proveedores por proceso. Evidencia: mapa de dependencias documentado."
+        }
+      ]
+    },
+    {
+      "title": "Estrategia y Plan de Continuidad · Cláusula 8",
+      "pymeTitle": "El plan — qué hacéis cuando pasa algo",
+      "items": [
+        {
+          "code": "8.3",
+          "difficulty": "medio",
+          "text": "Estrategias de continuidad definidas y aprobadas",
+          "pymeText": "¿Tenéis definido cómo mantener cada proceso crítico si falla algo importante?",
+          "tooltip": "Cómo se va a mantener cada proceso crítico. Evidencia: estrategias documentadas, análisis coste-beneficio, aprobación."
+        },
+        {
+          "code": "8.4.1",
+          "difficulty": "facil",
+          "text": "Plan de Continuidad de Negocio (BCP) documentado",
+          "pymeText": "¿Tenéis un plan escrito de cómo actuar cuando el negocio se interrumpe?",
+          "tooltip": "Procedimientos de activación y recuperación. Evidencia: BCP documentado, versiones controladas."
+        },
+        {
+          "code": "8.4.2",
+          "difficulty": "medio",
+          "text": "Plan de Recuperación ante Desastres (DRP) documentado",
+          "pymeText": "¿Tenéis un plan técnico de cómo recuperar los sistemas si caen?",
+          "tooltip": "Plan técnico de recuperación de sistemas. Evidencia: DRP por sistema crítico, pasos detallados."
+        },
+        {
+          "code": "8.4.3",
+          "difficulty": "medio",
+          "text": "Procedimientos de respuesta a incidentes integrados en el BCP",
+          "pymeText": "¿Sabéis exactamente cuándo activar el plan de continuidad y quién da la orden?",
+          "tooltip": "Cómo se activa el BCP ante un incidente. Evidencia: umbrales de activación, árbol de decisiones, roles."
+        },
+        {
+          "code": "8.4.4",
+          "difficulty": "medio",
+          "text": "Plan de comunicación de crisis documentado",
+          "pymeText": "¿Tenéis preparado cómo comunicar una crisis a empleados, clientes y proveedores?",
+          "tooltip": "Cómo se comunica durante una interrupción. Evidencia: árbol de llamadas, plantillas de comunicación, portavoz designado."
+        },
+        {
+          "code": "8.4.5",
+          "difficulty": "complejo",
+          "text": "Medios alternativos para continuidad operativa identificados",
+          "pymeText": "Si vuestra oficina o servidor principal no está disponible, ¿tenéis alternativas?",
+          "tooltip": "Oficinas alternativas, sistemas redundantes. Evidencia: lista de alternativas, contratos o acuerdos vigentes."
+        }
+      ]
+    },
+    {
+      "title": "Gestión de recursos · Cláusula 7",
+      "pymeTitle": "Personas y medios para la continuidad",
+      "items": [
+        {
+          "code": "7.1",
+          "difficulty": "medio",
+          "text": "Recursos necesarios para el SGCN identificados y asignados",
+          "pymeText": "¿Tenéis presupuesto y personal dedicado a mantener el plan de continuidad?",
+          "tooltip": "Personal, tecnología y presupuesto. Evidencia: presupuesto aprobado, recursos asignados al equipo de continuidad."
+        },
+        {
+          "code": "7.2",
+          "difficulty": "medio",
+          "text": "Competencias del equipo de continuidad verificadas",
+          "pymeText": "¿El equipo de continuidad sabe qué hacer de verdad, no solo en teoría?",
+          "tooltip": "El equipo sabe qué hacer. Evidencia: formación recibida, registros de competencias, suplentes identificados."
+        },
+        {
+          "code": "7.3",
+          "difficulty": "facil",
+          "text": "Concienciación sobre continuidad en toda la organización",
+          "pymeText": "¿Todos los empleados saben que hay un plan de continuidad y qué papel tienen en él?",
+          "tooltip": "El personal conoce los planes. Evidencia: formación a todo el personal, comunicaciones internas."
+        },
+        {
+          "code": "7.4",
+          "difficulty": "medio",
+          "text": "Comunicación interna y externa sobre continuidad definida",
+          "pymeText": "¿Tenéis definido cómo comunicaros internamente y con el exterior si los canales habituales fallan?",
+          "tooltip": "Protocolos de comunicación. Evidencia: matriz de comunicación, canales alternativos identificados."
+        }
+      ]
+    },
+    {
+      "title": "Pruebas y Ejercicios · Cláusula 8",
+      "pymeTitle": "¿Habéis probado que funciona?",
+      "items": [
+        {
+          "code": "8.5",
+          "difficulty": "facil",
+          "text": "Programa de pruebas y ejercicios de continuidad establecido",
+          "pymeText": "¿Hacéis simulacros o pruebas del plan de continuidad al menos una vez al año?",
+          "tooltip": "Plan de pruebas anual. Evidencia: calendario de pruebas, tipos de ejercicios definidos."
+        },
+        {
+          "code": "8.5",
+          "difficulty": "facil",
+          "text": "Ejercicios de continuidad realizados y documentados",
+          "pymeText": "¿Tenéis registrado cómo fueron esas pruebas y qué habría que mejorar?",
+          "tooltip": "Pruebas ejecutadas con registro. Evidencia: informes de ejercicios, participantes, resultados, desviaciones."
+        },
+        {
+          "code": "8.5",
+          "difficulty": "complejo",
+          "text": "RTO y RPO verificados mediante pruebas reales",
+          "pymeText": "¿Habéis verificado en una prueba real que podéis recuperar los sistemas en el tiempo previsto?",
+          "tooltip": "Los tiempos se han medido, no estimado. Evidencia: registros de pruebas con tiempos reales vs objetivos."
+        },
+        {
+          "code": "8.5",
+          "difficulty": "facil",
+          "text": "Plan de mejora derivado de los ejercicios con seguimiento",
+          "pymeText": "¿Después de cada prueba o incidente real, mejoráis el plan?",
+          "tooltip": "Las lecciones aprendidas se implementan. Evidencia: plan de mejora post-ejercicio, estado de cada acción."
+        }
+      ]
+    },
+    {
+      "title": "Evaluación y Mejora · Cláusulas 9-10",
+      "pymeTitle": "¿Aprendéis y mejoráis?",
+      "items": [
+        {
+          "code": "9.1",
+          "difficulty": "complejo",
+          "text": "Indicadores de rendimiento del SGCN definidos y medidos",
+          "pymeText": "¿Medís si el plan de continuidad funciona con indicadores concretos?",
+          "tooltip": "KPIs de continuidad. Evidencia: indicadores definidos, datos de seguimiento, informes periódicos."
+        },
+        {
+          "code": "9.2",
+          "difficulty": "medio",
+          "text": "Auditoría interna del SGCN realizada",
+          "pymeText": "¿Hacéis auditoría interna del plan de continuidad?",
+          "tooltip": "Auditoría interna documentada. Evidencia: informe de auditoría interna, no conformidades, seguimiento."
+        },
+        {
+          "code": "9.3",
+          "difficulty": "facil",
+          "text": "Revisión por la dirección del SGCN documentada",
+          "pymeText": "¿La dirección revisa el plan de continuidad al menos una vez al año?",
+          "tooltip": "Revisión anual por dirección. Evidencia: actas con entradas y decisiones, compromisos de recursos."
+        },
+        {
+          "code": "10.1",
+          "difficulty": "medio",
+          "text": "No conformidades gestionadas con acciones correctivas",
+          "pymeText": "¿Las desviaciones que encontráis se corrigen formalmente?",
+          "tooltip": "Las desviaciones se corrigen. Evidencia: registro de no conformidades, acciones correctivas, verificación."
+        },
+        {
+          "code": "10.2",
+          "difficulty": "medio",
+          "text": "Mejora continua del SGCN documentada",
+          "pymeText": "¿El plan mejora con el tiempo y se adapta a los cambios de la empresa?",
+          "tooltip": "El sistema mejora con el tiempo. Evidencia: historial de mejoras, comparativa entre revisiones."
+        }
+      ]
+    },
+    {
+      "title": "Proveedores críticos",
+      "pymeTitle": "Los proveedores de los que dependéis",
+      "items": [
+        {
+          "code": "8.3",
+          "difficulty": "complejo",
+          "text": "Proveedores críticos identificados con SLAs que soportan los RTO",
+          "pymeText": "¿Los SLAs de vuestros proveedores críticos son compatibles con vuestros tiempos de recuperación?",
+          "tooltip": "Los SLAs de proveedores son coherentes con el RTO. Evidencia: contratos con SLAs verificados, análisis de coherencia."
+        },
+        {
+          "code": "8.3",
+          "difficulty": "medio",
+          "text": "Planes de contingencia para fallo de proveedores críticos",
+          "pymeText": "¿Tenéis un plan B si falla un proveedor crítico?",
+          "tooltip": "Qué pasa si falla un proveedor clave. Evidencia: alternativas identificadas, planes de contingencia por proveedor."
+        }
+      ]
+    }
+  ]
+}

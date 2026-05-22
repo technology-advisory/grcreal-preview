@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0">
+<title>Quiz · GRCreal</title>
+<meta name="description" content="Pon a prueba tu conocimiento en ciberseguridad y compliance. 10 preguntas aleatorias por tema y nivel.">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Quiz · GRCreal ">
+<meta property="og:description" content="Compliance, ciberseguridad y normativa. ¿Cuánto sabes realmente?">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://grcreal.com/quiz/">
+<meta property="og:image" content="https://grcreal.com/grcreal.png">
+<link rel="canonical" href="https://grcreal.com/quiz/">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="stylesheet" href="../css/marca.css">
+<link rel="stylesheet" href="../css/quiz.css">
+<script src="/js/preguntas.js"></script>
+
+<style>
+/* ── GRID TEMAS (igual que academy-grid) ── */
+.quiz-topic-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  margin-bottom: 28px;
+}
+
+.quiz-topic-card {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 22px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  cursor: pointer;
+  transition: all .2s ease;
+  position: relative;
+  text-align: left;
+  font-family: var(--sans);
+}
+.quiz-topic-card:hover {
+  border-color: var(--brand);
+  background: var(--brand-light);
+}
+.quiz-topic-card.active {
+  border-color: var(--brand);
+  background: var(--brand);
+}
+.quiz-topic-card.active .qtc-tag,
+.quiz-topic-card.active .qtc-title,
+.quiz-topic-card.active .qtc-desc {
+  color: #fff;
+}
+.quiz-topic-card.active .qtc-check {
+  opacity: 1;
+}
+
+.qtc-tag {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--brand);
+  margin-bottom: 6px;
+}
+.qtc-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.25;
+  margin-bottom: 6px;
+}
+.qtc-desc {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+.qtc-check {
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  font-size: 16px;
+  opacity: 0;
+  transition: opacity .15s;
+}
+
+/* ── NIVEL (3 columnas limpias) ── */
+.level-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.level-btn {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  padding: 12px 8px;
+  border: 1px solid var(--border);
+  background: var(--white);
+  color: var(--muted);
+  cursor: pointer;
+  transition: all .15s;
+  text-align: center;
+}
+.level-btn:hover  { border-color: var(--brand); color: var(--brand); background: var(--brand-light); }
+.level-btn.active { border-color: var(--brand); background: var(--brand); color: var(--white); }
+
+/* ── PANTALLAS ── */
+.screen        { display: none; }
+.screen.active { display: block; }
+
+/* ── PROGRESO ── */
+.q-counter {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--faint);
+  margin-bottom: 10px;
+}
+.progress-wrap {
+  height: 3px;
+  background: var(--border-soft);
+  margin-bottom: 24px;
+  overflow: hidden;
+}
+.progress-bar {
+  height: 100%;
+  background: var(--brand);
+  transition: width .4s ease;
+}
+
+/* ── TAGS PREGUNTA ── */
+.q-tags { display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap; }
+.q-tag {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+}
+.q-tag.topic { background: var(--brand-light); color: var(--brand); border: 1px solid var(--brand-mid); }
+.q-tag.level { background: var(--surface); color: var(--ghost); border: 1px solid var(--border-soft); }
+
+/* ── PREGUNTA ── */
+.q-text {
+  font-size: 21px;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.4;
+  margin-bottom: 24px;
+}
+
+/* ── OPCIONES ── */
+.opt-btn {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  width: 100%;
+  padding: 14px 18px;
+  border: 1px solid var(--border);
+  background: var(--white);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.55;
+  text-align: left;
+  cursor: pointer;
+  margin-bottom: 8px;
+  transition: border-color .13s, background .13s;
+}
+.opt-btn:last-child { margin-bottom: 0; }
+.opt-btn:hover:not(:disabled) { border-color: var(--brand); background: var(--brand-light); }
+.opt-btn:disabled { cursor: default; }
+.opt-btn.correct  { border-color: #2d8a4e; background: #eaf6ee; color: #1a5c33; font-weight: 600; }
+.opt-btn.wrong    { border-color: #c0392b; background: #fdecea; color: #7b1d1d; font-weight: 600; }
+.opt-btn.dimmed   { opacity: .38; }
+
+.opt-letter {
+  min-width: 28px;
+  height: 28px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--ghost);
+  font-family: var(--mono);
+  font-weight: 700;
+  font-size: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.opt-btn.correct .opt-letter { background: #2d8a4e; border-color: #2d8a4e; color: #fff; }
+.opt-btn.wrong   .opt-letter { background: #c0392b; border-color: #c0392b; color: #fff; }
+
+/* ── EXPLICACIÓN ── */
+.explain-block {
+  border-left: 3px solid #2d8a4e;
+  background: #eaf6ee;
+  padding: 16px 20px;
+  margin: 18px 0 0;
+  font-size: 15px;
+  line-height: 1.75;
+  color: #1a5c33;
+}
+.explain-block.wrong-explain { border-left-color: #c0392b; background: #fdecea; color: #7b1d1d; }
+.explain-label {
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+/* ── BOTÓN PRINCIPAL ── */
+.cta-quiz {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: #fff;
+  background: var(--brand);
+  border: none;
+  padding: 15px 28px;
+  cursor: pointer;
+  text-align: center;
+  width: 100%;
+  transition: background .2s;
+  margin-top: 8px;
+}
+.cta-quiz:hover    { background: var(--brand-dark); }
+.cta-quiz.secondary {
+  background: var(--white);
+  color: var(--brand);
+  border: 1px solid var(--brand);
+}
+.cta-quiz.secondary:hover { background: var(--brand-light); }
+.btn-row { display: flex; gap: 10px; }
+.btn-row .cta-quiz { margin-top: 0; }
+
+/* ── RESULTADO ── */
+.score-badge {
+  text-align: center;
+  padding: 28px 0 20px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  margin-bottom: 28px;
+}
+.score-number { font-size: 68px; font-weight: 700; color: var(--ink); line-height: 1; letter-spacing: -2px; }
+.score-label  { font-family: var(--mono); font-size: 11px; letter-spacing: .18em; text-transform: uppercase; color: var(--faint); margin-top: 10px; }
+.score-pct    { font-size: 20px; color: var(--brand); font-weight: 700; margin-top: 6px; }
+
+/* ── HISTORIAL ── */
+.history-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border-soft);
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+.history-icon { font-size: 14px; flex-shrink: 0; margin-top: 2px; }
+
+/* ── ANIM ── */
+@keyframes fadeUp { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:none; } }
+.fade-up { animation: fadeUp .28s ease forwards; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 620px) {
+  .quiz-topic-grid { grid-template-columns: 1fr; }
+  .q-text { font-size: 18px; }
+  .opt-btn { font-size: 14px; }
+  .score-number { font-size: 52px; }
+}
+</style>
+</head>
+
+<body>
+<div class="card-wrapper">
+<div class="card">
+
+  <div class="accent-bar"></div>
+
+  <!-- NAV -->
+  <div style="display:flex;align-items:center;justify-content:space-between;padding:14px 48px;border-bottom:1px solid var(--border-soft);flex-wrap:wrap;gap:8px;">
+    <span style="font-size:15px;font-weight:700;color:var(--brand);font-family:var(--sans);">
+  GRCreal <span style="color:var(--ink);font-weight:400;"></span>
+</span>
+    <span style="font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);background:var(--surface);border:1px solid var(--border-soft);padding:4px 12px;" id="nav-badge">
+      Quiz · Compliance
+    </span>
+  </div>
+
+  <!-- ══════════════════════════════════════
+       PANTALLA 1: CONFIG
+       ══════════════════════════════════════ -->
+  <div id="screen-config" class="screen active">
+
+    <div class="header">
+      <div class="tag">GRCreal · Quiz</div>
+      <div class="headline">
+        ¿Cuánto sabes<br>
+        <span class="accent">realmente</span><span class="dim">?</span>
+      </div>
+      <p class="subline">
+        10 preguntas aleatorias por tema.<br>
+        <strong>Sin trampa. Sin PDF. Solo conocimiento real.</strong>
+      </p>
+    </div>
+
+    <div class="body">
+
+      <!-- SELECTOR TEMAS -->
+      <div class="block-label">Tema</div>
+      <div class="block-title">¿Sobre qué quieres ser examinado?</div>
+
+      <div class="quiz-topic-grid" id="topic-grid"></div>
+
+      <div class="divider"></div>
+
+      <!-- SELECTOR NIVEL -->
+      <div class="block-label">Nivel</div>
+      <div class="block-title">¿Cuál es tu nivel de partida?</div>
+
+      <div class="level-row">
+        <button class="level-btn"        data-level="Junior" onclick="selectLevel(this)">
+          Junior<br><span style="font-size:9px;opacity:.7;letter-spacing:.08em;">Conceptos base</span>
+        </button>
+        <button class="level-btn active" data-level="Senior" onclick="selectLevel(this)">
+          Senior<br><span style="font-size:9px;opacity:.85;letter-spacing:.08em;">Práctica real</span>
+        </button>
+        <button class="level-btn"        data-level="Expert" onclick="selectLevel(this)">
+          Expert<br><span style="font-size:9px;opacity:.7;letter-spacing:.08em;">Detalle técnico</span>
+        </button>
+      </div>
+
+      <button class="cta-quiz" onclick="startQuiz()">
+        Empezar Quiz (10 preguntas) →
+      </button>
+
+    </div>
+
+    <div class="footer">
+      <div class="footer-inner">
+        <div class="author-block">
+          <div class="author-avatar">MA</div>
+          <div>
+            <div class="author-name">Miguel Ángel Carriazo · <span>vCISO</span></div>
+            <div class="author-title">Cybersecurity &amp; Infrastructure Architect</div>
+          </div>
+        </div>
+        <a href="https://www.linkedin.com/in/macarriazo/" target="_blank" rel="noopener noreferrer" class="li-btn">
+          <svg class="li-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#0077B5">
+            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+          </svg>
+          <div>
+            <span class="li-main">"Merece la pena la experiencia."</span>
+            <span class="li-sub">Hablemos en LinkedIn →</span>
+          </div>
+        </a>
+      </div>
+    </div>
+
+  </div><!-- /screen-config -->
+
+  <!-- ══════════════════════════════════════
+       PANTALLA 2: QUIZ
+       ══════════════════════════════════════ -->
+  <div id="screen-quiz" class="screen">
+    <div class="body">
+
+      <div class="q-counter" id="q-counter">Pregunta 1 de 10</div>
+      <div class="progress-wrap">
+        <div class="progress-bar" id="progress-bar" style="width:0%"></div>
+      </div>
+
+      <div class="q-tags">
+        <span class="q-tag topic" id="q-topic-tag"></span>
+        <span class="q-tag level" id="q-level-tag"></span>
+      </div>
+
+      <div class="q-text fade-up" id="q-text"></div>
+
+      <div id="options-container"></div>
+      <div id="explain-container"></div>
+
+      <div id="next-container" style="display:none;margin-top:22px;">
+        <button class="cta-quiz" onclick="nextQuestion()" id="next-btn">
+          Siguiente pregunta →
+        </button>
+      </div>
+
+    </div>
+  </div><!-- /screen-quiz -->
+
+  <!-- ══════════════════════════════════════
+       PANTALLA 3: RESULTADO
+       ══════════════════════════════════════ -->
+  <div id="screen-result" class="screen">
+
+    <div class="header">
+      <div class="tag">Resultado · Quiz</div>
+      <div class="headline" id="result-headline">
+        Bien hecho,<br><span class="accent">nivel Senior</span>
+      </div>
+    </div>
+
+    <div class="body">
+
+      <div class="score-badge">
+        <div class="score-number" id="result-score">—</div>
+        <div class="score-label"  id="result-label">—</div>
+        <div class="score-pct"    id="result-pct">—</div>
+      </div>
+
+      <div class="block-label">Resumen</div>
+      <div class="block-title">Pregunta a pregunta</div>
+      <div id="history-list" style="margin-top:14px;margin-bottom:32px;"></div>
+
+      <div class="divider"></div>
+
+      <div class="btn-row">
+        <button class="cta-quiz"           onclick="startQuiz()" style="flex:1;">🔄 Repetir tema</button>
+        <button class="cta-quiz secondary" onclick="goConfig()"  style="flex:1;">🎯 Cambiar tema</button>
+      </div>
+
+    </div>
+
+    <div class="footer">
+      <div class="footer-inner">
+        <div class="author-block">
+          <div class="author-avatar">MA</div>
+          <div>
+            <div class="author-name">Miguel Ángel Carriazo · <span>vCISO</span></div>
+            <div class="author-title">Cybersecurity &amp; Infrastructure Architect</div>
+          </div>
+        </div>
+        <a href="https://www.linkedin.com/in/macarriazo/" target="_blank" rel="noopener noreferrer" class="li-btn">
+          <svg class="li-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#0077B5">
+            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+          </svg>
+          <div>
+            <span class="li-main">"Comparte tu resultado."</span>
+            <span class="li-sub">LinkedIn →</span>
+          </div>
+        </a>
+      </div>
+    </div>
+
+  </div><!-- /screen-result -->
+
+</div><!-- /card -->
+</div><!-- /card-wrapper -->
+
+<a href="/index.html" class="home-btn">⌂ Home</a>
+
+<script>
+/* ── DATOS DE TEMAS ── */
+const TOPIC_META = {
+  "ISO/IEC 27001":                    { tag: "Seguridad · SGSI",          title: "ISO/IEC 27001",                      desc: "Gestión de la seguridad de la información. Controles, riesgos, SoA y ciclo PDCA." },
+  "ENS (Esquema Nacional de Seguridad)": { tag: "Administración Pública",   title: "ENS",                                desc: "Esquema Nacional de Seguridad. Categorías, medidas y auditoría en AA.PP." },
+  "NIS2 Directive":                   { tag: "Directiva europea",           title: "NIS2",                               desc: "Resiliencia de redes y sistemas. Sectores esenciales, notificación y sanciones." },
+  "RGPD / GDPR":                      { tag: "Protección de datos",         title: "RGPD / GDPR",                        desc: "Reglamento europeo de protección de datos personales. Bases, derechos y DPO." },
+  "ISO 22301 BCM":                    { tag: "Continuidad · BCM",           title: "ISO 22301",                          desc: "Continuidad de negocio. BIA, RTO, RPO, planes y gestión de crisis." },
+  "Zero Trust Architecture":          { tag: "Arquitectura · Seguridad",    title: "Zero Trust",                         desc: "Never Trust, Always Verify. Microsegmentación, identidad y ZTNA." },
+  "DORA (Digital Operational Resilience)": { tag: "Sector financiero",      title: "DORA",                               desc: "Resiliencia operativa digital en el sector financiero europeo." },
+  "Ransomware Defense":               { tag: "Ciberamenazas · IR",          title: "Ransomware",                         desc: "Defensa, respuesta y recuperación ante ataques de ransomware." },
+  "vCISO / GRC":                      { tag: "Gobierno · Estrategia",       title: "vCISO / GRC",                        desc: "Gobierno, riesgo y cumplimiento. El rol del vCISO y la estrategia de seguridad." },
+  "Threat Intelligence":              { tag: "Inteligencia · SOC",          title: "Threat Intelligence",                desc: "MITRE ATT&CK, IOCs, TTPs y ciclo de vida de la inteligencia de amenazas." }
+};
+
+const TOPICS  = Object.keys(QUIZ_DATA);
+const LETTERS = ['A','B','C','D'];
+const LVL_DESC = {
+  Junior: 'Conceptos básicos y definiciones esenciales.',
+  Senior: 'Aplicación práctica y casuística real. Nivel profesional en activo.',
+  Expert: 'Detalle técnico/normativo avanzado. Casos edge y matices.'
+};
+
+let S = { topic: TOPICS[0], level: 'Senior', questions: [], current: 0, score: 0, history: [], answered: false };
+
+/* ── INIT ── */
+document.addEventListener('DOMContentLoaded', () => {
+  const grid = document.getElementById('topic-grid');
+  TOPICS.forEach((t, i) => {
+    const meta = TOPIC_META[t] || { tag: '', title: t, desc: '' };
+    const card = document.createElement('button');
+    card.className = 'quiz-topic-card' + (i === 0 ? ' active' : '');
+    card.dataset.topic = t;
+    card.innerHTML =
+      '<span class="qtc-check">✓</span>' +
+      '<div class="qtc-tag">'   + meta.tag   + '</div>' +
+      '<div class="qtc-title">' + meta.title + '</div>' +
+      '<div class="qtc-desc">'  + meta.desc  + '</div>';
+    card.onclick = () => {
+      document.querySelectorAll('.quiz-topic-card').forEach(c => c.classList.remove('active'));
+      card.classList.add('active');
+      S.topic = t;
+    };
+    grid.appendChild(card);
+  });
+  show('config');
+});
+
+function selectLevel(btn) {
+  document.querySelectorAll('.level-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  S.level = btn.dataset.level;
+}
+
+function show(name) {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.getElementById('screen-' + name).classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+/* ── START ── */
+function startQuiz() {
+  const pool = [...QUIZ_DATA[S.topic]];
+  shuffle(pool);
+  S.questions = pool.slice(0, 10);
+  S.current = 0; S.score = 0; S.history = []; S.answered = false;
+  document.getElementById('nav-badge').textContent = (TOPIC_META[S.topic]?.title || S.topic) + ' · Quiz';
+  show('quiz');
+  renderQ();
+}
+
+/* ── RENDER PREGUNTA ── */
+function renderQ() {
+  const q = S.questions[S.current];
+  const num = S.current + 1;
+  const tot = S.questions.length;
+
+  document.getElementById('q-counter').textContent    = 'Pregunta ' + num + ' de ' + tot;
+  document.getElementById('progress-bar').style.width = ((num - 1) / tot * 100) + '%';
+  document.getElementById('q-topic-tag').textContent  = TOPIC_META[S.topic]?.title || S.topic;
+  document.getElementById('q-level-tag').textContent  = S.level;
+
+  const qEl = document.getElementById('q-text');
+  qEl.textContent = q.q;
+  qEl.classList.remove('fade-up');
+  void qEl.offsetWidth;
+  qEl.classList.add('fade-up');
+
+  const cont = document.getElementById('options-container');
+  cont.innerHTML = '';
+  q.o.forEach((opt, idx) => {
+    const btn = document.createElement('button');
+    btn.className = 'opt-btn';
+    btn.innerHTML = '<span class="opt-letter">' + LETTERS[idx] + '</span><span>' + opt + '</span>';
+    btn.onclick = () => answer(idx);
+    cont.appendChild(btn);
+  });
+
+  document.getElementById('explain-container').innerHTML = '';
+  document.getElementById('next-container').style.display = 'none';
+  S.answered = false;
+}
+
+/* ── RESPUESTA ── */
+function answer(idx) {
+  if (S.answered) return;
+  S.answered = true;
+  const q = S.questions[S.current];
+  const ok = idx === q.c;
+  if (ok) S.score++;
+  S.history.push({ text: q.q, ok });
+
+  document.querySelectorAll('.opt-btn').forEach((btn, i) => {
+    btn.disabled = true;
+    const l = btn.querySelector('.opt-letter');
+    if      (i === q.c)          { btn.classList.add('correct'); l.textContent = '✓'; }
+    else if (i === idx && !ok)   { btn.classList.add('wrong');   l.textContent = '✗'; }
+    else                         btn.classList.add('dimmed');
+  });
+
+  document.getElementById('explain-container').innerHTML =
+    '<div class="explain-block ' + (ok ? '' : 'wrong-explain') + ' fade-up">' +
+    '<div class="explain-label">' + (ok ? '✅ Correcto' : '❌ Incorrecto') + '</div>' +
+    q.e + '</div>';
+
+  const isLast = S.current + 1 >= S.questions.length;
+  document.getElementById('next-btn').textContent = isLast ? 'Ver resultados 🏁' : 'Siguiente pregunta →';
+  document.getElementById('next-container').style.display = 'block';
+}
+
+/* ── SIGUIENTE ── */
+function nextQuestion() {
+  S.current++;
+  if (S.current >= S.questions.length) { showResult(); return; }
+  renderQ();
+  document.querySelector('.card').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+/* ── RESULTADO ── */
+function showResult() {
+  const pct = Math.round(S.score / S.questions.length * 100);
+  let nivel, emoji;
+  if      (pct >= 90) { nivel = 'nivel Expert';       emoji = '🏆'; }
+  else if (pct >= 70) { nivel = 'nivel Senior';        emoji = '⭐'; }
+  else if (pct >= 50) { nivel = 'nivel Junior';        emoji = '📚'; }
+  else                { nivel = 'a seguir estudiando'; emoji = '💪'; }
+
+  document.getElementById('result-headline').innerHTML =
+    emoji + ' Resultado:<br><span class="accent">' + nivel + '</span>';
+  document.getElementById('result-score').textContent = S.score + '/' + S.questions.length;
+  document.getElementById('result-label').textContent = (TOPIC_META[S.topic]?.title || S.topic) + ' · ' + S.level;
+  document.getElementById('result-pct').textContent   = pct + '% de acierto';
+
+  const list = document.getElementById('history-list');
+  list.innerHTML = '';
+  S.history.forEach(h => {
+    list.insertAdjacentHTML('beforeend',
+      '<div class="history-item"><span class="history-icon">' + (h.ok ? '✅' : '❌') +
+      '</span><span>' + h.text + '</span></div>');
+  });
+
+  document.getElementById('nav-badge').textContent = 'Resultado · ' + (TOPIC_META[S.topic]?.title || S.topic);
+  show('result');
+}
+
+function goConfig() {
+  document.getElementById('nav-badge').textContent = 'Quiz · Compliance';
+  show('config');
+}
+
+function shuffle(a) {
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+}
+</script>
+
+</body>
+</html>

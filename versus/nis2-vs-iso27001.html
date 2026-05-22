@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0">
+<title>NIS2 vs ISO 27001 · GRCreal</title>
+<meta name="description" content="NIS2 te obliga. ISO 27001 te ayuda a cumplirla. Son complementarias — pero el certificado no es escudo regulatorio.">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="NIS2 vs ISO 27001 — El certificado no es cumplimiento">
+<meta property="og:description" content="NIS2 te obliga. ISO 27001 te ayuda a cumplirla. Son complementarias — pero el certificado no es escudo regulatorio.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://grcreal.com/versus/nis2-vs-iso27001.html">
+<meta property="og:image" content="https://grcreal.com/grcreal.png">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="stylesheet" href="../css/marca.css">
+<link rel="stylesheet" href="../css/versus.css">
+<link rel="stylesheet" href="../css/global.css">
+
+<style>
+  .tbl-scroll {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin-top: 20px;
+  }
+  .tbl-scroll table.tension {
+    min-width: 520px;
+    width: 100%;
+  }
+</style>
+</head>
+<body class="article-page">
+<div class="card-wrapper">
+<div class="card">
+<div class="accent-bar"></div>
+
+<div class="header">
+  <div class="tag">NIS2 · ISO 27001 · Cumplimiento · Versus</div>
+  <div class="article-date">7 Mayo 2026</div>
+  <div class="headline">
+    NIS2<br>
+    <span class="dim">vs</span><br>
+    <span class="accent">ISO 27001</span>
+  </div>
+  <p class="subline">
+    El certificado no es cumplimiento.<br>
+    <strong>Y confundirlos tiene consecuencias legales.</strong>
+  </p>
+</div>
+
+<div class="body">
+
+  <!-- FICHA RÁPIDA -->
+  <div class="block">
+    <div class="block-label">Ficha rápida</div>
+    <div class="block-title">Los contendientes de un vistazo</div>
+
+    <div class="tbl-scroll">
+      <table class="tension">
+        <tr>
+          <td class="tension-who"></td>
+          <td class="tension-says"><strong>NIS2</strong></td>
+          <td class="tension-says"><strong>ISO 27001</strong></td>
+        </tr>
+        <tr>
+          <td class="tension-who">Tipo</td>
+          <td class="tension-says">Directiva europea — obligación legal</td>
+          <td class="tension-says">Norma internacional — voluntaria</td>
+        </tr>
+        <tr>
+          <td class="tension-who">En vigor</td>
+          <td class="tension-says">Octubre 2024</td>
+          <td class="tension-says">2005 / revisión 2022</td>
+        </tr>
+        <tr>
+          <td class="tension-who">Alcance</td>
+          <td class="tension-says">Entidades esenciales e importantes de 15 sectores críticos en la UE</td>
+          <td class="tension-says">Cualquier organización, sector y tamaño</td>
+        </tr>
+        <tr>
+          <td class="tension-who">Sanciones</td>
+          <td class="tension-says">Hasta 10M€ o 2% facturación global (esenciales)</td>
+          <td class="tension-says">Ninguna — es voluntaria</td>
+        </tr>
+        <tr>
+          <td class="tension-who">Responsabilidad dirección</td>
+          <td class="tension-says">Personal y directa — sancionable</td>
+          <td class="tension-says">Liderazgo y compromiso exigido, sin sanción</td>
+        </tr>
+        <tr>
+          <td class="tension-who">Artículos operativos clave</td>
+          <td class="tension-says">Art. 20 (gobernanza), Art. 21 (riesgos), Art. 23 (notificación)</td>
+          <td class="tension-says">93 controles en Anexo A</td>
+        </tr>
+        <tr class="hi-row">
+          <td class="tension-who">Relación entre ambas</td>
+          <td class="tension-says" colspan="2"><span class="hi">El Preámbulo 79 de NIS2 menciona explícitamente la familia ISO 27000 como base recomendada para la gestión de riesgos</span></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- MAPPING BSI -->
+  <div class="block">
+    <div class="block-label">El mapping oficial</div>
+    <div class="block-title">Qué cubre ISO 27001 de cada artículo NIS2</div>
+    <div class="block-text">
+      BSI publicó la herramienta de correspondencia oficial NIS2 → ISO 27001. Este es el resultado artículo por artículo. Es el dato que falta en la mayoría de comparativas.
+    </div>
+
+    <div class="tbl-scroll">
+      <table class="tension">
+        <tr>
+          <td class="tension-who"><strong>Artículo NIS2</strong></td>
+          <td class="tension-says"><strong>Controles ISO 27001 que cubren</strong></td>
+          <td class="tension-says"><strong>Gap principal</strong></td>
+        </tr>
+        <tr>
+          <td class="tension-who">Art. 20 — Gobernanza</td>
+          <td class="tension-says">A.5.1, A.5.31, A.5.34, A.5.35, A.5.36, A.6.3</td>
+          <td class="tension-says">ISO 27001 no impone responsabilidad personal ni sanciones a la dirección</td>
+        </tr>
+        <tr>
+          <td class="tension-who">Art. 21A — Análisis de riesgos</td>
+          <td class="tension-says">Cláusulas 5.2, 6.1.2, 6.1.3, 8.2, 8.3 + A.5.1</td>
+          <td class="tension-says">Cobertura alta — uno de los puntos con mayor solapamiento real</td>
+        </tr>
+        <tr>
+          <td class="tension-who">Art. 21B — Gestión de incidentes</td>
+          <td class="tension-says">A.5.24, A.5.25, A.5.26, A.5.27, A.5.28, A.6.8, A.8.16</td>
+          <td class="tension-says">ISO 27001 cubre el proceso. NIS2 exige plazos legales: 24h alerta, 72h notificación, 30 días informe final</td>
+        </tr>
+        <tr>
+          <td class="tension-who">Art. 21C — Continuidad y backup</td>
+          <td class="tension-says">A.5.29, A.5.30, A.8.13, A.8.14, A.8.15, A.8.16</td>
+          <td class="tension-says">NIS2 exige demostrar eficacia operativa real, no solo existencia documental</td>
+        </tr>
+        <tr>
+          <td class="tension-who">Art. 21D — Cadena de suministro</td>
+          <td class="tension-says">A.5.19, A.5.20, A.5.21, A.5.22, A.5.23</td>
+          <td class="tension-says">En muchos SGSI existe documentalmente pero no está integrada en el ciclo operativo de riesgo. NIS2 exige trazabilidad real</td>
+        </tr>
+        <tr>
+          <td class="tension-who">Art. 21E — Desarrollo y vulnerabilidades</td>
+          <td class="tension-says">A.8.8, A.8.9, A.8.20, A.8.21, A.5.37, A.6.8</td>
+          <td class="tension-says">Cobertura razonable con los controles técnicos del Anexo A</td>
+        </tr>
+        <tr>
+          <td class="tension-who">Art. 21F — Eficacia de las medidas</td>
+          <td class="tension-says">Cláusulas 9.1, 9.2, 9.3 + A.5.35, A.5.36</td>
+          <td class="tension-says">ISO 27001 certifica que los controles existen. NIS2 exige demostrar que funcionan en la práctica</td>
+        </tr>
+        <tr>
+          <td class="tension-who">Art. 21G — Higiene y formación</td>
+          <td class="tension-says">Cláusulas 7.3, 7.4 + A.5.15, A.5.16, A.5.18, A.6.3, A.8.2, A.8.5, A.8.7, A.8.22</td>
+          <td class="tension-says">Cobertura amplia — mayor solapamiento de toda la directiva</td>
+        </tr>
+        <tr>
+          <td class="tension-who">Art. 21H — Criptografía</td>
+          <td class="tension-says">A.8.24</td>
+          <td class="tension-says">Un solo control. NIS2 va más lejos en el detalle sectorial</td>
+        </tr>
+        <tr>
+          <td class="tension-who">Art. 21I — RRHH, acceso y activos</td>
+          <td class="tension-says">A.5.9–A.5.11, A.5.15–A.5.18, A.6.1, A.6.2, A.6.4, A.6.5, A.6.6</td>
+          <td class="tension-says">Cobertura alta</td>
+        </tr>
+        <tr>
+          <td class="tension-who">Art. 21J — MFA y comunicaciones seguras</td>
+          <td class="tension-says">A.5.14, A.5.16, A.5.17</td>
+          <td class="tension-says">MFA no es requisito explícito en ISO 27001. NIS2 la exige directamente donde aplique</td>
+        </tr>
+        <tr>
+          <td class="tension-who">Art. 23 — Notificación a autoridades</td>
+          <td class="tension-says">A.5.14, A.6.8</td>
+          <td class="tension-says">ISO 27001 cubre reporte interno de eventos. NIS2 exige notificación a autoridades competentes con plazos legales. Son cosas distintas</td>
+        </tr>
+        <tr class="hi-row">
+          <td class="tension-who">Art. 24 — Certificación europea</td>
+          <td class="tension-says">A.5.20</td>
+          <td class="tension-says"><span class="hi">Cobertura parcial vía gestión de proveedores</span></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- GAPS CRÍTICOS -->
+  <div class="block">
+    <div class="block-label">Los gaps que más duelen</div>
+    <div class="block-title">Lo que ISO 27001 no cubre de NIS2</div>
+
+    <div class="tbl-scroll">
+      <table class="tension">
+        <tr>
+          <td class="tension-who"><strong>Área</strong></td>
+          <td class="tension-says"><strong>ISO 27001</strong></td>
+          <td class="tension-says"><strong>NIS2</strong></td>
+        </tr>
+        <tr>
+          <td class="tension-who">Responsabilidad de la dirección</td>
+          <td class="tension-says">Liderazgo y compromiso exigido</td>
+          <td class="tension-says">Responsabilidad personal y directa — sancionable individualmente</td>
+        </tr>
+        <tr>
+          <td class="tension-who">Notificación de incidentes</td>
+          <td class="tension-says">Proceso de gestión de incidentes documentado</td>
+          <td class="tension-says">Plazos legales: 24h alerta, 72h notificación, 30 días informe final a la autoridad</td>
+        </tr>
+        <tr>
+          <td class="tension-who">Criterio de incidente significativo</td>
+          <td class="tension-says">No definido como requisito explícito</td>
+          <td class="tension-says">Debe estar definido, documentado y operativo</td>
+        </tr>
+        <tr>
+          <td class="tension-who">Autenticación multifactor</td>
+          <td class="tension-says">No es requisito explícito</td>
+          <td class="tension-says">Exigida directamente donde aplique</td>
+        </tr>
+        <tr>
+          <td class="tension-who">Requisitos sectoriales</td>
+          <td class="tension-says">Norma agnóstica al sector</td>
+          <td class="tension-says">Requisitos distintos por sector: sanidad ≠ energía ≠ infraestructura digital</td>
+        </tr>
+        <tr class="hi-row">
+          <td class="tension-who">Eficacia demostrable de controles</td>
+          <td class="tension-says">Certifica que los controles existen y están documentados</td>
+          <td class="tension-says"><span class="hi">Exige demostrar que funcionan operativamente. No vale solo el papel.</span></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- CUÁNDO USAR -->
+  <div class="block">
+    <div class="block-label">¿Cuándo usar cada una?</div>
+    <div class="block-title">La decisión en una tabla</div>
+
+    <div class="tbl-scroll">
+      <table class="tension">
+        <tr>
+          <td class="tension-who"><strong>Situación</strong></td>
+          <td class="tension-says"><strong>NIS2</strong></td>
+          <td class="tension-says"><strong>ISO 27001</strong></td>
+        </tr>
+        <tr>
+          <td class="tension-who">Entidad esencial o importante</td>
+          <td class="tension-says">✓ Obligatoria. Sin discusión.</td>
+          <td class="tension-says">✓ Mejor vehículo para cumplirla</td>
+        </tr>
+        <tr>
+          <td class="tension-who">Demostrar madurez a clientes / licitaciones</td>
+          <td class="tension-says">No aplica directamente</td>
+          <td class="tension-says">✓ Referencia global reconocida</td>
+        </tr>
+        <tr>
+          <td class="tension-who">Proveedor de entidad NIS2</td>
+          <td class="tension-says">Te alcanza por Art. 21D (cadena de suministro)</td>
+          <td class="tension-says">✓ Respuesta más sólida ante tu cliente</td>
+        </tr>
+        <tr>
+          <td class="tension-who">PYME fuera del ámbito NIS2 directo</td>
+          <td class="tension-says">Puede llegarte vía cadena de suministro</td>
+          <td class="tension-says">✓ Voluntaria, pero cada vez más exigida</td>
+        </tr>
+        <tr class="hi-row">
+          <td class="tension-who">Tienes ISO 27001 y eres entidad NIS2</td>
+          <td class="tension-says"><span class="hi">Haz el gap analysis. No asumas cobertura automática.</span></td>
+          <td class="tension-says">Cubre el 60–80% de NIS2. El 20–40% restante es el que tiene consecuencias legales.</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- EL ERROR MÁS FRECUENTE -->
+  <div class="block">
+    <div class="block-label">El error más frecuente</div>
+    <div class="block-title">El certificado no es cumplimiento</div>
+    <div class="block-text">
+      Creer que el certificado ISO 27001 demuestra cumplimiento NIS2 es el error más extendido — y el más caro. No lo demuestra. Demuestra que tienes un sistema de gestión de seguridad auditado. Son cosas distintas.
+      <br><br>
+      Para demostrar cumplimiento NIS2 necesitas un gap analysis específico contra los artículos de la directiva, no contra los controles del Anexo A. Algunos requisitos NIS2 no tienen equivalente directo en ISO 27001. Otros sí existen pero con exigencias operativas distintas — especialmente en notificación y en responsabilidad de la dirección.
+      <br><br>
+      ISO 27001 cubre entre el 60 y el 80 por ciento de los requisitos técnicos de NIS2. El 20–40 por ciento restante incluye exactamente los artículos que tienen consecuencias legales directas: plazos de notificación, responsabilidad de la dirección y eficacia operativa demostrable.
+      <br><br>
+      <strong>El gap analysis NIS2 contra tu SGSI actual no es opcional. Es el paso que convierte el certificado en cumplimiento real.</strong>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- VEREDICTO -->
+  <div class="block">
+    <div class="block-label">Veredicto GRCREAL</div>
+    <div class="block-title">NIS2 obliga. ISO 27001 estructura. Las dos juntas funcionan.</div>
+    <div class="block-text">
+      NIS2 te obliga. ISO 27001 te ayuda a cumplirla de forma estructurada y demostrable. Son complementarias — no alternativas.
+      <br><br>
+      Sin ISO 27001: demostrar el cumplimiento NIS2 es más difícil, más caro y menos creíble ante una autoridad supervisora.
+      <br><br>
+      Con ISO 27001 sola: cubres la base técnica, pero te quedas sin cubrir lo que más duele — los plazos legales, la responsabilidad personal de la dirección y la demostración de que los controles funcionan en la práctica.
+      <br><br>
+      <strong>La transición hacia NIS2 suele durar entre 1 y 3 años. Si aún no has empezado, ya vas tarde.</strong>
+    </div>
+  </div>
+
+  <div class="cta-block">
+    <div class="cta-headline">
+      ¿Tienes ISO 27001<br>
+      <span>y crees que ya cumples NIS2?</span>
+    </div>
+    <div class="cta-sub">
+      Probablemente tienes el 60–80%. El resto son exactamente los artículos con consecuencias legales. <strong></strong>
+    </div>
+  </div>
+
+</div>
+
+  <!-- FINAL DEL BODY -->
+<div id="footer-placeholder"></div>
+<script>
+    fetch('/includes/footer.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('footer-placeholder').innerHTML = data;
+        });
+</script>
+
+</div>
+</div>
+<a href="/versus/" class="home-btn">⌂ Home Versus</a>
+</body>
+<script src="/js/global.js"></script>
+</html>

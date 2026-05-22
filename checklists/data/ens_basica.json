@@ -1,0 +1,314 @@
+{
+  "sections": [
+    {
+      "title": "Marco Organizativo",
+      "pymeTitle": "Las reglas escritas de seguridad",
+      "items": [
+        {
+          "code": "org.1",
+          "difficulty": "facil",
+          "text": "Política de seguridad aprobada por la dirección y comunicada a todo el personal",
+          "pymeText": "¿Tenéis un documento firmado por la dirección con las reglas de seguridad? ¿Lo conocen todos?",
+          "tooltip": "Debe existir una política de seguridad firmada por la alta dirección, accesible y comunicada. Evidencia: documento de política, actas de comunicación, fecha de última revisión.",
+          "tags": [
+            { "name": "ens", "text": "ENS org.1", "tooltip": "Política de seguridad aprobada por dirección" }
+          ]
+        },
+        {
+          "code": "org.2",
+          "difficulty": "facil",
+          "text": "Normativa de seguridad documentada y accesible",
+          "pymeText": "¿Hay normas escritas de seguridad que el personal pueda consultar?",
+          "tooltip": "Conjunto de normas que desarrollan la política. Evidencia: documentación accesible al personal, índice de normativa actualizado.",
+          "tags": [
+            { "name": "ens", "text": "ENS org.2", "tooltip": "Normativa de seguridad documentada" }
+          ]
+        },
+        {
+          "code": "org.3",
+          "difficulty": "facil",
+          "text": "Procedimientos de seguridad definidos para las operaciones habituales",
+          "pymeText": "¿Los procesos más importantes tienen procedimientos escritos paso a paso?",
+          "tooltip": "Los procesos críticos tienen procedimientos escritos. Evidencia: catálogo de procedimientos, fecha de última actualización.",
+          "tags": [
+            { "name": "ens", "text": "ENS org.3", "tooltip": "Procedimientos de seguridad definidos" }
+          ]
+        },
+        {
+          "code": "org.4",
+          "difficulty": "medio",
+          "text": "Proceso de autorización para entrada en operación de nuevos sistemas",
+          "pymeText": "¿Ningún sistema nuevo entra en producción sin que alguien lo apruebe formalmente?",
+          "tooltip": "Ningún sistema entra en producción sin autorización formal. Evidencia: registros de autorización, responsable designado.",
+          "tags": [
+            { "name": "ens", "text": "ENS org.4", "tooltip": "Autorización para nuevos sistemas" }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Planificación",
+      "pymeTitle": "Cómo planificáis la seguridad",
+      "items": [
+        {
+          "code": "op.pl.1",
+          "difficulty": "medio",
+          "text": "Análisis de riesgos realizado y documentado",
+          "pymeText": "¿Habéis analizado qué riesgos tiene vuestra información y vuestros sistemas?",
+          "tooltip": "El ENS exige un análisis de riesgos formal. Evidencia: metodología usada, inventario de activos, amenazas y vulnerabilidades identificadas, fecha.",
+          "tags": [
+            { "name": "ens", "text": "ENS op.pl.1", "tooltip": "Análisis de riesgos documentado" }
+          ]
+        },
+        {
+          "code": "op.pl.2",
+          "difficulty": "medio",
+          "text": "Arquitectura de seguridad definida y documentada",
+          "pymeText": "¿Tenéis un diagrama actualizado de cómo está montada vuestra red y vuestros sistemas?",
+          "tooltip": "Diagrama de red y arquitectura de seguridad actualizados. Evidencia: diagramas firmados con fecha de revisión.",
+          "tags": [
+            { "name": "ens", "text": "ENS op.pl.2", "tooltip": "Arquitectura de seguridad documentada" }
+          ]
+        },
+        {
+          "code": "op.pl.3",
+          "difficulty": "medio",
+          "text": "Adquisición de nuevos componentes contempla requisitos de seguridad",
+          "pymeText": "Cuando compráis software o hardware nuevo, ¿evaluáis si es seguro antes de comprarlo?",
+          "tooltip": "Al comprar software o hardware se evalúa la seguridad. Evidencia: proceso de compra con criterios de seguridad, validación previa.",
+          "tags": [
+            { "name": "ens", "text": "ENS op.pl.3", "tooltip": "Seguridad en adquisiciones" }
+          ]
+        },
+        {
+          "code": "op.pl.4",
+          "difficulty": "complejo",
+          "text": "Dimensionamiento y capacidad de los sistemas planificados",
+          "pymeText": "¿Tenéis capacidad suficiente en los sistemas para que no fallen por sobrecarga?",
+          "tooltip": "Los sistemas tienen capacidad suficiente para los picos de uso. Evidencia: plan de capacidad, alertas de uso.",
+          "tags": [
+            { "name": "ens", "text": "ENS op.pl.4", "tooltip": "Dimensionamiento de sistemas" }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Control de Acceso",
+      "pymeTitle": "Quién puede acceder a qué",
+      "items": [
+        {
+          "code": "op.acc.1",
+          "difficulty": "facil",
+          "text": "Política de control de acceso definida",
+          "pymeText": "¿Tenéis claro quién puede acceder a qué en vuestra empresa?",
+          "tooltip": "Reglas claras sobre quién accede a qué. Evidencia: política de control de acceso, matriz de roles.",
+          "tags": [
+            { "name": "ens", "text": "ENS op.acc.1", "tooltip": "Política de control de acceso" }
+          ]
+        },
+        {
+          "code": "op.acc.2",
+          "difficulty": "facil",
+          "text": "Gestión de derechos de acceso con proceso formal de alta, modificación y baja",
+          "pymeText": "Cuando alguien entra o sale de la empresa, ¿hay un proceso formal para gestionar sus accesos?",
+          "tooltip": "Ciclo de vida completo de cuentas. Evidencia: procedimiento de altas/bajas, registros de solicitudes.",
+          "tags": [
+            { "name": "ens", "text": "ENS op.acc.2", "tooltip": "Gestión de derechos de acceso" }
+          ]
+        },
+        {
+          "code": "op.acc.3",
+          "difficulty": "facil",
+          "text": "Identificación de usuarios — cuentas nominativas, no compartidas",
+          "pymeText": "¿Cada empleado tiene su propia cuenta? ¿No se comparten usuarios entre personas?",
+          "tooltip": "Cada usuario tiene su propia cuenta. Evidencia: política de cuentas, ausencia de cuentas genéricas en sistemas críticos.",
+          "tags": [
+            { "name": "ens", "text": "ENS op.acc.3", "tooltip": "Cuentas nominativas" }
+          ]
+        },
+        {
+          "code": "op.acc.4",
+          "difficulty": "facil",
+          "text": "Autenticación con contraseña robusta",
+          "pymeText": "¿Las contraseñas tienen una longitud mínima y no son fáciles de adivinar?",
+          "tooltip": "Política de contraseñas con longitud mínima, complejidad y renovación. Evidencia: configuración de sistemas, política documentada.",
+          "tags": [
+            { "name": "ens", "text": "ENS op.acc.4", "tooltip": "Contraseñas robustas" }
+          ]
+        },
+        {
+          "code": "op.acc.5",
+          "difficulty": "medio",
+          "text": "Segregación de funciones en tareas críticas",
+          "pymeText": "¿Nadie controla un proceso crítico de principio a fin sin que otra persona lo supervise?",
+          "tooltip": "Nadie controla un proceso sensible de principio a fin. Evidencia: matriz de segregación, controles en sistemas.",
+          "tags": [
+            { "name": "ens", "text": "ENS op.acc.5", "tooltip": "Segregación de funciones" }
+          ]
+        },
+        {
+          "code": "op.acc.6",
+          "difficulty": "medio",
+          "text": "Actividad de los usuarios registrada (logs de acceso)",
+          "pymeText": "¿Los accesos a los sistemas quedan registrados — quién entró, cuándo y a qué?",
+          "tooltip": "Los accesos quedan registrados. Evidencia: logs activados, política de retención, responsable de revisión.",
+          "tags": [
+            { "name": "ens", "text": "ENS op.acc.6", "tooltip": "Registro de actividad" }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Explotación",
+      "pymeTitle": "Operación diaria de los sistemas",
+      "items": [
+        {
+          "code": "op.exp.1",
+          "difficulty": "facil",
+          "text": "Inventario de activos actualizado",
+          "pymeText": "¿Tenéis una lista de todos los sistemas, servidores y equipos que usáis?",
+          "tooltip": "Todos los sistemas y datos inventariados con propietario. Evidencia: inventario con fecha de actualización.",
+          "tags": [
+            { "name": "ens", "text": "ENS op.exp.1", "tooltip": "Inventario de activos" }
+          ]
+        },
+        {
+          "code": "op.exp.2",
+          "difficulty": "medio",
+          "text": "Configuración de seguridad de los equipos documentada",
+          "pymeText": "¿Los equipos están configurados de forma segura, sin programas ni servicios innecesarios?",
+          "tooltip": "Línea base de configuración por tipo de sistema. Evidencia: guías de configuración, verificación periódica.",
+          "tags": [
+            { "name": "ens", "text": "ENS op.exp.2", "tooltip": "Configuración de seguridad" }
+          ]
+        },
+        {
+          "code": "op.exp.4",
+          "difficulty": "facil",
+          "text": "Mantenimiento y actualizaciones de seguridad aplicadas",
+          "pymeText": "¿Actualizáis el software y aplicáis parches de seguridad regularmente?",
+          "tooltip": "Proceso de gestión de parches. Evidencia: registro de parches, SLA de aplicación.",
+          "tags": [
+            { "name": "ens", "text": "ENS op.exp.4", "tooltip": "Mantenimiento y actualizaciones" }
+          ]
+        },
+        {
+          "code": "op.exp.5",
+          "difficulty": "medio",
+          "text": "Gestión de incidentes de seguridad con procedimiento definido",
+          "pymeText": "Si ocurre un incidente de seguridad, ¿sabéis qué hacer? ¿Hay un procedimiento?",
+          "tooltip": "Procedimiento de respuesta a incidentes. Evidencia: procedimiento documentado, registro de incidentes.",
+          "tags": [
+            { "name": "ens", "text": "ENS op.exp.5", "tooltip": "Gestión de incidentes" }
+          ]
+        },
+        {
+          "code": "op.exp.6",
+          "difficulty": "facil",
+          "text": "Protección frente a código dañino (antimalware)",
+          "pymeText": "¿Todos los equipos tienen antivirus instalado y actualizado?",
+          "tooltip": "Antimalware en todos los endpoints. Evidencia: software instalado y actualizado, gestión centralizada.",
+          "tags": [
+            { "name": "ens", "text": "ENS op.exp.6", "tooltip": "Antimalware" }
+          ]
+        },
+        {
+          "code": "op.exp.9",
+          "difficulty": "facil",
+          "text": "Copias de seguridad realizadas y verificadas",
+          "pymeText": "¿Hacéis copias de seguridad y verificáis que funcionan restaurándolas?",
+          "tooltip": "Backup con pruebas de restauración. Evidencia: política de backup, registros de copias y pruebas.",
+          "tags": [
+            { "name": "ens", "text": "ENS op.exp.9", "tooltip": "Copias de seguridad" }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Medidas de Protección",
+      "pymeTitle": "Protecciones específicas",
+      "items": [
+        {
+          "code": "mp.if.1",
+          "difficulty": "facil",
+          "text": "Áreas separadas con control de acceso físico",
+          "pymeText": "¿Las zonas donde están los servidores tienen acceso físico restringido?",
+          "tooltip": "Zonas de seguridad con acceso controlado. Evidencia: planos de instalaciones, controles de acceso.",
+          "tags": [
+            { "name": "ens", "text": "ENS mp.if.1", "tooltip": "Control de acceso físico" }
+          ]
+        },
+        {
+          "code": "mp.per.2",
+          "difficulty": "facil",
+          "text": "Formación y concienciación en seguridad para todo el personal",
+          "pymeText": "¿Los empleados reciben formación básica en ciberseguridad al menos una vez al año?",
+          "tooltip": "Todo el personal recibe formación en seguridad. Evidencia: plan de formación, registros de asistencia.",
+          "tags": [
+            { "name": "ens", "text": "ENS mp.per.2", "tooltip": "Formación en seguridad" }
+          ]
+        },
+        {
+          "code": "mp.eq.1",
+          "difficulty": "facil",
+          "text": "Puesto de trabajo despejado (política de mesa limpia)",
+          "pymeText": "¿Los empleados dejan la mesa limpia y sin documentos sensibles cuando se van?",
+          "tooltip": "No dejar información sensible visible. Evidencia: política documentada, verificaciones periódicas.",
+          "tags": [
+            { "name": "ens", "text": "ENS mp.eq.1", "tooltip": "Mesa limpia" }
+          ]
+        },
+        {
+          "code": "mp.eq.2",
+          "difficulty": "facil",
+          "text": "Bloqueo de sesión por inactividad",
+          "pymeText": "¿La pantalla se bloquea automáticamente si el equipo lleva un rato sin usarse?",
+          "tooltip": "Pantalla bloqueada automáticamente. Evidencia: configuración de sistemas, tiempo máximo definido.",
+          "tags": [
+            { "name": "ens", "text": "ENS mp.eq.2", "tooltip": "Bloqueo por inactividad" }
+          ]
+        },
+        {
+          "code": "mp.com.1",
+          "difficulty": "medio",
+          "text": "Perímetro de red seguro con cortafuegos",
+          "pymeText": "¿Vuestra red tiene un firewall en el perímetro que controla el tráfico exterior?",
+          "tooltip": "Firewall en el perímetro. Evidencia: diagrama de red, reglas de firewall, logs.",
+          "tags": [
+            { "name": "ens", "text": "ENS mp.com.1", "tooltip": "Perímetro de red seguro" }
+          ]
+        },
+        {
+          "code": "mp.si.3",
+          "difficulty": "facil",
+          "text": "Borrado y destrucción segura de soportes",
+          "pymeText": "¿Los discos y soportes se borran de forma segura antes de desecharlos o reutilizarlos?",
+          "tooltip": "Proceso de borrado seguro. Evidencia: procedimiento, registros de bajas de equipos.",
+          "tags": [
+            { "name": "ens", "text": "ENS mp.si.3", "tooltip": "Borrado seguro de soportes" }
+          ]
+        },
+        {
+          "code": "mp.info.1",
+          "difficulty": "medio",
+          "text": "Datos de carácter personal tratados conforme al RGPD",
+          "pymeText": "¿El tratamiento de datos personales cumple el RGPD?",
+          "tooltip": "Cumplimiento del RGPD verificado. Evidencia: registro de tratamientos, DPO designado si aplica.",
+          "tags": [
+            { "name": "ens", "text": "ENS mp.info.1", "tooltip": "RGPD" }
+          ]
+        },
+        {
+          "code": "mp.cont.1",
+          "difficulty": "medio",
+          "text": "Plan de continuidad básico ante interrupción de servicios",
+          "pymeText": "¿Tenéis un plan básico para seguir operando si algo crítico falla?",
+          "tooltip": "BCP básico documentado. Evidencia: plan de continuidad, procedimientos de emergencia.",
+          "tags": [
+            { "name": "ens", "text": "ENS mp.cont.1", "tooltip": "Plan de continuidad" }
+          ]
+        }
+      ]
+    }
+  ]
+}

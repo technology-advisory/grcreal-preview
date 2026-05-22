@@ -1,0 +1,188 @@
+{
+  "sections": [
+    {
+      "title": "Control de Acceso — Nivel Media",
+      "pymeTitle": "Acceso más controlado",
+      "items": [
+        {
+          "code": "op.acc.4",
+          "difficulty": "medio",
+          "text": "Autenticación de doble factor (MFA) en accesos privilegiados y remotos",
+          "pymeText": "¿Los administradores y el personal remoto usan doble factor de autenticación (MFA)?",
+          "tooltip": "MFA obligatorio para administradores y acceso remoto. Evidencia: MFA configurado en VPN, sistemas de administración, registro de configuración.",
+          "tags": [
+            { "name": "ens", "text": "ENS op.acc.4", "tooltip": "MFA en accesos privilegiados" }
+          ]
+        },
+        {
+          "code": "op.acc.5",
+          "difficulty": "medio",
+          "text": "Gestión de cuentas privilegiadas con procedimiento específico",
+          "pymeText": "¿Las cuentas de administrador tienen controles especiales, separadas de las de uso diario?",
+          "tooltip": "Las cuentas de administrador tienen controles adicionales. Evidencia: procedimiento de cuentas privilegiadas, revisión periódica.",
+          "tags": [
+            { "name": "ens", "text": "ENS op.acc.5", "tooltip": "Gestión de cuentas privilegiadas" }
+          ]
+        },
+        {
+          "code": "op.acc.6",
+          "difficulty": "complejo",
+          "text": "Monitorización de la actividad de usuarios privilegiados",
+          "pymeText": "¿Los accesos de los administradores se auditan y se revisan activamente?",
+          "tooltip": "Los accesos privilegiados se auditan. Evidencia: logs de actividad privilegiada, alertas configuradas, revisión periódica.",
+          "tags": [
+            { "name": "ens", "text": "ENS op.acc.6", "tooltip": "Monitorización de actividad privilegiada" }
+          ]
+        },
+        {
+          "code": "op.acc.7",
+          "difficulty": "medio",
+          "text": "Acceso remoto controlado mediante VPN con autenticación fuerte",
+          "pymeText": "¿Todo acceso remoto pasa por VPN con doble factor obligatorio?",
+          "tooltip": "Toda conexión remota pasa por VPN con MFA. Evidencia: política de acceso remoto, configuración de VPN.",
+          "tags": [
+            { "name": "ens", "text": "ENS op.acc.7", "tooltip": "VPN con MFA" }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Explotación — Nivel Media",
+      "pymeTitle": "Operación más rigurosa",
+      "items": [
+        {
+          "code": "op.exp.4",
+          "difficulty": "medio",
+          "text": "Proceso formal de gestión de vulnerabilidades con SLA definido",
+          "pymeText": "¿Los parches de seguridad críticos se aplican en un plazo definido?",
+          "tooltip": "Los parches críticos se aplican en plazo definido. Evidencia: proceso documentado, SLA por criticidad, registros de cumplimiento.",
+          "tags": [
+            { "name": "ens", "text": "ENS op.exp.4", "tooltip": "Gestión de vulnerabilidades con SLA" }
+          ]
+        },
+        {
+          "code": "op.exp.5",
+          "difficulty": "medio",
+          "text": "Gestión de incidentes con clasificación, escalado y lecciones aprendidas",
+          "pymeText": "¿Los incidentes se clasifican, escalan y se aprende de ellos?",
+          "tooltip": "Los incidentes se gestionan, clasifican y analizan. Evidencia: registro de incidentes, informes post-incidente.",
+          "tags": [
+            { "name": "ens", "text": "ENS op.exp.5", "tooltip": "Gestión de incidentes completa" }
+          ]
+        },
+        {
+          "code": "op.exp.7",
+          "difficulty": "medio",
+          "text": "Segmentación de red con políticas de filtrado entre segmentos",
+          "pymeText": "¿La red está segmentada — servidores separados de puestos de trabajo y wifi de visitas?",
+          "tooltip": "Redes separadas por funcionalidad. Evidencia: diagrama de VLANs, reglas de firewall entre segmentos.",
+          "tags": [
+            { "name": "ens", "text": "ENS op.exp.7", "tooltip": "Segmentación de red" }
+          ]
+        },
+        {
+          "code": "op.exp.8",
+          "difficulty": "complejo",
+          "text": "Registros de actividad con integridad garantizada y retención mínima de 6 meses",
+          "pymeText": "¿Los registros de actividad están protegidos contra modificación y se guardan al menos 6 meses?",
+          "tooltip": "Logs protegidos contra modificación. Evidencia: configuración de logs, política de retención, controles de integridad.",
+          "tags": [
+            { "name": "ens", "text": "ENS op.exp.8", "tooltip": "Integridad de logs" }
+          ]
+        },
+        {
+          "code": "op.mon.1",
+          "difficulty": "complejo",
+          "text": "Detección de intrusiones — IDS/IPS o monitorización equivalente",
+          "pymeText": "¿Tenéis algún sistema que detecte accesos o comportamientos sospechosos — IDS/IPS?",
+          "tooltip": "Sistema de detección activo. Evidencia: herramienta desplegada, alertas configuradas, procedimiento de respuesta.",
+          "tags": [
+            { "name": "ens", "text": "ENS op.mon.1", "tooltip": "IDS/IPS" }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Medidas de Protección — Nivel Media",
+      "pymeTitle": "Protecciones adicionales",
+      "items": [
+        {
+          "code": "mp.if.3",
+          "difficulty": "medio",
+          "text": "Protección frente a amenazas ambientales (incendio, inundación, temperatura)",
+          "pymeText": "¿Hay protección contra incendios, inundaciones y temperatura en el CPD?",
+          "tooltip": "CPD con protección ambiental. Evidencia: sistemas de detección y extinción, climatización redundante.",
+          "tags": [
+            { "name": "ens", "text": "ENS mp.if.3", "tooltip": "Protección ambiental" }
+          ]
+        },
+        {
+          "code": "mp.com.2",
+          "difficulty": "medio",
+          "text": "Protección de la confidencialidad de las comunicaciones — cifrado TLS",
+          "pymeText": "¿Las comunicaciones externas importantes van cifradas — HTTPS, TLS?",
+          "tooltip": "Comunicaciones cifradas. Evidencia: certificados TLS actualizados, configuración de versiones mínimas.",
+          "tags": [
+            { "name": "ens", "text": "ENS mp.com.2", "tooltip": "Cifrado TLS" }
+          ]
+        },
+        {
+          "code": "mp.si.2",
+          "difficulty": "medio",
+          "text": "Cifrado de datos en reposo para información sensible",
+          "pymeText": "¿Los datos sensibles están cifrados en disco?",
+          "tooltip": "Datos sensibles cifrados en disco. Evidencia: política de cifrado, herramientas usadas, cobertura.",
+          "tags": [
+            { "name": "ens", "text": "ENS mp.si.2", "tooltip": "Cifrado en reposo" }
+          ]
+        },
+        {
+          "code": "mp.cont.2",
+          "difficulty": "medio",
+          "text": "Plan de continuidad probado con ejercicios documentados",
+          "pymeText": "¿El plan de continuidad se ha probado con ejercicios reales documentados?",
+          "tooltip": "El BCP se ha probado. Evidencia: registros de ejercicios, resultados, plan de mejora.",
+          "tags": [
+            { "name": "ens", "text": "ENS mp.cont.2", "tooltip": "Pruebas de continuidad" }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Auditoría — Nivel Media",
+      "pymeTitle": "Verificación externa",
+      "items": [
+        {
+          "code": "aud.1",
+          "difficulty": "medio",
+          "text": "Auditoría de seguridad bienal por entidad independiente",
+          "pymeText": "¿Hay una auditoría de seguridad cada dos años por entidad independiente?",
+          "tooltip": "Auditoría cada 2 años. Evidencia: informe de última auditoría, entidad auditora, fecha.",
+          "tags": [
+            { "name": "ens", "text": "ENS aud.1", "tooltip": "Auditoría bienal" }
+          ]
+        },
+        {
+          "code": "aud.2",
+          "difficulty": "complejo",
+          "text": "Declaración de Aplicabilidad (DoA) documentada y actualizada",
+          "pymeText": "¿Tenéis la Declaración de Aplicabilidad documentada y actualizada?",
+          "tooltip": "DoA alineada con el análisis de riesgos. Evidencia: documento DoA con fecha y firma.",
+          "tags": [
+            { "name": "ens", "text": "ENS aud.2", "tooltip": "Declaración de Aplicabilidad" }
+          ]
+        },
+        {
+          "code": "aud.3",
+          "difficulty": "medio",
+          "text": "Plan de mejora con seguimiento de no conformidades",
+          "pymeText": "¿Las no conformidades tienen plan de mejora con responsable y seguimiento?",
+          "tooltip": "Las no conformidades se gestionan. Evidencia: plan de mejora, estado de cada acción.",
+          "tags": [
+            { "name": "ens", "text": "ENS aud.3", "tooltip": "Plan de mejora" }
+          ]
+        }
+      ]
+    }
+  ]
+}

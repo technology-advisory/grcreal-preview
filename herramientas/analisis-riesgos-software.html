@@ -1,0 +1,1400 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0">
+<title>Análisis de Riesgos · Empresa de Software · GRCreal</title>
+<meta name="description" content="Herramienta guiada de análisis de riesgos para empresas de software. 100 preguntas alineadas con ISO 27001:2022 y ENS RD 311/2022. Sin registro ni almacenamiento.">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Análisis de Riesgos — Empresa de Software">
+<meta property="og:description" content="100 preguntas guiadas para identificar riesgos de seguridad. ISO 27001 + ENS. Sin registro.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://grcreal.com/herramientas/analisis-riesgos-software.html">
+<meta property="og:image" content="https://grcreal.com/grcreal.png">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="../css/marca.css">
+<script src="/js/jspdf.umd.min.js"></script>
+
+<style>
+
+/* ── WIZARD NAV ── */
+.wizard-nav {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+.wizard-step {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  color: var(--muted);
+  background: var(--white);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.wizard-step.active {
+  background: var(--brand);
+  color: #fff;
+  border-color: var(--brand);
+}
+.wizard-step.done {
+  background: var(--brand-light);
+  color: var(--brand);
+  border-color: var(--brand-mid);
+}
+.wizard-step:hover:not(.active) {
+  border-color: var(--brand);
+  color: var(--brand);
+}
+
+/* ── PROGRESS ── */
+.progress-bar-wrap {
+  background: var(--border-soft);
+  border-radius: 4px;
+  height: 10px;
+  margin-bottom: 8px;
+  overflow: hidden;
+}
+.progress-bar {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.3s ease, background-color 0.5s ease;
+  width: 0%;
+  background-color: #e74c3c;
+}
+.progress-bar.orange { background-color: #e67e22; }
+.progress-bar.yellow { background-color: #f1c40f; }
+.progress-bar.green  { background-color: #27ae60; }
+.progress-label {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 0.1em;
+  margin-bottom: 6px;
+}
+.progress-label span { color: var(--brand); font-weight: bold; }
+.progress-status {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  margin-bottom: 20px;
+  padding: 4px 10px;
+  display: inline-block;
+  border-radius: 3px;
+}
+.progress-status.red    { background: #fde; color: #c0392b; border: 1px solid #fab; }
+.progress-status.orange { background: #fef3e2; color: #d35400; border: 1px solid #f5cba7; }
+.progress-status.yellow { background: #fefde2; color: #9a7d0a; border: 1px solid #f9e79f; }
+.progress-status.green  { background: #eafaf1; color: #1e8449; border: 1px solid #a9dfbf; }
+
+/* ── PANTALLA INICIO ── */
+.inicio-screen { display: block; }
+.preguntas-screen { display: none; }
+.informe-screen { display: none; }
+
+/* ── FORM DATOS EMPRESA ── */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+.form-grid .full { grid-column: 1 / -1; }
+.form-group { display: flex; flex-direction: column; gap: 5px; }
+.form-label {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.form-input, .form-select {
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  padding: 9px 11px;
+  font-size: 14px;
+  font-family: var(--sans, sans-serif);
+  color: #333;
+  background: var(--white);
+  outline: none;
+  transition: border-color 0.15s;
+}
+.form-input:focus, .form-select:focus { border-color: var(--brand); }
+
+/* ── SELECTOR MARCO ── */
+.marco-selector {
+  display: flex;
+  gap: 0;
+  margin-bottom: 20px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+  width: fit-content;
+}
+.marco-btn {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 9px 16px;
+  border: none;
+  background: var(--surface, #f5f7fa);
+  color: var(--muted);
+  cursor: pointer;
+  transition: all 0.15s;
+  border-right: 1px solid var(--border);
+}
+.marco-btn:last-child { border-right: none; }
+.marco-btn.active { background: var(--brand); color: #fff; }
+
+/* ── BLOQUE PREGUNTAS ── */
+.bloque-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border-soft);
+}
+.bloque-code {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--brand);
+  background: var(--brand-light);
+  border: 1px solid var(--brand-mid);
+  padding: 3px 10px;
+  border-radius: 3px;
+  white-space: nowrap;
+}
+.bloque-titulo { font-size: 17px; font-weight: 700; color: #222; }
+.bloque-ref {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+/* ── PREGUNTA ITEM ── */
+.pregunta-item {
+  padding: 13px 0;
+  border-bottom: 1px solid var(--border-soft);
+}
+.pregunta-item:last-child { border-bottom: none; }
+.pregunta-top {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.pregunta-num {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--muted);
+  min-width: 26px;
+  padding-top: 1px;
+  flex-shrink: 0;
+}
+.pregunta-texto {
+  font-size: 14px;
+  color: #444;
+  line-height: 1.55;
+  flex: 1;
+}
+.pregunta-tags {
+  display: flex;
+  gap: 5px;
+  margin-left: 36px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+.ptag {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.08em;
+  padding: 2px 7px;
+  border-radius: 10px;
+  font-weight: 600;
+}
+.ptag-iso { background: #e8f4fd; color: #0077B5; border: 1px solid #b3d7f0; }
+.ptag-ens { background: #fef3e2; color: #d35400; border: 1px solid #f5cba7; }
+
+/* ── BOTONES RESPUESTA ── */
+.respuestas {
+  display: flex;
+  gap: 7px;
+  margin-left: 36px;
+  flex-wrap: wrap;
+}
+.resp-btn {
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  padding: 7px 15px;
+  border-radius: 3px;
+  border: 1px solid var(--border);
+  background: var(--white);
+  color: var(--muted);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.resp-btn:hover { border-color: var(--brand); color: var(--brand); }
+.resp-btn.sel-si    { background: #eafaf1; border-color: #27ae60; color: #1e8449; }
+.resp-btn.sel-no    { background: #fde; border-color: #e74c3c; color: #c0392b; }
+.resp-btn.sel-parcial { background: #fef3e2; border-color: #e67e22; color: #d35400; }
+.resp-btn.sel-nose  { background: #f5f7fa; border-color: #aaa; color: #777; }
+
+/* ── AVISO ── */
+.aviso {
+  background: var(--brand-light);
+  border-left: 3px solid var(--brand);
+  padding: 12px 16px;
+  font-size: 13px;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+/* ── BOTONES NAV ── */
+.nav-btns {
+  display: flex;
+  gap: 10px;
+  margin-top: 28px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.btn-primary {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 10px 22px;
+  border: none;
+  background: var(--brand);
+  color: #fff;
+  cursor: pointer;
+  border-radius: 3px;
+  transition: all 0.15s;
+}
+.btn-primary:hover { background: #005f94; }
+.btn-secondary {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  border: 1px solid var(--border);
+  background: var(--white);
+  color: var(--muted);
+  cursor: pointer;
+  border-radius: 3px;
+  transition: all 0.15s;
+}
+.btn-secondary:hover { border-color: var(--brand); color: var(--brand); }
+.btn-pdf {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  border: 1px solid var(--brand);
+  background: var(--white);
+  color: var(--brand);
+  cursor: pointer;
+  border-radius: 3px;
+  transition: all 0.15s;
+}
+.btn-pdf:hover { background: var(--brand); color: #fff; }
+
+/* ── LEYENDA ── */
+.leyenda {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+  align-items: center;
+}
+.leyenda-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+}
+.leyenda-dot {
+  width: 11px; height: 11px;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+/* ── RESET ── */
+.reset-btn {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 8px 16px;
+  border: 1px solid var(--border);
+  background: var(--white);
+  color: var(--muted);
+  cursor: pointer;
+  transition: all 0.15s;
+  margin-left: 10px;
+}
+.reset-btn:hover { border-color: var(--brand); color: var(--brand); }
+
+/* ── INFORME ── */
+.informe-section { margin-bottom: 28px; }
+.informe-section-title {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--brand);
+  border-bottom: 1px solid var(--border-soft);
+  padding-bottom: 8px;
+  margin-bottom: 14px;
+}
+.resumen-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-bottom: 24px;
+}
+.resumen-card {
+  border: 1px solid var(--border-soft);
+  border-radius: 4px;
+  padding: 14px 12px;
+  text-align: center;
+  background: var(--white);
+}
+.resumen-num {
+  font-family: var(--mono);
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.resumen-label {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.rc-critico .resumen-num { color: #c0392b; }
+.rc-alto    .resumen-num { color: #e74c3c; }
+.rc-medio   .resumen-num { color: #e67e22; }
+.rc-bajo    .resumen-num { color: #27ae60; }
+
+.riesgo-table { width: 100%; border-collapse: collapse; font-size: 13px; margin-bottom: 4px; }
+.riesgo-table th {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding: 8px 10px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-soft);
+}
+.riesgo-table td {
+  padding: 10px;
+  border-bottom: 1px solid var(--border-soft);
+  color: #555;
+  vertical-align: top;
+  line-height: 1.45;
+}
+.riesgo-table tr:hover td { background: var(--brand-light); }
+.badge-nivel {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 3px 8px;
+  border-radius: 10px;
+  white-space: nowrap;
+}
+.bn-critico { background: #fde; color: #c0392b; border: 1px solid #fab; }
+.bn-alto    { background: #fde; color: #e74c3c; border: 1px solid #f5b7b1; }
+.bn-medio   { background: #fef3e2; color: #d35400; border: 1px solid #f5cba7; }
+.bn-bajo    { background: #eafaf1; color: #1e8449; border: 1px solid #a9dfbf; }
+
+.madurez-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.madurez-table th {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding: 8px 10px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-soft);
+}
+.madurez-table td {
+  padding: 9px 10px;
+  border-bottom: 1px solid var(--border-soft);
+  color: #555;
+  font-size: 13px;
+}
+.mini-bar-wrap {
+  background: var(--border-soft);
+  border-radius: 2px;
+  height: 6px;
+  width: 80px;
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 6px;
+}
+.mini-bar { height: 100%; border-radius: 2px; }
+
+@media (max-width: 600px) {
+  .form-grid { grid-template-columns: 1fr; }
+  .resumen-grid { grid-template-columns: repeat(2, 1fr); }
+  .respuestas { gap: 5px; }
+  .resp-btn { font-size: 10px; padding: 6px 11px; }
+  .marco-selector { flex-wrap: wrap; }
+}
+</style>
+</head>
+<body>
+
+<div class="card-wrapper">
+<div class="card">
+  <div class="accent-bar"></div>
+
+  <div class="header">
+    <div class="tag">Empresa de Software · ISO 27001:2022 + ENS RD 311/2022</div>
+    <div class="headline">
+      Análisis de<br>
+      <span class="accent">Riesgos</span><br>
+      <span class="dim">Guiado</span>
+    </div>
+    <p class="subline">
+      100 preguntas para identificar y valorar los riesgos de seguridad de tu empresa de software.<br>
+      <strong>Sin registro. Sin almacenamiento de datos. Todo en tu navegador.</strong>
+    </p>
+  </div>
+
+  <div class="body">
+
+    <!-- ══════════════════════════════ -->
+    <!-- PANTALLA 0: INICIO            -->
+    <!-- ══════════════════════════════ -->
+    <div class="inicio-screen" id="screenInicio">
+
+      <div class="aviso">
+        Responde las preguntas con sinceridad. Al final obtendrás un registro de riesgos con recomendaciones alineadas con ISO 27001:2022 y ENS RD 311/2022. Ningún dato sale de tu navegador — al cerrar la pestaña todo desaparece.
+      </div>
+
+      <div style="margin-bottom:18px;">
+        <div style="font-family:var(--mono);font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);margin-bottom:10px;">Marco normativo</div>
+        <div class="marco-selector">
+          <button class="marco-btn active" id="mb-ambos" onclick="setMarco('ambos')">◈ ISO 27001 + ENS</button>
+          <button class="marco-btn" id="mb-iso" onclick="setMarco('iso')">◉ Solo ISO 27001</button>
+          <button class="marco-btn" id="mb-ens" onclick="setMarco('ens')">◆ Solo ENS</button>
+        </div>
+        <div style="font-size:12px;color:var(--muted);margin-top:7px;">
+          Elige <strong>ISO 27001 + ENS</strong> si prestas servicios a la Administración Pública.
+        </div>
+      </div>
+
+      <div style="font-family:var(--mono);font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);margin-bottom:14px;">Datos de la organización</div>
+
+      <div class="form-grid">
+        <div class="form-group full">
+          <label class="form-label">Nombre de la empresa *</label>
+          <input class="form-input" id="f-empresa" type="text" placeholder="Ej: Acme Software S.L.">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Responsable del análisis *</label>
+          <input class="form-input" id="f-responsable" type="text" placeholder="Nombre y cargo">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Fecha</label>
+          <input class="form-input" id="f-fecha" type="date">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Número de empleados</label>
+          <select class="form-select" id="f-empleados">
+            <option value="">Seleccionar...</option>
+            <option>1-10</option><option>11-25</option><option>26-50</option>
+            <option>51-100</option><option>Más de 100</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Infraestructura principal</label>
+          <select class="form-select" id="f-infra">
+            <option value="">Seleccionar...</option>
+            <option>100% Cloud</option>
+            <option>Híbrida (cloud + on-premise)</option>
+            <option>100% On-premise</option>
+            <option>Sin infraestructura propia</option>
+          </select>
+        </div>
+        <div class="form-group full">
+          <label class="form-label">Versión / Referencia</label>
+          <input class="form-input" id="f-version" type="text" placeholder="Ej: v1.0 — Análisis inicial 2025">
+        </div>
+      </div>
+
+      <div class="nav-btns">
+        <button class="btn-primary" onclick="iniciarAnalisis()">INICIAR ANÁLISIS →</button>
+        <span style="font-family:var(--mono);font-size:10px;color:var(--muted);">100 preguntas · ~25 min · Sin registro</span>
+      </div>
+
+    </div><!-- /inicio-screen -->
+
+
+    <!-- ══════════════════════════════ -->
+    <!-- PANTALLA 1: PREGUNTAS         -->
+    <!-- ══════════════════════════════ -->
+    <div class="preguntas-screen" id="screenPreguntas">
+
+      <!-- Barra progreso global -->
+      <div class="progress-bar-wrap">
+        <div class="progress-bar" id="progress-bar"></div>
+      </div>
+      <div class="progress-label" id="progress-label">0 de 100 preguntas respondidas (0%)</div>
+      <div style="display:flex;align-items:center;gap:0;margin-bottom:20px;">
+        <span class="progress-status red" id="progress-status">⚠ Sin respuestas aún</span>
+        <button class="reset-btn" onclick="resetAll()">↺ Reiniciar</button>
+      </div>
+
+      <!-- Leyenda -->
+      <div class="leyenda">
+        <div class="leyenda-item"><div class="leyenda-dot" style="background:#27ae60"></div>Sí — control implementado</div>
+        <div class="leyenda-item"><div class="leyenda-dot" style="background:#e74c3c"></div>No — control ausente</div>
+        <div class="leyenda-item"><div class="leyenda-dot" style="background:#e67e22"></div>Parcial — en proceso</div>
+        <div class="leyenda-item"><div class="leyenda-dot" style="background:#aaa"></div>No sé</div>
+      </div>
+
+      <!-- Navegación de bloques -->
+      <div class="wizard-nav" id="wizardNav"></div>
+
+      <!-- Contenedor bloque actual -->
+      <div id="bloqueContainer"></div>
+
+      <!-- Botones navegación -->
+      <div class="nav-btns" id="navBtns"></div>
+
+    </div><!-- /preguntas-screen -->
+
+
+    <!-- ══════════════════════════════ -->
+    <!-- PANTALLA 2: INFORME           -->
+    <!-- ══════════════════════════════ -->
+    <div class="informe-screen" id="screenInforme">
+      <div id="informeContenido"></div>
+      <div class="nav-btns" style="margin-top:24px;">
+        <button class="btn-primary" onclick="exportarPDF()">⬇ Exportar PDF</button>
+        <button class="btn-secondary" onclick="volverPreguntas()">← Volver y editar</button>
+        <button class="reset-btn" onclick="nuevoAnalisis()">↺ Nuevo análisis</button>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="cta-block" id="ctaBlock" style="display:none;">
+      <div class="cta-headline">
+        ¿Necesitas ir más allá<br>
+        <span>de este análisis?</span>
+      </div>
+      <div class="cta-sub">
+        Este análisis identifica los riesgos. Un vCISO los gestiona, prioriza y te acompaña en la implantación.<br><br>
+        Como Lead Auditor e Implementer certificado en ISO 27001 —
+        <strong><a href="/contacto.html">hablemos.</a></strong>
+      </div>
+    </div>
+
+  </div><!-- /body -->
+
+  <div class="footer">
+    <div class="footer-inner">
+      <div class="author-block">
+        <div class="author-avatar">MA</div>
+        <div>
+          <div class="author-name">Miguel &Aacute;ngel Carriazo &middot; <span>vCISO</span></div>
+          <div class="author-title">Cybersecurity &amp; Infrastructure Architect</div>
+        </div>
+      </div>
+      <a href="https://www.linkedin.com/in/macarriazo/" target="_blank" class="li-btn">
+        <svg class="li-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#0077B5">
+          <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+        </svg>
+        <div>
+          <span class="li-main">&ldquo;Merece la pena la experiencia...&rdquo;</span>
+          <span class="li-sub">Hablemos en LinkedIn &rarr;</span>
+        </div>
+      </a>
+    </div>
+  </div>
+
+</div>
+</div>
+<a href="/herramientas/index.html" class="home-btn">⌂ Herramientas</a>
+
+
+<!-- ══════════════════════════════════════════════════════ -->
+<!-- JAVASCRIPT                                            -->
+<!-- ══════════════════════════════════════════════════════ -->
+<script>
+
+// ── ESTADO ──
+let marcoActivo = 'ambos';
+let bloqueActual = 0;
+let respuestas = {};
+let datosFirma = {};
+
+// ── BLOQUES Y PREGUNTAS ──
+const BLOQUES = [
+  {
+    id:'B01', titulo:'Activos de Información', ref:'ISO §A.8 · ENS Anexo I',
+    preguntas:[
+      {id:'q01',iso:true,ens:true,texto:'¿Tenéis un inventario actualizado de todos vuestros activos de información: datos, sistemas, aplicaciones y servicios?'},
+      {id:'q02',iso:true,ens:true,texto:'¿Están identificados los activos críticos para el negocio (código fuente, base de datos de clientes, documentación técnica)?'},
+      {id:'q03',iso:true,ens:true,texto:'¿Cada activo tiene asignado un propietario responsable de su seguridad?'},
+      {id:'q04',iso:true,ens:true,texto:'¿Los datos están clasificados según su nivel de confidencialidad (público, interno, confidencial)?'},
+      {id:'q05',iso:true,ens:true,texto:'¿Sabéis en qué países o regiones se almacenan o procesan vuestros datos?'},
+      {id:'q06',iso:true,ens:true,texto:'¿Tenéis identificados todos los activos en cloud (AWS, Azure, GCP, SaaS)?'},
+      {id:'q07',iso:true,ens:true,texto:'¿Existe un proceso para actualizar el inventario cuando se añaden o retiran activos?'},
+      {id:'q08',iso:true,ens:true,texto:'¿Valoráis el impacto en confidencialidad, integridad y disponibilidad para cada activo crítico?'},
+    ]
+  },
+  {
+    id:'B02', titulo:'Código Fuente y SDLC', ref:'ISO §A.8.4, §A.8.25 · ENS mp.sw',
+    preguntas:[
+      {id:'q09',iso:true,ens:true,texto:'¿El código fuente está en un repositorio con control de versiones (Git, SVN)?'},
+      {id:'q10',iso:true,ens:true,texto:'¿El acceso al repositorio está restringido solo a las personas que lo necesitan?'},
+      {id:'q11',iso:true,ens:true,texto:'¿Están separados los entornos de desarrollo, preproducción y producción?'},
+      {id:'q12',iso:true,ens:true,texto:'¿Se utilizan datos reales de clientes en entornos de desarrollo o test?'},
+      {id:'q13',iso:true,ens:true,texto:'¿Existe un proceso de revisión de código (code review) antes de pasar a producción?'},
+      {id:'q14',iso:true,ens:false,texto:'¿Se realizan análisis automáticos de seguridad en el código (SAST/DAST)?'},
+      {id:'q15',iso:true,ens:true,texto:'¿Tenéis control sobre las dependencias y librerías de terceros que usáis (npm, pip, Maven...)?'},
+      {id:'q16',iso:true,ens:false,texto:'¿Se revisan las vulnerabilidades conocidas en dependencias de terceros (Dependabot, Snyk, OWASP)?'},
+      {id:'q17',iso:true,ens:true,texto:'¿Los commits al repositorio requieren autenticación fuerte (SSH key, MFA)?'},
+      {id:'q18',iso:true,ens:true,texto:'¿Se han definido requisitos de seguridad antes de desarrollar nuevas funcionalidades?'},
+      {id:'q19',iso:true,ens:true,texto:'¿Se realizan pruebas de seguridad antes de cada release importante (pentest, revisión de código)?'},
+      {id:'q20',iso:false,ens:false,texto:'¿Existe una política formal de gestión de ramas y releases (branching strategy)?'},
+    ]
+  },
+  {
+    id:'B03', titulo:'Infraestructura y Sistemas', ref:'ISO §A.8 · ENS mp.eq, mp.si',
+    preguntas:[
+      {id:'q21',iso:true,ens:true,texto:'¿Tenéis un inventario actualizado de servidores, máquinas virtuales y contenedores?'},
+      {id:'q22',iso:true,ens:true,texto:'¿Los sistemas operativos y software de base se actualizan con los últimos parches de seguridad?'},
+      {id:'q23',iso:true,ens:true,texto:'¿Existe un proceso formal de gestión de parches con plazos definidos según criticidad?'},
+      {id:'q24',iso:true,ens:true,texto:'¿Se aplica hardening (bastionado) a los sistemas antes de ponerlos en producción?'},
+      {id:'q25',iso:true,ens:true,texto:'¿Los equipos de usuario final (portátiles, PCs) tienen antivirus/EDR actualizado?'},
+      {id:'q26',iso:true,ens:true,texto:'¿Existe cifrado de disco en los equipos portátiles de los empleados?'},
+      {id:'q27',iso:true,ens:true,texto:'¿Hay política de bloqueo automático de pantalla en los equipos?'},
+      {id:'q28',iso:true,ens:true,texto:'¿Se monitoriza el estado y rendimiento de los sistemas en tiempo real?'},
+    ]
+  },
+  {
+    id:'B04', titulo:'Cloud y Virtualización', ref:'ISO §A.5.23 · ENS op.ext',
+    preguntas:[
+      {id:'q29',iso:true,ens:true,texto:'¿Tenéis identificados todos los servicios cloud que usáis y quién los contrata?'},
+      {id:'q30',iso:true,ens:true,texto:'¿Existe "shadow IT" — servicios cloud contratados por empleados sin conocimiento del área IT?'},
+      {id:'q31',iso:true,ens:true,texto:'¿Las cuentas de administrador cloud (AWS root, Azure Global Admin) tienen MFA obligatorio?'},
+      {id:'q32',iso:true,ens:true,texto:'¿Tenéis control sobre quién puede crear y eliminar recursos cloud (IAM cloud)?'},
+      {id:'q33',iso:false,ens:false,texto:'¿Los recursos cloud tienen etiquetas/tags para identificar propietario, entorno y coste?'},
+      {id:'q34',iso:true,ens:false,texto:'¿Tenéis alertas configuradas ante cambios inesperados en costes o recursos cloud?'},
+      {id:'q35',iso:true,ens:true,texto:'¿Conocéis el modelo de responsabilidad compartida de vuestro proveedor cloud?'},
+    ]
+  },
+  {
+    id:'B05', titulo:'Accesos e Identidad (IAM)', ref:'ISO §A.5.15–5.18 · ENS op.acc',
+    preguntas:[
+      {id:'q36',iso:true,ens:true,texto:'¿Existe un proceso formal para dar altas, modificar y dar de baja accesos de empleados?'},
+      {id:'q37',iso:true,ens:true,texto:'¿Se revocan los accesos de forma inmediata cuando un empleado causa baja?'},
+      {id:'q38',iso:true,ens:true,texto:'¿Se aplica el principio de mínimo privilegio (cada usuario accede solo a lo que necesita)?'},
+      {id:'q39',iso:true,ens:true,texto:'¿Existe autenticación multifactor (MFA) en los sistemas críticos?'},
+      {id:'q40',iso:true,ens:true,texto:'¿El acceso remoto (VPN, escritorio remoto) requiere MFA?'},
+      {id:'q41',iso:true,ens:true,texto:'¿Se usan cuentas compartidas o genéricas entre varios empleados?'},
+      {id:'q42',iso:true,ens:true,texto:'¿Existe una política de contraseñas con requisitos mínimos de complejidad?'},
+      {id:'q43',iso:true,ens:false,texto:'¿Se usa un gestor de contraseñas corporativo?'},
+      {id:'q44',iso:true,ens:true,texto:'¿Las cuentas privilegiadas (admin, root) son distintas de las cuentas de uso diario?'},
+      {id:'q45',iso:true,ens:true,texto:'¿Se revisan periódicamente los permisos de todos los usuarios (recertificación de accesos)?'},
+    ]
+  },
+  {
+    id:'B06', titulo:'Red y Conectividad', ref:'ISO §A.8.20–8.22 · ENS mp.com',
+    preguntas:[
+      {id:'q46',iso:true,ens:true,texto:'¿La red está segmentada (usuarios separados de servidores y de visitantes)?'},
+      {id:'q47',iso:true,ens:true,texto:'¿Existe firewall perimetral correctamente configurado y mantenido?'},
+      {id:'q48',iso:true,ens:true,texto:'¿La red WiFi corporativa está separada de la red WiFi de invitados?'},
+      {id:'q49',iso:true,ens:true,texto:'¿El tráfico entre sistemas críticos está cifrado (TLS 1.2+, IPsec)?'},
+      {id:'q50',iso:true,ens:true,texto:'¿Se monitorizan y registran los accesos y el tráfico de red?'},
+      {id:'q51',iso:true,ens:true,texto:'¿Tenéis identificados todos los puertos y servicios expuestos a Internet?'},
+      {id:'q52',iso:true,ens:true,texto:'¿Se realizan escaneos periódicos de vulnerabilidades en red y sistemas expuestos?'},
+    ]
+  },
+  {
+    id:'B07', titulo:'Proveedores y Cadena de Suministro', ref:'ISO §A.5.19–5.22 · ENS op.ext',
+    preguntas:[
+      {id:'q53',iso:true,ens:true,texto:'¿Tenéis un inventario de todos los proveedores con acceso a vuestros sistemas o datos?'},
+      {id:'q54',iso:true,ens:true,texto:'¿Los contratos con proveedores incluyen cláusulas de seguridad y confidencialidad?'},
+      {id:'q55',iso:true,ens:true,texto:'¿Se evalúa la seguridad de los proveedores críticos antes de contratarlos?'},
+      {id:'q56',iso:true,ens:true,texto:'¿El acceso de proveedores a vuestros sistemas está limitado y monitorizado?'},
+      {id:'q57',iso:true,ens:true,texto:'¿Tenéis control sobre los subcontratistas de vuestros proveedores (cuarta parte)?'},
+      {id:'q58',iso:true,ens:true,texto:'¿Se revisa periódicamente el cumplimiento de seguridad de proveedores críticos?'},
+      {id:'q59',iso:true,ens:false,texto:'¿Las APIs de terceros que consumís usan autenticación segura (OAuth2, API keys rotadas)?'},
+      {id:'q60',iso:true,ens:true,texto:'¿Tenéis plan de contingencia si un proveedor crítico deja de estar disponible?'},
+    ]
+  },
+  {
+    id:'B08', titulo:'Personas y Formación', ref:'ISO §A.6 · ENS op.per',
+    preguntas:[
+      {id:'q61',iso:true,ens:true,texto:'¿Todos los empleados reciben formación en ciberseguridad al incorporarse?'},
+      {id:'q62',iso:true,ens:false,texto:'¿Se realizan simulacros de phishing o formación anti-fraude periódicamente?'},
+      {id:'q63',iso:true,ens:true,texto:'¿Existe una política de seguridad de la información aprobada por dirección?'},
+      {id:'q64',iso:true,ens:true,texto:'¿Los empleados conocen y han firmado la política de uso aceptable de los sistemas?'},
+      {id:'q65',iso:true,ens:true,texto:'¿Los nuevos empleados con acceso a sistemas críticos pasan por verificación de antecedentes?'},
+      {id:'q66',iso:true,ens:true,texto:'¿Existe un canal claro para que los empleados reporten incidentes o sospechas de seguridad?'},
+      {id:'q67',iso:true,ens:true,texto:'¿Hay un proceso definido para la baja de empleados con revocación inmediata de accesos?'},
+      {id:'q68',iso:true,ens:true,texto:'¿Los empleados con acceso privilegiado tienen formación adicional específica?'},
+    ]
+  },
+  {
+    id:'B09', titulo:'Continuidad y Backups', ref:'ISO §A.5.29–5.30 · ENS op.cont',
+    preguntas:[
+      {id:'q69',iso:true,ens:true,texto:'¿Tenéis copias de seguridad automáticas de todos los sistemas y datos críticos?'},
+      {id:'q70',iso:true,ens:true,texto:'¿Las copias de seguridad se almacenan en una ubicación separada (offsite o cloud diferente)?'},
+      {id:'q71',iso:true,ens:true,texto:'¿Se realizan pruebas de restauración de backups periódicamente (al menos cada 6 meses)?'},
+      {id:'q72',iso:true,ens:true,texto:'¿Conocéis el tiempo máximo que podéis estar sin sistemas (RTO) y la pérdida máxima de datos tolerable (RPO)?'},
+      {id:'q73',iso:true,ens:true,texto:'¿Tenéis un plan documentado de continuidad de negocio o recuperación ante desastres (BCP/DRP)?'},
+      {id:'q74',iso:true,ens:true,texto:'¿Los backups están cifrados?'},
+      {id:'q75',iso:true,ens:true,texto:'¿Se monitoriza que los backups se completan correctamente (alertas ante fallos)?'},
+      {id:'q76',iso:true,ens:true,texto:'¿Tenéis identificados los procesos mínimos necesarios para operar en caso de crisis?'},
+    ]
+  },
+  {
+    id:'B10', titulo:'Gestión de Incidentes', ref:'ISO §A.5.24–5.28 · ENS op.exp.7',
+    preguntas:[
+      {id:'q77',iso:true,ens:true,texto:'¿Existe un procedimiento documentado de respuesta a incidentes de seguridad?'},
+      {id:'q78',iso:true,ens:true,texto:'¿Hay una persona o equipo claramente responsable de gestionar los incidentes?'},
+      {id:'q79',iso:true,ens:true,texto:'¿Los empleados saben qué hacer y a quién avisar si detectan un incidente (ransomware, phishing, acceso no autorizado)?'},
+      {id:'q80',iso:true,ens:true,texto:'¿Se registran y documentan todos los incidentes, aunque sean menores?'},
+      {id:'q81',iso:true,ens:true,texto:'¿Se analiza la causa raíz de los incidentes para evitar que se repitan?'},
+      {id:'q82',iso:true,ens:true,texto:'¿Conocéis las obligaciones de notificación de brechas de datos (AEPD en 72h, CCN-CERT, NIS2)?'},
+      {id:'q83',iso:true,ens:true,texto:'¿Habéis sufrido algún incidente de seguridad significativo en los últimos 2 años?'},
+    ]
+  },
+  {
+    id:'B11', titulo:'Cumplimiento y Auditoría', ref:'ISO §9 · ENS Art. 28-31',
+    preguntas:[
+      {id:'q84',iso:true,ens:true,texto:'¿Conocéis la normativa de protección de datos aplicable a vuestro negocio (RGPD, LOPDGDD, NIS2)?'},
+      {id:'q85',iso:true,ens:false,texto:'¿Tenéis registros de actividades de tratamiento actualizados (si aplica RGPD)?'},
+      {id:'q86',iso:true,ens:true,texto:'¿Se realizan auditorías internas de seguridad periódicamente?'},
+      {id:'q87',iso:true,ens:true,texto:'¿Los logs de sistemas críticos se conservan durante el tiempo requerido por normativa?'},
+      {id:'q88',iso:true,ens:true,texto:'¿Los logs están protegidos contra modificación o borrado no autorizado?'},
+      {id:'q89',iso:true,ens:true,texto:'¿La dirección revisa formalmente el estado de la seguridad al menos una vez al año?'},
+      {id:'q90',iso:true,ens:true,texto:'¿Existe un proceso de gestión de cambios con revisión de seguridad incluida?'},
+    ]
+  },
+  {
+    id:'B12', titulo:'Seguridad Física', ref:'ISO §A.7 · ENS mp.if',
+    preguntas:[
+      {id:'q91',iso:true,ens:true,texto:'¿El acceso a las oficinas está controlado (tarjetas, llaves, registro de visitas)?'},
+      {id:'q92',iso:true,ens:true,texto:'¿Los servidores o equipos críticos están en salas con acceso restringido?'},
+      {id:'q93',iso:true,ens:true,texto:'¿Existe política de escritorio limpio (no dejar documentos confidenciales a la vista)?'},
+      {id:'q94',iso:true,ens:true,texto:'¿La impresión de documentos confidenciales está controlada?'},
+      {id:'q95',iso:true,ens:true,texto:'¿Existe un proceso seguro para destruir documentos y dispositivos con información sensible?'},
+    ]
+  },
+  {
+    id:'B13', titulo:'Criptografía y Protección de Datos', ref:'ISO §A.8.24 · ENS mp.si.2',
+    preguntas:[
+      {id:'q96',iso:true,ens:true,texto:'¿Los datos sensibles en tránsito están cifrados (HTTPS obligatorio, TLS 1.2+, VPN)?'},
+      {id:'q97',iso:true,ens:true,texto:'¿Los datos sensibles en reposo (bases de datos, ficheros) están cifrados?'},
+      {id:'q98',iso:true,ens:true,texto:'¿Las claves de cifrado están gestionadas de forma segura (rotación, custodia, control de acceso)?'},
+      {id:'q99',iso:true,ens:false,texto:'¿Las contraseñas se almacenan hasheadas con algoritmos modernos (bcrypt, Argon2)?'},
+      {id:'q100',iso:true,ens:true,texto:'¿Existe una política de uso de criptografía que define qué algoritmos están aprobados?'},
+    ]
+  },
+];
+
+// ── MOTOR DE RIESGOS ──
+const REGLAS = [
+  // CRÍTICO
+  {qid:'q69',ans:'no',nivel:'critico',amenaza:'Pérdida de datos irreversible ante ransomware o fallo',activo:'Datos y sistemas críticos',rec:'Implementar backup automatizado con verificación periódica de restauración. Regla 3-2-1.'},
+  {qid:'q71',ans:'no',nivel:'critico',amenaza:'Backup inútil — sin prueba de restauración confirmada',activo:'Copias de seguridad',rec:'Programar pruebas de restauración documentadas al menos cada 6 meses.'},
+  {qid:'q37',ans:'no',nivel:'critico',amenaza:'Acceso persistente de ex-empleados a sistemas',activo:'Gestión de identidades',rec:'Establecer proceso de baja con revocación automatizada e inmediata de todos los accesos.'},
+  {qid:'q31',ans:'no',nivel:'critico',amenaza:'Compromiso total de infraestructura cloud',activo:'Cuentas administrador cloud',rec:'Activar MFA en todas las cuentas privilegiadas cloud de forma inmediata.'},
+  {qid:'q47',ans:'no',nivel:'critico',amenaza:'Exposición directa de sistemas a Internet sin filtrado',activo:'Infraestructura de red',rec:'Revisar y configurar firewall perimetral. Prioridad máxima antes de cualquier otra acción.'},
+  {qid:'q96',ans:'no',nivel:'critico',amenaza:'Interceptación de datos sensibles en tránsito',activo:'Datos en tránsito',rec:'Forzar HTTPS/TLS en todas las comunicaciones. Auditar certificados y versiones TLS.'},
+  {qid:'q12',ans:'si',nivel:'critico',amenaza:'Exposición de datos reales de clientes en entornos no seguros',activo:'Base de datos de producción',rec:'Sustituir datos reales por datos sintéticos o anonimizados en todos los entornos de dev/test.'},
+  // ALTO
+  {qid:'q11',ans:'no',nivel:'alto',amenaza:'Contaminación de producción desde entornos de desarrollo',activo:'Entornos de desarrollo y producción',rec:'Separar estrictamente los entornos. Accesos, redes y credenciales distintos por entorno.'},
+  {qid:'q39',ans:'no',nivel:'alto',amenaza:'Robo de credenciales y acceso no autorizado a sistemas críticos',activo:'Sistemas críticos',rec:'Implementar MFA en todos los sistemas de acceso crítico como medida prioritaria.'},
+  {qid:'q77',ans:'no',nivel:'alto',amenaza:'Respuesta caótica y costosa ante incidente de seguridad',activo:'Continuidad operativa',rec:'Elaborar y ensayar un procedimiento básico de respuesta a incidentes. Asignar responsable.'},
+  {qid:'q36',ans:'no',nivel:'alto',amenaza:'Accesos huérfanos y no controlados en los sistemas',activo:'Gestión de accesos',rec:'Implementar proceso formal de gestión del ciclo de vida de usuarios (altas/bajas/cambios).'},
+  {qid:'q16',ans:'no',nivel:'alto',amenaza:'Vulnerabilidades conocidas en dependencias de código',activo:'Aplicaciones y código fuente',rec:'Integrar herramienta SCA (Snyk, Dependabot, OWASP Dependency-Check) en el pipeline CI/CD.'},
+  {qid:'q74',ans:'no',nivel:'alto',amenaza:'Robo de datos a través de backups sin cifrar',activo:'Copias de seguridad',rec:'Activar cifrado en todas las copias de seguridad. Verificar también las copias en cloud.'},
+  {qid:'q82',ans:'no',nivel:'alto',amenaza:'Sanción por incumplimiento de obligaciones de notificación',activo:'Cumplimiento legal',rec:'Revisar obligaciones bajo RGPD (72h a AEPD), NIS2 y ENS. Designar responsable de notificación.'},
+  {qid:'q10',ans:'no',nivel:'alto',amenaza:'Robo o filtración de código fuente',activo:'Repositorios de código',rec:'Auditar y restringir accesos al repositorio. Revisar tokens, deploy keys y accesos de terceros.'},
+  {qid:'q73',ans:'no',nivel:'alto',amenaza:'Sin capacidad de recuperación ante desastre',activo:'Continuidad del negocio',rec:'Elaborar plan básico de recuperación ante desastres con RTO y RPO definidos y probados.'},
+  {qid:'q30',ans:'si',nivel:'alto',amenaza:'Datos corporativos en servicios cloud no controlados',activo:'Información corporativa',rec:'Realizar inventario de shadow IT. Establecer política de uso aprobado de servicios cloud.'},
+  // MEDIO
+  {qid:'q38',ans:'no',nivel:'medio',amenaza:'Escalada de privilegios y acceso lateral interno',activo:'Sistemas y datos',rec:'Auditar permisos de todos los usuarios. Aplicar principio de mínimo privilegio por rol.'},
+  {qid:'q41',ans:'si',nivel:'medio',amenaza:'Imposibilidad de trazabilidad y auditoría de acciones',activo:'Logs y auditoría',rec:'Eliminar cuentas compartidas. Asignar credenciales individuales e intransferibles a cada usuario.'},
+  {qid:'q48',ans:'no',nivel:'medio',amenaza:'Acceso no autorizado a red corporativa vía WiFi',activo:'Red corporativa',rec:'Crear red WiFi de invitados aislada de la red corporativa. Implementar WPA3.'},
+  {qid:'q53',ans:'no',nivel:'medio',amenaza:'Riesgo no gestionado en la cadena de suministro',activo:'Proveedores críticos',rec:'Elaborar inventario de proveedores con acceso a sistemas y datos. Evaluar riesgos por proveedor.'},
+  {qid:'q63',ans:'no',nivel:'medio',amenaza:'Ausencia de marco normativo interno de seguridad',activo:'Organización',rec:'Redactar y aprobar una Política de Seguridad de la Información firmada por dirección.'},
+  {qid:'q61',ans:'no',nivel:'medio',amenaza:'Error humano y alta susceptibilidad al phishing',activo:'Empleados',rec:'Implementar programa de concienciación en seguridad con formación anual y simulacros de phishing.'},
+  {qid:'q14',ans:'no',nivel:'medio',amenaza:'Vulnerabilidades de seguridad en el código enviado a producción',activo:'Aplicaciones software',rec:'Integrar análisis SAST en el pipeline de CI/CD. Contemplar DAST en entornos de preproducción.'},
+  {qid:'q46',ans:'no',nivel:'medio',amenaza:'Propagación lateral de ataques en la red interna',activo:'Infraestructura de red',rec:'Implementar segmentación de red por zonas (usuarios, servidores, DMZ, gestión).'},
+  {qid:'q86',ans:'no',nivel:'medio',amenaza:'Incumplimientos no detectados hasta una auditoría externa',activo:'Cumplimiento y gobernanza',rec:'Planificar auditorías internas periódicas con plan de acción sobre hallazgos.'},
+  {qid:'q44',ans:'no',nivel:'medio',amenaza:'Cuentas privilegiadas usadas para trabajo diario — riesgo de compromiso',activo:'Cuentas de administrador',rec:'Separar cuentas privilegiadas de cuentas de uso diario. MFA obligatorio en cuentas admin.'},
+  {qid:'q97',ans:'no',nivel:'medio',amenaza:'Acceso a datos sensibles por compromiso de almacenamiento',activo:'Datos en reposo',rec:'Activar cifrado en bases de datos, volúmenes y ficheros con datos sensibles.'},
+  {qid:'q22',ans:'no',nivel:'medio',amenaza:'Explotación de vulnerabilidades conocidas en sistemas sin parchear',activo:'Infraestructura de sistemas',rec:'Establecer proceso de gestión de parches con SLA por criticidad (crítico: 24-48h, alto: 7 días).'},
+  // BAJO
+  {qid:'q33',ans:'no',nivel:'bajo',amenaza:'Pérdida de control y visibilidad sobre recursos cloud',activo:'Infraestructura cloud',rec:'Establecer política de etiquetado de recursos cloud (propietario, entorno, proyecto, coste).'},
+  {qid:'q43',ans:'no',nivel:'bajo',amenaza:'Contraseñas débiles o reutilizadas entre servicios',activo:'Credenciales de acceso',rec:'Evaluar e implementar un gestor de contraseñas corporativo (Bitwarden, 1Password Business).'},
+  {qid:'q91',ans:'no',nivel:'bajo',amenaza:'Acceso físico no autorizado a instalaciones',activo:'Instalaciones y equipos',rec:'Revisar y reforzar controles de acceso físico. Registro de visitantes y acompañamiento obligatorio.'},
+  {qid:'q93',ans:'no',nivel:'bajo',amenaza:'Exposición de información confidencial en puestos desatendidos',activo:'Documentos e información visible',rec:'Implementar política de escritorio limpio y bloqueo automático de pantalla (máx. 5 min).'},
+  {qid:'q95',ans:'no',nivel:'bajo',amenaza:'Recuperación de información sensible de equipos dados de baja',activo:'Equipos y soportes obsoletos',rec:'Establecer proceso de borrado seguro certificado antes de reutilizar o desechar equipos.'},
+  {qid:'q88',ans:'no',nivel:'bajo',amenaza:'Manipulación o eliminación de logs de auditoría',activo:'Registros de actividad',rec:'Proteger integridad de logs con almacenamiento centralizado e inmutable. Definir política de retención.'},
+];
+
+// ── UI ──
+function setMarco(m) {
+  marcoActivo = m;
+  ['ambos','iso','ens'].forEach(x => {
+    document.getElementById('mb-'+x).classList.toggle('active', x === m);
+  });
+}
+
+function iniciarAnalisis() {
+  const emp = document.getElementById('f-empresa').value.trim();
+  const resp = document.getElementById('f-responsable').value.trim();
+  if (!emp || !resp) {
+    alert('Introduce el nombre de la empresa y el responsable del análisis.');
+    return;
+  }
+  datosFirma = {
+    empresa: emp,
+    responsable: resp,
+    fecha: document.getElementById('f-fecha').value || new Date().toLocaleDateString('es-ES'),
+    empleados: document.getElementById('f-empleados').value,
+    infra: document.getElementById('f-infra').value,
+    version: document.getElementById('f-version').value || 'v1.0',
+    marco: marcoActivo
+  };
+  mostrarPantalla('preguntas');
+  construirNav();
+  renderBloque(0);
+}
+
+function mostrarPantalla(p) {
+  document.getElementById('screenInicio').style.display = p === 'inicio' ? 'block' : 'none';
+  document.getElementById('screenPreguntas').style.display = p === 'preguntas' ? 'block' : 'none';
+  document.getElementById('screenInforme').style.display = p === 'informe' ? 'block' : 'none';
+  document.getElementById('ctaBlock').style.display = p === 'informe' ? 'block' : 'none';
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function construirNav() {
+  const nav = document.getElementById('wizardNav');
+  nav.innerHTML = BLOQUES.map((b, i) =>
+    `<button class="wizard-step" id="ws${i}" onclick="renderBloque(${i})" title="${b.titulo}">${b.id}</button>`
+  ).join('');
+}
+
+function actualizarNav() {
+  BLOQUES.forEach((b, i) => {
+    const el = document.getElementById('ws'+i);
+    if (!el) return;
+    el.className = 'wizard-step';
+    const todas = b.preguntas.every(q => respuestas[q.id]);
+    if (i === bloqueActual) el.classList.add('active');
+    else if (todas) el.classList.add('done');
+  });
+}
+
+function renderBloque(idx) {
+  bloqueActual = idx;
+  const b = BLOQUES[idx];
+  let offset = BLOQUES.slice(0, idx).reduce((a, bl) => a + bl.preguntas.length, 0);
+
+  const pHTML = b.preguntas.map((p, pi) => {
+    const num = offset + pi + 1;
+    const r = respuestas[p.id] || '';
+    const tags = [
+      p.iso ? '<span class="ptag ptag-iso">ISO 27001</span>' : '',
+      p.ens ? '<span class="ptag ptag-ens">ENS</span>' : '',
+    ].filter(Boolean).join('');
+    const btns = [
+      {v:'si', l:'✓ Sí'},
+      {v:'no', l:'✗ No'},
+      {v:'parcial', l:'⚠ Parcial'},
+      {v:'nose', l:'? No sé'},
+    ].map(({v,l}) =>
+      `<button class="resp-btn ${r===v?'sel-'+v:''}" onclick="setResp('${p.id}',this,'${v}')">${l}</button>`
+    ).join('');
+
+    return `
+    <div class="pregunta-item" id="pi-${p.id}">
+      <div class="pregunta-top">
+        <span class="pregunta-num">${String(num).padStart(2,'0')}.</span>
+        <span class="pregunta-texto">${p.texto}</span>
+      </div>
+      <div class="pregunta-tags">${tags}</div>
+      <div class="respuestas">${btns}</div>
+    </div>`;
+  }).join('');
+
+  document.getElementById('bloqueContainer').innerHTML = `
+    <div class="bloque-header">
+      <span class="bloque-code">${b.id} · ${idx+1}/${BLOQUES.length}</span>
+      <div>
+        <div class="bloque-titulo">${b.titulo}</div>
+        <div class="bloque-ref">${b.ref}</div>
+      </div>
+    </div>
+    ${pHTML}
+  `;
+
+  const nav = document.getElementById('navBtns');
+  nav.innerHTML = `
+    ${idx > 0 ? `<button class="btn-secondary" onclick="renderBloque(${idx-1})">← Anterior</button>` : ''}
+    ${idx < BLOQUES.length-1
+      ? `<button class="btn-primary" onclick="renderBloque(${idx+1})">Siguiente →</button>`
+      : `<button class="btn-primary" onclick="generarInforme()">Generar informe →</button>`
+    }
+    <button class="btn-pdf" onclick="generarInforme()" style="margin-left:auto;">Ver informe</button>
+  `;
+
+  actualizarNav();
+  actualizarProgreso();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function setResp(qid, btn, val) {
+  respuestas[qid] = val;
+  const pi = document.getElementById('pi-'+qid);
+  pi.querySelectorAll('.resp-btn').forEach(b => b.className = 'resp-btn');
+  btn.classList.add('sel-'+val);
+  actualizarProgreso();
+}
+
+function actualizarProgreso() {
+  const total = BLOQUES.reduce((a,b) => a + b.preguntas.length, 0);
+  const done = Object.keys(respuestas).length;
+  const pct = Math.round((done / total) * 100);
+  const bar = document.getElementById('progress-bar');
+  const lbl = document.getElementById('progress-label');
+  const sts = document.getElementById('progress-status');
+
+  bar.style.width = pct + '%';
+  lbl.innerHTML = '<span>' + done + ' de ' + total + '</span> preguntas respondidas (' + pct + '%)';
+  bar.className = 'progress-bar';
+
+  if (pct >= 80) {
+    bar.classList.add('green');
+    sts.className = 'progress-status green';
+    sts.textContent = '✓ Análisis completo — ' + pct + '%';
+  } else if (pct >= 60) {
+    bar.classList.add('yellow');
+    sts.className = 'progress-status yellow';
+    sts.textContent = '◑ Avanzando — ' + pct + '%';
+  } else if (pct >= 30) {
+    bar.classList.add('orange');
+    sts.className = 'progress-status orange';
+    sts.textContent = '▲ En proceso — ' + pct + '%';
+  } else {
+    sts.className = 'progress-status red';
+    sts.textContent = '⚠ ' + (done === 0 ? 'Sin respuestas aún' : done + ' respondidas — ' + pct + '%');
+  }
+  actualizarNav();
+}
+
+function resetAll() {
+  if (!confirm('¿Reiniciar todas las respuestas del análisis?')) return;
+  respuestas = {};
+  renderBloque(bloqueActual);
+  actualizarProgreso();
+}
+
+// ── GENERACIÓN DEL INFORME ──
+function generarInforme() {
+  const riesgos = [];
+  REGLAS.forEach(r => {
+    const ans = respuestas[r.qid];
+    if (!ans) return;
+    const match = (r.ans === 'si' && ans === 'si') || (r.ans === 'no' && (ans === 'no' || ans === 'nose'));
+    if (match) riesgos.push(r);
+  });
+
+  const cnt = {critico:0, alto:0, medio:0, bajo:0};
+  riesgos.forEach(r => cnt[r.nivel]++);
+
+  const total = BLOQUES.reduce((a,b) => a + b.preguntas.length, 0);
+  const respondidas = Object.keys(respuestas).length;
+  const siCnt = Object.values(respuestas).filter(v=>v==='si').length;
+  const noCnt = Object.values(respuestas).filter(v=>v==='no').length;
+  const parCnt = Object.values(respuestas).filter(v=>v==='parcial').length;
+  const noseCnt = Object.values(respuestas).filter(v=>v==='nose').length;
+
+  const marcoLabel = {ambos:'ISO 27001:2022 + ENS RD 311/2022', iso:'ISO/IEC 27001:2022', ens:'ENS RD 311/2022'};
+
+  // Tabla riesgos
+  const niveles = ['critico','alto','medio','bajo'];
+  const filas = niveles.flatMap(nv =>
+    riesgos.filter(r=>r.nivel===nv).map(r => `
+      <tr>
+        <td><span class="badge-nivel bn-${nv}">${nv.toUpperCase()}</span></td>
+        <td>${r.amenaza}</td>
+        <td style="color:#666;">${r.activo}</td>
+        <td style="font-size:12px;color:#777;font-style:italic;">${r.rec}</td>
+      </tr>`)
+  ).join('');
+
+  // Tabla madurez por bloque
+  const filasBloque = BLOQUES.map(b => {
+    const noBq = b.preguntas.filter(q => {
+      const a = respuestas[q.id];
+      return a === 'no' || a === 'nose';
+    }).length;
+    const pct = b.preguntas.length > 0
+      ? Math.round(((b.preguntas.length - noBq) / b.preguntas.length) * 100) : 0;
+    const col = pct >= 80 ? '#27ae60' : pct >= 50 ? '#e67e22' : '#e74c3c';
+    return `
+      <tr>
+        <td style="font-family:var(--mono);font-size:10px;color:var(--muted);">${b.id}</td>
+        <td>${b.titulo}</td>
+        <td>
+          <span class="mini-bar-wrap"><span class="mini-bar" style="width:${pct}%;background:${col};"></span></span>
+          <span style="font-family:var(--mono);font-size:11px;color:${col};font-weight:700;">${pct}%</span>
+        </td>
+        <td style="font-family:var(--mono);font-size:11px;">${noBq}/${b.preguntas.length} gaps</td>
+      </tr>`;
+  }).join('');
+
+  document.getElementById('informeContenido').innerHTML = `
+
+    <div class="informe-section">
+      <div class="informe-section-title">Identificación del documento</div>
+      <table style="width:100%;font-size:13px;border-collapse:collapse;">
+        <tr><td style="padding:6px 0;color:var(--muted);font-family:var(--mono);font-size:10px;letter-spacing:0.1em;width:160px;">ORGANIZACIÓN</td><td style="padding:6px 0;color:#333;font-weight:600;">${datosFirma.empresa}</td></tr>
+        <tr><td style="padding:6px 0;color:var(--muted);font-family:var(--mono);font-size:10px;letter-spacing:0.1em;">RESPONSABLE</td><td style="padding:6px 0;color:#333;">${datosFirma.responsable}</td></tr>
+        <tr><td style="padding:6px 0;color:var(--muted);font-family:var(--mono);font-size:10px;letter-spacing:0.1em;">FECHA</td><td style="padding:6px 0;color:#333;">${datosFirma.fecha}</td></tr>
+        <tr><td style="padding:6px 0;color:var(--muted);font-family:var(--mono);font-size:10px;letter-spacing:0.1em;">MARCO NORMATIVO</td><td style="padding:6px 0;color:#333;">${marcoLabel[datosFirma.marco]}</td></tr>
+        <tr><td style="padding:6px 0;color:var(--muted);font-family:var(--mono);font-size:10px;letter-spacing:0.1em;">VERSIÓN</td><td style="padding:6px 0;color:#333;">${datosFirma.version}</td></tr>
+        ${datosFirma.empleados ? `<tr><td style="padding:6px 0;color:var(--muted);font-family:var(--mono);font-size:10px;letter-spacing:0.1em;">EMPLEADOS</td><td style="padding:6px 0;color:#333;">${datosFirma.empleados}</td></tr>` : ''}
+        ${datosFirma.infra ? `<tr><td style="padding:6px 0;color:var(--muted);font-family:var(--mono);font-size:10px;letter-spacing:0.1em;">INFRAESTRUCTURA</td><td style="padding:6px 0;color:#333;">${datosFirma.infra}</td></tr>` : ''}
+        <tr><td style="padding:6px 0;color:var(--muted);font-family:var(--mono);font-size:10px;letter-spacing:0.1em;">PREGUNTAS RESPONDIDAS</td><td style="padding:6px 0;color:#333;">${respondidas} de ${total} (${Math.round(respondidas/total*100)}%)</td></tr>
+      </table>
+    </div>
+
+    <div class="informe-section">
+      <div class="informe-section-title">Resumen ejecutivo de riesgos</div>
+      <div class="resumen-grid">
+        <div class="resumen-card rc-critico"><div class="resumen-num">${cnt.critico}</div><div class="resumen-label">Crítico</div></div>
+        <div class="resumen-card rc-alto"><div class="resumen-num">${cnt.alto}</div><div class="resumen-label">Alto</div></div>
+        <div class="resumen-card rc-medio"><div class="resumen-num">${cnt.medio}</div><div class="resumen-label">Medio</div></div>
+        <div class="resumen-card rc-bajo"><div class="resumen-num">${cnt.bajo}</div><div class="resumen-label">Bajo</div></div>
+      </div>
+      <div class="aviso">
+        <strong>Respuestas:</strong> ✓ ${siCnt} confirmadas · ✗ ${noCnt} negativas · ⚠ ${parCnt} parciales · ? ${noseCnt} sin información
+      </div>
+    </div>
+
+    ${riesgos.length === 0 ? `
+      <div class="aviso" style="border-color:#27ae60;background:#eafaf1;">
+        ✅ No se han identificado riesgos significativos con las respuestas proporcionadas. Completa las preguntas pendientes para un análisis más exhaustivo.
+      </div>` : `
+    <div class="informe-section">
+      <div class="informe-section-title">Registro de riesgos identificados</div>
+      <table class="riesgo-table">
+        <thead><tr><th>Nivel</th><th>Amenaza / Riesgo</th><th>Activo afectado</th><th>Recomendación</th></tr></thead>
+        <tbody>${filas}</tbody>
+      </table>
+    </div>`}
+
+    <div class="informe-section">
+      <div class="informe-section-title">Madurez por bloque</div>
+      <table class="madurez-table">
+        <thead><tr><th>Bloque</th><th>Área</th><th>% Cumplimiento</th><th>Gaps</th></tr></thead>
+        <tbody>${filasBloque}</tbody>
+      </table>
+    </div>
+
+    <div class="informe-section">
+      <div class="informe-section-title">Próximos pasos recomendados</div>
+      <table class="riesgo-table">
+        <thead><tr><th>#</th><th>Acción</th><th>Prioridad</th></tr></thead>
+        <tbody>
+          ${cnt.critico > 0 ? `<tr><td style="font-family:var(--mono);color:var(--muted);font-size:11px;">01</td><td>Abordar de inmediato los ${cnt.critico} riesgo(s) <strong>crítico(s)</strong> identificados</td><td><span class="badge-nivel bn-critico">INMEDIATA</span></td></tr>` : ''}
+          ${cnt.alto > 0 ? `<tr><td style="font-family:var(--mono);color:var(--muted);font-size:11px;">02</td><td>Planificar tratamiento de los ${cnt.alto} riesgo(s) <strong>alto(s)</strong> en los próximos 30-60 días</td><td><span class="badge-nivel bn-alto">30-60 DÍAS</span></td></tr>` : ''}
+          <tr><td style="font-family:var(--mono);color:var(--muted);font-size:11px;">03</td><td>Completar las preguntas no respondidas para un análisis exhaustivo</td><td><span class="badge-nivel bn-medio">PRÓXIMO</span></td></tr>
+          <tr><td style="font-family:var(--mono);color:var(--muted);font-size:11px;">04</td><td>Establecer revisión anual del análisis de riesgos o ante cambios significativos</td><td><span class="badge-nivel bn-bajo">ANUAL</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div style="font-family:var(--mono);font-size:10px;color:var(--muted);text-align:center;padding-top:16px;border-top:1px solid var(--border-soft);">
+      Análisis generado con la herramienta de <strong>GRCreal.com</strong> · Ningún dato ha sido almacenado ni transmitido.
+    </div>
+  `;
+
+  mostrarPantalla('informe');
+}
+
+function volverPreguntas() {
+  mostrarPantalla('preguntas');
+  renderBloque(bloqueActual);
+}
+
+function nuevoAnalisis() {
+  if (!confirm('¿Iniciar un nuevo análisis? Se perderán todas las respuestas.')) return;
+  respuestas = {};
+  datosFirma = {};
+  bloqueActual = 0;
+  marcoActivo = 'ambos';
+  ['ambos','iso','ens'].forEach(x => document.getElementById('mb-'+x).classList.toggle('active', x==='ambos'));
+  document.getElementById('f-empresa').value = '';
+  document.getElementById('f-responsable').value = '';
+  document.getElementById('f-empleados').value = '';
+  document.getElementById('f-infra').value = '';
+  document.getElementById('f-version').value = '';
+  document.getElementById('f-fecha').value = new Date().toISOString().split('T')[0];
+  mostrarPantalla('inicio');
+}
+
+// ── EXPORT PDF ──
+function exportarPDF() {
+  const btn = document.querySelector('.btn-primary[onclick="exportarPDF()"]');
+  if (btn) { btn.textContent = '⏳ Generando...'; btn.disabled = true; }
+
+  const tryGenerar = () => {
+    if (window.jspdf && window.jspdf.jsPDF) {
+      generarPDF(window.jspdf.jsPDF);
+      if (btn) { btn.textContent = '⬇ Exportar PDF'; btn.disabled = false; }
+      return;
+    }
+    const iv = setInterval(() => {
+      if (window.jspdf && window.jspdf.jsPDF) {
+        clearInterval(iv);
+        generarPDF(window.jspdf.jsPDF);
+        if (btn) { btn.textContent = '⬇ Exportar PDF'; btn.disabled = false; }
+      }
+    }, 100);
+    setTimeout(() => {
+      clearInterval(iv);
+      if (btn && btn.disabled) {
+        alert('La librería PDF no está disponible. Verifica tu conexión.');
+        btn.textContent = '⬇ Exportar PDF';
+        btn.disabled = false;
+      }
+    }, 6000);
+  };
+  tryGenerar();
+}
+
+function generarPDF(jsPDF) {
+  const doc = new jsPDF({ orientation: 'portrait', unit: 'mm', format: 'a4' });
+  const W = 210, margin = 16, cW = W - margin * 2;
+  const brand = [0,119,181], white = [255,255,255], ink = [26,26,26];
+  const muted = [120,120,120], light = [245,247,250], border = [220,220,220];
+
+  const riesgos = [];
+  REGLAS.forEach(r => {
+    const ans = respuestas[r.qid];
+    if (!ans) return;
+    const match = (r.ans==='si' && ans==='si') || (r.ans==='no' && (ans==='no'||ans==='nose'));
+    if (match) riesgos.push(r);
+  });
+  const cnt = {critico:0,alto:0,medio:0,bajo:0};
+  riesgos.forEach(r => cnt[r.nivel]++);
+
+  const total = BLOQUES.reduce((a,b)=>a+b.preguntas.length,0);
+  const done = Object.keys(respuestas).length;
+  const pct = total > 0 ? Math.round((done/total)*100) : 0;
+  const today = datosFirma.fecha || new Date().toLocaleDateString('es-ES');
+
+  let statusColor, statusLabel;
+  if (pct>=80){statusColor=[39,174,96];statusLabel='Madurez Avanzada';}
+  else if (pct>=60){statusColor=[241,196,15];statusLabel='Madurez Intermedia';}
+  else if (pct>=30){statusColor=[230,126,34];statusLabel='Madurez Básica';}
+  else{statusColor=[231,76,60];statusLabel='Madurez Inicial';}
+
+  // CABECERA
+  doc.setFillColor(...brand);
+  doc.rect(0,0,W,44,'F');
+  doc.setTextColor(...white);
+  doc.setFontSize(20);doc.setFont('helvetica','bold');
+  doc.text('GRCreal', margin, 16);
+  doc.setFontSize(9);doc.setFont('helvetica','normal');
+  doc.text('Documento orientativo — no sustituye una consultoría profesional certificada. ', margin, 26);
+  doc.setFontSize(13);doc.setFont('helvetica','bold');
+  doc.text('Análisis de Riesgos — Empresa de Software', margin, 36);
+
+  // FICHA
+  let y = 52;
+  doc.setFillColor(...light);
+  doc.rect(margin,y,cW,32,'F');
+  doc.setFontSize(8);doc.setFont('helvetica','normal');doc.setTextColor(...muted);
+  doc.text('ORGANIZACIÓN',margin+3,y+7);
+  doc.text('RESPONSABLE',margin+3,y+17);
+  doc.text('FECHA',margin+3,y+27);
+  doc.text('MARCO NORMATIVO',margin+70,y+7);
+  doc.text('VERSIÓN',margin+70,y+17);
+  doc.text('RESULTADO',margin+140,y+7);
+  doc.setFontSize(10);doc.setFont('helvetica','bold');doc.setTextColor(...ink);
+  doc.text(datosFirma.empresa||'—',margin+3,y+13);
+  doc.text(datosFirma.responsable||'—',margin+3,y+23);
+  doc.text(today,margin+3,y+30);
+  const marcoLabel = {ambos:'ISO 27001:2022 + ENS',iso:'ISO/IEC 27001:2022',ens:'ENS RD 311/2022'};
+  doc.text(marcoLabel[datosFirma.marco]||'—',margin+70,y+13);
+  doc.text(datosFirma.version||'v1.0',margin+70,y+23);
+  // badge nivel
+  doc.setFontSize(8);doc.setFont('helvetica','bold');
+  const bw = doc.getTextWidth(statusLabel)+10;
+  doc.setFillColor(...statusColor);
+  doc.roundedRect(margin+140,y+10,bw,7,2,2,'F');
+  doc.setTextColor(...white);
+  doc.text(statusLabel,margin+140+5,y+15.5);
+
+  // PROGRESO
+  y += 40;
+  doc.setTextColor(...ink);doc.setFontSize(10);doc.setFont('helvetica','bold');
+  doc.text(`${done} de ${total} preguntas respondidas (${pct}%)`,margin,y);
+  y += 5;
+  doc.setFillColor(...border);doc.roundedRect(margin,y,cW,5,2,2,'F');
+  if (pct>0){doc.setFillColor(...statusColor);doc.roundedRect(margin,y,(cW*pct)/100,5,2,2,'F');}
+
+  // RESUMEN RIESGOS
+  y += 12;
+  doc.setFontSize(8);doc.setFont('helvetica','bold');doc.setTextColor(...brand);
+  doc.text('RESUMEN DE RIESGOS IDENTIFICADOS',margin,y);
+  y += 6;
+  const cards = [{l:'CRÍTICO',v:cnt.critico,c:[192,57,43]},{l:'ALTO',v:cnt.alto,c:[231,76,60]},{l:'MEDIO',v:cnt.medio,c:[230,126,34]},{l:'BAJO',v:cnt.bajo,c:[39,174,96]}];
+  const cardW = (cW-9)/4;
+  cards.forEach((c,i) => {
+    const cx = margin + i*(cardW+3);
+    doc.setFillColor(248,249,250);doc.rect(cx,y,cardW,16,'F');
+    doc.setDrawColor(...border);doc.rect(cx,y,cardW,16,'S');
+    doc.setFontSize(20);doc.setFont('helvetica','bold');doc.setTextColor(...c.c);
+    doc.text(String(c.v),cx+cardW/2,y+11,{align:'center'});
+    doc.setFontSize(7);doc.setFont('helvetica','normal');doc.setTextColor(...muted);
+    doc.text(c.l,cx+cardW/2,y+15,{align:'center'});
+  });
+
+  // TABLA RIESGOS
+  y += 24;
+  doc.setFontSize(8);doc.setFont('helvetica','bold');doc.setTextColor(...brand);
+  doc.text('REGISTRO DE RIESGOS',margin,y);
+  y += 5;
+  doc.setFillColor(...brand);doc.rect(margin,y,cW,7,'F');
+  doc.setTextColor(...white);doc.setFontSize(8);doc.setFont('helvetica','bold');
+  doc.text('NIVEL',margin+2,y+5);
+  doc.text('AMENAZA / RIESGO',margin+22,y+5);
+  doc.text('ACTIVO',margin+100,y+5);
+  doc.text('RECOMENDACIÓN',margin+138,y+5);
+  y += 9;
+
+  let alt = false;
+  const niveles2 = ['critico','alto','medio','bajo'];
+  const colNivel = {critico:[192,57,43],alto:[231,76,60],medio:[230,126,34],bajo:[39,174,96]};
+  const colBg = {critico:[253,220,220],alto:[253,235,235],medio:[254,243,226],bajo:[234,250,241]};
+
+  for (const nv of niveles2) {
+    for (const r of riesgos.filter(x=>x.nivel===nv)) {
+      const amenazaLines = doc.splitTextToSize(r.amenaza, 76);
+      const recLines = doc.splitTextToSize(r.rec, 56);
+      const activoLines = doc.splitTextToSize(r.activo, 34);
+      const rowH = Math.max(amenazaLines.length, recLines.length, activoLines.length) * 4.5 + 4;
+
+      if (y + rowH > 272) {
+        doc.addPage();y=20;
+        doc.setFillColor(...brand);doc.rect(margin,y,cW,7,'F');
+        doc.setTextColor(...white);doc.setFontSize(8);doc.setFont('helvetica','bold');
+        doc.text('NIVEL',margin+2,y+5);doc.text('AMENAZA / RIESGO',margin+22,y+5);
+        doc.text('ACTIVO',margin+100,y+5);doc.text('RECOMENDACIÓN',margin+138,y+5);
+        y+=9;alt=false;
+      }
+
+      if (alt){doc.setFillColor(248,249,250);doc.rect(margin,y,cW,rowH,'F');}
+      // badge nivel
+      doc.setFillColor(...colBg[nv]);doc.roundedRect(margin+1,y+1.5,18,5,1,1,'F');
+      doc.setTextColor(...colNivel[nv]);doc.setFontSize(6.5);doc.setFont('helvetica','bold');
+      doc.text(nv.toUpperCase(),margin+10,y+5.5,{align:'center'});
+      // texto
+      doc.setTextColor(...ink);doc.setFontSize(8);doc.setFont('helvetica','normal');
+      doc.text(amenazaLines,margin+22,y+5);
+      doc.setTextColor(100,100,100);
+      doc.text(activoLines,margin+100,y+5);
+      doc.setFontSize(7.5);doc.setFont('helvetica','italic');doc.setTextColor(130,130,130);
+      doc.text(recLines,margin+138,y+5);
+      doc.setDrawColor(...border);doc.line(margin,y+rowH,margin+cW,y+rowH);
+      y+=rowH;alt=!alt;
+    }
+  }
+
+  // MADUREZ
+  if (y+60 > 272){doc.addPage();y=20;}
+  y+=8;
+  doc.setFontSize(8);doc.setFont('helvetica','bold');doc.setTextColor(...brand);
+  doc.text('MADUREZ POR BLOQUE',margin,y);y+=5;
+  doc.setFillColor(...brand);doc.rect(margin,y,cW,7,'F');
+  doc.setTextColor(...white);doc.setFontSize(8);doc.setFont('helvetica','bold');
+  doc.text('BLOQUE',margin+2,y+5);doc.text('ÁREA',margin+22,y+5);
+  doc.text('CUMPLIMIENTO',margin+110,y+5);doc.text('GAPS',margin+155,y+5);
+  y+=9;alt=false;
+
+  for (const b of BLOQUES) {
+    const noBq = b.preguntas.filter(q=>{const a=respuestas[q.id];return a==='no'||a==='nose';}).length;
+    const bpct = Math.round(((b.preguntas.length-noBq)/b.preguntas.length)*100);
+    const bc = bpct>=80?[39,174,96]:bpct>=50?[230,126,34]:[231,76,60];
+    if (y+8>272){doc.addPage();y=20;}
+    if (alt){doc.setFillColor(248,249,250);doc.rect(margin,y,cW,8,'F');}
+    doc.setTextColor(...brand);doc.setFontSize(7.5);doc.setFont('helvetica','bold');
+    doc.text(b.id,margin+2,y+5.5);
+    doc.setTextColor(...ink);doc.setFont('helvetica','normal');doc.setFontSize(8);
+    doc.text(b.titulo,margin+22,y+5.5);
+    // mini bar
+    doc.setFillColor(...border);doc.roundedRect(margin+110,y+2,40,4,1,1,'F');
+    if (bpct>0){doc.setFillColor(...bc);doc.roundedRect(margin+110,y+2,(40*bpct)/100,4,1,1,'F');}
+    doc.setTextColor(...bc);doc.setFontSize(7.5);doc.setFont('helvetica','bold');
+    doc.text(bpct+'%',margin+152,y+5.5);
+    doc.setTextColor(...muted);doc.setFont('helvetica','normal');
+    doc.text(`${noBq}/${b.preguntas.length}`,margin+158,y+5.5);
+    doc.setDrawColor(...border);doc.line(margin,y+8,margin+cW,y+8);
+    y+=8;alt=!alt;
+  }
+
+  // PIE
+  const pages = doc.getNumberOfPages();
+  for(let i=1;i<=pages;i++){
+    doc.setPage(i);
+    doc.setFillColor(...brand);doc.rect(0,287,W,10,'F');
+    doc.setTextColor(...white);doc.setFontSize(7);doc.setFont('helvetica','normal');
+    doc.text('GRCreal.com · Miguel Ángel Carriazo, vCISO · Documento orientativo — no sustituye consultoría profesional certificada',margin,293.5);
+    doc.text(`Pág. ${i}/${pages}`,W-margin-8,293.5);
+  }
+
+  const fn = `GRCreal_AR_Software_${today.replace(/\//g,'-')}.pdf`;
+  doc.save(fn);
+}
+
+// Fecha por defecto
+document.getElementById('f-fecha').value = new Date().toISOString().split('T')[0];
+
+</script>
+</body>
+</html>

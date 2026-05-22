@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0">
+
+<title>Resumen del Curso · ISO 27001 Lead Implementer · GRCreal Academy</title>
+
+<meta name="description" content="Resumen ejecutivo completo de los 10 módulos del curso ISO 27001 Lead Implementer. Tablas, conexiones, errores típicos y checklist final.">
+
+<meta name="robots" content="index, follow">
+
+<link rel="icon" href="/favicon.ico" sizes="any">
+
+<link rel="stylesheet" href="../../css/academia.css">
+
+<style>
+.cta-buttons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    margin-top: 8px;
+    flex-wrap: wrap;
+}
+.cta-button {
+    display: inline-block;
+    background: var(--brand, #0077B5);
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 12px 28px;
+    border-radius: 40px;
+    font-size: 1rem;
+    transition: 0.2s background;
+    box-shadow: 0 5px 12px rgba(0,0,0,0.05);
+}
+.cta-button:hover {
+    background: var(--brand-dark, #005a8e);
+}
+.course-home-btn {
+    background: var(--brand-light, #e8f3fa);
+    color: var(--brand, #0077B5);
+    padding: 6px 14px;
+    border-radius: 40px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-left: 12px;
+    transition: 0.2s;
+}
+.course-home-btn:hover {
+    background: var(--brand-mid, #cce4f0);
+}
+.summary-highlight {
+    background: var(--brand-light, #e8f3fa);
+    padding: 20px 24px;
+    border-radius: 16px;
+    margin: 24px 0;
+    border-left: 4px solid var(--brand, #0077B5);
+}
+.error-box {
+    background: #fff8f0;
+    border-left: 4px solid #e67e22;
+    padding: 16px 20px;
+    margin: 16px 0;
+    border-radius: 12px;
+}
+.checklist-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+.checklist-marker {
+    color: var(--brand, #0077B5);
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+</style>
+
+</head>
+
+<body class="article-page">
+
+<div class="card-wrapper">
+<div class="card">
+
+<div class="accent-bar"></div>
+
+<nav class="academy-module-menu">
+
+<a href="/academia/iso27001-lead-implementer/index.html" class="academy-course-logo">
+ISO 27001 <span>Lead Implementer</span>
+</a>
+
+<div class="academy-course-links">
+<span class="module-badge">Resumen del Curso</span>
+<a href="/academia/iso27001-lead-implementer/index.html" class="course-home-btn">⌂ Curso</a>
+</div>
+
+</nav>
+
+<div class="header">
+
+<div class="tag">
+ISO 27001 · SGSI · RESUMEN EJECUTIVO
+</div>
+
+<div class="article-date">
+Material de repaso
+</div>
+
+<div class="headline">
+Resumen del curso:<br>
+<span class="accent">10 módulos</span><br>
+<span class="dim">en perspectiva</span>
+</div>
+
+<p class="subline">
+
+No es solo aprobar un examen.<br>
+<strong>Es entender cómo construir un SGSI que funcione en la realidad.</strong>
+
+</p>
+
+</div>
+
+<div class="body">
+
+<!-- INTRO -->
+
+<div class="summary-highlight">
+<p>
+<strong>📌 Antes de empezar:</strong> Este resumen no repite los "Lo que debes llevarte de aquí" de cada módulo.  
+En cada módulo ya tienes los consejos prácticos específicos. Aquí tienes la <strong>visión global</strong> que conecta todos los módulos, los errores típicos y un checklist final.
+</p>
+</div>
+
+<!-- TABLA COMPACTA DE 10 MODULOS -->
+
+<div class="block">
+
+<div class="block-label">
+Visión global
+</div>
+
+<div class="block-title">
+Los 10 módulos del curso
+</div>
+
+<div class="block-text">
+
+El SGSI no es una colección de requisitos independientes. Es un <strong>sistema</strong> donde cada parte se conecta con las demás.
+
+</div>
+
+<table class="tension" style="margin-top:16px;">
+
+<tr>
+<td class="tension-who">M1</td>
+<td class="tension-says"><strong>Introducción</strong><br>La triada CIA y qué es realmente un SGSI. La base conceptual de todo lo demás.</td>
+</tr>
+
+<tr>
+<td class="tension-who">M2</td>
+<td class="tension-says"><strong>Business Case</strong><br>Convencer a la dirección. Sin esto, el proyecto no arranca.</td>
+</tr>
+
+<tr>
+<td class="tension-who">M3</td>
+<td class="tension-says"><strong>GAP Analysis</strong><br>Saber dónde estamos. El diagnóstico que evita construir sobre suposiciones.</td>
+</tr>
+
+<tr>
+<td class="tension-who">M4</td>
+<td class="tension-says"><strong>Contexto</strong><br>Entender el entorno. Lo que pasa fuera y dentro afecta a la seguridad.</td>
+</tr>
+
+<tr>
+<td class="tension-who">M5</td>
+<td class="tension-says"><strong>Liderazgo</strong><br>Compromiso desde arriba. Sin alta dirección implicada, el SGSI muere.</td>
+</tr>
+
+<tr>
+<td class="tension-who">M6</td>
+<td class="tension-says"><strong>Planificación</strong><br>Anticiparse a los riesgos. Evaluar, tratar, documentar en la SoA.</td>
+</tr>
+
+<tr>
+<td class="tension-who">M7</td>
+<td class="tension-says"><strong>Soporte</strong><br>Recursos, competencias, concienciación. El combustible del SGSI.</td>
+</tr>
+
+<tr>
+<td class="tension-who">M8</td>
+<td class="tension-says"><strong>Operación</strong><br>Ejecutar lo planificado. Los cambios, los proveedores, el día a día.</td>
+</tr>
+
+<tr>
+<td class="tension-who">M9</td>
+<td class="tension-says"><strong>Evaluación</strong><br>Medir para saber si funciona. Auditorías internas y revisión por dirección.</td>
+</tr>
+
+<tr class="hi-row">
+<td class="tension-who">M10</td>
+<td class="tension-says"><span class="hi">Mejora<br>El SGSI no termina con la certificación. Solo empieza. No conformidades, acciones correctivas, PHVA.</span></td>
+</tr>
+
+</table>
+
+</div>
+
+<div class="divider"></div>
+
+<!-- CONCEPTOS CLAVE POR MÓDULO -->
+
+<div class="block">
+
+<div class="block-label">
+Repaso rápido
+</div>
+
+<div class="block-title">
+Conceptos clave por módulo
+</div>
+
+<div class="block-text">
+Para un repaso exprés, recuerda estas palabras clave:
+</div>
+
+<table class="tension" style="margin-top:16px;">
+
+<tr>
+<td class="tension-who">M1</td>
+<td class="tension-says">CIA · SGSI · Anexo A · Certificación ≠ Preparación</td>
+</tr>
+
+<tr>
+<td class="tension-who">M2</td>
+<td class="tension-says">Business Case · ROI · Opciones · Lenguaje de negocio</td>
+</tr>
+
+<tr>
+<td class="tension-who">M3</td>
+<td class="tension-says">GAP · Brecha · Madurez · COBIT (0-5)</td>
+</tr>
+
+<tr>
+<td class="tension-who">M4</td>
+<td class="tension-says">Contexto externo/interno · Stakeholders · Alcance</td>
+</tr>
+
+<tr>
+<td class="tension-who">M5</td>
+<td class="tension-says">Alta dirección · Política · Roles · Responsabilidades</td>
+</tr>
+
+<tr>
+<td class="tension-who">M6</td>
+<td class="tension-says">Riesgos · Tratamiento (evitar/aceptar/modificar/compartir) · SoA</td>
+</tr>
+
+<tr>
+<td class="tension-who">M7</td>
+<td class="tension-says">Recursos · Competencia · Concienciación · Documentación</td>
+</tr>
+
+<tr>
+<td class="tension-who">M8</td>
+<td class="tension-says">Operación · Cambios planificados/no planificados · Proveedores</td>
+</tr>
+
+<tr>
+<td class="tension-who">M9</td>
+<td class="tension-says">Métricas · Auditoría interna · Revisión por dirección</td>
+</tr>
+
+<tr class="hi-row">
+<td class="tension-who">M10</td>
+<td class="tension-says"><span class="hi">No conformidad · Causa raíz · PHVA · Mejora continua</span></td>
+</tr>
+
+</table>
+
+</div>
+
+<div class="divider"></div>
+
+<!-- EL HILO CONDUCTOR -->
+
+<div class="block">
+
+<div class="block-label">
+El hilo conductor
+</div>
+
+<div class="block-title">
+Cómo se conectan los módulos
+</div>
+
+<div class="block-text">
+
+Un error común es tratar cada módulo como un "tema aislado". La realidad es que forman un flujo lógico:
+
+</div>
+
+<table class="tension" style="margin-top:16px;">
+
+<tr>
+<td class="tension-who">1️⃣ → 2️⃣</td>
+<td class="tension-says"><strong>Entender (M1) → Convencer (M2).</strong> No puedes vender lo que no entiendes.</td>
+</tr>
+
+<tr>
+<td class="tension-who">2️⃣ → 3️⃣</td>
+<td class="tension-says"><strong>Convencer (M2) → Diagnosticar (M3).</strong> Un Business Case sin diagnóstico real es humo.</td>
+</tr>
+
+<tr>
+<td class="tension-who">3️⃣ → 4️⃣</td>
+<td class="tension-says"><strong>Diagnosticar (M3) → Contextualizar (M4).</strong> Las brechas solo tienen sentido en tu entorno concreto.</td>
+</tr>
+
+<tr>
+<td class="tension-who">4️⃣ → 5️⃣</td>
+<td class="tension-says"><strong>Contexto (M4) → Liderazgo (M5).</strong> La dirección solo actúa si el contexto lo exige.</td>
+</tr>
+
+<tr>
+<td class="tension-who">5️⃣ → 6️⃣</td>
+<td class="tension-says"><strong>Liderazgo (M5) → Planificar (M6).</strong> Sin mandato, la planificación es un ejercicio teórico.</td>
+</tr>
+
+<tr>
+<td class="tension-who">6️⃣ → 7️⃣ → 8️⃣</td>
+<td class="tension-says"><strong>Planificar (M6) → Soportar (M7) → Operar (M8).</strong> La ejecución necesita recursos y competencias.</td>
+</tr>
+
+<tr>
+<td class="tension-who">8️⃣ → 9️⃣</td>
+<td class="tension-says"><strong>Operar (M8) → Evaluar (M9).</strong> No sabes si funciona si no lo mides.</td>
+</tr>
+
+<tr class="hi-row">
+<td class="tension-who">9️⃣ → 🔟</td>
+<td class="tension-says"><span class="hi">Evaluar (M9) → Mejorar (M10). La evaluación sin mejora es solo burocracia. El ciclo se cierra y vuelve a empezar.</span></td>
+</tr>
+
+</table>
+
+</div>
+
+<div class="divider"></div>
+
+<!-- ERRORES TÍPICOS POR MÓDULO -->
+
+<div class="block">
+
+<div class="block-label">
+Atención
+</div>
+
+<div class="block-title">
+Errores típicos · Lo que nadie te cuenta
+</div>
+
+<div class="error-box">
+<strong>⚠️ Módulo 1 · Introducción</strong><br>
+Confundir "tener documentos" con "tener un SGSI". El SGSI se opera, no se archiva.
+</div>
+
+<div class="error-box">
+<strong>⚠️ Módulo 2 · Business Case</strong><br>
+Escribir un Business Case técnico ("necesitamos controles") en lugar de uno de negocio ("accederemos a nuevos mercados").
+</div>
+
+<div class="error-box">
+<strong>⚠️ Módulo 3 · GAP Analysis</strong><br>
+Hacer el GAP Analysis sobre suposiciones, no sobre evidencias objetivas.
+</div>
+
+<div class="error-box">
+<strong>⚠️ Módulo 4 · Contexto</strong><br>
+Definir un alcance demasiado amplio (inviable) o demasiado estrecho (deja riesgos fuera).
+</div>
+
+<div class="error-box">
+<strong>⚠️ Módulo 5 · Liderazgo</strong><br>
+Que la alta dirección delegue pero no acompañe. La responsabilidad no es delegable.
+</div>
+
+<div class="error-box">
+<strong>⚠️ Módulo 6 · Planificación</strong><br>
+Seleccionar controles del Anexo A sin justificación basada en riesgos.
+</div>
+
+<div class="error-box">
+<strong>⚠️ Módulo 7 · Soporte</strong><br>
+Crear documentación excesiva que nadie lee ni usa.
+</div>
+
+<div class="error-box">
+<strong>⚠️ Módulo 8 · Operación</strong><br>
+No gestionar los cambios no planificados (incidentes) como parte del SGSI.
+</div>
+
+<div class="error-box">
+<strong>⚠️ Módulo 9 · Evaluación</strong><br>
+Medir por medir, sin que las métricas tomen decisiones.
+</div>
+
+<div class="error-box">
+<strong>⚠️ Módulo 10 · Mejora</strong><br>
+Corregir el síntoma sin eliminar la causa raíz.
+</div>
+
+</div>
+
+<div class="divider"></div>
+
+<!-- FASES DEL VIAJE DEL SGSI -->
+
+<div class="block">
+
+<div class="block-label">
+Tu roadmap
+</div>
+
+<div class="block-title">
+El viaje del SGSI en 4 fases
+</div>
+
+<table class="tension" style="margin-top:16px;">
+
+<tr>
+<td class="tension-who">Fase 1</td>
+<td class="tension-says"><strong>Diagnóstico y convencimiento.</strong><br>M1, M2, M3, M4 → Entiendes, convences, diagnosticas y contextualizas.</td>
+</tr>
+
+<tr>
+<td class="tension-who">Fase 2</td>
+<td class="tension-says"><strong>Compromiso y planificación.</strong><br>M5, M6 → La dirección se compromete y se planifica la acción.</td>
+</tr>
+
+<tr>
+<td class="tension-who">Fase 3</td>
+<td class="tension-says"><strong>Ejecución y soporte.</strong><br>M7, M8 → Recursos, competencias y operación del día a día.</td>
+</tr>
+
+<tr class="hi-row">
+<td class="tension-who">Fase 4</td>
+<td class="tension-says"><span class="hi">Evaluación y mejora continua.<br>M9, M10 → Mides, corriges, mejoras. El ciclo nunca termina.</span></td>
+</tr>
+
+</table>
+
+</div>
+
+<div class="divider"></div>
+
+<!-- CHECKLIST FINAL -->
+
+<div class="block">
+
+<div class="block-label">
+Checklist final
+</div>
+
+<div class="block-title">
+Antes de la certificación · ¿Todo en orden?
+</div>
+
+<div class="block-text">
+Marca mentalmente cada punto:
+</div>
+
+<div class="checklist-item">
+<div class="checklist-marker">□</div>
+<div><strong>Contexto y alcance</strong> · ¿Están definidos, documentados y aprobados?</div>
+</div>
+
+<div class="checklist-item">
+<div class="checklist-marker">□</div>
+<div><strong>Liderazgo</strong> · ¿La alta dirección ha aprobado la política y revisado el SGSI?</div>
+</div>
+
+<div class="checklist-item">
+<div class="checklist-marker">□</div>
+<div><strong>Riesgos</strong> · ¿Están identificados, evaluados, tratados y documentados en la SoA?</div>
+</div>
+
+<div class="checklist-item">
+<div class="checklist-marker">□</div>
+<div><strong>Objetivos</strong> · ¿Son medibles, comunicados y se les hace seguimiento?</div>
+</div>
+
+<div class="checklist-item">
+<div class="checklist-marker">□</div>
+<div><strong>Recursos y competencias</strong> · ¿Hay personas cualificadas y concienciadas?</div>
+</div>
+
+<div class="checklist-item">
+<div class="checklist-marker">□</div>
+<div><strong>Operación</strong> · ¿Los procesos se ejecutan como están documentados?</div>
+</div>
+
+<div class="checklist-item">
+<div class="checklist-marker">□</div>
+<div><strong>Evaluación</strong> · ¿Se han realizado auditorías internas y revisión por dirección?</div>
+</div>
+
+<div class="checklist-item">
+<div class="checklist-marker">□</div>
+<div><strong>Mejora</strong> · ¿Las no conformidades tienen acciones correctivas con causa raíz?</div>
+</div>
+
+<div class="checklist-item">
+<div class="checklist-marker">□</div>
+<div><strong>Documentación</strong> · ¿Está controlada, actualizada y accesible?</div>
+</div>
+
+<div class="checklist-item">
+<div class="checklist-marker">□</div>
+<div><strong>Evidencias</strong> · ¿Los registros demuestran que el SGSI funciona?</div>
+</div>
+
+</div>
+
+<div class="divider"></div>
+
+<!-- LA LECCIÓN FINAL -->
+
+<div class="block">
+
+<div class="block-label">
+La lección final
+</div>
+
+<div class="block-title">
+Lo que ningún módulo dice explícitamente
+</div>
+
+<div class="quote-block">
+
+<div class="quote-text">
+&ldquo;ISO 27001 no es un checklist. Es una mentalidad.&rdquo;
+</div>
+
+<div class="quote-attr">
+El verdadero espíritu de la norma
+</div>
+
+</div>
+
+<div class="block-text">
+
+A lo largo de 10 módulos hemos visto requisitos, controles, procesos y documentación. Pero hay algo que ningún procedimiento escrito puede reemplazar:
+
+</div>
+
+<table class="tension" style="margin-top:20px;">
+
+<tr>
+<td class="tension-who">🎯</td>
+<td class="tension-says">La seguridad no es un proyecto con fecha de fin. Es una <strong>capacidad continua</strong> de la organización.</td>
+</tr>
+
+<tr>
+<td class="tension-who">🔄</td>
+<td class="tension-says">El SGSI vive en el día a día, no en una carpeta de Google Drive. <strong>Se opera, no se archiva.</strong></td>
+</tr>
+
+<tr>
+<td class="tension-who">🧠</td>
+<td class="tension-says">Los documentos son importantes, pero lo crítico es que las personas <strong>entiendan y actúen</strong> según ellos.</td>
+</tr>
+
+<tr class="hi-row">
+<td class="tension-who">📊</td>
+<td class="tension-says"><span class="hi">Las métricas no son para el auditor. Son para <strong>saber si estás mejor que ayer</strong>.</span></td>
+</tr>
+
+</table>
+
+</div>
+
+<div class="divider"></div>
+
+<!-- CTA FINAL -->
+
+<div class="cta-block">
+
+<div class="cta-headline">
+¿Estás listo para<br>
+<span>implementar un SGSI real?</span>
+</div>
+
+<div class="cta-sub">
+Repasa los módulos que necesites. La certificación es un papel.<br>
+<strong>La preparación real es lo que protege tu organización.</strong>
+</div>
+
+
+
+<div class="cta-buttons">
+    <a href="modulo-10.html" class="cta-button">← Volver al Módulo 10</a>
+    <a href="consejos.html" class="cta-button">Consejos para el examen →</a>
+</div>
+
+</div>
+
+</div>
+
+<!-- FOOTER -->
+
+<div class="footer">
+
+<div class="footer-inner">
+
+<div class="author-block">
+<div class="author-avatar">MA</div>
+<div>
+<div class="author-name">Miguel Angel Carriazo · <span>vCISO</span></div>
+<div class="author-title">Cybersecurity & Infrastructure Architect</div>
+</div>
+</div>
+
+<a href="https://www.linkedin.com/in/macarriazo/" target="_blank" rel="noopener noreferrer" class="li-btn">
+<svg class="li-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#0077B5">
+<path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+</svg>
+<div>
+<span class="li-main">"Merece la pena la experiencia..."</span>
+<span class="li-sub">Hablemos en LinkedIn →</span>
+</div>
+</a>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</body>
+<script src="/js/modulo-check.js"></script>
+</html>

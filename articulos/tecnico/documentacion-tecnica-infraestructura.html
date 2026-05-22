@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0">
+<title>Documentación técnica: el conocimiento que vive en una sola cabeza · GRCreal</title>
+<meta name="description" content="En la mayoría de organizaciones, el conocimiento crítico de la infraestructura vive en la cabeza de una o dos personas. Qué pasa cuando se van y cómo evitarlo.">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Documentación técnica: el conocimiento que vive en una sola cabeza">
+<meta property="og:description" content="El conocimiento crítico de la infraestructura en una sola persona es uno de los riesgos más ignorados. Cómo documentar lo que importa.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://grcreal.com/articulos/documentacion-tecnica-infraestructura.html">
+<meta property="og:image" content="https://grcreal.com/grcreal.png">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="../../css/marca.css">
+<link rel="stylesheet" href="../../css/articles.css">
+<link rel="stylesheet" href="../../css/global.css">
+</head>
+<body class="article-page">
+<div class="card-wrapper">
+<div class="card">
+<div class="accent-bar"></div>
+
+<div class="header">
+  <div class="tag">Técnico · Documentación · Infraestructura</div>
+  <div class="article-date">9 Diciembre 9999</div>
+  <div class="headline">
+    El conocimiento<br>
+    <span class="accent">que vive</span><br>
+    <span class="dim">en una sola</span><br>
+    <span class="accent">cabeza</span>
+  </div>
+  <p class="subline">
+    Cuando esa persona no está disponible,<br>
+    <strong>el problema es de toda la organización.</strong>
+  </p>
+</div>
+
+<div class="body">
+
+  <div class="block">
+    <div class="block-label">El riesgo invisible</div>
+    <div class="block-title">La dependencia de persona clave</div>
+    <div class="block-text">
+      En la mayoría de organizaciones que audito existe una figura que se repite: la persona que sabe cómo funciona todo. Conoce la arquitectura de red de memoria, sabe por qué se tomó aquella decisión hace cinco años, conoce las contraseñas de los sistemas críticos, sabe qué pasa exactamente cuando falla el servidor de producción y cómo recuperarlo.
+      <br><br>
+      Cuando está disponible, todo funciona. Cuando está de vacaciones, de baja o decide cambiar de trabajo — la organización descubre que ese conocimiento no existe en ningún otro sitio.
+      <br><br>
+      <strong>Esto no es solo un problema operativo. Es un riesgo de seguridad, un riesgo de continuidad y, en entornos regulados, un incumplimiento normativo.</strong>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="block">
+    <div class="block-label">Por qué no se documenta</div>
+    <div class="block-title">Las razones reales</div>
+    <div class="block-text">
+      No hay tiempo. El equipo técnico está saturado con la operativa y documentar se pospone indefinidamente porque nunca es urgente — hasta que lo es.
+      <br><br>
+      No hay incentivo. En muchas organizaciones, ser el único que sabe cómo funciona algo da una posición de poder implícita. Nadie lo dice, pero documentar elimina esa posición.
+      <br><br>
+      No hay formato. Sin una estructura clara de qué documentar, cómo y dónde, la documentación que existe es heterogénea, desactualizada y difícil de usar.
+      <br><br>
+      <strong>Y no hay cultura. Si la dirección no valora la documentación técnica como un activo crítico de la organización, nunca se prioriza frente a otras tareas.</strong>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="block">
+    <div class="block-label">Qué documentar</div>
+    <div class="block-title">Lo mínimo que debe existir</div>
+
+    <table class="tension" style="margin-top:20px;">
+      <tr>
+        <td class="tension-who">Arquitectura</td>
+        <td class="tension-says">Diagrama de red actualizado. Segmentos, VLANs, conectividad entre sistemas, puntos de acceso a internet y DMZ. Sin esto, responder a un incidente es improvisar.</td>
+      </tr>
+      <tr>
+        <td class="tension-who">Inventario</td>
+        <td class="tension-says">Lista de sistemas críticos con su función, responsable, versión de software y ubicación. Física y lógica. Actualizada cuando hay cambios.</td>
+      </tr>
+      <tr>
+        <td class="tension-who">Procedimientos</td>
+        <td class="tension-says">Cómo se arrancan y paran los sistemas críticos. Cómo se hace una restauración de backup. Qué pasos seguir ante los incidentes más frecuentes. Escritos para que los ejecute alguien que no los ha hecho antes.</td>
+      </tr>
+      <tr>
+        <td class="tension-who">Credenciales</td>
+        <td class="tension-says">Gestión centralizada de contraseñas y accesos con un gestor de contraseñas corporativo. Nunca en un Excel en el escritorio del técnico.</td>
+      </tr>
+      <tr class="hi-row">
+        <td class="tension-who">Dependencias</td>
+        <td class="tension-says"><span class="hi">Qué sistemas dependen de qué. Si cae el servidor de directorio activo, ¿qué deja de funcionar? Si falla el sistema de backup, ¿qué datos están en riesgo? Este mapa de dependencias es crítico en un incidente.</span></td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="block">
+    <div class="block-label">Cómo hacerlo bien</div>
+    <div class="block-title">La documentación que realmente se usa</div>
+    <div class="block-text">
+      La documentación técnica útil no es la que describe cómo debería funcionar el sistema — es la que describe cómo funciona realmente.
+      <br><br>
+      Tiene que ser suficientemente detallada para que alguien con conocimientos técnicos generales pueda ejecutar un procedimiento sin ayuda. Si asume conocimiento que no está escrito, no es documentación útil.
+      <br><br>
+      Tiene que estar actualizada. Una arquitectura de red de hace tres años puede ser peor que no tener ninguna si la red ha cambiado. La documentación desactualizada genera falsa confianza.
+      <br><br>
+      Tiene que estar accesible. No en el portátil del técnico, no en un sistema al que solo accede una persona. En un repositorio centralizado, con acceso controlado pero disponible para quien lo necesite en un incidente.
+      <br><br>
+      <strong>Y tiene que probarse: que otra persona puede ejecutar el procedimiento siguiendo la documentación, sin ayuda de quien lo escribió. Si no puede — la documentación no está terminada.</strong>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="block">
+    <div class="block-label">La perspectiva del auditor</div>
+    <div class="block-title">Lo que se pide en una auditoría</div>
+    <div class="block-text">
+      En una auditoría ISO 27001 o ENS, la documentación técnica no es opcional. Se pide el diagrama de red actualizado, el inventario de activos, los procedimientos de operación y los registros de cambios.
+      <br><br>
+      Pero más allá del cumplimiento normativo, la ausencia de documentación técnica es uno de los factores que más agravan el impacto de un incidente. He visto organizaciones que tardaron días en recuperarse de un incidente que con documentación adecuada hubiera tomado horas.
+      <br><br>
+      <strong>La documentación técnica no es burocracia. Es resiliencia.</strong>
+    </div>
+  </div>
+
+  <div class="cta-block">
+    <div class="cta-headline">
+      ¿Podría tu organización recuperarse<br>
+      <span>sin su persona clave?</span>
+    </div>
+    <div class="cta-sub">
+      Si la respuesta es no — o no lo sabes —<br>
+      <strong>la documentación no es burocracia, es resiliencia.</strong>
+    </div>
+  </div>
+
+</div>
+
+<!-- FINAL DEL BODY -->
+<div id="footer-placeholder"></div>
+<script>
+    fetch('/includes/footer.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('footer-placeholder').innerHTML = data;
+        });
+</script>
+
+</div>
+</div>
+<a href="/articulos" class="home-btn">⌂ Home Artículos</a>
+</body>
+<script src="/js/global.js"></script>
+</html>

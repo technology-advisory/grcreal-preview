@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0">
+
+<title>Hallazgos y No Conformidades · ISO 27001 Lead Auditor · GRCreal Academy</title>
+
+<meta name="description" content="Modulo 8 ISO 27001 Lead Auditor. Cómo identificar, redactar y gestionar hallazgos, no conformidades y oportunidades de mejora en una auditoría.">
+
+<meta name="robots" content="index, follow">
+
+<link rel="icon" href="/favicon.ico" sizes="any">
+
+<link rel="stylesheet" href="../../css/academia.css">
+
+<style>
+.cta-buttons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    margin-top: 8px;
+    flex-wrap: wrap;
+}
+.cta-button {
+    display: inline-block;
+    background: var(--brand, #0077B5);
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 12px 28px;
+    border-radius: 40px;
+    font-size: 1rem;
+    transition: 0.2s background;
+    box-shadow: 0 5px 12px rgba(0,0,0,0.05);
+}
+.cta-button:hover {
+    background: var(--brand-dark, #005a8e);
+}
+.course-home-btn {
+    background: var(--brand-light, #e8f3fa);
+    color: var(--brand, #0077B5);
+    padding: 6px 14px;
+    border-radius: 40px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-left: 12px;
+    transition: 0.2s;
+}
+.course-home-btn:hover {
+    background: var(--brand-mid, #cce4f0);
+}
+</style>
+
+</head>
+
+<body class="article-page">
+
+<div class="card-wrapper">
+<div class="card">
+
+<div class="accent-bar"></div>
+
+<nav class="academy-module-menu">
+
+<a href="/academia/iso27001-lead-auditor/index.html" class="academy-course-logo">
+ISO 27001 <span>Lead Auditor</span>
+</a>
+
+<div class="academy-course-links">
+<span class="module-badge">Módulo 8 · Hallazgos y No Conformidades</span></div>
+<a href="/academia/iso27001-lead-auditor/index.html" class="course-home-btn">⌂ Curso</a>
+</nav>
+
+<div class="header">
+
+<div class="tag">
+HALLAZGOS · NO CONFORMIDADES · EVIDENCIAS
+</div>
+
+<div class="article-date">
+Módulo 8
+</div>
+
+<div class="headline">
+Hallazgos y<br>
+<span class="accent">No Conformidades</span>
+</div>
+
+<p class="subline">
+
+Un hallazgo no es un reproche.<br>
+<strong>Es una oportunidad para mejorar.</strong>
+
+</p>
+
+</div>
+
+<div class="body">
+
+<!-- BLOQUE 1 · QUÉ ES UN HALLAZGO -->
+
+<div class="block">
+
+<div class="block-label">
+Definición
+</div>
+
+<div class="block-title">
+Qué es un hallazgo de auditoría
+</div>
+
+<div class="block-text">
+
+Un <strong>hallazgo de auditoría</strong> es el resultado de la evaluación de la evidencia de auditoría recopilada contra los criterios de auditoría.
+
+</div>
+
+<div class="quote-block">
+
+<div class="quote-text">
+&ldquo;Los hallazgos indican conformidad o no conformidad. También pueden identificar riesgos, oportunidades de mejora o buenas prácticas.&rdquo;
+</div>
+<div class="quote-attr">
+ISO 19011:2018
+</div>
+</div>
+
+<table class="tension" style="margin-top:20px;">
+
+<tr>
+<td class="tension-who">✅</td>
+<td class="tension-says"><strong>Hallazgo de conformidad.</strong> Se cumple con el requisito. La implementación corresponde a la intención y es eficiente.}
+</tr>
+
+<tr class="hi-row">
+<td class="tension-who">❌</td>
+<td class="tension-says"><span class="hi">Hallazgo de no conformidad. No se cumple con el requisito. Hay una desviación entre lo que se requiere y lo que se hace.</span>
+</td>
+</tr>
+
+<tr>
+<td class="tension-who">📈</td>
+<td class="tension-says"><strong>Oportunidad de mejora.</strong> No es una no conformidad, pero la organización podría mejorar su desempeño si lo aborda.}
+</tr>
+
+</td>
+<td class="tension-who">🏆</td>
+<td class="tension-says"><strong>Buena práctica.</strong> Práctica destacable que podría compartirse con otras áreas u organizaciones.}
+</tr>
+
+</table>
+
+</div>
+
+<div class="divider"></div>
+
+<!-- BLOQUE 2 · TIPOS DE NO CONFORMIDADES -->
+
+<div class="block">
+
+<div class="block-label">
+Clasificación
+</div>
+
+<div class="block-title">
+Tipos de no conformidades
+</div>
+
+<div class="block-text">
+
+Las no conformidades pueden clasificarse según su gravedad y alcance:
+
+</div>
+
+<table class="tension" style="margin-top:20px;">
+
+<tr>
+<td class="tension-who">🔴<strong>Mayor</strong></td>
+<td class="tension-says">Afecta a la capacidad del SGSI para lograr los resultados previstos. Ausencia total o fallo grave de un requisito. Puede suspender la certificación.}
+</tr>
+
+<tr>
+<td class="tension-who">🟡<strong>Menor</strong></td>
+<td class="tension-says">Fallo puntual o aislado. No afecta de forma significativa a la eficacia del SGSI. Puede corregirse sin afectar la certificación.}
+</td>
+
+<tr class="hi-row">
+<td class="tension-who">📋<strong>De oportunidad</strong></td>
+<td class="tension-says"><span class="hi">Situación que no es una no conformidad pero que, si no se aborda, podría convertirse en una en el futuro.</span>
+</td>
+</tr>
+
+</table>
+
+<div class="block-text" style="margin-top:20px;">
+
+La diferencia entre mayor y menor no es arbitraria. Depende del impacto en la capacidad de la organización para cumplir sus objetivos de seguridad de la información.
+
+</div>
+
+</div>
+
+<div class="divider"></div>
+
+<!-- BLOQUE 3 · NO CONFORMIDADES MÁS COMUNES -->
+
+<div class="block">
+
+<div class="block-label">
+Casos reales
+</div>
+
+<div class="block-title">
+No conformidades más frecuentes en SGSI
+</div>
+
+<div class="block-text">
+
+Según la experiencia en auditorías, estas son las no conformidades más comunes:
+
+</div>
+
+<table class="tension" style="margin-top:16px;">
+
+<tr>
+<td class="tension-who">📄</td>
+<td class="tension-says">Documentación no encontrada o no disponible.}
+</tr>
+
+<tr>
+<td class="tension-who">🎓</td>
+<td class="tension-says">Competencias del personal no evaluadas.}
+</tr>
+
+<tr>
+<td class="tension-who">🔧</td>
+<td class="tension-says">Controles implementados de forma inadecuada.}
+</tr>
+
+<tr>
+<td class="tension-who">🔁</td>
+<td class="tension-says">No conformidades de auditorías internas sin cierre eficaz.}
+</td>
+
+<tr>
+<td class="tension-who">⚠️</td>
+<td class="tension-says">Acciones correctivas sin revisión por la dirección.}
+</tr>
+
+<tr>
+<td class="tension-who">📊</td>
+<td class="tension-says">Metodología de análisis de riesgos deficiente.}
+</tr>
+
+<tr class="hi-row">
+<td class="tension-who">📋</td>
+<td class="tension-says"><span class="hi">Incumplimiento de procedimientos documentados.</span>
+</td>
+</tr>
+
+</table>
+
+</div>
+
+<div class="divider"></div>
+
+<!-- BLOQUE 4 · CÓMO REDACTAR UNA NO CONFORMIDAD -->
+
+<div class="block">
+
+<div class="block-label">
+Estructura
+</div>
+
+<div class="block-title">
+Fórmula para redactar una no conformidad
+</div>
+
+<div class="block-text">
+
+Una no conformidad bien redactada debe incluir <strong>tres elementos claros</strong>:
+
+</div>
+
+<table class="tension" style="margin-top:20px;">
+
+<tr>
+<td class="tension-who">1️⃣<strong>Evidencia</strong></td>
+<td class="tension-says">Lista de hallazgos respaldados con evidencia objetiva o presenciados por el auditado. Debe ser específica.}
+</tr>
+
+<tr>
+<td class="tension-who">2️⃣<strong>Referencia</strong></td>
+<td class="tension-says">El requisito de la norma y/o del documento del auditado. Un requisito por vez, el más aplicable.}
+</tr>
+
+<tr class="hi-row">
+<td class="tension-who">3️⃣<strong>Conclusión</strong></td>
+<td class="tension-says"><span class="hi">Declaración clara, breve, precisa y aceptada por el auditado.</span>
+</td>
+</tr>
+
+</table>
+
+</div>
+
+<div class="divider"></div>
+
+<!-- BLOQUE 5 · EJEMPLO DE REDACCIÓN -->
+
+<div class="block">
+
+<div class="block-label">
+Ejemplo práctico
+</div>
+
+<div class="block-title">
+Ejemplo de no conformidad bien redactada
+</div>
+
+<div class="quote-block">
+
+<div class="quote-text">
+&ldquo;Evidencia: Durante la revisión de los registros de formación del departamento de IT, se constató que 3 de 5 administradores de sistemas (Juan Pérez, María López, Carlos Ruiz) no tienen evidencia de haber recibido formación en concienciación de seguridad en los últimos 12 meses, tal como requiere el procedimiento RH-FORM-003.&rdquo;
+</div>
+<div class="quote-text" style="margin-top:12px;">
+&ldquo;Referencia: ISO 27001:2022, cláusula 7.3 (Toma de conciencia) y procedimiento RH-FORM-003, punto 4.2.&rdquo;
+</div>
+<div class="quote-text" style="margin-top:12px;">
+&ldquo;Conclusión: No conformidad. La organización no ha garantizado que el personal bajo su control sea consciente de la política de seguridad de la información.&rdquo;
+</div>
+</div>
+
+<div class="block-text">
+
+<strong>La no conformidad debe ser aceptada por el auditado</strong> antes de cerrar la auditoría. Si no hay acuerdo, se documenta la discrepancia.
+
+</div>
+
+</div>
+
+<div class="divider"></div>
+
+<!-- BLOQUE 6 · ERROR TÍPICO -->
+
+<div class="block">
+
+<div class="block-label">
+Error típico
+</div>
+
+<div class="block-title">
+Redactar no conformidades sin evidencia suficiente
+</div>
+
+<div class="quote-block">
+
+<div class="quote-text">
+&ldquo;El sistema no cumple con los requisitos de la norma.&rdquo;
+</div>
+<div class="quote-attr">
+Ejemplo de no conformidad mal redactada (demasiado genérica)
+</div>
+</div>
+
+<div class="block-text">
+
+Una no conformidad <strong>no puede ser genérica</strong>. Debe especificar:
+- Qué se ha incumplido exactamente
+- Dónde se ha encontrado la evidencia
+- Qué requisito concreto se ha vulnerado
+
+Una no conformidad sin evidencia específica no es defendible y será impugnada por el auditado.
+
+</div>
+
+</div>
+
+<div class="divider"></div>
+
+<!-- BLOQUE 7 · OBSERVACIONES Y OPORTUNIDADES -->
+
+<div class="block">
+
+<div class="block-label">
+Valor añadido
+</div>
+
+<div class="block-title">
+Observaciones y oportunidades de mejora
+</div>
+
+<div class="block-text">
+
+No todo son no conformidades. El auditor también debe identificar:
+
+</div>
+
+<table class="tension" style="margin-top:16px;">
+
+<tr>
+<td class="tension-who">👁️<strong>Observación</strong></td>
+<td class="tension-says">Situación que potencialmente podría generar una no conformidad si no se trata. Es una alerta temprana.}
+</tr>
+
+<tr class="hi-row">
+<td class="tension-who">💡<strong>Oportunidad de mejora</strong></td>
+<td class="tension-says"><span class="hi">Situación que no es una no conformidad pero que la organización puede revisar para mejorar la eficacia o eficiencia del proceso.</span>
+</td>
+</tr>
+
+<tr>
+<td class="tension-who">🏆<strong>Buena práctica</strong></td>
+<td class="tension-says">Práctica destacable que el auditor puede recomendar para compartir en otras áreas. Aporta valor más allá de la conformidad.}
+</tr>
+
+</table>
+
+</div>
+
+<div class="divider"></div>
+
+<!-- BLOQUE 8 · RESUMEN EJECUTIVO -->
+
+<div class="block">
+
+<div class="block-label">
+Resumen del módulo
+</div>
+
+<div class="block-title">
+Lo que debes llevarte de aquí
+</div>
+
+<table class="tension" style="margin-top:16px;">
+
+<tr>
+<td class="tension-who">1</td>
+<td class="tension-says">Un hallazgo puede ser conformidad, no conformidad, oportunidad de mejora o buena práctica.}
+</tr>
+
+<tr>
+<td class="tension-who">2</td>
+<td class="tension-says">Las no conformidades se clasifican en mayores, menores o de oportunidad.}
+</tr>
+
+<tr>
+<td class="tension-who">3</td>
+<td class="tension-says">Una no conformidad debe contener: evidencia + referencia + conclusión.}
+</tr>
+
+<tr class="hi-row">
+<td class="tension-who">4</td>
+<td class="tension-says"><span class="hi">Las observaciones y oportunidades de mejora aportan valor más allá de la simple conformidad.</span>
+</td>
+</table>
+
+<table>
+
+</div>
+
+<!-- CTA -->
+
+<div class="cta-block">
+
+<div class="cta-headline">
+El siguiente paso es comunicar<br>
+<span>los resultados de la auditoría</span>
+</div>
+
+<div class="cta-sub">
+Siguiente módulo: <strong>Informe y Cierre de Auditoría</strong>
+</div>
+
+<div class="cta-buttons">
+    <a href="modulo-7.html" class="cta-button">← Anterior</a>
+    <a href="modulo-9.html" class="cta-button">Continuar →</a>
+</div>
+
+</div>
+
+</div>
+
+<!-- FOOTER -->
+
+<div class="footer">
+
+<div class="footer-inner">
+
+<div class="author-block">
+<div class="author-avatar">MA</div>
+<div>
+<div class="author-name">Miguel Angel Carriazo · <span>vCISO</span></div>
+<div class="author-title">Cybersecurity & Infrastructure Architect</div>
+</div>
+</div>
+
+<a href="https://www.linkedin.com/in/macarriazo/" target="_blank" rel="noopener noreferrer" class="li-btn">
+<svg class="li-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#0077B5">
+<path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+</svg>
+<div>
+<span class="li-main">"Merece la pena la experiencia..."</span>
+<span class="li-sub">Hablemos en LinkedIn →</span>
+</div>
+</a>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</body>
+<script>
+(function() {
+    // Buscar el badge y añadir la bombilla automáticamente
+    var badge = document.querySelector('.module-badge');
+    if (badge && !badge.parentElement.querySelector('.copyright-hint-auto')) {
+        var wrapper = document.createElement('div');
+        wrapper.style.display = 'inline-flex';
+        wrapper.style.alignItems = 'center';
+        wrapper.style.gap = '8px';
+        
+        // Mover el badge dentro del wrapper
+        badge.parentNode.insertBefore(wrapper, badge);
+        wrapper.appendChild(badge);
+        
+        // Crear botón bombilla
+        var btn = document.createElement('button');
+        btn.innerHTML = 'ℹ️';
+        btn.className = 'copyright-hint-auto';
+        btn.style.cssText = 'background: var(--brand-light, #e8f3fa); border: none; font-size: 1rem; cursor: pointer; padding: 4px 8px; border-radius: 20px; color: var(--brand, #0077B5); transition: all 0.2s ease;';
+        btn.onclick = function() { document.getElementById('copyrightPopupAuto').style.display = 'flex'; };
+        wrapper.appendChild(btn);
+        
+        // Estilo hover
+        btn.onmouseover = function() { this.style.transform = 'scale(1.05)'; };
+        btn.onmouseout = function() { this.style.transform = 'scale(1)'; };
+    }
+    
+    // Crear popup si no existe
+    if (!document.getElementById('copyrightPopupAuto')) {
+        var popup = document.createElement('div');
+        popup.id = 'copyrightPopupAuto';
+        popup.style.cssText = 'display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 1000; align-items: center; justify-content: center;';
+        popup.innerHTML = `
+            <div style="background: white; max-width: 400px; margin: 20px; padding: 28px; border-radius: 20px; position: relative; box-shadow: 0 20px 35px rgba(0,0,0,0.2);">
+                <button onclick="document.getElementById('copyrightPopupAuto').style.display='none'" style="position: absolute; top: 12px; right: 16px; background: none; border: none; font-size: 24px; cursor: pointer; color: #888;">&times;</button>
+                <p style="margin-bottom: 16px;"><strong>📄 Sobre este material</strong></p>
+                <p style="margin-bottom: 12px;">Este contenido ha sido elaborado por <strong>Miguel Angel Carriazo</strong> basado en:</p>
+                <ul style="margin-bottom: 16px; margin-left: 20px;">
+                    <li>Experiencia directa en auditorías ISO 27001</li>
+                    <li>ISO 19011:2018 (Directrices de auditoría)</li>
+                    <li>ISO/IEC 27001:2022</li>
+                </ul>
+                <p style="margin-bottom: 8px;">© GRCreal Academy · Prohibida la reproducción sin autorización.</p>
+                <p style="font-size: 11px; color: #888;">Para uso personal o formación interna · <a href="/legal/index.html" target="_blank" style="color: var(--brand, #0077B5); text-decoration: none;">Más información legal →</a></p>
+            </div>
+        `;
+        document.body.appendChild(popup);
+        
+        // Cerrar al hacer clic fuera
+        popup.addEventListener('click', function(e) {
+            if (e.target === this) this.style.display = 'none';
+        });
+    }
+})();
+</script>
+<script src="/js/modulo-check.js"></script>
+</html>

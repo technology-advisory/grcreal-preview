@@ -1,0 +1,81 @@
+/* ═══════════════════════════════════════════════
+   VERSUS.CSS — solo para páginas Versus
+   No afecta al footer (solo tablas y contenido)
+   ═══════════════════════════════════════════════ */
+
+/* ── Links en tabla de pasos ── */
+.article-page .tension-says a {
+  color: #1a73a8;
+  text-decoration: none;
+  font-weight: 600;
+}
+.article-page .tension-says a:hover {
+  text-decoration: underline;
+}
+
+/* ── Links inline en body ── */
+.article-page .block-text a {
+  color: #1a73a8;
+  text-decoration: none;
+  font-weight: 600;
+}
+.article-page .block-text a:hover {
+  text-decoration: underline;
+}
+
+/* ── Hover filas ── */
+.article-page .tension tr:hover {
+  background: #f7fafd;
+  cursor: pointer;
+}
+
+/* ── Columna izquierda de tabla más oscura ── */
+.article-page .tension-who {
+  color: #666666 !important;
+  opacity: 1 !important;
+  font-weight: 500 !important;
+  text-transform: none !important;
+  font-size: 11px !important;
+}
+
+/* ══════════════════════════════════════
+   BOTÓN VOLVER A SERIE (si se usa)
+   ══════════════════════════════════════ */
+.article-page .series-wrapper {
+  text-align: center;
+  margin: 30px 0 10px;
+}
+.article-page .series-btn {
+  display: inline-block;
+  padding: 10px 18px;
+  border-radius: 8px;
+  background: #f0f7fc;
+  border: 1px solid #cce4f0;
+  color: #1a73a8;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+.article-page .series-btn:hover {
+  background: #dbeef8;
+}
+
+/* ══════════════════════════════════════
+   RESPONSIVE (tablas)
+   ══════════════════════════════════════ */
+@media (max-width: 620px) {
+  .article-page .tbl-scroll {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+.article-date {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  color: var(--faint);
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
