@@ -1,0 +1,827 @@
+ Volume in drive Z is DATA
+ Volume Serial Number is 444E-864B
+
+ Directory of Z:\web\github\grcreal-preview
+
+22/05/2026  13:30    <DIR>          .
+22/05/2026  09:08    <DIR>          ..
+16/05/2026  21:49             7,343 404.html
+22/05/2026  09:09    <DIR>          academia
+29/04/2026  11:33             7,778 apple-touch-icon.png
+22/05/2026  09:09    <DIR>          articulos
+22/05/2026  09:09    <DIR>          checklists
+22/05/2026  09:21                19 CNAME
+17/05/2026  18:36             4,693 contacto.html
+22/05/2026  11:42    <DIR>          css
+22/05/2026  11:44    <DIR>          data
+22/05/2026  13:30                 0 dir.txt
+22/05/2026  09:09    <DIR>          enfoque
+29/04/2026  11:33               589 favicon-16x16.png
+29/04/2026  11:33             1,186 favicon-32x32.png
+29/04/2026  11:33            15,406 favicon.ico
+29/04/2026  11:33           290,411 grcreal.png
+29/04/2026  11:33           977,002 hero.png
+22/05/2026  12:13    <DIR>          herramientas
+22/05/2026  09:09    <DIR>          images
+22/05/2026  09:09    <DIR>          includes
+17/05/2026  18:39             4,527 index - Copy.html
+22/05/2026  11:56             5,083 index.html
+04/05/2026  16:44             3,219 index.html_mantenimiento
+22/05/2026  12:17    <DIR>          js
+22/05/2026  09:09    <DIR>          legal
+22/05/2026  09:09    <DIR>          metodologia
+22/05/2026  09:09    <DIR>          novedades
+22/05/2026  09:09    <DIR>          quiz
+22/05/2026  09:21                26 robots.txt
+29/04/2026  11:33               263 site.webmanifest
+11/05/2026  13:47             9,028 sitemap.xml
+22/05/2026  09:09    <DIR>          sobre-mi
+22/05/2026  09:09    <DIR>          versus
+              16 File(s)      1,326,573 bytes
+
+ Directory of Z:\web\github\grcreal-preview\.git
+
+22/05/2026  13:30    <DIR>          ..
+22/05/2026  11:37                 4 COMMIT_EDITMSG
+22/05/2026  09:08               317 config
+22/05/2026  09:08                73 description
+22/05/2026  09:21               114 FETCH_HEAD
+22/05/2026  09:21                21 HEAD
+22/05/2026  09:08    <DIR>          hooks
+22/05/2026  11:37            19,340 index
+22/05/2026  09:10    <DIR>          info
+22/05/2026  09:10    <DIR>          logs
+22/05/2026  11:37    <DIR>          objects
+22/05/2026  09:21                41 ORIG_HEAD
+22/05/2026  09:11    <DIR>          refs
+               7 File(s)         19,910 bytes
+
+ Directory of Z:\web\github\grcreal-preview\.git\hooks
+
+22/05/2026  09:08    <DIR>          .
+22/05/2026  09:08               478 applypatch-msg.sample
+22/05/2026  09:08             1,972 commit-msg.sample
+22/05/2026  09:08             4,611 fsmonitor-watchman.sample
+22/05/2026  09:08               189 post-update.sample
+22/05/2026  09:08               424 pre-applypatch.sample
+22/05/2026  09:08             1,649 pre-commit.sample
+22/05/2026  09:08               416 pre-merge-commit.sample
+22/05/2026  09:08             1,374 pre-push.sample
+22/05/2026  09:08             4,898 pre-rebase.sample
+22/05/2026  09:08               544 pre-receive.sample
+22/05/2026  09:08             1,492 prepare-commit-msg.sample
+22/05/2026  09:08             2,783 push-to-checkout.sample
+22/05/2026  09:08             2,308 sendemail-validate.sample
+22/05/2026  09:08             3,650 update.sample
+              14 File(s)         26,788 bytes
+
+ Directory of Z:\web\github\grcreal-preview\.git\info
+
+22/05/2026  09:10    <DIR>          .
+22/05/2026  09:08               240 exclude
+22/05/2026  09:10                57 refs
+               2 File(s)            297 bytes
+
+ Directory of Z:\web\github\grcreal-preview\.git\logs
+
+22/05/2026  09:10    <DIR>          .
+22/05/2026  11:37             1,798 HEAD
+22/05/2026  09:11    <DIR>          refs
+               1 File(s)          1,798 bytes
+
+ Directory of Z:\web\github\grcreal-preview\.git\logs\refs
+
+22/05/2026  09:11    <DIR>          .
+22/05/2026  09:10    <DIR>          ..
+22/05/2026  09:10    <DIR>          heads
+22/05/2026  09:11    <DIR>          remotes
+               0 File(s)              0 bytes
+
+ Directory of Z:\web\github\grcreal-preview\.git\logs\refs\heads
+
+22/05/2026  09:10    <DIR>          .
+22/05/2026  09:11    <DIR>          ..
+22/05/2026  11:37             1,275 main
+               1 File(s)          1,275 bytes
+
+ Directory of Z:\web\github\grcreal-preview\.git\logs\refs\remotes
+
+22/05/2026  09:11    <DIR>          .
+22/05/2026  09:11    <DIR>          ..
+22/05/2026  09:11    <DIR>          origin
+               0 File(s)              0 bytes
+
+ Directory of Z:\web\github\grcreal-preview\.git\logs\refs\remotes\origin
+
+22/05/2026  09:11    <DIR>          .
+22/05/2026  09:11    <DIR>          ..
+22/05/2026  11:37             1,040 main
+               1 File(s)          1,040 bytes
+
+ Directory of Z:\web\github\grcreal-preview\.git\objects
+
+22/05/2026  11:37    <DIR>          .
+22/05/2026  11:37    <DIR>          07
+22/05/2026  09:18    <DIR>          11
+22/05/2026  09:21    <DIR>          1f
+22/05/2026  11:32    <DIR>          2b
+22/05/2026  09:18    <DIR>          2d
+22/05/2026  11:37    <DIR>          36
+22/05/2026  09:18    <DIR>          39
+22/05/2026  11:33    <DIR>          3c
+22/05/2026  11:32    <DIR>          3e
+22/05/2026  09:21    <DIR>          41
+22/05/2026  11:32    <DIR>          4d
+22/05/2026  11:33    <DIR>          57
+22/05/2026  09:18    <DIR>          5a
+22/05/2026  09:21    <DIR>          77
+22/05/2026  09:21    <DIR>          79
+22/05/2026  09:21    <DIR>          81
+22/05/2026  09:21    <DIR>          92
+22/05/2026  11:37    <DIR>          9a
+22/05/2026  11:37    <DIR>          9c
+22/05/2026  11:35    <DIR>          a0
+22/05/2026  11:32    <DIR>          a2
+22/05/2026  11:32    <DIR>          ad
+22/05/2026  09:21    <DIR>          c2
+22/05/2026  11:33    <DIR>          c4
+22/05/2026  11:35    <DIR>          c7
+22/05/2026  11:35    <DIR>          c8
+22/05/2026  09:21    <DIR>          cb
+22/05/2026  11:32    <DIR>          d3
+22/05/2026  09:18    <DIR>          d8
+22/05/2026  09:21    <DIR>          df
+22/05/2026  11:32    <DIR>          fd
+22/05/2026  09:10    <DIR>          info
+22/05/2026  09:10    <DIR>          pack
+               0 File(s)              0 bytes
+
+ Directory of Z:\web\github\grcreal-preview\.git\objects\07
+
+22/05/2026  11:37    <DIR>          .
+22/05/2026  11:37    <DIR>          ..
+22/05/2026  11:37             1,014 4e5faf4af4618284e7376aff6569f0611e1fc8
+               1 File(s)          1,014 bytes
+
+ Directory of Z:\web\github\grcreal-preview\.git\objects\11
+
+22/05/2026  09:18    <DIR>          .
+22/05/2026  11:37    <DIR>          ..
+22/05/2026  09:18               307 2b39244c6074c00f2d2be1799e34175aafc697
+               1 File(s)            307 bytes
+
+ Directory of Z:\web\github\grcreal-preview\.git\objects\1f
+
+22/05/2026  09:21    <DIR>          .
+22/05/2026  11:37    <DIR>          ..
+22/05/2026  09:21             1,012 9f346afd45d71fdb30f491bc2228804bc75c4f
+               1 File(s)          1,012 bytes
+
+ Directory of Z:\web\github\grcreal-preview\.git\objects\2b
+
+22/05/2026  11:32    <DIR>          .
+22/05/2026  11:37    <DIR>          ..
+22/05/2026  11:32               125 63a33e988e7c0ea552b1bf9a6f24cd752c958a
+               1 File(s)            125 bytes
+
+ Directory of Z:\web\github\grcreal-preview\.git\objects\2d
+
+22/05/2026  09:18    <DIR>          .
+22/05/2026  11:37    <DIR>          ..
+22/05/2026  09:18             1,771 276c28cacbcf36a5c5354d4b964a42f2ef686e
+               1 File(s)          1,771 bytes
+
+ Directory of Z:\web\github\grcreal-preview\.git\objects\36
+
+22/05/2026  11:37    <DIR>          .
+22/05/2026  11:37    <DIR>          ..
+22/05/2026  11:37               103 f90f2a4a1d87d4c2c3826fd16636962f5cba6a
+               1 File(s)            103 bytes
+
+ Directory of Z:\web\github\grcreal-preview\.git\objects\39
+
+22/05/2026  09:18    <DIR>          .
+22/05/2026  11:37    <DIR>          ..
+22/05/2026  09:18               154 bb37ae296caf0142f944b1a87721ab8e6c9146
+               1 File(s)            154 bytes
+
+ Directory of Z:\web\github\grcreal-preview\.git\objects\3c
+
+22/05/2026  11:33    <DIR>          .
+22/05/2026  11:37    <DIR>          ..
+22/05/2026  11:33             1,792 4b927858602b34eedcec006542ded8aee3dc00
+               1 File(s)          1,792 bytes
+
+ Directory of Z:\web\github\grcreal-preview\.git\objects\3e
+
+22/05/2026  11:32    <DIR>          .
+22/05/2026  11:37    <DIR>          ..
+22/05/2026  11:32            12,170 8ed45955b79987f7efb2504b19b4f3c9b9e2b9
+22/05/2026  09:21             1,013 df1431d645e2ab6f38071a53643bde667a2b78
+               2 File(s)         13,183 bytes
+
+ Directory of Z:\web\github\grcreal-preview\.git\objects\41
+
+22/05/2026  09:21    <DIR>          .
+22/05/2026  11:37    <DIR>          ..
+22/05/2026  09:21               160 4e0557e51c13e9c580b9d901d7725f0ebad8c6
+               1 File(s)            160 bytes
+
+ Directory of Z:\web\github\grcreal-preview\.git\objects\4d
+
+22/05/2026  11:32    <DIR>          .
+22/05/2026  11:37    <DIR>          ..
+22/05/2026  11:32               336 f56920cadc7d268146c171e980f7d81deec985
+               1 File(s)            336 bytes
+
+ Directory of Z:\web\github\grcreal-preview\.git\objects\57
+
+22/05/2026  11:33    <DIR>          .
+22/05/2026  11:37    <DIR>          ..
+22/05/2026  11:33             1,017 a52c4946a816a8b965ae1e6ac9ef198eb8fc0d
+               1 File(s)          1,017 bytes
+
+ Directory of Z:\web\github\grcreal-preview\.git\objects\5a
+
+22/05/2026  09:18    <DIR>          .
+22/05/2026  11:37    <DIR>          ..
+22/05/2026  09:18               919 de4fe47cf55e704088fbb0a9bf5ece0c546cc1
+               1 File(s)            919 bytes
+
+ Directory of Z:\web\github\grcreal-preview\.git\objects\77
+
+22/05/2026  09:21    <DIR>          .
+22/05/2026  11:37    <DIR>          ..
+22/05/2026  09:21                41 470cb39f05f70a5b709b68304d0756bab75a0d
+               1 File(s)             41 bytes
+
+ Directory of Z:\web\github\grcreal-preview\.git\objects\79
+
+22/05/2026  09:21    <DIR>          .
+22/05/2026  11:37    <DIR>          ..
+22/05/2026  09:21             1,012 d3bdfe38986b77b72272e5c82238cabfcd6dbe
+               1 File(s)          1,012 bytes
+
+ Directory of Z:\web\github\grcreal-preview\.git\objects\81
+
+22/05/2026  09:21    <DIR>          .
+22/05/2026  11:37    <DIR>          ..
+22/05/2026  09:21             1,013 f83e13a587da6db6ca04146629f5992b78d4f2
+               1 File(s)          1,013 bytes
+
+ Directory of Z:\web\github\grcreal-preview\.git\objects\92
+
+22/05/2026  09:21    <DIR>          .
+22/05/2026  11:37    <DIR>          ..
+22/05/2026  09:21               160 a39cb6d7d8dfceb0f1b52ff24e8528d1399375
+               1 File(s)            160 bytes
+
+ Directory of Z:\web\github\grcreal-preview\.git\objects\9a
+
+22/05/2026  11:37    <DIR>          .
+22/05/2026  11:37    <DIR>          ..
+22/05/2026  11:37             2,013 2eea85d3f8c1996df5efad8bd24949c6132c06
+22/05/2026  11:32               102 c6c98a0ad024fdeb740d66ec1fe0f1345cc065
+               2 File(s)          2,115 bytes
+
+ Directory of Z:\web\github\grcreal-preview\.git\objects\9c
+
+22/05/2026  11:37    <DIR>          .
+22/05/2026  11:37    <DIR>          ..
+22/05/2026  11:37               149 ed446cedb4eaaa275faabf3c4715529a1a84d7
+               1 File(s)            149 bytes
+
+ Directory of Z:\web\github\grcreal-preview\.git\objects\a0
+
+22/05/2026  11:35    <DIR>          .
+22/05/2026  11:37    <DIR>          ..
+22/05/2026  11:35             1,014 94af617d90332d891bcda98e4c4949de620f68
+               1 File(s)          1,014 bytes
+
+ Directory of Z:\web\github\grcreal-preview\.git\objects\a2
+
+22/05/2026  11:32    <DIR>          .
+22/05/2026  11:37    <DIR>          ..
+22/05/2026  11:32               151 d7783c1a7e7ce3c714f0aab33dd18c7e645442
+               1 File(s)            151 bytes
+
+ Directory of Z:\web\github\grcreal-preview\.git\objects\ad
+
+22/05/2026  11:32    <DIR>          .
+22/05/2026  11:37    <DIR>          ..
+22/05/2026  11:32             2,495 8a33fc54f23460cc01a828a53599efe176898b
+               1 File(s)          2,495 bytes
+
+ Directory of Z:\web\github\grcreal-preview\.git\objects\c2
+
+22/05/2026  09:21    <DIR>          .
+22/05/2026  11:37    <DIR>          ..
+22/05/2026  09:21               825 e510be2013d757910ba25acd1c830a59d003ec
+               1 File(s)            825 bytes
+
+ Directory of Z:\web\github\grcreal-preview\.git\objects\c4
+
+22/05/2026  11:33    <DIR>          .
+22/05/2026  11:37    <DIR>          ..
+22/05/2026  11:33               157 a79dccd4e64560cb8e714b883a822ad384b178
+               1 File(s)            157 bytes
+
+ Directory of Z:\web\github\grcreal-preview\.git\objects\c7
+
+22/05/2026  11:35    <DIR>          .
+22/05/2026  11:37    <DIR>          ..
+22/05/2026  11:35             1,794 bcdbbb8bb87f304fd2ebb00571e2fb69bd91d1
+               1 File(s)          1,794 bytes
+
+ Directory of Z:\web\github\grcreal-preview\.git\objects\c8
+
+22/05/2026  11:35    <DIR>          .
+22/05/2026  11:37    <DIR>          ..
+22/05/2026  11:35               158 6baf7fa8207bfe75b29ba1e549fba78c56f701
+               1 File(s)            158 bytes
+
+ Directory of Z:\web\github\grcreal-preview\.git\objects\cb
+
+22/05/2026  09:21    <DIR>          .
+22/05/2026  11:37    <DIR>          ..
+22/05/2026  09:21               155 331b3a762d0ca9680e292090af6feedabd6e25
+               1 File(s)            155 bytes
+
+ Directory of Z:\web\github\grcreal-preview\.git\objects\d3
+
+22/05/2026  11:32    <DIR>          .
+22/05/2026  11:37    <DIR>          ..
+22/05/2026  11:32             1,013 4ed953b94caaf73bc810d2abdf3cdf9f774f12
+               1 File(s)          1,013 bytes
+
+ Directory of Z:\web\github\grcreal-preview\.git\objects\d8
+
+22/05/2026  09:18    <DIR>          .
+22/05/2026  11:37    <DIR>          ..
+22/05/2026  09:18             1,013 687fa02a7c2ec78a1ff6bb5ca2686736dc136c
+               1 File(s)          1,013 bytes
+
+ Directory of Z:\web\github\grcreal-preview\.git\objects\df
+
+22/05/2026  09:21    <DIR>          .
+22/05/2026  11:37    <DIR>          ..
+22/05/2026  09:21                35 f51306e6d1eca62b0be29f8c2b81380fdd0936
+               1 File(s)             35 bytes
+
+ Directory of Z:\web\github\grcreal-preview\.git\objects\fd
+
+22/05/2026  11:32    <DIR>          .
+22/05/2026  11:37    <DIR>          ..
+22/05/2026  11:32             2,044 03cc370d513e14565418e20c87127fd68bd4e7
+               1 File(s)          2,044 bytes
+
+ Directory of Z:\web\github\grcreal-preview\.git\objects\info
+
+22/05/2026  09:10    <DIR>          .
+22/05/2026  11:37    <DIR>          ..
+22/05/2026  09:10                54 packs
+               1 File(s)             54 bytes
+
+ Directory of Z:\web\github\grcreal-preview\.git\objects\pack
+
+22/05/2026  09:10    <DIR>          .
+22/05/2026  11:37    <DIR>          ..
+22/05/2026  09:10             7,216 multi-pack-index
+22/05/2026  09:10             7,120 pack-c6349f891c1141a77a58e1caac492c320afb6f3c.idx
+22/05/2026  09:10         2,726,794 pack-c6349f891c1141a77a58e1caac492c320afb6f3c.pack
+22/05/2026  09:10               916 pack-c6349f891c1141a77a58e1caac492c320afb6f3c.rev
+               4 File(s)      2,742,046 bytes
+
+ Directory of Z:\web\github\grcreal-preview\.git\refs
+
+22/05/2026  09:11    <DIR>          .
+22/05/2026  11:37    <DIR>          heads
+22/05/2026  09:11    <DIR>          remotes
+22/05/2026  09:08    <DIR>          tags
+               0 File(s)              0 bytes
+
+ Directory of Z:\web\github\grcreal-preview\.git\refs\heads
+
+22/05/2026  11:37    <DIR>          .
+22/05/2026  09:11    <DIR>          ..
+22/05/2026  11:37                41 main
+               1 File(s)             41 bytes
+
+ Directory of Z:\web\github\grcreal-preview\.git\refs\remotes
+
+22/05/2026  09:11    <DIR>          .
+22/05/2026  09:11    <DIR>          ..
+22/05/2026  11:37    <DIR>          origin
+               0 File(s)              0 bytes
+
+ Directory of Z:\web\github\grcreal-preview\.git\refs\remotes\origin
+
+22/05/2026  11:37    <DIR>          .
+22/05/2026  09:11    <DIR>          ..
+22/05/2026  11:37                41 main
+               1 File(s)             41 bytes
+
+ Directory of Z:\web\github\grcreal-preview\.git\refs\tags
+
+22/05/2026  09:08    <DIR>          .
+22/05/2026  09:11    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of Z:\web\github\grcreal-preview\academia
+
+22/05/2026  09:09    <DIR>          .
+22/05/2026  13:30    <DIR>          ..
+21/05/2026  16:47             6,603 index.html
+22/05/2026  09:09    <DIR>          iso27001-lead-auditor
+22/05/2026  09:09    <DIR>          iso27001-lead-implementer
+               1 File(s)          6,603 bytes
+
+ Directory of Z:\web\github\grcreal-preview\academia\iso27001-lead-auditor
+
+22/05/2026  09:09    <DIR>          .
+22/05/2026  09:09    <DIR>          ..
+16/05/2026  20:31            10,930 consejos.html
+21/05/2026  17:28            17,551 index.html
+21/05/2026  16:57            14,181 modulo-1.html
+21/05/2026  16:58            16,070 modulo-10.html
+21/05/2026  17:04            10,814 modulo-2.html
+21/05/2026  16:59            14,931 modulo-3.html
+21/05/2026  16:59            15,249 modulo-4.html
+21/05/2026  16:59            15,418 modulo-5.html
+21/05/2026  16:59            14,615 modulo-6.html
+21/05/2026  16:58            16,154 modulo-7.html
+21/05/2026  16:58            16,878 modulo-8.html
+21/05/2026  16:58            15,761 modulo-9.html
+16/05/2026  20:33            15,798 resumen.html
+              13 File(s)        194,350 bytes
+
+ Directory of Z:\web\github\grcreal-preview\academia\iso27001-lead-implementer
+
+22/05/2026  09:09    <DIR>          .
+22/05/2026  09:09    <DIR>          ..
+15/05/2026  19:45             7,402 consejos.html
+21/05/2026  17:15            17,385 index.html
+21/05/2026  16:54            14,658 modulo-1.html
+20/05/2026  12:51            10,155 modulo-10.html
+20/05/2026  12:52            12,730 modulo-2.html
+20/05/2026  12:52            12,037 modulo-3.html
+20/05/2026  12:52            11,613 modulo-4.html
+20/05/2026  12:51            15,190 modulo-5.html
+20/05/2026  12:51            12,723 modulo-6.html
+20/05/2026  12:51            12,012 modulo-7.html
+20/05/2026  12:51            11,635 modulo-8.html
+20/05/2026  12:51            10,688 modulo-9.html
+20/05/2026  12:52            17,845 resumen.html
+              13 File(s)        166,073 bytes
+
+ Directory of Z:\web\github\grcreal-preview\articulos
+
+22/05/2026  09:09    <DIR>          .
+22/05/2026  13:30    <DIR>          ..
+22/05/2026  09:09    <DIR>          ai
+17/05/2026  21:46            19,695 articulos.json
+22/05/2026  09:09    <DIR>          compliance
+29/04/2026  11:29             2,441 draft.html
+22/05/2026  09:09    <DIR>          ens
+22/05/2026  09:09    <DIR>          grc
+22/05/2026  09:09    <DIR>          ia
+17/05/2026  21:44            10,243 index.html
+22/05/2026  09:09    <DIR>          iso22301
+22/05/2026  09:09    <DIR>          iso27001
+22/05/2026  09:09    <DIR>          iso42001
+22/05/2026  09:09    <DIR>          iso45003
+22/05/2026  09:09    <DIR>          nis2
+22/05/2026  09:09    <DIR>          tecnico
+22/05/2026  09:09    <DIR>          vciso
+               3 File(s)         32,379 bytes
+
+ Directory of Z:\web\github\grcreal-preview\articulos\ai
+
+22/05/2026  09:09    <DIR>          .
+22/05/2026  09:09    <DIR>          ..
+17/05/2026  20:58             6,147 aiact.html
+17/05/2026  20:46             6,883 aiact_art1.html
+17/05/2026  20:46             7,231 aiact_art2.html
+17/05/2026  20:46             6,483 aiact_art3.html
+17/05/2026  20:46             6,945 aiact_art4.html
+17/05/2026  20:46             6,910 aiact_art5.html
+               6 File(s)         40,599 bytes
+
+ Directory of Z:\web\github\grcreal-preview\articulos\compliance
+
+22/05/2026  09:09    <DIR>          .
+22/05/2026  09:09    <DIR>          ..
+17/05/2026  20:37            10,666 codigo_conducta.html
+17/05/2026  21:09            10,196 Compliance_para_principiantes.html
+17/05/2026  21:46             9,965 Compliance_para_PYMEs.html
+17/05/2026  20:37            10,661 LPRL_compliance.html
+               4 File(s)         41,488 bytes
+
+ Directory of Z:\web\github\grcreal-preview\articulos\ens
+
+22/05/2026  09:09    <DIR>          .
+22/05/2026  09:09    <DIR>          ..
+17/05/2026  20:15             9,540 auditoria-ens.html
+17/05/2026  21:46             8,872 borrado-seguro-ens.html
+17/05/2026  20:15             7,446 ens-medidas-seguridad-criticas.html
+17/05/2026  20:15             7,689 ens-proveedores-privados.html
+17/05/2026  20:37             8,182 niveles-ens.html
+               5 File(s)         41,729 bytes
+
+ Directory of Z:\web\github\grcreal-preview\articulos\grc
+
+22/05/2026  09:09    <DIR>          .
+22/05/2026  09:09    <DIR>          ..
+17/05/2026  20:15             6,850 analisis-de-riesgos-util.html
+17/05/2026  21:09             6,722 auditoria-interna-seguridad.html
+17/05/2026  21:09            10,149 CEO_y_compliance.html
+17/05/2026  20:57             7,703 cumplir-no-es-estar-preparado.html
+17/05/2026  20:37             7,732 datos-ia-ubicacion-tratamiento.html
+17/05/2026  20:37            12,686 disaster-recovery-nis2-ens-iso27001.html
+17/05/2026  21:18             6,947 dpo-delegado-proteccion-datos.html
+17/05/2026  20:15             7,739 el-fallo-es-de-gobierno.html
+17/05/2026  20:15             7,577 ens-vs-iso27001-diferencias.html
+17/05/2026  21:46             8,444 grc-pymes-sin-expertos.html
+17/05/2026  20:37             7,627 iso22301-vs-bcp-casero.html
+17/05/2026  21:03             6,857 iso27001-declaracion-aplicabilidad.html
+17/05/2026  20:37             7,657 iso27001-lo-que-nadie-te-explica.html
+17/05/2026  20:15             6,643 it-no-es-responsable-seguridad.html
+17/05/2026  20:37            11,361 plan-continuidad-o-chapuza.html
+17/05/2026  20:37             6,582 plan-continuidad-probado.html
+17/05/2026  20:15             6,597 rgpd-en-la-practica.html
+17/05/2026  21:09            10,925 sgcn-comite-direccion.html
+              18 File(s)        146,798 bytes
+
+ Directory of Z:\web\github\grcreal-preview\articulos\ia
+
+22/05/2026  09:09    <DIR>          .
+22/05/2026  09:09    <DIR>          ..
+17/05/2026  21:09            12,501 ia-despachos-profesionales-rgpd-vciso.html
+               1 File(s)         12,501 bytes
+
+ Directory of Z:\web\github\grcreal-preview\articulos\iso22301
+
+22/05/2026  09:09    <DIR>          .
+22/05/2026  09:09    <DIR>          ..
+17/05/2026  21:02             9,774 auditoria-continuidad-que-revisa.html
+17/05/2026  21:00             6,991 rto-rpo-realidad.html
+               2 File(s)         16,765 bytes
+
+ Directory of Z:\web\github\grcreal-preview\articulos\iso27001
+
+22/05/2026  09:09    <DIR>          .
+22/05/2026  09:09    <DIR>          ..
+17/05/2026  21:03             7,129 iso27001-auditoria-stage1-stage2.html
+17/05/2026  21:03             7,061 iso27001-mantenimiento-sgsi.html
+               2 File(s)         14,190 bytes
+
+ Directory of Z:\web\github\grcreal-preview\articulos\iso42001
+
+22/05/2026  09:09    <DIR>          .
+22/05/2026  09:09    <DIR>          ..
+17/05/2026  21:03             6,901 iso42001-ai-act-diferencias.html
+17/05/2026  21:02             9,850 iso42001-gestion-ia.html
+17/05/2026  20:15             7,354 iso42001-inventario-sistemas-ia.html
+17/05/2026  20:15             7,444 iso42001-sesgos-ia-empresas.html
+               4 File(s)         31,549 bytes
+
+ Directory of Z:\web\github\grcreal-preview\articulos\iso45003
+
+22/05/2026  09:09    <DIR>          .
+22/05/2026  09:09    <DIR>          ..
+17/05/2026  21:09            13,607 iso-45003-riesgos-psicosociales.html
+               1 File(s)         13,607 bytes
+
+ Directory of Z:\web\github\grcreal-preview\articulos\nis2
+
+22/05/2026  09:09    <DIR>          .
+22/05/2026  09:09    <DIR>          ..
+17/05/2026  20:37             7,700 nis2-entidades-esenciales-importantes.html
+17/05/2026  21:14            26,619 nis2-medidas-tecnicas-articulo21.html
+17/05/2026  20:15             8,035 nis2-notificacion-incidentes.html
+17/05/2026  20:15             8,079 nis2-quien-aplica.html
+               4 File(s)         50,433 bytes
+
+ Directory of Z:\web\github\grcreal-preview\articulos\tecnico
+
+22/05/2026  09:09    <DIR>          .
+22/05/2026  09:09    <DIR>          ..
+17/05/2026  20:15             7,689 active-directory-seguridad.html
+17/05/2026  20:15             7,879 backup-no-es-recuperacion.html
+17/05/2026  20:37             7,299 cloud-seguridad-responsabilidad-compartida.html
+17/05/2026  20:37             8,669 documentacion-tecnica-infraestructura.html
+17/05/2026  21:02             7,956 el-incidente-ocurrio.html
+17/05/2026  20:37             7,967 gestion-identidades.html
+17/05/2026  20:37             7,807 hardening-windows-gpo.html
+17/05/2026  20:15             7,637 phishing-2026.html
+17/05/2026  21:03             7,347 ransomware-defensa-real.html
+17/05/2026  20:15             5,534 security-by-design.html
+17/05/2026  20:15             7,442 segmentacion-red-real.html
+17/05/2026  20:15             7,133 zero-trust-on-prem.html
+              12 File(s)         90,359 bytes
+
+ Directory of Z:\web\github\grcreal-preview\articulos\vciso
+
+22/05/2026  09:09    <DIR>          .
+22/05/2026  09:09    <DIR>          ..
+17/05/2026  20:15             6,581 ciberseguridad-consejo-administracion.html
+17/05/2026  20:15             5,608 vciso-dos-realidades.html
+17/05/2026  20:15             8,127 vciso-que-es.html
+               3 File(s)         20,316 bytes
+
+ Directory of Z:\web\github\grcreal-preview\checklists
+
+22/05/2026  09:09    <DIR>          .
+22/05/2026  13:30    <DIR>          ..
+20/05/2026  16:58           180,751 checklists.zip
+22/05/2026  09:09    <DIR>          data
+21/05/2026  12:53             5,917 dora.html
+30/04/2026  21:20           476,329 dora.xml
+21/05/2026  14:40             6,926 ens.html
+21/05/2026  14:48             8,085 index.html
+17/05/2026  18:48            51,367 iso22301 - Copy.html
+20/05/2026  16:04             5,378 iso22301.html
+21/05/2026  13:49             5,835 iso27001.html
+21/05/2026  13:50             5,605 iso42001.html
+21/05/2026  13:55             5,904 mapeo-nis2-iso27001-ens-dora.html
+21/05/2026  13:51             5,558 nis2.html
+              11 File(s)        757,655 bytes
+
+ Directory of Z:\web\github\grcreal-preview\checklists\data
+
+22/05/2026  09:09    <DIR>          .
+22/05/2026  09:09    <DIR>          ..
+21/05/2026  12:48            38,225 dora.json
+21/05/2026  14:38             9,500 ens_alta.json
+21/05/2026  14:37            15,667 ens_basica.json
+21/05/2026  14:37             9,182 ens_media.json
+20/05/2026  14:00            14,405 iso22301.json
+21/05/2026  12:51            23,685 iso27001.json
+21/05/2026  12:49            12,161 iso42001.json
+21/05/2026  14:31            40,807 mapeo.json
+21/05/2026  12:50            12,143 nis2.json
+               9 File(s)        175,775 bytes
+
+ Directory of Z:\web\github\grcreal-preview\css
+
+22/05/2026  11:42    <DIR>          .
+22/05/2026  13:30    <DIR>          ..
+16/05/2026  20:26            15,956 academia.css
+21/05/2026  16:46             5,689 academy.css
+17/05/2026  12:31             1,589 articles.css
+17/05/2026  12:28             4,296 articulos-index.css
+22/05/2026  13:08            20,952 bia.css
+21/05/2026  14:43             2,127 checklists-index.css
+21/05/2026  14:33            13,733 checklists.css
+17/05/2026  17:09             1,733 global.css
+21/05/2026  15:52            13,664 marca.css
+21/05/2026  15:50             6,637 menu.css
+21/05/2026  15:57             4,959 novedades.css
+15/05/2026  18:41            11,325 quiz.css
+17/05/2026  17:33             5,575 sobremi.css
+17/05/2026  18:26             2,466 versus.css
+              14 File(s)        110,701 bytes
+
+ Directory of Z:\web\github\grcreal-preview\data
+
+22/05/2026  11:44    <DIR>          .
+22/05/2026  13:30    <DIR>          ..
+21/05/2026  16:50             3,782 academy.json
+21/05/2026  16:14             1,407 notices.json
+               2 File(s)          5,189 bytes
+
+ Directory of Z:\web\github\grcreal-preview\enfoque
+
+22/05/2026  09:09    <DIR>          .
+22/05/2026  13:30    <DIR>          ..
+17/05/2026  18:11             9,144 index.html
+               1 File(s)          9,144 bytes
+
+ Directory of Z:\web\github\grcreal-preview\herramientas
+
+22/05/2026  12:13    <DIR>          .
+22/05/2026  13:30    <DIR>          ..
+22/05/2026  12:13    <DIR>          analisisriegos
+22/05/2026  11:52    <DIR>          bia
+22/05/2026  11:44    <DIR>          data
+               0 File(s)              0 bytes
+
+ Directory of Z:\web\github\grcreal-preview\herramientas\analisisriegos
+
+22/05/2026  12:13    <DIR>          .
+22/05/2026  12:13    <DIR>          ..
+05/05/2026  18:11            68,783 analisis-riesgos-software.html
+               1 File(s)         68,783 bytes
+
+ Directory of Z:\web\github\grcreal-preview\herramientas\bia
+
+22/05/2026  11:52    <DIR>          .
+22/05/2026  12:13    <DIR>          ..
+22/05/2026  13:08            10,057 index.html
+               1 File(s)         10,057 bytes
+
+ Directory of Z:\web\github\grcreal-preview\herramientas\data
+
+22/05/2026  11:44    <DIR>          .
+22/05/2026  12:13    <DIR>          ..
+22/05/2026  12:25             8,000 bia-config.json
+               1 File(s)          8,000 bytes
+
+ Directory of Z:\web\github\grcreal-preview\images
+
+22/05/2026  09:09    <DIR>          .
+22/05/2026  13:30    <DIR>          ..
+29/04/2026  11:33           290,411 grcreal.png
+               1 File(s)        290,411 bytes
+
+ Directory of Z:\web\github\grcreal-preview\includes
+
+22/05/2026  09:09    <DIR>          .
+22/05/2026  13:30    <DIR>          ..
+17/05/2026  17:23             1,201 footer-no-share.html
+17/05/2026  16:37             2,306 footer.html
+               2 File(s)          3,507 bytes
+
+ Directory of Z:\web\github\grcreal-preview\js
+
+22/05/2026  12:17    <DIR>          .
+22/05/2026  13:30    <DIR>          ..
+22/05/2026  13:25            20,864 bia.js
+21/05/2026  14:22            13,151 checklists.js
+17/05/2026  17:24             3,491 global.js
+29/04/2026  11:33           364,463 jspdf.umd.min.js
+20/05/2026  13:48             9,914 modulo-check.js
+21/05/2026  16:13             3,284 novedades.js
+22/05/2026  12:28            20,320 pdf-export-bia.js
+20/05/2026  16:56            16,019 pdf-export.js
+22/05/2026  09:21             2,387 popup-welcome_preview.js
+15/05/2026  18:41           155,100 preguntas.js
+              10 File(s)        608,993 bytes
+
+ Directory of Z:\web\github\grcreal-preview\legal
+
+22/05/2026  09:09    <DIR>          .
+22/05/2026  13:30    <DIR>          ..
+21/05/2026  16:06             5,981 index.html
+               1 File(s)          5,981 bytes
+
+ Directory of Z:\web\github\grcreal-preview\metodologia
+
+22/05/2026  09:09    <DIR>          .
+22/05/2026  13:30    <DIR>          ..
+17/05/2026  18:10             7,812 index.html
+               1 File(s)          7,812 bytes
+
+ Directory of Z:\web\github\grcreal-preview\novedades
+
+22/05/2026  09:09    <DIR>          .
+22/05/2026  13:30    <DIR>          ..
+21/05/2026  16:13             1,874 index.html
+               1 File(s)          1,874 bytes
+
+ Directory of Z:\web\github\grcreal-preview\quiz
+
+22/05/2026  09:09    <DIR>          .
+22/05/2026  13:30    <DIR>          ..
+15/05/2026  20:33            23,338 index.html
+               1 File(s)         23,338 bytes
+
+ Directory of Z:\web\github\grcreal-preview\sobre-mi
+
+22/05/2026  09:09    <DIR>          .
+22/05/2026  13:30    <DIR>          ..
+17/05/2026  17:48            16,549 analisis-riesgos.jpg
+17/05/2026  17:48            22,330 aproximacion-ens.jpg
+17/05/2026  17:48            15,562 auditorias-ens.jpg
+17/05/2026  17:46            24,893 ens.jpg
+29/04/2026  11:33            68,544 ens.png
+29/04/2026  11:33            29,463 foto.jpg
+17/05/2026  17:46            17,835 incidentes.jpg
+17/05/2026  17:58            17,114 index.html
+29/04/2026  11:33            73,548 ISO_22301.png
+29/04/2026  11:33            72,084 iso_27001_auditor.png
+29/04/2026  11:33            72,852 ISO_27001_lead.png
+29/04/2026  11:33           147,687 ISO_42001.png
+29/04/2026  11:33            45,144 nis2.png
+17/05/2026  17:47            20,821 uceens.jpg
+              14 File(s)        644,426 bytes
+
+ Directory of Z:\web\github\grcreal-preview\versus
+
+22/05/2026  09:09    <DIR>          .
+22/05/2026  13:30    <DIR>          ..
+17/05/2026  18:23            16,981 dora-vs-iso27001.html
+17/05/2026  18:23            18,691 ens-vs-iso27001.html
+17/05/2026  18:23            16,003 ens-vs-nis2.html
+17/05/2026  18:13             7,689 index.html
+17/05/2026  18:23            14,322 iso22301-vs-bia.html
+17/05/2026  18:26            15,300 iso27001-vs-iso42001.html
+17/05/2026  18:23            15,285 iso27001-vs-soc2.html
+17/05/2026  18:23            16,097 nis2-vs-iso27001.html
+17/05/2026  18:23            16,545 pentest-vs-auditoria.html
+17/05/2026  18:23            16,336 vciso-vs-ciso.html
+              10 File(s)        153,249 bytes
+
+     Total Files Listed:
+             255 File(s)      7,961,734 bytes
+             238 Dir(s)  305,083,396,096 bytes free

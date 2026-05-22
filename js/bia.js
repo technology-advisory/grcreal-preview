@@ -3,11 +3,35 @@ let config = null;
 let grupos = [];
 let frameworkSeleccionado = 'iso22301';
 let datosFirma = {
-  empresa: '',
-  responsable: '',
-  fecha: '',
-  alcance: '',
-  ubicaciones: ''
+  empresa: '', responsable: '', fecha: '', alcance: '', ubicaciones: ''
+};
+
+// ── TOOLTIPS POR PROCESO (info contextual como en checklists) ──
+const TOOLTIPS_PROCESO = {
+  p01: 'El correo es el canal principal de comunicación interna y externa. Su caída afecta coordinación, atención al cliente y operaciones. Evalúa si tienes canales alternativos (Teams, Slack, teléfono) definidos.',
+  p02: 'Los backups son la última línea de defensa ante ransomware, borrados accidentales o fallos de hardware. Define claramente cada cuánto horas se hace backup (RPO) y cuánto tardarías en restaurar (RTO).',
+  p03: 'Sin IAM/SSO los usuarios no pueden acceder a ningún sistema. Evalúa si tienes cuentas locales de emergencia, procedimientos de acceso manual y cómo recuperar el servicio de directorio.',
+  p04: 'El pipeline de CI/CD afecta a la capacidad de publicar correcciones de seguridad y nuevas versiones. Una parada prolongada bloquea todo el ciclo de desarrollo.',
+  p05: 'Tu presencia web pública es la primera imagen ante clientes y prospectos. Define si tienes CDN, DNS alternativo y procedimiento de página de mantenimiento.',
+  p06: 'Los parches sin aplicar son vulnerabilidades abiertas. Evalúa si puedes posponer actualizaciones sin riesgo y cuánto tiempo máximo puedes estar sin parchear.',
+  p07: 'Sin monitorización estás ciego ante incidentes. El SIEM y alertas son críticos para detectar ataques en curso. Su caída puede significar horas sin visibilidad.',
+  p08: 'El EDR es tu primera barrera contra malware. Si cae la consola central, los agentes siguen funcionando en modo autónomo — pero sin visibilidad centralizada.',
+  p09: 'La facturación parada significa pérdida directa de ingresos y posibles incumplimientos contractuales. Prioridad máxima en cualquier BCP.',
+  p10: 'La atención al cliente afecta directamente a la reputación y retención. Define canales alternativos y protocolo de comunicación de crisis ante clientes.',
+  p11: 'El core del negocio: producción, prestación de servicio o fabricación. Su parada es la parada del negocio. RTO debe ser el más restrictivo.',
+  p12: 'Una cadena de suministro interrumpida puede paralizar producción aunque tus sistemas internos funcionen. Evalúa proveedores alternativos y stock mínimo.',
+  p13: 'La gestión documental afecta a contratos, procedimientos y evidencias de auditoría. Una pérdida puede tener consecuencias legales.',
+  p14: 'Sin CRM los equipos comerciales pierden contexto de cliente, histórico y pipeline activo. Evalúa si tienes exportaciones recientes y acceso offline.',
+  p15: 'Marketing puede permitirse más tiempo de parada sin impacto inmediato en ingresos. Prioridad baja salvo campañas activas con penalizaciones.',
+  p16: 'Contratos sin acceso pueden bloquear renovaciones, facturación y operaciones legales. La firma electrónica es crítica si no tienes backup en papel.',
+  p17: 'Los impagos de nómina tienen consecuencias legales inmediatas. Evalúa si tienes proceso manual de emergencia para pago de salarios.',
+  p18: 'Incumplir plazos regulatorios (CNMV, AEAT, Banco de España) genera sanciones automáticas. Identifica qué obligaciones son inaplazables.',
+  p19: 'La gestión de incidentes de seguridad debe ser siempre operativa. Si el SIEM cae durante un ataque, necesitas procedimientos manuales de escalada.',
+  p20: 'La comunicación de crisis mal gestionada amplifica el daño reputacional. Define cadena de mando, portavoz y mensajes predefinidos.',
+  p21: 'Los plazos fiscales (IVA, IS, IRPF) son inamovibles. Una parada no exime de sanciones. Identifica si tu asesor fiscal tiene acceso a tus sistemas.',
+  p22: 'La seguridad física protege personas y activos físicos. Sin control de acceso, cualquier persona puede entrar a zonas restringidas.',
+  p23: 'La gestión de flota y equipos tiene impacto diferido: una compra urgente puede no materializarse en días. Prioridad baja en BCP.',
+  p24: 'Los accesos de proveedores no revisados son una superficie de ataque. Evalúa si tienes un proceso de revocación de emergencia.'
 };
 
 // ── CARGA INICIAL ──
@@ -15,15 +39,22 @@ document.addEventListener('DOMContentLoaded', async () => {
   await cargarConfiguracion();
   inicializarEventos();
   renderFrameworkSelector();
-  document.getElementById('f-fecha').value = new Date().toISOString().split('T')[0];
-  renderFooter();
+  const fechaInput = document.getElementById('f-fecha');
+  if (fechaInput) fechaInput.value = new Date().toISOString().split('T')[0];
 });
 
 async function cargarConfiguracion() {
   try {
-    const response = await fetch('data/bia-config.json');
+    const response = await fetch('../data/bia-config.json');
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
     config = await response.json();
     grupos = JSON.parse(JSON.stringify(config.grupos));
+    grupos.forEach(grupo => {
+      grupo.procesos.forEach(proceso => {
+        proceso._touched = false;
+        proceso._noAplica = false; // nuevo flag
+      });
+    });
   } catch (error) {
     console.error('Error cargando configuración:', error);
     mostrarError('No se pudo cargar la configuración. Recarga la página.');
@@ -36,46 +67,47 @@ function mostrarError(msg) {
   aviso.style.background = '#fee2e2';
   aviso.style.borderLeftColor = '#e63946';
   aviso.innerHTML = `❌ ${msg}`;
-  document.querySelector('.body').prepend(aviso);
+  const body = document.querySelector('.body');
+  if (body) body.prepend(aviso);
 }
 
 function inicializarEventos() {
-  document.getElementById('btnIniciar').addEventListener('click', iniciarBIA);
-  document.getElementById('btnReset').addEventListener('click', resetAll);
-  document.getElementById('stickyBtn').addEventListener('click', generarInforme);
-  document.getElementById('btnExportarPDF').addEventListener('click', exportarPDF);
-  document.getElementById('btnVolver').addEventListener('click', volverPreguntas);
-  document.getElementById('btnNuevo').addEventListener('click', nuevoAnalisis);
-}
-
-function renderFooter() {
-  const footer = document.getElementById('footerGRCreal');
-  footer.innerHTML = `
-    <div>© GRCreal · Miguel Ángel Carriazo, vCISO</div>
-    <div><a href="/herramientas/index.html">← Volver a herramientas</a></div>
-  `;
+  const btnIniciar = document.getElementById('btnIniciar');
+  if (btnIniciar) btnIniciar.addEventListener('click', iniciarBIA);
+  const btnReset = document.getElementById('btnReset');
+  if (btnReset) btnReset.addEventListener('click', resetAll);
+  const stickyBtn = document.getElementById('stickyBtn');
+  if (stickyBtn) stickyBtn.addEventListener('click', generarInforme);
+  const btnExportarPDF = document.getElementById('btnExportarPDF');
+  if (btnExportarPDF) btnExportarPDF.addEventListener('click', exportBiaPDF);
+  const stickyBtnMobile = document.getElementById('stickyBtnMobile');
+  if (stickyBtnMobile) stickyBtnMobile.addEventListener('click', generarInforme);
+  const btnVolver = document.getElementById('btnVolver');
+  if (btnVolver) btnVolver.addEventListener('click', volverPreguntas);
+  const btnNuevo = document.getElementById('btnNuevo');
+  if (btnNuevo) btnNuevo.addEventListener('click', nuevoAnalisis);
 }
 
 // ── FRAMEWORK SELECTOR ──
 function renderFrameworkSelector() {
   const container = document.getElementById('frameworkGrid');
-  const frameworks = config.frameworks;
+  if (!container || !config) return;
   container.innerHTML = '';
-  
-  Object.entries(frameworks).forEach(([key, fw]) => {
+  Object.entries(config.frameworks).forEach(([key, fw]) => {
     const card = document.createElement('div');
-    card.className = `fw-card ${key === frameworkSeleccionado ? 'selected' : ''}`;
+    card.className = `framework-card ${key === frameworkSeleccionado ? 'selected' : ''}`;
     card.setAttribute('data-framework', key);
     card.innerHTML = `
-      <div class="fw-icon">${fw.icono}</div>
-      <div class="fw-name">${fw.nombre_corto}</div>
-      <div class="fw-desc">${fw.nombre}</div>
+      <div class="framework-icon">${fw.icono}</div>
+      <div class="framework-name">${fw.nombre_corto}</div>
+      <div class="framework-desc">${fw.nombre}</div>
     `;
     card.addEventListener('click', () => {
-      document.querySelectorAll('.fw-card').forEach(c => c.classList.remove('selected'));
+      document.querySelectorAll('.framework-card').forEach(c => c.classList.remove('selected'));
       card.classList.add('selected');
       frameworkSeleccionado = key;
-      document.getElementById('headerTag').textContent = fw.tag;
+      const headerTag = document.getElementById('headerTag');
+      if (headerTag) headerTag.textContent = fw.tag;
     });
     container.appendChild(card);
   });
@@ -83,22 +115,37 @@ function renderFrameworkSelector() {
 
 // ── INICIO ──
 function iniciarBIA() {
-  const empresa = document.getElementById('f-empresa').value.trim();
-  const responsable = document.getElementById('f-responsable').value.trim();
-  
+  if (!config) {
+    alert('La configuración aún no ha terminado de cargarse. Espera un momento.');
+    return;
+  }
+  const empresaInput = document.getElementById('f-empresa');
+  const responsableInput = document.getElementById('f-responsable');
+  const empresa = empresaInput ? empresaInput.value.trim() : '';
+  const responsable = responsableInput ? responsableInput.value.trim() : '';
   if (!empresa || !responsable) {
     alert('Introduce el nombre de la empresa y el responsable del análisis.');
     return;
   }
-  
+  const fechaInput = document.getElementById('f-fecha');
+  const alcanceSelect = document.getElementById('f-alcance');
+  const ubicacionesInput = document.getElementById('f-ubicaciones');
+  let fechaValor = new Date().toLocaleDateString('es-ES');
+  if (fechaInput && fechaInput.value) {
+    const partes = fechaInput.value.split('-');
+    if (partes.length === 3) fechaValor = `${partes[2]}/${partes[1]}/${partes[0]}`;
+  }
   datosFirma = {
-    empresa,
-    responsable,
-    fecha: document.getElementById('f-fecha').value || new Date().toLocaleDateString('es-ES'),
-    alcance: document.getElementById('f-alcance').value || 'Toda la organización',
-    ubicaciones: document.getElementById('f-ubicaciones').value || 'No especificado'
+    empresa, responsable, fecha: fechaValor,
+    alcance: (alcanceSelect && alcanceSelect.value) || 'Toda la organización',
+    ubicaciones: (ubicacionesInput && ubicacionesInput.value.trim()) || 'No especificado'
   };
-  
+  window.biaGrupos = grupos;
+  window.biaConfig = config;
+  window.datosOrganizacion = datosFirma;
+  window.frameworkSeleccionado = frameworkSeleccionado;
+  window.todosLosProcesos = todosLosProcesos;
+  window.procesoCompleto = procesoCompleto;
   mostrarPantalla('preguntas');
   renderTodo();
 }
@@ -107,208 +154,372 @@ function mostrarPantalla(pantalla) {
   document.getElementById('screenInicio').style.display = pantalla === 'inicio' ? 'block' : 'none';
   document.getElementById('screenPreguntas').style.display = pantalla === 'preguntas' ? 'block' : 'none';
   document.getElementById('screenInforme').style.display = pantalla === 'informe' ? 'block' : 'none';
-  document.getElementById('stickyFooter').className = `sticky-footer ${pantalla === 'preguntas' ? 'visible' : ''}`;
+  const sf = document.getElementById('stickyFooter');
+  if (sf) sf.className = `sticky-footer ${pantalla === 'preguntas' ? 'visible' : ''}`;
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-// ── RENDER PROCESOS ──
+// ── RENDER ──
 function renderTodo() {
   renderGrupos();
   actualizarProgreso();
-  actualizarBtnAnadir();
   renderWizardNav();
 }
 
 function renderGrupos() {
-  let html = '';
-  grupos.forEach((g, gi) => {
-    html += `
-      <div class="grupo-procesos">
-        <div class="grupo-header">
-          <span class="grupo-icon">${g.icono}</span>
-          <span class="grupo-titulo">${g.titulo}</span>
-          <span class="grupo-count">${g.procesos.length} procesos</span>
-        </div>
-        <div id="grupo-items-${g.id}">
+  const bloqueContainer = document.getElementById('bloqueContainer');
+  if (!bloqueContainer) return;
+
+  bloqueContainer.innerHTML = '';
+
+  grupos.forEach((g) => {
+    const grupoDiv = document.createElement('div');
+    grupoDiv.className = 'grupo-procesos';
+    grupoDiv.innerHTML = `
+      <div class="grupo-header">
+        <span class="grupo-icon">${g.icono}</span>
+        <span class="grupo-titulo">${g.titulo}</span>
+        <span class="grupo-count">${g.procesos.length} procesos</span>
+      </div>
     `;
-    g.procesos.forEach((p, pi) => {
-      html += renderProceso(p, gi, pi);
+    const itemsDiv = document.createElement('div');
+    itemsDiv.id = `grupo-items-${g.id}`;
+    g.procesos.forEach(p => {
+      itemsDiv.appendChild(crearProcesoEl(p));
     });
-    html += `</div></div>`;
+    grupoDiv.appendChild(itemsDiv);
+    bloqueContainer.appendChild(grupoDiv);
   });
-  document.getElementById('bloqueContainer').innerHTML = html;
-  
-  document.getElementById('addProcesoWrap').innerHTML = `
-    <button class="btn-secondary" id="btnAnadir" style="width:100%;padding:12px;">+ Añadir proceso</button>
-  `;
-  document.getElementById('btnAnadir')?.addEventListener('click', agregarProceso);
+
+  // Botón añadir — usando DOM real para evitar el bug de innerHTML + addEventListener
+  const addWrap = document.getElementById('addProcesoWrap');
+  if (addWrap) {
+    addWrap.innerHTML = '';
+    const btnWrapper = document.createElement('div');
+    btnWrapper.className = 'btn-wrapper-anadir';
+
+    const btn = document.createElement('button');
+    btn.className = 'btn-anadir-proceso';
+    btn.id = 'btnAnadir';
+    btn.innerHTML = `<span class="btn-anadir-icon">+</span> Añadir proceso personalizado`;
+    btn.addEventListener('click', agregarProceso);
+
+    const popup = document.createElement('span');
+    popup.className = 'popup-anadir';
+    popup.textContent = '⚠️ Completa el proceso anterior o márcalo como N/A antes de añadir uno nuevo.';
+
+    btnWrapper.appendChild(btn);
+    btnWrapper.appendChild(popup);
+    addWrap.appendChild(btnWrapper);
+  }
+
+  actualizarEstadoBtnAnadir();
 }
 
-function renderProceso(p, gi, pi) {
-  const isDefault = /^Nuevo proceso \d+$/.test(p.nombre.trim());
+// FIX PRINCIPAL: crear proceso con DOM real (no innerHTML) → fix del bug de "añadir proceso no funciona"
+function crearProcesoEl(p) {
   const completo = procesoCompleto(p);
-  const criticidad = config.criticidades[p.critico];
-  const criticoClass = `critico-${p.critico}`;
+  const noAplica = p._noAplica === true;
   const rtoRpoError = p.rpo_horas > p.rto_horas;
-  
-  return `
-    <div class="proceso-item ${completo ? 'completo' : 'incompleto'}" id="proc-${p.id}">
-      <div class="proceso-header">
-        <div class="nombre-wrapper">
-          <input type="text"
-            class="proceso-nombre-input${isDefault ? ' default-name' : ''}"
-            value="${escapeHtml(p.nombre)}"
-            placeholder="Nombre del proceso..."
-            data-id="${p.id}"
-            data-field="nombre"
-            onchange="actualizarCampo('${p.id}', 'nombre', this.value)"
-            onfocus="this.classList.remove('default-name')">
-          <button class="btn-edit-nombre" data-id="${p.id}" title="Editar nombre">✏️</button>
-          <span class="completitud-badge ${completo ? 'ok' : 'pending'}" id="badge-${p.id}">${completo ? '✓ Completo' : 'Pendiente'}</span>
-        </div>
-        <select class="proceso-critico ${criticoClass}" data-id="${p.id}" data-field="critico" onchange="actualizarCampo('${p.id}', 'critico', this.value)">
-          <option value="critico" ${p.critico === 'critico' ? 'selected' : ''}>◉ CRÍTICO (parada &lt;4h)</option>
-          <option value="alto" ${p.critico === 'alto' ? 'selected' : ''}>▲ ALTO (parada 4-12h)</option>
-          <option value="medio" ${p.critico === 'medio' ? 'selected' : ''}>◆ MEDIO (parada 12-48h)</option>
-          <option value="bajo" ${p.critico === 'bajo' ? 'selected' : ''}>● BAJO (parada &gt;48h)</option>
-        </select>
-      </div>
-      <div class="grid-rto">
-        <div class="rto-field">
-          <span class="rto-label">RTO · Recovery Time Objective</span>
-          <div class="rto-value">
-            <input type="number" data-id="${p.id}" data-field="rto_horas" value="${p.rto_horas}" step="0.5" min="0.5" onchange="actualizarCampo('${p.id}', 'rto_horas', this.value)">
-            <span class="rto-unit">horas</span>
-          </div>
-          <div class="rto-hint">Tiempo máximo hasta recuperar el servicio</div>
-        </div>
-        <div class="rto-field ${rtoRpoError ? 'error' : ''}" id="rpo-field-${p.id}">
-          <span class="rto-label">RPO · Recovery Point Objective</span>
-          <div class="rto-value">
-            <input type="number" data-id="${p.id}" data-field="rpo_horas" value="${p.rpo_horas}" step="0.5" min="0" onchange="actualizarCampo('${p.id}', 'rpo_horas', this.value)">
-            <span class="rto-unit">horas</span>
-          </div>
-          <div class="rto-hint">Pérdida máxima de datos tolerable</div>
-          ${rtoRpoError ? '<div class="rto-error">⚠ RPO no puede ser mayor que RTO</div>' : ''}
-        </div>
-      </div>
-      <div class="rto-field" style="margin-top:8px;">
-        <span class="rto-label">Dependencias (tecnológicas, proveedores, internas)</span>
-        <input type="text" style="width:100%;padding:8px;border:1px solid var(--border);border-radius:6px;font-size:13px;"
-          placeholder="Ej: Internet, CRM, ERP..." value="${p.dependencias.join(', ')}"
-          data-id="${p.id}" data-field="dependencias" onchange="actualizarCampo('${p.id}', 'dependencias', this.value)">
-      </div>
-      <div class="proceso-obs">
-        <textarea rows="2" class="form-textarea" placeholder="Observaciones o estrategia de recuperación específica..."
-          data-id="${p.id}" data-field="observaciones" onchange="actualizarCampo('${p.id}', 'observaciones', this.value)">${escapeHtml(p.observaciones)}</textarea>
-      </div>
-      ${isDefault ? '<div class="aviso-warning">✏️ Dale un nombre descriptivo a este proceso antes de generar el informe.</div>' : ''}
-      <div style="margin-top:12px;text-align:right;">
-        <button class="reset-btn" style="padding:4px 12px;font-size:10px;" onclick="eliminarProceso('${p.id}')">🗑 Eliminar</button>
-      </div>
-    </div>
-  `;
+  const isDefault = /^Nuevo proceso \d+$/.test(p.nombre.trim());
+  const tooltipTexto = TOOLTIPS_PROCESO[p.id] || 'Define las características de recuperación de este proceso.';
+
+  const wrapper = document.createElement('div');
+  wrapper.className = `proceso-item ${noAplica ? 'no-aplica' : (completo ? 'completo' : 'incompleto')}`;
+  wrapper.id = `proc-${p.id}`;
+
+  // ── CABECERA DEL PROCESO ──
+  const header = document.createElement('div');
+  header.className = 'proceso-header';
+
+  // Nombre + badge + info
+  const nombreWrapper = document.createElement('div');
+  nombreWrapper.className = 'nombre-wrapper';
+
+  const nombreInput = document.createElement('input');
+  nombreInput.type = 'text';
+  nombreInput.className = `proceso-nombre-input${isDefault ? ' default-name' : ''}`;
+  nombreInput.value = p.nombre;
+  nombreInput.placeholder = 'Nombre del proceso...';
+  nombreInput.addEventListener('focus', () => nombreInput.classList.remove('default-name'));
+  nombreInput.addEventListener('input', () => {
+    p.nombre = nombreInput.value;
+    p._touched = true;
+    actualizarCompletoUI(p.id);
+    actualizarProgreso();
+    actualizarEstadoBtnAnadir();
+    window.biaGrupos = grupos;
+  });
+
+  // Botón info tooltip (como en checklists)
+  const infoWrap = document.createElement('div');
+  infoWrap.className = 'bia-tooltip-wrap';
+  const infoIcon = document.createElement('div');
+  infoIcon.className = 'info-icon';
+  infoIcon.textContent = 'i';
+  const tooltipDiv = document.createElement('div');
+  tooltipDiv.className = 'bia-tooltip';
+  tooltipDiv.textContent = tooltipTexto;
+  infoWrap.appendChild(infoIcon);
+  infoWrap.appendChild(tooltipDiv);
+  infoIcon.addEventListener('click', (e) => {
+    e.stopPropagation();
+    // Mobile: expandir inline; Desktop: toggle
+    if (window.innerWidth < 768) {
+      let exp = wrapper.querySelector('.bia-tooltip-expanded');
+      if (!exp) {
+        exp = document.createElement('div');
+        exp.className = 'bia-tooltip-expanded';
+        exp.textContent = tooltipTexto;
+        wrapper.insertBefore(exp, wrapper.firstChild.nextSibling);
+      }
+      exp.classList.toggle('visible');
+    } else {
+      infoWrap.classList.toggle('open');
+      document.querySelectorAll('.bia-tooltip-wrap.open').forEach(w => {
+        if (w !== infoWrap) w.classList.remove('open');
+      });
+    }
+  });
+
+  const badge = document.createElement('span');
+  badge.className = `completitud-badge ${noAplica ? 'na' : (completo ? 'ok' : 'pending')}`;
+  badge.id = `badge-${p.id}`;
+  badge.textContent = noAplica ? '— N/A' : (completo ? '✓ Completo' : 'Pendiente');
+
+  nombreWrapper.appendChild(nombreInput);
+  nombreWrapper.appendChild(infoWrap);
+  nombreWrapper.appendChild(badge);
+
+  // Selector criticidad
+  const criticoSel = document.createElement('select');
+  criticoSel.className = `proceso-critico critico-${p.critico}`;
+  [
+    ['critico', '◉ CRÍTICO (parada <4h)'],
+    ['alto', '▲ ALTO (parada 4-12h)'],
+    ['medio', '◆ MEDIO (parada 12-48h)'],
+    ['bajo', '● BAJO (parada >48h)']
+  ].forEach(([val, lbl]) => {
+    const opt = document.createElement('option');
+    opt.value = val;
+    opt.textContent = lbl;
+    if (p.critico === val) opt.selected = true;
+    criticoSel.appendChild(opt);
+  });
+  criticoSel.addEventListener('change', () => {
+    p.critico = criticoSel.value;
+    p._touched = true;
+    criticoSel.className = `proceso-critico critico-${criticoSel.value}`;
+    actualizarCompletoUI(p.id);
+    actualizarProgreso();
+    window.biaGrupos = grupos;
+  });
+
+  header.appendChild(nombreWrapper);
+  header.appendChild(criticoSel);
+  wrapper.appendChild(header);
+
+  // ── CHECKBOX NO APLICA ──
+  const noAplicaBar = document.createElement('div');
+  noAplicaBar.className = 'no-aplica-bar';
+  const noAplicaLabel = document.createElement('label');
+  noAplicaLabel.className = 'no-aplica-label';
+  const noAplicaCheck = document.createElement('input');
+  noAplicaCheck.type = 'checkbox';
+  noAplicaCheck.className = 'no-aplica-check';
+  noAplicaCheck.checked = noAplica;
+  noAplicaLabel.appendChild(noAplicaCheck);
+  noAplicaLabel.appendChild(document.createTextNode(' No aplica a esta organización'));
+  noAplicaBar.appendChild(noAplicaLabel);
+  wrapper.appendChild(noAplicaBar);
+
+  // Contenedor de campos (se oculta si no aplica)
+  const camposDiv = document.createElement('div');
+  camposDiv.className = 'proceso-campos';
+  if (noAplica) camposDiv.style.display = 'none';
+
+  // RTO / RPO grid
+  const gridRto = document.createElement('div');
+  gridRto.className = 'grid-rto';
+
+  // RTO
+  const rtoField = document.createElement('div');
+  rtoField.className = 'rto-field';
+  rtoField.innerHTML = `<span class="rto-label">RTO · Recovery Time Objective</span>`;
+  const rtoVal = document.createElement('div');
+  rtoVal.className = 'rto-value';
+  const rtoInput = document.createElement('input');
+  rtoInput.type = 'number';
+  rtoInput.value = p.rto_horas;
+  rtoInput.step = '0.5';
+  rtoInput.min = '0.5';
+  rtoInput.addEventListener('change', () => {
+    p.rto_horas = parseFloat(rtoInput.value) || 0.5;
+    p._touched = true;
+    actualizarCompletoUI(p.id);
+    actualizarProgreso();
+    window.biaGrupos = grupos;
+  });
+  const rtoUnit = document.createElement('span');
+  rtoUnit.className = 'rto-unit';
+  rtoUnit.textContent = 'horas';
+  rtoVal.appendChild(rtoInput);
+  rtoVal.appendChild(rtoUnit);
+  rtoField.appendChild(rtoVal);
+  const rtoHint = document.createElement('div');
+  rtoHint.className = 'rto-hint';
+  rtoHint.textContent = 'Tiempo máximo hasta recuperar el servicio';
+  rtoField.appendChild(rtoHint);
+  gridRto.appendChild(rtoField);
+
+  // RPO
+  const rpoField = document.createElement('div');
+  rpoField.className = `rto-field${rtoRpoError ? ' error' : ''}`;
+  rpoField.id = `rpo-field-${p.id}`;
+  rpoField.innerHTML = `<span class="rto-label">RPO · Recovery Point Objective</span>`;
+  const rpoVal = document.createElement('div');
+  rpoVal.className = 'rto-value';
+  const rpoInput = document.createElement('input');
+  rpoInput.type = 'number';
+  rpoInput.value = p.rpo_horas;
+  rpoInput.step = '0.5';
+  rpoInput.min = '0';
+  rpoInput.addEventListener('change', () => {
+    p.rpo_horas = parseFloat(rpoInput.value) || 0;
+    p._touched = true;
+    actualizarCompletoUI(p.id);
+    actualizarProgreso();
+    window.biaGrupos = grupos;
+  });
+  const rpoUnit = document.createElement('span');
+  rpoUnit.className = 'rto-unit';
+  rpoUnit.textContent = 'horas';
+  rpoVal.appendChild(rpoInput);
+  rpoVal.appendChild(rpoUnit);
+  rpoField.appendChild(rpoVal);
+  const rpoHint = document.createElement('div');
+  rpoHint.className = 'rto-hint';
+  rpoHint.textContent = 'Pérdida máxima de datos tolerable';
+  rpoField.appendChild(rpoHint);
+  if (rtoRpoError) {
+    const rpoErr = document.createElement('div');
+    rpoErr.className = 'rto-error';
+    rpoErr.textContent = '⚠ RPO no puede ser mayor que RTO';
+    rpoField.appendChild(rpoErr);
+  }
+  gridRto.appendChild(rpoField);
+  camposDiv.appendChild(gridRto);
+
+  // Dependencias
+  const depsField = document.createElement('div');
+  depsField.className = 'rto-field';
+  depsField.style.marginTop = '8px';
+  const depsLabel = document.createElement('span');
+  depsLabel.className = 'rto-label';
+  depsLabel.textContent = 'Dependencias (tecnológicas, proveedores, internas)';
+  const depsInput = document.createElement('input');
+  depsInput.type = 'text';
+  depsInput.className = 'deps-input';
+  depsInput.placeholder = 'Ej: Internet, CRM, ERP...';
+  depsInput.value = (p.dependencias || []).join(', ');
+  depsInput.addEventListener('input', () => {
+    p.dependencias = depsInput.value.split(',').map(s => s.trim()).filter(s => s);
+    p._touched = true;
+    actualizarCompletoUI(p.id);
+    actualizarProgreso();
+    actualizarEstadoBtnAnadir();
+    window.biaGrupos = grupos;
+  });
+  depsField.appendChild(depsLabel);
+  depsField.appendChild(depsInput);
+  camposDiv.appendChild(depsField);
+
+  // Observaciones
+  const obsDiv = document.createElement('div');
+  obsDiv.className = 'proceso-obs';
+  const obsArea = document.createElement('textarea');
+  obsArea.rows = 2;
+  obsArea.className = 'form-textarea';
+  obsArea.placeholder = 'Observaciones o estrategia de recuperación específica...';
+  obsArea.value = p.observaciones || '';
+  obsArea.addEventListener('input', () => {
+    p.observaciones = obsArea.value;
+    p._touched = true;
+    window.biaGrupos = grupos;
+  });
+  obsDiv.appendChild(obsArea);
+  camposDiv.appendChild(obsDiv);
+
+  wrapper.appendChild(camposDiv);
+
+  // Botón eliminar
+  const eliminarDiv = document.createElement('div');
+  eliminarDiv.className = 'proceso-footer-actions';
+  const eliminarBtn = document.createElement('button');
+  eliminarBtn.className = 'btn-eliminar';
+  eliminarBtn.textContent = '🗑 Eliminar proceso';
+  eliminarBtn.addEventListener('click', () => {
+    if (!confirm('¿Eliminar este proceso del análisis?')) return;
+    grupos.forEach(g => { g.procesos = g.procesos.filter(q => q.id !== p.id); });
+    window.biaGrupos = grupos;
+    renderTodo();
+  });
+  eliminarDiv.appendChild(eliminarBtn);
+  wrapper.appendChild(eliminarDiv);
+
+  // ── LÓGICA NO APLICA ──
+  noAplicaCheck.addEventListener('change', () => {
+    p._noAplica = noAplicaCheck.checked;
+    p._touched = true;
+    camposDiv.style.display = noAplicaCheck.checked ? 'none' : 'block';
+    const b = document.getElementById(`badge-${p.id}`);
+    if (b) {
+      b.className = `completitud-badge ${noAplicaCheck.checked ? 'na' : (procesoCompleto(p) ? 'ok' : 'pending')}`;
+      b.textContent = noAplicaCheck.checked ? '— N/A' : (procesoCompleto(p) ? '✓ Completo' : 'Pendiente');
+    }
+    wrapper.className = `proceso-item ${noAplicaCheck.checked ? 'no-aplica' : (procesoCompleto(p) ? 'completo' : 'incompleto')}`;
+    actualizarProgreso();
+    actualizarEstadoBtnAnadir();
+    window.biaGrupos = grupos;
+  });
+
+  // Cerrar tooltips al hacer click fuera
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.bia-tooltip-wrap')) {
+      document.querySelectorAll('.bia-tooltip-wrap.open').forEach(w => w.classList.remove('open'));
+    }
+  }, { once: false });
+
+  return wrapper;
 }
 
 function escapeHtml(str) {
   if (!str) return '';
-  return str.replace(/[&<>]/g, function(m) {
-    if (m === '&') return '&amp;';
-    if (m === '<') return '&lt;';
-    if (m === '>') return '&gt;';
-    return m;
-  });
+  return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
 }
 
-// ── ACTUALIZACIÓN DE CAMPOS ──
-window.actualizarCampo = function(id, campo, valor) {
-  const p = todosLosProcesos().find(p => p.id === id);
-  if (!p) return;
-  
-  if (campo === 'nombre') {
-    p.nombre = valor || p.nombre;
-  } else if (campo === 'critico') {
-    p.critico = valor;
-    const sel = document.querySelector(`#proc-${id} .proceso-critico`);
-    if (sel) {
-      sel.className = `proceso-critico critico-${valor}`;
-    }
-  } else if (campo === 'rto_horas') {
-    p.rto_horas = parseFloat(valor) || 0;
-  } else if (campo === 'rpo_horas') {
-    p.rpo_horas = parseFloat(valor) || 0;
-  } else if (campo === 'dependencias') {
-    p.dependencias = valor.split(',').map(s => s.trim()).filter(s => s);
-  } else if (campo === 'observaciones') {
-    p.observaciones = valor;
-  }
-  
-  actualizarCompletoUI(id);
-  actualizarProgreso();
-  actualizarBtnAnadir();
-};
-
-window.eliminarProceso = function(id) {
-  grupos.forEach(g => {
-    g.procesos = g.procesos.filter(p => p.id !== id);
-  });
-  renderTodo();
-};
-
-function agregarProceso() {
-  const todos = todosLosProcesos();
-  const newId = 'p' + Date.now().toString().slice(-6);
-  const lastGroup = grupos[grupos.length - 1];
-  
-  lastGroup.procesos.push({
-    id: newId,
-    nombre: `Nuevo proceso ${todos.length + 1}`,
-    critico: 'medio',
-    rto_horas: config.defaults.rto_horas,
-    rpo_horas: config.defaults.rpo_horas,
-    dependencias: [],
-    observaciones: ''
-  });
-  
-  renderTodo();
-  setTimeout(() => {
-    const el = document.getElementById(`proc-${newId}`);
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      el.querySelector('.proceso-nombre-input')?.focus();
-    }
-  }, 100);
-}
-
-function resetAll() {
-  if (!confirm('¿Reiniciar todos los procesos y valores?')) return;
-  grupos = JSON.parse(JSON.stringify(config.grupos));
-  renderTodo();
-}
-
-// ── COMPLETITUD ──
+// ── ACTUALIZACIÓN ESTADO ──
 function procesoCompleto(p) {
-  return !/^Nuevo proceso \d+$/.test(p.nombre.trim()) && 
-         p.dependencias.length > 0 && 
-         p.rpo_horas <= p.rto_horas;
+  if (p._noAplica) return true; // N/A cuenta como resuelto
+  const nombreValido = p.nombre.trim() !== '' && !/^Nuevo proceso \d+$/.test(p.nombre.trim());
+  const tieneDeps = p.dependencias && p.dependencias.length > 0;
+  const rpoValido = p.rpo_horas <= p.rto_horas;
+  const fueTocado = p._touched === true;
+  return nombreValido && tieneDeps && rpoValido && fueTocado;
 }
 
 function actualizarCompletoUI(id) {
   const p = todosLosProcesos().find(p => p.id === id);
   if (!p) return;
-  
   const item = document.getElementById(`proc-${p.id}`);
   const badge = document.getElementById(`badge-${p.id}`);
   const completo = procesoCompleto(p);
-  
-  if (item) {
-    item.className = `proceso-item ${completo ? 'completo' : 'incompleto'}`;
-  }
+  const noAplica = p._noAplica;
+  if (item) item.className = `proceso-item ${noAplica ? 'no-aplica' : (completo ? 'completo' : 'incompleto')}`;
   if (badge) {
-    badge.className = `completitud-badge ${completo ? 'ok' : 'pending'}`;
-    badge.textContent = completo ? '✓ Completo' : 'Pendiente';
+    badge.className = `completitud-badge ${noAplica ? 'na' : (completo ? 'ok' : 'pending')}`;
+    badge.textContent = noAplica ? '— N/A' : (completo ? '✓ Completo' : 'Pendiente');
   }
-  
   const rpoField = document.getElementById(`rpo-field-${p.id}`);
   if (rpoField) {
     const errDiv = rpoField.querySelector('.rto-error');
@@ -328,476 +539,306 @@ function actualizarCompletoUI(id) {
 }
 
 function todosLosProcesos() {
+  if (!grupos) return [];
   return grupos.flatMap(g => g.procesos);
 }
 
 function actualizarProgreso() {
   const todos = todosLosProcesos();
   const total = todos.length;
+  // N/A cuenta como completo en el progreso
   const completos = todos.filter(procesoCompleto).length;
+  const noAplican = todos.filter(p => p._noAplica).length;
   const pct = total ? Math.round(completos / total * 100) : 0;
-  
-  document.getElementById('progress-bar').style.width = pct + '%';
-  document.getElementById('progress-label').innerHTML = `<span>${completos}</span> de ${total} procesos completados`;
-  
-  const sts = document.getElementById('progress-status');
-  if (pct === 100) {
-    sts.style.background = '#e8f8f5';
-    sts.style.color = '#1e8449';
-    sts.textContent = '✓ Todos los procesos completados';
-  } else if (pct > 50) {
-    sts.style.background = '#e8f4f8';
-    sts.style.color = '#2c7da0';
-    sts.textContent = `⚙ ${pct}% completado`;
-  } else {
-    sts.style.background = '#fff3cd';
-    sts.style.color = '#92400e';
-    sts.textContent = `⚙ ${pct}% completado`;
-  }
-  
+
+  const progressBar = document.getElementById('progress-bar');
+  const progressLabel = document.getElementById('progress-label');
+  const progressStatus = document.getElementById('progress-status');
   const stickyInfo = document.getElementById('stickyInfo');
-  const criticos = todos.filter(p => p.critico === 'critico').length;
-  stickyInfo.innerHTML = `<strong>${total}</strong> procesos · <strong>${criticos}</strong> críticos · ${completos}/${total} completados`;
+
+  if (progressBar) progressBar.style.width = pct + '%';
+  if (progressLabel) {
+    const activosCompletos = completos - noAplican;
+    progressLabel.innerHTML = `<span>${activosCompletos}</span> de ${total - noAplican} procesos completados${noAplican > 0 ? ` · <span style="color:#6c7a8e">${noAplican} N/A</span>` : ''}`;
+  }
+  if (progressStatus) {
+    if (pct === 100) {
+      progressStatus.style.cssText = 'background:#e8f8f5;color:#1e8449';
+      progressStatus.textContent = '✓ Todos los procesos completados — listo para generar';
+    } else if (pct > 50) {
+      progressStatus.style.cssText = 'background:#e8f4f8;color:#2c7da0';
+      progressStatus.textContent = `⚙ ${pct}% completado`;
+    } else {
+      progressStatus.style.cssText = 'background:#fff3cd;color:#92400e';
+      progressStatus.textContent = `⚙ ${pct}% completado — Completa cada proceso`;
+    }
+  }
+  if (stickyInfo) {
+    const criticos = todos.filter(p => p.critico === 'critico' && !p._noAplica).length;
+    stickyInfo.innerHTML = `<strong>${total}</strong> procesos · <strong>${criticos}</strong> críticos · ${completos}/${total} completados`;
+  }
 }
 
-function actualizarBtnAnadir() {
+function actualizarEstadoBtnAnadir() {
   const btn = document.getElementById('btnAnadir');
   if (!btn) return;
   const todos = todosLosProcesos();
-  const ultimoCompleto = todos.length === 0 || procesoCompleto(todos[todos.length - 1]);
-  btn.disabled = !ultimoCompleto;
-  btn.title = ultimoCompleto ? '' : 'Completa el proceso anterior antes de añadir otro';
+  // Puede añadir si no hay procesos o el último está completo/N/A
+  const ultimo = todos[todos.length - 1];
+  const puedeAnadir = todos.length === 0 || !ultimo || procesoCompleto(ultimo);
+  btn.disabled = !puedeAnadir;
+  const wrapper = btn.closest('.btn-wrapper-anadir');
+  if (wrapper) wrapper.classList.toggle('bloqueado', !puedeAnadir);
 }
 
 function renderWizardNav() {
-  const gruposIds = grupos.map(g => g.id);
   const container = document.getElementById('wizardNav');
-  container.innerHTML = gruposIds.map((id, idx) => `
-    <div class="wizard-step ${idx === 0 ? 'active' : ''}" data-grupo="${id}">
-      ${grupos[idx].titulo}
-    </div>
-  `).join('');
-  
-  document.querySelectorAll('.wizard-step').forEach(step => {
+  if (!container) return;
+  container.innerHTML = '';
+  grupos.forEach((g) => {
+    const step = document.createElement('div');
+    step.className = 'wizard-step';
+    step.dataset.grupo = g.id;
+    step.textContent = g.titulo;
     step.addEventListener('click', () => {
-      const grupoId = step.dataset.grupo;
-      document.getElementById(`grupo-items-${grupoId}`)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      const grupoEl = document.getElementById(`grupo-items-${g.id}`);
+      if (grupoEl) grupoEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+    container.appendChild(step);
+  });
+  const steps = container.querySelectorAll('.wizard-step');
+  if (steps.length > 0) steps[0].classList.add('active');
+  const grupoEls = grupos.map(g => document.getElementById(`grupo-items-${g.id}`)).filter(Boolean);
+  if ('IntersectionObserver' in window) {
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const id = entry.target.id.replace('grupo-items-', '');
+          steps.forEach(s => s.classList.toggle('active', s.dataset.grupo === id));
+        }
+      });
+    }, { threshold: 0.3 });
+    grupoEls.forEach(el => obs.observe(el));
+  }
+}
+
+// ── AÑADIR PROCESO ──
+function agregarProceso() {
+  const todos = todosLosProcesos();
+  const newId = 'p' + Date.now().toString().slice(-6);
+  if (!grupos || grupos.length === 0) return;
+
+  // Añadir al último grupo
+  const lastGroup = grupos[grupos.length - 1];
+  const nuevoProceso = {
+    id: newId,
+    nombre: `Nuevo proceso ${todos.length + 1}`,
+    critico: 'medio',
+    rto_horas: config?.defaults?.rto_horas || 12,
+    rpo_horas: config?.defaults?.rpo_horas || 6,
+    dependencias: [],
+    observaciones: '',
+    _touched: false,
+    _noAplica: false
+  };
+  lastGroup.procesos.push(nuevoProceso);
+  window.biaGrupos = grupos;
+
+  // Renderizar solo el nuevo proceso (sin re-renderizar todo)
+  const grupoItemsEl = document.getElementById(`grupo-items-${lastGroup.id}`);
+  if (grupoItemsEl) {
+    const nuevoEl = crearProcesoEl(nuevoProceso);
+    grupoItemsEl.appendChild(nuevoEl);
+    // Actualizar contador del grupo
+    const grupoCount = grupoItemsEl.closest('.grupo-procesos')?.querySelector('.grupo-count');
+    if (grupoCount) grupoCount.textContent = `${lastGroup.procesos.length} procesos`;
+  }
+
+  actualizarProgreso();
+  actualizarEstadoBtnAnadir();
+
+  setTimeout(() => {
+    const el = document.getElementById(`proc-${newId}`);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      const input = el.querySelector('.proceso-nombre-input');
+      if (input) { input.focus(); input.select(); }
+    }
+  }, 100);
+}
+
+function resetAll() {
+  if (!confirm('¿Reiniciar todos los procesos y valores?')) return;
+  grupos = JSON.parse(JSON.stringify(config.grupos));
+  grupos.forEach(grupo => {
+    grupo.procesos.forEach(proceso => {
+      proceso._touched = false;
+      proceso._noAplica = false;
     });
   });
+  window.biaGrupos = grupos;
+  renderTodo();
 }
 
-// ── GENERAR INFORME ──
+// ── GENERAR INFORME HTML ──
 function generarInforme() {
   const todos = todosLosProcesos();
-  const sinNombre = todos.filter(p => /^Nuevo proceso \d+$/.test(p.nombre.trim()));
-  
-  if (sinNombre.length > 0) {
-    if (!confirm(`${sinNombre.length} proceso(s) aún tienen nombre genérico. ¿Generar igualmente?`)) {
-      return;
-    }
+  const conErrorRPO = todos.filter(p => !p._noAplica && p.rpo_horas > p.rto_horas);
+  if (conErrorRPO.length > 0) {
+    alert(`⚠️ ${conErrorRPO.length} proceso(s) tienen RPO mayor que RTO. Corrígelos antes de generar el informe.`);
+    return;
   }
-  
-  const cfg = config.frameworks[frameworkSeleccionado];
-  const criticos = todos.filter(p => p.critico === 'critico').length;
-  const altos = todos.filter(p => p.critico === 'alto').length;
-  const medios = todos.filter(p => p.critico === 'medio').length;
-  const bajos = todos.filter(p => p.critico === 'bajo').length;
-  const avgRTO = Math.round(todos.reduce((s, p) => s + p.rto_horas, 0) / todos.length);
-  const avgRPO = Math.round(todos.reduce((s, p) => s + p.rpo_horas, 0) / todos.length);
-  const rtoMin = Math.min(...todos.map(p => p.rto_horas));
-  const rtoMax = Math.max(...todos.map(p => p.rto_horas));
-  const procCriticos = todos.filter(p => p.critico === 'critico').map(p => p.nombre);
-  const criticosRapidos = todos.filter(p => p.critico === 'critico' && p.rto_horas <= 4);
-  const depsCriticas = [...new Set(todos.filter(p => p.critico === 'critico').flatMap(p => p.dependencias))];
-  
-  const estrategias = criticosRapidos.length > 0
-    ? `Los procesos críticos (${criticosRapidos.map(p => p.nombre).join(', ')}) requieren estrategias de alta disponibilidad: clúster activo-activo, failover automático o hot standby.`
-    : `Implementar estrategias de recuperación priorizando los procesos con menor RTO (${rtoMin}h).`;
-  
-  const filas = todos.map(p => {
-    const lbl = { critico: 'CRÍTICO', alto: 'ALTO', medio: 'MEDIO', bajo: 'BAJO' }[p.critico];
-    const cls = { critico: 'bc-critico', alto: 'bc-alto', medio: 'bc-medio', bajo: 'bc-bajo' }[p.critico];
+  const sinNombre = todos.filter(p => !p._noAplica && /^Nuevo proceso \d+$/.test(p.nombre.trim()));
+  const noTocados = todos.filter(p => !p._noAplica && !p._touched);
+  if (noTocados.length > 0) {
+    if (!confirm(`${noTocados.length} proceso(s) no han sido revisados. ¿Generar igualmente?`)) return;
+  }
+  if (sinNombre.length > 0) {
+    if (!confirm(`${sinNombre.length} proceso(s) aún tienen nombre genérico. ¿Generar igualmente?`)) return;
+  }
+  mostrarPantalla('informe');
+  renderInformeHTML();
+}
+
+function renderInformeHTML() {
+  const informeContenido = document.getElementById('informeContenido');
+  if (!informeContenido) return;
+  const todos = todosLosProcesos();
+  const activos = todos.filter(p => !p._noAplica);
+  const total = todos.length;
+  const noAplican = todos.filter(p => p._noAplica).length;
+  const completos = todos.filter(procesoCompleto).length;
+  const pct = total ? Math.round(completos / total * 100) : 0;
+  const criticos = activos.filter(p => p.critico === 'critico').length;
+  const altos = activos.filter(p => p.critico === 'alto').length;
+  const medios = activos.filter(p => p.critico === 'medio').length;
+  const bajos = activos.filter(p => p.critico === 'bajo').length;
+  const avgRTO = activos.length > 0 ? (activos.reduce((s, p) => s + p.rto_horas, 0) / activos.length).toFixed(1) : 0;
+  const avgRPO = activos.length > 0 ? (activos.reduce((s, p) => s + p.rpo_horas, 0) / activos.length).toFixed(1) : 0;
+  const rtoMin = activos.length > 0 ? Math.min(...activos.map(p => p.rto_horas)) : 0;
+  const rtoMax = activos.length > 0 ? Math.max(...activos.map(p => p.rto_horas)) : 0;
+  const fw = config?.frameworks?.[frameworkSeleccionado] || { nombre: 'ISO 22301:2019', nombre_corto: 'ISO 22301', color: 'fw-iso22301', controles: '' };
+  const labelCrit = { critico: 'CRÍTICO', alto: 'ALTO', medio: 'MEDIO', bajo: 'BAJO' };
+  const badgeCls = { critico: 'bc-critico', alto: 'bc-alto', medio: 'bc-medio', bajo: 'bc-bajo' };
+  const procCriticos = activos.filter(p => p.critico === 'critico' || p.critico === 'alto');
+  const depsCriticas = [...new Set(activos.filter(p => p.critico === 'critico').flatMap(p => p.dependencias || []))];
+
+  const filasProcesos = grupos.map(g => {
+    const procesosGrupo = g.procesos;
+    if (!procesosGrupo.length) return '';
+    return `
+      <tr><td colspan="6" style="background:#f1f5f9;font-family:var(--mono);font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:#1a5f7a;padding:10px 10px 6px;">${g.icono} ${g.titulo}</td></tr>
+      ${procesosGrupo.map(p => p._noAplica
+        ? `<tr style="opacity:0.5"><td><em>${escapeHtml(p.nombre)}</em></td><td colspan="5" style="font-size:11px;color:#6c7a8e;font-style:italic;">— No aplica a esta organización</td></tr>`
+        : `<tr>
+            <td><strong>${escapeHtml(p.nombre)}</strong></td>
+            <td><span class="badge-critico ${badgeCls[p.critico]}">${labelCrit[p.critico]}</span></td>
+            <td style="font-family:var(--mono);font-weight:700;color:#1a5f7a;">${p.rto_horas}h</td>
+            <td style="font-family:var(--mono);font-weight:700;color:#2c9b6e;">${p.rpo_horas}h</td>
+            <td style="font-size:12px;color:#6c7a8e;">${escapeHtml((p.dependencias || []).join(', ')) || '—'}</td>
+            <td style="font-size:12px;color:#6c7a8e;">${escapeHtml(p.observaciones || '') || '—'}</td>
+          </tr>`
+      ).join('')}`;
+  }).join('');
+
+  const filasRecuperacion = procCriticos.map(p => {
+    const estrategia = p.observaciones?.trim() ? escapeHtml(p.observaciones) : `Recuperar en menos de ${p.rto_horas}h con pérdida máxima de ${p.rpo_horas}h de datos.`;
     return `<tr>
-      <td style="font-weight:600;">${escapeHtml(p.nombre)}</td>
-      <td><span class="badge-critico ${cls}">${lbl}</span></td>
-      <td style="font-family:monospace;font-weight:700;">${p.rto_horas}h</td>
-      <td style="font-family:monospace;font-weight:700;">${p.rpo_horas}h</td>
-      <td style="font-size:12px;">${p.dependencias.join(', ') || '—'}</td>
-      <td style="font-size:11px;color:#666;">${escapeHtml(p.observaciones) || '—'}</td>
+      <td><strong>${escapeHtml(p.nombre)}</strong></td>
+      <td><span class="badge-critico ${badgeCls[p.critico]}">${labelCrit[p.critico]}</span></td>
+      <td style="font-family:var(--mono);font-size:12px;">${p.rto_horas}h / ${p.rpo_horas}h</td>
+      <td style="font-size:12px;color:#555;">${estrategia}</td>
     </tr>`;
   }).join('');
-  
-  const d = { avgRTO, avgRPO, rtoMin, rtoMax, procCriticos, estrategias, depsCriticas, criticosRapidos };
-  
-  document.getElementById('informeContenido').innerHTML = `
-    <span class="framework-badge ${cfg.color}">${cfg.nombre} · ${cfg.controles}</span>
-    <div class="informe-section">
-      <div class="informe-section-title">🏢 Identificación del documento</div>
-      <table style="width:100%;font-size:13px;">
-        <tr><td style="padding:6px 0;width:180px;color:var(--muted);font-family:monospace;">ORGANIZACIÓN</td><td style="font-weight:600;">${escapeHtml(datosFirma.empresa)}</td></tr>
-        <tr><td style="padding:6px 0;color:var(--muted);font-family:monospace;">RESPONSABLE</td><td>${escapeHtml(datosFirma.responsable)}</td></tr>
-        <tr><td style="padding:6px 0;color:var(--muted);font-family:monospace;">MARCO NORMATIVO</td><td>${cfg.nombre}</td></tr>
-        <tr><td style="padding:6px 0;color:var(--muted);font-family:monospace;">FECHA BIA</td><td>${datosFirma.fecha}</td></tr>
-        <tr><td style="padding:6px 0;color:var(--muted);font-family:monospace;">ALCANCE</td><td>${escapeHtml(datosFirma.alcance)}</td></tr>
-        <tr><td style="padding:6px 0;color:var(--muted);font-family:monospace;">UBICACIONES</td><td>${escapeHtml(datosFirma.ubicaciones)}</td></tr>
-      </table>
-    </div>
-    <div class="informe-section">
-      <div class="informe-section-title">📊 Resumen BIA</div>
-      <div class="resumen-grid">
-        <div class="resumen-card critico-card"><div class="resumen-num" style="color:#991b1b;">${criticos}</div><div class="resumen-label">Críticos</div></div>
-        <div class="resumen-card" style="background:#fff3cd;"><div class="resumen-num" style="color:#92400e;">${altos}</div><div class="resumen-label">Altos</div></div>
-        <div class="resumen-card"><div class="resumen-num" style="color:#d35400;">${medios}</div><div class="resumen-label">Medios</div></div>
-        <div class="resumen-card"><div class="resumen-num" style="color:#1e8449;">${bajos}</div><div class="resumen-label">Bajos</div></div>
-      </div>
-      <div class="resumen-grid">
-        <div class="resumen-card rto-avg"><div class="resumen-num" style="color:var(--success);">${avgRTO}h</div><div class="resumen-label">RTO Promedio</div></div>
-        <div class="resumen-card rpo-avg"><div class="resumen-num" style="color:#d35400;">${avgRPO}h</div><div class="resumen-label">RPO Promedio</div></div>
-        <div class="resumen-card"><div class="resumen-num" style="color:var(--brand);">${rtoMin}h</div><div class="resumen-label">RTO Mínimo</div></div>
-        <div class="resumen-card"><div class="resumen-num" style="color:var(--muted);">${rtoMax}h</div><div class="resumen-label">RTO Máximo</div></div>
-      </div>
-    </div>
-    <div class="informe-section">
-      <div class="informe-section-title">📋 Inventario de procesos con RTO/RPO</div>
-      <table class="proceso-table">
-        <thead><tr><th>Proceso</th><th>Criticidad</th><th>RTO</th><th>RPO</th><th>Dependencias</th><th>Observaciones</th></tr></thead>
-        <tbody>${filas}</tbody>
-      </table>
-    </div>
-    <div class="informe-section">
-      <div class="informe-section-title">📋 Estrategia de Continuidad (BCP)</div>
-      <div class="aviso" style="background:#e8f4f8;">
-        <strong>RTO mínimo:</strong> ${rtoMin}h · <strong>RTO máximo:</strong> ${rtoMax}h · <strong>RPO promedio:</strong> ${avgRPO}h
-      </div>
-      <ul style="margin-left:20px;line-height:1.9;font-size:13px;">
-        <li><strong>Prioridad de recuperación:</strong> ${procCriticos.join(', ') || 'Sin procesos críticos definidos'}</li>
-        <li><strong>Estrategia recomendada:</strong> ${estrategias}</li>
-        <li><strong>Dependencias críticas a proteger:</strong> ${depsCriticas.join(', ') || 'Identificar dependencias principales'}</li>
-        <li><strong>Backup y restauración:</strong> Verificar que las copias de seguridad cumplen el RPO de ${avgRPO}h. Configurar retención y frecuencia de backup acorde.</li>
-        <li><strong>Plan de comunicación:</strong> Establecer cadena de mando y protocolos de comunicación a clientes y stakeholders ante incidente.</li>
-        <li><strong>Pruebas del plan:</strong> Realizar simulacros al menos cada 6 meses. Documentar resultados y lecciones aprendidas.</li>
-        ${configResumenExtra(cfg, d)}
-      </ul>
-    </div>
-    <div class="informe-section">
-      <div class="informe-section-title">🖥 Plan de Recuperación ante Desastres (DRP)</div>
-      <ul style="margin-left:20px;line-height:1.9;font-size:13px;">
-        <li><strong>Responsable de coordinación:</strong> ${escapeHtml(datosFirma.responsable)}</li>
-        <li><strong>Infraestructura alternativa:</strong> Definir centro de respaldo (cloud secundario, oficina alternativa o teletrabajo).</li>
-        <li><strong>Niveles de activación:</strong>
-          <ul style="margin-left:20px;margin-top:4px;">
-            <li>Nivel 1 — Incidencia menor: resolución interna sin activar el DRP completo</li>
-            <li>Nivel 2 — Incidencia mayor: activación parcial, procesos críticos</li>
-            <li>Nivel 3 — Desastre: activación total del plan, traslado a sede alternativa</li>
-          </ul>
-        </li>
-        <li><strong>Checklist de restauración:</strong>
-          <ul style="margin-left:20px;margin-top:4px;">
-            <li>✓ Activar equipo de respuesta y comunicar a dirección</li>
-            <li>✓ Restaurar desde backups (RPO objetivo: ${avgRPO}h)</li>
-            <li>✓ Validar integridad de datos restaurados</li>
-            <li>✓ Desviar tráfico/usuarios a sistemas alternativos</li>
-            <li>✓ Comunicar a clientes/usuarios afectados</li>
-            <li>✓ Documentar el incidente y lecciones aprendidas</li>
-          </ul>
-        </li>
-        <li><strong>Retorno a operación normal (fallback):</strong> Plan de reversión documentado con criterios de vuelta a producción.</li>
-      </ul>
-    </div>
-    ${configInformeExtra(cfg, d)}
-    <div class="informe-section">
-      <div class="informe-section-title">✅ Próximos pasos</div>
-      <ul style="margin-left:20px;line-height:1.9;font-size:13px;">
-        <li>📌 <strong>Aprobación formal</strong> de este BIA/BCP por la dirección</li>
-        <li>🔄 <strong>Revisión periódica:</strong> actualizar al menos anualmente o tras cambios significativos</li>
-        <li>🧪 <strong>Simulacro de recuperación:</strong> programar en los próximos <strong>${Math.min(3, Math.floor(avgRTO / 24) || 1)} meses</strong></li>
-        <li>📚 <strong>Formación:</strong> comunicar el plan a todos los equipos involucrados</li>
-        <li>🔗 <strong>Integración normativa:</strong> vincular este BIA con tu SGSI / sistema de gestión bajo ${cfg.nombre}</li>
-      </ul>
-    </div>
-    <div style="font-family:monospace;font-size:10px;color:var(--muted);text-align:center;padding-top:24px;border-top:1px solid var(--border-soft);">
-      Documento generado con <strong>GRCreal.com</strong> · Miguel Ángel Carriazo, vCISO ·
-      BIA / BCP / DRP · ${cfg.nombre} · Sin almacenamiento de datos.
-    </div>
-  `;
-  
-  mostrarPantalla('informe');
-}
 
-function configResumenExtra(cfg, d) {
-  if (cfg.id === 'iso22301') {
-    return `<li><strong>Pruebas y ejercicios (8.5):</strong> Programar ejercicio de validación del BCP en los próximos ${Math.min(3, Math.floor(d.avgRTO / 24) || 1)} meses.</li>`;
-  }
-  if (cfg.id === 'iso27001') {
-    return `<li><strong>A.5.30 Preparación TIC:</strong> Verificar redundancia de sistemas críticos identificados en este BIA.</li>`;
-  }
-  if (cfg.id === 'ens') {
-    return `<li><strong>Categorización ENS:</strong> Revisar que la dimensión de disponibilidad (D) en la categorización del sistema es coherente con los RTO/RPO definidos. RTO mínimo = ${d.rtoMin}h → categoría ${d.rtoMin <= 4 ? 'ALTA' : d.rtoMin <= 24 ? 'MEDIA' : 'BÁSICA'}.</li>`;
-  }
-  if (cfg.id === 'nis2') {
-    return `<li><strong>Art. 21.2(c) NIS2:</strong> Este BIA forma parte de las medidas técnicas y organizativas de gestión de continuidad exigidas a entidades esenciales e importantes.</li>`;
-  }
-  if (cfg.id === 'dora') {
-    return `<li><strong>Art. 12 BIA:</strong> Identificar funciones críticas y dependencias ICT externas.</li><li><strong>Art. 13 Registro:</strong> Mantener actualizado el registro de ICT RPS.</li>`;
-  }
-  if (cfg.id === 'iso42001') {
-    return `<li><strong>Cláusula 6.1.2:</strong> Este BIA identifica impactos de los sistemas de IA en la organización.</li><li><strong>A.7 Supervisión humana:</strong> Validar que existe supervisión humana en decisiones críticas.</li>`;
-  }
-  return '';
-}
-
-function configInformeExtra(cfg, d) {
-  if (cfg.id === 'iso22301') {
-    return `
-      <div class="informe-section">
-        <div class="informe-section-title">📐 Alineación ISO 22301:2019</div>
-        <table style="width:100%;font-size:13px;">
-          <tr><td style="padding:6px 0;width:200px;color:var(--muted);font-family:monospace;">Cláusula 8.2</td><td>BIA documentado — este documento</td></tr>
-          <tr><td style="padding:6px 0;color:var(--muted);font-family:monospace;">Cláusula 8.3</td><td>Estrategias de continuidad definidas por proceso</td></tr>
-          <tr><td style="padding:6px 0;color:var(--muted);font-family:monospace;">Cláusula 8.4</td><td>Plan de continuidad (BCP) — sección anterior</td></tr>
-          <tr><td style="padding:6px 0;color:var(--muted);font-family:monospace;">Cláusula 8.5</td><td>Ejercicios: programar simulacro en ${Math.min(3, Math.floor(d.avgRTO / 24) || 1)} meses</td></tr>
-          <tr><td style="padding:6px 0;color:var(--muted);font-family:monospace;">Cláusula 9.1</td><td>Seguimiento: revisión anual de RTO/RPO</td></tr>
+  informeContenido.innerHTML = `
+    <div class="informe-section" style="background:linear-gradient(135deg,#0d3d50,#1a5f7a);color:white;padding:32px;border-radius:16px;margin-bottom:28px;">
+      <div style="font-family:var(--mono);font-size:10px;letter-spacing:0.15em;opacity:0.7;margin-bottom:8px;">INFORME BIA · BCP · DRP</div>
+      <div style="font-size:26px;font-weight:700;margin-bottom:4px;">Análisis de Impacto de Negocio</div>
+      <div style="font-size:14px;opacity:0.8;margin-bottom:20px;">${escapeHtml(datosFirma.empresa)}</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-top:16px;">
+        ${[['RESPONSABLE',datosFirma.responsable],['FECHA',datosFirma.fecha],['ALCANCE',datosFirma.alcance||'Toda la organización'],['MARCO',fw.nombre_corto]].map(([k,v])=>`
+        <div style="background:rgba(255,255,255,0.1);border-radius:8px;padding:12px;">
+          <div style="font-size:10px;opacity:0.6;font-family:var(--mono);margin-bottom:4px;">${k}</div>
+          <div style="font-size:13px;font-weight:600;">${escapeHtml(v)}</div>
+        </div>`).join('')}
+      </div>
+    </div>
+    <div class="informe-section">
+      <div class="informe-section-title">Resumen Ejecutivo</div>
+      <div class="resumen-grid">
+        <div class="resumen-card"><div class="resumen-num" style="color:#1a5f7a;">${total}</div><div class="resumen-label">Procesos analizados</div></div>
+        <div class="resumen-card"><div class="resumen-num" style="color:#991b1b;">${criticos}</div><div class="resumen-label">Procesos críticos</div></div>
+        <div class="resumen-card"><div class="resumen-num" style="color:#92400e;">${altos}</div><div class="resumen-label">Alto impacto</div></div>
+        <div class="resumen-card"><div class="resumen-num" style="color:#1e8449;">${pct}%</div><div class="resumen-label">Nivel documentación</div></div>
+      </div>
+      <div style="background:#f1f5f9;border-radius:10px;padding:16px;display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;font-family:var(--mono);font-size:11px;color:#6c7a8e;">
+        <div>RTO promedio: <strong style="color:#1a5f7a;">${avgRTO}h</strong></div>
+        <div>RPO promedio: <strong style="color:#2c9b6e;">${avgRPO}h</strong></div>
+        <div>RTO mínimo: <strong>${rtoMin}h</strong></div><div>RTO máximo: <strong>${rtoMax}h</strong></div>
+        <div>Procesos medio: <strong>${medios}</strong></div><div>Procesos bajo: <strong>${bajos}</strong></div>
+        ${noAplican > 0 ? `<div>No aplica: <strong>${noAplican}</strong></div>` : ''}
+      </div>
+      <div style="margin-top:12px;"><span class="framework-badge ${fw.color}">${fw.nombre}</span>${fw.controles?`<div style="font-size:12px;color:#6c7a8e;margin-top:6px;">📋 ${escapeHtml(fw.controles)}</div>`:''}</div>
+    </div>
+    <div class="informe-section">
+      <div class="informe-section-title">Inventario de Procesos y RTO/RPO</div>
+      <div style="overflow-x:auto;">
+        <table class="proceso-table">
+          <thead><tr><th>Proceso</th><th>Criticidad</th><th>RTO</th><th>RPO</th><th>Dependencias</th><th>Observaciones</th></tr></thead>
+          <tbody>${filasProcesos}</tbody>
         </table>
-      </div>`;
-  }
-  if (cfg.id === 'iso27001') {
-    return `
-      <div class="informe-section">
-        <div class="informe-section-title">🔐 Alineación ISO 27001:2022 — Anexo A</div>
-        <table style="width:100%;font-size:13px;">
-          <tr><td style="padding:6px 0;width:200px;color:var(--muted);font-family:monospace;">A.5.29</td><td>Continuidad de la seguridad de la información — este BIA cubre los procesos y activos críticos</td></tr>
-          <tr><td style="padding:6px 0;color:var(--muted);font-family:monospace;">A.5.30</td><td>Preparación TIC para continuidad — validar redundancia en: ${d.procCriticos.join(', ') || 'procesos críticos identificados'}</td></tr>
-          <tr><td style="padding:6px 0;color:var(--muted);font-family:monospace;">A.8.6</td><td>Gestión de la capacidad — revisar que los RTO definidos son alcanzables con la infraestructura actual</td></tr>
-          <tr><td style="padding:6px 0;color:var(--muted);font-family:monospace;">A.8.13</td><td>Backup de información — RPO promedio definido: ${d.avgRPO}h → configurar frecuencia de copias acorde</td></tr>
-        </table>
-      </div>`;
-  }
-  if (cfg.id === 'ens') {
-    return `
-      <div class="informe-section">
-        <div class="informe-section-title">🏛 Alineación ENS — RD 311/2022</div>
-        <table style="width:100%;font-size:13px;">
-          <tr><td style="padding:6px 0;width:200px;color:var(--muted);font-family:monospace;">op.cont.1</td><td>Análisis de impacto — este documento cumple el requisito de BIA formal</td></tr>
-          <tr><td style="padding:6px 0;color:var(--muted);font-family:monospace;">op.cont.2</td><td>Plan de continuidad — sección BCP de este informe</td></tr>
-          <tr><td style="padding:6px 0;color:var(--muted);font-family:monospace;">op.cont.3</td><td>Pruebas periódicas del plan — obligatorio en categoría MEDIA y ALTA</td></tr>
-          <tr><td style="padding:6px 0;color:var(--muted);font-family:monospace;">mp.com.3</td><td>Continuidad del servicio — los RTO/RPO deben reflejarse en los SLA con la Administración</td></tr>
-          <tr><td style="padding:6px 0;color:var(--muted);font-family:monospace;">Dimensión D</td><td>Disponibilidad: RTO mínimo definido = ${d.rtoMin}h → categorizar como ${d.rtoMin <= 4 ? 'ALTA' : d.rtoMin <= 24 ? 'MEDIA' : 'BÁSICA'}</td></tr>
-        </table>
-      </div>`;
-  }
-  if (cfg.id === 'nis2') {
-    return `
-      <div class="informe-section">
-        <div class="informe-section-title">🇪🇺 Alineación NIS2 — Directiva (UE) 2022/2555</div>
-        <table style="width:100%;font-size:13px;">
-          <tr><td style="padding:6px 0;width:200px;color:var(--muted);font-family:monospace;">Art. 21.2(c) </td><td>Continuidad de negocio — gestión de copias de seguridad, recuperación ante desastres y gestión de crisis</td></tr>
-          <tr><td style="padding:6px 0;color:var(--muted);font-family:monospace;">Art. 21.2(a) </td><td>Políticas de seguridad — este BIA debe integrarse en la política de continuidad aprobada por dirección</td></tr>
-          <tr><td style="padding:6px 0;color:var(--muted);font-family:monospace;">Art. 23 </td><td>Notificación de incidentes — los procesos con RTO &lt;4h deben tener procedimiento de notificación a INCIBE/CNPIC</td></tr>
-          <tr><td style="padding:6px 0;color:var(--muted);font-family:monospace;">Art. 21.4 </td><td>Responsabilidad de dirección — aprobación formal de este BIA por órgano de dirección</td></tr>
-        </table>
-        <div class="aviso" style="margin-top:12px;background:#f3e8ff;border-color:#a855f7;">
-          <strong>Recordatorio NIS2:</strong> Las entidades esenciales están sujetas a supervisión ex-ante. Las entidades importantes, ex-post. Verificar la clasificación de tu organización según el Anexo I y II de la Directiva.
+      </div>
+    </div>
+    <div class="informe-section">
+      <div class="informe-section-title">Plan de Continuidad de Negocio (BCP)</div>
+      <div style="background:#e8f4f8;border-left:3px solid #1a5f7a;border-radius:0 8px 8px 0;padding:12px 16px;font-size:13px;color:#555;margin-bottom:16px;">
+        Prioridad de recuperación: procesos con criticidad <strong>Crítico</strong> y <strong>Alto</strong> primero. Dependencias críticas: <strong>${depsCriticas.length > 0 ? escapeHtml(depsCriticas.slice(0,5).join(', ')) : 'Ver tabla'}</strong>.
+      </div>
+      ${procCriticos.length > 0 ? `<div style="overflow-x:auto;"><table class="proceso-table"><thead><tr><th>Proceso</th><th>Criticidad</th><th>RTO/RPO</th><th>Estrategia de recuperación</th></tr></thead><tbody>${filasRecuperacion}</tbody></table></div>` : '<p style="color:#6c7a8e;font-size:13px;">No se han identificado procesos críticos o de alto impacto.</p>'}
+    </div>
+    <div class="informe-section">
+      <div class="informe-section-title">Plan de Recuperación ante Desastres (DRP)</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+        <div style="background:#f9fbfd;border:1px solid #e2e8f0;border-radius:10px;padding:16px;">
+          <div style="font-family:var(--mono);font-size:10px;color:#1a5f7a;margin-bottom:8px;">NIVELES DE ACTIVACIÓN</div>
+          <div style="font-size:13px;line-height:1.8;color:#555;">1️⃣ <strong>Incidente menor</strong> — Recuperación en horas<br>2️⃣ <strong>Incidente mayor</strong> — Activar BCP<br>3️⃣ <strong>Desastre</strong> — DRP completo</div>
         </div>
-      </div>`;
-  }
-  if (cfg.id === 'dora') {
-    return `
-      <div class="informe-section">
-        <div class="informe-section-title">🏦 Alineación DORA — Reglamento (UE) 2022/2554</div>
-        <table style="width:100%;font-size:13px;">
-          <tr><td style="padding:6px 0;width:200px;color:var(--muted);font-family:monospace;">Art. 11 </td><td>ICT RPS — Identificar proveedores externos de servicios ICT críticos</td></tr>
-          <tr><td style="padding:6px 0;color:var(--muted);font-family:monospace;">Art. 12 </td><td>BIA para funciones críticas — este documento cumple el requisito</td></tr>
-          <tr><td style="padding:6px 0;color:var(--muted);font-family:monospace;">Art. 13 </td><td>Registro de información — mantener actualizado el registro de ICT RPS</td></tr>
-          <tr><td style="padding:6px 0;color:var(--muted);font-family:monospace;">Art. 14 </td><td>Pruebas de resiliencia operativa — programar pruebas periódicas de los planes de continuidad</td></tr>
-        </table>
-        <div class="aviso" style="margin-top:12px;background:#e8f4e8;border-color:#2d6a4f;">
-          <strong>Recordatorio DORA:</strong> Aplicable a entidades financieras. Las funciones críticas identificadas en este BIA deben tener contratos con ICT RPS que incluyan cláusulas de notificación de brechas (máx 24h).
+        <div style="background:#f9fbfd;border:1px solid #e2e8f0;border-radius:10px;padding:16px;">
+          <div style="font-family:var(--mono);font-size:10px;color:#1a5f7a;margin-bottom:8px;">CHECKLIST DE ACTIVACIÓN</div>
+          <div style="font-size:13px;line-height:1.8;color:#555;">☐ Activar equipo (${escapeHtml(datosFirma.responsable)})<br>☐ Evaluar alcance<br>☐ Restaurar backups<br>☐ Validar recuperación<br>☐ Comunicar<br>☐ Documentar lecciones</div>
         </div>
-      </div>`;
-  }
-  if (cfg.id === 'iso42001') {
-    return `
-      <div class="informe-section">
-        <div class="informe-section-title">🤖 Alineación ISO 42001:2023 — Sistemas de Gestión de IA</div>
-        <table style="width:100%;font-size:13px;">
-          <tr><td style="padding:6px 0;width:200px;color:var(--muted);font-family:monospace;">Cláusula 6.1.2 </td><td>Análisis de impacto de IA — este BIA identifica impactos de los sistemas de IA</td></tr>
-          <tr><td style="padding:6px 0;color:var(--muted);font-family:monospace;">Anexo A.6.2 </td><td>Transparencia — documentar los sistemas de IA y sus decisiones</td></tr>
-          <tr><td style="padding:6px 0;color:var(--muted);font-family:monospace;">Anexo A.7 </td><td>Supervisión humana — garantizar que existe supervisión humana en decisiones críticas</td></tr>
-          <tr><td style="padding:6px 0;color:var(--muted);font-family:monospace;">Anexo A.9 </td><td>Resiliencia y continuidad — planes específicos para sistemas de IA</td></tr>
-        </table>
-        <div class="aviso" style="margin-top:12px;background:#f3e8ff;border-color:#6b21a8;">
-          <strong>Recordatorio ISO 42001:</strong> Si tu organización desarrolla o utiliza sistemas de IA, este BIA debe incluir impactos específicos de esos sistemas (sesgos, opacidad, fallos autónomos).
-        </div>
-      </div>`;
-  }
-  return '';
+      </div>
+      <div style="margin-top:12px;background:#fff3cd;border-left:3px solid #f39c12;border-radius:0 8px 8px 0;padding:10px 14px;font-size:12px;color:#856404;">⚠️ Documento orientativo. Revisar y adaptar antes de uso en producción.</div>
+    </div>
+    <div class="informe-section">
+      <div class="informe-section-title">Próximos Pasos Recomendados</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;">
+        ${[['📋','Validar con dirección','Revisión y aprobación formal del BIA.'],['🔄','Planificar simulacros','Ejercicios de recuperación para validar RTO/RPO.'],['📅','Revisión anual','Actualizar ante cambios o anualmente.'],['🔐','Integrar con SGSI',`Alinear con controles ${escapeHtml(fw.nombre_corto)}.`]].map(([ic,t,d])=>`
+        <div style="background:#f9fbfd;border:1px solid #e2e8f0;border-radius:10px;padding:16px;font-size:13px;"><div style="font-size:20px;margin-bottom:8px;">${ic}</div><strong>${t}</strong><br><span style="color:#6c7a8e;">${d}</span></div>`).join('')}
+      </div>
+    </div>`;
 }
 
 function volverPreguntas() {
   mostrarPantalla('preguntas');
-  renderTodo();
+  // No re-renderizar — los event listeners ya existen
 }
 
 function nuevoAnalisis() {
   if (!confirm('¿Iniciar un nuevo análisis? Se perderán todos los datos.')) return;
   grupos = JSON.parse(JSON.stringify(config.grupos));
+  grupos.forEach(g => g.procesos.forEach(p => { p._touched = false; p._noAplica = false; }));
   frameworkSeleccionado = 'iso22301';
-  datosFirma = {
-    empresa: '',
-    responsable: '',
-    fecha: '',
-    alcance: '',
-    ubicaciones: ''
-  };
-  document.getElementById('f-empresa').value = '';
-  document.getElementById('f-responsable').value = '';
-  document.getElementById('f-fecha').value = new Date().toISOString().split('T')[0];
-  document.getElementById('f-alcance').value = '';
-  document.getElementById('f-ubicaciones').value = '';
-  
-  const firstFwCard = document.querySelector('.fw-card');
-  if (firstFwCard) {
-    document.querySelectorAll('.fw-card').forEach(c => c.classList.remove('selected'));
-    firstFwCard.classList.add('selected');
-    frameworkSeleccionado = firstFwCard.dataset.framework || 'iso22301';
-    const fwConfig = config.frameworks[frameworkSeleccionado];
-    if (fwConfig) document.getElementById('headerTag').textContent = fwConfig.tag;
-  }
-  
+  window.biaGrupos = grupos;
+  window.frameworkSeleccionado = frameworkSeleccionado;
+  datosFirma = { empresa: '', responsable: '', fecha: '', alcance: '', ubicaciones: '' };
+  ['f-empresa','f-responsable','f-ubicaciones'].forEach(id => { const el = document.getElementById(id); if (el) el.value = ''; });
+  const fi = document.getElementById('f-fecha'); if (fi) fi.value = new Date().toISOString().split('T')[0];
+  const as = document.getElementById('f-alcance'); if (as) as.value = '';
+  document.querySelectorAll('.framework-card').forEach(c => c.classList.toggle('selected', c.dataset.framework === 'iso22301'));
+  const fwD = config?.frameworks?.['iso22301'];
+  const ht = document.getElementById('headerTag');
+  if (fwD && ht) ht.textContent = fwD.tag;
   mostrarPantalla('inicio');
-}
-
-// ── EXPORTAR PDF ──
-async function exportarPDF() {
-  const btn = document.getElementById('btnExportarPDF');
-  const originalText = btn.textContent;
-  btn.textContent = '⏳ Generando PDF...';
-  btn.disabled = true;
-  
-  try {
-    const { jsPDF } = window.jspdf;
-    if (!jsPDF) throw new Error('jsPDF no cargado');
-    
-    const doc = new jsPDF({ orientation: 'portrait', unit: 'mm', format: 'a4' });
-    const M = 16;
-    const brand = [44, 125, 160];
-    
-    const todos = todosLosProcesos();
-    const cfg = config.frameworks[frameworkSeleccionado];
-    const avgRTO = Math.round(todos.reduce((s, p) => s + p.rto_horas, 0) / todos.length);
-    const avgRPO = Math.round(todos.reduce((s, p) => s + p.rpo_horas, 0) / todos.length);
-    const rtoMin = Math.min(...todos.map(p => p.rto_horas));
-    
-    // Portada
-    doc.setFillColor(...brand);
-    doc.rect(0, 0, 210, 50, 'F');
-    doc.setTextColor(255, 255, 255);
-    doc.setFontSize(22);
-    doc.setFont('helvetica', 'bold');
-    doc.text('GRCreal.com', M, 18);
-    doc.setFontSize(10);
-    doc.setFont('helvetica', 'normal');
-    doc.text('Herramienta de Continuidad de Negocio', M, 28);
-    doc.setFontSize(13);
-    doc.setFont('helvetica', 'bold');
-    doc.text(`BIA / BCP / DRP · ${datosFirma.empresa || 'Organización'}`, M, 40);
-    
-    doc.setFillColor(232, 244, 248);
-    doc.roundedRect(M, 55, 80, 10, 2, 2, 'F');
-    doc.setTextColor(...brand);
-    doc.setFontSize(8);
-    doc.setFont('helvetica', 'bold');
-    doc.text(cfg.nombre, M + 4, 62);
-    
-    let y = 74;
-    
-    const addSection = (titulo) => {
-      if (y > 260) { doc.addPage(); y = 20; }
-      doc.setFontSize(10);
-      doc.setFont('helvetica', 'bold');
-      doc.setTextColor(...brand);
-      doc.text(titulo.toUpperCase(), M, y);
-      doc.setDrawColor(...brand);
-      doc.line(M, y + 2, 210 - M, y + 2);
-      doc.setTextColor(0, 0, 0);
-      y += 8;
-    };
-    
-    addSection('Identificación del documento');
-    const datos = [
-      ['Organización', datosFirma.empresa || '—'],
-      ['Responsable', datosFirma.responsable || '—'],
-      ['Marco normativo', cfg.nombre],
-      ['Fecha BIA', datosFirma.fecha || '—'],
-      ['Alcance', datosFirma.alcance || 'Toda la organización'],
-      ['Ubicaciones', datosFirma.ubicaciones || '—']
-    ];
-    doc.setFontSize(9);
-    datos.forEach(([k, v]) => {
-      if (y > 270) { doc.addPage(); y = 20; }
-      doc.setFont('helvetica', 'bold');
-      doc.setTextColor(80, 80, 80);
-      doc.text(k.toUpperCase(), M, y);
-      doc.setFont('helvetica', 'normal');
-      doc.setTextColor(0, 0, 0);
-      doc.text(String(v), M + 55, y);
-      y += 6;
-    });
-    
-    y += 6;
-    addSection('Resumen BIA');
-    doc.setFontSize(9);
-    const criticos = todos.filter(p => p.critico === 'critico').length;
-    const altos = todos.filter(p => p.critico === 'alto').length;
-    const medios = todos.filter(p => p.critico === 'medio').length;
-    const bajos = todos.filter(p => p.critico === 'bajo').length;
-    doc.text(`Procesos críticos: ${criticos}   Altos: ${altos}   Medios: ${medios}   Bajos: ${bajos}`, M, y);
-    y += 5;
-    doc.text(`RTO promedio: ${avgRTO}h   RPO promedio: ${avgRPO}h   RTO mínimo: ${rtoMin}h`, M, y);
-    y += 10;
-    
-    addSection('Inventario de procesos — RTO / RPO');
-    todos.forEach(p => {
-      if (y > 265) { doc.addPage(); y = 20; }
-      doc.setFontSize(9);
-      doc.setFont('helvetica', 'bold');
-      doc.text(p.nombre.substring(0, 70), M, y);
-      doc.setFont('helvetica', 'normal');
-      doc.setFontSize(8);
-      doc.setTextColor(80, 80, 80);
-      doc.text(`RTO: ${p.rto_horas}h  /  RPO: ${p.rpo_horas}h  ·  Criticidad: ${p.critico.toUpperCase()}`, M, y + 4);
-      if (p.dependencias.length) {
-        const depText = `Dependencias: ${p.dependencias.join(', ')}`;
-        const lines = doc.splitTextToSize(depText, 180);
-        lines.forEach((l, i) => { doc.text(l, M, y + 8 + (i * 4)); });
-        y += 8 + (lines.length * 4);
-      } else {
-        y += 8;
-      }
-      if (p.observaciones) {
-        const obsLines = doc.splitTextToSize(`Obs: ${p.observaciones}`, 180);
-        obsLines.forEach((l, i) => { doc.text(l, M, y + (i * 4)); });
-        y += obsLines.length * 4;
-      }
-      doc.setDrawColor(230, 230, 230);
-      doc.line(M, y + 1, 210 - M, y + 1);
-      y += 5;
-    });
-    
-    const pages = doc.getNumberOfPages();
-    for (let i = 1; i <= pages; i++) {
-      doc.setPage(i);
-      doc.setFontSize(7);
-      doc.setTextColor(150, 150, 150);
-      doc.text(`GRCreal.com · BIA/BCP/DRP · ${cfg.nombre} · ${datosFirma.empresa || ''} · Pág. ${i}/${pages}`, M, 290);
-    }
-    
-    doc.save(`BIA_BCP_DRP_${datosFirma.empresa || 'empresa'}_${frameworkSeleccionado}_${datosFirma.fecha || 'fecha'}.pdf`);
-  } catch (error) {
-    console.error('Error generando PDF:', error);
-    alert('Error al generar el PDF. Intenta de nuevo.');
-  } finally {
-    btn.textContent = originalText;
-    btn.disabled = false;
-  }
 }

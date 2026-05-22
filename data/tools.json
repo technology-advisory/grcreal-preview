@@ -1,0 +1,88 @@
+{
+  "features": [
+    {
+      "icono": "⚡",
+      "titulo": "Listos para usar",
+      "texto": "Sin configuración. Sin registro. Abres, rellenas, exportas."
+    },
+    {
+      "icono": "📐",
+      "titulo": "Metodología integrada",
+      "texto": "Cada tool sigue el marco normativo correspondiente: ISO 27001, ISO 22301, ISO 27005."
+    },
+    {
+      "icono": "🔗",
+      "titulo": "Trazabilidad entre herramientas",
+      "texto": "Los outputs de una tool alimentan directamente la siguiente."
+    },
+    {
+      "icono": "📤",
+      "titulo": "Exportación real",
+      "texto": "Genera documentación válida para auditorías, no solo hojas de cálculo bonitas."
+    }
+  ],
+  "nota": {
+    "texto": "La mayoría de plantillas GRC son formularios vacíos disfrazados de metodología.<br><br>GRCreal Tools busca algo diferente:<br><br><strong>herramientas que funcionan con los datos reales de tu organización y producen outputs que aguantan una auditoría.</strong><br><br>Porque rellenar plantillas no es lo mismo que gestionar el riesgo."
+  },
+  "tools": [
+    {
+      "id": "bia",
+      "titulo": "BIA<br>Business Impact Analysis",
+      "tag": "ISO 22301 · Continuidad de Negocio",
+      "descripcion": "Identifica procesos críticos, dependencias clave y el impacto real de una interrupción. Calcula RTO, RPO y MTD desde datos operacionales, no desde suposiciones.",
+      "badges": ["ISO 22301", "RTO/RPO", "MTD", "MTPD", "Criticidad"],
+      "enlace": "bia/index.html",
+      "bloqueado": false,
+      "proximamente": false,
+      "estado": "activo"
+    },
+    {
+      "id": "analisis-riesgos",
+      "titulo": "Análisis<br>de Riesgos",
+      "tag": "ISO 27005 · Gestión del Riesgo",
+      "descripcion": "Identifica, evalúa y prioriza riesgos de seguridad de la información. Calcula probabilidad e impacto, asigna propietarios y genera el registro de riesgos listo para el SGSI.",
+      "badges": ["ISO 27005", "ISO 27001", "Probabilidad", "Impacto", "Risk Register"],
+      "enlace": null,
+      "bloqueado": true,
+      "proximamente": true,
+      "estado": "proximo",
+      "mensaje_bloqueo": "Próximamente"
+    },
+    {
+      "id": "plan-tratamiento",
+      "titulo": "Plan de Tratamiento<br>de Riesgos",
+      "tag": "ISO 27001 · Anexo A · SoA",
+      "descripcion": "Convierte el registro de riesgos en decisiones de tratamiento concretas. Asigna controles del Anexo A, responsables, plazos y evidencias esperadas. Output directo al SoA.",
+      "badges": ["ISO 27001", "Annex A", "SoA", "Controls", "PTR"],
+      "enlace": null,
+      "bloqueado": true,
+      "proximamente": true,
+      "estado": "proximo",
+      "mensaje_bloqueo": "Próximamente"
+    },
+    {
+      "id": "matriz-dependencias",
+      "titulo": "Matriz de<br>Dependencias",
+      "tag": "ISO 22301 · ISO 27001 · Arquitectura",
+      "descripcion": "Mapea las dependencias entre procesos, sistemas, infraestructura y proveedores. Detecta puntos únicos de fallo y cuellos de botella que no aparecen en los organigramas.",
+      "badges": ["Dependencias", "SPOF", "Procesos", "Sistemas", "Resiliencia"],
+      "enlace": null,
+      "bloqueado": true,
+      "proximamente": true,
+      "estado": "proximo",
+      "mensaje_bloqueo": "Próximamente"
+    },
+    {
+      "id": "gestion-proveedores",
+      "titulo": "Gestión de<br>Proveedores",
+      "tag": "ISO 27001 · A.5.19 · NIS2",
+      "descripcion": "Evalúa el riesgo real de tu cadena de suministro. Clasifica proveedores por criticidad, controla cláusulas contractuales de seguridad y genera evidencias para auditorías de terceros.",
+      "badges": ["A.5.19", "NIS2", "Due Diligence", "SLA", "Third Party Risk"],
+      "enlace": null,
+      "bloqueado": true,
+      "proximamente": true,
+      "estado": "proximo",
+      "mensaje_bloqueo": "Próximamente"
+    }
+  ]
+}
