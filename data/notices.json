@@ -25,6 +25,11 @@
       "fecha": "Próximamente",
       "titulo": "❓ Quiz GRCreal",
       "descripcion": "Nueva sección interactiva para evaluar tus conocimientos en Seguridad, Riesgo y Cumplimiento. Preguntas prácticas, casos reales y resultados inmediatos."
+    },
+	{
+      "fecha": "Próximamente",
+      "titulo": "🛠️ Herramientas GRCreal",
+      "descripcion": "Nueva sección interactiva para acelerar tus análisis de continuidad de negocio (BIA), evaluar riesgos y fortalecer la resiliencia operativa."
     }
   ]
 }

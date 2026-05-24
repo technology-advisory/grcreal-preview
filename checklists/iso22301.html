@@ -16,7 +16,7 @@
 <link rel="stylesheet" href="../css/checklists.css">
 <script src="/js/jspdf.umd.min.js"></script>
 </head>
-<body>
+<body data-norma="ISO22301">
 <div class="card-wrapper">
 <div class="card">
   <div class="accent-bar"></div>
@@ -85,6 +85,7 @@
             .then(response => response.text())
             .then(data => {
                 document.getElementById('footer-placeholder').innerHTML = data;
+            })
             .catch(() => {
                 document.getElementById('footer-placeholder').innerHTML = '<div class="footer-mini">© GRCreal · Checklist ISO 22301:2019 · Sin almacenamiento de datos</div>';
             });

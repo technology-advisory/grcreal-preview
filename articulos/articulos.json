@@ -384,10 +384,11 @@
     "cat": "compliance",
     "meta": "Compliance · Introducción",
     "title": "Compliance: no es cosa de abogados (ni solo para grandes)",
-    "date": "23 Abril 2025",
+    "date": "25 Mayo 2026",
     "desc": "Cumplir la ley no es solo evitar multas.",
     "url": "compliance/Compliance_para_principiantes.html",
-    "published": false
+    "published": true,
+    "badge": "Nuevo"
   },
   {
     "id": 40,
@@ -397,8 +398,7 @@
     "date": "18 Mayo 2026",
     "desc": "Pequeño no significa invisible.",
     "url": "compliance/Compliance_para_PYMEs.html",
-    "published": true,
-    "badge": "Nuevo"
+    "published": true
   },
   {
     "id": 41,
@@ -418,18 +418,18 @@
     "date": "18 Mayo 2026",
     "desc": "El borrado seguro es obligatorio en el ENS.",
     "url": "ens/borrado-seguro-ens.html",
-    "published": true,
-    "badge": "Nuevo"
+    "published": true
   },
   {
     "id": 43,
     "cat": "ens",
     "meta": "ENS · Categorías",
     "title": "Niveles y compromisos del ENS: Básico, Medio y Alto",
-    "date": "23 Abril 2025",
+    "date": "25 Mayo 2026",
     "desc": "El ENS tiene tres categorías con obligaciones muy distintas.",
     "url": "ens/niveles-ens.html",
-    "published": false
+    "published": true,
+    "badge": "Nuevo"
   },
   {
     "id": 44,
@@ -489,8 +489,7 @@
     "date": "18 Mayo 2026",
     "desc": "Las pymes también tienen obligaciones de seguridad.",
     "url": "grc/grc-pymes-sin-expertos.html",
-    "published": true,
-    "badge": "Nuevo"
+    "published": true
   },
   {
     "id": 50,
@@ -524,13 +523,14 @@
   },
   {
     "id": 53,
-    "cat": "grc",
+    "cat": "iso22301",
     "meta": "ISO 22301 · Continuidad",
     "title": "ISO 22301 vs BCP casero: las diferencias que importan",
-    "date": "23 Abril 2025",
+    "date": "25 Mayo 2026",
     "desc": "Muchas organizaciones tienen un plan de continuidad hecho internamente.",
-    "url": "grc/iso22301-vs-bcp-casero.html",
-    "published": false
+    "url": "iso22301/iso22301-vs-bcp-casero.html",
+    "published": true,
+    "badge": "Nuevo"
   },
   {
     "id": 54,
@@ -567,10 +567,11 @@
     "cat": "nis2",
     "meta": "NIS2 · Regulación",
     "title": "NIS2: entidades esenciales vs importantes",
-    "date": "23 Abril 2025",
+    "date": "25 Mayo 2026",
     "desc": "No todas las entidades sujetas a NIS2 tienen las mismas obligaciones.",
     "url": "nis2/nis2-entidades-esenciales-importantes.html",
-    "published": false
+    "published": true,
+    "badge": "Nuevo"
   },
   {
     "id": 58,

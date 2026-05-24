@@ -1,5 +1,5 @@
 // pdf-export.js · GRCreal · Diseño corporativo v3
-// Donut real + barras de cláusula dinámicas desde el DOM
+// CORREGIDO: Detección multi-norma funcionando correctamente
 
 function exportPDF() {
   const items = document.querySelectorAll('.checklist-item');
@@ -33,8 +33,6 @@ function exportPDF() {
   }, 5000);
 }
 
-// Dibuja un arco en jsPDF (para el donut)
-// cx,cy = centro, r = radio, startDeg, endDeg en grados, color RGB array
 function _drawArc(doc, cx, cy, r, startDeg, endDeg, color, lineWidth) {
   const steps = 60;
   const start = (startDeg - 90) * Math.PI / 180;
@@ -51,13 +49,11 @@ function _drawArc(doc, cx, cy, r, startDeg, endDeg, color, lineWidth) {
   }
 }
 
-// Extrae el número de cláusula principal de un código (ej: "8.2.3" → 8, "10.1" → 10)
 function _clauseNum(code) {
   const m = code.trim().match(/^(\d+)/);
   return m ? parseInt(m[1], 10) : -1;
 }
 
-// Calcula % de implementados para controles cuya cláusula principal esté en el array de números
 function _pctByClause(items, clauseNums) {
   let impl = 0, total = 0;
   items.forEach(item => {
@@ -69,7 +65,78 @@ function _pctByClause(items, clauseNums) {
   return total > 0 ? Math.round((impl / total) * 100) : 0;
 }
 
+// ============================================================
+// DETECCIÓN AUTOMÁTICA DE LA NORMA
+// ============================================================
+
+// Mapa de valores data-norma → etiqueta legible en el PDF
+const _NORMA_MAP = {
+  'Mapeo':    'Mapeo NIS2/ISO27001/ENS/DORA',
+  'NIS2':     'NIS2 Directive',
+  'DORA':     'DORA (UE 2022/2554)',
+  'ENS':      'ENS (RD 311/2022)',
+  'ISO27001': 'ISO 27001:2022',
+  'ISO22301': 'ISO 22301:2019',
+  'ISO42001': 'ISO 42001:2023',
+};
+
+function detectarNorma() {
+  // Recoge las tres fuentes posibles de forma segura
+  const src      = (typeof window._checklistSrc === 'string') ? window._checklistSrc : '';
+  const dataNorma= (document.body && document.body.getAttribute('data-norma')) ? document.body.getAttribute('data-norma') : '';
+  const url      = window.location.pathname || '';
+
+  // Concatena solo strings reales (nunca 'null' como string)
+  const ref = [src, dataNorma, url].join(' ').toLowerCase();
+  console.log('🔍 detectarNorma ref:', ref);
+
+  // Orden importante: más específicos primero
+  if (ref.includes('mapeo'))    return 'Mapeo NIS2/ISO27001/ENS/DORA';
+  if (ref.includes('iso42001')) return 'ISO 42001:2023';
+  if (ref.includes('iso27001')) return 'ISO 27001:2022';
+  if (ref.includes('iso22301')) return 'ISO 22301:2019';
+  if (ref.includes('nis2'))     return 'NIS2 Directive';
+  if (ref.includes('dora'))     return 'DORA (UE 2022/2554)';
+  if (ref.includes('ens')) {
+    const activeTab = document.querySelector('.tab-btn.active');
+    const tab = activeTab ? activeTab.getAttribute('data-tab') : '';
+    if (tab === 'media') return 'ENS - Nivel Medio';
+    if (tab === 'alta')  return 'ENS - Nivel Alto';
+    return 'ENS - Nivel Básico';
+  }
+
+  console.warn('⚠️ Norma no detectada. ref:', ref);
+  return 'GRCreal Checklist';
+}
+
+
+
+function getFileNameBase(norma) {
+  if (norma.includes('Mapeo'))     return 'GRCreal_Mapeo';
+  if (norma.includes('ISO 27001')) return 'GRCreal_ISO27001';
+  if (norma.includes('ISO 42001')) return 'GRCreal_ISO42001';
+  if (norma.includes('ISO 22301')) return 'GRCreal_ISO22301';
+  if (norma.includes('NIS2'))      return 'GRCreal_NIS2';
+  if (norma.includes('DORA'))      return 'GRCreal_DORA';
+  if (norma.includes('ENS')) {
+    if (norma.includes('Básico')) return 'GRCreal_ENS_Basica';
+    if (norma.includes('Medio'))  return 'GRCreal_ENS_Media';
+    if (norma.includes('Alto'))   return 'GRCreal_ENS_Alta';
+    return 'GRCreal_ENS';
+  }
+  return 'GRCreal_Checklist';
+}
+
+// ============================================================
+// GENERACIÓN DEL PDF
+// ============================================================
 function generatePDF(jsPDF) {
+  const NORMA = detectarNorma();
+  const FILE_BASE = getFileNameBase(NORMA);
+  
+  console.log('📄 Norma detectada:', NORMA);
+  console.log('📁 Base nombre archivo:', FILE_BASE);
+  
   const doc = new jsPDF({ orientation: 'portrait', unit: 'mm', format: 'a4' });
   const items = document.querySelectorAll('.checklist-item');
 
@@ -81,9 +148,8 @@ function generatePDF(jsPDF) {
   const total = items.length;
   const pct = total > 0 ? Math.round((implementados / total) * 100) : 0;
   const today = new Date().toLocaleDateString('es-ES', { day: '2-digit', month: '2-digit', year: 'numeric' });
-  const fileName = `GRCreal_ISO22301_${today.replace(/\//g, '-')}.pdf`;
+  const fileName = `${FILE_BASE}_${today.replace(/\//g, '-')}.pdf`;
 
-  // ── PALETA ──
   const C = {
     azulDark:  [13,  61,  80],
     azul:      [26,  95, 122],
@@ -104,9 +170,7 @@ function generatePDF(jsPDF) {
   const CW = 210 - M * 2;
   let y = 0;
 
-  // ════════════════════════════════════════════
   // CABECERA
-  // ════════════════════════════════════════════
   doc.setFillColor(...C.azulDark);
   doc.rect(0, 0, 210, 52, 'F');
 
@@ -130,15 +194,25 @@ function generatePDF(jsPDF) {
   doc.setTextColor(...C.blanco);
   doc.setFontSize(10);
   doc.setFont('helvetica', 'bold');
-  doc.text('ISO 22301:2019', 171, 21.5, { align: 'center' });
+  doc.text(NORMA, 171, 21.5, { align: 'center' });
 
   doc.setTextColor(...C.blanco);
   doc.setFontSize(10);
   doc.setFont('helvetica', 'normal');
-  doc.text('Informe de autoevaluacion — Continuidad de Negocio', M, 37);
+  
+  let descripcion = 'Informe de autoevaluación';
+  if (NORMA.includes('ISO 27001')) descripcion += ' — Sistema de Gestión de Seguridad de la Información';
+  else if (NORMA.includes('NIS2')) descripcion += ' — Directiva NIS2 Article 21';
+  else if (NORMA.includes('DORA')) descripcion += ' — Resiliencia Operativa Digital';
+  else if (NORMA.includes('ENS')) descripcion += ' — Esquema Nacional de Seguridad';
+  else if (NORMA.includes('ISO 22301')) descripcion += ' — Continuidad de Negocio';
+  else if (NORMA.includes('ISO 42001')) descripcion += ' — Gobernanza de Inteligencia Artificial';
+  else if (NORMA.includes('Mapeo')) descripcion += ' — Mapeo multi-marco';
+  
+  doc.text(descripcion, M, 37);
   doc.setFontSize(7.5);
   doc.setTextColor(140, 185, 205);
-  doc.text('Evaluacion realizada: ' + today, M, 43.5);
+  doc.text('Evaluación realizada: ' + today, M, 43.5);
   doc.setLineWidth(0.3);
   doc.setDrawColor(45, 122, 154);
   doc.line(M, 47, 210 - M, 47);
@@ -149,9 +223,7 @@ function generatePDF(jsPDF) {
 
   y = 62;
 
-  // ════════════════════════════════════════════
   // KPI CARDS
-  // ════════════════════════════════════════════
   const kpis = [
     { val: String(total),           label: 'TOTAL CONTROLES',  color: C.gris  },
     { val: String(implementados),   label: 'IMPLEMENTADOS',    color: C.verde },
@@ -178,9 +250,7 @@ function generatePDF(jsPDF) {
 
   y += 30;
 
-  // ════════════════════════════════════════════
   // BARRA DE PROGRESO
-  // ════════════════════════════════════════════
   doc.setTextColor(...C.gris);
   doc.setFontSize(7.5);
   doc.setFont('helvetica', 'normal');
@@ -199,10 +269,10 @@ function generatePDF(jsPDF) {
   y += 10;
 
   let nivelLabel, nivelBg, nivelTx;
-  if (pct >= 80)      { nivelLabel = 'Cumplimiento avanzado — Sistema solido. Alineado con ISO 22301.';    nivelBg = C.azulLight;  nivelTx = C.azul; }
+  if (pct >= 80)      { nivelLabel = 'Cumplimiento avanzado — Sistema sólido. Alineado con la norma.';    nivelBg = C.azulLight;  nivelTx = C.azul; }
   else if (pct >= 60) { nivelLabel = 'Cumplimiento destacado — Buen nivel. Mejoras puntuales.';             nivelBg = C.verdeLight; nivelTx = C.verde; }
   else if (pct >= 30) { nivelLabel = 'Cumplimiento parcial — Base establecida. Oportunidades de mejora.';  nivelBg = [254,243,199]; nivelTx = [146,64,14]; }
-  else                { nivelLabel = 'Cumplimiento inicial — En progreso. Implementacion en marcha.';       nivelBg = C.rojoLight;  nivelTx = C.rojo; }
+  else                { nivelLabel = 'Cumplimiento inicial — En progreso. Implementación en marcha.';       nivelBg = C.rojoLight;  nivelTx = C.rojo; }
 
   doc.setFillColor(...nivelBg);
   doc.roundedRect(M, y - 4, CW, 8, 2, 2, 'F');
@@ -213,38 +283,29 @@ function generatePDF(jsPDF) {
 
   y += 14;
 
-  // ════════════════════════════════════════════
-  // DOS COLUMNAS: DONUT  |  BARRAS POR CLÁUSULA
-  // ════════════════════════════════════════════
+  // DOS COLUMNAS
   const colW = (CW - 6) / 2;
 
-  // ── Sección título ──
   doc.setFillColor(...C.azulLight);
   doc.rect(M, y, CW, 0.5, 'F');
   y += 5;
+  const sectionY = y;
 
-  const sectionY = y;  // guardar Y inicio de sección gráficos
-
-  // ── DONUT (columna izquierda) ──
   const donutCX = M + colW / 2;
   const donutCY = sectionY + 34;
   const donutR  = 16;
   const trackW  = 4.5;
 
-  // Título col izq
   doc.setTextColor(...C.azul);
   doc.setFontSize(7);
   doc.setFont('helvetica', 'bold');
   doc.text('DISTRIBUCIÓN DE ESTADO', M + colW / 2, sectionY + 4, { align: 'center' });
 
-  // Track gris (círculo completo)
   _drawArc(doc, donutCX, donutCY, donutR, 0, 360, C.grisBorde, trackW);
 
-  // Arco implementados (azul) — de 0 a pct*3.6 grados
   if (implementados > 0) {
     _drawArc(doc, donutCX, donutCY, donutR, 0, (implementados / total) * 360, C.azul, trackW);
   }
-  // Arco no implementados (rojo) — continúa donde termina el azul
   if (noImplementados > 0) {
     _drawArc(doc, donutCX, donutCY, donutR,
       (implementados / total) * 360,
@@ -252,7 +313,6 @@ function generatePDF(jsPDF) {
       [200, 120, 90], trackW);
   }
 
-  // Texto central
   doc.setTextColor(...C.azul);
   doc.setFontSize(12);
   doc.setFont('helvetica', 'bold');
@@ -262,28 +322,24 @@ function generatePDF(jsPDF) {
   doc.setTextColor(...C.gris);
   doc.text('global', donutCX, donutCY + 7, { align: 'center' });
 
-  // Leyenda donut
   const legY = sectionY + 56;
-  // Punto azul + texto
   doc.setFillColor(...C.azul);
   doc.roundedRect(M + 8, legY - 2.5, 5, 3, 0.5, 0.5, 'F');
   doc.setTextColor(...C.gris);
   doc.setFontSize(6.5);
   doc.text('Implementado (' + implementados + ')', M + 15, legY);
-  // Punto rojo + texto
   doc.setFillColor(200, 120, 90);
   doc.roundedRect(M + 8, legY + 3.5, 5, 3, 0.5, 0.5, 'F');
   doc.text('No implementado (' + noImplementados + ')', M + 15, legY + 6);
 
-  // ── BARRAS POR CLÁUSULA (columna derecha) ──
+  // BARRAS POR CLÁUSULA
   const colRX = M + colW + 6;
   doc.setTextColor(...C.azul);
   doc.setFontSize(7);
   doc.setFont('helvetica', 'bold');
   doc.text('CUMPLIMIENTO POR CLÁUSULA', colRX + colW / 2, sectionY + 4, { align: 'center' });
 
-  // Calcular % reales desde el DOM (por número de cláusula, sin ambigüedad de prefijos)
-  const clausulas = [
+  let clausulas = [
     { name: 'Cl. 4 — Contexto',   nums: [4] },
     { name: 'Cl. 5 — Liderazgo',  nums: [5] },
     { name: 'Cl. 7 — Soporte',    nums: [7] },
@@ -291,11 +347,22 @@ function generatePDF(jsPDF) {
     { name: 'Cl. 9 — Evaluación', nums: [9] },
     { name: 'Cl. 10 — Mejora',    nums: [10] },
   ];
+  
+  if (NORMA.includes('ISO')) {
+    clausulas = [
+      { name: 'Cl. 4 — Contexto',   nums: [4] },
+      { name: 'Cl. 5 — Liderazgo',  nums: [5] },
+      { name: 'Cl. 6 — Planificación', nums: [6] },
+      { name: 'Cl. 7 — Soporte',    nums: [7] },
+      { name: 'Cl. 8 — Operación',  nums: [8] },
+      { name: 'Cl. 9 — Evaluación', nums: [9] },
+      { name: 'Cl. 10 — Mejora',    nums: [10] },
+    ];
+  }
 
   const barAreaW = colW - 4;
   const labelBarW = 30;
-  const pctLbW = 10;
-  const barFillW = barAreaW - labelBarW - pctLbW - 4;
+  const barFillW = barAreaW - labelBarW - 14;
   const barH2 = 4;
   const barGap2 = 9;
   let barY = sectionY + 12;
@@ -321,9 +388,7 @@ function generatePDF(jsPDF) {
 
   y = Math.max(donutCY + 30, barY) + 8;
 
-  // ════════════════════════════════════════════
   // TABLA DE CONTROLES
-  // ════════════════════════════════════════════
   doc.setFillColor(...C.azulLight);
   doc.rect(M, y, CW, 0.5, 'F');
   y += 5;
@@ -389,14 +454,14 @@ function generatePDF(jsPDF) {
       doc.setTextColor(...C.verde);
       doc.setFontSize(6.5);
       doc.setFont('helvetica', 'bold');
-      doc.text('Implantado', M + CW - 26.5, y + 5);
+      doc.text('Implementado', M + CW - 26.5, y + 5);
     } else if (isNoImpl) {
       doc.setFillColor(...C.rojoLight);
       doc.roundedRect(M + CW - 28, y + 1, 26, 5.5, 1.5, 1.5, 'F');
       doc.setTextColor(...C.rojo);
       doc.setFontSize(6.5);
       doc.setFont('helvetica', 'bold');
-      doc.text('No impl.', M + CW - 26.5, y + 5);
+      doc.text('No implementado', M + CW - 26.5, y + 5);
     }
 
     doc.setDrawColor(...C.grisBorde);
@@ -407,11 +472,11 @@ function generatePDF(jsPDF) {
     rowAlt = !rowAlt;
   }
 
-  _drawFooter(doc, C, today);
+  _drawFooter(doc, C, today, NORMA);
   doc.save(fileName);
 }
 
-function _drawFooter(doc, C, today) {
+function _drawFooter(doc, C, today, norma) {
   const pages = doc.getNumberOfPages();
   for (let i = 1; i <= pages; i++) {
     doc.setPage(i);
@@ -422,6 +487,6 @@ function _drawFooter(doc, C, today) {
     doc.setFont('helvetica', 'normal');
     doc.text('GRCreal · grcreal.com · Autoevaluación sin valor legal · Datos no almacenados', 16, 293);
     doc.setTextColor(120, 160, 180);
-    doc.text(today + '  ·  Página ' + i + ' de ' + pages, 210 - 16, 293, { align: 'right' });
+    doc.text(today + '  ·  ' + norma + '  ·  Página ' + i + ' de ' + pages, 210 - 16, 293, { align: 'right' });
   }
 }

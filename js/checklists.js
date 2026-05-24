@@ -3,6 +3,7 @@
 let checklistData = null;
 
 function cargarChecklist(jsonUrl) {
+    window._checklistSrc = jsonUrl;
     fetch(jsonUrl)
         .then(response => response.json())
         .then(data => {
