@@ -2,6 +2,10 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
+<link rel="stylesheet" href="../../css/marca.css">
+<link rel="stylesheet" href="../../css/global.css">
+<link rel="stylesheet" href="../../css/dossier-core.css">
+<link rel="stylesheet" href="../../css/dossier-articulo.css">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0">
 <title>Gestión de Proveedores · Third Party Risk · GRCreal</title>
 <meta name="description" content="Evalúa el riesgo de tu cadena de suministro: clasifica proveedores por criticidad y acceso a datos, controla cláusulas contractuales y certificaciones, y genera evidencias para auditoría. ISO 27001 A.5.19, NIS2. Sin registro, sin almacenamiento.">
@@ -51,6 +55,14 @@ table.reg input:focus,table.reg select:focus{border-color:var(--ds-accent);backg
 </style>
 </head>
 <body>
+    <div id="nav-placeholder"></div>
+<script>
+    fetch('/includes/nav.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('nav-placeholder').outerHTML = data;
+        });
+</script>
 <div class="wrap">
   <div class="ds-meta">
     <span class="ds-ref">REF.TOOL-PROV</span>
@@ -191,5 +203,7 @@ function exportPDF(){
 }
 seedDemo();
 </script>
+</div><!-- /card -->
+</div><!-- /card-wrapper -->
 </body>
 </html>

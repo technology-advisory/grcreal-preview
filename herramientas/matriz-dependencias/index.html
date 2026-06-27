@@ -2,6 +2,10 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
+<link rel="stylesheet" href="../../css/marca.css">
+<link rel="stylesheet" href="../../css/global.css">
+<link rel="stylesheet" href="../../css/dossier-core.css">
+<link rel="stylesheet" href="../../css/dossier-articulo.css">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0">
 <title>Matriz de Dependencias · SPOF · GRCreal</title>
 <meta name="description" content="Mapea dependencias entre procesos, sistemas, infraestructura y proveedores. Detecta puntos únicos de fallo (SPOF) que no aparecen en los organigramas. Sin registro, sin almacenamiento.">
@@ -62,6 +66,14 @@ table.mtx td.on{background:#e3edf8}
 </style>
 </head>
 <body>
+    <div id="nav-placeholder"></div>
+<script>
+    fetch('/includes/nav.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('nav-placeholder').outerHTML = data;
+        });
+</script>
 <div class="wrap">
   <div class="ds-meta">
     <span class="ds-ref">REF.TOOL-DEP</span>
@@ -248,5 +260,7 @@ function exportPDF(){
 }
 seedDemo();
 </script>
+</div><!-- /card -->
+</div><!-- /card-wrapper -->
 </body>
 </html>

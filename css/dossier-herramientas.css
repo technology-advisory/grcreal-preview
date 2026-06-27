@@ -70,6 +70,18 @@
   color:#fff;background:var(--ds-navy,#14233b);border:1px solid var(--ds-navy,#14233b);
   padding:9px 16px;text-decoration:none}
 .hr-cta:hover{background:#0d1828}
+.hr-cta.disabled{
+  background:#d9dee5;
+  border-color:#d9dee5;
+  color:#7b8794;
+  pointer-events:none;
+  cursor:not-allowed;
+  opacity:.85;
+}
+
+.hr-cta.disabled:hover{
+  background:#d9dee5;
+}
 
 /* ---- estado bloqueado ---- */
 .hr-card.locked{border-top-color:var(--ds-line,#d3dae3)}
