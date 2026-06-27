@@ -1,0 +1,907 @@
+{
+  "titulo": "ENS (Esquema Nacional de Seguridad)",
+  "tema": "RD 311/2022 · ENS",
+  "descripcion": "Auditoría y certificación en el Esquema Nacional de Seguridad. 80 preguntas sobre medidas de seguridad, categorización de sistemas, gestión de riesgos y ciberseguridad.",
+  "preguntas": [
+    {
+      "q": "El Auditor Jefe se deberá asegurar que se realiza...",
+      "o": [
+        "La evaluación del logro de los objetivos de la auditoría.",
+        "La distribución de los informes de auditoría a todas las partes interesadas.",
+        "La comunicación de los resultados de la auditoría y las mejores prácticas.",
+        "Todas son correctas."
+      ],
+      "c": 3,
+      "e": "El Auditor Jefe debe asegurar que se cumplan todos los aspectos: evaluación de objetivos, distribución del informe a partes interesadas relevantes, y comunicación de resultados y buenas prácticas."
+    },
+    {
+      "q": "En una entidad de certificación, seleccionar los métodos de auditoría, definir objetivos, alcance y criterios, y garantizar que el equipo tiene la competencia necesaria, son tarea del:",
+      "o": [
+        "Equipo auditor principal.",
+        "Responsable Técnico.",
+        "Partes interesadas relevantes.",
+        "Auditor Jefe."
+      ],
+      "c": 1,
+      "e": "El Responsable Técnico de la entidad de certificación es quien define la metodología, objetivos, alcance y criterios, y garantiza la competencia del equipo auditor."
+    },
+    {
+      "q": "En una auditoría, se deberán tener bien definidos...",
+      "o": [
+        "Los objetivos.",
+        "El alcance.",
+        "Los resultados de auditoría.",
+        "Todas son correctas."
+      ],
+      "c": 3,
+      "e": "Una auditoría requiere tener claramente definidos los objetivos, el alcance y los resultados esperados para garantizar su eficacia."
+    },
+    {
+      "q": "El equipo auditor deberá informar con sinceridad y precisión los resultados de la auditoría, las conclusiones de la misma, de forma que se vea reflejado de manera veraz y precisa las actividades realizadas. Esto es...",
+      "o": ["Verdadero", "Falso"],
+      "c": 0,
+      "e": "Los auditores deben actuar con integridad, honestidad y precisión al informar los resultados y conclusiones de la auditoría."
+    },
+    {
+      "q": "Una auditoría puede tener lugar en relación con varios criterios de auditoría (por separado o en combinación), como por ejemplo:",
+      "o": [
+        "Un estándar internacional, como una norma ISO.",
+        "Requisitos legales (ENS o RGPD).",
+        "Requisitos reglamentarios.",
+        "Todas son correctas."
+      ],
+      "c": 3,
+      "e": "Los criterios de auditoría pueden incluir normas ISO, requisitos legales como el ENS o RGPD, y otros requisitos reglamentarios aplicables."
+    },
+    {
+      "q": "El alcance de un programa de auditoría debe basarse en:",
+      "o": [
+        "El tamaño y la naturaleza del auditado.",
+        "La funcionalidad y complejidad del sistema a auditar.",
+        "El nivel de madurez del sistema a auditar.",
+        "Todas las anteriores."
+      ],
+      "c": 3,
+      "e": "El alcance del programa de auditoría debe considerar múltiples factores: tamaño, naturaleza, complejidad, funcionalidad y madurez del sistema auditado."
+    },
+    {
+      "q": "¿Qué se debe tener en cuenta para entender el contexto del auditado?",
+      "o": [
+        "Los objetivos de la organización.",
+        "Los asuntos externos e internos relevantes.",
+        "Las necesidades y expectativas de las partes interesadas.",
+        "Todas son correctas."
+      ],
+      "c": 3,
+      "e": "Para entender el contexto del auditado se deben considerar sus objetivos, los factores internos y externos relevantes, y las expectativas de las partes interesadas."
+    },
+    {
+      "q": "Las auditorías externas pueden llamarse también:",
+      "o": [
+        "Auditorías de primera parte.",
+        "Auditorías de segunda parte.",
+        "Auditorías de tercera parte.",
+        "Auditorías de segunda y tercera parte."
+      ],
+      "c": 3,
+      "e": "Las auditorías externas pueden ser de segunda parte (cliente a proveedor) o de tercera parte (realizadas por entidades de certificación independientes)."
+    },
+    {
+      "q": "¿Cuál NO es una obligación de las entidades de certificación?",
+      "o": [
+        "Mantener a disposición del CCN los Informes de Auditoría.",
+        "Mantener una vigilancia esporádica de las Guías CCN-STIC.",
+        "Comunicar al CCN cualquier circunstancia que limite la calidad o imparcialidad.",
+        "Realizar auditorías sin coste para el sector público."
+      ],
+      "c": 3,
+      "e": "Las entidades de certificación no tienen la obligación de realizar auditorías gratuitas; deben cumplir con la transparencia, vigilancia y comunicación al CCN."
+    },
+    {
+      "q": "¿En qué casos NO se puede expedir una Certificación de Conformidad?",
+      "o": [
+        "Cuando existiera una No Conformidad Mayor.",
+        "Cuando existiera una Conformidad.",
+        "Cuando no se hubiere presentado y evaluado satisfactoriamente el PAC.",
+        "Cuando existiera una No Conformidad Menor."
+      ],
+      "c": 0,
+      "e": "La existencia de una No Conformidad Mayor impide la expedición de la certificación hasta que sea corregida y verificada su eficacia."
+    },
+    {
+      "q": "Con respecto a la realización de auditorías de certificación en modo remoto...",
+      "o": [
+        "Se requiere evidencia presencial obligatoriamente.",
+        "No es estrictamente necesaria la presencia física usando medios electrónicos.",
+        "Solo el Auditor Jefe decide si puede ser remota.",
+        "No está permitido el modo remoto en el ENS."
+      ],
+      "c": 1,
+      "e": "Las auditorías remotas son posibles siempre que se puedan alcanzar niveles adecuados de garantía usando medios electrónicos o telemáticos."
+    },
+    {
+      "q": "Las Entidades de Certificación del ENS deberán disponer de un método para obtener, de cada evaluación realizada, un documento con el número de conformidades detectadas. Esto es...",
+      "o": ["Verdadero", "Falso"],
+      "c": 0,
+      "e": "Las entidades deben documentar y registrar las conformidades detectadas en cada evaluación para garantizar la trazabilidad y transparencia del proceso."
+    },
+    {
+      "q": "¿Qué se debe hacer con las No Conformidades detectadas?",
+      "o": [
+        "No es necesario verificarlas.",
+        "Hay que verificar que todas las No Conformidades se han corregido.",
+        "Solo hay que verificar las No Conformidades mayores.",
+        "Solo hay que verificar las No Conformidades menores."
+      ],
+      "c": 1,
+      "e": "Todas las No Conformidades, independientemente de su gravedad, deben ser corregidas y verificadas para asegurar la eficacia del sistema."
+    },
+    {
+      "q": "¿Es posible agrupar varias No conformidades menores en una sola No Conformidad Menor?",
+      "o": [
+        "Sí, aunque se refieran a distintos grupos de medidas.",
+        "Sí, pero siempre que no se refieran a distintos grupos de medidas.",
+        "No.",
+        "Solo si son del mismo grupo de medidas."
+      ],
+      "c": 1,
+      "e": "Las No Conformidades menores pueden agruparse siempre que pertenezcan al mismo grupo de medidas para facilitar su gestión."
+    },
+    {
+      "q": "En cuanto al número de jornadas de auditor, se deberá considerar...",
+      "o": [
+        "La complejidad del sistema de información.",
+        "La existencia de certificación ENS previa.",
+        "La homogeneidad tecnológica utilizada.",
+        "Todas las anteriores."
+      ],
+      "c": 3,
+      "e": "El número de jornadas de auditoría debe considerar la complejidad del sistema, certificaciones previas, acuerdos con terceros y homogeneidad tecnológica."
+    },
+    {
+      "q": "Para realizar las Auditorías de Certificación del ENS, se requerirá como mínimo del siguiente personal cualificado:",
+      "o": [
+        "Solo Auditor jefe.",
+        "Auditor jefe y Revisor de Expedientes.",
+        "Auditor jefe, Revisor de Expedientes, Responsable Técnico, Auditores y Expertos.",
+        "Solo Auditores."
+      ],
+      "c": 2,
+      "e": "El equipo mínimo para una auditoría de certificación ENS incluye: Auditor Jefe, Revisor de Expedientes, Responsable Técnico, Auditores y Expertos Técnicos según necesidad."
+    },
+    {
+      "q": "Cuando no se evidencie ninguna 'No Conformidad Mayor' o 'No Conformidad Menor', el dictamen del informe de Auditoría será:",
+      "o": ["Favorable.", "Favorable con no conformidades.", "Desfavorable.", "Condicionado."],
+      "c": 0,
+      "e": "Si no se detectan No Conformidades, el dictamen del informe de auditoría será Favorable (conforme)."
+    },
+    {
+      "q": "Una auditoría de cumplimiento del ENS debe realizarse de una forma metodológica que permita identificar:",
+      "o": ["Alcance, criterio y objetivos.", "Replanificación posterior.", "Los hallazgos encontrados.", "Todas son correctas."],
+      "c": 3,
+      "e": "La auditoría debe identificar alcance, criterios, objetivos y hallazgos, y permitir la replanificación si fuera necesario."
+    },
+    {
+      "q": "El informe de auditoría debe incluir como mínimo:",
+      "o": [
+        "Documentación revisada.",
+        "Firma de todas las partes interesadas.",
+        "La fecha de inicio de la auditoría.",
+        "El alcance, extensión y limitaciones."
+      ],
+      "c": 3,
+      "e": "El informe debe incluir al menos el alcance, extensión y limitaciones de la auditoría, además de la documentación revisada."
+    },
+    {
+      "q": "Un sistema de categoría básica...",
+      "o": [
+        "Requiere de una autoevaluación para su declaración de conformidad.",
+        "No debe nunca someterse a una auditoría formal.",
+        "Ninguna de las anteriores es correcta.",
+        "Solo requiere declaración responsable."
+      ],
+      "c": 0,
+      "e": "Los sistemas de categoría BÁSICA pueden optar por una declaración de conformidad basada en autoevaluación, sin necesidad de auditoría externa obligatoria."
+    },
+    {
+      "q": "En cuanto a las evidencias de la auditoría, se pueden tener en cuenta...",
+      "o": [
+        "Correos electrónicos.",
+        "Información recogida en entrevistas.",
+        "Pruebas de observación no documentadas.",
+        "Todas las anteriores."
+      ],
+      "c": 3,
+      "e": "Las evidencias de auditoría pueden incluir correos electrónicos, entrevistas, observaciones y cualquier otra fuente fiable de información."
+    },
+    {
+      "q": "¿Quiénes deben firmar una cláusula de confidencialidad?",
+      "o": [
+        "Los auditores internos.",
+        "Los auditores externos.",
+        "Ninguno de los dos.",
+        "Ambos, internos y externos."
+      ],
+      "c": 1,
+      "e": "Los auditores externos deben firmar cláusulas de confidencialidad. Los internos ya están sujetos a deberes de confidencialidad por su relación laboral."
+    },
+    {
+      "q": "¿Qué se debe valorar al definir las pruebas a realizar?",
+      "o": [
+        "Si es necesario solicitar cuentas de acceso al sistema auditado.",
+        "Si hace falta verificación técnica por personal especializado.",
+        "El riesgo de interrupción del servicio.",
+        "Todas las anteriores."
+      ],
+      "c": 3,
+      "e": "Al definir las pruebas se debe valorar la necesidad de cuentas de acceso, verificación técnica especializada y el riesgo de interrupción del servicio."
+    },
+    {
+      "q": "Las medidas de protección del ENS incluyen...",
+      "o": [
+        "Protección de instalaciones e infraestructuras.",
+        "Protección de equipos y aplicaciones informáticas.",
+        "Protección de comunicaciones y soportes de información.",
+        "Todas las anteriores."
+      ],
+      "c": 3,
+      "e": "Las medidas de protección del ENS abarcan instalaciones, equipos, aplicaciones, comunicaciones y soportes de información."
+    },
+    {
+      "q": "Un Sistema Informático es:",
+      "o": [
+        "Un conjunto de elementos tecnológicos que interactúan.",
+        "Un conjunto de elementos que incluyen personas.",
+        "Equivalente a un Sistema de Gestión.",
+        "Un conjunto de instrumentos organizativos."
+      ],
+      "c": 1,
+      "e": "Un Sistema Informático es un conjunto de elementos, habitualmente tecnológicos pero que suelen incluir personas, que interactúan para soportar servicios."
+    },
+    {
+      "q": "Un Sistema de Gestión es:",
+      "o": [
+        "El conjunto de instrumentos organizativos interrelacionados.",
+        "Un sistema informático.",
+        "Una base de datos.",
+        "Un conjunto de hardware."
+      ],
+      "c": 0,
+      "e": "Un Sistema de Gestión es el conjunto de instrumentos organizativos (políticas, normas, procedimientos) orientados a mejorar la eficacia y eficiencia."
+    },
+    {
+      "q": "Para determinar las medidas de seguridad aplicables a un sistema, debe tenerse en cuenta:",
+      "o": [
+        "La categoría del sistema.",
+        "La gestión de riesgos.",
+        "Las dos respuestas anteriores son correctas.",
+        "Solo los requisitos legales."
+      ],
+      "c": 2,
+      "e": "La determinación de medidas de seguridad se basa tanto en la categoría del sistema como en la gestión de riesgos específica."
+    },
+    {
+      "q": "En relación a los riesgos de seguridad que presentan los documentos electrónicos, debemos considerar que:",
+      "o": [
+        "El posible agresor no requiere siempre acceso físico.",
+        "El riesgo corresponde solo a actos deliberados.",
+        "Los errores no detectados apenas afectan.",
+        "Solo requieren medidas lógicas."
+      ],
+      "c": 0,
+      "e": "Los documentos electrónicos pueden ser atacados remotamente, sin necesidad de acceso físico a las instalaciones."
+    },
+    {
+      "q": "¿Qué afirmación sobre el ENS NO es correcta?",
+      "o": [
+        "Las medidas se detallan en el Anexo II del RD 3/2010.",
+        "Varias medidas se aplican según la categoría del sistema.",
+        "El ENS distingue tres categorías: BÁSICA, MEDIA y ALTA.",
+        "El nuevo RD dispone de 75 medidas para categoría alta."
+      ],
+      "c": 0,
+      "e": "El Anexo con las medidas de seguridad no es el Anexo II sino otros anexos del RD correspondiente (actualmente RD 311/2022)."
+    },
+    {
+      "q": "¿Qué afirmación sobre la Política de Seguridad (PSI) es correcta?",
+      "o": [
+        "Es el primer documento a elaborar, aprobar y difundir.",
+        "Se elabora después de la categorización.",
+        "No es necesaria para la certificación.",
+        "Solo aplica a sistemas de categoría ALTA."
+      ],
+      "c": 0,
+      "e": "La Política de Seguridad de la Información es el documento fundamental que marca la estrategia de seguridad y debe elaborarse, aprobarse y difundirse inicialmente."
+    },
+    {
+      "q": "Según la norma ISO 31000:2018 sobre Gestión del Riesgo, ¿qué afirmación NO es cierta?",
+      "o": [
+        "La gestión incluye identificación, análisis, evaluación y tratamiento.",
+        "La probabilidad de amenaza depende de las vulnerabilidades.",
+        "En la fase de análisis se obtiene el valor del riesgo.",
+        "La fase de identificación asocia amenazas a activos."
+      ],
+      "c": 1,
+      "e": "La probabilidad de materialización de una amenaza depende directamente de las vulnerabilidades del activo afectado."
+    },
+    {
+      "q": "¿Qué afirmación sobre el Plan de Tratamiento de Riesgos (PTR) es correcta?",
+      "o": [
+        "Es consecuencia de identificar, analizar y evaluar riesgos.",
+        "Contiene la planificación de acciones de mitigación.",
+        "Las dos anteriores son correctas.",
+        "Solo aplica a riesgos altos."
+      ],
+      "c": 2,
+      "e": "El PTR es el resultado del análisis de riesgos y contiene la planificación de acciones para mitigar los riesgos inaceptables."
+    },
+    {
+      "q": "¿Qué afirmación sobre MAGERIT es correcta?",
+      "o": [
+        "MAGERIT dispone de catálogo de amenazas propio.",
+        "La metodología debe definirse al inicio del análisis.",
+        "Las dos anteriores son correctas.",
+        "MAGERIT no incluye guías de valoración."
+      ],
+      "c": 2,
+      "e": "MAGERIT incluye un catálogo de amenazas y requiere definir la metodología y escalas de valoración al inicio del análisis."
+    },
+    {
+      "q": "¿Cuál es la afirmación correcta sobre el ENS?",
+      "o": [
+        "El ENS es de adscripción voluntaria para el sector público.",
+        "Las medidas del anexo III se dividen en marcos organizativo, operacional y de protección.",
+        "Los artículos del RD 311/2022 son solo a efectos aclaratorios.",
+        "La seguridad como proceso integral es un principio básico del ENS."
+      ],
+      "c": 3,
+      "e": "La seguridad como un proceso integral es uno de los principios básicos del ENS, reflejado en el artículo 5 del RD 311/2022."
+    },
+    {
+      "q": "¿Qué afirmación es la más exacta sobre lo que certifica el ENS?",
+      "o": [
+        "Un Sistema de Gestión.",
+        "Un Sistema de Información.",
+        "Un Sistema de Información y para categorías MEDIA/ALTA adicionalmente un Sistema de Gestión.",
+        "Un Sistema de Calidad."
+      ],
+      "c": 2,
+      "e": "En el ENS se certifica un Sistema de Información, y para categorías MEDIA y ALTA también se requiere un Sistema de Gestión."
+    },
+    {
+      "q": "¿Cuál de estas acciones NO está sujeta a seguimiento continuo en un SGSI?",
+      "o": [
+        "Acciones para corregir desviaciones en indicadores.",
+        "Acciones para corregir No Conformidades.",
+        "Acciones para el tratamiento de riesgos inaceptables.",
+        "Acciones para elaborar la Política de Seguridad (PSI)."
+      ],
+      "c": 3,
+      "e": "La elaboración de la PSI es una acción inicial, no está sujeta a seguimiento continuo como las acciones correctivas y de tratamiento de riesgos."
+    },
+    {
+      "q": "¿Qué respuesta muestra un orden lógico de abordar diferentes fases en un proceso de adecuación al ENS?",
+      "o": [
+        "Análisis de riesgos; categorización; auditoría.",
+        "Política de seguridad; implementación; Declaración de Aplicabilidad.",
+        "Plan de Adecuación; Implementación; Certificación.",
+        "Plan de adecuación; vigilancia y mejora continua; implantación."
+      ],
+      "c": 2,
+      "e": "El orden lógico es: Plan de Adecuación, Implementación de la Seguridad y finalmente Certificación de Conformidad."
+    },
+    {
+      "q": "¿Qué afirmación sobre el análisis diferencial o GAP es correcta?",
+      "o": [
+        "Se emplea para verificar la situación de partida en la adecuación al ENS.",
+        "La Declaración de Aplicabilidad se elabora al final.",
+        "La gestión de riesgos no considera activos.",
+        "El riesgo residual no tiene en cuenta salvaguardas."
+      ],
+      "c": 0,
+      "e": "El análisis GAP se utiliza para conocer la situación inicial frente a los requisitos del ENS antes de iniciar el proceso de adecuación."
+    },
+    {
+      "q": "¿Qué respuesta NO es correcta sobre responsabilidades en el ENS?",
+      "o": [
+        "La responsabilidad de seguridad estará diferenciada de la del servicio.",
+        "El Responsable de Seguridad no puede coincidir con el DPD bajo ninguna circunstancia.",
+        "El Comité de Seguridad es el mecanismo de toma de decisiones.",
+        "Responsable del Servicio puede coincidir con Responsable de la Información."
+      ],
+      "c": 1,
+      "e": "El Responsable de Seguridad puede coincidir con el DPD en la misma persona física, siempre que se gestionen adecuadamente los posibles conflictos."
+    },
+    {
+      "q": "¿Qué afirmación sobre la PSI NO es correcta?",
+      "o": [
+        "Se plasmará en un documento escrito.",
+        "Es conveniente disponer de un registro de normativa aplicable.",
+        "Es procedente definir un protocolo de actualización del registro.",
+        "La política no es necesario publicarla ni ponerla a disposición del personal."
+      ],
+      "c": 3,
+      "e": "La política debe ser publicada y puesta a disposición de todo el personal de la organización, ya que es un documento fundamental del sistema de gestión."
+    },
+    {
+      "q": "En referencia a los activos, ¿qué afirmación NO es correcta?",
+      "o": [
+        "Activos esenciales son servicios e información.",
+        "En la valoración se consideran las cinco dimensiones de seguridad.",
+        "Las cinco dimensiones son: Confidencialidad, Integridad, Disponibilidad, Autenticidad y Trazabilidad.",
+        "La categoría del sistema la determina el mayor nivel en cualquier dimensión."
+      ],
+      "c": 2,
+      "e": "Las cinco dimensiones de seguridad del ENS son: Confidencialidad, Integridad, Disponibilidad, Autenticidad y Trazabilidad (no Resiliencia)."
+    },
+    {
+      "q": "Respecto a los riesgos evaluados como inaceptables, ¿qué afirmación es la más adecuada?",
+      "o": [
+        "Evitar un riesgo es, por ejemplo, eliminar una funcionalidad.",
+        "Transferir un riesgo es externalizar un servicio.",
+        "Las dos respuestas anteriores son correctas.",
+        "Aceptar un riesgo es incluirlo en tareas urgentes."
+      ],
+      "c": 2,
+      "e": "Evitar (eliminar funcionalidad) y transferir (externalizar) son opciones válidas de tratamiento de riesgos inaceptables."
+    },
+    {
+      "q": "En relación a la Declaración de Aplicabilidad, ¿qué respuesta NO es correcta?",
+      "o": [
+        "Contiene todas las medidas del ENS indicando cuáles aplican.",
+        "Es deseable justificar la no aplicabilidad de medidas excluidas.",
+        "Algunas organizaciones incluyen el nivel de madurez.",
+        "La Declaración de Aplicabilidad está orientada exclusivamente a la organización y no a un Sistema de Información."
+      ],
+      "c": 3,
+      "e": "La Declaración de Aplicabilidad está orientada a un Sistema de Información específico, no a la organización en general."
+    },
+    {
+      "q": "¿Qué afirmación sobre el Plan de Mejora de la Seguridad es correcta?",
+      "o": [
+        "Es el último entregable del Plan de Adecuación.",
+        "No tiene relación con la fase de Implantación.",
+        "No es conveniente priorizar las acciones.",
+        "Valorar en horas/jornadas no aporta valor."
+      ],
+      "c": 0,
+      "e": "El Plan de Mejora de la Seguridad es el resultado final de la fase de adecuación y contiene las acciones prioritarias a implementar."
+    },
+    {
+      "q": "¿Qué afirmación sobre la elección de medidas de seguridad del ENS es correcta?",
+      "o": [
+        "Obedece únicamente a la categoría del sistema.",
+        "Obedece a la categoría del sistema y a la gestión de riesgos.",
+        "El ENS define un nivel mínimo de madurez por categoría.",
+        "La falta de madurez no genera No Conformidad."
+      ],
+      "c": 1,
+      "e": "La elección de medidas aplicables puede seguir dos vías: según la categoría del sistema o según la gestión de riesgos específica."
+    },
+    {
+      "q": "¿Qué afirmación NO es correcta sobre instrumentos organizativos?",
+      "o": [
+        "La PSI es el instrumento de mayor rango.",
+        "La PSI se desarrolla mediante normas y procedimientos.",
+        "Una norma indica qué debe hacerse; un procedimiento cómo.",
+        "No es necesario registrar las autorizaciones concedidas."
+      ],
+      "c": 3,
+      "e": "Es necesario registrar y conservar las autorizaciones referidas a diferentes aspectos del sistema de información para garantizar la trazabilidad."
+    },
+    {
+      "q": "¿Qué respuesta es correcta sobre la clasificación de incidentes?",
+      "o": [
+        "Clasificar incidentes por tipología permite aprender de ellos.",
+        "Los SLA y ANS son conceptos diferentes pero relacionados.",
+        "El RPO es tiempo de recuperación; el RTO es información perdida.",
+        "La respuesta correcta es la a y la b."
+      ],
+      "c": 3,
+      "e": "Clasificar incidentes por tipología permite aprender de ellos, y SLA/ANS son conceptos relacionados con el nivel de servicio."
+    },
+    {
+      "q": "¿Qué afirmación sobre el BIA es correcta?",
+      "o": [
+        "Establece los requisitos de disponibilidad de los servicios.",
+        "A partir del árbol de dependencias determina activos críticos.",
+        "Un Plan de Continuidad no probado no ofrece garantías.",
+        "Todas las anteriores son correctas."
+      ],
+      "c": 3,
+      "e": "El BIA establece requisitos de disponibilidad, determina activos críticos mediante árbol de dependencias, y los planes no probados no garantizan nada."
+    },
+    {
+      "q": "¿Qué afirmación sobre medidas de protección NO es correcta?",
+      "o": [
+        "No es necesario llevar registro entrada/salida si hay inventario de activos.",
+        "La graduación de medidas depende del contexto y análisis de riesgos.",
+        "Si hay grupo electrógeno, se necesita SAI con baterías suficientes.",
+        "La climatización debe adecuarse a las especificaciones del fabricante."
+      ],
+      "c": 0,
+      "e": "Aunque exista inventario de activos, es necesario llevar un registro de entrada/salida de equipamiento para garantizar la trazabilidad."
+    },
+    {
+      "q": "Relacionado con el personal de la organización, ¿qué respuesta es la más correcta?",
+      "o": [
+        "Debe informarse a cada persona de sus deberes en seguridad.",
+        "Los empleados públicos no requieren cláusula de confidencialidad.",
+        "Las dos respuestas anteriores son correctas.",
+        "No es necesario acuerdo con proveedores."
+      ],
+      "c": 2,
+      "e": "Debe informarse a todo el personal de sus deberes de seguridad, y los empleados públicos ya tienen deber de confidencialidad por su estatuto."
+    },
+    {
+      "q": "En relación a la formación y concienciación, ¿qué respuesta NO es correcta?",
+      "o": [
+        "Formación y concienciación deben planificarse anualmente.",
+        "Si la formación es en remoto no es necesario valorar el resultado.",
+        "La formación debe focalizarse en seguridad y protección de datos.",
+        "El personal con responsabilidades debe recibir formación específica periódica."
+      ],
+      "c": 1,
+      "e": "Incluso si la formación es en remoto, es necesario valorar el resultado para evaluar su eficacia."
+    },
+    {
+      "q": "En relación a las comunicaciones, ¿qué afirmación es cierta?",
+      "o": [
+        "La seguridad perimetral requiere dos firewalls de diferentes fabricantes.",
+        "Las redes solo pueden segregarse físicamente.",
+        "Un ejemplo de segregación es diferenciar redes de servidores internos, publicados y WiFi.",
+        "Medios alternativos requieren dos compañías TELCO."
+      ],
+      "c": 2,
+      "e": "La segregación de redes puede incluir diferenciar redes de servidores internos, servidores publicados, WiFi de empleados y WiFi de visitas."
+    },
+    {
+      "q": "En relación a los soportes de información, ¿qué afirmación NO es cierta?",
+      "o": [
+        "Debe emplearse etiquetado donde la ausencia no implique nivel bajo.",
+        "Para categoría MEDIA se empleará criptografía en soportes.",
+        "Las pruebas de software se realizarán en entorno aislado.",
+        "Para categoría MEDIA, desarrollo y producción pueden coincidir."
+      ],
+      "c": 3,
+      "e": "Incluso para categoría MEDIA, los entornos de desarrollo no deben coincidir con los de producción para evitar riesgos."
+    },
+    {
+      "q": "En relación a la protección de datos, ¿qué afirmación NO es cierta?",
+      "o": [
+        "El sector público está obligado a disponer de DPD.",
+        "El análisis de riesgos debe incluir aspectos de protección de datos.",
+        "En el sector público no es necesario realizar EIPD.",
+        "El RAT debe publicarse en el sector público."
+      ],
+      "c": 2,
+      "e": "En el sector público también es necesario realizar Evaluaciones de Impacto en Protección de Datos (EIPD) cuando proceda según el RGPD."
+    },
+    {
+      "q": "En relación a las copias de seguridad, ¿qué respuesta es correcta?",
+      "o": [
+        "El período de retención es desde la última copia.",
+        "Una copia incremental ocupa cada vez más volumen.",
+        "No es necesario realizar pruebas de restauración.",
+        "Las copias requieren al menos el mismo nivel de seguridad que los datos originales."
+      ],
+      "c": 3,
+      "e": "Las copias de seguridad deben tener al menos el mismo nivel de protección que los datos originales para garantizar su seguridad."
+    },
+    {
+      "q": "¿Qué respuesta sobre certificación de proveedores NO es correcta?",
+      "o": [
+        "El sector público debe notificar a proveedores la obligación de certificación.",
+        "El certificado del proveedor debe ser al menos de la misma categoría.",
+        "El sistema del proveedor Cloud no requiere certificación ENS.",
+        "La cadena de suministro implica certificación en cascada."
+      ],
+      "c": 2,
+      "e": "El sistema de información que soporta los servicios de un proveedor Cloud también requiere estar certificado en el ENS según corresponda."
+    },
+    {
+      "q": "Cuando una entidad audita a un cliente con infraestructura externalizada, ¿qué afirmación es la más correcta?",
+      "o": [
+        "Si está en Cloud IaaS, el proveedor debe tener certificación ENS.",
+        "Si está en housing, se auditan las medidas de protección de instalaciones.",
+        "Las dos respuestas anteriores son correctas.",
+        "Ninguna de las anteriores es correcta."
+      ],
+      "c": 2,
+      "e": "En externalización Cloud se requiere certificación del proveedor; en housing se auditan las medidas de protección de instalaciones."
+    },
+    {
+      "q": "¿Qué afirmación sobre servicios Cloud NO es correcta?",
+      "o": [
+        "En SaaS, la responsabilidad es del proveedor extremo a extremo.",
+        "En on premise, la responsabilidad es compartida.",
+        "El proveedor debe entregar guías de instalación, uso seguro y relación Cliente-Proveedor.",
+        "Se certifica igual aunque no tenga las tres guías."
+      ],
+      "c": 3,
+      "e": "Los proveedores deben poder evidenciar que disponen de las tres guías para ser entregadas a sus clientes para obtener la certificación."
+    },
+    {
+      "q": "¿Qué respuesta sobre el coste de auditoría NO es correcta?",
+      "o": [
+        "El coste es proporcional al número de jornadas.",
+        "No existe un número mínimo de jornadas para considerarse válida.",
+        "El número de jornadas no puede ser fijado arbitrariamente.",
+        "Una entidad puede alterar sus tarifas para un cliente determinado."
+      ],
+      "c": 3,
+      "e": "Una entidad de certificación no puede alterar sus tarifas para un cliente determinado; las tarifas son aplicables a todos los clientes por igual."
+    },
+    {
+      "q": "¿Qué afirmación sobre ISO 27001 y ENS es correcta?",
+      "o": [
+        "Las normas ISO son normas jurídicas.",
+        "Las normas ISO son de adscripción voluntaria.",
+        "ISO 20000-1 es de gestión del riesgo.",
+        "ISO 22301 pertenece a la familia SGSI."
+      ],
+      "c": 1,
+      "e": "Las normas ISO son estándares internacionales de adscripción voluntaria, no normas jurídicas obligatorias."
+    },
+    {
+      "q": "¿Qué afirmación sobre ISO 27001 y ENS NO es correcta?",
+      "o": [
+        "Ambas consideran 5 dimensiones de seguridad.",
+        "ISO 27001 certifica Sistemas de Gestión; ENS certifica Sistemas de Información.",
+        "Ambas están basadas en el riesgo.",
+        "RD 3/2010 tiene 75 medidas; ISO 27001:2013 tiene 114 controles."
+      ],
+      "c": 0,
+      "e": "ISO 27001 considera confidencialidad, integridad y disponibilidad; el ENS añade autenticidad y trazabilidad como dimensiones adicionales."
+    },
+    {
+      "q": "Para implantar ISO 27001 partiendo del ENS, hay disponible:",
+      "o": [
+        "Guía CCN-STIC 825 sobre certificaciones 27001.",
+        "Guía CCN-STIC 852 sobre aplicación del ENS en organismos pagadores.",
+        "Ambas respuestas son correctas.",
+        "Ninguna de las anteriores."
+      ],
+      "c": 2,
+      "e": "El CCN dispone de ambas guías como material de ayuda para la implantación de ISO 27001 desde el ENS."
+    },
+    {
+      "q": "¿Qué respuesta sobre certificación NO es correcta?",
+      "o": [
+        "Tanto ENS como ISO 27001 tienen vigencia de 2 años.",
+        "El ENS distingue categorías; ISO 27001 no.",
+        "Puede realizarse auditoría concurrente de ENS e ISO 27001.",
+        "La certificación ISO 27001 exime de la certificación ENS."
+      ],
+      "c": 3,
+      "e": "Disponer de certificación ISO 27001 no exime de la certificación ENS; es un facilitador pero no un sustituto."
+    },
+    {
+      "q": "¿Qué afirmación sobre declaración y certificación de conformidad es correcta?",
+      "o": [
+        "La declaración de conformidad solo puede ser BÁSICA o MEDIA.",
+        "La certificación la emite entidad acreditada por ENAC.",
+        "En el portal del CCN puede consultarse organizaciones certificadas.",
+        "Todas las anteriores son correctas."
+      ],
+      "c": 3,
+      "e": "La declaración de conformidad es solo para categorías BÁSICA/MEDIA, la certificación requiere entidad acreditada, y el CCN publica los certificados vigentes."
+    },
+    {
+      "q": "¿Qué es una vulnerabilidad?",
+      "o": [
+        "Un terremoto o catástrofe natural.",
+        "Una técnica de gestión de riesgos.",
+        "Un daño que se ha hecho en un sistema.",
+        "Una debilidad o fallo que puede ser aprovechada por una amenaza."
+      ],
+      "c": 3,
+      "e": "Una vulnerabilidad es una debilidad o fallo en un activo que puede ser explotado por una amenaza para causar daño."
+    },
+    {
+      "q": "¿Qué es la ingeniería social?",
+      "o": [
+        "Disciplina que estudia la interacción humana científica.",
+        "Creación de programas informáticos dañinos.",
+        "Disciplina que estudia la conducta social y organización de sociedades.",
+        "Técnica de manipulación psicológica mediante engaño."
+      ],
+      "c": 3,
+      "e": "La ingeniería social es una técnica de manipulación psicológica que busca que los usuarios cometan errores de seguridad o entreguen información sensible."
+    },
+    {
+      "q": "En la fase de investigación de la ingeniería social:",
+      "o": [
+        "Se pone en marcha el pretexto o 'cebo'.",
+        "No hay fases en la ingeniería social.",
+        "Se intentan realizar movimientos laterales.",
+        "Se reúne toda la información posible sobre la víctima."
+      ],
+      "c": 3,
+      "e": "En la fase de investigación, el ingeniero social recopila toda la información posible sobre su víctima antes del ataque."
+    },
+    {
+      "q": "Conjunto de técnicas y herramientas para recopilar información de fuentes abiertas o públicas:",
+      "o": ["INTEL", "OSINT", "INTEC", "OPIC"],
+      "c": 1,
+      "e": "OSINT (Open Source Intelligence) es la disciplina que se dedica a la recopilación y análisis de información de fuentes abiertas."
+    },
+    {
+      "q": "Los sesgos cognitivos consisten en:",
+      "o": [
+        "Una interpretación errónea sistemática de la información disponible.",
+        "Una técnica de manipulación psicológica.",
+        "Un sistema cognitivo infalible.",
+        "Problemas solo de personas con trastornos psicológicos."
+      ],
+      "c": 0,
+      "e": "Los sesgos cognitivos son interpretaciones erróneas sistemáticas que influyen en cómo procesamos pensamientos y tomamos decisiones."
+    },
+    {
+      "q": "El eslabón más débil de la ciberseguridad es el ser humano.",
+      "o": ["Verdadero", "Falso"],
+      "c": 0,
+      "e": "El factor humano es considerado el eslabón más débil en ciberseguridad, ya que los errores humanos son la causa de la mayoría de los incidentes."
+    },
+    {
+      "q": "¿Qué es el quid pro quo en ingeniería social?",
+      "o": [
+        "Lanzar una afirmación falsa para que la víctima rectifique.",
+        "Crear una historia o pretexto para ganarse la confianza.",
+        "Fingir proporcionar algo para que la víctima se sienta en deuda.",
+        "Despertar la curiosidad para que haga clic en un enlace."
+      ],
+      "c": 2,
+      "e": "El quid pro quo es un ataque donde el delincuente finge proporcionar algo a cambio para que la víctima entregue información o accesos."
+    },
+    {
+      "q": "Para protegerse de ataques de ingeniería social, debemos:",
+      "o": [
+        "Conocer nuestras vulnerabilidades y los métodos de los delincuentes.",
+        "No compartir demasiada información personal en redes sociales.",
+        "Evitar cargar el smartphone en lugares públicos.",
+        "Todas las anteriores son correctas."
+      ],
+      "c": 3,
+      "e": "La protección contra ingeniería social requiere concienciación, limitar información personal en redes sociales y precaución con dispositivos móviles."
+    },
+    {
+      "q": "Una vulnerabilidad es...",
+      "o": [
+        "Un terremoto u otra catástrofe natural.",
+        "Una técnica de gestión de riesgos.",
+        "Un daño que se ha hecho en un sistema.",
+        "Una debilidad o fallo que puede ser aprovechada por una amenaza."
+      ],
+      "c": 3,
+      "e": "Una vulnerabilidad es una debilidad que puede ser explotada por una amenaza, causando un impacto negativo en el activo."
+    },
+    {
+      "q": "La realización del análisis de riesgos contribuye fundamentalmente a que la organización:",
+      "o": [
+        "Ajuste su nivel de protección al mínimo imprescindible.",
+        "Esté más segura.",
+        "Se certifique.",
+        "Conozca cómo está respecto de la seguridad."
+      ],
+      "c": 3,
+      "e": "El análisis de riesgos permite a la organización conocer su situación actual en materia de seguridad y tomar decisiones informadas."
+    },
+    {
+      "q": "¿Cuál de los siguientes elementos es más importante para analizar los riesgos de un sistema?",
+      "o": [
+        "Conocer los detalles técnicos del centro de cálculo.",
+        "Conocer el valor de los servicios que presta y de la información que maneja.",
+        "Conocer los términos de la póliza de seguro.",
+        "Haber realizado un proyecto de hacking ético."
+      ],
+      "c": 1,
+      "e": "Para analizar riesgos es fundamental conocer el valor de los servicios e información, ya que el riesgo depende del impacto potencial."
+    },
+    {
+      "q": "El riesgo es una medida de...",
+      "o": [
+        "Un daño ponderado por la probabilidad estimada de que ocurra la amenaza.",
+        "Un daño estimado cuyo valor es independiente de la degradación del activo.",
+        "El daño absoluto dependiente del activo afectado.",
+        "Un daño estimado independiente del activo afectado."
+      ],
+      "c": 0,
+      "e": "El riesgo se calcula como el daño potencial ponderado por la probabilidad de materialización de la amenaza."
+    },
+    {
+      "q": "En un árbol de dependencias donde los activos superiores dependen de los inferiores es imprescindible:",
+      "o": [
+        "Valorar los activos intermedios.",
+        "Valorar las ramas del árbol.",
+        "Valorar los activos inferiores.",
+        "Valorar los activos superiores."
+      ],
+      "c": 2,
+      "e": "En un árbol de dependencias, es imprescindible valorar los activos inferiores ya que el impacto en ellos repercute en los superiores."
+    },
+    {
+      "q": "Sea un activo A que soporta un servicio de muy alto valor y está sujeto a una amenaza Z muy improbable. ¿Qué riesgo estimaría para el mismo?",
+      "o": ["Medio.", "Bajo.", "Alto.", "Muy alto."],
+      "c": 1,
+      "e": "Alto valor multiplicado por baja probabilidad resulta en un riesgo bajo o medio-bajo."
+    },
+    {
+      "q": "Fijar el riesgo residual que acepta la Organización corresponde a:",
+      "o": [
+        "El director financiero del proyecto.",
+        "Los consultores externos.",
+        "La Dirección.",
+        "El administrador técnico de la seguridad."
+      ],
+      "c": 2,
+      "e": "La aceptación del riesgo residual es una decisión de la Dirección, que establece el apetito de riesgo de la organización."
+    },
+    {
+      "q": "Cuando contratamos un seguro de cobertura de riesgos, estamos realizando un tratamiento del tipo:",
+      "o": [
+        "Asumir el riesgo.",
+        "Compartir el riesgo.",
+        "Mitigación del riesgo.",
+        "Evitar el riesgo."
+      ],
+      "c": 1,
+      "e": "Contratar un seguro es una forma de compartir o transferir el riesgo, ya que se traslada parte de la carga económica a la aseguradora."
+    },
+    {
+      "q": "Desde un punto de vista económico, el tratamiento de los riesgos busca:",
+      "o": [
+        "Minimizar el gasto previsible derivado de incidentes.",
+        "Optimizar el empleo de recursos entre prevenir y reparar.",
+        "Minimizar el gasto en medidas de seguridad.",
+        "Maximizar el retorno de inversión."
+      ],
+      "c": 1,
+      "e": "El tratamiento de riesgos busca optimizar la asignación de recursos entre medidas preventivas y correctivas para minimizar el coste total esperado."
+    },
+    {
+      "q": "¿Qué es un cortafuegos personal o firewall?",
+      "o": [
+        "Un servidor que actúa como pasarela a Internet.",
+        "Un programa que monitoriza conexiones entrantes y salientes.",
+        "Un filtro entre navegador y sitio web.",
+        "Una red de túneles cifrados."
+      ],
+      "c": 1,
+      "e": "Un firewall personal es un programa que monitoriza y controla el tráfico de red entrante y saliente de un equipo individual."
+    },
+    {
+      "q": "¿Qué tipo de información puede facilitar un navegador web?",
+      "o": [
+        "Los navegadores no facilitan información.",
+        "Dirección IP, resolución de pantalla, idioma y zona horaria.",
+        "Únicamente si el usuario ha aceptado cookies.",
+        "Únicamente el campo User Agent."
+      ],
+      "c": 1,
+      "e": "Los navegadores pueden revelar múltiples datos como IP, resolución de pantalla, idioma, zona horaria, y configuraciones del sistema operativo."
+    },
+    {
+      "q": "¿Qué es un servidor proxy?",
+      "o": [
+        "Un servidor que actúa como pasarela entre cliente e Internet.",
+        "Una red de túneles cifrados.",
+        "Las respuestas a) y b) son correctas.",
+        "Ninguna de las anteriores."
+      ],
+      "c": 0,
+      "e": "Un servidor proxy actúa como intermediario entre el cliente e Internet, recuperando páginas web en lugar del usuario."
+    },
+    {
+      "q": "¿Qué técnicas o consejos se deben aplicar en el uso de dispositivos IoT?",
+      "o": [
+        "Cambiar contraseñas por defecto y usar contraseñas robustas.",
+        "Asegurar autenticidad, confidencialidad e integridad en comunicaciones.",
+        "Mantener actualizados los dispositivos.",
+        "Todas las anteriores son correctas."
+      ],
+      "c": 3,
+      "e": "La seguridad en IoT requiere cambiar contraseñas por defecto, proteger las comunicaciones y mantener los dispositivos actualizados."
+    }
+  ]
+}

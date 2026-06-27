@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0">
+<title>Análisis de Riesgos · Risk Register · GRCreal</title>
+<meta name="description" content="Herramienta guiada de análisis de riesgos: identifica, evalúa y prioriza riesgos con matriz 5×5, decide el tratamiento y exporta el registro. Alineado con ISO 27005, ISO 27001, ENS y NIS2. Sin registro, sin almacenamiento.">
+<!-- En tu site puedes usar tu copia local: <script src="/js/jspdf.umd.min.js"></script> -->
+<script src="../../js/jspdf.umd.min.js"></script>
+<style>
+:root{
+  --ds-navy:#14233b; --ds-ink:#2b3340; --ds-muted:#5a6675;
+  --ds-line:#d3dae3; --ds-paper:#fff; --ds-bg:#f4f6f9;
+  --ds-accent:#1f5fa8; --ds-grid:rgba(20,35,59,.035);
+  --r-bajo:#2f7d5b; --r-medio:#c79100; --r-alto:#d9622b; --r-critico:#c0392b;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ds-bg);color:var(--ds-ink);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.55}
+a{color:var(--ds-accent);text-decoration:none}
+.mono{font-family:ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace}
+.wrap{max-width:1180px;margin:0 auto;padding:22px 20px 80px}
+
+/* expediente */
+.ds-meta{display:flex;flex-wrap:wrap;gap:16px;align-items:center;background:var(--ds-paper);
+  border:1px solid var(--ds-line);border-left:3px solid var(--ds-navy);padding:12px 16px;
+  font-size:13px;color:var(--ds-muted);margin:0 0 22px}
+.ds-meta strong{color:var(--ds-navy)}
+.ds-ref{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:11px;letter-spacing:.1em;color:var(--ds-navy);
+  background:#eef2f7;border:1px solid var(--ds-line);padding:3px 9px}
+.ds-cat{margin-left:auto;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:11px;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--ds-accent);border:1px solid var(--ds-line);padding:3px 9px}
+h1{font-size:30px;color:var(--ds-navy);font-weight:800;margin:0 0 8px}
+.lead{font-size:16.5px;color:var(--ds-muted);max-width:70ch;margin:0 0 22px}
+.nostore{display:inline-flex;gap:8px;align-items:center;font-family:ui-monospace,Menlo,Consolas,monospace;
+  font-size:11.5px;letter-spacing:.04em;color:var(--r-bajo);border:1px solid var(--ds-line);padding:5px 10px;margin-bottom:24px}
+.nostore b{color:var(--r-bajo)}
+
+.panel{background:var(--ds-paper);border:1px solid var(--ds-line);border-top:3px solid var(--ds-accent);
+  padding:20px 22px;margin-bottom:18px;position:relative}
+.panel::before{content:"";position:absolute;inset:0;pointer-events:none;
+  background-image:linear-gradient(var(--ds-grid) 1px,transparent 1px),linear-gradient(90deg,var(--ds-grid) 1px,transparent 1px);
+  background-size:26px 26px}
+.panel>*{position:relative}
+.panel-label{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:11px;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--ds-muted);margin-bottom:12px}
+
+/* framework selector */
+.fw{display:flex;flex-wrap:wrap;gap:8px}
+.fw button{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:12.5px;letter-spacing:.04em;
+  background:#fff;border:1px solid var(--ds-line);color:var(--ds-muted);padding:8px 14px;cursor:pointer}
+.fw button.on{background:var(--ds-navy);color:#fff;border-color:var(--ds-navy)}
+.fw-help{font-size:13px;color:var(--ds-muted);margin-top:10px}
+
+/* KPIs */
+.kpis{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-bottom:18px}
+.kpi{background:var(--ds-paper);border:1px solid var(--ds-line);padding:14px 12px;text-align:center}
+.kpi .n{font-size:26px;font-weight:800;color:var(--ds-navy)}
+.kpi .l{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ds-muted);margin-top:2px}
+.kpi.bajo .n{color:var(--r-bajo)} .kpi.medio .n{color:var(--r-medio)}
+.kpi.alto .n{color:var(--r-alto)} .kpi.critico .n{color:var(--r-critico)}
+
+/* tabla riesgos */
+.tbl-scroll{overflow-x:auto}
+table.reg{width:100%;border-collapse:collapse;font-size:13.5px;min-width:860px}
+table.reg th{background:var(--ds-navy);color:#fff;font-weight:600;text-align:left;padding:9px 8px;font-size:12px;
+  letter-spacing:.03em;white-space:nowrap}
+table.reg td{border-bottom:1px solid var(--ds-line);padding:6px 7px;vertical-align:middle}
+table.reg tr:nth-child(even) td{background:#f8fafc}
+table.reg input,table.reg select{width:100%;border:1px solid transparent;background:transparent;font:inherit;
+  color:var(--ds-ink);padding:5px 6px}
+table.reg input:focus,table.reg select:focus{border-color:var(--ds-accent);background:#fff;outline:none}
+.pi{width:62px!important}
+.nivel{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:11px;font-weight:700;letter-spacing:.06em;
+  text-align:center;color:#fff;padding:4px 6px;white-space:nowrap}
+.nivel.bajo{background:var(--r-bajo)} .nivel.medio{background:var(--r-medio)}
+.nivel.alto{background:var(--r-alto)} .nivel.critico{background:var(--r-critico)}
+.del{cursor:pointer;color:var(--ds-muted);border:none;background:none;font-size:16px;padding:4px 8px}
+.del:hover{color:var(--r-critico)}
+
+.btn{font-family:inherit;font-size:14px;cursor:pointer;border:1px solid var(--ds-navy);
+  background:var(--ds-navy);color:#fff;padding:10px 18px}
+.btn:hover{background:#0d1828}
+.btn.ghost{background:#fff;color:var(--ds-navy)}
+.btn.ghost:hover{background:#eef2f7}
+.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+
+/* matriz 5x5 */
+.matrix-wrap{display:flex;gap:18px;flex-wrap:wrap;align-items:flex-start}
+.matrix{border-collapse:collapse}
+.matrix td,.matrix th{width:64px;height:48px;text-align:center;font-size:12px;border:1px solid #fff}
+.matrix th{background:none;color:var(--ds-muted);font-weight:600;font-size:11px;width:auto;height:auto;padding:4px 6px}
+.matrix .axis{writing-mode:vertical-rl;transform:rotate(180deg);color:var(--ds-muted);font-size:11px}
+.cell{color:#fff;font-weight:700;position:relative}
+.cell .cnt{font-size:14px}
+.cell.b{background:var(--r-bajo)} .cell.m{background:var(--r-medio)}
+.cell.a{background:var(--r-alto)} .cell.c{background:var(--r-critico)}
+.matrix-legend{font-size:12.5px;color:var(--ds-muted);line-height:1.9}
+.matrix-legend span{display:inline-block;width:12px;height:12px;margin-right:6px;vertical-align:-1px}
+
+@media(max-width:760px){
+  .kpis{grid-template-columns:repeat(2,1fr)}
+  h1{font-size:24px}
+  .matrix td,.matrix th{width:46px;height:38px;font-size:11px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="ds-meta">
+    <span class="ds-ref">REF.TOOL-AR</span>
+    <span>Herramienta: <strong>Análisis de Riesgos</strong></span>
+    <span>Método: <strong>Probabilidad × Impacto</strong></span>
+    <span class="ds-cat" id="catTag">ISO 27005</span>
+  </div>
+
+  <h1>Análisis de Riesgos</h1>
+  <p class="lead">Identifica, evalúa y prioriza riesgos. La matriz 5×5 calcula el nivel automáticamente, decides el tratamiento y exportas el registro listo para tu SGSI. Sin teoría: datos reales, decisiones reales.</p>
+  <div class="nostore">🔒 <b>Sin registro · sin almacenamiento</b> — todo se queda en tu navegador. Nada se guarda ni se envía.</div>
+
+  <!-- FRAMEWORK -->
+  <div class="panel">
+    <div class="panel-label">1 · Marco de referencia</div>
+    <div class="fw" id="fwSel">
+      <button data-fw="ISO 27005" class="on">ISO 27005</button>
+      <button data-fw="ISO 27001">ISO 27001 (Anexo A)</button>
+      <button data-fw="ENS">ENS · RD 311/2022</button>
+      <button data-fw="NIS2">NIS2</button>
+    </div>
+    <div class="fw-help" id="fwHelp"></div>
+  </div>
+
+  <!-- KPIs -->
+  <div class="kpis">
+    <div class="kpi"><div class="n" id="kTotal">0</div><div class="l">Riesgos</div></div>
+    <div class="kpi critico"><div class="n" id="kCrit">0</div><div class="l">Críticos</div></div>
+    <div class="kpi alto"><div class="n" id="kAlto">0</div><div class="l">Altos</div></div>
+    <div class="kpi medio"><div class="n" id="kMedio">0</div><div class="l">Medios</div></div>
+    <div class="kpi bajo"><div class="n" id="kBajo">0</div><div class="l">Bajos</div></div>
+  </div>
+
+  <!-- REGISTRO -->
+  <div class="panel">
+    <div class="panel-label">2 · Registro de riesgos</div>
+    <div class="tbl-scroll">
+      <table class="reg">
+        <thead>
+          <tr>
+            <th style="width:30px">#</th>
+            <th>Activo</th><th>Amenaza</th><th>Vulnerabilidad</th>
+            <th>Prob.</th><th>Imp.</th><th>Nivel</th>
+            <th>Propietario</th><th>Tratamiento</th>
+            <th id="thRef">Control / Ref.</th><th style="width:34px"></th>
+          </tr>
+        </thead>
+        <tbody id="rows"></tbody>
+      </table>
+    </div>
+    <div class="actions">
+      <button class="btn ghost" onclick="addRow()">+ Añadir riesgo</button>
+      <button class="btn ghost" onclick="seedDemo()">Cargar ejemplos</button>
+    </div>
+  </div>
+
+  <!-- MATRIZ -->
+  <div class="panel">
+    <div class="panel-label">3 · Mapa de calor (Probabilidad × Impacto)</div>
+    <div class="matrix-wrap">
+      <table class="matrix">
+        <tr><th></th><th colspan="5">Impacto →</th></tr>
+        <tr>
+          <th class="axis" rowspan="6">Probabilidad →</th>
+        </tr>
+        <tbody id="matrixBody"></tbody>
+      </table>
+      <div class="matrix-legend">
+        <div><span style="background:var(--r-bajo)"></span>Bajo (1–4)</div>
+        <div><span style="background:var(--r-medio)"></span>Medio (5–9)</div>
+        <div><span style="background:var(--r-alto)"></span>Alto (10–15)</div>
+        <div><span style="background:var(--r-critico)"></span>Crítico (16–25)</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="actions">
+    <button class="btn" onclick="exportPDF()">⬇ Exportar registro (PDF)</button>
+    <button class="btn ghost" onclick="window.print()">Imprimir</button>
+  </div>
+
+</div>
+
+<script>
+// ---------- estado ----------
+var FW = "ISO 27005";
+var FW_HELP = {
+  "ISO 27005":"Metodología de gestión del riesgo de seguridad de la información. El nivel guía el tratamiento; el registro alimenta el SGSI de ISO 27001.",
+  "ISO 27001":"Cada riesgo se trata asignando controles del Anexo A (2022). La columna de referencia espera el control aplicable (p. ej. A.8.16, A.5.7).",
+  "ENS":"Riesgos sobre sistemas categorizados según RD 311/2022. La referencia apunta a la medida del ENS aplicable (p. ej. op.exp.8, mp.info.6).",
+  "NIS2":"Gestión de riesgos del art. 21. La referencia apunta a la medida técnica/organizativa exigida (p. ej. continuidad, cadena de suministro)."
+};
+var TH_REF = {"ISO 27005":"Control / Ref.","ISO 27001":"Control Anexo A","ENS":"Medida ENS","NIS2":"Medida art. 21"};
+var rows = [];
+var nextId = 1;
+
+function nivelDe(p,i){
+  var v=(+p||0)*(+i||0);
+  if(v>=16) return {k:"critico",t:"CRÍTICO",v:v};
+  if(v>=10) return {k:"alto",t:"ALTO",v:v};
+  if(v>=5)  return {k:"medio",t:"MEDIO",v:v};
+  if(v>=1)  return {k:"bajo",t:"BAJO",v:v};
+  return {k:"bajo",t:"—",v:0};
+}
+
+function addRow(data){
+  data = data || {};
+  rows.push({
+    id: nextId++,
+    activo:data.activo||"", amenaza:data.amenaza||"", vuln:data.vuln||"",
+    p:data.p||"", i:data.i||"", owner:data.owner||"",
+    trat:data.trat||"Mitigar", ref:data.ref||""
+  });
+  render();
+}
+function delRow(id){ rows = rows.filter(function(r){return r.id!==id}); render(); }
+
+function upd(id,campo,val){
+  var r = rows.find(function(x){return x.id===id});
+  if(r){ r[campo]=val; if(campo==="p"||campo==="i"){ render(); } else { refreshKpis(); } }
+}
+
+function esc(s){return (s||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");}
+
+function optsP(sel){var o="";for(var n=1;n<=5;n++){o+='<option value="'+n+'"'+(+sel===n?' selected':'')+'>'+n+'</option>';}return o;}
+function optsTrat(sel){return ["Mitigar","Aceptar","Transferir","Evitar"].map(function(t){
+  return '<option'+(t===sel?' selected':'')+'>'+t+'</option>';}).join("");}
+
+function render(){
+  var tb=document.getElementById("rows"); tb.innerHTML="";
+  rows.forEach(function(r,idx){
+    var nv=nivelDe(r.p,r.i);
+    var tr=document.createElement("tr");
+    tr.innerHTML=
+      '<td class="mono">'+(idx+1)+'</td>'+
+      '<td><input value="'+esc(r.activo)+'" placeholder="Servidor, BD, proceso…" oninput="upd('+r.id+',\'activo\',this.value)"></td>'+
+      '<td><input value="'+esc(r.amenaza)+'" placeholder="Ransomware, fuga…" oninput="upd('+r.id+',\'amenaza\',this.value)"></td>'+
+      '<td><input value="'+esc(r.vuln)+'" placeholder="Sin MFA, sin backup…" oninput="upd('+r.id+',\'vuln\',this.value)"></td>'+
+      '<td><select class="pi" onchange="upd('+r.id+',\'p\',this.value)"><option value="">·</option>'+optsP(r.p)+'</select></td>'+
+      '<td><select class="pi" onchange="upd('+r.id+',\'i\',this.value)"><option value="">·</option>'+optsP(r.i)+'</select></td>'+
+      '<td><div class="nivel '+nv.k+'">'+nv.t+(nv.v?' · '+nv.v:'')+'</div></td>'+
+      '<td><input value="'+esc(r.owner)+'" placeholder="Responsable" oninput="upd('+r.id+',\'owner\',this.value)"></td>'+
+      '<td><select onchange="upd('+r.id+',\'trat\',this.value)">'+optsTrat(r.trat)+'</select></td>'+
+      '<td><input value="'+esc(r.ref)+'" placeholder="—" oninput="upd('+r.id+',\'ref\',this.value)"></td>'+
+      '<td><button class="del" title="Eliminar" onclick="delRow('+r.id+')">✕</button></td>';
+    tb.appendChild(tr);
+  });
+  refreshKpis(); renderMatrix();
+}
+
+function refreshKpis(){
+  var c={total:0,critico:0,alto:0,medio:0,bajo:0};
+  rows.forEach(function(r){ var nv=nivelDe(r.p,r.i); if(nv.v>0){c.total++;c[nv.k]++;} });
+  document.getElementById("kTotal").textContent=c.total;
+  document.getElementById("kCrit").textContent=c.critico;
+  document.getElementById("kAlto").textContent=c.alto;
+  document.getElementById("kMedio").textContent=c.medio;
+  document.getElementById("kBajo").textContent=c.bajo;
+}
+
+function renderMatrix(){
+  var body=document.getElementById("matrixBody"); body.innerHTML="";
+  // contar riesgos por (p,i)
+  var grid={};
+  rows.forEach(function(r){ if(r.p&&r.i){var k=r.p+"-"+r.i; grid[k]=(grid[k]||0)+1;} });
+  for(var p=5;p>=1;p--){
+    var tr=document.createElement("tr");
+    var th='<th>'+p+'</th>';
+    var tds="";
+    for(var i=1;i<=5;i++){
+      var nv=nivelDe(p,i);
+      var cnt=grid[p+"-"+i]||0;
+      var cls={critico:"c",alto:"a",medio:"m",bajo:"b"}[nv.k];
+      tds+='<td class="cell '+cls+'"><span class="cnt">'+(cnt||"")+'</span></td>';
+    }
+    tr.innerHTML=th+tds; body.appendChild(tr);
+  }
+  var foot=document.createElement("tr");
+  foot.innerHTML='<th></th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th>';
+  body.appendChild(foot);
+}
+
+// ---------- framework ----------
+document.getElementById("fwSel").addEventListener("click",function(e){
+  if(e.target.tagName!=="BUTTON")return;
+  FW=e.target.dataset.fw;
+  [].forEach.call(this.children,function(b){b.classList.toggle("on",b.dataset.fw===FW);});
+  document.getElementById("catTag").textContent=FW;
+  document.getElementById("fwHelp").textContent=FW_HELP[FW];
+  document.getElementById("thRef").textContent=TH_REF[FW];
+});
+document.getElementById("fwHelp").textContent=FW_HELP[FW];
+
+// ---------- demo ----------
+function seedDemo(){
+  rows=[]; nextId=1;
+  [
+    {activo:"Servidor de ficheros",amenaza:"Ransomware",vuln:"Backup sin probar restauración",p:4,i:5,owner:"IT Ops",trat:"Mitigar",ref:"A.8.13"},
+    {activo:"VPN acceso remoto",amenaza:"Robo de credenciales",vuln:"Sin MFA en cuentas privilegiadas",p:4,i:4,owner:"Seguridad",trat:"Mitigar",ref:"A.8.5"},
+    {activo:"Web corporativa",amenaza:"Defacement / DDoS",vuln:"Sin WAF ni mitigación",p:3,i:3,owner:"IT",trat:"Transferir",ref:"A.8.16"},
+    {activo:"Proveedor SaaS RRHH",amenaza:"Fuga de datos de terceros",vuln:"Sin cláusulas de seguridad",p:2,i:5,owner:"Compras",trat:"Mitigar",ref:"A.5.19"},
+    {activo:"Puesto de trabajo",amenaza:"Phishing",vuln:"Baja concienciación",p:5,i:3,owner:"RRHH",trat:"Mitigar",ref:"A.6.3"}
+  ].forEach(function(d){addRow(d);});
+}
+
+// ---------- PDF ----------
+function exportPDF(){
+ function safe(s){return String(s==null?"":s).replace(/…/g,"...").replace(/—/g,"-").replace(/[•●]/g,"-").replace(/→/g,"->").replace(/[“”]/g,'"').replace(/[‘’]/g,"'");}
+
+  var ok = rows.some(function(r){return r.p&&r.i;});
+  if(!ok){ alert("Añade al menos un riesgo con probabilidad e impacto."); return; }
+  var jsPDF = window.jspdf.jsPDF;
+  var doc = new jsPDF({orientation:"landscape",unit:"mm",format:"a4"});
+  var W=doc.internal.pageSize.getWidth();
+  // cabecera
+  doc.setFillColor(20,35,59); doc.rect(0,0,W,22,"F");
+  doc.setTextColor(255); doc.setFont("helvetica","bold"); doc.setFontSize(15);
+  doc.text("Registro de Riesgos",12,11);
+  doc.setFont("helvetica","normal"); doc.setFontSize(9);
+  doc.text("Marco: "+FW+"   ·   GRCreal   ·   Generado: "+new Date().toLocaleDateString("es-ES"),12,17);
+
+  var cols=["#","Activo","Amenaza","Vulnerabilidad","P","I","Nivel","Propietario","Trat.",TH_REF[FW]];
+  var x0=10,y=30; var cw=[8,40,38,46,8,8,24,32,22,38];
+  doc.setTextColor(255); doc.setFillColor(31,95,168);
+  doc.rect(x0,y-5,cw.reduce(function(a,b){return a+b}),7,"F");
+  doc.setFont("helvetica","bold"); doc.setFontSize(8);
+  var cx=x0+1; cols.forEach(function(c,k){doc.text(String(c),cx,y);cx+=cw[k];});
+  y+=4;
+  doc.setFont("helvetica","normal"); doc.setTextColor(40);
+  var idx=0;
+  rows.forEach(function(r){
+    if(!(r.p&&r.i))return; idx++;
+    var nv=nivelDe(r.p,r.i);
+    if(y>185){ doc.addPage("a4","landscape"); y=20; }
+    var cells=[idx,r.activo,r.amenaza,r.vuln,r.p,r.i,nv.t,r.owner,r.trat,r.ref];
+    var cx=x0+1;
+    cells.forEach(function(c,k){
+      var t=safe(c);
+      if(t.length>30)t=t.slice(0,28)+"...";
+      // colorear celda nivel
+      if(k===6){var col={critico:[192,57,43],alto:[217,98,43],medio:[199,145,0],bajo:[47,125,91]}[nv.k];
+        doc.setTextColor(col[0],col[1],col[2]);doc.setFont("helvetica","bold");}
+      doc.text(t,cx,y);
+      if(k===6){doc.setTextColor(40);doc.setFont("helvetica","normal");}
+      cx+=cw[k];
+    });
+    doc.setDrawColor(220); doc.line(x0,y+1.5,x0+cw.reduce(function(a,b){return a+b}),y+1.5);
+    y+=6;
+  });
+  // resumen
+  var c={critico:0,alto:0,medio:0,bajo:0};
+  rows.forEach(function(r){var nv=nivelDe(r.p,r.i);if(nv.v>0)c[nv.k]++;});
+  y+=6; if(y>180){doc.addPage("a4","landscape");y=20;}
+  doc.setFont("helvetica","bold");doc.setFontSize(9);doc.setTextColor(20,35,59);
+  doc.text("Resumen: "+idx+" riesgos · Críticos "+c.critico+" · Altos "+c.alto+" · Medios "+c.medio+" · Bajos "+c.bajo,x0,y);
+  y+=6; doc.setFont("helvetica","normal");doc.setFontSize(8);doc.setTextColor(90);
+  doc.text(FW_HELP[FW],x0,y,{maxWidth:W-20});
+  doc.save("registro-riesgos-"+FW.replace(/\s+/g,"-").toLowerCase()+".pdf");
+}
+
+// init
+seedDemo();
+</script>
+</body>
+</html>

@@ -748,27 +748,7 @@
 /* ============================================
    HOME BUTTON (arriba derecha)
    ============================================ */
-.home-btn {
-    position: fixed;
-    top: 12px;
-    right: 12px;
-    background: #1a5f7a;
-    color: white;
-    padding: 5px 12px;
-    border-radius: 30px;
-    text-decoration: none;
-    font-size: 12px;
-    font-weight: 500;
-    font-family: system-ui, -apple-system, sans-serif;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
-    transition: 0.2s;
-    z-index: 999;
-}
 
-.home-btn:hover {
-    background: #0e4357;
-    transform: translateY(-1px);
-}
 
 /* ============================================
    FOOTER

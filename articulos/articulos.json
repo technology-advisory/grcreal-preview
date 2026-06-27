@@ -387,8 +387,7 @@
     "date": "25 Mayo 2026",
     "desc": "Cumplir la ley no es solo evitar multas.",
     "url": "compliance/Compliance_para_principiantes.html",
-    "published": true,
-    "badge": "Nuevo"
+    "published": true
   },
   {
     "id": 40,
@@ -405,10 +404,11 @@
     "cat": "compliance",
     "meta": "Compliance · PRL",
     "title": "La LPRL no basta: lo que el inspector ya sabe",
-    "date": "23 Abril 2025",
+    "date": "18 Junio 2026",
     "desc": "Los cascos y las señales ya no son suficientes.",
     "url": "compliance/LPRL_compliance.html",
-    "published": false
+    "published": true,
+    "badge": "Nuevo"
   },
   {
     "id": 42,
@@ -428,8 +428,7 @@
     "date": "25 Mayo 2026",
     "desc": "El ENS tiene tres categorías con obligaciones muy distintas.",
     "url": "ens/niveles-ens.html",
-    "published": true,
-    "badge": "Nuevo"
+    "published": true
   },
   {
     "id": 44,
@@ -529,8 +528,7 @@
     "date": "25 Mayo 2026",
     "desc": "Muchas organizaciones tienen un plan de continuidad hecho internamente.",
     "url": "iso22301/iso22301-vs-bcp-casero.html",
-    "published": true,
-    "badge": "Nuevo"
+    "published": true
   },
   {
     "id": 54,
@@ -547,20 +545,22 @@
     "cat": "grc",
     "meta": "IA · Datos",
     "title": "Datos de la IA: dónde van y por qué deberías preocuparte",
-    "date": "23 Abril 2025",
+    "date": "18 Junio 2026",
     "desc": "Cuando usas una herramienta de IA, ¿sabes dónde se procesan tus datos?",
     "url": "grc/datos-ia-ubicacion-tratamiento.html",
-    "published": false
+    "published": true,
+    "badge": "Nuevo"
   },
   {
     "id": 56,
     "cat": "nis2",
     "meta": "NIS2 · Medidas Técnicas",
     "title": "NIS2 Art. 21: las medidas técnicas que el regulador espera ver",
-    "date": "23 Abril 2025",
+    "date": "18 Junio 2026",
     "desc": "No basta con decir que tenéis medidas de seguridad.",
     "url": "nis2/nis2-medidas-tecnicas-articulo21.html",
-    "published": false
+    "published": true,
+    "badge": "Nuevo"
   },
   {
     "id": 57,
@@ -570,28 +570,29 @@
     "date": "25 Mayo 2026",
     "desc": "No todas las entidades sujetas a NIS2 tienen las mismas obligaciones.",
     "url": "nis2/nis2-entidades-esenciales-importantes.html",
-    "published": true,
-    "badge": "Nuevo"
+    "published": true
   },
   {
     "id": 58,
     "cat": "tecnico",
     "meta": "Cloud · Arquitectura",
     "title": "Cloud y seguridad: la responsabilidad compartida",
-    "date": "23 Abril 2025",
+    "date": "18 Junio 2026",
     "desc": "Ir a la nube no significa que el proveedor se encarga de la seguridad.",
     "url": "tecnico/cloud-seguridad-responsabilidad-compartida.html",
-    "published": false
+    "published": true,
+    "badge": "Nuevo"
   },
   {
     "id": 59,
     "cat": "tecnico",
     "meta": "Documentación · Infraestructura",
     "title": "Documentación técnica: el conocimiento que vive en una sola cabeza",
-    "date": "23 Abril 2025",
+    "date": "18 Junio 2026",
     "desc": "El conocimiento crítico vive en la cabeza de una o dos personas.",
     "url": "tecnico/documentacion-tecnica-infraestructura.html",
-    "published": false
+    "published": true,
+    "badge": "Nuevo"
   },
   {
     "id": 60,
@@ -621,6 +622,255 @@
     "date": "9 Diciembre 9999",
     "desc": "",
     "url": "grc/dpo-delegado-proteccion-datos.html",
+    "published": false
+  },
+  {
+    "id": 63,
+    "cat": "vciso",
+    "meta": "vCISO · Consejo · Gobierno",
+    "title": "El vCISO ante el consejo que no entiende de seguridad",
+    "date": "18 Junio 2026",
+    "desc": "Tienes 20 minutos en el orden del día. Lo que digas determinará el presupuesto del año.",
+    "url": "vciso/vciso-ante-el-consejo.html",
+    "published": true,
+    "badge": "Nuevo"
+  },
+  {
+    "id": 64,
+    "cat": "vciso",
+    "meta": "vCISO · Organización · Estrategia",
+    "title": "vCISO no es un cargo. Es una función.",
+    "date": "11 Junio 2026",
+    "desc": "Contratar el título no resuelve nada si no se define qué debe hacer y con qué autoridad.",
+    "url": "vciso/vciso-funcion-no-cargo.html",
+    "published": false
+  },
+  {
+    "id": 65,
+    "cat": "grc",
+    "meta": "GRC · Proveedores · Supply Chain",
+    "title": "El proveedor que no controlas es tu mayor riesgo",
+    "date": "11 Junio 2026",
+    "desc": "La cadena de suministro es el vector de ataque que más ha crecido.",
+    "url": "grc/gestion-proveedores-criticos.html",
+    "published": false
+  },
+  {
+    "id": 66,
+    "cat": "grc",
+    "meta": "GRC · Métricas · Gobierno",
+    "title": "Métricas de seguridad: medir lo que importa, no lo que es fácil",
+    "date": "11 Junio 2026",
+    "desc": "Actividad no es lo mismo que efectividad.",
+    "url": "grc/metricas-seguridad-reales.html",
+    "published": false
+  },
+  {
+    "id": 67,
+    "cat": "ai",
+    "meta": "EU AI Act · Alto Riesgo · Compliance",
+    "title": "AI Act: sistemas de alto riesgo — qué son y qué implican realmente",
+    "date": "11 Junio 2026",
+    "desc": "Los sistemas de alto riesgo tienen requisitos que muchas empresas ignoran.",
+    "url": "ai/aiact-sistemas-alto-riesgo.html",
+    "published": false
+  },
+  {
+    "id": 68,
+    "cat": "ai",
+    "meta": "EU AI Act · IA Prohibida · Compliance",
+    "title": "AI Act: lo que está prohibido sin excepciones ni interpretaciones",
+    "date": "18 Junio 2026",
+    "desc": "Hay usos de la IA directamente prohibidos. Sanciones de hasta 35 millones de euros.",
+    "url": "ai/aiact-prohibiciones.html",
+    "published": true,
+    "badge": "Nuevo"
+  },
+  {
+    "id": 69,
+    "cat": "ia",
+    "meta": "IA · Riesgos · Gobernanza",
+    "title": "Las alucinaciones de la IA no son un bug. Son una característica que hay que gestionar.",
+    "date": "18 Junio 2026",
+    "desc": "Los LLMs inventan con total confianza. Hay empresas tomando decisiones sobre esas invenciones.",
+    "url": "ia/ia-alucinaciones-empresas.html",
+    "published": true,
+    "badge": "Nuevo"
+  },
+  {
+    "id": 70,
+    "cat": "ia",
+    "meta": "IA · Shadow AI · Gobernanza",
+    "title": "Shadow AI: la IA que ya está en tu empresa y que nadie ha aprobado",
+    "date": "11 Junio 2026",
+    "desc": "Tus empleados ya la usan. Con datos de la empresa. Sin política ninguna.",
+    "url": "ia/ia-sombra-empresas.html",
+    "published": false
+  },
+  {
+    "id": 71,
+    "cat": "tecnico",
+    "meta": "Técnico · Parcheo · Vulnerabilidades",
+    "title": "Gestión de parches: la tarea que nunca está terminada",
+    "date": "11 Junio 2026",
+    "desc": "El 80% de los ataques exitosos explotan vulnerabilidades con parche disponible.",
+    "url": "tecnico/gestion-parches-realidad.html",
+    "published": false
+  },
+  {
+    "id": 72,
+    "cat": "tecnico",
+    "meta": "Técnico · Microsegmentación · Zero Trust",
+    "title": "Microsegmentación: el control que limita el blast radius cuando el perímetro ya ha caído",
+    "date": "11 Junio 2026",
+    "desc": "El atacante ya está dentro. La pregunta es cuánto puede moverse.",
+    "url": "tecnico/microsegmentacion-zero-trust.html",
+    "published": false
+  },
+  {
+    "id": 73,
+    "cat": "ens",
+    "meta": "ENS · Continuidad · Resiliencia",
+    "title": "ENS y continuidad de negocio: más que un plan en un cajón",
+    "date": "11 Junio 2026",
+    "desc": "El ENS no pide que tengas un plan. Pide que ese plan funcione.",
+    "url": "ens/ens-continuidad-negocio.html",
+    "published": false
+  },
+  {
+    "id": 74,
+    "cat": "ens",
+    "meta": "ENS · Incidentes · Notificación",
+    "title": "ENS y gestión de incidentes: el proceso que hay que tener antes de que llegue el incidente",
+    "date": "18 Junio 2026",
+    "desc": "Improvisar durante un incidente activo sale siempre más caro.",
+    "url": "ens/ens-gestion-incidentes.html",
+    "published": true,
+    "badge": "Nuevo"
+  },
+  {
+    "id": 75,
+    "cat": "iso27001",
+    "meta": "ISO 27001 · Revisión Dirección · SGSI",
+    "title": "La revisión por la dirección del SGSI: el control que más se hace mal",
+    "date": "18 Junio 2026",
+    "desc": "No es una reunión. Es un proceso con entradas, salidas y evidencias documentadas.",
+    "url": "iso27001/iso27001-revision-por-direccion.html",
+    "published": true,
+    "badge": "Nuevo"
+  },
+  {
+    "id": 76,
+    "cat": "iso27001",
+    "meta": "ISO 27001 · Riesgos · Controles",
+    "title": "Tratamiento de riesgos en ISO 27001: cuatro opciones, muchos errores",
+    "date": "11 Junio 2026",
+    "desc": "La decisión de qué hacer con el riesgo debe tomarla la dirección, con criterio y documentado.",
+    "url": "iso27001/iso27001-tratamiento-riesgos.html",
+    "published": false
+  },
+  {
+    "id": 77,
+    "cat": "iso22301",
+    "meta": "ISO 22301 · Pruebas · BCP",
+    "title": "ISO 22301 y los ejercicios de continuidad: el plan que nunca se prueba no existe cuando más se necesita",
+    "date": "11 Junio 2026",
+    "desc": "ISO 22301 no solo exige tener un plan. Exige que el plan haya sido probado.",
+    "url": "iso22301/iso22301-ejercicios-prueba.html",
+    "published": false
+  },
+  {
+    "id": 78,
+    "cat": "iso22301",
+    "meta": "ISO 22301 · Organización · Roles",
+    "title": "SGCN: quién hace qué cuando la continuidad se activa",
+    "date": "18 Junio 2026",
+    "desc": "Cuando hay fuego, no es el momento de decidir quién tiene la manguera.",
+    "url": "iso22301/iso22301-sgcn-roles.html",
+    "published": true,
+    "badge": "Nuevo"
+  },
+  {
+    "id": 79,
+    "cat": "iso42001",
+    "meta": "ISO 42001 · Política IA · Gobernanza",
+    "title": "ISO 42001: la política de IA que tu organización necesita y pocas tienen bien hecha",
+    "date": "11 Junio 2026",
+    "desc": "Sin política de IA, cada decisión sobre sistemas de IA es ad hoc.",
+    "url": "iso42001/iso42001-politica-ia.html",
+    "published": false
+  },
+  {
+    "id": 80,
+    "cat": "iso42001",
+    "meta": "ISO 42001 · Evaluación Impacto · EIPD IA",
+    "title": "Evaluación de impacto en sistemas de IA: antes de desplegar, no después de que algo salga mal",
+    "date": "18 Junio 2026",
+    "desc": "ISO 42001 exige evaluar el impacto de los sistemas de IA antes de ponerlos en marcha.",
+    "url": "iso42001/iso42001-evaluacion-impacto-ia.html",
+    "published": true,
+    "badge": "Nuevo"
+  },
+  {
+    "id": 81,
+    "cat": "nis2",
+    "meta": "NIS2 · Dirección · Responsabilidad",
+    "title": "NIS2 y el órgano de gestión: la responsabilidad que ya no se puede delegar hacia abajo",
+    "date": "11 Junio 2026",
+    "desc": "El CEO y el consejo no pueden decir que de eso se ocupa IT.",
+    "url": "nis2/nis2-responsabilidad-organo-gestion.html",
+    "published": false
+  },
+  {
+    "id": 82,
+    "cat": "nis2",
+    "meta": "NIS2 · Cadena de Suministro · Proveedores",
+    "title": "NIS2 y la cadena de suministro: tu seguridad depende de la seguridad de tus proveedores",
+    "date": "18 Junio 2026",
+    "desc": "NIS2 obliga a extender los requisitos de seguridad a la cadena de suministro.",
+    "url": "nis2/nis2-cadena-suministro.html",
+    "published": true,
+    "badge": "Nuevo"
+  },
+  {
+    "id": 83,
+    "cat": "iso45003",
+    "meta": "ISO 45003 · Teletrabajo · Riesgos Psicosociales",
+    "title": "Teletrabajo y riesgos psicosociales: el entorno que no se ve también es responsabilidad de la empresa",
+    "date": "11 Junio 2026",
+    "desc": "La obligación de prevención psicosocial no desaparece porque el empleado trabaje desde casa.",
+    "url": "iso45003/iso45003-trabajo-remoto-riesgos.html",
+    "published": false
+  },
+  {
+    "id": 84,
+    "cat": "iso45003",
+    "meta": "ISO 45003 · Burnout · Salud Mental",
+    "title": "Burnout en el trabajo: no es un problema individual. Es un riesgo organizacional.",
+    "date": "18 Junio 2026",
+    "desc": "ISO 45003 obliga a gestionarlo como lo que es: un riesgo del entorno de trabajo.",
+    "url": "iso45003/iso45003-burnout-prevencion.html",
+    "published": true,
+    "badge": "Nuevo"
+  },
+  {
+    "id": 85,
+    "cat": "compliance",
+    "meta": "Compliance · Canal de Denuncias · Ley 2/2023",
+    "title": "El canal de denuncias que nadie usa no protege a nadie",
+    "date": "11 Junio 2026",
+    "desc": "Ley 2/2023 obliga a tenerlo. Pero tenerlo no es lo mismo que que funcione.",
+    "url": "compliance/canal-denuncias-real.html",
+    "published": false
+  },
+  {
+    "id": 86,
+    "cat": "compliance",
+    "meta": "Compliance · Penal · Responsabilidad Corporativa",
+    "title": "Responsabilidad penal de la empresa: no es un problema solo de grandes corporaciones",
+    "date": "11 Junio 2026",
+    "desc": "El Código Penal no tiene filtro por tamaño. La única defensa es tener un modelo de compliance que funcione.",
+    "url": "compliance/compliance-penal-pyme.html",
     "published": false
   }
 ]

@@ -1,0 +1,115 @@
+/* ============================================
+   DOSSIER-CORE.CSS — Núcleo compartido del sistema "expediente"
+   Lo cargan TODAS las páginas .ds-page.
+   Contiene SOLO lo genérico: tokens, reset de card, barra de
+   expediente, hero genérico (.header/.tag/.headline/.subline),
+   bloques con REF automático, citas, tabla tension y CTA oscura.
+   Cada página añade su propio dossier-[pagina].css encima para
+   sus clases específicas (ct-, sm-, md-, legal-, art-...).
+   ============================================ */
+
+:root{
+  --ds-ink:#10161B;
+  --ds-paper:#F6F7F5;
+  --ds-deep:#003955;
+  --ds-line:#D7DCDF;
+  --ds-flag:#B23A2E;
+}
+
+.card-wrapper.ds-page{ padding:0; background:var(--ds-paper); display:block; }
+.card-wrapper.ds-page .card{ max-width:none; width:100%; box-shadow:none; border-radius:0; border:none; background:transparent; overflow:visible; }
+.ds-page .accent-bar{ display:none; }
+
+/* ── BARRA DE EXPEDIENTE ── */
+.ds-meta{
+  display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:6px;
+  background:var(--ds-deep);color:#cfe6f2;
+  font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;
+  padding:10px 56px;
+}
+.ds-meta .dot{width:6px;height:6px;border-radius:50%;background:#42c98a;display:inline-block;margin-right:8px;}
+.ds-meta strong{color:#fff;}
+
+/* ── HERO genérico ── */
+.ds-page .header{
+  max-width:none;padding:64px 56px 52px;background:var(--ds-paper);
+  background-image:linear-gradient(rgba(0,119,181,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(0,119,181,.07) 1px,transparent 1px);
+  background-size:28px 28px;background-position:-1px -1px;border-bottom:none;overflow:hidden;position:relative;
+}
+.ds-page .tag{
+  font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--brand);
+  border:none;padding:0;margin-bottom:18px;display:flex;align-items:center;gap:8px;position:relative;z-index:1;
+}
+.ds-page .tag::before{content:'';width:6px;height:6px;background:var(--brand);}
+.ds-page .headline{
+  font-size:clamp(28px,3.6vw,42px);font-weight:800;line-height:1.12;letter-spacing:-.015em;
+  text-transform:uppercase;color:var(--ds-ink);position:relative;z-index:1;max-width:1000px;
+}
+.ds-page .headline .accent{color:var(--brand);}
+.ds-page .headline .dim{color:#aab3ba;}
+.ds-page .subline{
+  font-size:16.5px;color:#3d4751;max-width:640px;line-height:1.65;position:relative;z-index:1;margin-top:18px;
+}
+.ds-page .subline strong{color:var(--ds-ink);}
+
+/* ── BLOQUES / SECCIONES con REF automático ── */
+.ds-page .card{counter-reset:ds-ref;}
+.ds-page .body{max-width:none;padding:0;}
+.ds-page .block{
+  max-width:1320px;padding:40px 56px;border-top:1px solid var(--ds-line);
+}
+.ds-page .divider{display:none;}
+.ds-page .block-label{
+  font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#7c8790;
+  margin:0 0 16px;display:flex;align-items:baseline;gap:14px;
+}
+.ds-page .block-label::before{
+  counter-increment:ds-ref;
+  content:"REF." counter(ds-ref,decimal-leading-zero);
+  font-family:var(--mono);font-size:11px;color:var(--brand);border:1px solid var(--brand);
+  padding:2px 8px;letter-spacing:.05em;flex-shrink:0;
+}
+.ds-page .block-title{
+  font-size:23px;font-weight:800;color:var(--ds-ink);margin-bottom:16px;max-width:1000px;line-height:1.3;
+}
+.ds-page .block-text{
+  font-size:15.5px;line-height:1.8;color:#3d4751;max-width:1000px;
+}
+.ds-page .block-text strong{color:var(--ds-ink);}
+
+/* ── CITAS ── */
+.ds-page .quote-block{
+  border:none;border-left:3px solid var(--ds-deep);background:#EFF3F3;padding:18px 26px;max-width:900px;margin:22px 0;
+}
+.ds-page .quote-text{font-family:var(--mono);color:var(--ds-ink);}
+.ds-page .quote-attr{color:#7c8790;}
+
+/* ── TABLA TENSION (comparativas) ── */
+.ds-page .tension{
+  border:1px solid var(--ds-line);background:var(--ds-paper);max-width:1000px;border-collapse:collapse;
+}
+.ds-page .tension tr{border-bottom:1px solid var(--ds-line);}
+.ds-page .tension tr.hi-row{background:#fff;}
+.ds-page .tension-who{color:#7c8790;font-family:var(--mono);}
+.ds-page .tension-says .hi{color:var(--brand);}
+
+/* ── CTA banda oscura genérica ── */
+.ds-page .cta-block{
+  background:var(--ds-deep);max-width:none;padding:60px 56px;text-align:center;border:none;
+}
+.ds-page .cta-headline{
+  font-size:clamp(24px,3vw,32px);font-weight:800;color:#fff;text-transform:uppercase;letter-spacing:-.01em;margin-bottom:12px;
+}
+.ds-page .cta-headline span{color:#5fb6e0;}
+.ds-page .cta-sub{color:#9bb6c4;font-size:15px;max-width:620px;margin:0 auto 28px;}
+.ds-page .cta-sub strong{color:#fff;}
+.ds-page .cta-pill{
+  display:inline-flex;align-items:center;gap:10px;border:1.5px solid #fff;background:transparent;color:#fff;
+  text-decoration:none;font-family:var(--mono);font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  padding:16px 34px;transition:background .15s,color .15s;
+}
+.ds-page .cta-pill:hover{background:#fff;color:var(--ds-deep);}
+
+@media (max-width:640px){
+  .ds-meta,.ds-page .header,.ds-page .block,.ds-page .cta-block{padding-left:20px;padding-right:20px;}
+}

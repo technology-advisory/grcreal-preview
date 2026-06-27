@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0">
+
+<title>Soporte · ISO 22301 Lead Auditor · GRCreal Academy</title>
+
+<meta name="description" content="Módulo 5 ISO 22301 Lead Auditor. Cómo auditar el soporte del BCMS: recursos, competencia, concienciación, comunicación e información documentada según Cláusula 7.">
+
+<meta name="robots" content="index, follow">
+
+<link rel="canonical" href="https://grcreal.com/academia/iso23001-internal-auditor/modulo-5.html">
+<link rel="icon" href="/favicon.ico" sizes="any">
+
+<link rel="stylesheet" href="../../css/marca.css">
+<link rel="stylesheet" href="../../css/academia.css">
+<link rel="stylesheet" href="../../css/dossier-core.css">
+<link rel="stylesheet" href="../../css/dossier-academia.css">
+
+<style>
+.cta-buttons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    margin-top: 8px;
+    flex-wrap: wrap;
+}
+.cta-button {
+    display: inline-block;
+    background: var(--brand, #0077B5);
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 12px 28px;
+    border-radius: 40px;
+    font-size: 1rem;
+    transition: 0.2s background;
+    box-shadow: 0 5px 12px rgba(0,0,0,0.05);
+}
+.cta-button:hover {
+    background: var(--brand-dark, #005a8e);
+}
+.course-home-btn {
+    background: var(--brand-light, #e8f3fa);
+    color: var(--brand, #0077B5);
+    padding: 6px 14px;
+    border-radius: 40px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-left: 12px;
+    transition: 0.2s;
+}
+.course-home-btn:hover {
+    background: var(--brand-mid, #cce4f0);
+}
+</style>
+
+</head>
+
+<body class="article-page">
+<nav class="nav">
+<a href="/index.html" class="nav-logo" style="text-decoration:none;">GRC<span>real</span></a>
+<div class="nav-menu-wrapper" id="navMenuWrapper">
+<ul class="nav-menu" id="navMenu">
+<li class="nav-item-dropdown" id="navDropdownMarcos"><a href="javascript:void(0)" onclick="document.getElementById('navDropdownMarcos').classList.toggle('open'); document.getElementById('navDropdownRecursos').classList.remove('open');"><span class="nav-ic-flat"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="2.5" width="12" height="3.5" rx="1"/><rect x="3" y="7.5" width="12" height="3.5" rx="1"/><rect x="3" y="12.5" width="12" height="3" rx="1"/></svg></span>Marcos <span class="chev">▾</span></a>
+<div class="nav-dropdown-panel">
+<a href="/marcos/iso27001/index.html"><span class="nav-ic"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 1.5 14.5 3.5 V8 C14.5 12 11.5 14.5 9 16 C6.5 14.5 3.5 12 3.5 8 V3.5 Z"/><path d="M6.3 9 8.2 10.8 11.7 7"/></svg></span><span class="nav-txt"><span class="nav-title">ISO 27001</span><span class="nav-sub">El estándar más adoptado</span></span></a>
+<a href="/marcos/ens/index.html"><span class="nav-ic"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 16h13"/><path d="M3.5 16V8.5M6.3 16V8.5M9 16V8.5M11.7 16V8.5M14.5 16V8.5"/><path d="M1.8 8.5 9 3 16.2 8.5Z"/></svg></span><span class="nav-txt"><span class="nav-title">ENS</span><span class="nav-sub">Sector público español</span></span></a>
+<a href="/marcos/nis2/index.html"><span class="nav-ic"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 2v3"/><path d="M3 5h12"/><path d="M3 5 1.5 8.5h3Z"/><path d="M15 5 13.5 8.5h3Z"/><path d="M5.2 9.2v2.3c0 .8.8 1.5 1.8 1.5s1.8-.7 1.8-1.5V9.2"/><path d="M9 8.5v6.2M6 16h6"/></svg></span><span class="nav-txt"><span class="nav-title">NIS2</span><span class="nav-sub">Directiva europea</span></span></a>
+<a href="/marcos/ia/index.html"><span class="nav-ic"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="5" width="8" height="8" rx="1"/><path d="M9 1.5v3M9 13.5v3M1.5 9h3M13.5 9h3M3.5 3.5l2 2M14.5 3.5l-2 2M3.5 14.5l2-2M14.5 14.5l-2-2"/></svg></span><span class="nav-txt"><span class="nav-title">IA</span><span class="nav-sub">AI Act + ISO 42001</span></span></a>
+<a href="/marcos/iso22301/index.html"><span class="nav-ic"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 9A5.5 5.5 0 1 1 12.7 5.1"/><path d="M12.7 1.8v3.3h3.3"/></svg></span><span class="nav-txt"><span class="nav-title">ISO 22301</span><span class="nav-sub">Continuidad de negocio</span></span></a>
+<a href="/marcos/vciso/index.html"><span class="nav-ic"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="6.3" r="2.8"/><path d="M3 15.5c0-2.9 2.7-5.2 6-5.2s6 2.3 6 5.2"/></svg></span><span class="nav-txt"><span class="nav-title">vCISO</span><span class="nav-sub">Rol, no certificación</span></span></a>
+</div>
+</li>
+<li class="nav-item-dropdown" id="navDropdownRecursos"><a href="javascript:void(0)" onclick="document.getElementById('navDropdownRecursos').classList.toggle('open'); document.getElementById('navDropdownMarcos').classList.remove('open');"><span class="nav-ic-flat"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 5.5a1 1 0 0 1 1-1h3.3l1.3 1.6H15a1 1 0 0 1 1 1V13a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1Z"/></svg></span>Recursos <span class="chev">▾</span></a>
+<div class="nav-dropdown-panel">
+<a href="/articulos/index.html"><span class="nav-ic"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="2" width="11" height="14" rx="1.3"/><path d="M6 6h6M6 9h6M6 12h3.5"/></svg></span><span class="nav-txt"><span class="nav-title">Artículos</span><span class="nav-sub">Análisis y opinión técnica</span></span></a>
+<a href="/checklists/index.html"><span class="nav-ic"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="3" width="13" height="12" rx="1.3"/><path d="M5 6.3h2.2M5 9h2.2M5 11.7h2.2"/><path d="M11 6.2l.9.9 1.6-1.7M11 8.9l.9.9 1.6-1.7M11 11.6l.9.9 1.6-1.7"/></svg></span><span class="nav-txt"><span class="nav-title">Checklists</span><span class="nav-sub">Autoevaluación interactiva</span></span></a>
+<a href="/versus/index.html"><span class="nav-ic"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 6.5h11M10.5 3.5l3 3-3 3"/><path d="M15.5 11.5h-11M7.5 8.5l-3 3 3 3"/></svg></span><span class="nav-txt"><span class="nav-title">Versus</span><span class="nav-sub">Comparativas entre marcos</span></span></a>
+<a href="/quiz/index.html"><span class="nav-ic"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="9" r="7"/><path d="M7 7.2c0-1.1.9-2 2-2s2 .8 2 1.8c0 1.4-2 1.6-2 3.3"/><circle cx="9" cy="12.7" r="0.15" fill="currentColor" stroke="none"/></svg></span><span class="nav-txt"><span class="nav-title">Quiz</span><span class="nav-sub">Pon a prueba tu nivel</span></span></a>
+<a href="/academia/index.html"><span class="nav-ic"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M1.5 6.5 9 3l7.5 3.5L9 10Z"/><path d="M5 8.3v3.4c0 1.3 1.8 2.3 4 2.3s4-1 4-2.3V8.3"/><path d="M16.5 6.5v4.3"/></svg></span><span class="nav-txt"><span class="nav-title">Academia</span><span class="nav-sub">Cursos paso a paso</span></span></a>
+<a href="/herramientas/index.html"><span class="nav-ic"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M11.3 2.3a3.2 3.2 0 0 0-4.3 4.2L2 11.5l1.8 1.8 5-5a3.2 3.2 0 0 0 4.2-4.3l-2 2-1.7-1.7Z"/></svg></span><span class="nav-txt"><span class="nav-title">Herramientas</span><span class="nav-sub">BIA, análisis de riesgos</span></span></a>
+</div>
+</li>
+<li><a href="/enfoque/index.html"><span class="nav-ic-flat"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="9" r="6.5"/><circle cx="9" cy="9" r="3"/><circle cx="9" cy="9" r="0.4" fill="currentColor" stroke="none"/></svg></span>Enfoque</a></li>
+<li><a href="/metodologia/index.html"><span class="nav-ic-flat"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="3.3" cy="3.3" r="1.8"/><circle cx="14.7" cy="9" r="1.8"/><circle cx="3.3" cy="14.7" r="1.8"/><path d="M5 4.3l8 4M5 13.7l8-4"/></svg></span>Metodología</a></li>
+<li><a href="/sobre-mi/index.html"><span class="nav-ic-flat"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="6" r="2.8"/><path d="M3.3 15c0-2.7 2.6-4.8 5.7-4.8s5.7 2.1 5.7 4.8"/></svg></span>Sobre mí</a></li>
+<li><a href="/contacto.html"><span class="nav-ic-flat"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="14" height="10" rx="1.3"/><path d="M2.5 5l6.5 5 6.5-5"/></svg></span>Contacto</a></li>
+<li><a href="/legal/index.html" class="nav-cta-pill">Legal</a></li>
+</ul>
+</div>
+<div class="nav-toggle" onclick="this.classList.toggle('open'); document.getElementById('navMenu').classList.toggle('open')">
+<span></span><span></span><span></span>
+</div>
+</nav>
+
+<div class="card-wrapper ds-page">
+<div class="card">
+
+<div class="accent-bar"></div>
+
+<div class="ds-meta">
+  <span><span class="dot"></span>GRCreal // expediente: academia</span>
+  <span>curso: <strong>ISO 22301 Internal Auditor</strong></span>
+</div>
+
+<nav class="academy-module-menu">
+
+<a href="/academia/iso23001-internal-auditor/index.html" class="academy-course-logo">
+ISO 22301 <span>Lead Auditor</span>
+</a>
+
+<div class="academy-course-links">
+<span class="module-badge">Módulo 5 · Soporte</span>
+<a href="/academia/iso23001-internal-auditor/index.html" class="course-home-btn">⌂ Curso</a>
+</div>
+
+</nav>
+
+<div class="header">
+
+<div class="tag">
+CLÁUSULA 7 · RECURSOS · COMPETENCIA · COMUNICACIÓN
+</div>
+
+<div class="article-date">
+Módulo 5
+</div>
+
+<h1 class="headline">Soporte <span class="accent">del BCMS</span></h1>
+
+<p class="subline">
+
+El mejor BCMS del mundo no sirve de nada<br>
+<strong>si las personas no son competentes ni están concienciadas.</strong>
+
+</p>
+
+</div>
+
+<div class="body">
+
+<!-- BLOQUE 1 · CLÁUSULA 7.1 RECURSOS -->
+
+<div class="block">
+
+<div class="block-label">
+Cláusula 7.1
+</div>
+
+<div class="block-title">
+Recursos para el BCMS
+</div>
+
+<div class="block-text">
+
+La organización debe determinar y proporcionar los recursos necesarios para el establecimiento, implementación, mantenimiento y mejora continua del BCMS.
+
+</div>
+
+<div class="quote-block">
+
+<div class="quote-text">
+&ldquo;Un BCMS sin recursos es un documento, no un sistema de gestión.&rdquo;
+</div>
+
+<div class="quote-attr">
+Principio auditor
+</div>
+
+</div>
+
+<table class="tension" style="margin-top:20px;">
+
+<tr>
+<td class="tension-who">💰</span></td>
+<td class="tension-says"><strong>Recursos financieros</strong> · Presupuesto asignado a actividades de continuidad: herramientas de BIA, planes de recuperación, formación, simulacros, personal dedicado.</td>
+</tr>
+
+<tr class="hi-row">
+<td class="tension-who">👥</span></td>
+<td class="tension-says"><span class="hi">Recursos humanos: Personal con dedicación adecuada para gestionar el BCMS, equipos de respuesta a crisis identificados y con suplentes.</span></td>
+</tr>
+
+<tr>
+<td class="tension-who">🏢</span></td>
+<td class="tension-says"><strong>Recursos físicos</strong> · Sitios alternativos de recuperación, infraestructura crítica, equipos de respaldo, documentación de continuidad accesible.</td>
+</tr>
+
+</table>
+
+</div>
+
+<div class="divider"></div>
+
+<!-- BLOQUE 2 · CLÁUSULA 7.2 COMPETENCIA -->
+
+<div class="block">
+
+<div class="block-label">
+Cláusula 7.2
+</div>
+
+<div class="block-title">
+Competencia: el control preventivo del BCMS
+</div>
+
+<div class="block-text">
+
+La competencia no es un requisito administrativo. En continuidad, las personas que gestionan crisis, recuperan sistemas o toman decisiones deben tener conocimiento demostrable.
+
+</div>
+
+<div class="quote-block">
+
+<div class="quote-text">
+&ldquo;Un plan perfecto ejecutado por personal no competente es un fracaso asegurado.&rdquo;
+</div>
+
+<div class="quote-attr">
+ISO 22301 - Enfoque en competencia
+</div>
+
+</div>
+
+<table class="tension" style="margin-top:20px;">
+
+<tr>
+<td class="tension-who">📋</span></td>
+<td class="tension-says"><strong>Qué verificar</strong> · ¿Se ha determinado la competencia necesaria para cada rol de continuidad? ¿Las personas son competentes (formación, experiencia, simulacros)? ¿Hay evidencia documentada?</td>
+</tr>
+
+<tr class="hi-row">
+<td class="tension-who">🎓</span></td>
+<td class="tension-says"><span class="hi">Competencias específicas en continuidad: Gestión de crisis, activación de planes, uso de herramientas de recuperación, comunicación en emergencias, conocimiento del BIA y los RTO.</span></td>
+</tr>
+
+</table>
+
+<div class="block-text" style="margin-top:20px;">
+
+<strong>Evidencia no es solo certificados:</strong> El auditor busca evidencia de aplicación práctica: participación en simulacros, decisiones tomadas en incidentes reales, evaluación después de ejercicios.
+
+</div>
+
+</div>
+
+<div class="divider"></div>
+
+<!-- BLOQUE 3 · CLÁUSULA 7.3 CONCIENCIACIÓN -->
+
+<div class="block">
+
+<div class="block-label">
+Cláusula 7.3
+</div>
+
+<div class="block-title">
+Concienciación: que todos sepan qué hacer en una crisis
+</div>
+
+<div class="block-text">
+
+Las personas que realizan trabajos bajo el control de la organización deben ser conscientes de la política de continuidad, su contribución a la eficacia del BCMS, las implicaciones del incumplimiento y <strong>su propio rol antes, durante y después de incidentes disruptivos</strong>.
+
+</div>
+
+<table class="tension" style="margin-top:20px;">
+
+<tr>
+<td class="tension-who">🧠</span></td>
+<td class="tension-says"><strong>Niveles de concienciación</strong> · Alta dirección: estrategia y recursos; Equipo de crisis: activación y decisiones; Empleados: qué hacer durante una evacuación, cómo reportar incidentes; Proveedores críticos: sus responsabilidades.</td>
+</tr>
+
+<tr class="hi-row">
+<td class="tension-who">📋</span></td>
+<td class="tension-says"><span class="hi">Evidencias: Plan de concienciación, registros de formación, entrevistas para verificar comprensión real, comunicación interna sobre continuidad, cartelería en instalaciones.</span></td>
+</tr>
+
+</td>
+
+<div class="block-text" style="margin-top:20px;">
+
+<strong>Pregunta del auditor en entrevista:</strong> "Si suena la alarma de evacuación ahora mismo, ¿qué hace? ¿Dónde está el punto de reunión? ¿Sabe cuál es su rol?"
+
+</div>
+
+</div>
+
+<div class="divider"></div>
+
+<!-- BLOQUE 4 · CLÁUSULA 7.4 COMUNICACIÓN -->
+
+<div class="block">
+
+<div class="block-label">
+Cláusula 7.4
+</div>
+
+<div class="block-title">
+Comunicación interna y externa en continuidad
+</div>
+
+<div class="block-text">
+
+La organización debe determinar las comunicaciones internas y externas relevantes para el BCMS: qué comunicar, cuándo, a quién, cómo y quién comunica.
+
+</div>
+
+<div class="quote-block">
+
+<div class="quote-text">
+&ldquo;En una crisis, la falta de comunicación es casi tan mala como la crisis misma.&rdquo;
+</div>
+
+<div class="quote-attr">
+Lección de auditoría de continuidad
+</div>
+
+</div>
+
+<table class="tension" style="margin-top:20px;">
+
+<tr>
+<td class="tension-who">📢</span></td>
+<td class="tension-says"><strong>Comunicación externa crítica</strong> · Clientes (estado de servicios), reguladores (notificación de incidentes si aplica), proveedores críticos, empleados (instrucciones), medios de comunicación.</td>
+</tr>
+
+<tr class="hi-row">
+<td class="tension-who">📋</span></td>
+<td class="tension-says"><span class="hi">Evidencias: Plan de comunicación de crisis, listados de contactos de emergencia, protocolos de activación, registros de comunicaciones en simulacros, canales alternativos de comunicación.</span></td>
+</tr>
+
+</tr>
+
+</div>
+
+<div class="divider"></div>
+
+<!-- BLOQUE 5 · CLÁUSULA 7.5 INFORMACIÓN DOCUMENTADA -->
+
+<div class="block">
+
+<div class="block-label">
+Cláusula 7.5
+</div>
+
+<div class="block-title">
+Información documentada: la memoria del BCMS
+</div>
+
+<div class="block-text">
+
+La información documentada debe incluir la requerida por ISO 22301 y la que la organización determina como necesaria. Debe ser controlada, actualizada y accesible especialmente durante una crisis.
+
+</div>
+
+<table class="tension" style="margin-top:20px;">
+
+<tr>
+<td class="tension-who">📄</span></td>
+<td class="tension-says"><strong>Documentos obligatorios mínimos</strong> · Alcance del BCMS, política de continuidad, objetivos de continuidad, BIA, evaluación de riesgos, estrategias, planes de continuidad, programa de ejercicios, resultados de simulacros.</td>
+</tr>
+
+<tr class="hi-row">
+<td class="tension-who">🔒</span></td>
+<td class="tension-says"><span class="hi">Control de documentos: El auditor verifica identificación (título, fecha, versión, autor), aprobación, acceso controlado, cambios trazables, disponibilidad en ubicaciones alternativas.</span></td>
+</tr>
+
+</td>
+
+<div class="block-text" style="margin-top:20px;">
+
+<strong>Error típico:</strong> Los planes de continuidad solo existen en formato digital en la red corporativa. Si la red cae (incidente típico), los planes no son accesibles. El auditor verifica copias impresas o en ubicaciones alternativas.
+
+</div>
+
+</div>
+
+<div class="divider"></div>
+
+<!-- BLOQUE 6 · CASO PRÁCTICO -->
+
+<div class="block">
+
+<div class="block-label">
+Caso auditor
+</div>
+
+<div class="block-title">
+Fallas en soporte que debilitan el BCMS
+</div>
+
+<div class="block-text">
+
+<strong>Escenario:</strong> Una organización financiera ha implementado un BCMS, pero en auditoría se detectan múltiples debilidades de soporte.
+
+<strong>Hallazgos:</strong>
+
+- El equipo de respuesta a crisis no ha recibido formación en gestión de incidentes en los últimos 2 años (competencia deficiente).
+- Los empleados desconocen los puntos de reunión de emergencia (concienciación nula).
+- No existe un plan de comunicación de crisis aprobado.
+- Los planes de continuidad solo están en la red interna sin copia offline.
+
+</div>
+
+<div class="quote-block">
+
+<div class="quote-text">
+&ldquo;El BCMS existe en documentos, pero no vive en la organización. En una crisis real, las personas no sabrían qué hacer.&rdquo;
+</div>
+
+<div class="quote-attr">
+Conclusión del auditor
+</div>
+
+</div>
+
+<div class="block-text">
+
+<strong>Clasificación:</strong> No Conformidad Mayor por falla sistémica en soporte.
+
+<strong>Cláusulas afectadas:</strong> 7.2 (Competencia), 7.3 (Concienciación), 7.4 (Comunicación), 7.5 (Información documentada).
+
+</div>
+
+</div>
+
+<div class="divider"></div>
+
+<!-- BLOQUE 7 · RESUMEN EJECUTIVO -->
+
+<div class="block">
+
+<div class="block-label">
+Resumen del módulo
+</div>
+
+<div class="block-title">
+Lo que debes llevarte de aquí
+</div>
+
+<table class="tension" style="margin-top:16px;">
+
+<tr>
+<td class="tension-who">1</span></td>
+<td class="tension-says">La organización debe proporcionar recursos (financieros, humanos, físicos) para el BCMS.</span>
+</span>
+</tr>
+
+<tr class="hi-row">
+<td class="tension-who">2</span></td>
+<td class="tension-says"><span class="hi">La competencia (7.2) en continuidad se demuestra en simulacros e incidentes reales, no solo con certificados.</span></span>
+</span>
+</table>
+
+<tr>
+<td class="tension-who">3</span></td>
+<td class="tension-says">La concienciación (7.3) se verifica con entrevistas y observación, no solo con registros de formación.</span>
+</span>
+</tr>
+
+<tr class="hi-row">
+<td class="tension-who">4</span></td>
+<td class="tension-says"><span class="hi">La comunicación (7.4) en crisis debe estar planificada: qué decir, a quién, cuándo y por qué medio.</span></span>
+</span>
+</td>
+
+<tr>
+<td class="tension-who">5</span></td>
+<td class="tension-says">La información documentada (7.5) debe estar accesible incluso cuando la red corporativa no está disponible.</span>
+</span>
+</tr>
+
+</table>
+
+</div>
+
+<!-- CTA -->
+
+<div class="cta-block">
+
+<div class="cta-headline">
+El siguiente paso es auditar<br>
+<span>la operación del BCMS</span>
+</div>
+
+<div class="cta-sub">
+Siguiente módulo: <strong>Operación (Cláusula 8)</strong>
+</div>
+
+<div class="cta-buttons">
+    <a href="modulo-4.html" class="cta-button">← Anterior</a>
+    <a href="modulo-6.html" class="cta-button">Continuar →</a>
+</div>
+
+</div>
+
+</div>
+
+<!-- FOOTER -->
+<div id="footer-placeholder"></div>
+<script>
+    fetch('/includes/footer-no-share.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('footer-placeholder').innerHTML = data;
+        });
+</script>
+
+</div>
+</div>
+
+</body>
+<script src="/js/modulo-check-22301.js"></script>
+</html>

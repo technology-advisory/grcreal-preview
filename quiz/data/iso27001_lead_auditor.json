@@ -1,0 +1,362 @@
+{
+  "titulo": "ISO 27001 Lead Auditor",
+  "tema": "ISO 27001:2022",
+  "descripcion": "Auditoría ISO 27001 desde la práctica. 40 preguntas sobre evidencias, hallazgos, no conformidades y evaluación de controles.",
+  "preguntas": [
+    {
+      "q": "¿El examen de registros, las entrevistas al personal y la observación directa constituyen?",
+      "o": [
+        "Mecanismos para calificar a los auditores",
+        "Las metas principales de una auditoría",
+        "Los requerimientos mínimos para ejecutar una auditoría",
+        "Rasgos de identidad del auditor líder"
+      ],
+      "c": 2,
+      "e": "De acuerdo con los procesos de auditoría, para que una revisión tenga validez técnica es indispensable recopilar evidencia mediante estos tres métodos fundamentales de recolección de datos en campo."
+    },
+    {
+      "q": "Según ISO 27001:2022 cláusula 4.2, la organización debe determinar:",
+      "o": [
+        "Qué requisitos serán abordados a través del SGSI",
+        "Las partes interesadas relevantes para el SGSI",
+        "Los requisitos relevantes de estas partes interesadas",
+        "Todas las anteriores"
+      ],
+      "c": 3,
+      "e": "Cláusula 4.2: la organización debe determinar las partes interesadas relevantes, sus requisitos, y cuáles serán abordados por el SGSI."
+    },
+    {
+      "q": "Una organización tiene un Plan de Continuidad de Negocio, pero no hay evidencia de pruebas o simulacros periódicos. ¿Qué control del Anexo A no generó evidencia objetiva?",
+      "o": [
+        "5.30 (Gestión de la continuidad del negocio)",
+        "8.20",
+        "6.8",
+        "8.16"
+      ],
+      "c": 0,
+      "e": "Si un plan de continuidad existe pero no se realizan pruebas periódicas que generen evidencia, se incumple el control de Gestión de Continuidad de Negocio."
+    },
+    {
+      "q": "En una auditoría del SGSI, el auditor nota que no hay comentarios de partes interesadas en entrevistas con gerencia y levanta una NO CONFORMIDAD. ¿A qué cláusula se asigna?",
+      "o": [
+        "5.1",
+        "9.1",
+        "4.2 (Comprensión de necesidades de partes interesadas)",
+        "9.3.2"
+      ],
+      "c": 2,
+      "e": "El numeral 4.2 se titula 'Understanding the Needs and Expectations of Stakeholders'. Si la organización no identifica ni da seguimiento a estos actores, viola esta sección."
+    },
+    {
+      "q": "Estas herramientas dan constancia al proceso de revisión, estructuran la evaluación, detectan puntos vulnerables y regulan el alcance y ritmo de la auditoría:",
+      "o": [
+        "Listas de verificación",
+        "Programas de auditoría",
+        "Planes de auditoría",
+        "Equipos de auditoría"
+      ],
+      "c": 0,
+      "e": "Las listas de verificación sirven como guía estructurada del auditor para no omitir puntos clave de la norma."
+    },
+    {
+      "q": "Los informes de revisión por la dirección deben contemplar cambios en necesidades y expectativas de partes interesadas. ¿Es correcto?",
+      "o": ["Verdadero", "Falso"],
+      "c": 0,
+      "e": "La Revisión por la Dirección debe incluir como entrada los 'External and internal changes' y el 'Stakeholder feedback'."
+    },
+    {
+      "q": "¿Con cuál afirmación estás de acuerdo?",
+      "o": [
+        "El equipo de auditoría se elige evaluando la aptitud y competencia necesarias",
+        "El equipo se elige evaluando los títulos académicos requeridos",
+        "El equipo se elige evaluando las destrezas operativas necesarias",
+        "El equipo se elige evaluando el nivel de lealtad"
+      ],
+      "c": 0,
+      "e": "El estándar prioriza la competencia: 'the ability to apply knowledge and skills for the achievement of intended results'."
+    },
+    {
+      "q": "Por un apagón, el personal trabaja desde casa vía VPN. El UPS del Datacenter falló a las 2 horas, incumpliendo disponibilidad del 99.7%. ¿Qué control del Anexo A aplica?",
+      "o": [
+        "5.1",
+        "6.3",
+        "7.2",
+        "8.14 (Seguridad física y ambiental)"
+      ],
+      "c": 3,
+      "e": "Las fallas de suministro eléctrico e infraestructura física corresponden al dominio 'Physical and environmental security'."
+    },
+    {
+      "q": "¿Cómo beneficia un SGSI a una corporación?",
+      "o": [
+        "Ayuda en la administración de riesgos para niveles tolerables",
+        "Incorpora la protección de datos como parte fundamental de los procesos",
+        "Ayuda a prevenir y detectar incidentes de seguridad",
+        "Todas las anteriores"
+      ],
+      "c": 3,
+      "e": "El SGSI preserva confidencialidad, integridad y disponibilidad mediante gestión del riesgo, prevención de incidentes e integración de seguridad en procesos."
+    },
+    {
+      "q": "La neutralidad de los juicios del auditor y la ausencia de sesgos en hallazgos corresponde a:",
+      "o": [
+        "Un componente obligatorio del reporte final",
+        "Una pauta para decisiones ante riesgos tecnológicos",
+        "Un principio fundamental de la auditoría",
+        "Un requisito formal del alcance"
+      ],
+      "c": 2,
+      "e": "Una auditoría se rige por principios como 'Independence' y 'Evidence-based approach' para garantizar imparcialidad."
+    },
+    {
+      "q": "Según ISO 19011:2018, los hallazgos de auditoría son:",
+      "o": [
+        "El balance tras analizar los controles del Anexo A",
+        "La resolución tras contrastar puntos de vista del auditado",
+        "El desenlace tras medir objetivos frente a fallas",
+        "El resultado de contrastar evidencias frente a requisitos"
+      ],
+      "c": 3,
+      "e": "Un hallazgo nace cuando la evidencia recopilada se compara contra los criterios técnicos o requisitos (Audit Criteria)."
+    },
+    {
+      "q": "Un ex-empleado filtró datos confidenciales a competidores. ¿Qué dominio del Anexo A aplica?",
+      "o": [
+        "6.2",
+        "6.5 y 6.6",
+        "6.1",
+        "Ninguna (Corresponde a Seguridad de Recursos Humanos al egreso)"
+      ],
+      "c": 3,
+      "e": "La seguridad de empleados que se desvinculan pertenece al dominio 'Human resources security'."
+    },
+    {
+      "q": "Dictámenes previos, métricas de rendimiento, histórico de incidentes y entrevistas son canales válidos para recopilar datos.",
+      "o": ["Verdadero", "Falso"],
+      "c": 0,
+      "e": "El auditor recurre legítimamente a incidentes, indicadores e información documental para medir el desempeño del SGSI."
+    },
+    {
+      "q": "La asignación de actividades y roles entre los auditores es atribución de:",
+      "o": [
+        "El director de auditoría",
+        "Los encargados del programa de auditorías",
+        "La junta directiva",
+        "El auditor líder designado"
+      ],
+      "c": 3,
+      "e": "La asignación de tareas operativas y el mando técnico corresponden al Auditor Líder."
+    },
+    {
+      "q": "'Cualidad que asegura que los datos no sean accesibles a personas no autorizadas' define:",
+      "o": ["Integridad", "Irrepudiabilidad", "Confidencialidad", "Disponibilidad"],
+      "c": 2,
+      "e": "La Confidencialidad consiste en resguardar la información de accesos o divulgaciones no autorizadas."
+    },
+    {
+      "q": "Al estructurar comunicaciones internas y externas del SGSI, se debe definir:",
+      "o": [
+        "Qué comunicar",
+        "Cómo comunicar",
+        "Cuándo comunicar",
+        "Todos los anteriores"
+      ],
+      "c": 3,
+      "e": "La organización debe definir contenido (what), momento (when) y canales (how) de comunicación."
+    },
+    {
+      "q": "Usar Wi-Fi pública de hotel para enviar reportes confidenciales sin protección vulnera:",
+      "o": ["7.11", "5.1", "5.10", "7.9 (Teletrabajo y seguridad en comunicaciones)"],
+      "c": 3,
+      "e": "El uso de redes abiertas sin protección viola políticas de Dispositivos Móviles y Teletrabajo."
+    },
+    {
+      "q": "Según ISO 19011:2018, la evidencia objetiva:",
+      "o": [
+        "Solo se recaba ante incumplimientos graves",
+        "Son registros, declaraciones comprobables y verificables ligados a criterios",
+        "Es imposible de obtener sin cooperación del auditado",
+        "Se limita a observación directa"
+      ],
+      "c": 1,
+      "e": "La evidencia objetiva son registros, hechos o datos constatables relacionados con los criterios de auditoría."
+    },
+    {
+      "q": "En ISO 19011:2018, los criterios de auditoría son:",
+      "o": [
+        "Aspectos logísticos entre evaluador y auditado",
+        "Políticas, reglas o requisitos como punto de comparación",
+        "El desglose de resultados del reporte final",
+        "Pautas que solo manejan auditor y dirección"
+      ],
+      "c": 1,
+      "e": "Los criterios son 'a set of policies, procedures or requirements used as a reference against which audit evidence is compared'."
+    },
+    {
+      "q": "Los hallazgos se generan al contrastar evidencias frente a requisitos establecidos.",
+      "o": ["Verdadero", "Falso"],
+      "c": 0,
+      "e": "Un hallazgo (conformidad o no conformidad) requiere medir la evidencia real frente a la norma o requisito."
+    },
+    {
+      "q": "Según cláusula 4.2 de ISO 27001, la organización debe documentar:",
+      "o": [
+        "Qué expectativas forman parte del alcance del SGSI",
+        "Las partes interesadas con impacto en el SGSI",
+        "Las necesidades obligatorias de dichos actores",
+        "Todas las anteriores"
+      ],
+      "c": 3,
+      "e": "La cláusula 4.2 exige identificar interesados y sus requisitos legales, regulatorios o de negocio."
+    },
+    {
+      "q": "Peligros del entorno físico, riesgos naturales y presiones del mercado son variables para estructurar:",
+      "o": [
+        "Políticas de seguridad",
+        "Prioridad de riesgos y requisitos de seguridad",
+        "Listas de verificación",
+        "Ninguna"
+      ],
+      "c": 1,
+      "e": "Los 'External Issues' ayudan a entender riesgos contextuales y definir controles prioritarios."
+    },
+    {
+      "q": "¿Qué control asegura que los sistemas se desarrollen y mantengan de forma segura en todo su ciclo de vida?",
+      "o": ["8.27 (Desarrollo seguro)", "8.20", "8.28", "5.1"],
+      "c": 0,
+      "e": "El ciclo de desarrollo seguro está regido por 'Systems acquisition, development and maintenance'."
+    },
+    {
+      "q": "Un backup no restauró la información perdiendo registros del SGSI. ¿Qué control falló?",
+      "o": ["8.14 (Copias de seguridad)", "8.13", "8.20", "5.1"],
+      "c": 0,
+      "e": "Un respaldo que no se puede restaurar demuestra falla operativa del control de copias de seguridad."
+    },
+    {
+      "q": "Un auditor debe declarar NO CONFORMIDAD mayor cuando:",
+      "o": [
+        "Se excluye control 7.1 de perímetros físicos",
+        "Se intenta omitir cláusula 5.3 de roles y responsabilidades",
+        "Se justifica no aplicar control 8.27",
+        "Se decide no adoptar control 6.7 de trabajo remoto"
+      ],
+      "c": 1,
+      "e": "Las cláusulas 4 a 10 son obligatorias. Excluir la cláusula 5.3 es una violación directa al sistema."
+    },
+    {
+      "q": "Reportar a alta dirección el desempeño del SGSI es responsabilidad de:",
+      "o": [
+        "Cada dueño de proceso",
+        "El responsable de seguridad de la información",
+        "Asesores externos",
+        "La alta gerencia"
+      ],
+      "c": 1,
+      "e": "El seguimiento técnico recae en los roles de coordinación de seguridad, responsables del mantenimiento y reporte."
+    },
+    {
+      "q": "La viabilidad de una auditoría requiere cooperación del personal auditado.",
+      "o": ["Verdadero", "Falso"],
+      "c": 0,
+      "e": "Sin cooperación, no hay entrevistas ni acceso a registros, imposibilitando un juicio fundado."
+    },
+    {
+      "q": "PCs con fechas y horas desincronizadas en centros de cómputo. ¿Qué control falló?",
+      "o": ["5.2", "5.1", "8.14 (Sincronización de relojes)", "8.17"],
+      "c": 2,
+      "e": "Sincronizar relojes de servidores y equipos es parte del dominio 'Operations security'."
+    },
+    {
+      "q": "Si no hay criterios definidos para aceptar o rechazar riesgos, ¿qué cláusula se incumple?",
+      "o": ["8.3", "5.1", "6.1.2 (Criterios de aceptación)", "9.1"],
+      "c": 2,
+      "e": "Fijar 'predetermined acceptance criteria' es parte del proceso de planificación de riesgos (cláusula 6)."
+    },
+    {
+      "q": "Robo de laptop de un directivo en un hotel. ¿Qué control debió proteger los datos?",
+      "o": ["5.1", "7.9", "5.10 (Protección dispositivos móviles)", "7.8"],
+      "c": 2,
+      "e": "El aseguramiento de portátiles fuera de oficina se rige por políticas de dispositivos móviles."
+    },
+    {
+      "q": "Una no conformidad de auditoría anterior sobre políticas de seguridad sigue sin corregirse. ¿Qué cláusula se incumple?",
+      "o": ["5.2", "5.3", "5.1", "10.2 (Acciones correctivas)"],
+      "c": 3,
+      "e": "La sección de mejora continua (10.2) exige ejecutar acciones para mitigar la causa raíz."
+    },
+    {
+      "q": "El informe final de auditoría debe incluir objetivos, criterios, hallazgos y conclusiones.",
+      "o": ["Verdadero", "Falso"],
+      "c": 0,
+      "e": "El reporte final debe integrar objetivos iniciales, criterios aplicados y el juicio técnico final."
+    },
+    {
+      "q": "El plan de auditoría debe incluir horarios, lugares, entrevistas y reuniones con dirección.",
+      "o": ["Verdadero", "Falso"],
+      "c": 0,
+      "e": "El Audit Plan describe actividades y arreglos organizativos detallados para la auditoría específica."
+    },
+    {
+      "q": "Ser perceptivo, diplomático y versátil son:",
+      "o": [
+        "Habilidades exclusivas de la dirección",
+        "Atributos de quienes diseñan el programa",
+        "Cualidades de los auditados",
+        "Atributos personales indispensables de los auditores"
+      ],
+      "c": 3,
+      "e": "Según ISO 19011, ser diplomático, perceptivo y versátil son atributos personales requeridos en auditores."
+    },
+    {
+      "q": "Un ex-empleado sigue con accesos activos un mes después de su salida. ¿Qué control se omitió?",
+      "o": ["5.18 (Revocación de accesos)", "5.15", "5.16", "5.18 y 5.16"],
+      "c": 0,
+      "e": "Esta omisión corresponde a Gestión de Accesos y al control de cese de funciones en Recursos Humanos."
+    },
+    {
+      "q": "La ubicación, fechas, horario y reuniones con dirección deben estar en el plan de auditoría.",
+      "o": ["Verdadero", "Falso"],
+      "c": 0,
+      "e": "El plan de auditoría debe incluir todos los detalles logísticos y organizativos."
+    },
+    {
+      "q": "Mejoras al programa de auditoría pueden incluir alinear fechas con disponibilidad del auditado, múltiples auditorías en una visita y minimizar tiempos muertos.",
+      "o": ["Verdadero", "Falso"],
+      "c": 0,
+      "e": "Coordinar agendas, auditorías integradas y optimizar tiempos son estrategias recomendadas."
+    },
+    {
+      "q": "Las lecciones aprendidas de incidentes se usan para reducir el impacto de:",
+      "o": [
+        "Conflictos de confidencialidad con proveedores",
+        "Incidentes de seguridad de la información",
+        "Errores en gestión del cambio",
+        "Incumplimientos de políticas"
+      ],
+      "c": 1,
+      "e": "El fin del ciclo continuo del SGSI es reducir incidentes que afecten los activos y la reputación."
+    },
+    {
+      "q": "Según ISO 19011, verificar la relevancia y precisión de la información recopilada es actividad obligatoria de:",
+      "o": [
+        "El auditor líder",
+        "El auditado",
+        "El auditor interno",
+        "Los gestores del programa"
+      ],
+      "c": 0,
+      "e": "El auditor líder debe verificar que los testimonios o documentos sean fidedignos antes de emitir dictamen."
+    },
+    {
+      "q": "El conocimiento adquirido debe usarse para reducir la posibilidad o impacto de futuros:",
+      "o": [
+        "Incumplimientos de acuerdos de confidencialidad",
+        "Incidentes de seguridad de la información",
+        "Errores en gestión de cambios",
+        "Incumplimientos de políticas"
+      ],
+      "c": 1,
+      "e": "La mejora continua del SGSI busca reducir la frecuencia e impacto de incidentes de seguridad."
+    }
+  ]
+}

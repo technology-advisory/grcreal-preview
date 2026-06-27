@@ -1,0 +1,348 @@
+{
+  "titulo": "Ransomware Defense",
+  "tema": "Ciberamenazas · Respuesta a Incidentes",
+  "descripcion": "Defensa, respuesta y recuperación ante ataques de ransomware. Enfoque GRC: preparación, detección, contención, erradicación y recuperación.",
+  "preguntas": [
+    {
+      "q": "¿Qué tipo de ransomware cifra los archivos y exige un rescate por su descifrado?",
+      "o": [
+        "Locker ransomware",
+        "Crypto ransomware",
+        "Scareware",
+        "Doxware"
+      ],
+      "c": 1,
+      "e": "El Crypto ransomware cifra archivos y documentos. El Locker ransomware bloquea el acceso al dispositivo pero no cifra archivos."
+    },
+    {
+      "q": "¿Cuál es el vector de ataque más común utilizado por el ransomware para infiltrarse en una organización?",
+      "o": [
+        "Ataques de fuerza bruta",
+        "Ingeniería social y phishing con adjuntos maliciosos",
+        "Ataques Man-in-the-Middle",
+        "Explotación de hardware"
+      ],
+      "c": 1,
+      "e": "El phishing con enlaces o adjuntos maliciosos sigue siendo el método principal. Más del 70% de los ataques comienzan con un correo de phishing."
+    },
+    {
+      "q": "Según el marco NIST CSF, ¿en qué fase del ciclo de respuesta a incidentes se debe aislar un sistema infectado?",
+      "o": [
+        "Preparación",
+        "Identificación",
+        "Contención",
+        "Recuperación"
+      ],
+      "c": 2,
+      "e": "La contención (Containment) es la fase donde se aíslan los sistemas afectados para evitar la propagación del ransomware."
+    },
+    {
+      "q": "¿Qué control del Anexo A de ISO 27001:2022 es crítico para DETECTAR y PREVENIR la ejecución de ransomware en los endpoints?",
+      "o": [
+        "A.5.1 Políticas de seguridad",
+        "A.8.20 Seguridad de redes",
+        "A.8.7 Protección contra malware",
+        "A.8.8 Gestión de vulnerabilidades"
+      ],
+      "c": 2,
+      "e": "A.8.7 (Protección contra malware) establece medidas de detección, prevención y recuperación frente a código malicioso en endpoints. Para controlar la propagación lateral en red, aplica complementariamente A.8.20."
+    },
+    {
+      "q": "¿Qué significa la sigla 'RTO' en un plan de recuperación ante ransomware?",
+      "o": [
+        "Recovery Time Objective",
+        "Recovery Task Operation",
+        "Ransomware Treatment Order",
+        "Response Time Option"
+      ],
+      "c": 0,
+      "e": "RTO (Recovery Time Objective) es el tiempo máximo tolerable para restaurar las operaciones tras un incidente. En ransomware, es crítico definirlo antes del ataque."
+    },
+    {
+      "q": "¿Cuál es la recomendación estándar de la industria sobre pagar o no el rescate en un ataque de ransomware?",
+      "o": [
+        "Siempre pagar para recuperar los datos rápido",
+        "Nunca pagar, ya que financia el crimen y no garantiza la recuperación",
+        "Pagar solo si el rescate es menor a 10.000€",
+        "Depende del país donde ocurra el ataque"
+      ],
+      "c": 1,
+      "e": "Agencias como FBI, ENISA y CCN recomiendan NO pagar el rescate. El pago financia el crimen organizado y no garantiza la devolución de los datos."
+    },
+    {
+      "q": "¿Qué estrategia de backup es más efectiva contra ransomware?",
+      "o": [
+        "Backups en la misma red que los servidores",
+        "Regla 3-2-1 (3 copias, 2 soportes, 1 fuera de línea/offline)",
+        "Backups diarios en el mismo disco",
+        "Backups en la nube sin cifrado"
+      ],
+      "c": 1,
+      "e": "La regla 3-2-1 es el estándar: 3 copias de los datos, en 2 soportes diferentes, con 1 copia offline o inmutable que no pueda ser cifrada por el ransomware."
+    },
+    {
+      "q": "¿Qué es un 'RaaS' (Ransomware as a Service)?",
+      "o": [
+        "Un antivirus especializado en ransomware",
+        "Un modelo de negocio criminal donde los operadores alquilan ransomware a afiliados",
+        "Un servicio de recuperación de datos tras un ataque",
+        "Un estándar de seguridad para backups"
+      ],
+      "c": 1,
+      "e": "RaaS es un modelo de negocio en el cibercrimen donde los desarrolladores alquilan su ransomware a afiliados a cambio de un porcentaje del rescate."
+    },
+    {
+      "q": "¿Qué medida de seguridad debe implementarse obligatoriamente en los backups para protegerse del ransomware?",
+      "o": [
+        "Compresión de datos",
+        "Inmutabilidad o air-gap (aislamiento físico)",
+        "Deduplicación",
+        "Indexación automática"
+      ],
+      "c": 1,
+      "e": "La inmutabilidad impide que el ransomware modifique o cifre los backups. El air-gap (aislamiento físico) garantiza que las copias no sean accesibles desde la red."
+    },
+    {
+      "q": "¿Qué estándar internacional proporciona guías específicas para la respuesta a incidentes de seguridad?",
+      "o": [
+        "ISO 27001",
+        "ISO 27035",
+        "ISO 22301",
+        "ISO 31000"
+      ],
+      "c": 1,
+      "e": "ISO 27035 es el estándar específico para la gestión de incidentes de seguridad de la información, incluyendo ransomware."
+    },
+    {
+      "q": "¿Qué acción debe tomarse PRIMERO al detectar un posible ransomware en un equipo?",
+      "o": [
+        "Apagar el equipo inmediatamente",
+        "Desconectarlo de la red (cable y WiFi)",
+        "Ejecutar un antivirus",
+        "Notificar al CISO"
+      ],
+      "c": 1,
+      "e": "Desconectar el equipo de la red es prioritario para evitar la propagación a servidores y otros equipos. Apagarlo puede borrar evidencias forenses en memoria volátil."
+    },
+    {
+      "q": "¿Qué es 'doble extorsión' en el contexto del ransomware?",
+      "o": [
+        "Pedir rescate dos veces a la misma víctima",
+        "Exigir un rescate por descifrar los datos y otro por no publicar la información robada",
+        "Atacar a la empresa y luego a sus clientes",
+        "Usar dos tipos de cifrado diferentes"
+      ],
+      "c": 1,
+      "e": "La doble extorsión combina el cifrado de archivos con la exfiltración de datos. Si no se paga, los atacantes publican la información robada."
+    },
+    {
+      "q": "¿Qué control de ISO 27001:2022 es fundamental para prevenir el ransomware que entra por RDP expuesto a Internet?",
+      "o": [
+        "A.5.1 Políticas",
+        "A.8.20 Seguridad de redes",
+        "A.8.27 Arquitectura segura",
+        "A.8.21 Seguridad de servicios de red"
+      ],
+      "c": 3,
+      "e": "A.8.21 (Security of network services) incluye asegurar servicios como RDP, VPN y acceso remoto, cerrando puertos innecesarios expuestos a Internet."
+    },
+    {
+      "q": "Según estudios del sector (Sophos State of Ransomware), ¿qué porcentaje de organizaciones que pagan el rescate NO recuperan todos sus datos?",
+      "o": [
+        "Menos del 10%",
+        "Aproximadamente el 20-30%",
+        "Más del 50%",
+        "El 100% recupera todos los datos"
+      ],
+      "c": 2,
+      "e": "Según el informe State of Ransomware de Sophos, más del 50% de las organizaciones que pagan el rescate no recuperan todos sus datos. La recuperación completa es la excepción, no la norma."
+    },
+    {
+      "q": "¿Qué framework de ciberseguridad es ampliamente utilizado para evaluar la madurez frente a ransomware?",
+      "o": [
+        "COBIT",
+        "NIST CSF (Cybersecurity Framework)",
+        "ITIL",
+        "TOGAF"
+      ],
+      "c": 1,
+      "e": "NIST CSF es el marco de referencia para evaluar la postura de seguridad, incluyendo las funciones: Identificar, Proteger, Detectar, Responder y Recuperar."
+    },
+    {
+      "q": "¿Qué técnica de detección de ransomware analiza el comportamiento en lugar de firmas?",
+      "o": [
+        "Antivirus tradicional",
+        "EDR (Endpoint Detection and Response)",
+        "Lista blanca de aplicaciones",
+        "Filtrado de correo"
+      ],
+      "c": 1,
+      "e": "EDR utiliza análisis de comportamiento y heurístico para detectar ransomware incluso si no tiene una firma conocida, observando patrones como cifrado masivo de archivos."
+    },
+    {
+      "q": "¿Qué debe contener obligatoriamente un Plan de Respuesta a Incidentes de ransomware?",
+      "o": [
+        "Solo el número de teléfono del CISO",
+        "Matriz de roles y responsabilidades, procedimientos de contención y contactos de emergencia",
+        "Instrucciones para pagar el rescate",
+        "Backups de los servidores"
+      ],
+      "c": 1,
+      "e": "Un plan debe incluir roles definidos (equipo de respuesta), procedimientos técnicos de contención y una lista de contactos clave: legal, forense, aseguradora, CCN-CERT."
+    },
+    {
+      "q": "¿Qué es un 'honeypot' o 'canary token' en defensa contra ransomware?",
+      "o": [
+        "Un tipo de antivirus",
+        "Un señuelo o archivo trampa que alerta cuando es accedido o modificado",
+        "Un backup cifrado",
+        "Un firewall de nueva generación"
+      ],
+      "c": 1,
+      "e": "Los honeypots son archivos señuelo que, al ser modificados por ransomware, activan una alerta temprana antes de que se cifren los archivos reales."
+    },
+    {
+      "q": "¿Qué regulación europea puede imponer sanciones millonarias si no se notifica un incidente de ransomware a tiempo?",
+      "o": [
+        "GDPR (RGPD)",
+        "PCI DSS",
+        "ISO 27001",
+        "NIST SP 800-53"
+      ],
+      "c": 0,
+      "e": "GDPR (RGPD) exige notificar brechas de seguridad que afecten datos personales en 72 horas. El ransomware con exfiltración de datos está sujeto a esta obligación."
+    },
+    {
+      "q": "¿Cuál es el objetivo principal de realizar ejercicios de mesa (tabletop exercises) para ransomware?",
+      "o": [
+        "Probar la velocidad de los backups",
+        "Entrenar al equipo de respuesta y validar el plan antes de un ataque real",
+        "Medir el tiempo de cifrado",
+        "Calcular el costo del rescate"
+      ],
+      "c": 1,
+      "e": "Los ejercicios de mesa simulan un ataque para entrenar al equipo de respuesta, identificar brechas en el plan y mejorar los tiempos de reacción sin impacto real."
+    },
+    {
+      "q": "¿Qué tipo de seguro es recomendable para mitigar el impacto financiero del ransomware?",
+      "o": [
+        "Seguro de vida",
+        "Seguro de responsabilidad civil y ciberseguridad (Cyber Insurance)",
+        "Seguro de salud",
+        "Seguro de transporte"
+      ],
+      "c": 1,
+      "e": "El seguro de ciberseguridad (Cyber Insurance) cubre costes de respuesta a incidentes, forensia, notificaciones, multas regulatorias y, en algunos casos, el rescate."
+    },
+    {
+      "q": "¿Qué práctica de gestión de accesos reduce significativamente el impacto del ransomware?",
+      "o": [
+        "Contraseñas de un solo uso (OTP)",
+        "Principio de mínimo privilegio (PoLP)",
+        "Autenticación biométrica",
+        "Cambio de contraseña mensual"
+      ],
+      "c": 1,
+      "e": "El principio de mínimo privilegio limita los permisos de los usuarios. Si un usuario con privilegios limitados es infectado, el ransomware no podrá cifrar servidores críticos."
+    },
+    {
+      "q": "¿Qué hace el 'Modo seguro' en un plan de recuperación ante ransomware?",
+      "o": [
+        "Ejecutar antivirus",
+        "Restaurar sistemas en un entorno aislado antes de volver a producción",
+        "Apagar todos los servidores",
+        "Llamar a la policía"
+      ],
+      "c": 1,
+      "e": "El 'modo seguro' implica restaurar sistemas en un entorno limpio y aislado para validar que no queda rastro del ransomware antes de conectarlos a la red de producción."
+    },
+    {
+      "q": "¿Qué grupos de ransomware son conocidos actualmente por atacar infraestructuras críticas con rescates millonarios?",
+      "o": [
+        "WannaCry y NotPetya",
+        "LockBit, RansomHub y ALPHV/BlackCat",
+        "Ryuk y Petya",
+        "CryptoLocker y Locky"
+      ],
+      "c": 1,
+      "e": "LockBit fue la operación RaaS más activa hasta su desmantelamiento parcial en 2024. RansomHub y ALPHV/BlackCat han tomado el relevo como grupos más activos en ataques a infraestructuras críticas."
+    },
+    {
+      "q": "¿Qué control de seguridad debe tener el personal de TI para restaurar backups durante un ataque de ransomware?",
+      "o": [
+        "Acceso administrativo desde sus equipos diarios",
+        "Credenciales de emergencia o 'break glass' fuera de banda",
+        "Acceso remoto 24/7",
+        "Permiso para pagar el rescate"
+      ],
+      "c": 1,
+      "e": "Las credenciales 'break glass' (fuera de banda) permiten acceder a los backups aunque el ransomware haya comprometido las credenciales normales del dominio."
+    },
+    {
+      "q": "¿Qué elemento del Análisis de Impacto al Negocio (BIA) es crítico para priorizar la recuperación ante ransomware?",
+      "o": [
+        "El costo de los equipos",
+        "El RTO y RPO de cada proceso crítico",
+        "La antigüedad de los empleados",
+        "La ubicación geográfica"
+      ],
+      "c": 1,
+      "e": "El BIA define RTO (tiempo máximo de recuperación) y RPO (pérdida máxima de datos aceptable), que guían qué sistemas recuperar primero tras un ransomware."
+    },
+    {
+      "q": "¿Qué es 'MFA' y por qué es crítico contra ransomware?",
+      "o": [
+        "Multi-Factor Authentication, evita accesos no autorizados aunque la contraseña sea robada",
+        "Manual Forense Avanzado",
+        "Matriz de Fallos de Autenticación",
+        "Módulo de Firma Avanzada"
+      ],
+      "c": 0,
+      "e": "MFA (Autenticación Multifactor) bloquea accesos no autorizados incluso si la contraseña es robada por phishing, un vector común de entrada de ransomware."
+    },
+    {
+      "q": "Según múltiples informes del sector, ¿cuál es el rango habitual del 'dwell time' (tiempo entre infección y detección) del ransomware?",
+      "o": [
+        "Menos de 1 hora",
+        "1-2 días",
+        "Semanas o meses en muchos casos",
+        "Siempre se detecta inmediatamente"
+      ],
+      "c": 2,
+      "e": "El dwell time puede ser de semanas o meses. Durante ese tiempo, el atacante se mueve lateralmente, escala privilegios y exfiltra datos antes de activar el cifrado."
+    },
+    {
+      "q": "¿Qué práctica de hardening de sistemas reduce la superficie de ataque del ransomware?",
+      "o": [
+        "Instalar todos los servicios por defecto",
+        "Deshabilitar macros de Office por defecto y restringir PowerShell",
+        "Usar el mismo administrador local en todos los equipos",
+        "Permitir RDP desde Internet"
+      ],
+      "c": 1,
+      "e": "Deshabilitar macros de Office (vector común de ransomware) y restringir PowerShell son prácticas de hardening que reducen la superficie de ataque."
+    },
+    {
+      "q": "¿Qué debe hacer una organización INMEDIATAMENTE después de contener un ransomware?",
+      "o": [
+        "Pagar el rescate",
+        "Preservar evidencias forenses y activar el equipo de respuesta",
+        "Formatear todos los servidores",
+        "Reiniciar los equipos afectados"
+      ],
+      "c": 1,
+      "e": "Preservar evidencias es crítico para el análisis forense, identificar la causa raíz y evitar que el ataque se repita. Formatear sin preservar destruye información valiosa."
+    },
+    {
+      "q": "¿Qué es un 'wiper' y cómo se diferencia del ransomware?",
+      "o": [
+        "Es lo mismo que ransomware",
+        "Un wiper destruye datos permanentemente sin posibilidad de recuperación, incluso si se paga",
+        "Un wiper solo afecta a sistemas Linux",
+        "Un wiper es menos peligroso que el ransomware"
+      ],
+      "c": 1,
+      "e": "Un wiper (destructor) no busca rescate: destruye datos de forma irreversible. A veces se hace pasar por ransomware para ocultar un ataque destructivo o de sabotaje."
+    }
+  ]
+}

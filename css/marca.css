@@ -121,12 +121,162 @@ body {
   background: var(--brand-light);
   color: var(--brand);
 }
+.nav-cta-pill {
+  background: var(--brand) !important;
+  color: #fff !important;
+  border-radius: 14px !important;
+}
+.nav-cta-pill:hover {
+  background: var(--brand-dark) !important;
+  color: #fff !important;
+}
+.nav-menu li a .nav-ic-flat {
+  display: inline-flex;
+  width: 15px;
+  height: 15px;
+  margin-right: 5px;
+  vertical-align: -3px;
+  color: var(--brand);
+}
+.nav-menu li a .nav-ic-flat svg { width: 100%; height: 100%; display: block; }
 .nav-toggle {
   display: none;
   flex-direction: column;
   gap: 5px;
   cursor: pointer;
   padding: 4px;
+}
+
+/* ══════════════════════════════════════
+   NAV — DESPLEGABLES (Marcos / Recursos)
+   ══════════════════════════════════════ */
+.nav-item-dropdown {
+  position: relative;
+}
+.nav-item-dropdown > a {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+}
+.nav-item-dropdown > a .chev {
+  font-size: 11px;
+  transition: transform 0.15s;
+}
+.nav-item-dropdown.open > a .chev {
+  transform: rotate(180deg);
+}
+.nav-menu .nav-dropdown-panel {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: var(--white);
+  border: 1px solid #e8edf2;
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  padding: 10px;
+  min-width: 360px;
+  z-index: 200;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
+}
+.nav-item-dropdown.open .nav-dropdown-panel {
+  display: grid;
+}
+.nav-menu .nav-dropdown-panel a {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 9px 10px;
+  border-radius: 6px;
+  text-decoration: none;
+  cursor: pointer;
+}
+.nav-menu .nav-dropdown-panel a:hover {
+  background: var(--brand-light);
+}
+.nav-menu .nav-dropdown-panel .nav-ic {
+  display: inline-flex;
+  flex-shrink: 0;
+  width: 19px;
+  height: 19px;
+  color: var(--brand);
+  margin-top: 1px;
+}
+.nav-menu .nav-dropdown-panel .nav-ic svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.nav-menu .nav-dropdown-panel .nav-txt {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.nav-menu .nav-dropdown-panel .nav-title {
+  font-size: 13px;
+  font-weight: 500;
+  color: #222;
+  white-space: nowrap;
+}
+.nav-menu .nav-dropdown-panel .nav-sub {
+  font-size: 11px;
+  font-weight: 400;
+  color: var(--faint);
+  white-space: normal;
+  line-height: 1.3;
+}
+
+/* ══════════════════════════════════════
+   TARJETAS DE RECURSOS (hubs de Marcos, relacionados)
+   ══════════════════════════════════════ */
+.resource-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-top: 14px;
+}
+.resource-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px 16px;
+  border: 1px solid #e8edf2;
+  border-radius: 10px;
+  text-decoration: none;
+  background: #fff;
+  transition: border-color 0.15s, box-shadow 0.15s, transform 0.15s;
+}
+.resource-card:hover {
+  border-color: var(--brand);
+  box-shadow: 0 6px 16px rgba(0,119,181,0.1);
+  transform: translateY(-1px);
+}
+.resource-card .nav-ic {
+  display: inline-flex;
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  color: var(--brand);
+  margin-top: 2px;
+}
+.resource-card .nav-ic svg { width: 100%; height: 100%; display: block; }
+.resource-card .rc-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1a1a1a;
+  line-height: 1.35;
+}
+.resource-card .rc-arrow {
+  margin-left: auto;
+  color: var(--faint);
+  font-size: 14px;
+  align-self: center;
+  flex-shrink: 0;
+}
+@media (max-width: 640px) {
+  .resource-grid { grid-template-columns: 1fr; }
 }
 .nav-toggle span {
   display: block;
@@ -437,25 +587,129 @@ body {
 }
 
 /* ══════════════════════════════════════
-   BOTÓN HOME
+   MEGA FOOTER (footer ampliado multi-columna)
    ══════════════════════════════════════ */
-.home-btn {
-  position: fixed;
-  top: 16px;
-  right: 24px;
-  z-index: 999;
-  background: var(--brand);
-  color: white;
+.mega-footer {
+  background: var(--white);
+  border-top: 1px solid #eee;
+  padding: 36px 28px 0;
+}
+.mega-footer-top {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px 28px;
+  padding-bottom: 28px;
+}
+.mega-col {
+  flex: 1 1 140px;
+  min-width: 140px;
+}
+.mega-col-brand {
+  flex: 2.1 1 250px;
+  min-width: 230px;
+  max-width: 320px;
+}
+.mega-col-certs {
+  flex: 1.4 1 190px;
+  min-width: 180px;
+}
+.mega-logo {
+  display: inline-block;
+  font-weight: 700;
+  font-size: 19px;
+  color: var(--brand);
+  letter-spacing: 0.02em;
+  text-decoration: none;
+}
+.mega-logo span { color: #111; font-weight: 400; }
+.mega-tagline {
   font-family: var(--sans);
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.65;
+  margin-top: 12px;
+}
+.mega-col-brand .author-block { margin-top: 18px; }
+.mega-col-brand .li-btn { margin-top: 12px; }
+.mega-heading {
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--brand);
+  margin-bottom: 14px;
+}
+.mega-links { list-style: none; }
+.mega-links li { margin-bottom: 9px; }
+.mega-links a {
+  font-family: var(--sans);
+  font-size: 13.5px;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+.mega-links a:hover { color: var(--brand); }
+.mega-links a.mega-link-muted {
+  display: inline-block;
+  background: var(--brand);
+  color: #fff;
+  padding: 4px 13px;
+  border-radius: 13px;
   font-size: 12px;
   font-weight: 600;
-  letter-spacing: 0.06em;
-  text-decoration: none;
-  padding: 7px 16px;
-  border-radius: 6px;
-  transition: background 0.2s;
 }
-.home-btn:hover { background: var(--brand-dark); }
+.mega-links a.mega-link-muted:hover { background: var(--brand-dark); color: #fff; }
+.cert-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.cert-badge {
+  width: 56px;
+  height: 56px;
+  flex-shrink: 0;
+  border: 1px solid var(--border-soft);
+  border-radius: 10px;
+  background: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+}
+.cert-badge img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  display: block;
+}
+.mega-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 0;
+  border-top: 1px solid var(--border-soft);
+  font-family: var(--sans);
+  font-size: 12px;
+  color: var(--faint);
+}
+.mega-bottom a {
+  color: var(--faint);
+  text-decoration: none;
+}
+.mega-bottom a:hover { color: var(--brand); }
+@media (max-width: 480px) {
+  .mega-footer { padding: 28px 20px 0; }
+  .mega-col-brand { max-width: none; }
+  .mega-bottom { flex-direction: column; align-items: flex-start; gap: 8px; }
+}
+
+/* ══════════════════════════════════════
+   BOTÓN HOME
+   ══════════════════════════════════════ */
+
 
 /* ══════════════════════════════════════
    FAVICON (inline SVG — usar en <head>)
@@ -483,6 +737,16 @@ body {
   .nav-menu.open { display: flex; }
   .nav-menu li a { font-size: 14px; padding: 8px 10px; width: 100%; }
   .nav-toggle { display: flex; }
+  .nav-dropdown-panel {
+    position: static;
+    display: none;
+    grid-template-columns: 1fr;
+    box-shadow: none;
+    border: none;
+    padding: 4px 0 4px 14px;
+    min-width: 0;
+  }
+  .nav-item-dropdown.open .nav-dropdown-panel { display: grid; }
   .wrapper { padding: 12px; }
   .container { border-radius: 8px; }
 }
@@ -508,3 +772,50 @@ body {
   .footer-tags { text-align: left; }
 }
 
+
+
+/* ===== Rescatado de menu.css (hero, novedades banner) ===== */
+.hero-image {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+  background: #ffffff;
+}
+
+.main-png {
+  max-width: 1000px;
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.notice-bar {
+  background: linear-gradient(90deg, #eff6ff, #f5f3ff);
+  padding: 0.6rem 2rem;
+  text-align: center;
+  font-size: 0.75rem;
+  color: #475569;
+  border-bottom: 1px solid #eef2ff;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.notice-link {
+  color: #3b82f6;
+  text-decoration: none;
+  font-weight: 600;
+  margin-left: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.novedades-line {
+  text-align: center;
+  padding: 0.6rem 1rem;
+  background: #f8fafc;
+  border-bottom: 1px solid #eef2ff;
+  font-size: 0.8rem;
+  color: #475569;
+}

@@ -1,0 +1,88 @@
+:root{ --ct-deep:#003955; }
+/* ============================================
+   CONTACTO.CSS — Rediseño "expediente" (v2)
+   ============================================ */
+
+.ct-meta{
+  display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:6px;
+  background:var(--ct-deep);color:#cfe6f2;
+  font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;
+  padding:10px 48px;
+}
+.ct-meta .dot{width:6px;height:6px;border-radius:50%;background:#42c98a;display:inline-block;margin-right:8px;}
+.ct-meta strong{color:#fff;}
+
+.ct-hero{
+  position:relative;padding:64px 48px 56px;background:#F6F7F5;
+  background-image:linear-gradient(rgba(0,119,181,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(0,119,181,.07) 1px,transparent 1px);
+  background-size:28px 28px;background-position:-1px -1px;overflow:hidden;
+}
+.ct-hero-row{display:flex;justify-content:space-between;align-items:flex-start;gap:32px;flex-wrap:wrap;position:relative;z-index:1;}
+.ct-hero-main{flex:1 1 380px;max-width:620px;}
+.ct-eyebrow{
+  font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--brand);margin-bottom:18px;display:flex;align-items:center;gap:8px;
+}
+.ct-eyebrow::before{content:'';width:6px;height:6px;background:var(--brand);}
+.ct-hero h1{
+  font-size:clamp(38px,6.4vw,64px);font-weight:800;line-height:1.04;letter-spacing:-.025em;
+  text-transform:uppercase;color:#10161B;margin:0 0 22px;
+}
+.ct-hero h1 .b{color:var(--brand);}
+.ct-hero h1 .d{color:#aab3ba;}
+.ct-hero p{font-size:16.5px;color:#3d4751;max-width:480px;line-height:1.65;}
+.ct-hero p strong{color:#10161B;}
+
+.ct-stamp{
+  flex:0 0 auto;border:1.5px solid var(--ct-deep);padding:16px 20px;
+  transform:rotate(-3deg);background:#F6F7F5;margin-top:6px;
+}
+.ct-stamp-row{display:flex;gap:10px;align-items:baseline;font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;}
+.ct-stamp-row + .ct-stamp-row{margin-top:6px;}
+.ct-stamp-row span:first-child{color:#7c8790;}
+.ct-stamp-row span:last-child{color:var(--ct-deep);font-weight:700;}
+
+.ct-section{padding:40px 48px;border-top:1px solid #D7DCDF;}
+.ct-section-head{display:flex;align-items:baseline;gap:14px;margin-bottom:18px;flex-wrap:wrap;}
+.ct-ref{font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--brand);border:1px solid var(--brand);padding:2px 8px;}
+.ct-label{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#7c8790;margin:0;}
+.ct-title{font-size:23px;font-weight:800;color:#10161B;margin-bottom:16px;max-width:640px;line-height:1.3;}
+.ct-text{font-size:15px;line-height:1.75;color:#3d4751;max-width:640px;}
+.ct-text strong{color:#10161B;}
+
+.ct-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:#D7DCDF;border:1px solid #D7DCDF;margin-top:8px;}
+.ct-fit-card{background:#F6F7F5;padding:20px 22px;position:relative;}
+.ct-fit-card.is-strong{background:#fff;}
+.ct-fit-card.is-strong::after{
+  content:'AJUSTE FUERTE';position:absolute;top:10px;right:10px;
+  font-family:var(--mono);font-size:9px;letter-spacing:.1em;color:var(--ct-deep);
+  border:1px solid var(--ct-deep);padding:2px 6px;
+}
+.ct-fit-tag{font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--brand);display:block;margin-bottom:8px;}
+.ct-fit-desc{font-size:14px;color:#3d4751;line-height:1.55;}
+
+.ct-not-list{display:flex;flex-direction:column;gap:0;margin-top:8px;border-top:1px solid #D7DCDF;}
+.ct-not-item{
+  display:flex;gap:14px;align-items:flex-start;padding:16px 0;border-bottom:1px solid #D7DCDF;
+  font-size:14.5px;color:#3d4751;line-height:1.6;
+}
+.ct-not-item svg{flex-shrink:0;width:16px;height:16px;margin-top:3px;color:#B23A2E;}
+.ct-not-item strong{color:#10161B;}
+
+.ct-cta{background:var(--ct-deep);padding:60px 48px;text-align:center;}
+.ct-cta h2{font-size:clamp(26px,4vw,36px);font-weight:800;color:#fff;margin:0 0 10px;text-transform:uppercase;letter-spacing:-.01em;}
+.ct-cta h2 span{color:#5fb6e0;}
+.ct-cta p{color:#9bb6c4;font-size:14.5px;margin-bottom:30px;}
+.ct-cta-btn{
+  display:inline-flex;align-items:center;gap:10px;border:1.5px solid #fff;color:#fff;
+  text-decoration:none;font-family:var(--mono);font-size:13px;font-weight:700;letter-spacing:.1em;
+  text-transform:uppercase;padding:15px 30px;transition:background .15s,color .15s;
+}
+.ct-cta-btn:hover{background:#fff;color:var(--ct-deep);}
+
+@media (max-width:640px){
+  .ct-meta,.ct-hero,.ct-section,.ct-cta{padding-left:20px;padding-right:20px;}
+  .ct-grid{grid-template-columns:1fr;}
+  .ct-hero-row{flex-direction:column;}
+  .ct-stamp{transform:rotate(0deg);align-self:flex-start;}
+}

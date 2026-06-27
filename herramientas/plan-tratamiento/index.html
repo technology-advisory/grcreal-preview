@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0">
+<title>Plan de Tratamiento de Riesgos · SoA · GRCreal</title>
+<meta name="description" content="Convierte el registro de riesgos en decisiones de tratamiento: controles del Anexo A, responsables, plazos y evidencias. Output directo al SoA. ISO 27001, ENS, NIS2. Sin registro, sin almacenamiento.">
+<script src="../../js/jspdf.umd.min.js"></script>
+<style>
+:root{--ds-navy:#14233b;--ds-ink:#2b3340;--ds-muted:#5a6675;--ds-line:#d3dae3;--ds-paper:#fff;
+--ds-bg:#f4f6f9;--ds-accent:#1f5fa8;--ds-grid:rgba(20,35,59,.035);
+--r-bajo:#2f7d5b;--r-medio:#c79100;--r-alto:#d9622b;--r-critico:#c0392b;}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ds-bg);color:var(--ds-ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.55}
+.mono{font-family:ui-monospace,Menlo,Consolas,monospace}
+.wrap{max-width:1200px;margin:0 auto;padding:22px 20px 80px}
+.ds-meta{display:flex;flex-wrap:wrap;gap:16px;align-items:center;background:var(--ds-paper);border:1px solid var(--ds-line);border-left:3px solid var(--ds-navy);padding:12px 16px;font-size:13px;color:var(--ds-muted);margin:0 0 22px}
+.ds-meta strong{color:var(--ds-navy)}
+.ds-ref{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:11px;letter-spacing:.1em;color:var(--ds-navy);background:#eef2f7;border:1px solid var(--ds-line);padding:3px 9px}
+.ds-cat{margin-left:auto;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ds-accent);border:1px solid var(--ds-line);padding:3px 9px}
+h1{font-size:30px;color:var(--ds-navy);font-weight:800;margin:0 0 8px}
+.lead{font-size:16.5px;color:var(--ds-muted);max-width:72ch;margin:0 0 18px}
+.nostore{display:inline-flex;gap:8px;align-items:center;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:11.5px;color:var(--r-bajo);border:1px solid var(--ds-line);padding:5px 10px;margin-bottom:24px}
+.panel{background:var(--ds-paper);border:1px solid var(--ds-line);border-top:3px solid var(--ds-accent);padding:20px 22px;margin-bottom:18px;position:relative}
+.panel::before{content:"";position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(var(--ds-grid) 1px,transparent 1px),linear-gradient(90deg,var(--ds-grid) 1px,transparent 1px);background-size:26px 26px}
+.panel>*{position:relative}
+.panel-label{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ds-muted);margin-bottom:12px}
+.fw{display:flex;flex-wrap:wrap;gap:8px}
+.fw button{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:12.5px;background:#fff;border:1px solid var(--ds-line);color:var(--ds-muted);padding:8px 14px;cursor:pointer}
+.fw button.on{background:var(--ds-navy);color:#fff;border-color:var(--ds-navy)}
+.fw-help{font-size:13px;color:var(--ds-muted);margin-top:10px}
+.kpis{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-bottom:18px}
+.kpi{background:var(--ds-paper);border:1px solid var(--ds-line);padding:14px 12px;text-align:center}
+.kpi .n{font-size:24px;font-weight:800;color:var(--ds-navy)}
+.kpi .l{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--ds-muted);margin-top:2px}
+.kpi.ok .n{color:var(--r-bajo)} .kpi.curso .n{color:var(--r-medio)} .kpi.pend .n{color:var(--r-alto)}
+.tbl-scroll{overflow-x:auto}
+table.reg{width:100%;border-collapse:collapse;font-size:13px;min-width:1000px}
+table.reg th{background:var(--ds-navy);color:#fff;font-weight:600;text-align:left;padding:9px 8px;font-size:12px;white-space:nowrap}
+table.reg td{border-bottom:1px solid var(--ds-line);padding:6px 7px;vertical-align:middle}
+table.reg tr:nth-child(even) td{background:#f8fafc}
+table.reg input,table.reg select{width:100%;border:1px solid transparent;background:transparent;font:inherit;color:var(--ds-ink);padding:5px 6px}
+table.reg input:focus,table.reg select:focus{border-color:var(--ds-accent);background:#fff;outline:none}
+.nivel{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:11px;font-weight:700;text-align:center;color:#fff;padding:4px 6px}
+.nivel.bajo{background:var(--r-bajo)} .nivel.medio{background:var(--r-medio)} .nivel.alto{background:var(--r-alto)} .nivel.critico{background:var(--r-critico)}
+.est{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:10.5px;font-weight:700;text-align:center;padding:3px 5px;color:#fff;border-radius:2px}
+.est.pend{background:var(--r-alto)} .est.curso{background:var(--r-medio)} .est.ok{background:var(--r-bajo)}
+.del{cursor:pointer;color:var(--ds-muted);border:none;background:none;font-size:16px;padding:4px 8px}
+.del:hover{color:var(--r-critico)}
+.btn{font-family:inherit;font-size:14px;cursor:pointer;border:1px solid var(--ds-navy);background:var(--ds-navy);color:#fff;padding:10px 18px}
+.btn:hover{background:#0d1828}
+.btn.ghost{background:#fff;color:var(--ds-navy)}.btn.ghost:hover{background:#eef2f7}
+.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+.prog{height:10px;background:#eef2f7;border:1px solid var(--ds-line);margin-top:6px}
+.prog > i{display:block;height:100%;background:var(--r-bajo);width:0}
+@media(max-width:760px){.kpis{grid-template-columns:repeat(2,1fr)}h1{font-size:24px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="ds-meta">
+    <span class="ds-ref">REF.TOOL-PTR</span>
+    <span>Herramienta: <strong>Plan de Tratamiento de Riesgos</strong></span>
+    <span>Salida: <strong>SoA / Declaración de Aplicabilidad</strong></span>
+    <span class="ds-cat" id="catTag">ISO 27001</span>
+  </div>
+  <h1>Plan de Tratamiento de Riesgos</h1>
+  <p class="lead">Coge los riesgos que ya identificaste y conviértelos en decisiones: qué control aplicas, quién lo implanta, para cuándo y qué evidencia esperas. El output alimenta directamente tu SoA.</p>
+  <div class="nostore">🔒 <b>Sin registro · sin almacenamiento</b> — todo en tu navegador.</div>
+
+  <div class="panel">
+    <div class="panel-label">1 · Marco de referencia</div>
+    <div class="fw" id="fwSel">
+      <button data-fw="ISO 27001" class="on">ISO 27001 (Anexo A)</button>
+      <button data-fw="ENS">ENS · RD 311/2022</button>
+      <button data-fw="NIS2">NIS2</button>
+    </div>
+    <div class="fw-help" id="fwHelp"></div>
+  </div>
+
+  <div class="kpis">
+    <div class="kpi"><div class="n" id="kTotal">0</div><div class="l">Acciones</div></div>
+    <div class="kpi pend"><div class="n" id="kPend">0</div><div class="l">Pendientes</div></div>
+    <div class="kpi curso"><div class="n" id="kCurso">0</div><div class="l">En curso</div></div>
+    <div class="kpi ok"><div class="n" id="kOk">0</div><div class="l">Implantadas</div></div>
+    <div class="kpi"><div class="n" id="kPct">0%</div><div class="l">Avance</div></div>
+  </div>
+  <div class="prog"><i id="progBar"></i></div>
+
+  <div class="panel" style="margin-top:18px">
+    <div class="panel-label">2 · Plan de tratamiento</div>
+    <div class="tbl-scroll">
+      <table class="reg">
+        <thead><tr>
+          <th style="width:28px">#</th><th>Riesgo (activo · amenaza)</th><th>Nivel</th>
+          <th>Decisión</th><th id="thRef">Control Anexo A</th><th>Responsable</th>
+          <th>Plazo</th><th>Estado</th><th>Evidencia esperada</th><th style="width:34px"></th>
+        </tr></thead>
+        <tbody id="rows"></tbody>
+      </table>
+    </div>
+    <div class="actions">
+      <button class="btn ghost" onclick="addRow()">+ Añadir acción</button>
+      <button class="btn ghost" onclick="seedDemo()">Cargar ejemplos</button>
+    </div>
+  </div>
+
+  <div class="actions">
+    <button class="btn" onclick="exportPDF()">⬇ Exportar plan (PDF)</button>
+    <button class="btn ghost" onclick="window.print()">Imprimir</button>
+  </div>
+</div>
+
+<datalist id="ctrlList"></datalist>
+
+<script>
+var FW="ISO 27001";
+var FW_HELP={
+ "ISO 27001":"Cada riesgo se trata aplicando controles del Anexo A (ISO 27002:2022). El plan completo es la base de tu Declaración de Aplicabilidad (SoA).",
+ "ENS":"El tratamiento referencia medidas del ENS (RD 311/2022): marco organizativo (org), operacional (op) y de protección (mp).",
+ "NIS2":"El tratamiento referencia medidas de gestión de riesgos del art. 21 (continuidad, cadena de suministro, cifrado, control de accesos…)."
+};
+var TH_REF={"ISO 27001":"Control Anexo A","ENS":"Medida ENS","NIS2":"Medida art. 21"};
+var CTRLS={
+ "ISO 27001":["A.5.1 Políticas de seguridad","A.5.7 Inteligencia de amenazas","A.5.9 Inventario de activos","A.5.10 Uso aceptable","A.5.15 Control de acceso","A.5.18 Derechos de acceso","A.5.19 Seguridad en proveedores","A.5.20 Seguridad en contratos","A.5.23 Seguridad servicios cloud","A.5.24 Gestión de incidentes","A.5.30 Continuidad TIC","A.6.3 Concienciación y formación","A.8.1 Dispositivos de usuario","A.8.5 Autenticación segura (MFA)","A.8.7 Protección frente a malware","A.8.8 Gestión de vulnerabilidades","A.8.9 Gestión de configuración","A.8.12 Prevención de fuga de datos","A.8.13 Copias de seguridad","A.8.15 Registro (logging)","A.8.16 Monitorización","A.8.20 Seguridad de redes","A.8.23 Filtrado web","A.8.24 Criptografía","A.8.25 Ciclo de vida desarrollo seguro"],
+ "ENS":["org.1 Política de seguridad","org.4 Proceso de autorización","op.acc.5 Mecanismo de autenticación","op.exp.1 Inventario de activos","op.exp.8 Registro de actividad","op.cont.1 Análisis de impacto","op.cont.2 Plan de continuidad","op.mon.1 Detección de intrusión","mp.info.6 Copias de seguridad","mp.com.2 Protección de la confidencialidad","mp.s.1 Protección de servicios"],
+ "NIS2":["Análisis de riesgos y política de seguridad","Gestión de incidentes","Continuidad de negocio y backup","Seguridad de la cadena de suministro","Cifrado y criptografía","Control de accesos y MFA","Higiene y formación","Evaluación de eficacia de medidas"]
+};
+var rows=[],nextId=1;
+
+function fillCtrlList(){var dl=document.getElementById("ctrlList");dl.innerHTML="";
+ (CTRLS[FW]||[]).forEach(function(c){var o=document.createElement("option");o.value=c;dl.appendChild(o);});}
+
+function esc(s){return (s||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");}
+function addRow(d){d=d||{};rows.push({id:nextId++,riesgo:d.riesgo||"",nivel:d.nivel||"alto",decision:d.decision||"Mitigar",ctrl:d.ctrl||"",owner:d.owner||"",plazo:d.plazo||"",estado:d.estado||"pend",evid:d.evid||""});render();}
+function delRow(id){rows=rows.filter(function(r){return r.id!==id});render();}
+function upd(id,c,v){var r=rows.find(function(x){return x.id===id});if(r){r[c]=v;if(c==="nivel"||c==="estado")render();else refreshKpis();}}
+function optN(s){return ["bajo","medio","alto","critico"].map(function(n){return '<option value="'+n+'"'+(n===s?' selected':'')+'>'+n.toUpperCase()+'</option>';}).join("");}
+function optD(s){return ["Mitigar","Aceptar","Transferir","Evitar"].map(function(t){return '<option'+(t===s?' selected':'')+'>'+t+'</option>';}).join("");}
+function optE(s){return [["pend","Pendiente"],["curso","En curso"],["ok","Implantado"]].map(function(p){return '<option value="'+p[0]+'"'+(p[0]===s?' selected':'')+'>'+p[1]+'</option>';}).join("");}
+
+function render(){
+ var tb=document.getElementById("rows");tb.innerHTML="";
+ rows.forEach(function(r,idx){
+  var tr=document.createElement("tr");
+  tr.innerHTML='<td class="mono">'+(idx+1)+'</td>'+
+   '<td><input value="'+esc(r.riesgo)+'" placeholder="BD clientes · ransomware" oninput="upd('+r.id+',\'riesgo\',this.value)"></td>'+
+   '<td><select onchange="upd('+r.id+',\'nivel\',this.value)" class="selNivel">'+optN(r.nivel)+'</select></td>'+
+   '<td><select onchange="upd('+r.id+',\'decision\',this.value)">'+optD(r.decision)+'</select></td>'+
+   '<td><input list="ctrlList" value="'+esc(r.ctrl)+'" placeholder="Elige o escribe" oninput="upd('+r.id+',\'ctrl\',this.value)"></td>'+
+   '<td><input value="'+esc(r.owner)+'" placeholder="Responsable" oninput="upd('+r.id+',\'owner\',this.value)"></td>'+
+   '<td><input type="date" value="'+esc(r.plazo)+'" oninput="upd('+r.id+',\'plazo\',this.value)"></td>'+
+   '<td><select onchange="upd('+r.id+',\'estado\',this.value)">'+optE(r.estado)+'</select></td>'+
+   '<td><input value="'+esc(r.evid)+'" placeholder="Política firmada, captura…" oninput="upd('+r.id+',\'evid\',this.value)"></td>'+
+   '<td><button class="del" onclick="delRow('+r.id+')">✕</button></td>';
+  tb.appendChild(tr);
+  // colorear el select de nivel
+  var sn=tr.querySelector(".selNivel"); sn.className="selNivel nivel "+r.nivel;
+ });
+ refreshKpis();
+}
+function refreshKpis(){
+ var c={t:rows.length,pend:0,curso:0,ok:0};
+ rows.forEach(function(r){if(r.estado==="ok")c.ok++;else if(r.estado==="curso")c.curso++;else c.pend++;});
+ document.getElementById("kTotal").textContent=c.t;
+ document.getElementById("kPend").textContent=c.pend;
+ document.getElementById("kCurso").textContent=c.curso;
+ document.getElementById("kOk").textContent=c.ok;
+ var pct=c.t?Math.round((c.ok+c.curso*0.5)/c.t*100):0;
+ document.getElementById("kPct").textContent=pct+"%";
+ document.getElementById("progBar").style.width=pct+"%";
+}
+document.getElementById("fwSel").addEventListener("click",function(e){
+ if(e.target.tagName!=="BUTTON")return;FW=e.target.dataset.fw;
+ [].forEach.call(this.children,function(b){b.classList.toggle("on",b.dataset.fw===FW);});
+ document.getElementById("catTag").textContent=FW;
+ document.getElementById("fwHelp").textContent=FW_HELP[FW];
+ document.getElementById("thRef").textContent=TH_REF[FW];
+ fillCtrlList();
+});
+document.getElementById("fwHelp").textContent=FW_HELP[FW];
+
+function seedDemo(){rows=[];nextId=1;[
+ {riesgo:"Servidor ficheros · ransomware",nivel:"critico",decision:"Mitigar",ctrl:"A.8.13 Copias de seguridad",owner:"IT Ops",plazo:"",estado:"curso",evid:"Backup probado + informe restauración"},
+ {riesgo:"VPN · robo de credenciales",nivel:"alto",decision:"Mitigar",ctrl:"A.8.5 Autenticación segura (MFA)",owner:"Seguridad",plazo:"",estado:"ok",evid:"MFA forzado en todas las cuentas"},
+ {riesgo:"Proveedor SaaS · fuga de terceros",nivel:"alto",decision:"Mitigar",ctrl:"A.5.19 Seguridad en proveedores",owner:"Compras",plazo:"",estado:"pend",evid:"Cláusulas de seguridad en contrato"},
+ {riesgo:"Puesto de trabajo · phishing",nivel:"medio",decision:"Mitigar",ctrl:"A.6.3 Concienciación y formación",owner:"RRHH",plazo:"",estado:"curso",evid:"Campaña de phishing simulado + métricas"}
+].forEach(function(d){addRow(d);});}
+
+function exportPDF(){
+ function safe(s){return String(s==null?"":s).replace(/…/g,"...").replace(/—/g,"-").replace(/[•●]/g,"-").replace(/→/g,"->").replace(/[“”]/g,'"').replace(/[‘’]/g,"'");}
+
+ if(!rows.length){alert("Añade al menos una acción de tratamiento.");return;}
+ var jsPDF=window.jspdf.jsPDF;var doc=new jsPDF({orientation:"landscape",unit:"mm",format:"a4"});
+ var W=doc.internal.pageSize.getWidth();
+ doc.setFillColor(20,35,59);doc.rect(0,0,W,22,"F");
+ doc.setTextColor(255);doc.setFont("helvetica","bold");doc.setFontSize(15);
+ doc.text("Plan de Tratamiento de Riesgos",12,11);
+ doc.setFont("helvetica","normal");doc.setFontSize(9);
+ doc.text("Marco: "+FW+"   ·   GRCreal   ·   "+new Date().toLocaleDateString("es-ES"),12,17);
+ var cols=["#","Riesgo","Nivel","Decisión",TH_REF[FW],"Responsable","Plazo","Estado","Evidencia"];
+ var cw=[8,46,18,22,44,30,20,20,52];var x0=10,y=30;
+ doc.setFillColor(31,95,168);doc.rect(x0,y-5,cw.reduce(function(a,b){return a+b}),7,"F");
+ doc.setTextColor(255);doc.setFont("helvetica","bold");doc.setFontSize(8);
+ var cx=x0+1;cols.forEach(function(c,k){doc.text(String(c),cx,y);cx+=cw[k];});y+=4;
+ doc.setFont("helvetica","normal");doc.setTextColor(40);
+ var estTxt={pend:"Pendiente",curso:"En curso",ok:"Implantado"};
+ rows.forEach(function(r,i){
+  if(y>185){doc.addPage("a4","landscape");y=20;}
+  var cells=[i+1,r.riesgo,r.nivel.toUpperCase(),r.decision,r.ctrl,r.owner,r.plazo||"—",estTxt[r.estado],r.evid];
+  var cx=x0+1;cells.forEach(function(c,k){var t=safe(c);if(t.length>34)t=t.slice(0,32)+"...";doc.text(t,cx,y);cx+=cw[k];});
+  doc.setDrawColor(220);doc.line(x0,y+1.5,x0+cw.reduce(function(a,b){return a+b}),y+1.5);y+=6;
+ });
+ var c={pend:0,curso:0,ok:0};rows.forEach(function(r){c[r.estado]++;});
+ y+=6;if(y>180){doc.addPage("a4","landscape");y=20;}
+ doc.setFont("helvetica","bold");doc.setTextColor(20,35,59);doc.setFontSize(9);
+ doc.text("Resumen: "+rows.length+" acciones · Implantadas "+c.ok+" · En curso "+c.curso+" · Pendientes "+c.pend,x0,y);
+ doc.save("plan-tratamiento-"+FW.replace(/\s+/g,"-").toLowerCase()+".pdf");
+}
+fillCtrlList();seedDemo();
+</script>
+</body>
+</html>

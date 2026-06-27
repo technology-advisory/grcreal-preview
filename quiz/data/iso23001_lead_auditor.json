@@ -1,0 +1,247 @@
+{
+  "titulo": "ISO 22301 Lead Auditor",
+  "tema": "ISO 22301:2019 · BCMS",
+  "descripcion": "Auditoría de Continuidad del Negocio. 40 preguntas sobre el Sistema de Gestión de Continuidad del Negocio (SGCN), análisis de impacto, estrategias de continuidad y respuesta ante incidentes disruptivos.",
+  "preguntas": [
+    {
+      "q": "Deben brindar orientación e información para apoyar a los equipos en la respuesta a un incidente disruptivo y dar apoyo a la organización con la respuesta y la recuperación.",
+      "o": ["DRP.", "BCP.", "RTO.", "Ninguno de los anteriores."],
+      "c": 1,
+      "e": "El Plan de Continuidad del Negocio (BCP) es la información documentada que guía a la organización para responder, recuperar y restaurar la entrega de productos y servicios ante una disrupción."
+    },
+    {
+      "q": "'Proceso sistemático, independiente, documentado, para obtener evidencia y evaluarla objetivamente, con el fin de determinar en qué grado se cumplen los criterios de la auditoría' La anterior definición de auditoría corresponde a:",
+      "o": ["ISO 27001.", "ISO 19011.", "ISO 22301.", "Auditoría del sistema de gestión de continuidad de negocios."],
+      "c": 1,
+      "e": "La definición universal de auditoría para los sistemas de gestión proviene directamente de las directrices de la norma de auditoría ISO 19011."
+    },
+    {
+      "q": "El propósito de un SGCN es preparar para, proveer y mantener controles y las capacidades para gestionar la habilidad global de una organización para continuar operando durante:",
+      "o": ["Los incidentes disruptivos.", "Las crisis.", "Los desastres.", "Los problemas de continuidad."],
+      "c": 0,
+      "e": "El objetivo medular de un SGCN bajo ISO 22301 es garantizar la continuidad operativa específicamente ante incidentes disruptivos."
+    },
+    {
+      "q": "La cláusula 8.4 Planes y Procedimientos de Continuidad del Negocio de ISO 22301:2019 contiene los siguientes apartados, EXCEPTO:",
+      "o": ["8.4.2 Estructura de respuesta", "8.4.4 Plan de continuidad del Negocio.", "8.4.3 Gestión de crisis.", "8.4.5 Recuperación."],
+      "c": 2,
+      "e": "La sección 8.4 se desglosa en Generalidades, Estructura de respuesta, Planes de continuidad y Recuperación; 'Gestión de crisis' no forma parte de dicha estructura."
+    },
+    {
+      "q": "La organización debe proveer de ________ para gestionar la organización durante el incidente disruptivo, debe(n) ser utilizado(s) cuando sea necesario activar las soluciones de continuidad del negocio.",
+      "o": ["Programa de continuidad del negocio.", "Sistema de Gestión de continuidad del Negocio.", "Planes y procedimientos de Continuidad.", "Ninguna de las anteriores."],
+      "c": 2,
+      "e": "Los planes y procedimientos de continuidad constituyen la base operativa documentada requerida para responder de forma directa y oportuna durante una disrupción."
+    },
+    {
+      "q": "La organización debe implementar y mantener un ________ para validar en el tiempo la eficacia de sus estrategias y soluciones de continuidad del negocio.",
+      "o": ["Programa de ejercicios y pruebas.", "Plan de recuperación de contingencias (CRP).", "Plan de apoyo tecnológico (PAA).", "Plan de respuesta tecnológico (PAR)."],
+      "c": 0,
+      "e": "Un programa de ejercicios y pruebas periódico es la herramienta obligatoria para asegurar que las estrategias funcionen ante un escenario real."
+    },
+    {
+      "q": "La cláusula 7 Soporte de ISO 22301:2019 contiene: Recursos, Competencia, Concienciación, Comunicación e Información Documentada.",
+      "o": ["Verdadero", "Falso"],
+      "c": 0,
+      "e": "La cláusula 7 establece los pilares de apoyo necesarios para el SGCN: recursos, competencia, toma de conciencia, comunicación e información documentada."
+    },
+    {
+      "q": "Check (Verificar): Se basa en la medición, auditorías y revisión al SGCN. Esta fase del ciclo PDCA está representada por la cláusula 9 (Evaluación del desempeño).",
+      "o": ["Verdadero", "Falso"],
+      "c": 0,
+      "e": "En el ciclo PDCA, la fase de verificación corresponde a la cláusula 9, donde se audita, mide y revisa el estado del sistema de gestión."
+    },
+    {
+      "q": "La metodología de riesgos debe definirse antes de realizar la evaluación de los mismos.",
+      "o": ["Verdadero", "Falso"],
+      "c": 0,
+      "e": "Para garantizar la objetividad, los criterios y metodologías de evaluación de riesgos deben formalizarse previamente a la ejecución del análisis."
+    },
+    {
+      "q": "Act (Actuar): Se refiere al mantenimiento y mejora. Está ubicado exclusivamente en la cláusula 10 (Mejora) y en la cláusula 8 (Operación).",
+      "o": ["Verdadero", "Falso"],
+      "c": 1,
+      "e": "La fase 'Actuar' se aborda estrictamente en la cláusula 10 del estándar, no en la de operación."
+    },
+    {
+      "q": "La alta dirección y otros roles pertinentes de la dirección deberán demostrar Liderazgo y Compromiso con respecto al SGCN.",
+      "o": ["Verdadero", "Falso"],
+      "c": 0,
+      "e": "Por mandato de la cláusula 5, el liderazgo y compromiso deben ser demostrados activamente por la alta gerencia."
+    },
+    {
+      "q": "________: Situación que podría ser o podría conducir a una disrupción, pérdida, emergencia o crisis.",
+      "o": ["Incidente.", "Crisis.", "Emergencia.", "Problema."],
+      "c": 0,
+      "e": "Un incidente es todo evento que ostenta el potencial de transformarse en una disrupción mayor."
+    },
+    {
+      "q": "La alta dirección y otros roles pertinentes de la dirección deberán demostrar ________ con respecto al SGCN.",
+      "o": ["Liderazgo y Compromiso.", "Conocimiento y Entendimiento.", "Entendimiento y Liderazgo.", "Eficiencia y Conocimiento."],
+      "c": 0,
+      "e": "La cláusula 5.1 exige que la dirección evidencie liderazgo y compromiso para asegurar que el SGCN alcance los resultados previstos."
+    },
+    {
+      "q": "La cláusula 8 Operación de ISO 22301:2019 se divide en varios apartados. Seleccione la opción que NO corresponda a una sub-cláusula:",
+      "o": ["8.1 Planificación operacional y control.", "8.4 Plan de recuperación DRP.", "8.2 Business Impact Analysis y evaluación de riesgos.", "8.3 Estrategia de continuidad."],
+      "c": 1,
+      "e": "El apartado 8.4 se titula formalmente 'Planes y procedimientos de continuidad del negocio'."
+    },
+    {
+      "q": "Planificación operacional y control: En ISO 22301:2019, se evidencia en las cláusulas 4 (Contexto), 5 (Liderazgo) y 6 (Planificación).",
+      "o": ["Verdadero", "Falso"],
+      "c": 1,
+      "e": "La planificación operacional y el control se sitúa normativamente al inicio de la cláusula 8 (Operación)."
+    },
+    {
+      "q": "'La organización debe determinar las cuestiones externas e internas que son pertinentes para su propósito y que afectan su capacidad de lograr los resultados deseados de su SGCN.' Esta definición corresponde a:",
+      "o": ["Definición de alcance del SGCN.", "Contexto de la organización.", "Definición de los objetivos del SGCN.", "Definición de ISO 22301."],
+      "c": 1,
+      "e": "El análisis del entorno interno y externo constituye el núcleo de la cláusula 4.1, 'Comprensión de la organización y de su contexto'."
+    },
+    {
+      "q": "Su propósito es preparar para, proveer y mantener controles y capacidades para gestionar la habilidad global de una organización para continuar operando durante incidentes disruptivos. Esto define:",
+      "o": ["Sistema de Gestión Integrado de Continuidad.", "Sistema de Gestión de Continuidad y Resiliencia del Negocio.", "Estrategia de BCM.", "Sistema de Gestión de Continuidad del Negocio (SGCN)."],
+      "c": 3,
+      "e": "Esta declaración describe la finalidad de un Sistema de Gestión de Continuidad del Negocio (SGCN)."
+    },
+    {
+      "q": "La organización debe determinar los límites y la aplicabilidad del SGCN para establecer su alcance, considerando:",
+      "o": ["La misión, objetivos y obligaciones.", "Las cuestiones internas y externas del apartado 4.1.", "Los requisitos del apartado 4.2.", "Todas las anteriores."],
+      "c": 3,
+      "e": "Para fijar el alcance según cláusula 4.3, deben converger el contexto, requisitos de partes interesadas y la misión estratégica."
+    },
+    {
+      "q": "La cláusula de REFERENCIAS NORMATIVAS dentro de ISO 22301:2019:",
+      "o": ["Proporciona detalles sobre normas de referencia y terminología.", "Proporciona detalles sobre normas de referencia o publicaciones relevantes.", "Detalla términos y definiciones aplicables.", "Ninguna de las anteriores."],
+      "c": 1,
+      "e": "La cláusula 2 hace mención explícita a los documentos de referencia indispensables para la aplicación del estándar."
+    },
+    {
+      "q": "El propósito de un SGCN es preparar para, proveer y mantener controles y capacidades para gestionar la habilidad de una organización para ________ los incidentes disruptivos.",
+      "o": ["Continuar operando durante los", "El tratamiento de", "La comprensión de", "El adecuado conocimiento de"],
+      "c": 0,
+      "e": "El núcleo de la resiliencia en continuidad del negocio es mantener la operación activa durante una disrupción."
+    },
+    {
+      "q": "Información documentada que guía a una organización para responder a un incidente disruptivo y recuperar, reanudar y restaurar la entrega de productos y servicios. Es la definición de:",
+      "o": ["Estrategia de resiliencia organizacional.", "Norma ISO 22301.", "Plan de continuidad.", "Plan de recuperación."],
+      "c": 2,
+      "e": "El Plan de Continuidad del Negocio es el conjunto documental que pauta la respuesta y estabilización de servicios críticos."
+    },
+    {
+      "q": "ISO 22301:2019 se divide en 4 etapas principales en apego al ciclo PDCA. Estas fases son:",
+      "o": ["Establecer - Hacer - Verificar - Actuar.", "Planear - Hacer - Modificar - Actuar.", "Planear - Hacer - Verificar - Actuar.", "Planear - Desarrollar - Verificar - Actuar."],
+      "c": 2,
+      "e": "El ciclo de Deming sigue la secuencia: Planear (Plan), Hacer (Do), Verificar (Check) y Actuar (Act)."
+    },
+    {
+      "q": "Según cláusula 4.2.2, los requisitos legales y reglamentarios que una organización debe tener en cuenta son:",
+      "o": ["Solo legales y reglamentarios.", "Solo reglamentarios y otros requisitos.", "Legales, reglamentarios y otros requisitos aplicables.", "Ninguno de los anteriores."],
+      "c": 2,
+      "e": "La organización debe identificar el marco jurídico, regulatorio y otros compromisos asumidos voluntariamente."
+    },
+    {
+      "q": "Para la definición del alcance de un SGCN, la organización debe considerar servicios críticos, áreas de soporte, partes interesadas y el resto de la organización fuera del alcance.",
+      "o": ["Verdadero", "Falso"],
+      "c": 0,
+      "e": "Establecer las fronteras del SGCN demanda delimitar qué procesos y terceros se protegen y las exclusiones."
+    },
+    {
+      "q": "¿A partir de qué cláusula formal se da inicio al desarrollo específico del cuerpo del SGCN?",
+      "o": ["Contexto del SGCN.", "Contexto de la organización.", "Identificación del SGCN.", "Planificación del SGCN."],
+      "c": 1,
+      "e": "Tras las cláusulas 1 a 3, la estructura auditable del sistema inicia en la cláusula 4: Contexto de la organización."
+    },
+    {
+      "q": "Capacidad de la organización para continuar con la entrega de productos o servicios en un marco de tiempo aceptable durante un incidente disruptivo. Esto define:",
+      "o": ["Plan de continuidad.", "Continuidad del negocio", "Norma ISO 22301.", "Resiliencia operacional."],
+      "c": 1,
+      "e": "Esta es la definición formal que otorga el estándar al concepto de 'Continuidad del Negocio'."
+    },
+    {
+      "q": "Do (Hacer): Esta etapa del PDCA se enfoca en la implementación y operación práctica, observada en la cláusula 8 (Operación).",
+      "o": ["Verdadero", "Falso"],
+      "c": 0,
+      "e": "La ejecución y despliegue operativo de estrategias integran la etapa 'Hacer', mapeada en la cláusula 8."
+    },
+    {
+      "q": "¿Cuál de los siguientes argumentos define correctamente la naturaleza de ISO 22301?",
+      "o": ["Estándar auditable que especifica requisitos para un SGCN.", "Norma certificable y auditable que especifica requisitos para un SGCN.", "Norma que reúne conceptos de continuidad desde 1995.", "Ninguna de las anteriores."],
+      "c": 1,
+      "e": "ISO 22301 es un estándar de requisitos diseñado para ser plenamente auditable y certificable."
+    },
+    {
+      "q": "La cláusula 7 Soporte contiene un apartado 7.5.4 que regula formalmente el 'Control de las acciones preventivas y correctivas'.",
+      "o": ["Verdadero", "Falso"],
+      "c": 1,
+      "e": "La estructura actual de la norma no contempla 7.5.4; el tratamiento de la mejora está en la cláusula 10."
+    },
+    {
+      "q": "Debido a que no se conoce qué daño sufrirá la organización, estos procedimientos deben ser específicos sobre las etapas inmediatas durante un incidente disruptivo. Corresponde a:",
+      "o": ["Procedimientos operativos documentados.", "Procedimientos de evaluación de riesgos.", "Procedimientos de continuidad de negocio.", "Procedimientos de gestión de incidentes."],
+      "c": 3,
+      "e": "Los procedimientos de gestión de incidentes estructuran la reacción inmediata ante el caos inicial de una disrupción."
+    },
+    {
+      "q": "Documento donde la alta dirección indica qué desea lograr con el SGCN y cómo. Generalmente solo la aprobará la alta dirección:",
+      "o": ["La Política.", "La Estrategia.", "Los Objetivos.", "El Alcance."],
+      "c": 0,
+      "e": "La Política de Continuidad del Negocio emana del compromiso y firma de la alta dirección."
+    },
+    {
+      "q": "¿Cuál de las siguientes opciones NO constituye una cláusula oficial de ISO 22301:2019?",
+      "o": ["Referencias Normativas.", "Riesgos de la Continuidad.", "Contexto de la Organización.", "Liderazgo."],
+      "c": 1,
+      "e": "'Riesgos de la Continuidad' no es una cláusula oficial. Las cláusulas son: Alcance, Referencias, Términos, Contexto, Liderazgo, Planificación, Soporte, Operación, Evaluación y Mejora."
+    },
+    {
+      "q": "En la cláusula 6.2.1 de ISO 22301 se solicita delimitar ________ de continuidad del negocio para las funciones y niveles pertinentes.",
+      "o": ["el alcance", "los procesos de recuperación", "los objetivos", "los esfuerzos"],
+      "c": 2,
+      "e": "El apartado 6.2.1 se enfoca en el establecimiento de objetivos medibles de continuidad del negocio."
+    },
+    {
+      "q": "La cláusula correspondiente a auditorías internas (primera parte) al SGCN pertenece a la fase del PDCA:",
+      "o": ["Planear.", "Actuar.", "Hacer.", "Verificar."],
+      "c": 3,
+      "e": "La auditoría interna se agrupa en el bloque de evaluación del desempeño, asociado a la fase 'Verificar'."
+    },
+    {
+      "q": "Para realizar el Análisis de Impactos en el Negocio (BIA), se debe elaborar su metodología. ¿En qué cláusula se define el requisito del BIA?",
+      "o": ["Cláusula 7 Apoyo.", "Cláusula 4 Contexto.", "Cláusula 8 Operación.", "Cláusula 6 Planificación."],
+      "c": 2,
+      "e": "El BIA junto con la evaluación de riesgos constituye la base analítica operativa normada en la cláusula 8.2."
+    },
+    {
+      "q": "La Política de Continuidad del Negocio generalmente solo la aprobará:",
+      "o": ["El Comité.", "El Oficial de Continuidad.", "El Comité de Gerentes.", "La Alta Dirección"],
+      "c": 3,
+      "e": "Por principios de gobernanza, la aprobación de políticas corporativas recae indelegablemente en la Alta Dirección."
+    },
+    {
+      "q": "¿Cuál de las siguientes NO es una cláusula de ISO 22301:2019?",
+      "o": ["Planeación y Capacitación.", "Soporte y Gestión de Incidentes.", "Funcionamiento y Evaluación.", "Operación."],
+      "c": 0,
+      "e": "Los nombres correctos son Operación (8) y Mejora (10). 'Planeación y Capacitación' es ajeno al índice oficial."
+    },
+    {
+      "q": "¿Cuál es la mejor definición para la cláusula 6.2.1 Establecimiento de los objetivos de continuidad del negocio?",
+      "o": ["Delimitar objetivos y desarrollar definiciones del alcance.", "Delimitar esfuerzos y desarrollar proyectos.", "Delimitar objetivos para las funciones y niveles pertinentes.", "Delimitar objetivos y desarrollar definiciones del contexto."],
+      "c": 2,
+      "e": "El objetivo normativo es asegurar que cada nivel crítico tenga metas de continuidad claras y medibles."
+    },
+    {
+      "q": "¿Cuál es la definición correcta sobre el enfoque de ISO 22301?",
+      "o": ["Expone criterios de ICT para continuidad del negocio.", "Expone conceptos de disponibilidad de ICT.", "Desarrolla la continuidad del negocio según la magnitud de impacto aceptable.", "Expone conceptos de ICT para desarrollo de continuidad."],
+      "c": 2,
+      "e": "ISO 22301 dota un marco de resiliencia integral enfocado en la tolerancia al impacto, yendo más allá de la tecnología."
+    },
+    {
+      "q": "________: Situación de alta incertidumbre que puede derivarse de un incidente, interrumpe actividades clave y afecta la credibilidad, requiriendo acciones inmediatas.",
+      "o": ["Crisis.", "Incidente.", "Problema.", "Gestión de incidentes"],
+      "c": 0,
+      "e": "Una crisis se distingue por el grado extremo de incertidumbre y la amenaza a la reputación, demandando decisiones al más alto nivel."
+    }
+  ]
+}

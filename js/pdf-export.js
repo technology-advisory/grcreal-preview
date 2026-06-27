@@ -1,8 +1,12 @@
 // pdf-export.js · GRCreal · Diseño corporativo v3
-// CORREGIDO: Detección multi-norma funcionando correctamente
+// CORREGIDO: Soporta texto multilínea en las preguntas (no se cortan)
 
 function exportPDF() {
-  const items = document.querySelectorAll('.checklist-item');
+  let items = document.querySelectorAll('.checklist-item');
+  if (items.length === 0) {
+    items = document.querySelectorAll('.checklist-item-vertical');
+  }
+  
   let completedCount = 0;
   items.forEach(item => {
     if (item.querySelector('.sel-si.active') || item.querySelector('.sel-no.active')) completedCount++;
@@ -65,32 +69,13 @@ function _pctByClause(items, clauseNums) {
   return total > 0 ? Math.round((impl / total) * 100) : 0;
 }
 
-// ============================================================
-// DETECCIÓN AUTOMÁTICA DE LA NORMA
-// ============================================================
-
-// Mapa de valores data-norma → etiqueta legible en el PDF
-const _NORMA_MAP = {
-  'Mapeo':    'Mapeo NIS2/ISO27001/ENS/DORA',
-  'NIS2':     'NIS2 Directive',
-  'DORA':     'DORA (UE 2022/2554)',
-  'ENS':      'ENS (RD 311/2022)',
-  'ISO27001': 'ISO 27001:2022',
-  'ISO22301': 'ISO 22301:2019',
-  'ISO42001': 'ISO 42001:2023',
-};
-
 function detectarNorma() {
-  // Recoge las tres fuentes posibles de forma segura
   const src      = (typeof window._checklistSrc === 'string') ? window._checklistSrc : '';
   const dataNorma= (document.body && document.body.getAttribute('data-norma')) ? document.body.getAttribute('data-norma') : '';
   const url      = window.location.pathname || '';
-
-  // Concatena solo strings reales (nunca 'null' como string)
   const ref = [src, dataNorma, url].join(' ').toLowerCase();
   console.log('🔍 detectarNorma ref:', ref);
 
-  // Orden importante: más específicos primero
   if (ref.includes('mapeo'))    return 'Mapeo NIS2/ISO27001/ENS/DORA';
   if (ref.includes('iso42001')) return 'ISO 42001:2023';
   if (ref.includes('iso27001')) return 'ISO 27001:2022';
@@ -104,12 +89,8 @@ function detectarNorma() {
     if (tab === 'alta')  return 'ENS - Nivel Alto';
     return 'ENS - Nivel Básico';
   }
-
-  console.warn('⚠️ Norma no detectada. ref:', ref);
   return 'GRCreal Checklist';
 }
-
-
 
 function getFileNameBase(norma) {
   if (norma.includes('Mapeo'))     return 'GRCreal_Mapeo';
@@ -127,19 +108,22 @@ function getFileNameBase(norma) {
   return 'GRCreal_Checklist';
 }
 
-// ============================================================
-// GENERACIÓN DEL PDF
-// ============================================================
 function generatePDF(jsPDF) {
+  let items = document.querySelectorAll('.checklist-item');
+  let isVerticalFormat = false;
+  if (items.length === 0) {
+    items = document.querySelectorAll('.checklist-item-vertical');
+    isVerticalFormat = true;
+  }
+  
   const NORMA = detectarNorma();
   const FILE_BASE = getFileNameBase(NORMA);
   
   console.log('📄 Norma detectada:', NORMA);
-  console.log('📁 Base nombre archivo:', FILE_BASE);
+  console.log('📁 Formato vertical:', isVerticalFormat);
   
   const doc = new jsPDF({ orientation: 'portrait', unit: 'mm', format: 'a4' });
-  const items = document.querySelectorAll('.checklist-item');
-
+  
   let implementados = 0, noImplementados = 0;
   items.forEach(item => {
     if (item.querySelector('.sel-si.active')) implementados++;
@@ -183,7 +167,6 @@ function generatePDF(jsPDF) {
   doc.setTextColor(180, 210, 225);
   doc.text('grcreal.com', M, 27);
 
-  // Badge norma
   doc.setFillColor(255, 255, 255);
   doc.setGState(new doc.GState({ opacity: 0.08 }));
   doc.roundedRect(148, 8, 46, 18, 3, 3, 'F');
@@ -226,8 +209,8 @@ function generatePDF(jsPDF) {
   // KPI CARDS
   const kpis = [
     { val: String(total),           label: 'TOTAL CONTROLES',  color: C.gris  },
-    { val: String(implementados),   label: 'IMPLEMENTADOS',    color: C.verde },
-    { val: String(noImplementados), label: 'NO IMPLEMENTADOS', color: C.rojo  },
+    { val: String(implementados),   label: isVerticalFormat ? 'RESPUESTAS SÍ' : 'IMPLEMENTADOS',    color: C.verde },
+    { val: String(noImplementados), label: isVerticalFormat ? 'RESPUESTAS NO' : 'NO IMPLEMENTADOS', color: C.rojo  },
     { val: pct + '%',               label: 'CUMPLIMIENTO',     color: C.azul  },
   ];
   const cardW = (CW - 9) / 4;
@@ -327,68 +310,42 @@ function generatePDF(jsPDF) {
   doc.roundedRect(M + 8, legY - 2.5, 5, 3, 0.5, 0.5, 'F');
   doc.setTextColor(...C.gris);
   doc.setFontSize(6.5);
-  doc.text('Implementado (' + implementados + ')', M + 15, legY);
-  doc.setFillColor(200, 120, 90);
-  doc.roundedRect(M + 8, legY + 3.5, 5, 3, 0.5, 0.5, 'F');
-  doc.text('No implementado (' + noImplementados + ')', M + 15, legY + 6);
+  
+  if (isVerticalFormat) {
+    doc.text('Sí (' + implementados + ')', M + 15, legY);
+    doc.setFillColor(200, 120, 90);
+    doc.roundedRect(M + 8, legY + 3.5, 5, 3, 0.5, 0.5, 'F');
+    doc.text('No (' + noImplementados + ')', M + 15, legY + 6);
+  } else {
+    doc.text('Implementado (' + implementados + ')', M + 15, legY);
+    doc.setFillColor(200, 120, 90);
+    doc.roundedRect(M + 8, legY + 3.5, 5, 3, 0.5, 0.5, 'F');
+    doc.text('No implementado (' + noImplementados + ')', M + 15, legY + 6);
+  }
 
-  // BARRAS POR CLÁUSULA
+  // RESUMEN COLUMNA DERECHA
   const colRX = M + colW + 6;
   doc.setTextColor(...C.azul);
   doc.setFontSize(7);
   doc.setFont('helvetica', 'bold');
-  doc.text('CUMPLIMIENTO POR CLÁUSULA', colRX + colW / 2, sectionY + 4, { align: 'center' });
-
-  let clausulas = [
-    { name: 'Cl. 4 — Contexto',   nums: [4] },
-    { name: 'Cl. 5 — Liderazgo',  nums: [5] },
-    { name: 'Cl. 7 — Soporte',    nums: [7] },
-    { name: 'Cl. 8 — Operación',  nums: [8] },
-    { name: 'Cl. 9 — Evaluación', nums: [9] },
-    { name: 'Cl. 10 — Mejora',    nums: [10] },
-  ];
+  doc.text('RESUMEN', colRX + colW / 2, sectionY + 4, { align: 'center' });
   
-  if (NORMA.includes('ISO')) {
-    clausulas = [
-      { name: 'Cl. 4 — Contexto',   nums: [4] },
-      { name: 'Cl. 5 — Liderazgo',  nums: [5] },
-      { name: 'Cl. 6 — Planificación', nums: [6] },
-      { name: 'Cl. 7 — Soporte',    nums: [7] },
-      { name: 'Cl. 8 — Operación',  nums: [8] },
-      { name: 'Cl. 9 — Evaluación', nums: [9] },
-      { name: 'Cl. 10 — Mejora',    nums: [10] },
-    ];
+  doc.setTextColor(...C.texto);
+  doc.setFontSize(6.5);
+  doc.setFont('helvetica', 'normal');
+  doc.text('Total controles: ' + total, colRX, sectionY + 18);
+  if (isVerticalFormat) {
+    doc.text('Respuestas "Sí": ' + implementados, colRX, sectionY + 26);
+    doc.text('Respuestas "No": ' + noImplementados, colRX, sectionY + 34);
+  } else {
+    doc.text('Implementados: ' + implementados, colRX, sectionY + 26);
+    doc.text('No implementados: ' + noImplementados, colRX, sectionY + 34);
   }
+  doc.text('Tasa cumplimiento: ' + pct + '%', colRX, sectionY + 42);
 
-  const barAreaW = colW - 4;
-  const labelBarW = 30;
-  const barFillW = barAreaW - labelBarW - 14;
-  const barH2 = 4;
-  const barGap2 = 9;
-  let barY = sectionY + 12;
+  y = Math.max(donutCY + 30, sectionY + 56) + 8;
 
-  clausulas.forEach(cl => {
-    const cpct = _pctByClause(items, cl.nums);
-    doc.setTextColor(...C.texto);
-    doc.setFontSize(6.5);
-    doc.setFont('helvetica', 'normal');
-    doc.text(cl.name, colRX, barY + barH2 - 0.5);
-    const bx = colRX + labelBarW + 2;
-    doc.setFillColor(...C.grisBorde);
-    doc.roundedRect(bx, barY, barFillW, barH2, 2, 2, 'F');
-    if (cpct > 0) {
-      doc.setFillColor(...C.azul);
-      doc.roundedRect(bx, barY, (barFillW * cpct) / 100, barH2, 2, 2, 'F');
-    }
-    doc.setTextColor(...C.gris);
-    doc.setFontSize(6.5);
-    doc.text(cpct + '%', bx + barFillW + 3, barY + barH2 - 0.5);
-    barY += barGap2;
-  });
-
-  y = Math.max(donutCY + 30, barY) + 8;
-
-  // TABLA DE CONTROLES
+  // TABLA DE CONTROLES (MULTILÍNEA)
   doc.setFillColor(...C.azulLight);
   doc.rect(M, y, CW, 0.5, 'F');
   y += 5;
@@ -409,13 +366,26 @@ function generatePDF(jsPDF) {
   y += 10;
   doc.setFont('helvetica', 'normal');
   let rowAlt = false;
+  
+  const textoSi = isVerticalFormat ? 'Sí' : 'Implementado';
+  const textoNo = isVerticalFormat ? 'No' : 'No implementado';
+  const colorSi = isVerticalFormat ? C.azul : C.verde;
+  const colorSiLight = isVerticalFormat ? C.azulLight : C.verdeLight;
 
+  const codeWidth = 18;
+  const statusWidth = 26;
+  const textWidth = CW - codeWidth - statusWidth - 12;
+  
   for (const item of items) {
     const code = item.querySelector('.checklist-code')?.textContent?.trim() || '';
     let text = item.querySelector('.checklist-text')?.textContent?.trim() || '';
-    const isImpl   = !!item.querySelector('.sel-si.active');
-    const isNoImpl = !!item.querySelector('.sel-no.active');
-    const rowH = 7;
+    const isSi   = !!item.querySelector('.sel-si.active');
+    const isNo = !!item.querySelector('.sel-no.active');
+    
+    doc.setFontSize(7);
+    doc.setFont('helvetica', 'normal');
+    const textLines = doc.splitTextToSize(text, textWidth);
+    const rowH = Math.max(7, textLines.length * 4.5);
 
     if (y + rowH > 278) {
       doc.addPage();
@@ -438,30 +408,36 @@ function generatePDF(jsPDF) {
       doc.rect(M, y, CW, rowH, 'F');
     }
 
+    // Código
     doc.setFontSize(7);
     doc.setFont('helvetica', 'bold');
     doc.setTextColor(...C.azul);
-    doc.text(code, M + 4, y + 5);
+    doc.text(code, M + 4, y + 4.5);
 
-    if (text.length > 62) text = text.substring(0, 59) + '...';
+    // Texto multilínea
     doc.setFont('helvetica', 'normal');
     doc.setTextColor(...C.texto);
-    doc.text(text, M + 24, y + 5);
+    let currentY = y + 4.5;
+    for (let i = 0; i < textLines.length; i++) {
+      doc.text(textLines[i], M + 24, currentY);
+      currentY += 4.5;
+    }
 
-    if (isImpl) {
-      doc.setFillColor(...C.verdeLight);
-      doc.roundedRect(M + CW - 28, y + 1, 26, 5.5, 1.5, 1.5, 'F');
-      doc.setTextColor(...C.verde);
+    // Estado
+    if (isSi) {
+      doc.setFillColor(...colorSiLight);
+      doc.roundedRect(M + CW - statusWidth + 2, y + 1, statusWidth - 4, rowH - 2, 1.5, 1.5, 'F');
+      doc.setTextColor(...colorSi);
       doc.setFontSize(6.5);
       doc.setFont('helvetica', 'bold');
-      doc.text('Implementado', M + CW - 26.5, y + 5);
-    } else if (isNoImpl) {
+      doc.text(textoSi, M + CW - statusWidth/2 - 2, y + (rowH/2) + 1.5, { align: 'center' });
+    } else if (isNo) {
       doc.setFillColor(...C.rojoLight);
-      doc.roundedRect(M + CW - 28, y + 1, 26, 5.5, 1.5, 1.5, 'F');
+      doc.roundedRect(M + CW - statusWidth + 2, y + 1, statusWidth - 4, rowH - 2, 1.5, 1.5, 'F');
       doc.setTextColor(...C.rojo);
       doc.setFontSize(6.5);
       doc.setFont('helvetica', 'bold');
-      doc.text('No implementado', M + CW - 26.5, y + 5);
+      doc.text(textoNo, M + CW - statusWidth/2 - 2, y + (rowH/2) + 1.5, { align: 'center' });
     }
 
     doc.setDrawColor(...C.grisBorde);

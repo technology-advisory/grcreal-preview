@@ -1,0 +1,58 @@
+/* ============================================================
+   TESTIMONIOS · "Lo que dicen de mí"
+   AÑADIR AL FINAL de dossier-sobremi.css
+   Usa los tokens reales de dossier-core: --ds-deep, --ds-ink,
+   --ds-line, --brand, --mono. Hereda el ritmo de .sm-section.
+   ============================================================ */
+
+.sm-testi-intro{
+  font-size:14.5px;line-height:1.6;color:#69757f;max-width:680px;margin:0 0 22px;
+}
+
+.sm-testi-list{display:flex;flex-direction:column;gap:16px;}
+
+/* Tarjeta = misma familia visual que .sm-area-card (border-top brand, plana) */
+.sm-testi{
+  background:#fff;
+  border:1px solid var(--ds-line,#D7DCDF);
+  border-top:3px solid var(--brand,#0077B5);
+  padding:22px 24px;
+}
+
+.sm-testi-head{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:14px;}
+.sm-testi-ref{
+  font-family:var(--mono,monospace);font-size:11px;letter-spacing:.05em;
+  color:var(--brand,#0077B5);border:1px solid var(--brand,#0077B5);padding:2px 8px;
+}
+.sm-testi-verify{
+  font-family:var(--mono,monospace);font-size:11px;letter-spacing:.04em;text-transform:uppercase;
+  color:#7c8790;display:inline-flex;align-items:center;gap:7px;
+}
+.sm-testi-verify::before{content:'';width:7px;height:7px;border-radius:50%;background:#42c98a;}
+
+.sm-testi-quote{margin:0;padding:0;border:none;}
+.sm-testi-quote p{font-size:15px;line-height:1.7;color:#3d4751;margin:0 0 12px;}
+.sm-testi-quote p:last-child{margin-bottom:0;}
+.sm-testi-quote strong{color:var(--ds-ink,#10161B);}
+.sm-testi-quote em{color:var(--ds-deep,#003955);font-style:italic;}
+.sm-testi-quote ul{list-style:none;margin:0 0 12px;padding:0;}
+.sm-testi-quote li{
+  position:relative;padding-left:20px;margin-bottom:9px;
+  font-size:14.5px;line-height:1.6;color:#3d4751;
+}
+.sm-testi-quote li::before{content:'—';position:absolute;left:0;color:var(--brand,#0077B5);font-weight:700;}
+
+.sm-testi-author{margin-top:16px;padding-top:14px;border-top:1px solid #eef1f4;}
+.sm-testi-name{display:block;font-weight:800;font-size:15.5px;color:var(--ds-ink,#10161B);}
+.sm-testi-role{display:block;font-size:12.5px;color:#69757f;line-height:1.45;margin-top:3px;}
+
+.sm-testi-all{
+  display:inline-block;margin-top:18px;
+  font-family:var(--mono,monospace);font-size:13px;color:var(--brand,#0077B5);
+  text-decoration:none;border-bottom:1px solid transparent;
+}
+.sm-testi-all:hover{border-bottom-color:var(--brand,#0077B5);}
+
+@media (max-width:620px){
+  .sm-testi{padding:18px 16px;}
+}

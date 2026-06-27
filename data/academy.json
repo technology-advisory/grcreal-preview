@@ -55,17 +55,16 @@
 	  "proximamente": false,
 	  "estado": "activo"
 	},
-    {
+   {
       "id": "iso22301-auditor",
       "titulo": "ISO 22301<br>Lead Auditor",
       "tag": "ISO 22301 · Continuidad",
       "descripcion": "Continuidad de negocio desde la realidad operacional. Planes, ejercicios, auditorías, resiliencia y errores que aparecen continuamente cuando los incidentes dejan de ser teoría.",
       "badges": ["BCMS", "BIA", "RTO/RPO", "Crisis", "Resilience"],
-      "enlace": null,
-      "bloqueado": true,
-      "proximamente": true,
-      "estado": "proximo",
-      "mensaje_bloqueo": "Próximo lanzamiento"
+      "enlace": "iso23001-internal-auditor/index.html",
+      "bloqueado": false,
+      "proximamente": false,
+      "estado": "activo"
     },
     {
       "id": "iso42001-governance",
@@ -73,11 +72,10 @@
       "tag": "ISO/IEC 42001 · IA",
       "descripcion": "Gobierno de inteligencia artificial desde un enfoque operativo y regulatorio. Riesgos, supervisión humana, IA de alto riesgo, controles, cumplimiento y relación real con el AI Act europeo.",
       "badges": ["AI Act", "AIMS", "Governance", "Risk", "Compliance"],
-      "enlace": null,
-      "bloqueado": true,
-      "proximamente": true,
-      "estado": "proximo",
-      "mensaje_bloqueo": "Próximo lanzamiento"
+      "enlace": "iso42001-lead-auditor/index.html",
+	  "bloqueado": false,
+	  "proximamente": false,
+	  "estado": "activo"
     }
   ]
 }

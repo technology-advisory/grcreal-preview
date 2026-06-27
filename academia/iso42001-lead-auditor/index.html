@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ISO 42001 Lead Auditor · IA Management System · GRCreal Academy</title>
+
+<meta name="description" content="Curso práctico de ISO 42001 Lead Auditor. Aprende a auditar Sistemas de Gestión de Inteligencia Artificial (SGIA) desde los principios hasta el informe y seguimiento.">
+
+<meta name="robots" content="index, follow">
+
+<link rel="canonical" href="https://grcreal.com/academia/iso42001-lead-auditor/">
+<meta property="og:title" content="ISO 42001 Lead Auditor · GRCreal Academy">
+<meta property="og:description" content="Auditoría real de Sistemas de Gestión de IA. Enfoque en evidencia, riesgos de IA y eficacia de controles.">
+<meta property="og:type" content="website">
+
+<link rel="stylesheet" href="../../css/marca.css">
+<link rel="stylesheet" href="../../css/dossier-core.css">
+<link rel="stylesheet" href="../../css/dossier-academia.css">
+<link rel="icon" href="/favicon.ico" sizes="any">
+
+<style>
+
+/* ── HERO ── */
+
+.course-hero {
+padding: 48px 0 36px;
+border-bottom: 1px solid var(--border);
+margin-bottom: 40px;
+}
+
+.course-eyebrow {
+font-family: var(--mono);
+font-size: 10px;
+letter-spacing: .2em;
+text-transform: uppercase;
+color: var(--brand);
+margin-bottom: 14px;
+}
+
+.course-title {
+    font-size: 66px;
+    font-weight: bold;
+    line-height: 1.05;
+    color: var(--ink);
+    letter-spacing: -0.5px;
+    margin-bottom: 20px;
+}
+
+.course-title .accent {
+    color: var(--brand, #0077B5);
+}
+
+.course-desc {
+font-size: 16px;
+line-height: 1.85;
+color: var(--muted);
+max-width: 100%;
+margin-bottom: 28px;
+}
+
+.course-meta {
+display: flex;
+gap: 24px;
+flex-wrap: wrap;
+}
+
+.meta-item {
+display: flex;
+align-items: center;
+gap: 8px;
+font-family: var(--mono);
+font-size: 11px;
+letter-spacing: .1em;
+text-transform: uppercase;
+color: var(--muted);
+}
+
+.meta-dot {
+width: 6px;
+height: 6px;
+border-radius: 50%;
+background: var(--brand);
+flex-shrink: 0;
+}
+
+/* ── NAVIGATION PATH ── */
+
+.nav-path {
+display: flex;
+align-items: center;
+gap: 0;
+flex-wrap: wrap;
+margin-bottom: 48px;
+padding: 28px;
+background: var(--surface);
+border: 1px solid var(--border);
+overflow-x: auto;
+}
+
+.nav-step {
+display: flex;
+align-items: center;
+gap: 0;
+}
+
+.nav-step-label {
+font-family: var(--mono);
+font-size: 10px;
+letter-spacing: .14em;
+text-transform: uppercase;
+color: var(--muted);
+padding: 8px 16px;
+border: 1px solid var(--border);
+background: #fff;
+white-space: nowrap;
+}
+
+.nav-step-label.active {
+background: var(--brand);
+color: #fff;
+border-color: var(--brand);
+}
+
+.nav-step-label.cycle {
+background: var(--ink);
+color: #fff;
+border-color: var(--ink);
+}
+
+.nav-arrow {
+font-size: 14px;
+color: var(--muted);
+padding: 0 6px;
+}
+
+/* ── MODULE GRID ── */
+
+.module-section-title {
+font-family: var(--mono);
+font-size: 10px;
+letter-spacing: .2em;
+text-transform: uppercase;
+color: var(--muted);
+margin-bottom: 20px;
+padding-bottom: 12px;
+border-bottom: 1px solid var(--border);
+}
+
+.module-grid {
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+gap: 16px;
+margin-bottom: 48px;
+}
+
+.module-card {
+background: #fff;
+border: 1px solid var(--border);
+border-radius: 16px;
+padding: 24px;
+text-decoration: none;
+display: flex;
+align-items: flex-start;
+gap: 20px;
+transition: all .2s ease;
+position: relative;
+}
+
+.module-card:hover {
+background: var(--brand-light);
+transform: translateY(-2px);
+}
+
+.module-card:hover .module-arrow {
+transform: translateX(4px);
+color: var(--brand);
+}
+
+.module-card.locked {
+opacity: 0.7;
+cursor: not-allowed;
+background: #fafafa;
+}
+
+.module-card.locked:hover {
+background: #fafafa;
+transform: none;
+}
+
+.module-card.locked .module-arrow {
+color: var(--ghost);
+transform: none;
+}
+
+.lock-badge {
+position: absolute;
+top: 12px;
+right: 16px;
+font-size: 11px;
+color: var(--ghost);
+font-family: var(--mono);
+}
+
+.locked-message {
+font-size: 11px;
+color: var(--brand);
+margin-top: 6px;
+font-family: var(--mono);
+letter-spacing: 0.5px;
+display: flex;
+align-items: center;
+gap: 4px;
+}
+
+.module-number {
+font-family: var(--mono);
+font-size: 11px;
+font-weight: 700;
+color: var(--brand);
+background: var(--brand-light);
+border: 1px solid rgba(0,119,181,0.15);
+width: 36px;
+height: 36px;
+display: flex;
+align-items: center;
+justify-content: center;
+flex-shrink: 0;
+border-radius: 8px;
+}
+
+.module-card.locked .module-number {
+opacity: 0.5;
+}
+
+.module-content {
+flex: 1;
+}
+
+.module-tag {
+font-family: var(--mono);
+font-size: 9px;
+letter-spacing: .16em;
+text-transform: uppercase;
+color: var(--muted);
+margin-bottom: 6px;
+}
+
+.module-name {
+font-size: 15px;
+font-weight: 700;
+color: var(--ink);
+margin-bottom: 6px;
+line-height: 1.3;
+}
+
+.module-desc {
+font-size: 13px;
+line-height: 1.7;
+color: var(--muted);
+}
+
+.module-arrow {
+font-size: 16px;
+color: var(--muted);
+transition: all .2s ease;
+margin-top: 2px;
+}
+
+/* ── WHAT YOU LEARN ── */
+
+.learn-grid {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 16px;
+margin-bottom: 48px;
+}
+
+.learn-card {
+padding: 24px;
+border: 1px solid var(--border);
+background: var(--surface);
+border-radius: 12px;
+}
+
+.learn-icon {
+font-size: 22px;
+margin-bottom: 12px;
+}
+
+.learn-title {
+font-size: 13px;
+font-weight: 700;
+color: var(--ink);
+margin-bottom: 8px;
+}
+
+.learn-text {
+font-size: 13px;
+line-height: 1.7;
+color: var(--muted);
+}
+
+/* ── DISCLAIMER ── */
+
+.disclaimer-box {
+padding: 24px 28px;
+border-left: 4px solid var(--ink);
+background: var(--surface);
+margin-bottom: 40px;
+border-radius: 12px;
+}
+
+.disclaimer-box p {
+font-size: 13px;
+line-height: 1.8;
+color: var(--muted);
+margin: 0;
+}
+
+.disclaimer-box strong {
+color: var(--ink);
+}
+
+/* ── START CTA ── */
+
+.start-block {
+padding: 40px;
+background: var(--ink);
+color: #fff;
+display: flex;
+align-items: center;
+justify-content: space-between;
+gap: 32px;
+flex-wrap: wrap;
+margin-bottom: 0;
+border-radius: 16px;
+}
+
+.start-text .start-title {
+font-size: 22px;
+font-weight: 700;
+margin-bottom: 8px;
+}
+
+.start-text .start-sub {
+font-size: 14px;
+opacity: .8;
+}
+
+.start-btn {
+display: inline-block;
+background: var(--brand);
+color: #fff;
+text-decoration: none;
+padding: 14px 32px;
+font-family: var(--mono);
+font-size: 11px;
+font-weight: 700;
+letter-spacing: .12em;
+text-transform: uppercase;
+transition: opacity .2s;
+white-space: nowrap;
+border-radius: 40px;
+}
+
+.start-btn:hover {
+opacity: .85;
+}
+
+/* ── RESPONSIVE ── */
+
+@media(max-width: 720px) {
+    .course-title {
+        font-size: 42px;
+    }
+    .module-grid {
+        grid-template-columns: 1fr;
+    }
+    .learn-grid {
+        grid-template-columns: 1fr;
+    }
+    .start-block {
+        flex-direction: column;
+        text-align: center;
+    }
+    .nav-path {
+        gap: 4px;
+    }
+    .header {
+        padding: 24px 24px 16px 24px;
+    }
+    .body {
+        padding: 0 24px 32px 24px;
+    }
+}
+
+.card-wrapper {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.card {
+    max-width: 100%;
+}
+
+</style>
+
+</head>
+
+<body>
+<nav class="nav">
+<a href="/index.html" class="nav-logo" style="text-decoration:none;">GRC<span>real</span></a>
+<div class="nav-menu-wrapper" id="navMenuWrapper">
+<ul class="nav-menu" id="navMenu">
+<li class="nav-item-dropdown" id="navDropdownMarcos"><a href="javascript:void(0)" onclick="document.getElementById('navDropdownMarcos').classList.toggle('open'); document.getElementById('navDropdownRecursos').classList.remove('open');"><span class="nav-ic-flat"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="2.5" width="12" height="3.5" rx="1"/><rect x="3" y="7.5" width="12" height="3.5" rx="1"/><rect x="3" y="12.5" width="12" height="3" rx="1"/></svg></span>Marcos <span class="chev">▾</span></a>
+<div class="nav-dropdown-panel">
+<a href="/marcos/iso27001/index.html"><span class="nav-ic"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 1.5 14.5 3.5 V8 C14.5 12 11.5 14.5 9 16 C6.5 14.5 3.5 12 3.5 8 V3.5 Z"/><path d="M6.3 9 8.2 10.8 11.7 7"/></svg></span><span class="nav-txt"><span class="nav-title">ISO 27001</span><span class="nav-sub">El estándar más adoptado</span></span></a>
+<a href="/marcos/ens/index.html"><span class="nav-ic"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 16h13"/><path d="M3.5 16V8.5M6.3 16V8.5M9 16V8.5M11.7 16V8.5M14.5 16V8.5"/><path d="M1.8 8.5 9 3 16.2 8.5Z"/></svg></span><span class="nav-txt"><span class="nav-title">ENS</span><span class="nav-sub">Sector público español</span></span></a>
+<a href="/marcos/nis2/index.html"><span class="nav-ic"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 2v3"/><path d="M3 5h12"/><path d="M3 5 1.5 8.5h3Z"/><path d="M15 5 13.5 8.5h3Z"/><path d="M5.2 9.2v2.3c0 .8.8 1.5 1.8 1.5s1.8-.7 1.8-1.5V9.2"/><path d="M9 8.5v6.2M6 16h6"/></svg></span><span class="nav-txt"><span class="nav-title">NIS2</span><span class="nav-sub">Directiva europea</span></span></a>
+<a href="/marcos/ia/index.html"><span class="nav-ic"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="5" width="8" height="8" rx="1"/><path d="M9 1.5v3M9 13.5v3M1.5 9h3M13.5 9h3M3.5 3.5l2 2M14.5 3.5l-2 2M3.5 14.5l2-2M14.5 14.5l-2-2"/></svg></span><span class="nav-txt"><span class="nav-title">IA</span><span class="nav-sub">AI Act + ISO 42001</span></span></a>
+<a href="/marcos/iso22301/index.html"><span class="nav-ic"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 9A5.5 5.5 0 1 1 12.7 5.1"/><path d="M12.7 1.8v3.3h3.3"/></svg></span><span class="nav-txt"><span class="nav-title">ISO 22301</span><span class="nav-sub">Continuidad de negocio</span></span></a>
+<a href="/marcos/vciso/index.html"><span class="nav-ic"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="6.3" r="2.8"/><path d="M3 15.5c0-2.9 2.7-5.2 6-5.2s6 2.3 6 5.2"/></svg></span><span class="nav-txt"><span class="nav-title">vCISO</span><span class="nav-sub">Rol, no certificación</span></span></a>
+</div>
+</li>
+<li class="nav-item-dropdown" id="navDropdownRecursos"><a href="javascript:void(0)" onclick="document.getElementById('navDropdownRecursos').classList.toggle('open'); document.getElementById('navDropdownMarcos').classList.remove('open');"><span class="nav-ic-flat"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 5.5a1 1 0 0 1 1-1h3.3l1.3 1.6H15a1 1 0 0 1 1 1V13a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1Z"/></svg></span>Recursos <span class="chev">▾</span></a>
+<div class="nav-dropdown-panel">
+<a href="/articulos/index.html"><span class="nav-ic"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="2" width="11" height="14" rx="1.3"/><path d="M6 6h6M6 9h6M6 12h3.5"/></svg></span><span class="nav-txt"><span class="nav-title">Artículos</span><span class="nav-sub">Análisis y opinión técnica</span></span></a>
+<a href="/checklists/index.html"><span class="nav-ic"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="3" width="13" height="12" rx="1.3"/><path d="M5 6.3h2.2M5 9h2.2M5 11.7h2.2"/><path d="M11 6.2l.9.9 1.6-1.7M11 8.9l.9.9 1.6-1.7M11 11.6l.9.9 1.6-1.7"/></svg></span><span class="nav-txt"><span class="nav-title">Checklists</span><span class="nav-sub">Autoevaluación interactiva</span></span></a>
+<a href="/versus/index.html"><span class="nav-ic"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 6.5h11M10.5 3.5l3 3-3 3"/><path d="M15.5 11.5h-11M7.5 8.5l-3 3 3 3"/></svg></span><span class="nav-txt"><span class="nav-title">Versus</span><span class="nav-sub">Comparativas entre marcos</span></span></a>
+<a href="/quiz/index.html"><span class="nav-ic"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="9" r="7"/><path d="M7 7.2c0-1.1.9-2 2-2s2 .8 2 1.8c0 1.4-2 1.6-2 3.3"/><circle cx="9" cy="12.7" r="0.15" fill="currentColor" stroke="none"/></svg></span><span class="nav-txt"><span class="nav-title">Quiz</span><span class="nav-sub">Pon a prueba tu nivel</span></span></a>
+<a href="/academia/index.html"><span class="nav-ic"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M1.5 6.5 9 3l7.5 3.5L9 10Z"/><path d="M5 8.3v3.4c0 1.3 1.8 2.3 4 2.3s4-1 4-2.3V8.3"/><path d="M16.5 6.5v4.3"/></svg></span><span class="nav-txt"><span class="nav-title">Academia</span><span class="nav-sub">Cursos paso a paso</span></span></a>
+<a href="/herramientas/index.html"><span class="nav-ic"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M11.3 2.3a3.2 3.2 0 0 0-4.3 4.2L2 11.5l1.8 1.8 5-5a3.2 3.2 0 0 0 4.2-4.3l-2 2-1.7-1.7Z"/></svg></span><span class="nav-txt"><span class="nav-title">Herramientas</span><span class="nav-sub">BIA, análisis de riesgos</span></span></a>
+</div>
+</li>
+<li><a href="/enfoque/index.html"><span class="nav-ic-flat"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="9" r="6.5"/><circle cx="9" cy="9" r="3"/><circle cx="9" cy="9" r="0.4" fill="currentColor" stroke="none"/></svg></span>Enfoque</a></li>
+<li><a href="/metodologia/index.html"><span class="nav-ic-flat"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="3.3" cy="3.3" r="1.8"/><circle cx="14.7" cy="9" r="1.8"/><circle cx="3.3" cy="14.7" r="1.8"/><path d="M5 4.3l8 4M5 13.7l8-4"/></svg></span>Metodología</a></li>
+<li><a href="/sobre-mi/index.html"><span class="nav-ic-flat"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="6" r="2.8"/><path d="M3.3 15c0-2.7 2.6-4.8 5.7-4.8s5.7 2.1 5.7 4.8"/></svg></span>Sobre mí</a></li>
+<li><a href="/contacto.html"><span class="nav-ic-flat"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="14" height="10" rx="1.3"/><path d="M2.5 5l6.5 5 6.5-5"/></svg></span>Contacto</a></li>
+<li><a href="/legal/index.html" class="nav-cta-pill">Legal</a></li>
+</ul>
+</div>
+<div class="nav-toggle" onclick="this.classList.toggle('open'); document.getElementById('navMenu').classList.toggle('open')">
+<span></span><span></span><span></span>
+</div>
+</nav>
+
+<div class="card-wrapper ds-page">
+<div class="card">
+
+<div class="accent-bar"></div>
+
+<div class="ds-meta">
+  <span><span class="dot"></span>GRCreal // expediente: academia</span>
+  <span>curso: <strong>ISO 42001 Lead Auditor</strong></span>
+</div>
+
+<a href="/academia/index.html" class="art-back" style="margin:18px 56px 0;">← Volver a Academia</a>
+
+<!-- HERO -->
+
+<div class="header">
+
+<div class="course-hero">
+
+<div class="course-eyebrow">
+GRCreal Academy · ISO/IEC 42001:2023
+</div>
+
+<h1 class="course-title">
+ISO 42001<br>
+<span class="accent">Lead Auditor</span>
+</h1>
+
+<p class="course-desc">
+Cómo auditar realmente un Sistema de Gestión de Inteligencia Artificial (SGIA). Desde el contexto y los riesgos de IA hasta los controles del Anexo A, la evaluación de impacto y el cierre de la auditoría. Enfoque en evidencia objetiva, no en teoría.
+</p>
+
+<div class="course-meta">
+<div class="meta-item">
+<div class="meta-dot"></div>
+12 módulos
+</div>
+<div class="meta-item">
+<div class="meta-dot"></div>
+ISO/IEC 42001:2023
+</div>
+<div class="meta-item">
+<div class="meta-dot"></div>
+Enfoque práctico
+</div>
+<div class="meta-item">
+<div class="meta-dot"></div>
+Por Miguel Angel Carriazo · vCISO
+</div>
+</div>
+
+</div>
+
+</div>
+
+<div class="body academia-body">
+
+<!-- NAVIGATION PATH -->
+
+<h2 class="module-section-title">
+Ruta de auditoría del SGIA
+</h2>
+
+<div class="nav-path">
+
+<div class="nav-step">
+<div class="nav-step-label">Contexto</div>
+<div class="nav-arrow">→</div>
+</div>
+
+<div class="nav-step">
+<div class="nav-step-label">Planificación</div>
+<div class="nav-arrow">→</div>
+</div>
+
+<div class="nav-step">
+<div class="nav-step-label cycle">RIESGOS IA</div>
+<div class="nav-arrow">→</div>
+</div>
+
+<div class="nav-step">
+<div class="nav-step-label cycle">CONTROLES</div>
+<div class="nav-arrow">→</div>
+</div>
+
+<div class="nav-step">
+<div class="nav-step-label cycle">EVALUACIÓN</div>
+<div class="nav-arrow">→</div>
+</div>
+
+<div class="nav-step">
+<div class="nav-step-label cycle">MEJORA</div>
+</div>
+
+</div>
+
+<!-- MODULE GRID -->
+
+<h2 class="module-section-title">
+Módulos del curso
+</h2>
+
+<div class="module-grid">
+
+<a href="modulo-1.html" class="module-card">
+<div class="module-number">01</div>
+<div class="module-content">
+<div class="module-tag">Fundamentos</div>
+<div class="module-name">Introducción a la Auditoría ISO 42001</div>
+<div class="module-desc">Qué es un SGIA, tipos de auditoría, ISO 19011, y diferencias entre auditar IA vs otros sistemas.</div>
+</div>
+<div class="module-arrow">→</div>
+</a>
+
+<a href="modulo-2.html" class="module-card">
+<div class="module-number">02</div>
+<div class="module-content">
+<div class="module-tag">Contexto</div>
+<div class="module-name">Contexto y Alcance del SGIA (Cláusula 4)</div>
+<div class="module-desc">Cómo auditar contexto, partes interesadas, alcance y los roles en IA (proveedor, cliente, sujeto, autoridad).</div>
+</div>
+<div class="module-arrow">→</div>
+</a>
+
+<a href="modulo-3.html" class="module-card">
+<div class="module-number">03</div>
+<div class="module-content">
+<div class="module-tag">Liderazgo</div>
+<div class="module-name">Liderazgo y Política de IA (Cláusula 5)</div>
+<div class="module-desc">Auditar el compromiso de la alta dirección, la política de IA, roles y responsabilidades.</div>
+</div>
+<div class="module-arrow">→</div>
+</a>
+
+<a href="modulo-4.html" class="module-card">
+<div class="module-number">04</div>
+<div class="module-content">
+<div class="module-tag">Planificación</div>
+<div class="module-name">Planificación y Gestión de Riesgos en IA (Cláusula 6)</div>
+<div class="module-desc">Evaluación de riesgos de IA, evaluación de impacto, tratamiento del riesgo y objetivos de IA.</div>
+</div>
+<div class="module-arrow">→</div>
+</a>
+
+<a href="modulo-5.html" class="module-card">
+<div class="module-number">05</div>
+<div class="module-content">
+<div class="module-tag">Soporte</div>
+<div class="module-name">Soporte (Cláusula 7)</div>
+<div class="module-desc">Competencia, concienciación, comunicación e información documentada en el SGIA.</div>
+</div>
+<div class="module-arrow">→</div>
+</a>
+
+<a href="modulo-6.html" class="module-card">
+<div class="module-number">06</div>
+<div class="module-content">
+<div class="module-tag">Operación</div>
+<div class="module-name">Operación y Controles del Anexo A (Cláusula 8)</div>
+<div class="module-desc">Planificación operacional, gestión de cambios, procesos externalizados y los 9 grupos de controles.</div>
+</div>
+<div class="module-arrow">→</div>
+</a>
+
+<a href="modulo-7.html" class="module-card">
+<div class="module-number">07</div>
+<div class="module-content">
+<div class="module-tag">SoA</div>
+<div class="module-name">Declaración de Aplicabilidad y Evaluación de Eficacia</div>
+<div class="module-desc">Cómo auditar la SoA, determinar aplicabilidad y evaluar diseño vs implementación vs resultado.</div>
+</div>
+<div class="module-arrow">→</div>
+</a>
+
+<a href="modulo-8.html" class="module-card">
+<div class="module-number">08</div>
+<div class="module-content">
+<div class="module-tag">Evaluación</div>
+<div class="module-name">Evaluación del Desempeño (Cláusula 9)</div>
+<div class="module-desc">Monitoreo, medición, métricas de IA (precisión, sesgo, deriva), auditoría interna y revisión por dirección.</div>
+</div>
+<div class="module-arrow">→</div>
+</a>
+
+<a href="modulo-9.html" class="module-card">
+<div class="module-number">09</div>
+<div class="module-content">
+<div class="module-tag">Mejora</div>
+<div class="module-name">Mejora y No Conformidades (Cláusula 10)</div>
+<div class="module-desc">Hallazgos, no conformidades, acciones correctivas, causa raíz y verificación de eficacia.</div>
+</div>
+<div class="module-arrow">→</div>
+</a>
+
+<a href="modulo-10.html" class="module-card">
+<div class="module-number">10</div>
+<div class="module-content">
+<div class="module-tag">Auditoría</div>
+<div class="module-name">Auditoría del SGIA (ISO 19011 + 9.2)</div>
+<div class="module-desc">Programa de auditoría, plan de auditoría, muestreo basado en riesgo, evidencia y triangulación.</div>
+</div>
+<div class="module-arrow">→</div>
+</a>
+
+<!-- MODULO 11 · RESUMEN (BLOQUEADO) -->
+<div class="module-card locked">
+<div class="lock-badge">🔒</div>
+<div class="module-number">11</div>
+<div class="module-content">
+<div class="module-tag">Repaso</div>
+<div class="module-name">Resumen del Curso</div>
+<div class="module-desc">Tabla compacta, hilo conductor, errores típicos, checklist final y lecciones clave.</div>
+<div class="locked-message">Completa los 10 módulos para acceder</div>
+</div>
+<div class="module-arrow">→</div>
+</div>
+
+<!-- MODULO 12 · CONSEJOS EXAMEN (BLOQUEADO) -->
+<div class="module-card locked">
+<div class="lock-badge">🔒</div>
+<div class="module-number">12</div>
+<div class="module-content">
+<div class="module-tag">Certificación</div>
+<div class="module-name">Consejos para el Examen</div>
+<div class="module-desc">Consejos prácticos para superar la certificación ISO 42001 Lead Auditor.</div>
+<div class="locked-message">Completa los 10 módulos para acceder</div>
+</div>
+<div class="module-arrow">→</div>
+</div>
+
+</div>
+
+<!-- QUE APRENDERÁS -->
+
+<h2 class="module-section-title">
+Qué vas a aprender
+</h2>
+
+<div class="learn-grid">
+
+<div class="learn-card">
+<div class="learn-icon">🤖</div>
+<div class="learn-title">Auditoría de IA real</div>
+<div class="learn-text">No cómo aprobar un examen. Cómo auditar un SGIA que funcione en la realidad, con riesgos de IA y controles efectivos.</div>
+</div>
+
+<div class="learn-card">
+<div class="learn-icon">📋</div>
+<div class="learn-title">Evidencias en IA</div>
+<div class="learn-text">Qué evidencias son válidas en auditoría de IA: logs, métricas, actas de evaluación de impacto, SoA y registros de cambios.</div>
+</div>
+
+<div class="learn-card">
+<div class="learn-icon">⚠️</div>
+<div class="learn-title">Riesgos específicos de IA</div>
+<div class="learn-text">Sesgo, deriva, falta de explicabilidad, robustez deficiente. Cómo auditar que se gestionan correctamente.</div>
+</div>
+
+<div class="learn-card">
+<div class="learn-icon">📝</div>
+<div class="learn-title">Redacción de hallazgos</div>
+<div class="learn-text">Fórmula probada para redactar no conformidades en SGIA: criterio + condición + evidencia + impacto + conclusión.</div>
+</div>
+
+<div class="learn-card">
+<div class="learn-icon">📊</div>
+<div class="learn-title">Evaluación de impacto</div>
+<div class="learn-text">Cómo auditar que la organización evalúa impactos en personas y sociedad antes de desplegar sistemas de IA.</div>
+</div>
+
+<div class="learn-card">
+<div class="learn-icon">📄</div>
+<div class="learn-title">SoA y controles</div>
+<div class="learn-text">Cómo auditar la Declaración de Aplicabilidad, la trazabilidad riesgo-control y la eficacia de los controles.</div>
+</div>
+
+</div>
+
+<!-- DISCLAIMER -->
+
+<div class="disclaimer-box">
+<p>
+<strong>Nota sobre este contenido.</strong> Esta guía de estudio está elaborada a partir de la experiencia directa en auditoría de sistemas de gestión y el análisis de ISO/IEC 42001:2023.
+No reproduce contenido de ningún material de terceros. Los conceptos, ejemplos y estructuras son de elaboración propia.
+Para obtener la certificación oficial necesitarás completar el examen de un organismo acreditado.
+Esta guía te ayudará a llegar preparado de verdad.
+</p>
+</div>
+
+<!-- START CTA -->
+
+<div class="start-block">
+<div class="start-text">
+<div class="start-title">Empieza por el principio.</div>
+<div class="start-sub">Módulo 1 · Introducción a la Auditoría ISO 42001</div>
+</div>
+<a href="modulo-1.html" class="start-btn">
+Comenzar →
+</a>
+</div>
+
+</div>
+
+<!-- FOOTER -->
+<div id="footer-placeholder"></div>
+<script>
+    fetch('/includes/footer-no-share.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('footer-placeholder').innerHTML = data;
+        });
+</script>
+
+</div>
+</div>
+
+
+</body>
+<script src="/js/modulo-check-42001.js"></script>
+</html>

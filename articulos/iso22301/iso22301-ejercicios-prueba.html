@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0">
+<title>ISO 22301 y los ejercicios de continuidad: · GRCreal</title>
+<meta name="description" content="Los ejercicios de prueba del plan de continuidad son obligatorios en ISO 22301. Tipos de ejercicios, qué evalúan, cómo documentarlos y qué hace el auditor con los resultados.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://grcreal.com/articulos/iso22301/iso22301-ejercicios-prueba.html">
+<meta property="og:title" content="ISO 22301 y los ejercicios de continuidad:">
+<meta property="og:description" content="Los ejercicios de prueba del plan de continuidad son obligatorios en ISO 22301. Tipos de ejercicios, qué evalúan, cómo documentarlos y qué hace el auditor con los resultados.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://grcreal.com/articulos/iso22301/iso22301-ejercicios-prueba.html">
+<meta property="og:image" content="https://grcreal.com/grcreal.png">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="stylesheet" href="../../css/marca.css">
+<link rel="stylesheet" href="../../css/articles.css">
+<link rel="stylesheet" href="../../css/global.css">
+<link rel="stylesheet" href="../../css/dossier-core.css">
+<link rel="stylesheet" href="../../css/dossier-articulo.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "ISO 22301 y los ejercicios de continuidad: el plan que nunca se prueba no existe cuando más se necesita",
+  "description": "Los ejercicios de prueba del plan de continuidad son obligatorios en ISO 22301. Tipos de ejercicios, qué evalúan, cómo documentarlos y qué hace el auditor con los resultados.",
+  "image": "https://grcreal.com/grcreal.png",
+  "author": {
+    "@type": "Person",
+    "name": "Miguel Ángel Carriazo",
+    "url": "https://grcreal.com/sobre-mi/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "GRCreal",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://grcreal.com/favicon-32x32.png"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://grcreal.com/articulos/iso22301/iso22301-ejercicios-prueba.html"
+  },
+  "datePublished": "2026-06-11"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Inicio",
+      "item": "https://grcreal.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Artículos",
+      "item": "https://grcreal.com/articulos/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "ISO 22301",
+      "item": "https://grcreal.com/articulos/iso22301/"
+    }
+  ]
+}
+</script>
+</head>
+<body class="article-page">
+<nav class="nav">
+<a href="/index.html" class="nav-logo" style="text-decoration:none;">GRC<span>real</span></a>
+<div class="nav-menu-wrapper" id="navMenuWrapper">
+<ul class="nav-menu" id="navMenu">
+<li class="nav-item-dropdown" id="navDropdownMarcos"><a href="javascript:void(0)" onclick="document.getElementById('navDropdownMarcos').classList.toggle('open'); document.getElementById('navDropdownRecursos').classList.remove('open');"><span class="nav-ic-flat"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="2.5" width="12" height="3.5" rx="1"/><rect x="3" y="7.5" width="12" height="3.5" rx="1"/><rect x="3" y="12.5" width="12" height="3" rx="1"/></svg></span>Marcos <span class="chev">▾</span></a>
+<div class="nav-dropdown-panel">
+<a href="/marcos/iso27001/index.html"><span class="nav-ic"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 1.5 14.5 3.5 V8 C14.5 12 11.5 14.5 9 16 C6.5 14.5 3.5 12 3.5 8 V3.5 Z"/><path d="M6.3 9 8.2 10.8 11.7 7"/></svg></span><span class="nav-txt"><span class="nav-title">ISO 27001</span><span class="nav-sub">El estándar más adoptado</span></span></a>
+<a href="/marcos/ens/index.html"><span class="nav-ic"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 16h13"/><path d="M3.5 16V8.5M6.3 16V8.5M9 16V8.5M11.7 16V8.5M14.5 16V8.5"/><path d="M1.8 8.5 9 3 16.2 8.5Z"/></svg></span><span class="nav-txt"><span class="nav-title">ENS</span><span class="nav-sub">Sector público español</span></span></a>
+<a href="/marcos/nis2/index.html"><span class="nav-ic"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 2v3"/><path d="M3 5h12"/><path d="M3 5 1.5 8.5h3Z"/><path d="M15 5 13.5 8.5h3Z"/><path d="M5.2 9.2v2.3c0 .8.8 1.5 1.8 1.5s1.8-.7 1.8-1.5V9.2"/><path d="M9 8.5v6.2M6 16h6"/></svg></span><span class="nav-txt"><span class="nav-title">NIS2</span><span class="nav-sub">Directiva europea</span></span></a>
+<a href="/marcos/ia/index.html"><span class="nav-ic"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="5" width="8" height="8" rx="1"/><path d="M9 1.5v3M9 13.5v3M1.5 9h3M13.5 9h3M3.5 3.5l2 2M14.5 3.5l-2 2M3.5 14.5l2-2M14.5 14.5l-2-2"/></svg></span><span class="nav-txt"><span class="nav-title">IA</span><span class="nav-sub">AI Act + ISO 42001</span></span></a>
+<a href="/marcos/iso22301/index.html"><span class="nav-ic"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 9A5.5 5.5 0 1 1 12.7 5.1"/><path d="M12.7 1.8v3.3h3.3"/></svg></span><span class="nav-txt"><span class="nav-title">ISO 22301</span><span class="nav-sub">Continuidad de negocio</span></span></a>
+<a href="/marcos/vciso/index.html"><span class="nav-ic"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="6.3" r="2.8"/><path d="M3 15.5c0-2.9 2.7-5.2 6-5.2s6 2.3 6 5.2"/></svg></span><span class="nav-txt"><span class="nav-title">vCISO</span><span class="nav-sub">Rol, no certificación</span></span></a>
+</div>
+</li>
+<li class="nav-item-dropdown" id="navDropdownRecursos"><a href="javascript:void(0)" onclick="document.getElementById('navDropdownRecursos').classList.toggle('open'); document.getElementById('navDropdownMarcos').classList.remove('open');"><span class="nav-ic-flat"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 5.5a1 1 0 0 1 1-1h3.3l1.3 1.6H15a1 1 0 0 1 1 1V13a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1Z"/></svg></span>Recursos <span class="chev">▾</span></a>
+<div class="nav-dropdown-panel">
+<a href="/articulos/index.html"><span class="nav-ic"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="2" width="11" height="14" rx="1.3"/><path d="M6 6h6M6 9h6M6 12h3.5"/></svg></span><span class="nav-txt"><span class="nav-title">Artículos</span><span class="nav-sub">Análisis y opinión técnica</span></span></a>
+<a href="/checklists/index.html"><span class="nav-ic"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="3" width="13" height="12" rx="1.3"/><path d="M5 6.3h2.2M5 9h2.2M5 11.7h2.2"/><path d="M11 6.2l.9.9 1.6-1.7M11 8.9l.9.9 1.6-1.7M11 11.6l.9.9 1.6-1.7"/></svg></span><span class="nav-txt"><span class="nav-title">Checklists</span><span class="nav-sub">Autoevaluación interactiva</span></span></a>
+<a href="/versus/index.html"><span class="nav-ic"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 6.5h11M10.5 3.5l3 3-3 3"/><path d="M15.5 11.5h-11M7.5 8.5l-3 3 3 3"/></svg></span><span class="nav-txt"><span class="nav-title">Versus</span><span class="nav-sub">Comparativas entre marcos</span></span></a>
+<a href="/quiz/index.html"><span class="nav-ic"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="9" r="7"/><path d="M7 7.2c0-1.1.9-2 2-2s2 .8 2 1.8c0 1.4-2 1.6-2 3.3"/><circle cx="9" cy="12.7" r="0.15" fill="currentColor" stroke="none"/></svg></span><span class="nav-txt"><span class="nav-title">Quiz</span><span class="nav-sub">Pon a prueba tu nivel</span></span></a>
+<a href="/academia/index.html"><span class="nav-ic"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M1.5 6.5 9 3l7.5 3.5L9 10Z"/><path d="M5 8.3v3.4c0 1.3 1.8 2.3 4 2.3s4-1 4-2.3V8.3"/><path d="M16.5 6.5v4.3"/></svg></span><span class="nav-txt"><span class="nav-title">Academia</span><span class="nav-sub">Cursos paso a paso</span></span></a>
+<a href="/herramientas/index.html"><span class="nav-ic"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M11.3 2.3a3.2 3.2 0 0 0-4.3 4.2L2 11.5l1.8 1.8 5-5a3.2 3.2 0 0 0 4.2-4.3l-2 2-1.7-1.7Z"/></svg></span><span class="nav-txt"><span class="nav-title">Herramientas</span><span class="nav-sub">BIA, análisis de riesgos</span></span></a>
+</div>
+</li>
+<li><a href="/enfoque/index.html"><span class="nav-ic-flat"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="9" r="6.5"/><circle cx="9" cy="9" r="3"/><circle cx="9" cy="9" r="0.4" fill="currentColor" stroke="none"/></svg></span>Enfoque</a></li>
+<li><a href="/metodologia/index.html"><span class="nav-ic-flat"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="3.3" cy="3.3" r="1.8"/><circle cx="14.7" cy="9" r="1.8"/><circle cx="3.3" cy="14.7" r="1.8"/><path d="M5 4.3l8 4M5 13.7l8-4"/></svg></span>Metodología</a></li>
+<li><a href="/sobre-mi/index.html"><span class="nav-ic-flat"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="6" r="2.8"/><path d="M3.3 15c0-2.7 2.6-4.8 5.7-4.8s5.7 2.1 5.7 4.8"/></svg></span>Sobre mí</a></li>
+<li><a href="/contacto.html"><span class="nav-ic-flat"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="14" height="10" rx="1.3"/><path d="M2.5 5l6.5 5 6.5-5"/></svg></span>Contacto</a></li>
+<li><a href="/legal/index.html" class="nav-cta-pill">Legal</a></li>
+</ul>
+</div>
+<div class="nav-toggle" onclick="this.classList.toggle('open'); document.getElementById('navMenu').classList.toggle('open')">
+<span></span><span></span><span></span>
+</div>
+</nav>
+<div class="card-wrapper ds-page">
+<div class="card">
+<div class="accent-bar"></div>
+
+<div class="ds-meta">
+  <span><span class="dot"></span>GRCreal // expediente: artículo</span>
+  <span>categoría: <strong>ISO 22301</strong></span>
+</div>
+
+<div class="header">
+  <a href="/articulos/index.html" class="art-back">← Volver a artículos</a>
+  <div class="tag">ISO 22301 · Pruebas · BCP</div>
+  <h1 class="headline">
+    ISO 22301 y los ejercicios de continuidad: <span class="accent">el plan que nunca se prueba</span> <span class="dim">no existe cuando más se necesita</span>
+  </h1>
+  <p class="subline">
+    ISO 22301 no solo exige tener un plan. Exige que el plan haya sido probado.<br>
+    <strong>Y el ejercicio de prueba es donde se descubre si el plan es real o es papel.</strong>
+  </p>
+  <div class="art-meta">
+    <span class="art-meta-item">
+      <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="6" r="2.6"/><path d="M3.5 15c0-2.6 2.5-4.6 5.5-4.6s5.5 2 5.5 4.6"/></svg>
+      <strong>Miguel Ángel Carriazo</strong>
+    </span>
+    <span class="art-meta-item">
+      <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="3" width="13" height="12.5" rx="1.3"/><path d="M2.5 6.5h13M6 2v2.4M12 2v2.4"/></svg>
+      11 junio 2026
+    </span>
+    <span class="art-meta-item">
+      <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="9" r="6.8"/><path d="M9 5.3V9l2.8 1.7"/></svg>
+      3 min de lectura
+    </span>
+  </div>
+</div>
+
+<div class="body">
+  <div class="art-layout">
+  <div class="art-main">
+
+
+  <div class="block" id="s1">
+    <div class="block-label">El requisito de la norma</div>
+    <h2 class="block-title">Cláusula 8.5: pruebas y ejercicios</h2>
+    <div class="block-text">
+      ISO 22301:2019 exige en su cláusula 8.5 que la organización realice ejercicios y pruebas para validar los planes de continuidad. No para verificar que el documento existe — para comprobar que el plan funciona cuando se necesita.<br><br>Los ejercicios deben estar planificados, documentados y analizados. Las lecciones aprendidas deben retroalimentar la mejora del plan.<br><br><strong>Un plan que no se ha probado es una hipótesis, no una capacidad. Y en gestión de continuidad, las hipótesis no valen.</strong>
+    </div>
+  </div>
+  <div class="divider"></div>
+
+  <div class="block" id="s2">
+    <div class="block-label">Los tipos de ejercicio</div>
+    <h2 class="block-title">De menor a mayor impacto operativo</h2>
+    <table class="tension" style="margin-top:20px;">
+      <tr>
+        <td class="tension-who">Revisión documental</td>
+        <td class="tension-says">El equipo revisa el plan para comprobar que está actualizado y coherente. Sin impacto operativo. Válido como punto de partida, pero no sustituye un ejercicio real.</td>
+      </tr>
+      <tr>
+        <td class="tension-who">Tabletop exercise</td>
+        <td class="tension-says">Simulación en sala de un escenario de incidente. El equipo discute qué haría en cada fase. Sin impacto operativo, con alto valor para detectar lagunas en el plan y en el conocimiento del equipo.</td>
+      </tr>
+      <tr>
+        <td class="tension-who">Ejercicio funcional</td>
+        <td class="tension-says">Se activan procedimientos específicos en entorno real o de prueba. Por ejemplo, restaurar sistemas desde backup en el entorno de DR. Impacto controlado.</td>
+      </tr>
+      <tr class="hi-row">
+        <td class="tension-who">Simulacro completo</td>
+        <td class="tension-says"><span class="hi">Activación total del plan de continuidad en condiciones controladas. Máximo valor de validación. Requiere coordinación con todas las partes implicadas.</span></td>
+      </tr>
+    </table>
+  </div>
+  <div class="divider"></div>
+
+  <div class="block" id="s3">
+    <div class="block-label">Cómo documentar el ejercicio</div>
+    <h2 class="block-title">Lo que el auditor necesita ver</h2>
+    <div class="block-text">
+      <strong>Plan del ejercicio.</strong> Antes de realizarlo: objetivos, escenario, alcance, participantes, fecha, coordinador. Documento previo que evidencia que el ejercicio fue planificado.<br><br><strong>Informe de resultado.</strong> Después de realizarlo: qué se probó, qué funcionó, qué no funcionó, tiempos reales vs. tiempos objetivos (RTO/RPO), incidencias durante el ejercicio.<br><br><strong>Plan de mejora.</strong> Las lecciones aprendidas deben traducirse en acciones concretas con responsable y plazo. Sin esto, el ejercicio fue informativo pero no mejoró nada.<br><br><strong>Evidencias.</strong> Capturas de pantalla, registros de sistemas, actas de reunión, correos de coordinación. El auditor quiere evidencias de que el ejercicio ocurrió, no solo que hay un informe que lo dice.
+    </div>
+  </div>
+  <div class="divider"></div>
+
+  <div class="block" id="s4">
+    <div class="block-label">Cuándo y con qué frecuencia</div>
+    <h2 class="block-title">La frecuencia que tiene sentido según el perfil de la organización</h2>
+    <div class="block-text">
+      ISO 22301 habla de «intervalos planificados» sin fijar una frecuencia mínima. La práctica habitual es un ejercicio anual completo más revisiones periódicas del plan.<br><br>Pero hay situaciones que obligan a ejercicios adicionales: cambios significativos en la infraestructura, nuevas sedes, cambios en proveedores críticos, incidentes reales que activaron el plan parcialmente.<br><br><strong>El mejor ejercicio es el incidente real gestionado bien. El segundo mejor es el simulacro bien preparado. Los dos generan aprendizajes que ningún documento produce.</strong>
+    </div>
+  </div>
+
+  
+  </div><!-- /art-main -->
+
+  <aside class="art-toc">
+    <div class="art-toc-label">Contenido</div>
+    <nav class="art-toc-nav" id="artTocNav">
+      <a href="#s1" data-toc>El requisito de la norma</a>
+      <a href="#s2" data-toc>Los tipos de ejercicio</a>
+      <a href="#s3" data-toc>Cómo documentar el ejercicio</a>
+      <a href="#s4" data-toc>Cuándo y con qué frecuencia</a>
+    </nav>
+  </aside>
+
+  </div><!-- /art-layout -->
+<div class="cta-block">
+    <div class="cta-headline">
+      ¿Cuándo fue el último ejercicio<br>
+      <span>de continuidad en tu organización?</span>
+    </div>
+    <div class="cta-sub">
+      Si la respuesta es «nunca» o «no lo sé», hay trabajo por hacer antes de la próxima auditoría.<br>
+      <strong><a href="/contacto.html">Diseñamos y facilitamos ejercicios de continuidad adaptados a tu organización.</a></strong>
+    </div>
+  </div>
+
+</div>
+
+
+<!-- SOBRE EL AUTOR + COMPARTIR -->
+<div class="art-foot">
+  <div class="art-author">
+    <div class="art-foot-label">Sobre el autor</div>
+    <div class="art-author-name">Miguel Ángel Carriazo <span>· vCISO</span></div>
+    <p class="art-author-bio">vCISO · Arquitecto de Soluciones de Infraestructura y Ciberseguridad | Gobierno, Riesgo y Cumplimiento (GRC) | Gobierno de IA · ISO 42001 | Fundador de GRCreal</p>
+  </div>
+  <div class="art-share">
+    <div class="art-foot-label">Compartir artículo</div>
+    <a href="#" id="shareLinkedin" target="_blank" class="art-share-btn" aria-label="Compartir en LinkedIn">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+    </a>
+  </div>
+</div>
+
+<!-- ARTÍCULOS RELACIONADOS -->
+<div class="art-related">
+  <div class="art-related-label">Sigue leyendo</div>
+  <div class="art-related-title">Artículos relacionados</div>
+  <div class="art-related-grid">
+    <a href="/articulos/iso22301/iso22301-vs-bcp-casero.html" class="art-related-card">
+      <span class="art-related-pill">ISO 22301</span>
+      <h3>ISO 22301 vs BCP casero: las diferencias que importan</h3>
+      <p>Muchas organizaciones tienen un plan de continuidad hecho internamente.</p>
+      <div class="art-related-meta"><span>25 mayo 2026</span><span>4 min</span></div>
+    </a>
+    <a href="/articulos/iso22301/auditoria-continuidad-que-revisa.html" class="art-related-card">
+      <span class="art-related-pill">ISO 22301</span>
+      <h3>Qué revisa un auditor de continuidad de negocio</h3>
+      <p>Todo lo que te van a pedir y por qué importa.</p>
+      <div class="art-related-meta"><span>25 abril 2026</span><span>4 min</span></div>
+    </a>
+    <a href="/articulos/iso22301/rto-rpo-realidad.html" class="art-related-card">
+      <span class="art-related-pill">ISO 22301</span>
+      <h3>RTO y RPO: dos siglas que salvan empresas o las hunden</h3>
+      <p>En la mayoría, son estimaciones. No mediciones.</p>
+      <div class="art-related-meta"><span>21 abril 2026</span><span>4 min</span></div>
+    </a>
+  </div>
+</div>
+
+<div id="footer-placeholder"></div>
+<script>
+    fetch('/includes/footer-no-share.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('footer-placeholder').innerHTML = data;
+        });
+
+
+    // Compartir en LinkedIn
+    var shareBtn = document.getElementById('shareLinkedin');
+    if (shareBtn) {
+        shareBtn.href = 'https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(window.location.href);
+    }
+
+    // Índice lateral: resalta la sección visible
+    var tocLinks = Array.from(document.querySelectorAll('#artTocNav a'));
+    var sections = tocLinks.map(a => document.querySelector(a.getAttribute('href')));
+    if ('IntersectionObserver' in window) {
+        var observer = new IntersectionObserver(function(entries){
+            entries.forEach(function(entry){
+                if (entry.isIntersecting) {
+                    var id = '#' + entry.target.id;
+                    tocLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === id));
+                }
+            });
+        }, { rootMargin: '-20% 0px -70% 0px' });
+        sections.forEach(function(s){ if (s) observer.observe(s); });
+    }
+</script>
+
+</div>
+</div>
+</body>
+<script src="/js/global.js"></script>
+</html>

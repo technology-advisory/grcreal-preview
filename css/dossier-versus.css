@@ -1,0 +1,105 @@
+/* ============================================
+   DOSSIER-VERSUS.CSS — Específico de /versus/
+   (índice + páginas de comparativa individuales)
+   Requiere dossier-core.css cargado antes.
+   Aislado a propósito de dossier-articulo.css: tocar
+   versus no debe poder romper artículos, y viceversa.
+   ============================================ */
+
+/* ── ÍNDICE DE VERSUS ── */
+.ds-page .versus-body{padding:36px 56px 56px;max-width:1320px;}
+.ds-page .versus-grid{grid-template-columns:repeat(3,1fr);gap:14px;}
+.ds-page .versus-card{border:1px solid var(--ds-line);border-radius:0;background:var(--ds-paper);padding:26px 24px;box-shadow:none;}
+.ds-page .versus-card:hover{background:#fff;border-color:var(--ds-deep);transform:none;box-shadow:none;}
+.ds-page .versus-card-tag{color:var(--brand);}
+.ds-page .versus-card-title{color:var(--ds-ink);}
+.ds-page .versus-card-link{color:var(--brand);}
+@media (max-width:980px){ .ds-page .versus-grid{grid-template-columns:repeat(2,1fr);} }
+@media (max-width:640px){
+  .ds-page .versus-body{padding:28px 20px 40px;}
+  .ds-page .versus-grid{grid-template-columns:1fr;}
+}
+
+/* ── VOLVER A VERSUS ── */
+.ds-page .art-back{
+  display:flex;width:fit-content;align-items:center;gap:6px;font-family:var(--mono);font-size:12px;
+  letter-spacing:.04em;font-weight:600;color:#fff;background:var(--brand);text-decoration:none;
+  padding:5px 14px;border-radius:13px;margin-bottom:26px;position:relative;z-index:1;
+  transition:background .15s;
+}
+.ds-page .art-back:hover{background:var(--brand-dark);color:#fff;}
+
+/* ── META-ROW (autor · fecha · lectura) ── */
+.ds-page .art-meta{
+  position:relative;z-index:1;display:flex;flex-wrap:wrap;gap:22px;align-items:center;
+  margin-top:22px;padding-top:18px;border-top:1px solid var(--ds-line);
+}
+.ds-page .art-meta-item{display:flex;align-items:center;gap:7px;font-size:13px;color:#5b6670;}
+.ds-page .art-meta-item svg{width:15px;height:15px;color:var(--brand);flex-shrink:0;}
+.ds-page .art-meta-item strong{color:var(--ds-ink);font-weight:600;}
+
+/* ── LAYOUT CON ÍNDICE LATERAL ── */
+.ds-page .art-layout{
+  display:grid;grid-template-columns:1fr 260px;gap:64px;max-width:1320px;align-items:start;
+}
+.ds-page .art-main{min-width:0;}
+.ds-page .art-main .block:first-child{border-top:none;padding-top:0;}
+.ds-page .art-toc{
+  position:sticky;top:24px;padding:24px 0 24px 28px;border-left:1px solid var(--ds-line);
+}
+.ds-page .art-toc-label{
+  font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#7c8790;margin-bottom:14px;
+}
+.ds-page .art-toc-nav{display:flex;flex-direction:column;gap:11px;}
+.ds-page .art-toc-nav a{
+  font-size:13.5px;color:#5b6670;text-decoration:none;line-height:1.4;border-left:2px solid transparent;padding-left:10px;margin-left:-12px;transition:color .15s,border-color .15s;
+}
+.ds-page .art-toc-nav a:hover{color:var(--ds-ink);}
+.ds-page .art-toc-nav a.active{color:var(--brand);border-color:var(--brand);font-weight:600;}
+
+/* ── TABLAS CON SCROLL HORIZONTAL (comparativas anchas) ── */
+.ds-page .tbl-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin-top:20px;}
+.ds-page .tbl-scroll table.tension{min-width:560px;width:100%;}
+
+/* ── SOBRE EL AUTOR + COMPARTIR ── */
+.ds-page .art-foot{
+  display:flex;gap:48px;max-width:1320px;padding:40px 56px;border-top:1px solid var(--ds-line);flex-wrap:wrap;align-items:flex-start;
+}
+.ds-page .art-author{flex:1 1 0%;min-width:0;}
+.ds-page .art-share{flex:0 0 auto;padding-left:40px;border-left:1px solid var(--ds-line);}
+.ds-page .art-foot-label{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#7c8790;margin-bottom:12px;}
+.ds-page .art-author-name{font-size:16px;font-weight:800;color:var(--ds-ink);margin-bottom:8px;}
+.ds-page .art-author-name span{color:var(--brand);font-weight:600;}
+.ds-page .art-author-bio{font-size:13.5px;color:#5b6670;line-height:1.6;max-width:none;}
+.ds-page .art-share-btn{
+  width:42px;height:42px;border:1.5px solid var(--ds-deep);display:flex;align-items:center;justify-content:center;
+  color:var(--ds-deep);text-decoration:none;transition:background .15s,color .15s;
+}
+.ds-page .art-share-btn:hover{background:var(--ds-deep);color:#fff;}
+.ds-page .art-share-btn svg{width:19px;height:19px;}
+
+/* ── OTRAS COMPARATIVAS (relacionados) ── */
+.ds-page .art-related{max-width:1320px;padding:44px 56px 60px;border-top:1px solid var(--ds-line);}
+.ds-page .art-related-label{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--brand);margin-bottom:10px;}
+.ds-page .art-related-title{font-size:23px;font-weight:800;color:var(--ds-ink);margin-bottom:26px;}
+.ds-page .art-related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+.ds-page .art-related-card{
+  background:var(--ds-deep);padding:24px 22px;display:flex;flex-direction:column;text-decoration:none;
+}
+.ds-page .art-related-pill{
+  align-self:flex-start;font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;
+  color:#9bd0ea;border:1px solid #2e6f8c;padding:3px 9px;margin-bottom:14px;
+}
+.ds-page .art-related-card h3{font-size:16px;font-weight:700;color:#fff;line-height:1.35;margin:0 0 10px;}
+.ds-page .art-related-card p{font-size:13.5px;color:#9bb6c4;line-height:1.55;margin:0;}
+
+@media (max-width:980px){
+  .ds-page .art-layout{grid-template-columns:1fr;}
+  .ds-page .art-toc{position:static;border-left:none;border-top:1px solid var(--ds-line);border-bottom:1px solid var(--ds-line);padding:18px 0;margin-bottom:8px;order:-1;}
+  .ds-page .art-toc-nav{flex-direction:row;flex-wrap:wrap;gap:8px 16px;}
+  .ds-page .art-related-grid{grid-template-columns:1fr;}
+  .ds-page .art-share{padding-left:0;border-left:none;border-top:1px solid var(--ds-line);padding-top:24px;flex-basis:100%;}
+}
+@media (max-width:640px){
+  .ds-page .art-foot,.ds-page .art-related{padding-left:20px;padding-right:20px;}
+}

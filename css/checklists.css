@@ -445,32 +445,7 @@ body.modo-pyme .checklist-section-title {
 /* ============================================
    BOTÓN HOME - CORREGIDO (arriba derecha, pequeño)
    ============================================ */
-.home-btn {
-    position: fixed;
-    top: 12px;
-    right: 12px;
-    bottom: auto;
-    left: auto;
-    background: #1a5f7a;
-    color: white;
-    padding: 5px 12px;
-    border-radius: 30px;
-    text-decoration: none;
-    font-size: 12px;
-    font-weight: 500;
-    font-family: system-ui, -apple-system, sans-serif;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
-    transition: 0.2s;
-    z-index: 999;
-    width: auto;
-    height: auto;
-    line-height: normal;
-}
 
-.home-btn:hover {
-    background: #0e4357;
-    transform: translateY(-1px);
-}
 
 /* RESPONSIVE */
 @media (max-width: 800px) {

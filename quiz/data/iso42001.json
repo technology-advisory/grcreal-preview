@@ -1,0 +1,235 @@
+{
+  "titulo": "ISO 42001 Internal Auditor",
+  "tema": "ISO 42001:2023 · IA Management System",
+  "descripcion": "Auditoría de Sistemas de Gestión de Inteligencia Artificial (AIMS). 40 preguntas sobre evaluación de impacto, sesgos, transparencia, riesgos de IA y cumplimiento normativo.",
+  "preguntas": [
+    {
+      "q": "No se han realizado evaluaciones de impacto para sistemas de IA que recomiendan tratamientos. No existe proceso para reportar incidentes de IA que afecten a pacientes. ¿Qué juicio es más adecuado?",
+      "o": ["Incoherencia significativa entre política e implementación, debe reflejarse como hallazgo.", "Coherencia aceptable, porque la política es clara.", "El principio es solo aspiracional y no auditable.", "Asunto exclusivo del comité clínico."],
+      "c": 0,
+      "e": "La falta de evaluaciones de impacto y proceso de reporte de incidentes evidencia una brecha crítica entre lo declarado en política y la operación real, constituyendo un hallazgo de no conformidad."
+    },
+    {
+      "q": "¿Cuál de los siguientes elementos pertenece al alcance de la auditoría y no a los criterios de auditoría según ISO 19011?",
+      "o": ["Requisitos de la política de IA y anexo A de ISO 42001.", "Requisitos contractuales con clientes sobre niveles de servicio.", "Obligaciones legales aplicables al uso de IA.", "Ubicaciones, actividades y procesos del SGIA que se evaluarán en la auditoría."],
+      "c": 3,
+      "e": "El alcance define 'qué' se audita (ubicaciones, procesos, actividades), mientras que los criterios son las normas, políticas o requisitos de referencia."
+    },
+    {
+      "q": "Para sustentar un hallazgo sobre la evaluación del impacto del sistema de IA, ¿qué combinación representa mejor una triangulación adecuada de evidencias?",
+      "o": ["Entrevistas con equipo de datos y revisión de facturas.", "Solo revisión de informes de impacto de años anteriores.", "Observación de reunión de evaluación y revisión de estados financieros.", "Revisión documental de informes, entrevistas a responsables y observación del proceso en un caso reciente."],
+      "c": 3,
+      "e": "La triangulación combina múltiples fuentes: documentación, testimonios y observación directa, lo que permite una evidencia más sólida y confiable."
+    },
+    {
+      "q": "¿Qué error de auditoría sería más grave al revisar la determinación de aplicabilidad de controles (SoA)?",
+      "o": ["Solicitar aclaraciones sobre la redacción de la SoA.", "Recomendar añadir ejemplos en procedimientos.", "Aceptar sin cuestionar exclusiones de controles críticos en sistemas de IA de alto riesgo.", "Discutir con el auditado el detalle de formularios."],
+      "c": 2,
+      "e": "Aceptar exclusiones injustificadas de controles críticos en IA de alto riesgo es el error más grave, pues compromete la eficacia del sistema y la gestión de riesgos."
+    },
+    {
+      "q": "Auditas el proceso de monitoreo de desempeño de sistemas de IA. El objetivo es 'determinar si el monitoreo permite detectar desviaciones relevantes'. ¿Qué define mejor el alcance?",
+      "o": ["Opiniones de usuarios finales sobre la IA.", "Requisitos de ISO 42001 relacionados con seguimiento y medición.", "Actividades, ubicaciones, sistemas y periodos del SGIA relacionados con monitoreo de IA en producción.", "Todos los procesos de la organización."],
+      "c": 2,
+      "e": "El alcance debe delimitar con precisión las actividades, ubicaciones, sistemas y periodos que serán objeto de la auditoría."
+    },
+    {
+      "q": "Frente a una no conformidad por falta de revisión de datos de entrenamiento, la organización: 1) Actualizó el procedimiento, 2) Realizó capacitación, 3) No documentó causa raíz ni verificación de eficacia. ¿Qué juicio es más adecuado?",
+      "o": ["Completamente eficaz.", "Suficiente si alta dirección está de acuerdo.", "Incompleto, porque falta análisis de causa raíz y verificación de eficacia.", "No necesario, el problema no se repetirá."],
+      "c": 2,
+      "e": "Una acción correctiva completa requiere análisis de causa raíz, implementación de acciones y verificación documentada de eficacia."
+    },
+    {
+      "q": "¿Por qué es importante integrar resultados de medición, auditorías, no conformidades y revisiones por la dirección al juzgar la eficacia del SGIA?",
+      "o": ["Para demostrar cumplimiento solo a auditores externos.", "Para reducir número de indicadores.", "Porque cada fuente aporta una perspectiva distinta y su combinación permite un juicio más completo.", "Para tener más documentos archivados."],
+      "c": 2,
+      "e": "La integración de múltiples fuentes permite un juicio holístico y fundamentado sobre la eficacia y oportunidades de mejora."
+    },
+    {
+      "q": "¿Qué combinación de preguntas debe hacer el auditor para evaluar la eficacia de un control de revisión humana sobre decisiones de IA?",
+      "o": ["¿Es fácil para los usuarios usar la interfaz?", "¿Qué opina el proveedor del sistema de IA?", "¿Se aplica la revisión humana cuando corresponde, se registran las decisiones y se reducen riesgos?", "¿Es un control obligatorio en la norma?"],
+      "c": 2,
+      "e": "La eficacia del control se evalúa verificando su aplicación real, el registro de decisiones y la reducción efectiva de riesgos."
+    },
+    {
+      "q": "Al revisar el informe de eficacia del SGIA, detectas que solo se usan resultados de auditorías internas, sin considerar indicadores, no conformidades ni revisiones por la dirección. ¿Qué hallazgo es más adecuado?",
+      "o": ["Observación estética sobre el formato.", "Sugerencia informal sin documentar.", "No hay hallazgo.", "Informe incompleto: el juicio no integra todas las fuentes relevantes, limitando su validez."],
+      "c": 3,
+      "e": "El juicio de eficacia debe basarse en todas las fuentes relevantes (indicadores, auditorías, no conformidades, revisión por dirección)."
+    },
+    {
+      "q": "¿Cuál situación indica mejor que la política de IA es vigente, comunicada y coherente con el SGIA?",
+      "o": ["Política firmada por alta dirección, disponible como ID, referenciada en otros sistemas y difundida en formaciones.", "Política aprobada hace 5 años sin evidencia de revisión ni difusión.", "Política en correo informal del director de TI.", "Borrador de política sin aprobar, compartido solo con TI."],
+      "c": 0,
+      "e": "Una política vigente debe estar aprobada, documentada, integrada con otros sistemas y efectivamente comunicada mediante formaciones."
+    },
+    {
+      "q": "¿Qué elemento es clave para comprobar que el análisis y evaluación se realizan en los intervalos planificados?",
+      "o": ["Cronograma documentado y registros fechados de cada análisis realizado.", "Organigrama de la organización.", "Presupuesto anual de IA.", "Listado de partes interesadas."],
+      "c": 0,
+      "e": "La evidencia clave es la existencia de un cronograma planificado y registros que demuestren su ejecución en las fechas previstas."
+    },
+    {
+      "q": "Para un indicador que mide 'si las alarmas se investigan', ¿qué conclusión es más adecuada desde la perspectiva de validez del indicador?",
+      "o": ["Solo se necesita este indicador.", "No es relevante medir nada.", "Es insuficiente; debe complementarse con indicadores de efectividad (fallos evitados, precisión).", "Es suficiente porque muestra actividad."],
+      "c": 2,
+      "e": "Un indicador de actividad es insuficiente; se requieren indicadores de efectividad que midan el resultado real (fallos evitados, precisión de predicción)."
+    },
+    {
+      "q": "Al definir métodos de medición para indicadores del SGIA, ¿qué elemento es esencial documentar?",
+      "o": ["Opinión de usuarios sobre el indicador.", "El coste de obtención de cada dato.", "La marca del software utilizado.", "Fórmula de cálculo, fuente de datos, periodicidad y responsable de la medición."],
+      "c": 3,
+      "e": "Para garantizar la reproducibilidad y fiabilidad, es esencial documentar la fórmula, fuentes, periodicidad y responsable."
+    },
+    {
+      "q": "¿Qué aspecto debes comprobar al revisar informes de análisis de indicadores de IA para concluir que son útiles para la evaluación del SGIA?",
+      "o": ["Que tengan más de 20 páginas.", "Que estén firmados por responsable de TI.", "Que incluyan interpretación de tendencias, conclusiones y propuestas de acciones.", "Que tengan gráficos de alta calidad visual."],
+      "c": 2,
+      "e": "Un informe útil debe incluir análisis interpretativo, tendencias, conclusiones y acciones propuestas, no solo datos brutos."
+    },
+    {
+      "q": "¿Qué factor es menos relevante para decidir la aplicabilidad de un control del anexo A al SGIA?",
+      "o": ["Contexto interno y externo.", "Resultados de evaluación de riesgos e impactos.", "Preferencia personal del responsable de sistemas de IA.", "Alcance del SGIA y rol en el ecosistema de IA."],
+      "c": 2,
+      "e": "La aplicabilidad se basa en análisis objetivos (contexto, riesgos, alcance), no en preferencias personales del responsable."
+    },
+    {
+      "q": "Una organización tiene cuatro procesos con diferente riesgo. Dispones de recursos para tres auditorías internas. ¿Qué combinación prioriza mejor el enfoque basado en riesgos y cambios?",
+      "o": ["Diseño (riesgo alto) + Archivo (riesgo bajo) + Datos (riesgo medio)", "Diseño + Operación + Datos (tres de alto/medio riesgo)", "Operación + Datos + Archivo", "Diseño + Operación + Archivo"],
+      "c": 1,
+      "e": "El enfoque basado en riesgos debe priorizar los procesos de mayor riesgo y con más cambios: Diseño, Operación y Gestión de datos."
+    },
+    {
+      "q": "Durante la planificación, un auditor recibe bono ligado al éxito comercial de un sistema de IA auditado. ¿Cuál es la respuesta más adecuada?",
+      "o": ["Registrar conflicto y pedir declaración de imparcialidad.", "Mantenerlo porque no opera el sistema.", "Evaluar conflicto y, si compromete imparcialidad, reasignar al auditor.", "Ignorar por ser asunto de RR.HH."],
+      "c": 2,
+      "e": "Los conflictos de interés deben evaluarse documentadamente; si comprometen la imparcialidad, el auditor debe ser reasignado."
+    },
+    {
+      "q": "¿Qué afirmación describe mejor la eficacia de un control del SGIA?",
+      "o": ["El control es eficaz si, en operación real, reduce riesgos e impactos a nivel aceptable según lo previsto.", "Es eficaz si lo redactó alta dirección.", "Es eficaz si es fácil de explicar.", "Es eficaz si está descrito en el manual aunque no se aplique."],
+      "c": 0,
+      "e": "La eficacia se demuestra en la operación real, reduciendo riesgos a niveles aceptables según lo planificado."
+    },
+    {
+      "q": "La organización ha incorporado nuevos sistemas de IA de alto impacto, han ocurrido cambios regulatorios, y no hay evidencia de revisión de la política. ¿Cuál es el hallazgo más adecuado?",
+      "o": ["Tema irrelevante.", "Asunto opcional.", "No hay problema.", "No conformidad por falta de revisión de política ante cambios relevantes."],
+      "c": 3,
+      "e": "Cambios significativos en contexto o riesgos requieren revisión de la política; su ausencia constituye una no conformidad."
+    },
+    {
+      "q": "¿Cuál de los siguientes indicadores es menos pertinente para evaluar el desempeño del SGIA?",
+      "o": ["Número de publicaciones en redes sociales sobre IA.", "Porcentaje de sistemas IA con evaluación de impacto realizada.", "Porcentaje de auditorías internas realizadas respecto al plan.", "Número de no conformidades relacionadas con IA por periodo."],
+      "c": 0,
+      "e": "Las publicaciones en redes sociales no reflejan el desempeño del SGIA; los indicadores deben medir eficacia operativa y cumplimiento."
+    },
+    {
+      "q": "Una organización de vehículos autónomos audita supervisión de incidentes. Un auditor propone incluir a su pareja como experta externa. ¿Cuál es la acción más coherente con independencia?",
+      "o": ["Aceptar sin más.", "Permitir solo en reuniones de cierre.", "Rechazar automáticamente.", "Evaluar posibles conflictos de interés y documentar decisión antes de incorporar."],
+      "c": 3,
+      "e": "Cualquier incorporación externa requiere evaluación de conflictos de interés (dependencia económica, relaciones) y documentación de la decisión."
+    },
+    {
+      "q": "Indicador: 'Número de incidentes de sesgos en sistemas de IA críticos'. No se define 'crítico', no hay lista de sistemas, no se documenta el cálculo. ¿Qué conclusión es más adecuada?",
+      "o": ["El indicador es válido si se calcula una vez al año.", "No es necesario.", "Es poco fiable por falta de definiciones, universo claro y método documentado.", "Es aceptable si lo entiende alta dirección."],
+      "c": 2,
+      "e": "Un indicador fiable requiere definiciones claras, universo conocido y método de cálculo documentado y reproducible."
+    },
+    {
+      "q": "Organización usa IA para decisiones de crédito. El contexto documentado se centra en objetivos financieros, sin mencionar a personas afectadas ni impactos. ¿Qué conclusión es más adecuada?",
+      "o": ["El contexto es incompleto; no integra partes interesadas ni impactos sobre personas afectadas.", "No es relevante para SGIA.", "Solo debe considerar aspectos tecnológicos.", "Es suficiente porque recoge objetivos financieros."],
+      "c": 0,
+      "e": "El contexto debe incluir todas las partes interesadas relevantes, especialmente las personas afectadas por decisiones automatizadas."
+    },
+    {
+      "q": "¿Cuál representa mejor un juicio sustentado sobre la eficacia del SGIA?",
+      "o": ["'No se puede emitir juicio porque hay demasiados datos'.", "'El SGIA es eficaz en A y B, pero presenta debilidades significativas en C según tendencias, auditorías y NC'.", "'Es eficaz porque alta dirección lo indica'.", "'Es eficaz porque no ha habido quejas'."],
+      "c": 1,
+      "e": "Un juicio sustentado debe ser específico, basado en evidencias múltiples y diferenciar fortalezas de debilidades."
+    },
+    {
+      "q": "Criterio: quejas de IA deben registrarse en SGIA. Condición: solo se registran quejas resueltas por humanos. Evidencia: registros comerciales vs repositorio SGIA. ¿Qué hallazgo está mejor formulado?",
+      "o": ["'Los auditores creen que faltan datos'.", "'No conformidad: las quejas del chatbot no se registran en SGIA según procedimiento X, evidenciado por discrepancias entre sistemas'.", "'La organización debería considerar registrar más quejas'.", "'Las quejas no se gestionan bien'."],
+      "c": 1,
+      "e": "Un hallazgo bien formulado debe especificar: condición auditada, evidencia objetiva, requisito incumplido y criterio de referencia."
+    },
+    {
+      "q": "Empresa opera solo como usuario de IA en la nube, sin desarrollar modelos propios. ¿Qué control del anexo A es más probable que sea aplicable?",
+      "o": ["Certificación de terceros.", "Gestión de proveedores de IA y evaluación de sus riesgos.", "Fabricación de hardware especializado.", "Diseño de algoritmos propietarios."],
+      "c": 1,
+      "e": "Para usuarios de IA, el control más relevante es la gestión de proveedores y la evaluación de riesgos asociados a servicios externos."
+    },
+    {
+      "q": "Indicadores calculados todos los meses, pero análisis documentado solo en enero, junio y diciembre. ¿Qué hallazgo es más apropiado?",
+      "o": ["No conformidad, porque el análisis no tiene la frecuencia definida, afectando evaluación oportuna.", "Oportunidad de mejora.", "Observación menor.", "No hay hallazgo."],
+      "c": 0,
+      "e": "Si la frecuencia de análisis está definida, su incumplimiento sistemático constituye una no conformidad que afecta la evaluación oportuna."
+    },
+    {
+      "q": "¿Cuál describe mejor una acción correctiva completa según ISO 42001?",
+      "o": ["Cambiar de proveedor sin analizar causas.", "Notificar a alta dirección y archivar.", "Corregir, analizar causa raíz, identificar NC similares, implementar acciones y verificar eficacia.", "Corregir y seguir adelante."],
+      "c": 2,
+      "e": "Una acción correctiva completa incluye: corrección, análisis de causa raíz, acciones para eliminar causa, y verificación de eficacia documentada."
+    },
+    {
+      "q": "Identifica roles: 1) Proveedor de plataforma IA, 2) Área de riesgo que decide parámetros, 3) Personas afectadas por decisiones. ¿Asignación más adecuada?",
+      "o": ["1=órgano de gobierno; 2=proveedor; 3=partes interesadas internas", "1=usuario; 2=sujeto; 3=proveedor", "1=sujeto; 2=proveedor; 3=órgano de gobierno", "1=proveedor; 2=usuario; 3=sujetos de IA"],
+      "c": 3,
+      "e": "Según terminología IA: proveedor (desarrolla/provee sistema), usuario (implementa/decide parámetros), sujetos (afectados por decisiones)."
+    },
+    {
+      "q": "Organización usa IA para clasificar solicitudes de ayuda social. Contexto considera eficiencia y costes, sin referencia a errores que afecten grupos vulnerables. ¿Qué conclusión es más adecuada?",
+      "o": ["Solo debe describir arquitectura técnica.", "Es suficiente.", "Es incompleto; debe incorporar riesgos de impacto desigual sobre grupos vulnerables.", "Riesgos sociales no son parte del SGIA."],
+      "c": 2,
+      "e": "El contexto del SGIA debe incluir explícitamente los riesgos de impacto desigual y su gestión, especialmente en IA de alto riesgo social."
+    },
+    {
+      "q": "¿Cuál de las siguientes prácticas indica una mala determinación de la aplicabilidad de controles?",
+      "o": ["Valorar que un control se cubre con controles equivalentes internos.", "Adaptar un control a la realidad organizacional.", "Documentar por qué un control no aplica.", "Excluir un control de mitigación para IA de alto impacto sin justificar, pese a operar esos sistemas."],
+      "c": 3,
+      "e": "Excluir controles críticos para sistemas de alto riesgo sin justificación adecuada es una mala práctica que compromete la gestión de riesgos."
+    },
+    {
+      "q": "¿Qué evidencia sería menos relevante para verificar la eficacia de una acción correctiva?",
+      "o": ["Correo del responsable indicando 'a partir de ahora prestaremos más atención'.", "Registros que demuestren que el problema no se ha repetido.", "Actualización de procedimientos y formación con registros de aplicación.", "Indicadores que muestran mejora relacionada."],
+      "c": 0,
+      "e": "Las declaraciones de intención sin evidencia objetiva de implementación o resultados no son suficientes para verificar eficacia."
+    },
+    {
+      "q": "¿Qué combinación de evidencias necesitas para valorar la eficacia de un control del SGIA?",
+      "o": ["Evidencia de diseño (políticas, procedimientos) y evidencia de operación (registros, trazas) comparadas con riesgos identificados.", "Solo políticas de alto nivel.", "Únicamente registros de auditoría externa.", "Opinión verbal del responsable."],
+      "c": 0,
+      "e": "Valorar eficacia requiere tanto evidencia de diseño (lo planificado) como de operación (lo ejecutado), contrastadas con los riesgos."
+    },
+    {
+      "q": "Procedimiento exige revisión anual de impacto. Dos años de historiales sin evidencias de revisión. ¿Qué conclusión es más defendible?",
+      "o": ["El control es eficaz si hay intención de aplicarlo.", "No es eficaz, porque no se ejecuta la revisión periódica definida y persiste el riesgo.", "No hay problema porque no hay incidentes.", "Es eficaz porque el procedimiento es claro."],
+      "c": 1,
+      "e": "Un control no ejecutado según lo planificado no es eficaz, independientemente de la claridad del procedimiento o la ausencia de incidentes."
+    },
+    {
+      "q": "Dos indicadores empeoran, uno mejora. Auditoría: varias NC mayores en controles de datos. Revisión dirección: decisiones de refuerzo. NC anteriores: acciones cerradas sin verificación de eficacia. ¿Conclusión global más defendible?",
+      "o": ["Parcialmente eficaz, con debilidades en tratamiento de NC y controles de datos.", "Eficaz porque dirección tomó decisiones.", "No eficaz por existencia de cualquier NC.", "Ineficaz porque todos los indicadores empeoran."],
+      "c": 0,
+      "e": "La conclusión debe ser matizada: reconociendo aspectos parcialmente eficaces pero identificando debilidades específicas en el tratamiento de NC y controles de datos."
+    },
+    {
+      "q": "Hospital usa IA para procesar imágenes de pacientes. Equipo de desarrollo entrena modelos. ¿Asignación más adecuada de roles?",
+      "o": ["Hospital=proveedor; desarrollo=sujeto; pacientes=usuarios.", "Hospital=sujeto; desarrollo=usuario; pacientes=proveedores.", "Todos sin rol definido.", "Hospital=usuario; desarrollo=proveedor; pacientes=sujetos de IA."],
+      "c": 3,
+      "e": "Hospital (usuario), equipo desarrollo (proveedor), pacientes (sujetos de IA afectados por decisiones del sistema)."
+    },
+    {
+      "q": "¿Cuál evidencia apoya mejor que se ha gestionado el riesgo de conflicto de interés en el programa de auditoría interna del SGIA?",
+      "o": ["Organigrama general.", "Plan anual de formación en IA.", "Lista de proyectos de IA ejecutados.", "Registros de análisis de independencia de cada auditor respecto a los procesos que audita."],
+      "c": 3,
+      "e": "La evidencia clave son los registros documentados del análisis de independencia realizado para cada auditor antes de asignarlo a procesos."
+    },
+    {
+      "q": "¿Cuál ejemplo demuestra mejor que el equipo auditor mantiene independencia respecto al proceso auditado?",
+      "o": ["Auditor participa en diseño del proceso pero no en operación.", "Auditor externo trabajó en organización hace 10 años, no en proceso auditado.", "Auditor no tiene relación jerárquica ni responsabilidad sobre el proceso auditado y consta registro de análisis de independencia.", "Auditor pertenece al mismo equipo que el responsable pero trabaja en otra sede."],
+      "c": 2,
+      "e": "La independencia requiere: sin relación jerárquica, sin responsabilidad sobre el proceso auditado, y documentación del análisis de independencia."
+    }
+  ]
+}

@@ -1,0 +1,111 @@
+/* ============================================
+   DOSSIER-QUIZ.CSS — Específico de /quiz/
+   (catálogo, selector de variantes, quizzes interactivos)
+   Requiere dossier-core.css cargado antes.
+   Aislado del resto: tocar quiz no afecta a artículos,
+   versus, ni ninguna otra sección.
+   ============================================ */
+
+/* ── VOLVER AL CATÁLOGO ── */
+.ds-page .art-back{
+  display:flex;width:fit-content;align-items:center;gap:6px;font-family:var(--mono);font-size:12px;
+  letter-spacing:.04em;font-weight:600;color:#fff;background:var(--brand);text-decoration:none;
+  padding:5px 14px;border-radius:13px;margin-bottom:22px;transition:background .15s;
+}
+.ds-page .art-back:hover{background:var(--brand-dark);color:#fff;}
+
+/* ── BARRA INTERNA DEL QUIZ (logo + badge) ── */
+.ds-page .quiz-nav{padding:16px 56px;border-bottom:1px solid var(--ds-line);}
+.ds-page .quiz-badge{border-radius:0;background:var(--ds-paper);}
+
+/* ── CATÁLOGO ── */
+.ds-page .quiz-body{padding:36px 56px 56px;max-width:1320px;}
+.ds-page .quiz-catalog-grid{grid-template-columns:repeat(2,1fr);gap:14px;}
+.ds-page .quiz-catalog-card{border:1px solid var(--ds-line);border-radius:0;background:var(--ds-paper);box-shadow:none;}
+.ds-page .quiz-catalog-card:hover:not(.disabled){background:#fff;border-color:var(--ds-deep);transform:none;box-shadow:none;}
+.ds-page .quiz-catalog-card.disabled{background:var(--ds-paper);}
+.ds-page .coming-badge{border-radius:0;}
+
+/* ── SELECTOR DE VARIANTES (ej. iso27001.html) ── */
+.ds-page .variant-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin:28px 0;}
+.ds-page .variant-card{border:1px solid var(--ds-line);border-radius:0;background:var(--ds-paper);box-shadow:none;transition:background .15s,border-color .15s;}
+.ds-page .variant-card:hover{background:#fff;border-color:var(--ds-deep);transform:none;box-shadow:none;}
+.ds-page .quiz-topic-single{border:1.5px solid var(--ds-deep);background:var(--ds-paper);border-radius:0;}
+.ds-page .quiz-topic-single .qtc-check{border-radius:0;background:var(--ds-deep);}
+.ds-page .quiz-topic-grid{grid-template-columns:repeat(2,1fr);gap:12px;}
+.ds-page .quiz-topic-card{border:1px solid var(--ds-line);border-radius:0;background:var(--ds-paper);}
+.ds-page .quiz-topic-card:hover:not(.disabled){border-color:var(--ds-deep);background:#fff;}
+.ds-page .quiz-topic-card.active{border-color:var(--ds-deep);background:var(--ds-deep);}
+
+/* ── PROGRESO Y TAGS ── */
+.ds-page .progress-wrap{border-radius:0;background:var(--ds-line);}
+.ds-page .progress-bar{background:var(--ds-deep);}
+.ds-page .q-tag{border-radius:0;}
+.ds-page .q-tag.topic{background:var(--ds-paper);color:var(--brand);border:1px solid var(--brand);}
+
+/* ── OPCIONES DE RESPUESTA ── */
+.ds-page .opt-btn{border-radius:0;border:1px solid var(--ds-line);background:var(--ds-paper);}
+.ds-page .opt-btn:hover:not(:disabled){border-color:var(--ds-deep);background:#fff;}
+.ds-page .opt-letter{border-radius:0;border:1px solid var(--ds-line);background:#fff;}
+.ds-page .opt-btn.correct{border-color:#2d8a4e;background:#eaf6ee;}
+.ds-page .opt-btn.wrong{border-color:#c0392b;background:#fdecea;}
+.ds-page .opt-btn.correct .opt-letter{border-radius:0;}
+.ds-page .opt-btn.wrong .opt-letter{border-radius:0;}
+
+/* ── EXPLICACIÓN ── */
+.ds-page .explain-block{border-radius:0;}
+
+/* ── BOTONES ── */
+.ds-page .cta-quiz{
+  border-radius:0;background:var(--ds-deep);font-weight:700;
+}
+.ds-page .cta-quiz:hover{background:#00263d;}
+.ds-page .cta-quiz.secondary{background:#fff;color:var(--ds-deep);border:1.5px solid var(--ds-deep);}
+.ds-page .cta-quiz.secondary:hover{background:var(--ds-paper);}
+
+/* ── RESULTADO ── */
+.ds-page .score-badge{border-radius:0;border:1px solid var(--ds-line);background:var(--ds-paper);}
+.ds-page .score-number{color:var(--ds-ink);}
+.ds-page .score-pct{color:var(--brand);}
+.ds-page .history-item{border-bottom:1px solid var(--ds-line);}
+
+/* ── MODAL DE RESULTADO (sobreescribe el <style> inline de cada quiz) ── */
+.ds-page .modal-content{border-radius:0 !important;}
+.ds-page .modal-btn{border-radius:0 !important;font-family:var(--mono);letter-spacing:.08em;}
+.ds-page .modal-celebration{background:var(--ds-deep) !important;}
+
+/* ── SOBRE EL AUTOR + COMPARTIR (pantalla de resultado) ── */
+.ds-page .art-foot{
+  display:flex;gap:48px;max-width:1320px;padding:36px 56px;border-top:1px solid var(--ds-line);flex-wrap:wrap;align-items:flex-start;
+}
+.ds-page .art-author{flex:1 1 0%;min-width:0;}
+.ds-page .art-share{flex:0 0 auto;padding-left:40px;border-left:1px solid var(--ds-line);}
+.ds-page .art-foot-label{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#7c8790;margin-bottom:12px;}
+.ds-page .art-author-name{font-size:16px;font-weight:800;color:var(--ds-ink);margin-bottom:8px;}
+.ds-page .art-author-name span{color:var(--brand);font-weight:600;}
+.ds-page .art-author-bio{font-size:13.5px;color:#5b6670;line-height:1.6;}
+.ds-page .art-share-btn{
+  width:42px;height:42px;border:1.5px solid var(--ds-deep);display:flex;align-items:center;justify-content:center;
+  color:var(--ds-deep);text-decoration:none;transition:background .15s,color .15s;
+}
+.ds-page .art-share-btn:hover{background:var(--ds-deep);color:#fff;}
+.ds-page .art-share-btn svg{width:19px;height:19px;}
+
+/* ── OTROS QUIZZES (resultado) ── */
+.ds-page .art-related{max-width:1320px;padding:40px 56px 56px;border-top:1px solid var(--ds-line);}
+.ds-page .art-related-label{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--brand);margin-bottom:10px;}
+.ds-page .art-related-title{font-size:23px;font-weight:800;color:var(--ds-ink);margin-bottom:26px;}
+.ds-page .art-related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+.ds-page .art-related-card{background:var(--ds-deep);padding:24px 22px;display:flex;flex-direction:column;text-decoration:none;}
+.ds-page .art-related-pill{align-self:flex-start;font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:#9bd0ea;border:1px solid #2e6f8c;padding:3px 9px;margin-bottom:14px;}
+.ds-page .art-related-card h3{font-size:16px;font-weight:700;color:#fff;line-height:1.35;margin:0 0 10px;}
+.ds-page .art-related-card p{font-size:13.5px;color:#9bb6c4;line-height:1.55;margin:0;}
+
+@media (max-width:980px){
+  .ds-page .quiz-catalog-grid,.ds-page .variant-grid,.ds-page .quiz-topic-grid{grid-template-columns:1fr;}
+  .ds-page .art-related-grid{grid-template-columns:1fr;}
+  .ds-page .art-share{padding-left:0;border-left:none;border-top:1px solid var(--ds-line);padding-top:24px;flex-basis:100%;}
+}
+@media (max-width:640px){
+  .ds-page .quiz-nav,.ds-page .quiz-body,.ds-page .art-foot,.ds-page .art-related{padding-left:20px;padding-right:20px;}
+}

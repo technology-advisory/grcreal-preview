@@ -1,0 +1,76 @@
+{
+  "quizzes": [
+    {
+      "id": "iso27001",
+      "titulo": "ISO/IEC 27001",
+      "pagina": "iso27001.html",
+      "tag": "Seguridad · SGSI",
+      "descripcion": "Gestión de la seguridad de la información. Controles, riesgos, SoA y ciclo PDCA.",
+      "activo": true
+    },
+    {
+      "id": "iso42001",
+      "titulo": "ISO/IEC 42001",
+      "pagina": "iso42001.html",
+      "tag": "IA · AIMS",
+      "descripcion": "Sistemas de Gestión de Inteligencia Artificial. Evaluación de impacto, sesgos, transparencia y riesgos éticos.",
+      "activo": true
+    },
+    {
+      "id": "ens",
+      "titulo": "ENS (Esquema Nacional de Seguridad)",
+      "pagina": "ens.html",
+      "tag": "Administración Pública",
+      "descripcion": "Esquema Nacional de Seguridad. Categorías, medidas y auditoría en AA.PP.",
+      "activo": true
+    },
+    {
+      "id": "nis2",
+      "titulo": "NIS2 Directive",
+      "pagina": "nis2.html",
+      "tag": "Directiva europea",
+      "descripcion": "Resiliencia de redes y sistemas. Sectores esenciales, notificación y sanciones.",
+      "activo": false
+    },
+    {
+      "id": "rgpd",
+      "titulo": "RGPD / GDPR",
+      "pagina": "rgpd_gdpr.html",
+      "tag": "Protección de datos",
+      "descripcion": "Reglamento europeo de protección de datos personales. Bases, derechos y DPO.",
+      "activo": true
+    },
+    {
+      "id": "iso22301",
+      "titulo": "ISO 22301",
+      "pagina": "iso22301.html",
+      "tag": "Continuidad · BCM",
+      "descripcion": "Continuidad de negocio. BIA, RTO, RPO, planes y gestión de crisis.",
+      "activo": true
+    },
+    {
+      "id": "dora",
+      "titulo": "DORA (Digital Operational Resilience)",
+      "pagina": "dora.html",
+      "tag": "Sector financiero",
+      "descripcion": "Resiliencia operativa digital en el sector financiero europeo.",
+      "activo": false
+    },
+    {
+      "id": "ransomware",
+      "titulo": "Ransomware Defense",
+      "pagina": "ransomware_defense.html",
+      "tag": "Ciberamenazas · IR",
+      "descripcion": "Defensa, respuesta y recuperación ante ataques de ransomware.",
+      "activo": true
+    },
+    {
+      "id": "vciso",
+      "titulo": "vCISO / GRC",
+      "pagina": "vciso_grc.html",
+      "tag": "Gobierno · Estrategia",
+      "descripcion": "Gobierno, riesgo y cumplimiento. El rol del vCISO y la estrategia de seguridad.",
+      "activo": true
+    }
+  ]
+}

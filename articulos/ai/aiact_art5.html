@@ -6,6 +6,7 @@
 <title>AI Act · Punto 5 · ISO 42001 y gobernanza de IA · GRCreal</title>
 <meta name="description" content="ISO 42001 es el marco de gestión de IA que complementa el AI Act. Cómo alinear gobernanza, auditoría y cumplimiento regulatorio.">
 <meta name="robots" content="index, follow">
+<link rel="canonical" href="https://grcreal.com/articulos/ai/aiact_art5.html">
 <meta property="og:title" content="AI Act · ISO 42001 y gobernanza de IA">
 <meta property="og:description" content="ISO 42001 complementa el AI Act. Gobernanza, auditoría y cumplimiento alineados.">
 <meta property="og:type" content="article">
@@ -18,40 +19,149 @@
 <link rel="stylesheet" href="../../css/marca.css">
 <link rel="stylesheet" href="../../css/articles.css">
 <link rel="stylesheet" href="../../css/global.css">
+<link rel="stylesheet" href="../../css/dossier-core.css">
+<link rel="stylesheet" href="../../css/dossier-articulo.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "ISO 42001: no es obligatoria pero marca la diferencia",
+  "description": "ISO 42001 es el marco de gestión de IA que complementa el AI Act. Cómo alinear gobernanza, auditoría y cumplimiento regulatorio.",
+  "image": "https://grcreal.com/grcreal.png",
+  "author": {
+    "@type": "Person",
+    "name": "Miguel Ángel Carriazo",
+    "url": "https://grcreal.com/sobre-mi/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "GRCreal",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://grcreal.com/favicon-32x32.png"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://grcreal.com/articulos/ai/aiact_art5.html"
+  },
+  "datePublished": "2025-04-23"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Inicio",
+      "item": "https://grcreal.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Artículos",
+      "item": "https://grcreal.com/articulos/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "IA",
+      "item": "https://grcreal.com/articulos/ai/"
+    }
+  ]
+}
+</script>
 </head>
 
 
 <body class="article-page">
+<nav class="nav">
+<a href="/index.html" class="nav-logo" style="text-decoration:none;">GRC<span>real</span></a>
+<div class="nav-menu-wrapper" id="navMenuWrapper">
+<ul class="nav-menu" id="navMenu">
+<li class="nav-item-dropdown" id="navDropdownMarcos"><a href="javascript:void(0)" onclick="document.getElementById('navDropdownMarcos').classList.toggle('open'); document.getElementById('navDropdownRecursos').classList.remove('open');"><span class="nav-ic-flat"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="2.5" width="12" height="3.5" rx="1"/><rect x="3" y="7.5" width="12" height="3.5" rx="1"/><rect x="3" y="12.5" width="12" height="3" rx="1"/></svg></span>Marcos <span class="chev">▾</span></a>
+<div class="nav-dropdown-panel">
+<a href="/marcos/iso27001/index.html"><span class="nav-ic"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 1.5 14.5 3.5 V8 C14.5 12 11.5 14.5 9 16 C6.5 14.5 3.5 12 3.5 8 V3.5 Z"/><path d="M6.3 9 8.2 10.8 11.7 7"/></svg></span><span class="nav-txt"><span class="nav-title">ISO 27001</span><span class="nav-sub">El estándar más adoptado</span></span></a>
+<a href="/marcos/ens/index.html"><span class="nav-ic"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 16h13"/><path d="M3.5 16V8.5M6.3 16V8.5M9 16V8.5M11.7 16V8.5M14.5 16V8.5"/><path d="M1.8 8.5 9 3 16.2 8.5Z"/></svg></span><span class="nav-txt"><span class="nav-title">ENS</span><span class="nav-sub">Sector público español</span></span></a>
+<a href="/marcos/nis2/index.html"><span class="nav-ic"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 2v3"/><path d="M3 5h12"/><path d="M3 5 1.5 8.5h3Z"/><path d="M15 5 13.5 8.5h3Z"/><path d="M5.2 9.2v2.3c0 .8.8 1.5 1.8 1.5s1.8-.7 1.8-1.5V9.2"/><path d="M9 8.5v6.2M6 16h6"/></svg></span><span class="nav-txt"><span class="nav-title">NIS2</span><span class="nav-sub">Directiva europea</span></span></a>
+<a href="/marcos/ia/index.html"><span class="nav-ic"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="5" width="8" height="8" rx="1"/><path d="M9 1.5v3M9 13.5v3M1.5 9h3M13.5 9h3M3.5 3.5l2 2M14.5 3.5l-2 2M3.5 14.5l2-2M14.5 14.5l-2-2"/></svg></span><span class="nav-txt"><span class="nav-title">IA</span><span class="nav-sub">AI Act + ISO 42001</span></span></a>
+<a href="/marcos/iso22301/index.html"><span class="nav-ic"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 9A5.5 5.5 0 1 1 12.7 5.1"/><path d="M12.7 1.8v3.3h3.3"/></svg></span><span class="nav-txt"><span class="nav-title">ISO 22301</span><span class="nav-sub">Continuidad de negocio</span></span></a>
+<a href="/marcos/vciso/index.html"><span class="nav-ic"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="6.3" r="2.8"/><path d="M3 15.5c0-2.9 2.7-5.2 6-5.2s6 2.3 6 5.2"/></svg></span><span class="nav-txt"><span class="nav-title">vCISO</span><span class="nav-sub">Rol, no certificación</span></span></a>
+</div>
+</li>
+<li class="nav-item-dropdown" id="navDropdownRecursos"><a href="javascript:void(0)" onclick="document.getElementById('navDropdownRecursos').classList.toggle('open'); document.getElementById('navDropdownMarcos').classList.remove('open');"><span class="nav-ic-flat"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 5.5a1 1 0 0 1 1-1h3.3l1.3 1.6H15a1 1 0 0 1 1 1V13a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1Z"/></svg></span>Recursos <span class="chev">▾</span></a>
+<div class="nav-dropdown-panel">
+<a href="/articulos/index.html"><span class="nav-ic"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="2" width="11" height="14" rx="1.3"/><path d="M6 6h6M6 9h6M6 12h3.5"/></svg></span><span class="nav-txt"><span class="nav-title">Artículos</span><span class="nav-sub">Análisis y opinión técnica</span></span></a>
+<a href="/checklists/index.html"><span class="nav-ic"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="3" width="13" height="12" rx="1.3"/><path d="M5 6.3h2.2M5 9h2.2M5 11.7h2.2"/><path d="M11 6.2l.9.9 1.6-1.7M11 8.9l.9.9 1.6-1.7M11 11.6l.9.9 1.6-1.7"/></svg></span><span class="nav-txt"><span class="nav-title">Checklists</span><span class="nav-sub">Autoevaluación interactiva</span></span></a>
+<a href="/versus/index.html"><span class="nav-ic"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 6.5h11M10.5 3.5l3 3-3 3"/><path d="M15.5 11.5h-11M7.5 8.5l-3 3 3 3"/></svg></span><span class="nav-txt"><span class="nav-title">Versus</span><span class="nav-sub">Comparativas entre marcos</span></span></a>
+<a href="/quiz/index.html"><span class="nav-ic"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="9" r="7"/><path d="M7 7.2c0-1.1.9-2 2-2s2 .8 2 1.8c0 1.4-2 1.6-2 3.3"/><circle cx="9" cy="12.7" r="0.15" fill="currentColor" stroke="none"/></svg></span><span class="nav-txt"><span class="nav-title">Quiz</span><span class="nav-sub">Pon a prueba tu nivel</span></span></a>
+<a href="/academia/index.html"><span class="nav-ic"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M1.5 6.5 9 3l7.5 3.5L9 10Z"/><path d="M5 8.3v3.4c0 1.3 1.8 2.3 4 2.3s4-1 4-2.3V8.3"/><path d="M16.5 6.5v4.3"/></svg></span><span class="nav-txt"><span class="nav-title">Academia</span><span class="nav-sub">Cursos paso a paso</span></span></a>
+<a href="/herramientas/index.html"><span class="nav-ic"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M11.3 2.3a3.2 3.2 0 0 0-4.3 4.2L2 11.5l1.8 1.8 5-5a3.2 3.2 0 0 0 4.2-4.3l-2 2-1.7-1.7Z"/></svg></span><span class="nav-txt"><span class="nav-title">Herramientas</span><span class="nav-sub">BIA, análisis de riesgos</span></span></a>
+</div>
+</li>
+<li><a href="/enfoque/index.html"><span class="nav-ic-flat"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="9" r="6.5"/><circle cx="9" cy="9" r="3"/><circle cx="9" cy="9" r="0.4" fill="currentColor" stroke="none"/></svg></span>Enfoque</a></li>
+<li><a href="/metodologia/index.html"><span class="nav-ic-flat"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="3.3" cy="3.3" r="1.8"/><circle cx="14.7" cy="9" r="1.8"/><circle cx="3.3" cy="14.7" r="1.8"/><path d="M5 4.3l8 4M5 13.7l8-4"/></svg></span>Metodología</a></li>
+<li><a href="/sobre-mi/index.html"><span class="nav-ic-flat"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="6" r="2.8"/><path d="M3.3 15c0-2.7 2.6-4.8 5.7-4.8s5.7 2.1 5.7 4.8"/></svg></span>Sobre mí</a></li>
+<li><a href="/contacto.html"><span class="nav-ic-flat"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="14" height="10" rx="1.3"/><path d="M2.5 5l6.5 5 6.5-5"/></svg></span>Contacto</a></li>
+<li><a href="/legal/index.html" class="nav-cta-pill">Legal</a></li>
+</ul>
+</div>
+<div class="nav-toggle" onclick="this.classList.toggle('open'); document.getElementById('navMenu').classList.toggle('open')">
+<span></span><span></span><span></span>
+</div>
+</nav>
 
-<div class="card-wrapper">
+<div class="card-wrapper ds-page">
 <div class="card">
 
 <div class="accent-bar"></div>
 
+<div class="ds-meta">
+  <span><span class="dot"></span>GRCreal // expediente: artículo</span>
+  <span>categoría: <strong>EU AI Act</strong></span>
+</div>
+
 <!-- HEADER -->
 <div class="header">
 
+  <a href="/articulos/index.html" class="art-back">← Volver a artículos</a>
   <div class="tag">EU AI ACT · PUNTO 5</div>
-    <div class="article-date">23 Abril 2025</div>
-
-  <div class="headline">
-    ISO 42001:<br>
-    <span class="accent">no es obligatoria</span><br>
-    <span class="dim">pero marca la diferencia</span>
-  </div>
+    <h1 class="headline">
+    ISO 42001: <span class="accent">no es obligatoria</span> <span class="dim">pero marca la diferencia</span>
+  </h1>
 
   <p class="subline">
     El Reglamento te dice qué cumplir. La ISO te dice cómo hacerlo bien.
   </p>
 
+  <div class="art-meta">
+    <span class="art-meta-item">
+      <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="6" r="2.6"/><path d="M3.5 15c0-2.6 2.5-4.6 5.5-4.6s5.5 2 5.5 4.6"/></svg>
+      <strong>Miguel Ángel Carriazo</strong>
+    </span>
+    <span class="art-meta-item">
+      <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="3" width="13" height="12.5" rx="1.3"/><path d="M2.5 6.5h13M6 2v2.4M12 2v2.4"/></svg>
+      23 abril 2025
+    </span>
+    <span class="art-meta-item">
+      <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="9" r="6.8"/><path d="M9 5.3V9l2.8 1.7"/></svg>
+      1 min de lectura
+    </span>
+  </div>
 </div>
 
 <div class="body">
+  <div class="art-layout">
+  <div class="art-main">
+
 
   <!-- CONTEXTO -->
-  <div class="block">
+  <div class="block" id="s1">
     <div class="block-label">Marco de referencia</div>
-    <div class="block-title">Gobernar IA no es un proyecto. Es un sistema</div>
+    <h2 class="block-title">Gobernar IA no es un proyecto. Es un sistema</h2>
 
     <div class="block-text">
       La ISO/IEC 42001 es el estándar internacional para sistemas de gestión de inteligencia artificial.
@@ -65,9 +175,9 @@
   <div class="divider"></div>
 
   <!-- RELACIÓN -->
-  <div class="block">
+  <div class="block" id="s2">
     <div class="block-label">Relación con AI Act</div>
-    <div class="block-title">No compiten. Se complementan</div>
+    <h2 class="block-title">No compiten. Se complementan</h2>
 
     <div class="block-text">
       El EU AI Act establece obligaciones legales.
@@ -94,9 +204,9 @@
   <div class="divider"></div>
 
   <!-- MAPEO -->
-  <div class="block">
+  <div class="block" id="s3">
     <div class="block-label">Alineación real</div>
-    <div class="block-title">Los controles ya están definidos</div>
+    <h2 class="block-title">Los controles ya están definidos</h2>
 
     <div class="block-text">
       Muchos requisitos del AI Act ya están cubiertos por la norma:
@@ -118,9 +228,9 @@
   <div class="divider"></div>
 
   <!-- VALOR -->
-  <div class="block">
+  <div class="block" id="s4">
     <div class="block-label">Valor real</div>
-    <div class="block-title">No es compliance. Es posicionamiento</div>
+    <h2 class="block-title">No es compliance. Es posicionamiento</h2>
 
     <div class="block-text">
       La certificación no es obligatoria.
@@ -140,9 +250,9 @@
   <div class="divider"></div>
 
   <!-- CONTEXTO ESPAÑA -->
-  <div class="block">
+  <div class="block" id="s5">
     <div class="block-label">Contexto regulatorio</div>
-    <div class="block-title">Esto ya está entrando en supervisión real</div>
+    <h2 class="block-title">Esto ya está entrando en supervisión real</h2>
 
     <div class="block-text">
       En España, la AESIA ya reconoce ISO 42001 como referencia en gobernanza de IA.
@@ -164,7 +274,22 @@
   </div>
 
   <!-- CTA FINAL -->
-  <div class="cta-block">
+  
+  </div><!-- /art-main -->
+
+  <aside class="art-toc">
+    <div class="art-toc-label">Contenido</div>
+    <nav class="art-toc-nav" id="artTocNav">
+      <a href="#s1" data-toc>Marco de referencia</a>
+      <a href="#s2" data-toc>Relación con AI Act</a>
+      <a href="#s3" data-toc>Alineación real</a>
+      <a href="#s4" data-toc>Valor real</a>
+      <a href="#s5" data-toc>Contexto regulatorio</a>
+    </nav>
+  </aside>
+
+  </div><!-- /art-layout -->
+<div class="cta-block">
     <div class="cta-headline">
       Cumplir es obligatorio<br>
       <span>hacerlo bien es diferencial</span>
@@ -180,18 +305,81 @@
 </div><!-- card -->
 
 <!-- FINAL DEL BODY -->
+
+<!-- SOBRE EL AUTOR + COMPARTIR -->
+<div class="art-foot">
+  <div class="art-author">
+    <div class="art-foot-label">Sobre el autor</div>
+    <div class="art-author-name">Miguel Ángel Carriazo <span>· vCISO</span></div>
+    <p class="art-author-bio">vCISO · Arquitecto de Soluciones de Infraestructura y Ciberseguridad | Gobierno, Riesgo y Cumplimiento (GRC) | Gobierno de IA · ISO 42001 | Fundador de GRCreal</p>
+  </div>
+  <div class="art-share">
+    <div class="art-foot-label">Compartir artículo</div>
+    <a href="#" id="shareLinkedin" target="_blank" class="art-share-btn" aria-label="Compartir en LinkedIn">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+    </a>
+  </div>
+</div>
+
+<!-- ARTÍCULOS RELACIONADOS -->
+<div class="art-related">
+  <div class="art-related-label">Sigue leyendo</div>
+  <div class="art-related-title">Artículos relacionados</div>
+  <div class="art-related-grid">
+    <a href="/articulos/ai/aiact.html" class="art-related-card">
+      <span class="art-related-pill">EU AI Act</span>
+      <h3>El reloj corre y muchas empresas aún duermen</h3>
+      <p>La IA ya está. La gobernanza no.</p>
+      <div class="art-related-meta"><span>23 abril 2026</span><span>2 min</span></div>
+    </a>
+    <a href="/articulos/ai/aiact-prohibiciones.html" class="art-related-card">
+      <span class="art-related-pill">EU AI Act</span>
+      <h3>AI Act: lo que está prohibido sin excepciones ni interpretaciones</h3>
+      <p>Hay usos de la IA directamente prohibidos. Sanciones de hasta 35 millones de euros.</p>
+      <div class="art-related-meta"><span>18 junio 2026</span><span>4 min</span></div>
+    </a>
+    <a href="/articulos/iso45003/iso-45003-riesgos-psicosociales.html" class="art-related-card">
+      <span class="art-related-pill">ISO 45003</span>
+      <h3>El riesgo que no aparece en el firewall</h3>
+      <p>Riesgos psicosociales y ISO 45003:2021.</p>
+      <div class="art-related-meta"><span>7 mayo 2026</span><span>5 min</span></div>
+    </a>
+  </div>
+</div>
+
 <div id="footer-placeholder"></div>
 <script>
-    fetch('/includes/footer.html')
+    fetch('/includes/footer-no-share.html')
         .then(response => response.text())
         .then(data => {
             document.getElementById('footer-placeholder').innerHTML = data;
         });
+
+
+    // Compartir en LinkedIn
+    var shareBtn = document.getElementById('shareLinkedin');
+    if (shareBtn) {
+        shareBtn.href = 'https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(window.location.href);
+    }
+
+    // Índice lateral: resalta la sección visible
+    var tocLinks = Array.from(document.querySelectorAll('#artTocNav a'));
+    var sections = tocLinks.map(a => document.querySelector(a.getAttribute('href')));
+    if ('IntersectionObserver' in window) {
+        var observer = new IntersectionObserver(function(entries){
+            entries.forEach(function(entry){
+                if (entry.isIntersecting) {
+                    var id = '#' + entry.target.id;
+                    tocLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === id));
+                }
+            });
+        }, { rootMargin: '-20% 0px -70% 0px' });
+        sections.forEach(function(s){ if (s) observer.observe(s); });
+    }
 </script>
 
 </div>
 </div>
-<a href="/articulos" class="home-btn">⌂ Home Artículos</a>
 </body>
 <script src="/js/global.js"></script>
 </html>

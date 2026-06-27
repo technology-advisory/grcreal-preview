@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0">
+<title>Matriz de Dependencias · SPOF · GRCreal</title>
+<meta name="description" content="Mapea dependencias entre procesos, sistemas, infraestructura y proveedores. Detecta puntos únicos de fallo (SPOF) que no aparecen en los organigramas. Sin registro, sin almacenamiento.">
+<script src="../../js/jspdf.umd.min.js"></script>
+<style>
+:root{--ds-navy:#14233b;--ds-ink:#2b3340;--ds-muted:#5a6675;--ds-line:#d3dae3;--ds-paper:#fff;
+--ds-bg:#f4f6f9;--ds-accent:#1f5fa8;--ds-grid:rgba(20,35,59,.035);--spof:#c0392b;--ok:#2f7d5b;}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ds-bg);color:var(--ds-ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.55}
+.mono{font-family:ui-monospace,Menlo,Consolas,monospace}
+.wrap{max-width:1200px;margin:0 auto;padding:22px 20px 80px}
+.ds-meta{display:flex;flex-wrap:wrap;gap:16px;align-items:center;background:var(--ds-paper);border:1px solid var(--ds-line);border-left:3px solid var(--ds-navy);padding:12px 16px;font-size:13px;color:var(--ds-muted);margin:0 0 22px}
+.ds-meta strong{color:var(--ds-navy)}
+.ds-ref{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:11px;letter-spacing:.1em;color:var(--ds-navy);background:#eef2f7;border:1px solid var(--ds-line);padding:3px 9px}
+.ds-cat{margin-left:auto;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ds-accent);border:1px solid var(--ds-line);padding:3px 9px}
+h1{font-size:30px;color:var(--ds-navy);font-weight:800;margin:0 0 8px}
+.lead{font-size:16.5px;color:var(--ds-muted);max-width:72ch;margin:0 0 18px}
+.nostore{display:inline-flex;gap:8px;align-items:center;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:11.5px;color:var(--ok);border:1px solid var(--ds-line);padding:5px 10px;margin-bottom:24px}
+.panel{background:var(--ds-paper);border:1px solid var(--ds-line);border-top:3px solid var(--ds-accent);padding:20px 22px;margin-bottom:18px;position:relative}
+.panel::before{content:"";position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(var(--ds-grid) 1px,transparent 1px),linear-gradient(90deg,var(--ds-grid) 1px,transparent 1px);background-size:26px 26px}
+.panel>*{position:relative}
+.panel-label{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ds-muted);margin-bottom:12px}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:18px}
+.kpi{background:var(--ds-paper);border:1px solid var(--ds-line);padding:14px 12px;text-align:center}
+.kpi .n{font-size:26px;font-weight:800;color:var(--ds-navy)}
+.kpi .l{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--ds-muted);margin-top:2px}
+.kpi.spof .n{color:var(--spof)}
+.row-form{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:12px}
+.row-form input,.row-form select{font:inherit;border:1px solid var(--ds-line);padding:8px 10px;background:#fff;color:var(--ds-ink)}
+.row-form input{min-width:200px;flex:1}
+table.lst{width:100%;border-collapse:collapse;font-size:13.5px}
+table.lst th{background:var(--ds-navy);color:#fff;text-align:left;padding:8px;font-size:12px}
+table.lst td{border-bottom:1px solid var(--ds-line);padding:6px 8px}
+.tag{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:10.5px;padding:2px 7px;border:1px solid var(--ds-line);color:var(--ds-muted)}
+.tag.crit{color:var(--spof);border-color:var(--spof)}
+.tag.red{color:var(--ok);border-color:var(--ok)}
+.tag.nored{color:var(--spof);border-color:var(--spof)}
+.del{cursor:pointer;color:var(--ds-muted);border:none;background:none;font-size:15px}
+.del:hover{color:var(--spof)}
+.mtx-scroll{overflow-x:auto}
+table.mtx{border-collapse:collapse;font-size:12px}
+table.mtx th,table.mtx td{border:1px solid var(--ds-line);padding:6px 8px;text-align:center;white-space:nowrap}
+table.mtx thead th{background:#eef2f7;color:var(--ds-navy);font-weight:700;position:relative}
+table.mtx thead th.spof{background:var(--spof);color:#fff}
+table.mtx tbody th{background:var(--ds-paper);text-align:left;font-weight:600;color:var(--ds-navy)}
+table.mtx tbody th.crit::after{content:" ●";color:var(--spof)}
+table.mtx td input{transform:scale(1.2);cursor:pointer}
+table.mtx td.on{background:#e3edf8}
+.spof-list{margin-top:12px;font-size:14px}
+.spof-list li{margin-bottom:6px}
+.spof-list b{color:var(--spof)}
+.btn{font-family:inherit;font-size:14px;cursor:pointer;border:1px solid var(--ds-navy);background:var(--ds-navy);color:#fff;padding:10px 18px}
+.btn:hover{background:#0d1828}
+.btn.ghost{background:#fff;color:var(--ds-navy)}.btn.ghost:hover{background:#eef2f7}
+.btn.add{padding:8px 14px}
+.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+@media(max-width:760px){.kpis{grid-template-columns:repeat(2,1fr)}h1{font-size:24px}.row-form input{min-width:140px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="ds-meta">
+    <span class="ds-ref">REF.TOOL-DEP</span>
+    <span>Herramienta: <strong>Matriz de Dependencias</strong></span>
+    <span>Detecta: <strong>Puntos únicos de fallo (SPOF)</strong></span>
+    <span class="ds-cat">ISO 22301 · 27001</span>
+  </div>
+  <h1>Matriz de Dependencias</h1>
+  <p class="lead">Mapea de qué recursos depende cada proceso. Un recurso sin redundancia del que dependen procesos críticos es un punto único de fallo — y casi nunca aparece en el organigrama. Aquí salta a la vista.</p>
+  <div class="nostore">🔒 <b>Sin registro · sin almacenamiento</b> — todo en tu navegador.</div>
+
+  <div class="kpis">
+    <div class="kpi"><div class="n" id="kProc">0</div><div class="l">Procesos</div></div>
+    <div class="kpi"><div class="n" id="kRec">0</div><div class="l">Recursos</div></div>
+    <div class="kpi"><div class="n" id="kCrit">0</div><div class="l">Procesos críticos</div></div>
+    <div class="kpi spof"><div class="n" id="kSpof">0</div><div class="l">SPOF detectados</div></div>
+  </div>
+
+  <!-- RECURSOS -->
+  <div class="panel">
+    <div class="panel-label">1 · Recursos (sistemas, infra, proveedores, personas)</div>
+    <div class="row-form">
+      <input id="recN" placeholder="Nombre del recurso (ej. Base de datos central)">
+      <select id="recT"><option>Sistema</option><option>Infraestructura</option><option>Proveedor</option><option>Persona</option><option>Datos</option></select>
+      <select id="recR"><option value="no">Sin redundancia</option><option value="si">Con redundancia</option></select>
+      <button class="btn add" onclick="addRec()">+ Recurso</button>
+    </div>
+    <table class="lst"><thead><tr><th>Recurso</th><th>Tipo</th><th>Redundancia</th><th></th></tr></thead><tbody id="recRows"></tbody></table>
+  </div>
+
+  <!-- PROCESOS -->
+  <div class="panel">
+    <div class="panel-label">2 · Procesos de negocio</div>
+    <div class="row-form">
+      <input id="procN" placeholder="Nombre del proceso (ej. Facturación)">
+      <select id="procC"><option value="si">Crítico</option><option value="no">No crítico</option></select>
+      <button class="btn add" onclick="addProc()">+ Proceso</button>
+    </div>
+    <table class="lst"><thead><tr><th>Proceso</th><th>Criticidad</th><th></th></tr></thead><tbody id="procRows"></tbody></table>
+  </div>
+
+  <!-- MATRIZ -->
+  <div class="panel">
+    <div class="panel-label">3 · Matriz de dependencias — marca de qué depende cada proceso</div>
+    <div class="mtx-scroll" id="mtxWrap"><p style="color:var(--ds-muted)">Añade procesos y recursos para construir la matriz.</p></div>
+  </div>
+
+  <!-- SPOF -->
+  <div class="panel">
+    <div class="panel-label">4 · Puntos únicos de fallo</div>
+    <div id="spofOut" style="color:var(--ds-muted)">Sin datos suficientes todavía.</div>
+  </div>
+
+  <div class="actions">
+    <button class="btn ghost" onclick="seedDemo()">Cargar ejemplo</button>
+    <button class="btn" onclick="exportPDF()">⬇ Exportar (PDF)</button>
+    <button class="btn ghost" onclick="window.print()">Imprimir</button>
+  </div>
+</div>
+
+<script>
+var recs=[],procs=[],deps={},rid=1,pid=1; // deps key: p<pid>_r<rid> => true
+function esc(s){return (s||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");}
+
+function addRec(d){d=d||{};var n=d.n!=null?d.n:document.getElementById("recN").value.trim();
+ if(!n)return;recs.push({id:rid++,n:n,t:d.t||document.getElementById("recT").value,r:d.r||document.getElementById("recR").value});
+ document.getElementById("recN").value="";render();}
+function addProc(d){d=d||{};var n=d.n!=null?d.n:document.getElementById("procN").value.trim();
+ if(!n)return;procs.push({id:pid++,n:n,c:d.c||document.getElementById("procC").value});
+ document.getElementById("procN").value="";render();}
+function delRec(id){recs=recs.filter(function(x){return x.id!==id});for(var k in deps)if(k.indexOf("_r"+id)>-1)delete deps[k];render();}
+function delProc(id){procs=procs.filter(function(x){return x.id!==id});for(var k in deps)if(k.indexOf("p"+id+"_")===0)delete deps[k];render();}
+function toggle(p,r){var k="p"+p+"_r"+r;if(deps[k])delete deps[k];else deps[k]=true;render();}
+
+function spofSet(){
+ // recurso sin redundancia del que depende >=1 proceso crítico
+ var s={};
+ recs.forEach(function(rc){
+  if(rc.r==="si")return;
+  var critDep=procs.some(function(pc){return pc.c==="si"&&deps["p"+pc.id+"_r"+rc.id];});
+  if(critDep)s[rc.id]=true;
+ });
+ return s;
+}
+
+function render(){
+ // listas
+ var rb=document.getElementById("recRows");rb.innerHTML="";
+ recs.forEach(function(rc){var tr=document.createElement("tr");
+  tr.innerHTML='<td>'+esc(rc.n)+'</td><td><span class="tag">'+rc.t+'</span></td>'+
+   '<td><span class="tag '+(rc.r==="si"?"red":"nored")+'">'+(rc.r==="si"?"Redundante":"Sin redundancia")+'</span></td>'+
+   '<td><button class="del" onclick="delRec('+rc.id+')">✕</button></td>';rb.appendChild(tr);});
+ var pb=document.getElementById("procRows");pb.innerHTML="";
+ procs.forEach(function(pc){var tr=document.createElement("tr");
+  tr.innerHTML='<td>'+esc(pc.n)+'</td><td><span class="tag '+(pc.c==="si"?"crit":"")+'">'+(pc.c==="si"?"Crítico":"No crítico")+'</span></td>'+
+   '<td><button class="del" onclick="delProc('+pc.id+')">✕</button></td>';pb.appendChild(tr);});
+
+ // matriz
+ var spof=spofSet();
+ var w=document.getElementById("mtxWrap");
+ if(!procs.length||!recs.length){w.innerHTML='<p style="color:var(--ds-muted)">Añade procesos y recursos para construir la matriz.</p>';}
+ else{
+  var h='<table class="mtx"><thead><tr><th>Proceso \\ Recurso</th>';
+  recs.forEach(function(rc){h+='<th class="'+(spof[rc.id]?"spof":"")+'">'+esc(rc.n)+'</th>';});
+  h+='</tr></thead><tbody>';
+  procs.forEach(function(pc){
+   h+='<tr><th class="'+(pc.c==="si"?"crit":"")+'">'+esc(pc.n)+'</th>';
+   recs.forEach(function(rc){var on=!!deps["p"+pc.id+"_r"+rc.id];
+    h+='<td class="'+(on?"on":"")+'"><input type="checkbox" '+(on?"checked":"")+' onchange="toggle('+pc.id+','+rc.id+')"></td>';});
+   h+='</tr>';
+  });
+  h+='</tbody></table>';w.innerHTML=h;
+ }
+
+ // spof out
+ var ids=Object.keys(spof);
+ var out=document.getElementById("spofOut");
+ if(!ids.length){out.style.color="var(--ds-muted)";out.textContent="No se detectan SPOF con los datos actuales. (Un SPOF es un recurso sin redundancia del que depende algún proceso crítico.)";}
+ else{
+  var html='<ul class="spof-list">';
+  ids.forEach(function(id){var rc=recs.find(function(x){return x.id==id});
+   var ps=procs.filter(function(pc){return pc.c==="si"&&deps["p"+pc.id+"_r"+rc.id];}).map(function(pc){return pc.n;});
+   html+='<li><b>'+esc(rc.n)+'</b> ('+rc.t+', sin redundancia) — del que dependen: '+esc(ps.join(", "))+'</li>';});
+  html+='</ul>';out.style.color="var(--ds-ink)";out.innerHTML=html;
+ }
+
+ // kpis
+ document.getElementById("kProc").textContent=procs.length;
+ document.getElementById("kRec").textContent=recs.length;
+ document.getElementById("kCrit").textContent=procs.filter(function(p){return p.c==="si";}).length;
+ document.getElementById("kSpof").textContent=ids.length;
+}
+
+function seedDemo(){
+ recs=[];procs=[];deps={};rid=1;pid=1;
+ addRec({n:"Base de datos central",t:"Sistema",r:"no"});
+ addRec({n:"Active Directory",t:"Sistema",r:"no"});
+ addRec({n:"Conexión a Internet (único ISP)",t:"Infraestructura",r:"no"});
+ addRec({n:"Proveedor de pagos",t:"Proveedor",r:"si"});
+ addRec({n:"Administrador único de sistemas",t:"Persona",r:"no"});
+ addProc({n:"Facturación",c:"si"});
+ addProc({n:"Atención al cliente",c:"si"});
+ addProc({n:"Reporting interno",c:"no"});
+ // dependencias
+ [["1","1"],["1","4"],["1","5"],["2","1"],["2","2"],["2","3"],["3","1"]].forEach(function(p){deps["p"+p[0]+"_r"+p[1]]=true;});
+ render();
+}
+
+function exportPDF(){
+ function safe(s){return String(s==null?"":s).replace(/…/g,"...").replace(/—/g,"-").replace(/[•●]/g,"-").replace(/→/g,"->").replace(/[“”]/g,'"').replace(/[‘’]/g,"'");}
+
+ if(!procs.length||!recs.length){alert("Añade procesos y recursos primero.");return;}
+ var jsPDF=window.jspdf.jsPDF;var doc=new jsPDF({orientation:"landscape",unit:"mm",format:"a4"});
+ var W=doc.internal.pageSize.getWidth();
+ doc.setFillColor(20,35,59);doc.rect(0,0,W,22,"F");
+ doc.setTextColor(255);doc.setFont("helvetica","bold");doc.setFontSize(15);
+ doc.text("Matriz de Dependencias y SPOF",12,11);
+ doc.setFont("helvetica","normal");doc.setFontSize(9);
+ doc.text("GRCreal   ·   "+new Date().toLocaleDateString("es-ES"),12,17);
+ var spof=spofSet();var y=32,x0=10;
+ // matriz simple
+ doc.setFontSize(8);doc.setTextColor(40);
+ var colW=Math.min(34,(W-60)/Math.max(recs.length,1));
+ doc.setFont("helvetica","bold");doc.text("Proceso \\ Recurso",x0,y);
+ recs.forEach(function(rc,i){var t=safe(rc.n);if(t.length>16)t=t.slice(0,15)+"...";doc.text(t,x0+55+i*colW,y);});
+ y+=5;doc.setFont("helvetica","normal");
+ procs.forEach(function(pc){if(y>180){doc.addPage("a4","landscape");y=20;}
+  doc.setFont("helvetica",pc.c==="si"?"bold":"normal");
+  var pn=(pc.c==="si"?"* ":"")+safe(pc.n);doc.text(pn.length>30?pn.slice(0,29)+"...":pn,x0,y);
+  recs.forEach(function(rc,i){if(deps["p"+pc.id+"_r"+rc.id])doc.text("X",x0+55+i*colW,y);});
+  y+=5;});
+ // spof
+ y+=6;if(y>175){doc.addPage("a4","landscape");y=20;}
+ doc.setFont("helvetica","bold");doc.setTextColor(192,57,43);doc.setFontSize(10);
+ doc.text("Puntos únicos de fallo (SPOF):",x0,y);y+=6;
+ doc.setFont("helvetica","normal");doc.setTextColor(40);doc.setFontSize(9);
+ var ids=Object.keys(spof);
+ if(!ids.length){doc.text("Ninguno detectado.",x0,y);}
+ else ids.forEach(function(id){var rc=recs.find(function(x){return x.id==id});
+  var ps=procs.filter(function(pc){return pc.c==="si"&&deps["p"+pc.id+"_r"+rc.id];}).map(function(pc){return pc.n;});
+  if(y>195){doc.addPage("a4","landscape");y=20;}
+  doc.text("- "+safe(rc.n)+" ("+rc.t+") -> "+ps.join(", "),x0,y,{maxWidth:W-20});y+=6;});
+ doc.save("matriz-dependencias-spof.pdf");
+}
+seedDemo();
+</script>
+</body>
+</html>

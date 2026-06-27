@@ -1,0 +1,447 @@
+{
+  "titulo": "Protección de Datos",
+  "tema": "RGPD · LOPDGDD · AEPD",
+  "descripcion": "Reglamento General de Protección de Datos de la UE y Ley Orgánica de Protección de Datos y Garantía de Derechos Digitales. Derechos del interesado, bases jurídicas, principios y organismos.",
+  "preguntas": [
+    {
+      "q": "Según el artículo 14 del RGPD, cuando los datos personales no se hayan obtenido del interesado, el responsable del tratamiento facilitará información sobre los fines del tratamiento, las categorías de datos y los destinatarios. ¿Cuál de las siguientes afirmaciones es FALSA?",
+      "o": [
+        "Los fines del tratamiento y la base jurídica del tratamiento",
+        "Las categorías de datos personales de que se trate",
+        "Los destinatarios o las categorías de destinatarios de los datos personales",
+        "Todas son correctas"
+      ],
+      "c": 3,
+      "e": "Las opciones A, B y C son información que efectivamente debe facilitarse según el art. 14 RGPD cuando los datos no se obtienen del interesado. Por tanto, la respuesta falsa es D: no todas son correctas como afirmación independiente, sino que son obligaciones reales del responsable."
+    },
+    {
+      "q": "El Consejo Consultivo de la Agencia Española de Protección de Datos estará compuesto por expertos propuestos por las Organizaciones Empresariales. ¿Cuántos?",
+      "o": [
+        "Un experto",
+        "Dos expertos",
+        "Cuatro expertos",
+        "Tres expertos"
+      ],
+      "c": 1,
+      "e": "Según el artículo 50 de la LOPDGDD, el Consejo Consultivo de la AEPD incluye dos expertos propuestos por las organizaciones empresariales de ámbito estatal más representativas."
+    },
+    {
+      "q": "Según el artículo 14 del RGPD, cuando los datos no se hayan obtenido del interesado, señale la información que NO debe facilitarse obligatoriamente:",
+      "o": [
+        "La identidad y datos de contacto del responsable y su representante",
+        "Los datos de contacto del delegado de protección de datos",
+        "Los fines del tratamiento y la base jurídica",
+        "Los derechos que posee el interesado en relación a la comunicación de sus datos personales"
+      ],
+      "c": 3,
+      "e": "El art. 14 RGPD no establece como obligación informar sobre 'derechos en relación a la comunicación de datos'. Sí exige identidad del responsable, contacto del DPD, fines y base jurídica, entre otros. La opción D describe un derecho inexistente con esa formulación."
+    },
+    {
+      "q": "Señale la respuesta correcta según el artículo 16 del RGPD sobre el derecho de rectificación:",
+      "o": [
+        "El interesado tendrá derecho a obtener en el plazo máximo de quince días la rectificación",
+        "El interesado tendrá derecho a obtener en el plazo máximo de treinta días la rectificación",
+        "El interesado tendrá derecho a obtener en el plazo máximo de un mes la rectificación",
+        "Ninguna es correcta"
+      ],
+      "c": 3,
+      "e": "El art. 16 RGPD reconoce el derecho a la rectificación, pero no fija un plazo específico en ese artículo. El plazo de respuesta del responsable (un mes, prorrogable) está en el art. 12 RGPD. Por tanto, las opciones A, B y C incluyen formulaciones incorrectas y la respuesta es D."
+    },
+    {
+      "q": "El Consejo Consultivo de la AEPD estará compuesto por representantes de los profesionales de la protección de datos y la privacidad. ¿Cómo se designan?",
+      "o": [
+        "Un representante propuesto por la asociación de ámbito estatal con mayor número de asociados",
+        "Dos representantes propuestos por la asociación de ámbito estatal con mayor número de asociados",
+        "Un representante propuesto por el Gobierno",
+        "Dos representantes propuestos por el Gobierno"
+      ],
+      "c": 0,
+      "e": "Según el art. 50 LOPDGDD, el Consejo Consultivo de la AEPD incluye un representante de los profesionales de protección de datos, propuesto por la asociación de ámbito estatal con mayor número de asociados."
+    },
+    {
+      "q": "Uno de los principios relativos al tratamiento de datos según el RGPD establece que los datos personales serán:",
+      "o": [
+        "Explícitos, pertinentes y limitados a lo necesario en relación con los fines",
+        "Adecuados, pertinentes y limitados a lo necesario en relación con los fines",
+        "Adecuados, pertinentes, limitados y no excesivos en relación con los fines",
+        "Explícitos, pertinentes y no excesivos en relación con los fines"
+      ],
+      "c": 1,
+      "e": "El art. 5.1.c) RGPD establece el principio de minimización de datos: los datos serán 'adecuados, pertinentes y limitados a lo necesario' en relación con los fines. La expresión 'no excesivos' pertenece a la antigua Directiva 95/46/CE, no al RGPD."
+    },
+    {
+      "q": "Señale la respuesta FALSA respecto a las condiciones para el consentimiento según el RGPD:",
+      "o": [
+        "El responsable deberá ser capaz de demostrar que el interesado consintió el tratamiento",
+        "Si el consentimiento se da junto a otros asuntos, debe distinguirse claramente con lenguaje claro y sencillo",
+        "El interesado tendrá derecho a retirar su consentimiento en cualquier momento, sin que ello afecte a la licitud del tratamiento previo",
+        "Todas son correctas"
+      ],
+      "c": 3,
+      "e": "Las tres opciones A, B y C reflejan fielmente lo establecido en el art. 7 RGPD sobre condiciones del consentimiento. Por tanto, la afirmación 'todas son correctas' (D) no puede ser la respuesta falsa — la pregunta no tiene respuesta falsa real entre A, B y C."
+    },
+    {
+      "q": "Uno de los principios relativos al tratamiento de datos según el RGPD establece que los datos serán exactos y, si fuera necesario, actualizados. ¿Qué más establece ese principio?",
+      "o": [
+        "Se rectificarán sin dilación siempre que exista consentimiento del interesado",
+        "Se rectificarán en plazo máximo de tres días si existe consentimiento del interesado",
+        "Se adoptarán todas las medidas razonables para suprimir o rectificar sin dilación los datos inexactos respecto a los fines para los que se tratan",
+        "Se rectificarán en plazo máximo de tres días los datos inexactos respecto a los fines para los que se tratan"
+      ],
+      "c": 2,
+      "e": "El art. 5.1.d) RGPD establece el principio de exactitud: los datos serán exactos y, 'si fuera necesario', actualizados, adoptando medidas razonables para suprimir o rectificar sin dilación los inexactos. No exige consentimiento del interesado ni fija plazo de tres días."
+    },
+    {
+      "q": "Según el RGPD, ¿qué término corresponde a la definición 'todo conjunto estructurado de datos personales, accesibles con arreglo a criterios determinados, ya sea centralizado, descentralizado o repartido de forma funcional o geográfica'?",
+      "o": [
+        "Fichero",
+        "Base de datos",
+        "Conjunto de datos",
+        "Datos ordenados"
+      ],
+      "c": 0,
+      "e": "El art. 4.6 RGPD define 'fichero' exactamente así: todo conjunto estructurado de datos personales accesibles con arreglo a criterios determinados, centralizado, descentralizado o distribuido geográficamente."
+    },
+    {
+      "q": "Según el artículo 9 del RGPD, quedan prohibidos con carácter general los tratamientos de datos personales que revelen determinadas categorías especiales. ¿Cuál de las siguientes NO está incluida en ese artículo?",
+      "o": [
+        "El origen étnico o racial",
+        "Las opiniones políticas",
+        "Información bancaria",
+        "La afiliación sindical"
+      ],
+      "c": 2,
+      "e": "El art. 9 RGPD prohíbe el tratamiento de datos que revelen origen racial o étnico, opiniones políticas, convicciones religiosas o filosóficas, afiliación sindical, datos genéticos, biométricos, de salud, y vida u orientación sexual. La información bancaria NO figura en ese artículo."
+    },
+    {
+      "q": "Según la LOPDGDD, el tratamiento de datos personales de un menor de edad únicamente podrá fundarse en su consentimiento cuando sea mayor de:",
+      "o": [
+        "Doce años",
+        "Catorce años",
+        "Dieciséis años",
+        "Dieciocho años"
+      ],
+      "c": 1,
+      "e": "El art. 7 LOPDGDD fija en 14 años la edad a partir de la cual el menor puede prestar por sí solo consentimiento para el tratamiento de sus datos. Por debajo de esa edad, se requiere el consentimiento de los titulares de la patria potestad."
+    },
+    {
+      "q": "El Consejo Consultivo de la AEPD estará compuesto por un representante designado por el Consejo General del Poder Judicial. ¿Cuántos representantes?",
+      "o": [
+        "Un representante designado por el Consejo General del Poder Judicial",
+        "Dos representantes designados por el Consejo General del Poder Judicial",
+        "Tres representantes designados por el Consejo General del Poder Judicial",
+        "No hay representantes del Consejo General del Poder Judicial en el Consejo Consultivo de la AEPD"
+      ],
+      "c": 0,
+      "e": "Según el art. 50 LOPDGDD, el Consejo Consultivo de la AEPD incluye un representante designado por el Consejo General del Poder Judicial."
+    },
+    {
+      "q": "Según la LOPDGDD, los titulares de la patria potestad podrán ejercitar en nombre y representación de los menores de ______ los derechos de acceso, rectificación, cancelación, oposición o cualesquiera otros:",
+      "o": [
+        "Doce años",
+        "Trece años",
+        "Catorce años",
+        "Dieciséis años"
+      ],
+      "c": 2,
+      "e": "El art. 12 LOPDGDD establece que los titulares de la patria potestad pueden ejercer los derechos en representación de los menores de 14 años. A partir de esa edad, el menor puede ejercerlos por sí mismo."
+    },
+    {
+      "q": "El Reglamento General de Protección de Datos de la UE se aplicará en los siguientes supuestos (señale la respuesta correcta):",
+      "o": [
+        "En el ejercicio de una actividad no comprendida en el ámbito de aplicación del Derecho de la Unión",
+        "Al tratamiento de datos personales efectuado por una persona física en actividades exclusivamente personales o domésticas",
+        "Por parte de autoridades competentes con fines de prevención, investigación o enjuiciamiento de infracciones penales",
+        "Ninguna es correcta"
+      ],
+      "c": 3,
+      "e": "El art. 2.2 RGPD excluye expresamente su aplicación a: actividades fuera del ámbito del Derecho de la UE, actividades exclusivamente personales o domésticas, y tratamientos por autoridades competentes con fines penales (estos últimos se rigen por la Directiva 2016/680). Por tanto, ninguna de las opciones A, B o C describe un supuesto de aplicación del RGPD."
+    },
+    {
+      "q": "Según el artículo 11 de la LOPDGDD, la información básica al interesado para obtener su consentimiento deberá contener al menos (señale la respuesta FALSA):",
+      "o": [
+        "La identidad del responsable del tratamiento y de su representante",
+        "La finalidad del tratamiento",
+        "La posibilidad de ejercer los derechos establecidos en el RGPD",
+        "Las comunicaciones se podrán hacer con los datos personales del interesado"
+      ],
+      "c": 3,
+      "e": "El art. 11 LOPDGDD exige informar de la identidad del responsable, la finalidad y la posibilidad de ejercer derechos. La opción D no es un contenido exigido por ese artículo; es una afirmación que no corresponde a información básica obligatoria."
+    },
+    {
+      "q": "Según el artículo 8 del RGPD, cuando un menor presta consentimiento para el tratamiento de sus datos en servicios de la sociedad de la información, deberá tener como mínimo:",
+      "o": [
+        "12 años",
+        "14 años",
+        "15 años",
+        "16 años"
+      ],
+      "c": 3,
+      "e": "El art. 8.1 RGPD fija en 16 años la edad mínima para que un menor preste consentimiento válido en servicios de la sociedad de la información, aunque permite a los Estados miembros reducirla hasta los 13 años. España la fijó en 14 años mediante la LOPDGDD para el contexto nacional, pero la pregunta cita expresamente el RGPD."
+    },
+    {
+      "q": "Señale la afirmación FALSA según el artículo 12 de la LOPDGDD sobre el ejercicio de derechos:",
+      "o": [
+        "El responsable estará obligado a informar al afectado sobre los medios para ejercer sus derechos",
+        "Los medios deberán ser fácilmente accesibles para el afectado",
+        "El ejercicio del derecho no podrá ser denegado por el solo motivo de optar el afectado por otro medio",
+        "Todas son correctas"
+      ],
+      "c": 3,
+      "e": "Las opciones A, B y C reproducen fielmente el contenido del art. 12 LOPDGDD. Al ser todas correctas, la respuesta a 'señale la falsa' es D, ya que ninguna de las anteriores es falsa."
+    },
+    {
+      "q": "La Presidencia de la AEPD y su Adjunto serán nombrados por ______, a propuesta de ______:",
+      "o": [
+        "El Gobierno / del Congreso de los Diputados",
+        "La Presidencia de las Cortes Generales / del Congreso de los Diputados",
+        "El Rey / del Gobierno",
+        "El Gobierno / del Ministerio de Justicia"
+      ],
+      "c": 3,
+      "e": "Según el art. 49 LOPDGDD, la Presidencia de la AEPD y su adjunto son nombrados por el Gobierno, a propuesta del Ministerio de Justicia, entre personas de reconocida competencia profesional en materia de protección de datos."
+    },
+    {
+      "q": "Según el RGPD, ¿qué término corresponde a 'la persona física o jurídica, autoridad pública, servicio u otro organismo al que se comuniquen datos personales, se trate o no de un tercero'?",
+      "o": [
+        "Destinatario",
+        "Tercero",
+        "Responsable del tratamiento",
+        "Encargado del tratamiento"
+      ],
+      "c": 0,
+      "e": "El art. 4.9 RGPD define 'destinatario' como la persona física o jurídica, autoridad pública, servicio u organismo al que se comuniquen datos personales, sea o no tercero."
+    },
+    {
+      "q": "Según el RGPD, ¿qué término corresponde a 'el marcado de los datos de carácter personal conservados con el fin de limitar su tratamiento en el futuro'?",
+      "o": [
+        "Seudonimización",
+        "Limitación del tratamiento",
+        "Disociación de datos",
+        "Tratamiento oculto"
+      ],
+      "c": 1,
+      "e": "El art. 4.3 RGPD define 'limitación del tratamiento' exactamente como el marcado de datos personales conservados con el fin de limitar su tratamiento futuro."
+    },
+    {
+      "q": "Según el artículo 18 del RGPD, el interesado tendrá derecho a obtener la limitación del tratamiento cuando se cumpla alguna condición. Señale la FALSA:",
+      "o": [
+        "El interesado impugne la exactitud de los datos, durante el plazo de verificación por el responsable",
+        "El tratamiento de datos no tenga una finalidad clara y ello conlleve perjuicios para el interesado",
+        "El tratamiento sea ilícito y el interesado solicite la limitación en lugar de la supresión",
+        "El responsable ya no necesite los datos pero el interesado los necesite para reclamaciones"
+      ],
+      "c": 1,
+      "e": "El art. 18.1 RGPD establece cuatro supuestos para la limitación: impugnación de exactitud, tratamiento ilícito con oposición a la supresión, datos necesarios para reclamaciones, y oposición al tratamiento pendiente de verificación. La opción B no corresponde a ninguno de esos supuestos: la falta de finalidad clara no es causa de limitación según el art. 18."
+    },
+    {
+      "q": "Según el RGPD, el interesado tiene derecho de acceso a sus datos y a determinada información. Señale cuál de las siguientes opciones NO forma parte de esa información:",
+      "o": [
+        "La existencia del derecho a solicitar rectificación, supresión o limitación del tratamiento",
+        "La posibilidad de exigir una contraprestación económica si sus datos se usan para fines ilegítimos",
+        "El derecho a presentar una reclamación ante una autoridad de control",
+        "Cuando los datos no se hayan obtenido del interesado, cualquier información disponible sobre su origen"
+      ],
+      "c": 1,
+      "e": "El art. 15 RGPD regula el derecho de acceso y no contempla ningún derecho a exigir contraprestación económica. Las opciones A, C y D sí forman parte de la información accesible según ese artículo."
+    },
+    {
+      "q": "El Consejo Consultivo de la AEPD estará compuesto por representantes de los profesionales de la seguridad de la información. ¿Cómo se designan?",
+      "o": [
+        "Un representante propuesto por la asociación de ámbito estatal con mayor número de asociados",
+        "Dos representantes propuestos por la asociación de ámbito estatal con mayor número de asociados",
+        "Un representante propuesto por el sindicato de ámbito estatal con mayor número de asociados",
+        "Dos representantes propuestos por el sindicato de ámbito estatal con mayor número de asociados"
+      ],
+      "c": 0,
+      "e": "Según el art. 50 LOPDGDD, el Consejo Consultivo de la AEPD incluye un representante de los profesionales de la seguridad de la información, propuesto por la asociación de ámbito estatal con mayor número de asociados."
+    },
+    {
+      "q": "Uno de los principios relativos al tratamiento de datos según el RGPD establece que los datos sean tratados de manera:",
+      "o": [
+        "Parcial, consentida y transparente en relación con el interesado",
+        "Parcial, leal y transparente en relación con el interesado",
+        "Lícita, consentida y transparente en relación con el interesado",
+        "Lícita, leal y transparente en relación con el interesado"
+      ],
+      "c": 3,
+      "e": "El art. 5.1.a) RGPD establece el principio de licitud, lealtad y transparencia: los datos serán tratados de manera 'lícita, leal y transparente' en relación con el interesado. 'Consentida' no forma parte de ese principio."
+    },
+    {
+      "q": "Cuando los datos no se hayan obtenido directamente del interesado, el responsable facilitará la información prevista en el RGPD...",
+      "o": [
+        "A más tardar dentro de cinco días desde la obtención",
+        "A más tardar dentro de quince días desde la obtención",
+        "A más tardar dentro de veinte días desde la obtención",
+        "Dentro de un plazo razonable y a más tardar dentro de un mes desde la obtención"
+      ],
+      "c": 3,
+      "e": "El art. 14.3.a) RGPD establece que la información deberá facilitarse dentro de un plazo razonable, una vez obtenidos los datos, y a más tardar en un mes, habida cuenta de las circunstancias específicas del tratamiento."
+    },
+    {
+      "q": "Señale la respuesta correcta según el RGPD sobre el derecho de oposición:",
+      "o": [
+        "El interesado podrá oponerse en todo momento al tratamiento cuando tenga por objeto la toma de decisiones",
+        "Cuando el tratamiento tenga por objeto la mercadotecnia directa, el interesado podrá oponerse en todo momento, incluida la elaboración de perfiles relacionada",
+        "El interesado podrá oponerse cuando el tratamiento tenga por objeto la elaboración de listas personalizadas",
+        "Ninguna es correcta"
+      ],
+      "c": 1,
+      "e": "El art. 21.2 RGPD establece expresamente que cuando el tratamiento tenga por objeto la mercadotecnia directa, el interesado tendrá derecho a oponerse en todo momento, incluida la elaboración de perfiles relacionada. Este es el único supuesto con derecho de oposición absoluto e incondicionado."
+    },
+    {
+      "q": "Señale la respuesta correcta sobre la AEPD según el artículo 45 de la LOPDGDD:",
+      "o": [
+        "El Congreso de los Diputados, a propuesta del Gobierno, aprobará su Estatuto mediante ley",
+        "El Gobierno, a propuesta de la AEPD, aprobará su Estatuto mediante real decreto",
+        "La AEPD, a propuesta del Gobierno, aprobará su Estatuto mediante reglamento",
+        "Ninguna es correcta"
+      ],
+      "c": 1,
+      "e": "El art. 45.9 LOPDGDD establece que el Gobierno, a propuesta de la Agencia Española de Protección de Datos, aprobará su Estatuto mediante real decreto."
+    },
+    {
+      "q": "Según el RGPD, ¿qué término corresponde a 'datos personales obtenidos a partir de un tratamiento técnico específico, relativos a características físicas, fisiológicas o conductuales que permitan la identificación única de una persona, como imágenes faciales o datos dactiloscópicos'?",
+      "o": [
+        "Datos genéticos",
+        "Datos biométricos",
+        "Datos relativos a la salud",
+        "Datos morfológicos"
+      ],
+      "c": 1,
+      "e": "El art. 4.14 RGPD define 'datos biométricos' exactamente así: datos obtenidos a partir de un tratamiento técnico específico relativos a características físicas, fisiológicas o conductuales que permiten la identificación única, como imágenes faciales o huellas dactilares."
+    },
+    {
+      "q": "Según el RGPD, el tratamiento solo será lícito si se cumple al menos una condición. Señale la FALSA:",
+      "o": [
+        "El interesado dio su consentimiento para uno o varios fines específicos",
+        "El tratamiento es necesario para el cumplimiento de una obligación legal del responsable",
+        "El tratamiento es necesario para una misión en interés privado o en el ejercicio de poderes públicos",
+        "El tratamiento es necesario para la ejecución de un contrato en que el interesado es parte"
+      ],
+      "c": 2,
+      "e": "El art. 6.1.e) RGPD establece como base lícita el tratamiento necesario para 'el cumplimiento de una misión realizada en interés público o en el ejercicio de poderes públicos conferidos al responsable'. El 'interés privado' no es una base de licitud del art. 6 RGPD, por lo que la opción C es falsa."
+    },
+    {
+      "q": "Según el RGPD, ¿qué término corresponde a 'toda forma de tratamiento automatizado de datos personales consistente en utilizar datos personales para evaluar determinados aspectos personales de una persona física'?",
+      "o": [
+        "Seudonimización",
+        "Tratamiento",
+        "Elaboración de perfiles",
+        "Disociación"
+      ],
+      "c": 2,
+      "e": "El art. 4.4 RGPD define 'elaboración de perfiles' como toda forma de tratamiento automatizado de datos personales que evalúe aspectos personales de una persona física, en particular para analizar o predecir su rendimiento, situación económica, salud, preferencias, intereses, comportamiento, etc."
+    },
+    {
+      "q": "Según el RGPD, ¿qué término corresponde a 'el tratamiento de datos personales de manera tal que ya no puedan atribuirse a un interesado sin utilizar información adicional'?",
+      "o": [
+        "Disociación",
+        "Seudonimización",
+        "Elaboración de perfiles ocultos",
+        "Tratamiento de datos de terceros"
+      ],
+      "c": 1,
+      "e": "El art. 4.5 RGPD define 'seudonimización' como el tratamiento de datos de forma que ya no puedan atribuirse a un interesado sin usar información adicional, siempre que dicha información adicional figure por separado y esté sujeta a medidas técnicas y organizativas."
+    },
+    {
+      "q": "El Consejo Consultivo de la AEPD estará compuesto por Senadores propuestos por el Senado. ¿Cuántos?",
+      "o": [
+        "Un Senador",
+        "Dos Senadores",
+        "Tres Senadores",
+        "Cuatro Senadores"
+      ],
+      "c": 0,
+      "e": "Según el art. 50 LOPDGDD, el Consejo Consultivo de la AEPD incluye un Senador propuesto por el Senado."
+    },
+    {
+      "q": "Según el artículo 14 del RGPD, cuando los datos no se hayan obtenido del interesado, señale la información que NO debe facilitarse:",
+      "o": [
+        "El derecho a presentar una reclamación ante una autoridad de control",
+        "La fuente de la que proceden los datos y si proceden de fuentes de acceso público",
+        "La existencia de decisiones automatizadas, incluida la elaboración de perfiles",
+        "La existencia de una relación contractual que permita al encargado usar los datos con fines comerciales"
+      ],
+      "c": 3,
+      "e": "El art. 14 RGPD no contempla informar sobre ninguna 'relación contractual que permita al encargado usar datos con fines comerciales'. Las opciones A, B y C sí están recogidas en el art. 14.2 RGPD como información obligatoria."
+    },
+    {
+      "q": "El tratamiento de datos personales relativos a condenas e infracciones penales para fines distintos de los penales solo podrá llevarse a cabo cuando:",
+      "o": [
+        "Se encuentre amparado en el Derecho de la Unión Europea",
+        "Se encuentre amparado en la Ley Orgánica de Protección de Datos",
+        "Se encuentre amparado en una norma de rango legal",
+        "Todas son correctas"
+      ],
+      "c": 3,
+      "e": "El art. 10 RGPD y el art. 10 LOPDGDD establecen que el tratamiento de datos penales para fines distintos de los propios del proceso penal requiere amparo en el Derecho de la UE o en una norma de rango legal. Las tres opciones son válidas en su contexto respectivo."
+    },
+    {
+      "q": "Corresponde a la Presidencia de la AEPD autorizar las modificaciones presupuestarias que impliquen hasta ______ de la cifra inicial de su presupuesto total de gastos:",
+      "o": [
+        "Un tres por ciento",
+        "Un cinco por ciento",
+        "Un siete por ciento",
+        "Un diez por ciento"
+      ],
+      "c": 1,
+      "e": "El art. 45.3 LOPDGDD establece que la Presidencia de la AEPD podrá autorizar modificaciones presupuestarias de hasta el 5% de la cifra inicial del presupuesto total de gastos, siempre que no se incrementen los créditos para gastos de personal."
+    },
+    {
+      "q": "Según el RGPD, el interesado tiene derecho de acceso a sus datos y a determinada información. Señale cuál de las siguientes opciones NO forma parte de esa información:",
+      "o": [
+        "Los fines del tratamiento",
+        "Las categorías de datos personales de que se trate",
+        "Los destinatarios o categorías de destinatarios a los que se comunicaron los datos",
+        "La indicación de que podrán usar sus datos, una vez disociados, para fines comerciales"
+      ],
+      "c": 3,
+      "e": "El art. 15 RGPD regula el derecho de acceso y no contempla ninguna indicación sobre uso comercial de datos disociados. Las opciones A, B y C sí forman parte de la información que el responsable debe proporcionar al ejercer el derecho de acceso."
+    },
+    {
+      "q": "Según el RGPD, ¿qué término corresponde a 'toda información sobre una persona física identificada o identificable'?",
+      "o": [
+        "Fichero",
+        "Datos personales",
+        "Información personal",
+        "Datos de terceros"
+      ],
+      "c": 1,
+      "e": "El art. 4.1 RGPD define 'datos personales' como toda información sobre una persona física identificada o identificable. La persona identificable es aquella que puede ser determinada directa o indirectamente, en particular por un identificador."
+    },
+    {
+      "q": "Según el artículo 14 del RGPD, cuando los datos no se hayan obtenido del interesado, señale la información que NO debe facilitarse obligatoriamente:",
+      "o": [
+        "La normativa por la cual queda afectado el tratamiento, así como su justificación inequívoca y transparente",
+        "El plazo durante el cual se conservarán los datos o los criterios para determinarlo",
+        "La existencia del derecho a solicitar acceso, rectificación, supresión, limitación y portabilidad",
+        "El derecho a presentar una reclamación ante una autoridad de control"
+      ],
+      "c": 0,
+      "e": "El art. 14 RGPD no exige informar sobre la 'normativa que afecta al tratamiento con justificación inequívoca'. Sí exige el plazo de conservación (B), los derechos del interesado (C) y el derecho de reclamación (D). La opción A describe una obligación inexistente en el texto del RGPD."
+    },
+    {
+      "q": "Señale la respuesta correcta sobre el derecho de supresión según el artículo 17 del RGPD:",
+      "o": [
+        "El interesado tendrá derecho a obtener sin dilación indebida la supresión, y el responsable estará obligado a suprimir sin dilación cuando concurran las condiciones del RGPD",
+        "El interesado tendrá derecho a obtener en el plazo máximo de 15 días la supresión de sus datos",
+        "El interesado tendrá derecho a obtener en el plazo máximo de veinte días la supresión de sus datos",
+        "El interesado tendrá derecho a obtener en el plazo máximo de un mes la supresión de sus datos"
+      ],
+      "c": 0,
+      "e": "El art. 17 RGPD no fija un plazo concreto de días para la supresión: establece que el responsable deberá suprimir los datos 'sin dilación indebida' cuando concurra alguno de los supuestos previstos. Los plazos de respuesta al ejercicio de derechos están en el art. 12 RGPD (un mes, prorrogable)."
+    },
+    {
+      "q": "Uno de los principios relativos al tratamiento de datos según el RGPD establece que los datos personales serán recogidos con fines determinados, ______ y legítimos, y no serán tratados de manera incompatible con dichos fines:",
+      "o": [
+        "Implícitos",
+        "Explícitos",
+        "Con fines determinados, explícitos y legítimos, pero referido al tratamiento, no a la recogida",
+        "Con fines determinados, explícitos y legítimos, pero no serán recogidos de manera incompatible"
+      ],
+      "c": 1,
+      "e": "El art. 5.1.b) RGPD establece el principio de limitación de la finalidad: los datos serán 'recogidos con fines determinados, explícitos y legítimos, y no serán tratados ulteriormente de manera incompatible con dichos fines'. El término exacto es 'explícitos', no 'implícitos'."
+    }
+  ]
+}

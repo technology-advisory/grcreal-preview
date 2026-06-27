@@ -1,0 +1,326 @@
+{
+  "sections": [
+    {
+      "title": "1. Ámbito de aplicación — ¿Nos afecta NIS2?",
+      "pymeTitle": "Lo primero: saber si entramos o no",
+      "items": [
+        {
+          "code": "1.1",
+          "difficulty": "facil",
+          "text": "¿La organización pertenece a alguno de los sectores críticos (energía, banca, salud, transporte, agua, digital, administración pública)?",
+          "pymeText": "¿Estás en un sector importante como energía, banca, salud o transporte?",
+          "tooltip": "📌 ¿Qué sectores están dentro? Energía (luz, gas, petróleo), transporte (aviones, trenes, barcos, carreteras), banca y seguros, salud (hospitales, laboratorios, fabricantes de medicamentos), agua potable y residual, administración pública, empresas que gestionan internet o datos en la nube, tiendas online grandes, correo y paquetería, fabricación industrial, química, alimentación, automoción y defensa. 🔴 Si estás en uno de estos sectores y no lo sabías, ya estás incumpliendo. Averígualo esta semana."
+        },
+        {
+          "code": "1.2",
+          "difficulty": "facil",
+          "text": "¿La organización supera los 50 empleados o los 10 millones de euros de facturación anual?",
+          "pymeText": "¿Tienes más de 50 empleados o facturas más de 10 millones al año?",
+          "tooltip": "📌 ¿A quién aplica? La ley está pensada para medianas y grandes empresas: más de 50 empleados o más de 10 millones de euros al año. Excepción importante: si tu empresa es pequeña pero trabaja para hospitales, bancos o administraciones públicas, también puedes quedar dentro. 🔴 Si superas esos números, estás obligado. No saberlo no es excusa ante el regulador, y las multas son personales."
+        },
+        {
+          "code": "1.3",
+          "difficulty": "facil",
+          "text": "¿Conoce la clasificación de su organización como 'entidad esencial' o 'entidad importante'?",
+          "pymeText": "¿Sabes si eres 'esencial' o 'importante' para la ley?",
+          "tooltip": "📌 ¿Qué diferencia hay? Entidad Esencial: energía, banca, salud, transporte, agua y administración pública. Las inspeccionan más, las multan más y los plazos para avisar de un ataque son más estrictos. Entidad Importante: el resto de sectores obligados. Menos presión inspectora, pero las obligaciones son las mismas. 🔴 Si no sabes en qué categoría estás, pregunta a tu asesor jurídico o al organismo regulador de tu sector. No saberlo es un riesgo real."
+        },
+        {
+          "code": "1.4",
+          "difficulty": "facil",
+          "text": "¿Se ha evaluado si la organización actúa como proveedor crítico de otras entidades sujetas a NIS2?",
+          "pymeText": "¿Tus clientes dependen de ti para servicios esenciales? Podrías entrar por la puerta de atrás.",
+          "tooltip": "📌 ¿Por qué importa? La ley obliga a las grandes empresas a asegurarse de que sus proveedores también cumplen. Si prestas servicios de informática, mantenimiento de sistemas o gestión de datos a un hospital, un banco o una empresa de energía, tu cliente tiene la obligación de exigirte que cumplas NIS2. 🔴 Si no cumples, pierdes el contrato. Y si tu fallo causa un problema a tu cliente, puedes ser responsable de los daños. Revisa con quién trabajas y qué les estás dando."
+        }
+      ]
+    },
+    {
+      "title": "2. Responsabilidad personal del directivo — LO MÁS IMPORTANTE",
+      "pymeTitle": "Tu responsabilidad personal — esto va para ti",
+      "items": [
+        {
+          "code": "2.1",
+          "difficulty": "facil",
+          "text": "¿Es consciente de que la responsabilidad por el cumplimiento de NIS2 es personal e indelegable?",
+          "pymeText": "¿Sabes que tú respondes personalmente, aunque delegues en el de informática?",
+          "tooltip": "📌 ¿Qué dice la ley? La ley señala directamente al consejo de administración, al director general y a los administradores. No al equipo de informática, no al responsable de sistemas. A ti. Delegar la ejecución está bien. Delegar la responsabilidad, no. Tienes que supervisar activamente que se hace lo que hay que hacer. 🔴 Si hay un ataque grave y no puedes demostrar que supervisaste, te sancionan a ti personalmente. No solo a la empresa. A ti."
+        },
+        {
+          "code": "2.2",
+          "difficulty": "facil",
+          "text": "¿Conoce las sanciones personales que puede recibir? (Multas de hasta 10M€ y posible inhabilitación)",
+          "pymeText": "¿Sabes que te pueden multar con hasta 10 millones y hasta prohibirte ser directivo?",
+          "tooltip": "📌 ¿Cuánto pueden ser las multas? Para los sectores más críticos: hasta 10 millones de euros o el 2% de la facturación mundial del grupo. Para el resto: hasta 7 millones o el 1,4% de la facturación. Y eso es solo la multa a la empresa. 🔴 Lo que muchos no saben: además de la multa, un juez puede inhabilitarte para ser consejero o director en cualquier empresa durante años. No es solo dinero. Es tu carrera profesional."
+        },
+        {
+          "code": "2.3",
+          "difficulty": "facil",
+          "text": "¿Ha recibido formación específica en ciberseguridad adaptada a su rol directivo?",
+          "pymeText": "¿Te has formado en ciberseguridad este último año?",
+          "tooltip": "📌 ¿Qué se espera de ti? No tienes que saber configurar un servidor. Tienes que entender los riesgos, conocer tus obligaciones legales y saber qué preguntar. Con 2 o 3 horas de formación al año adaptada a directivos es suficiente para cumplir. 🔴 Lo importante es demostrarlo: si el regulador te pregunta cuándo fue tu última formación en ciberseguridad y no tienes respuesta ni certificado, eso juega en tu contra. Guarda los justificantes."
+        },
+        {
+          "code": "2.4",
+          "difficulty": "facil",
+          "text": "¿Tiene constancia por escrito (acta, informe) de que el consejo ha aprobado la estrategia de ciberseguridad?",
+          "pymeText": "¿Has firmado algún documento donde apruebas el plan de ciberseguridad?",
+          "tooltip": "📌 ¿Qué necesitas tener? El consejo tiene que aprobar formalmente el plan de ciberseguridad, el presupuesto y las principales decisiones de seguridad. Todo eso debe quedar reflejado en un acta, con fecha y firma. Y debe revisarse al menos una vez al año. 🔴 Si hay un incidente, lo primero que pedirá el inspector son esas actas. Si no existen, se da por hecho que no hiciste nada. No es una suposición, es cómo funciona la inspección."
+        },
+        {
+          "code": "2.5",
+          "difficulty": "facil",
+          "text": "¿Existe una asignación presupuestaria específica y suficiente para ciberseguridad aprobada por la dirección?",
+          "pymeText": "¿Hay dinero destinado específicamente a ciberseguridad, aprobado por ti?",
+          "tooltip": "📌 ¿Qué significa? Tiene que haber una partida de presupuesto claramente identificada para ciberseguridad. No vale que esté mezclada con el gasto general de informática. El regulador quiere ver que la dirección ha decidido cuánto dinero dedica a protegerse. 🔴 La lógica es brutal pero clara: sin presupuesto no hay medidas, sin medidas hay incumplimiento, con incumplimiento tú pagas. Es una cadena directa."
+        },
+        {
+          "code": "2.6",
+          "difficulty": "facil",
+          "text": "¿Existe un canal para que los empleados puedan reportar problemas de seguridad sin miedo a represalias?",
+          "pymeText": "¿Pueden los empleados avisar de problemas de seguridad sin miedo a consecuencias?",
+          "tooltip": "📌 ¿Por qué importa? La mayoría de los ataques los detectan primero los propios empleados: un correo raro, el ordenador que va lento, un mensaje que no encaja. Si tienen miedo de avisar o no saben a quién decírselo, pierdes horas críticas. 📋 Cómo hacerlo: un buzón o canal específico para avisos de seguridad, que todo el mundo conozca, con garantía de que no habrá represalias por avisar aunque sea una falsa alarma. 🔴 Bonus: este mismo canal te sirve para cumplir también la Ley del Informante (Ley 2/2023). Dos obligaciones legales con una sola medida."
+        }
+      ]
+    },
+    {
+      "title": "3. Supervisión activa y gobernanza",
+      "pymeTitle": "Lo que tienes que hacer como directivo",
+      "items": [
+        {
+          "code": "3.1",
+          "difficulty": "facil",
+          "text": "¿Recibe informes sobre el estado de la ciberseguridad al menos una vez al trimestre?",
+          "pymeText": "¿Alguien te explica cada 3 meses cómo va la seguridad?",
+          "tooltip": "📌 ¿Qué exige la ley? El consejo tiene que recibir información regular sobre cómo está la seguridad: qué ha pasado, qué riesgos hay abiertos, qué se está haciendo y cuánto se está gastando. Mínimo una vez cada tres meses. Y en un lenguaje que entiendas, no lleno de tecnicismos. 🔴 No basta con recibirlos: tienes que leerlos, discutirlos en el consejo y tomar decisiones. Y todo eso tiene que quedar reflejado en acta."
+        },
+        {
+          "code": "3.2",
+          "difficulty": "medio",
+          "text": "¿Cuestiona activamente esos informes? ¿Queda constancia de sus preguntas en acta?",
+          "pymeText": "¿Preguntas y queda registrado? Cosas como '¿y si falla este proveedor?'",
+          "tooltip": "📌 ¿Qué espera ver el regulador? No basta con recibir el informe y asentir. Tienes que hacer preguntas reales: ¿Qué pasa si este sistema falla? ¿Hemos probado el plan de emergencia? ¿Este proveedor está auditado? ¿Qué pasa si no invertimos en esto? Esas preguntas tienen que quedar escritas en el acta. 🔴 Si no hay actas con preguntas tuyas, el regulador asume que no supervisaste. Es duro, pero es así como funciona."
+        },
+        {
+          "code": "3.3",
+          "difficulty": "facil",
+          "text": "¿Tiene designado formalmente un responsable de ciberseguridad con autoridad real?",
+          "pymeText": "¿Hay alguien claramente responsable de seguridad con poder de verdad?",
+          "tooltip": "📌 ¿Qué se necesita? Una persona con responsabilidad clara sobre la seguridad de la empresa. Que tenga acceso directo al consejo cuando lo necesite, presupuesto propio y autoridad para frenar un proyecto si supone un riesgo. Que informe al consejo periódicamente. 🔴 No vale el informático que 'también lleva seguridad'. Tiene que ser un rol formal, con nombre, cargo y responsabilidad escrita. Si hay un incidente y nadie tenía ese papel definido, la responsabilidad sube directamente a ti."
+        },
+        {
+          "code": "3.4",
+          "difficulty": "facil",
+          "text": "¿El responsable de ciberseguridad tiene independencia y recursos para hacer su trabajo?",
+          "pymeText": "¿Esa persona puede hacer su trabajo sin que nadie se lo impida?",
+          "tooltip": "📌 Independencia real: El responsable de seguridad no puede depender de alguien que tenga interés en que no se hagan ciertas inversiones o que priorice la producción sobre la seguridad. Tiene que poder hablar directamente con el consejo sin que nadie filtre su mensaje. Recursos reales: personas, herramientas y dinero suficiente para hacer su trabajo. 🔴 Señal de alarma: Si esa persona te dice que lleva un año pidiendo presupuesto sin respuesta, eso es una evidencia en tu contra ante el regulador."
+        },
+        {
+          "code": "3.5",
+          "difficulty": "facil",
+          "text": "¿Existe una política de gestión de riesgos aprobada por la dirección?",
+          "pymeText": "¿Tienes un documento donde se identifican los riesgos de seguridad?",
+          "tooltip": "📌 ¿Qué tiene que tener? Un documento que diga cuáles son los activos más importantes de la empresa, qué amenazas hay sobre ellos, qué probabilidad tienen de materializarse, qué se hace para reducirlas y qué riesgo se asume conscientemente. Tiene que estar aprobado por el consejo y revisarse cada año. 🔴 Punto clave: cuando el consejo decide asumir un riesgo en lugar de invertir en eliminarlo, esa decisión tiene que quedar en acta. Si después hay un problema con ese riesgo, al menos demuestras que lo conocías y lo gestionaste."
+        },
+        {
+          "code": "3.6",
+          "difficulty": "medio",
+          "text": "¿Se revisa anualmente si las medidas de seguridad que tenéis realmente funcionan?",
+          "pymeText": "¿Comprobáis cada año si lo que tenéis montado realmente funciona?",
+          "tooltip": "📌 ¿Qué significa revisar que funciona? No basta con tener cosas puestas. Tienes que comprobar que sirven: que las copias de seguridad se pueden restaurar, que los empleados no caen en correos trampa, que los accesos de quien ya no trabaja aquí están eliminados. 🔴 Los sistemas se quedan obsoletos y las amenazas cambian. Una medida que funcionaba hace dos años puede ser inútil hoy. La revisión anual es obligatoria y tiene que documentarse. Si no está escrito, no ocurrió."
+        }
+      ]
+    },
+    {
+      "title": "4. Gestión de riesgos y activos críticos",
+      "pymeTitle": "Lo que hay que proteger",
+      "items": [
+        {
+          "code": "4.1",
+          "difficulty": "facil",
+          "text": "¿La organización tiene inventariados sus activos críticos (sistemas, datos, servicios)?",
+          "pymeText": "¿Tienes una lista de lo más importante (servidores, datos de clientes, facturación)?",
+          "tooltip": "📌 ¿Qué son activos críticos? Todo aquello sin lo que la empresa no puede funcionar: el sistema de facturación, la base de datos de clientes, el software de gestión, los datos financieros, los contratos. También los servicios que si se caen, paran el negocio. 🔴 Si no tienes esa lista, no puedes proteger lo que tienes. Es el primer paso de cualquier plan de seguridad. Y si viene una inspección, es lo primero que te van a pedir."
+        },
+        {
+          "code": "4.2",
+          "difficulty": "medio",
+          "text": "¿Se ha evaluado el riesgo que suponen los proveedores externos (informática, nube, mantenimiento)?",
+          "pymeText": "¿Has mirado si tus proveedores informáticos son seguros o son un problema?",
+          "tooltip": "📌 ¿Por qué importa? Un ataque a tu proveedor de software, a quien te hace el mantenimiento o a quien guarda tus datos puede afectarte a ti igual que si te atacan directamente. La ley lo sabe y te obliga a revisarlo. 📋 Qué hacer: identifica los proveedores de los que más dependes, pídeles que demuestren que tienen la seguridad en orden (certificaciones, auditorías), incluye obligaciones de seguridad en los contratos. 🔴 Un proveedor con problemas de seguridad es tu problema. Si algo falla por su culpa, el regulador igualmente vendrá a por ti."
+        },
+        {
+          "code": "4.3",
+          "difficulty": "medio",
+          "text": "¿Los contratos con proveedores críticos incluyen cláusulas de ciberseguridad?",
+          "pymeText": "¿Los contratos con proveedores dicen algo de cómo deben proteger tus datos?",
+          "tooltip": "📌 ¿Qué tienen que decir los contratos? Que el proveedor tiene que cumplir unos estándares de seguridad, que tiene que avisarte si sufre un incidente que te afecte, que tú puedes auditarle para comprobarlo, y que si incumple y eso te causa daños, responde. 🔴 Los contratos viejos no tienen esto. Revísalos. Renegociar un contrato lleva tiempo, pero si hay un incidente y tu contrato no dice nada sobre seguridad, quedas desprotegido tanto frente al proveedor como frente al regulador."
+        },
+        {
+          "code": "4.4",
+          "difficulty": "medio",
+          "text": "¿Existe un plan actualizado y probado para seguir operando si sufrís un ciberataque?",
+          "pymeText": "¿Tienes un plan para cuando te hackeen y lo has probado alguna vez?",
+          "tooltip": "📌 ¿Qué es este plan? Un documento que dice qué hacer cuando la empresa es atacada para minimizar el tiempo parada y la información perdida. Quién toma el mando, a qué sistemas se da prioridad, cómo se comunica con clientes y proveedores mientras se resuelve. 🔴 Lo más importante de todo: tiene que haberse probado. Un plan sin probar es papel mojado. Imagina llegar a un incendio real y que los empleados nunca hayan hecho un simulacro de evacuación. El simulacro debe documentarse."
+        },
+        {
+          "code": "4.5",
+          "difficulty": "medio",
+          "text": "¿Se hacen pruebas anuales para comprobar si los sistemas aguantan un ataque?",
+          "pymeText": "¿Alguien intenta hackearos a propósito para ver si aguantáis?",
+          "tooltip": "📌 ¿Qué tipos de pruebas hay? Revisiones de si se cumplen las políticas, intentos controlados de entrar en los sistemas para encontrar fallos antes que los atacantes, y evaluaciones del nivel general de seguridad. Todo con empresas especializadas y documentado. 🔴 Guarda los informes: un regulador te pedirá los resultados de las últimas pruebas. Si no los tienes, o son de hace más de un año, es una señal clara de que no se está haciendo lo que hay que hacer."
+        },
+        {
+          "code": "4.6",
+          "difficulty": "medio",
+          "text": "¿Los datos importantes están protegidos de forma que si alguien los roba no pueda leerlos?",
+          "pymeText": "¿Los datos importantes están cifrados cuando se envían y cuando están guardados?",
+          "tooltip": "📌 ¿Qué significa esto en la práctica? Que los datos de clientes, contratos, información financiera y otros datos sensibles viajen protegidos cuando se envían (por correo, por conexión remota) y que estén guardados de forma que si alguien roba un ordenador o accede a un servidor sin autorización, no pueda leer nada. 🔴 Si un portátil con datos de clientes desaparece y los datos no estaban protegidos así, tienes la obligación de notificar la brecha. Eso es tiempo, reputación y posibles multas. La protección evita ese escenario."
+        }
+      ]
+    },
+    {
+      "title": "5. Medidas técnicas básicas (lo mínimo exigible)",
+      "pymeTitle": "Lo técnico — lo que tiene que haber sí o sí",
+      "items": [
+        {
+          "code": "5.1",
+          "difficulty": "facil",
+          "text": "¿Se exige una segunda verificación (además de la contraseña) para acceder a los sistemas desde fuera o con permisos especiales?",
+          "pymeText": "¿Para entrar al correo o a los sistemas desde casa necesitas algo más que la contraseña?",
+          "tooltip": "📌 ¿Qué es eso en la práctica? Cuando entras a algo importante, el sistema te pide confirmar con algo más además de tu contraseña: un código que llega al móvil, una aplicación de verificación, una tarjeta. Es algo que ya conoces del banco o de Google. 📋 Dónde es obligatorio: conexiones desde fuera de la oficina, accesos de administradores, correo electrónico, sistemas financieros y cualquier sistema con datos de clientes. 🔴 Por qué es crítico: el 80% de los ataques exitosos empiezan con una contraseña robada o filtrada. Con esta segunda verificación, aunque tengan tu contraseña, no pueden entrar."
+        },
+        {
+          "code": "5.2",
+          "difficulty": "facil",
+          "text": "¿Existe una política de copias de seguridad probada periódicamente?",
+          "pymeText": "¿Haces copias de seguridad y las has probado para ver si funcionan?",
+          "tooltip": "📌 La regla básica: tres copias de los datos importantes, en dos sitios diferentes, y una de ellas fuera de la empresa (en otro servidor o en la nube). Las copias tienen que estar protegidas de forma que un ataque que cifre los sistemas no pueda cifrar también las copias. 🔴 Lo que mucha gente no hace: probar que la copia funciona de verdad. Una copia que nunca se ha probado es una copia que no existe. Prueba a restaurar datos desde la copia al menos dos veces al año y documenta que funcionó."
+        },
+        {
+          "code": "5.3",
+          "difficulty": "facil",
+          "text": "¿Se instalan las actualizaciones de seguridad del software en plazos definidos?",
+          "pymeText": "¿Actualizáis el software cuando salen parches de seguridad?",
+          "tooltip": "📌 ¿Qué son las actualizaciones de seguridad? Cuando los fabricantes de software descubren un fallo que los atacantes pueden explotar, publican un parche para corregirlo. Mientras no se instala ese parche, la puerta está abierta. 📋 Plazos razonables: los fallos más graves en menos de 3 días, los importantes en 2 semanas, el resto en 30 días. 🔴 Los mayores ciberataques de la historia (WannaCry, NotPetya) se produjeron contra empresas que no habían instalado parches disponibles desde semanas antes. Es la negligencia más fácil de probar."
+        },
+        {
+          "code": "5.4",
+          "difficulty": "medio",
+          "text": "¿Están separados los sistemas de trabajo del día a día de los servidores y sistemas críticos?",
+          "pymeText": "¿Los ordenadores normales están separados de los servidores?",
+          "tooltip": "📌 ¿Por qué separar? Si un empleado abre un correo trampa y su ordenador queda infectado, la infección no debería poder saltar directamente a los servidores con los datos de clientes o los sistemas de facturación. Separar las redes limita el daño. 🔴 Sin separación: un solo ordenador comprometido puede dar acceso a toda la empresa. Con separación, el atacante tiene que superar barreras adicionales. Es una medida técnica pero la decisión de implantarla y presupuestarla es tuya."
+        },
+        {
+          "code": "5.5",
+          "difficulty": "facil",
+          "text": "¿Cada empleado solo tiene acceso a la información que necesita para su trabajo, y nada más?",
+          "pymeText": "¿Cada empleado ve solo lo que necesita para su trabajo?",
+          "tooltip": "📌 En qué se traduce: El de contabilidad ve los datos financieros pero no los expedientes de RRHH. El comercial ve sus clientes pero no los de otros departamentos. El becario no tiene acceso a los contratos con clientes estratégicos. 🔴 Revisión periódica: Cuando alguien cambia de puesto o deja la empresa, sus accesos tienen que cambiar o eliminarse. Los accesos acumulados son uno de los problemas más frecuentes: gente que lleva años con permisos que ya no necesita. Revísalo al menos una vez al año."
+        },
+        {
+          "code": "5.6",
+          "difficulty": "medio",
+          "text": "¿Existe algún sistema que avise cuando ocurre algo anormal en los sistemas de la empresa?",
+          "pymeText": "¿Alguien o algo vigila vuestros sistemas para detectar si algo va mal?",
+          "tooltip": "📌 ¿De qué estamos hablando? De tener ojos sobre lo que pasa en los sistemas: accesos fuera de horario, alguien descargando grandes cantidades de datos, un sistema comunicándose con direcciones desconocidas. Puede ser una herramienta automática, un servicio externo o personal dedicado. 🔴 Sin vigilancia no hay reacción: la mayoría de las empresas que sufren un ataque grave lo descubren semanas o meses después. Para entonces, el daño es enorme y los plazos de notificación de NIS2 ya han vencido. Detectar rápido es lo que te permite reaccionar a tiempo."
+        }
+      ]
+    },
+    {
+      "title": "6. Gestión de incidentes y notificación",
+      "pymeTitle": "Cuando pase algo (porque pasará)",
+      "items": [
+        {
+          "code": "6.1",
+          "difficulty": "medio",
+          "text": "¿La organización tiene un plan escrito y aprobado de qué hacer si sufre un ciberataque?",
+          "pymeText": "¿Tienes un plan escrito de qué hacer si te hackean?",
+          "tooltip": "📌 ¿Qué tiene que incluir? Quién manda cuando hay un incidente (y quién le sustituye si no está), cómo se clasifica la gravedad, qué sistemas se apagan primero, cómo se recupera la operación, quién habla con clientes y proveedores y quién llama al regulador. 🔴 Tiene que estar aprobado por el consejo y revisarse cada año. Un plan que no está aprobado formalmente es como si no existiera. Y un plan que no se practica tampoco sirve de nada cuando llega el momento."
+        },
+        {
+          "code": "6.2",
+          "difficulty": "facil",
+          "text": "¿Sabe que debe notificar un incidente grave en 24 horas y presentar un informe detallado en 72 horas?",
+          "pymeText": "¿Sabes que si te hackean tienes que avisar en 24 horas?",
+          "tooltip": "📌 Los plazos exactos: Primer aviso al regulador en 24 horas desde que sabes que algo ha pasado (no hace falta saber todo, basta con avisar). Informe con detalles en 72 horas (qué pasó, qué impacto tuvo, qué estás haciendo). Informe final en el plazo de un mes. 🔴 ¿Cuándo hay que notificar? Cuando el incidente afecta gravemente a la operación, causa pérdidas económicas importantes o afecta a muchos clientes. Ante la duda, notifica siempre. Es mucho peor no notificar y que el regulador se entere por otro lado."
+        },
+        {
+          "code": "6.3",
+          "difficulty": "facil",
+          "text": "¿Tiene identificado a quién hay que avisar en caso de incidente y cómo contactar con ellos?",
+          "pymeText": "¿Tienes a mano el teléfono y el email de a quién avisar?",
+          "tooltip": "📌 ¿A quién se avisa en España? Si eres una entidad importante: a INCIBE (Instituto Nacional de Ciberseguridad). Si eres una entidad esencial o administración pública: a CCN-CERT. 🔴 Prepárate antes de que pase: Ten los contactos guardados y accesibles, define quién hace la llamada, ten preparada una plantilla básica de notificación. Cuando hay un incidente activo no es el momento de buscar teléfonos ni de redactar desde cero. Cada minuto cuenta."
+        },
+        {
+          "code": "6.4",
+          "difficulty": "medio",
+          "text": "¿Se ha realizado un simulacro de ciberataque en los últimos 12 meses?",
+          "pymeText": "¿Habéis hecho un simulacro de ciberataque este año?",
+          "tooltip": "📌 ¿Qué es un simulacro? Un ejercicio donde se simula que la empresa está siendo atacada y se activa el plan de respuesta para ver qué funciona y qué no. Puede ser una reunión donde se discute qué haríais paso a paso, o puede ser un ejercicio más real con el equipo técnico. Lo importante es practicarlo. 🔴 Documenta qué pasó, qué falló y qué hay que mejorar. Los reguladores piden evidencia de simulacros anuales. Sin ese documento, el plan de respuesta vale lo mismo que no tenerlo."
+        },
+        {
+          "code": "6.5",
+          "difficulty": "facil",
+          "text": "¿Saben todos los empleados a quién avisar si detectan algo sospechoso?",
+          "pymeText": "¿Todos los empleados saben a quién avisar si ven algo raro?",
+          "tooltip": "📌 ¿Por qué importa? Los primeros en detectar un ataque casi siempre son los empleados: un correo que parece raro, el ordenador que va muy lento, un mensaje que pide datos inusuales, archivos que han desaparecido. Si no saben a quién contárselo, pierdes tiempo crítico. 📋 Qué hace falta: un correo o teléfono de aviso que todo el mundo conozca, y la garantía de que avisar no acarrea consecuencias si resulta ser una falsa alarma. 🔴 Cultura de aviso sin miedo: más vale diez falsas alarmas que un ataque silencioso durante semanas."
+        },
+        {
+          "code": "6.6",
+          "difficulty": "medio",
+          "text": "¿Se anota todo lo que pasa en materia de seguridad, aunque parezca menor?",
+          "pymeText": "¿Apuntáis todos los problemas de seguridad, aunque parezcan pequeños?",
+          "tooltip": "📌 ¿Por qué registrar también los pequeños? Muchos ataques grandes empiezan con señales pequeñas que nadie conectó entre sí. Un registro de incidentes permite ver patrones que de otra forma pasan desapercibidos. Además, el regulador puede pedirte ese historial para ver si tienes capacidad real de detectar problemas. 🔴 Qué tiene que incluir cada anotación: cuándo pasó, qué fue, qué sistemas afectó, qué se hizo para resolverlo y qué se aprendió. Sin registro no hubo incidente. Con registro, demuestras que la empresa está encima de su seguridad."
+        }
+      ]
+    },
+    {
+      "title": "7. Evidencias y documentación — SIN PAPELES NO EXISTE",
+      "pymeTitle": "Los papeles — sin esto, no pasó",
+      "items": [
+        {
+          "code": "7.1",
+          "difficulty": "facil",
+          "text": "¿Todas las políticas de ciberseguridad están documentadas, aprobadas y fechadas por la dirección?",
+          "pymeText": "¿Todo lo que has aprobado está firmado y con fecha?",
+          "tooltip": "📌 ¿Qué documentos tienen que existir? El plan de seguridad general, las reglas sobre quién accede a qué, el plan de respuesta a incidentes, el plan de continuidad si hay un ataque, y las normas de uso de equipos y datos. Cada uno con fecha de aprobación, versión y firma del responsable del consejo. 🔴 Sin firma no hay aprobación. Sin fecha, no se puede demostrar que estaba vigente cuando ocurrió algo. Y todo tiene que revisarse al menos una vez al año."
+        },
+        {
+          "code": "7.2",
+          "difficulty": "facil",
+          "text": "¿Se conservan las actas de las reuniones donde el consejo trató temas de ciberseguridad?",
+          "pymeText": "¿Queda escrito que hablasteis de seguridad en las reuniones del consejo?",
+          "tooltip": "📌 ¿Qué tiene que aparecer en el acta? La fecha, quién asistió, que se habló de seguridad, qué informes se recibieron, qué preguntas se hicieron, qué decisiones se tomaron y qué presupuestos o planes se aprobaron. 🔴 El acta es tu escudo: En una inspección, el regulador pedirá las actas de los últimos años. Si no hay ninguna que mencione la ciberseguridad, asumirá que el consejo nunca se ocupó del tema. Si hay actas con debate y decisiones, demuestra que sí lo hiciste."
+        },
+        {
+          "code": "7.3",
+          "difficulty": "medio",
+          "text": "¿Puede presentar toda la documentación requerida ante un regulador en menos de 24 horas?",
+          "pymeText": "¿Si viene un inspector, puedes enseñarle todo en menos de un día?",
+          "tooltip": "📌 ¿Qué van a pedirte? Los planes y políticas aprobados, las actas del consejo donde se trató la seguridad, los informes de las últimas auditorías o pruebas de ataque, el registro de formación de los directivos, los contratos con proveedores críticos, el plan de continuidad y los documentos de los simulacros realizados. 🔴 Si tardas más de un día en reunirlo, o si no sabes dónde está, eso ya es un problema. Necesitas un repositorio ordenado, con acceso rápido, y que alguien sepa exactamente qué hay y dónde."
+        },
+        {
+          "code": "7.4",
+          "difficulty": "facil",
+          "text": "¿Existe un registro de que los directivos y el personal clave han recibido formación en ciberseguridad?",
+          "pymeText": "¿Tienes los certificados de que te has formado?",
+          "tooltip": "📌 ¿Quién tiene que formarse y cuánto? El consejo de administración: mínimo 2 o 3 horas al año, adaptadas a su rol. El responsable de seguridad y el equipo técnico: formación más específica y actualizada. Todos los empleados: al menos una sesión anual básica sobre cómo no caer en ataques. 🔗 Evidencia que necesitas: certificados de asistencia, diplomas de cursos online, actas de sesiones internas de formación, resultados de simulacros de correos trampa. 🔴 El regulador querrá ver que TODOS se han formado, no solo algunos. Uno sin formar es un punto débil documentado."
+        },
+        {
+          "code": "7.5",
+          "difficulty": "medio",
+          "text": "¿Se realizan revisiones internas o externas periódicas para comprobar que se cumple todo lo exigido?",
+          "pymeText": "¿Alguien externo o interno revisa que se cumple todo esto?",
+          "tooltip": "📌 Revisión interna: alguien de la empresa, pero independiente del área de seguridad, comprueba al menos una vez al año que las políticas se aplican, los controles funcionan y la documentación está en orden. Revisión externa: una empresa especializada hace lo mismo cada dos años o cuando el regulador lo exija. 📋 Qué se mira: que lo que dice el papel se hace de verdad, que los sistemas funcionan como deberían y que los registros reflejan la realidad. 🔴 Autoevaluarse no basta. El regulador sabe que quien se examina a sí mismo siempre aprueba. Una revisión externa independiente es lo que da credibilidad real."
+        },
+        {
+          "code": "7.6",
+          "difficulty": "medio",
+          "text": "¿Los documentos y registros que os protegen están guardados de forma segura y sin riesgo de que desaparezcan?",
+          "pymeText": "¿Los papeles y registros que te protegen están guardados de forma que nadie pueda borrarlos?",
+          "tooltip": "📌 ¿Por qué importa? Si tienes toda la documentación pero cualquiera puede borrarla o modificarla, no vale de nada. Un atacante puede destruir las evidencias. Un error puede eliminar el historial. Los documentos que te protegen necesitan estar en un sitio con acceso restringido, con copias en otro lugar, y con un registro de quién accedió a ellos y cuándo. 🔴 En una inspección o en un litigio: un documento que no puede demostrarse que no ha sido alterado tiene mucho menos valor. Esto se aplica también a los registros de actividad de los sistemas: tienen que estar guardados de forma que nadie pueda manipularlos."
+        }
+      ]
+    }
+  ]
+}

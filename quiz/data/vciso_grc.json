@@ -1,0 +1,337 @@
+{
+  "titulo": "vCISO / GRC",
+  "tema": "Gobierno · Riesgo · Cumplimiento",
+  "descripcion": "El rol del vCISO, gobierno de la seguridad, gestión de riesgos, cumplimiento normativo y estrategia de seguridad.",
+  "preguntas": [
+    {
+      "q": "¿Qué significa la sigla vCISO?",
+      "o": [
+        "Virtual Chief Information Security Officer",
+        "Verified Cybersecurity Intelligence Organization",
+        "Vulnerability Control and Security Operations",
+        "Very Certified ISO Officer"
+      ],
+      "c": 0,
+      "e": "vCISO (Virtual CISO) es un profesional de seguridad externo que actúa como el Chief Information Security Officer de una organización de forma remota o parcial."
+    },
+    {
+      "q": "¿Cuál es la principal ventaja de contratar un vCISO para una PYME?",
+      "o": [
+        "Tener un CISO a tiempo completo en oficina",
+        "Acceso a experiencia senior a un costo menor que un CISO interno",
+        "Eliminar la necesidad de tener un equipo de seguridad",
+        "Certificar ISO 27001 automáticamente"
+      ],
+      "c": 1,
+      "e": "Un vCISO aporta experiencia de nivel ejecutivo a un costo fraccional, ideal para PYMEs que no pueden permitirse un CISO a tiempo completo."
+    },
+    {
+      "q": "Según ISO 27001, ¿qué responsabilidad NO debe delegarse a un vCISO externo?",
+      "o": [
+        "La redacción de políticas de seguridad",
+        "La ejecución de análisis de riesgos",
+        "La aprobación final del presupuesto y la rendición de cuentas ante el consejo",
+        "La gestión de incidentes menores"
+      ],
+      "c": 2,
+      "e": "La responsabilidad final sobre la seguridad recae en la alta dirección (cláusula 5.1). El vCISO asesora, pero el presupuesto y la aprobación final son del consejo."
+    },
+    {
+      "q": "¿Qué documento es la piedra angular del gobierno de la seguridad?",
+      "o": [
+        "El registro de incidentes",
+        "La política de seguridad de la información",
+        "El inventario de activos",
+        "El plan de comunicación"
+      ],
+      "c": 1,
+      "e": "La política de seguridad es el documento fundacional que establece el compromiso de la dirección y los principios de gobierno del SGSI."
+    },
+    {
+      "q": "¿Qué significa GRC en el contexto de la seguridad?",
+      "o": [
+        "Governance, Risk and Compliance",
+        "Global Response Center",
+        "General Reporting Code",
+        "Guarded Resource Control"
+      ],
+      "c": 0,
+      "e": "GRC (Governance, Risk & Compliance) integra gobierno corporativo, gestión de riesgos y cumplimiento normativo en una sola estrategia."
+    },
+    {
+      "q": "¿Qué función NO corresponde típicamente a un vCISO?",
+      "o": [
+        "Definir la estrategia de seguridad",
+        "Gestionar el programa de cumplimiento normativo",
+        "Programar parches en servidores",
+        "Reportar el estado de la seguridad al consejo"
+      ],
+      "c": 2,
+      "e": "El vCISO tiene un rol estratégico y de gobierno. La operación (como parchear servidores) corresponde a equipos técnicos de TI o SOC."
+    },
+    {
+      "q": "¿Qué marco de gobierno de TI es ampliamente utilizado junto con ISO 27001?",
+      "o": [
+        "ITIL",
+        "COBIT",
+        "TOGAF",
+        "SCRUM"
+      ],
+      "c": 1,
+      "e": "COBIT (Control Objectives for Information and Related Technologies) es el marco de gobierno de TI más utilizado, complementario a ISO 27001."
+    },
+    {
+      "q": "Según la cláusula 5.1 de ISO 27001, la alta dirección debe:",
+      "o": [
+        "Ejecutar los controles técnicos",
+        "Demostrar liderazgo y compromiso con el SGSI",
+        "Realizar auditorías internas",
+        "Responder a incidentes de seguridad"
+      ],
+      "c": 1,
+      "e": "La cláusula 5.1 exige que la dirección demuestre liderazgo, apruebe la política y asigne recursos para el SGSI."
+    },
+    {
+      "q": "¿Qué es el 'modelo de las tres líneas' en el gobierno de riesgos?",
+      "o": [
+        "Tres firewalls en cascada",
+        "Modelo de gestión de riesgos con tres roles: operaciones, supervisión y auditoría",
+        "Tres niveles de backups",
+        "Tres tipos de cifrado"
+      ],
+      "c": 1,
+      "e": "El modelo de las Tres Líneas define: 1ª Línea (gestión operativa), 2ª Línea (supervisión de riesgos y compliance) y 3ª Línea (auditoría interna)."
+    },
+    {
+      "q": "En una estrategia GRC efectiva, ¿cuál es el peso relativo de la tecnología frente a personas y procesos?",
+      "o": [
+        "100%, la tecnología lo es todo",
+        "La tecnología es el elemento más importante, por encima de personas y procesos",
+        "La tecnología es un facilitador; personas y procesos son la parte más crítica y representan la mayor parte del esfuerzo",
+        "El peso es exactamente igual entre tecnología, personas y procesos"
+      ],
+      "c": 2,
+      "e": "El GRC efectivo se construye principalmente sobre personas y procesos. La tecnología es un habilitador, no el fin. Un programa de compliance sin cultura y procesos sólidos fracasa independientemente de las herramientas."
+    },
+    {
+      "q": "¿Qué documento define los controles que una organización ha decidido implementar y justifica las exclusiones?",
+      "o": [
+        "Política de seguridad",
+        "Declaración de Aplicabilidad (SoA - Statement of Applicability)",
+        "Registro de riesgos",
+        "Plan de tratamiento de riesgos"
+      ],
+      "c": 1,
+      "e": "El SoA (Statement of Applicability) es un documento obligatorio en ISO 27001 que lista los controles del Anexo A aplicables, justificando inclusiones y exclusiones."
+    },
+    {
+      "q": "¿Qué es un KPI en el contexto de la gobernanza de seguridad?",
+      "o": [
+        "Key Performance Indicator, indicador de desempeño para medir la efectividad del SGSI",
+        "Kernel Protection Interface",
+        "Knowledge Process Integration",
+        "Key Policy Instruction"
+      ],
+      "c": 0,
+      "e": "Los KPIs (Indicadores Clave de Rendimiento) miden la efectividad del SGSI, como % de controles operativos, tiempo medio de respuesta a incidentes, etc."
+    },
+    {
+      "q": "¿Qué organismo internacional publicó el marco de gobierno de TI COBIT?",
+      "o": [
+        "ISO",
+        "NIST",
+        "ISACA",
+        "IEC"
+      ],
+      "c": 2,
+      "e": "ISACA (Information Systems Audit and Control Association) es la entidad que mantiene y publica el marco COBIT."
+    },
+    {
+      "q": "¿Qué debe contener un informe de estado de la seguridad para el consejo de administración?",
+      "o": [
+        "Detalle técnico de todos los parches aplicados",
+        "KPIs, estado del riesgo, incidentes relevantes y hoja de ruta estratégica",
+        "Listado de empleados con acceso administrador",
+        "Código fuente de las aplicaciones"
+      ],
+      "c": 1,
+      "e": "Un informe ejecutivo debe ser conciso y estratégico: KPIs, apetito de riesgo, incidentes materiales y próximos pasos. El detalle técnico es para equipos operativos."
+    },
+    {
+      "q": "¿Qué es el 'apetito de riesgo' en una organización?",
+      "o": [
+        "La cantidad máxima de rescate que pagarían por ransomware",
+        "El nivel de riesgo que la organización está dispuesta a aceptar para alcanzar sus objetivos",
+        "El presupuesto anual de seguridad",
+        "El número de empleados del área de seguridad"
+      ],
+      "c": 1,
+      "e": "El apetito de riesgo es el nivel de riesgo que la dirección está dispuesta a tolerar en busca de objetivos estratégicos. Guía todas las decisiones de seguridad."
+    },
+    {
+      "q": "¿Qué rol suele reportar funcionalmente al Comité de Auditoría y al Consejo?",
+      "o": [
+        "El Administrador de Sistemas",
+        "El CISO o vCISO",
+        "El Técnico de Helpdesk",
+        "El Desarrollador Senior"
+      ],
+      "c": 1,
+      "e": "El CISO reporta regularmente al consejo o comité de auditoría sobre el estado de la seguridad, riesgos y cumplimiento normativo."
+    },
+    {
+      "q": "¿Qué es el 'risk register' o registro de riesgos?",
+      "o": [
+        "Un antivirus",
+        "Un documento que identifica, evalúa y da seguimiento a los riesgos de seguridad",
+        "Un firewall de nueva generación",
+        "Un backup de los servidores"
+      ],
+      "c": 1,
+      "e": "El registro de riesgos es un documento vivo que lista los riesgos identificados, su probabilidad, impacto, tratamiento y responsable del seguimiento."
+    },
+    {
+      "q": "¿Qué habilidad es más crítica para un vCISO eficaz?",
+      "o": [
+        "Saber programar en Python",
+        "Capacidad de comunicación con la alta dirección y habilidades de influencia",
+        "Administrar servidores Linux",
+        "Configurar firewalls"
+      ],
+      "c": 1,
+      "e": "Un vCISO debe traducir riesgos técnicos al lenguaje del negocio e influir en la dirección para obtener recursos y aprobaciones. Sin esa capacidad, el conocimiento técnico no llega al consejo."
+    },
+    {
+      "q": "¿Qué es un 'comité de dirección de seguridad' o 'Steering Committee'?",
+      "o": [
+        "El equipo de respuesta a incidentes",
+        "Un grupo de directivos que supervisa la estrategia de seguridad y aprueba inversiones",
+        "El equipo de auditoría interna",
+        "El departamento de TI"
+      ],
+      "c": 1,
+      "e": "El Comité de Dirección de Seguridad incluye directivos de negocio que validan la estrategia, aprueban presupuestos y toman decisiones sobre riesgos."
+    },
+    {
+      "q": "¿Qué normativa española regula la seguridad de las tecnologías de la información en la administración pública?",
+      "o": [
+        "LOPDGDD",
+        "ENS (Esquema Nacional de Seguridad)",
+        "Ley de Servicios Digitales",
+        "Ley de Telecomunicaciones"
+      ],
+      "c": 1,
+      "e": "El ENS (Esquema Nacional de Seguridad), regulado por el Real Decreto 311/2022, es de obligado cumplimiento para administraciones públicas y proveedores de servicios digitales públicos."
+    },
+    {
+      "q": "¿Cuál es el propósito principal de un programa de concientización en seguridad?",
+      "o": [
+        "Formar expertos en seguridad",
+        "Reducir el riesgo de error humano, el principal vector de incidentes",
+        "Certificar a los empleados",
+        "Reemplazar los controles técnicos"
+      ],
+      "c": 1,
+      "e": "El error humano es la causa principal de brechas. La concientización reduce el riesgo de phishing, uso indebido de credenciales y malas prácticas."
+    },
+    {
+      "q": "¿Qué documento debe aprobar la dirección antes de implementar un SGSI?",
+      "o": [
+        "El registro de incidentes",
+        "La política de seguridad y la asignación de recursos",
+        "El manual de procedimientos técnicos",
+        "El código fuente"
+      ],
+      "c": 1,
+      "e": "La dirección debe aprobar la política de seguridad (cláusula 5.2) y asignar los recursos necesarios (cláusula 7.1) antes de iniciar la implementación."
+    },
+    {
+      "q": "¿Qué es un 'Data Protection Officer' (DPO) y en qué normativa es obligatorio?",
+      "o": [
+        "Un técnico de backups, obligatorio en ISO 27001",
+        "Un responsable de protección de datos, obligatorio en GDPR (RGPD) para ciertas organizaciones",
+        "Un auditor interno de ISO 27001",
+        "Un gestor de incidentes de seguridad"
+      ],
+      "c": 1,
+      "e": "El DPO es una figura obligatoria en el RGPD para autoridades públicas y organizaciones que traten datos sensibles o realicen vigilancia a gran escala."
+    },
+    {
+      "q": "¿Qué métrica mide el tiempo que tarda la organización en detectar un incidente?",
+      "o": [
+        "MTTD (Mean Time To Detect)",
+        "MTTR (Mean Time To Respond)",
+        "RTO (Recovery Time Objective)",
+        "SLA (Service Level Agreement)"
+      ],
+      "c": 0,
+      "e": "MTTD mide el tiempo desde que ocurre un incidente hasta que es detectado. Un MTTD bajo es crítico para contener ransomware antes de que cifre datos masivamente."
+    },
+    {
+      "q": "¿Qué es la 'rendición de cuentas' (accountability) en el modelo de gobierno GRC?",
+      "o": [
+        "Pagar impuestos",
+        "Asignar responsabilidades claras y exigir resultados",
+        "Hacer backups",
+        "Tener un antivirus actualizado"
+      ],
+      "c": 1,
+      "e": "Accountability implica que cada rol tiene responsabilidades definidas y debe reportar resultados. Es un pilar del gobierno corporativo."
+    },
+    {
+      "q": "¿Qué diferencia a un CISO interno de un vCISO?",
+      "o": [
+        "El CISO interno tiene más experiencia",
+        "El vCISO suele trabajar para múltiples clientes y proporciona servicios fraccionales",
+        "El vCISO no entiende de tecnología",
+        "El CISO interno es más barato"
+      ],
+      "c": 1,
+      "e": "El vCISO trabaja como servicio para múltiples organizaciones, aportando experiencia senior a tiempo parcial. Un CISO interno es dedicado a una sola empresa."
+    },
+    {
+      "q": "¿Qué es un 'risk owner' o propietario del riesgo?",
+      "o": [
+        "El director de TI siempre",
+        "La persona responsable de gestionar y supervisar un riesgo específico",
+        "El auditor externo",
+        "El proveedor de seguros"
+      ],
+      "c": 1,
+      "e": "El risk owner es la persona designada para supervisar un riesgo, implementar controles y reportar su estado periódicamente. No tiene por qué ser siempre el director de TI."
+    },
+    {
+      "q": "¿Qué establece el principio de 'segregación de funciones' (SoD)?",
+      "o": [
+        "Que todos los empleados tengan el mismo acceso",
+        "Que ninguna persona tenga control completo sobre un proceso crítico sin supervisión",
+        "Que los desarrolladores no puedan hacer backups",
+        "Que los administradores no puedan usar Internet"
+      ],
+      "c": 1,
+      "e": "Segregation of Duties (SoD) previene fraudes y errores dividiendo funciones críticas entre múltiples personas. Ejemplo: quien solicita un acceso no debe ser quien lo aprueba."
+    },
+    {
+      "q": "¿Qué debe hacer un vCISO ante un nuevo requisito regulatorio (ej. NIS2, DORA)?",
+      "o": [
+        "Ignorarlo hasta que llegue una sanción",
+        "Realizar un gap analysis, evaluar impacto y presentar un plan de acción al consejo",
+        "Comprar una herramienta de compliance",
+        "Subcontratar todo a un proveedor externo"
+      ],
+      "c": 1,
+      "e": "El vCISO debe evaluar la brecha normativa (gap analysis), determinar el impacto y presentar un plan de implementación con recursos y plazos al consejo."
+    },
+    {
+      "q": "¿Qué función tiene el Consejo de Administración en la gobernanza de seguridad?",
+      "o": [
+        "Ejecutar los controles técnicos",
+        "Aprobar la estrategia de seguridad, supervisar riesgos y asignar presupuesto",
+        "Responder a incidentes técnicos",
+        "Instalar antivirus"
+      ],
+      "c": 1,
+      "e": "El Consejo tiene la responsabilidad fiduciaria de supervisar los riesgos de seguridad, aprobar la estrategia y asegurar que se asignan recursos adecuados."
+    }
+  ]
+}

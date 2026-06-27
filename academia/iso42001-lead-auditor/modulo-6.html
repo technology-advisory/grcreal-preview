@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0">
+
+<title>Operación y Controles del Anexo A · ISO 42001 Lead Auditor · GRCreal Academy</title>
+
+<meta name="description" content="Módulo 6 ISO 42001 Lead Auditor. Cómo auditar la operación del SGIA, la planificación operacional, gestión de cambios y los 9 grupos de controles del Anexo A.">
+
+<meta name="robots" content="index, follow">
+
+<link rel="canonical" href="https://grcreal.com/academia/iso42001-lead-auditor/modulo-6.html">
+<link rel="icon" href="/favicon.ico" sizes="any">
+
+<link rel="stylesheet" href="../../css/marca.css">
+<link rel="stylesheet" href="../../css/academia.css">
+<link rel="stylesheet" href="../../css/dossier-core.css">
+<link rel="stylesheet" href="../../css/dossier-academia.css">
+
+<style>
+.cta-buttons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    margin-top: 8px;
+    flex-wrap: wrap;
+}
+.cta-button {
+    display: inline-block;
+    background: var(--brand, #0077B5);
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 12px 28px;
+    border-radius: 40px;
+    font-size: 1rem;
+    transition: 0.2s background;
+    box-shadow: 0 5px 12px rgba(0,0,0,0.05);
+}
+.cta-button:hover {
+    background: var(--brand-dark, #005a8e);
+}
+.course-home-btn {
+    background: var(--brand-light, #e8f3fa);
+    color: var(--brand, #0077B5);
+    padding: 6px 14px;
+    border-radius: 40px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-left: 12px;
+    transition: 0.2s;
+}
+.course-home-btn:hover {
+    background: var(--brand-mid, #cce4f0);
+}
+</style>
+
+</head>
+
+<body class="article-page">
+<nav class="nav">
+<a href="/index.html" class="nav-logo" style="text-decoration:none;">GRC<span>real</span></a>
+<div class="nav-menu-wrapper" id="navMenuWrapper">
+<ul class="nav-menu" id="navMenu">
+<li class="nav-item-dropdown" id="navDropdownMarcos"><a href="javascript:void(0)" onclick="document.getElementById('navDropdownMarcos').classList.toggle('open'); document.getElementById('navDropdownRecursos').classList.remove('open');"><span class="nav-ic-flat"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="2.5" width="12" height="3.5" rx="1"/><rect x="3" y="7.5" width="12" height="3.5" rx="1"/><rect x="3" y="12.5" width="12" height="3" rx="1"/></svg></span>Marcos <span class="chev">▾</span></a>
+<div class="nav-dropdown-panel">
+<a href="/marcos/iso27001/index.html"><span class="nav-ic"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 1.5 14.5 3.5 V8 C14.5 12 11.5 14.5 9 16 C6.5 14.5 3.5 12 3.5 8 V3.5 Z"/><path d="M6.3 9 8.2 10.8 11.7 7"/></svg></span><span class="nav-txt"><span class="nav-title">ISO 27001</span><span class="nav-sub">El estándar más adoptado</span></span></a>
+<a href="/marcos/ens/index.html"><span class="nav-ic"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 16h13"/><path d="M3.5 16V8.5M6.3 16V8.5M9 16V8.5M11.7 16V8.5M14.5 16V8.5"/><path d="M1.8 8.5 9 3 16.2 8.5Z"/></svg></span><span class="nav-txt"><span class="nav-title">ENS</span><span class="nav-sub">Sector público español</span></span></a>
+<a href="/marcos/nis2/index.html"><span class="nav-ic"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 2v3"/><path d="M3 5h12"/><path d="M3 5 1.5 8.5h3Z"/><path d="M15 5 13.5 8.5h3Z"/><path d="M5.2 9.2v2.3c0 .8.8 1.5 1.8 1.5s1.8-.7 1.8-1.5V9.2"/><path d="M9 8.5v6.2M6 16h6"/></svg></span><span class="nav-txt"><span class="nav-title">NIS2</span><span class="nav-sub">Directiva europea</span></span></a>
+<a href="/marcos/ia/index.html"><span class="nav-ic"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="5" width="8" height="8" rx="1"/><path d="M9 1.5v3M9 13.5v3M1.5 9h3M13.5 9h3M3.5 3.5l2 2M14.5 3.5l-2 2M3.5 14.5l2-2M14.5 14.5l-2-2"/></svg></span><span class="nav-txt"><span class="nav-title">IA</span><span class="nav-sub">AI Act + ISO 42001</span></span></a>
+<a href="/marcos/iso22301/index.html"><span class="nav-ic"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 9A5.5 5.5 0 1 1 12.7 5.1"/><path d="M12.7 1.8v3.3h3.3"/></svg></span><span class="nav-txt"><span class="nav-title">ISO 22301</span><span class="nav-sub">Continuidad de negocio</span></span></a>
+<a href="/marcos/vciso/index.html"><span class="nav-ic"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="6.3" r="2.8"/><path d="M3 15.5c0-2.9 2.7-5.2 6-5.2s6 2.3 6 5.2"/></svg></span><span class="nav-txt"><span class="nav-title">vCISO</span><span class="nav-sub">Rol, no certificación</span></span></a>
+</div>
+</li>
+<li class="nav-item-dropdown" id="navDropdownRecursos"><a href="javascript:void(0)" onclick="document.getElementById('navDropdownRecursos').classList.toggle('open'); document.getElementById('navDropdownMarcos').classList.remove('open');"><span class="nav-ic-flat"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 5.5a1 1 0 0 1 1-1h3.3l1.3 1.6H15a1 1 0 0 1 1 1V13a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1Z"/></svg></span>Recursos <span class="chev">▾</span></a>
+<div class="nav-dropdown-panel">
+<a href="/articulos/index.html"><span class="nav-ic"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="2" width="11" height="14" rx="1.3"/><path d="M6 6h6M6 9h6M6 12h3.5"/></svg></span><span class="nav-txt"><span class="nav-title">Artículos</span><span class="nav-sub">Análisis y opinión técnica</span></span></a>
+<a href="/checklists/index.html"><span class="nav-ic"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="3" width="13" height="12" rx="1.3"/><path d="M5 6.3h2.2M5 9h2.2M5 11.7h2.2"/><path d="M11 6.2l.9.9 1.6-1.7M11 8.9l.9.9 1.6-1.7M11 11.6l.9.9 1.6-1.7"/></svg></span><span class="nav-txt"><span class="nav-title">Checklists</span><span class="nav-sub">Autoevaluación interactiva</span></span></a>
+<a href="/versus/index.html"><span class="nav-ic"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 6.5h11M10.5 3.5l3 3-3 3"/><path d="M15.5 11.5h-11M7.5 8.5l-3 3 3 3"/></svg></span><span class="nav-txt"><span class="nav-title">Versus</span><span class="nav-sub">Comparativas entre marcos</span></span></a>
+<a href="/quiz/index.html"><span class="nav-ic"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="9" r="7"/><path d="M7 7.2c0-1.1.9-2 2-2s2 .8 2 1.8c0 1.4-2 1.6-2 3.3"/><circle cx="9" cy="12.7" r="0.15" fill="currentColor" stroke="none"/></svg></span><span class="nav-txt"><span class="nav-title">Quiz</span><span class="nav-sub">Pon a prueba tu nivel</span></span></a>
+<a href="/academia/index.html"><span class="nav-ic"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M1.5 6.5 9 3l7.5 3.5L9 10Z"/><path d="M5 8.3v3.4c0 1.3 1.8 2.3 4 2.3s4-1 4-2.3V8.3"/><path d="M16.5 6.5v4.3"/></svg></span><span class="nav-txt"><span class="nav-title">Academia</span><span class="nav-sub">Cursos paso a paso</span></span></a>
+<a href="/herramientas/index.html"><span class="nav-ic"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M11.3 2.3a3.2 3.2 0 0 0-4.3 4.2L2 11.5l1.8 1.8 5-5a3.2 3.2 0 0 0 4.2-4.3l-2 2-1.7-1.7Z"/></svg></span><span class="nav-txt"><span class="nav-title">Herramientas</span><span class="nav-sub">BIA, análisis de riesgos</span></span></a>
+</div>
+</li>
+<li><a href="/enfoque/index.html"><span class="nav-ic-flat"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="9" r="6.5"/><circle cx="9" cy="9" r="3"/><circle cx="9" cy="9" r="0.4" fill="currentColor" stroke="none"/></svg></span>Enfoque</a></li>
+<li><a href="/metodologia/index.html"><span class="nav-ic-flat"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="3.3" cy="3.3" r="1.8"/><circle cx="14.7" cy="9" r="1.8"/><circle cx="3.3" cy="14.7" r="1.8"/><path d="M5 4.3l8 4M5 13.7l8-4"/></svg></span>Metodología</a></li>
+<li><a href="/sobre-mi/index.html"><span class="nav-ic-flat"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="6" r="2.8"/><path d="M3.3 15c0-2.7 2.6-4.8 5.7-4.8s5.7 2.1 5.7 4.8"/></svg></span>Sobre mí</a></li>
+<li><a href="/contacto.html"><span class="nav-ic-flat"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="14" height="10" rx="1.3"/><path d="M2.5 5l6.5 5 6.5-5"/></svg></span>Contacto</a></li>
+<li><a href="/legal/index.html" class="nav-cta-pill">Legal</a></li>
+</ul>
+</div>
+<div class="nav-toggle" onclick="this.classList.toggle('open'); document.getElementById('navMenu').classList.toggle('open')">
+<span></span><span></span><span></span>
+</div>
+</nav>
+
+<div class="card-wrapper ds-page">
+<div class="card">
+
+<div class="accent-bar"></div>
+
+<div class="ds-meta">
+  <span><span class="dot"></span>GRCreal // expediente: academia</span>
+  <span>curso: <strong>ISO 42001 Lead Auditor</strong></span>
+</div>
+
+<nav class="academy-module-menu">
+
+<a href="/academia/iso42001-lead-auditor/index.html" class="academy-course-logo">
+ISO 42001 <span>Lead Auditor</span>
+</a>
+
+<div class="academy-course-links">
+<span class="module-badge">Módulo 6 · Operación y Controles</span>
+<a href="/academia/iso42001-lead-auditor/index.html" class="course-home-btn">⌂ Curso</a>
+</div>
+
+</nav>
+
+<div class="header">
+
+<div class="tag">
+CLÁUSULA 8 · CONTROL OPERACIONAL · ANEXO A · 38 CONTROLES
+</div>
+
+<div class="article-date">
+Módulo 6
+</div>
+
+<h1 class="headline">Operación y <span class="accent">Controles del Anexo A</span></h1>
+
+<p class="subline">
+
+No basta con diseñar controles.<br>
+<strong>Hay que operarlos, monitorearlos y demostrar su eficacia.</strong>
+
+</p>
+
+</div>
+
+<div class="body">
+
+<!-- BLOQUE 1 · CLÁUSULA 8.1 PLANIFICACIÓN OPERACIONAL -->
+
+<div class="block">
+
+<div class="block-label">
+Cláusula 8.1
+</div>
+
+<div class="block-title">
+Planificación y control operacional
+</div>
+
+<div class="block-text">
+
+La organización debe planificar, implementar y controlar los procesos necesarios para cumplir los requisitos del SGIA y tratar los riesgos identificados.
+
+</div>
+
+<div class="quote-block">
+
+<div class="quote-text">
+&ldquo;Un control documentado pero no integrado al flujo operativo real no es un control. Es un papel.&rdquo;
+</div>
+
+<div class="quote-attr">
+Principio auditor
+</div>
+
+</div>
+
+<table class="tension" style="margin-top:20px;">
+
+<tr>
+<td class="tension-who">📋</span></td>
+<td class="tension-says"><strong>Qué auditar en operación</strong> · ¿Existen criterios claros para los procesos? ¿Se implementan los controles según lo planificado? ¿Hay registros de ejecución?</span>
+</td>
+</tr>
+
+<tr class="hi-row">
+<td class="tension-who">⚠️</span></td>
+<td class="tension-says"><span class="hi">Error típico: Un procedimiento existe, pero las personas no lo siguen. O el control se ejecuta de forma inconsistente sin trazabilidad.</span></span>
+</td>
+</tr>
+
+</table>
+
+</div>
+
+<div class="divider"></div>
+
+<!-- BLOQUE 2 · GESTIÓN DE CAMBIOS EN IA -->
+
+<div class="block">
+
+<div class="block-label">
+Cláusula 8.1 (cont.)
+</div>
+
+<div class="block-title">
+Gestión de cambios en sistemas de IA
+</div>
+
+<div class="block-text">
+
+Los sistemas de IA evolucionan: actualización de modelos, ajuste de hiperparámetros, nuevos datos de entrenamiento, cambios en proveedores. La auditoría debe evaluar si existe un procedimiento formal de gestión de cambios.
+
+</div>
+
+<div class="quote-block">
+
+<div class="quote-text">
+&ldquo;Un cambio no controlado puede invalidar el tratamiento de riesgos previamente aprobado.&rdquo;
+</div>
+
+<div class="quote-attr">
+ISO 42001 - Gestión de cambios
+</div>
+
+</div>
+
+<table class="tension" style="margin-top:20px;">
+
+<tr>
+<td class="tension-who">🔄</span></td>
+<td class="tension-says"><strong>Qué debe incluir la gestión de cambios</strong> · Análisis de impacto del cambio, aprobación previa por responsables, actualización de evaluación de riesgos, revisión de la SoA si aplica, verificación post-cambio.</span>
+</td>
+</tr>
+
+<tr class="hi-row">
+<td class="tension-who">📋</span></td>
+<td class="tension-says"><span class="hi">Evidencia auditable: Registro de solicitud de cambio, análisis de impacto, aprobación documentada, evidencia de pruebas, actualización de documentación, verificación posterior.</span></span>
+</td>
+</tr>
+
+</table>
+
+</div>
+
+<div class="divider"></div>
+
+<!-- BLOQUE 3 · PROCESOS EXTERNALIZADOS -->
+
+<div class="block">
+
+<div class="block-label">
+Cláusula 8.1 (cont.)
+</div>
+
+<div class="block-title">
+Proveedores externos y responsabilidad residual
+</div>
+
+<div class="block-text">
+
+ISO 42001 no permite transferir la responsabilidad del SGIA a proveedores externos. Si el sistema IA es SaaS o tercerizado, la organización debe demostrar control sobre el proveedor.
+
+</div>
+
+<div class="quote-block">
+
+<div class="quote-text">
+&ldquo;Una exclusión en la SoA basada únicamente en 'confianza en el proveedor' es técnicamente insostenible.&rdquo;
+</div>
+
+<div class="quote-attr">
+Criterio auditor
+</div>
+
+</div>
+
+<table class="tension" style="margin-top:20px;">
+
+<tr>
+<td class="tension-who">📋</span></td>
+<td class="tension-says"><strong>Qué verificar en proveedores IA</strong> · Evaluación y selección del proveedor, requisitos contractuales (SLAs, auditorías, notificación de cambios), monitoreo continuo del desempeño, acceso a evidencias.</span>
+</td>
+</tr>
+
+<tr class="hi-row">
+<td class="tension-who">📄</span></td>
+<td class="tension-says"><span class="hi">Evidencias: Contratos con cláusulas de SGIA, informes de auditoría de proveedor, evidencias de supervisión periódica, registros de incidentes del proveedor.</span></span>
+</td>
+</tr>
+
+</table>
+
+</div>
+
+<div class="divider"></div>
+
+<!-- BLOQUE 4 · ANEXO A - VISIÓN GENERAL -->
+
+<div class="block">
+
+<div class="block-label">
+Anexo A
+</div>
+
+<div class="block-title">
+Los 9 grupos de controles de referencia
+</div>
+
+<div class="block-text">
+
+El Anexo A de ISO 42001 proporciona controles de referencia para apoyar el tratamiento de riesgos de IA. No es un checklist obligatorio, sino una guía. El auditor evalúa la lógica de selección, no la cantidad de controles adoptados.
+
+</div>
+
+<table class="tension" style="margin-top:20px;">
+
+<tr>
+<td class="tension-who">1️⃣</span></td>
+<td class="tension-says"><strong>A.2 Políticas relacionadas con IA</strong> · Política de IA, alineación con otras políticas, revisión.</span>
+</td>
+</tr>
+
+<tr>
+<td class="tension-who">2️⃣</span></td>
+<td class="tension-says"><strong>A.3 Organización interna</strong> · Roles y responsabilidades de IA, reporte de preocupaciones.</span>
+</td>
+</tr>
+
+<tr>
+<td class="tension-who">3️⃣</span></td>
+<td class="tension-says"><strong>A.4 Recursos para sistemas de IA</strong> · Documentación de recursos, datos, herramientas, sistema y cómputo, recursos humanos.</span>
+</td>
+</tr>
+
+<tr>
+<td class="tension-who">4️⃣</span></td>
+<td class="tension-says"><strong>A.5 Evaluación de impactos de sistemas IA</strong> · Proceso de evaluación, documentación, impacto en individuos, impactos sociales.</span>
+</td>
+</tr>
+
+<tr>
+<td class="tension-who">5️⃣</span></td>
+<td class="tension-says"><strong>A.6 Ciclo de vida del sistema IA</strong> · Desarrollo responsable, requisitos, verificación y validación, despliegue, operación y monitoreo, registro de eventos.</span>
+</td>
+</tr>
+
+<tr>
+<td class="tension-who">6️⃣</span></td>
+<td class="tension-says"><strong>A.7 Datos para sistemas de IA</strong> · Datos para desarrollo, adquisición, calidad, procedencia, preparación.</span>
+</td>
+</tr>
+
+<tr>
+<td class="tension-who">7️⃣</span></td>
+<td class="tension-says"><strong>A.8 Información para partes interesadas</strong> · Documentación, reporte externo, comunicación de incidentes.</span>
+</td>
+</tr>
+
+<tr>
+<td class="tension-who">8️⃣</span></td>
+<td class="tension-says"><strong>A.9 Uso de sistemas de IA</strong> · Procesos para uso responsable, objetivos, uso previsto.</span>
+</td>
+</tr>
+
+<tr class="hi-row">
+<td class="tension-who">9️⃣</span></td>
+<td class="tension-says"><span class="hi">A.10 Relaciones con terceros y clientes: Asignación de responsabilidades, proveedores, clientes.</span></span>
+</td>
+</tr>
+
+</table>
+
+</div>
+
+<div class="divider"></div>
+
+<!-- BLOQUE 5 · CONTROLES CRÍTICOS PARA AUDITOR -->
+
+<div class="block">
+
+<div class="block-label">
+Enfoque auditor
+</div>
+
+<div class="block-title">
+Controles que todo auditor de SGIA debe conocer
+</div>
+
+<div class="block-text">
+
+Aunque el Anexo A tiene 38 controles, algunos son especialmente relevantes para la auditoría por su impacto en riesgos críticos de IA.
+
+</div>
+
+<table class="tension" style="margin-top:20px;">
+
+<tr>
+<td class="tension-who">📊</span></td>
+<td class="tension-says"><strong>A.5 Evaluación de impacto</strong> · El auditor verifica que se realiza antes del despliegue, que considera impactos en individuos y sociedad, y que sus resultados se vinculan al tratamiento del riesgo.</span>
+</td>
+</tr>
+
+<tr class="hi-row">
+<td class="tension-who">🔄</span></td>
+<td class="tension-says"><span class="hi">A.6 Gestión del ciclo de vida: El auditor verifica que existe trazabilidad desde requisitos hasta retiro, que hay verificación y validación documentadas, y que el monitoreo en producción está definido.</span></span>
+</td>
+</tr>
+
+<tr>
+<td class="tension-who">📈</span></td>
+<td class="tension-says"><strong>A.7 Calidad y procedencia de datos</strong> · El auditor verifica que los datos de entrenamiento son representativos, que se documenta la procedencia, y que hay controles de calidad antes del uso.</span>
+</td>
+</tr>
+
+<tr class="hi-row">
+<td class="tension-who">👁️</span></td>
+<td class="tension-says"><span class="hi">A.9 Uso responsable: El auditor verifica que existe supervisión humana cuando es necesaria, que los límites de uso están definidos, y que hay mecanismos de apelación para decisiones automatizadas.</span></span>
+</td>
+</tr>
+
+</table>
+
+</div>
+
+<div class="divider"></div>
+
+<!-- BLOQUE 6 · DISEÑO VS IMPLEMENTACIÓN VS RESULTADO -->
+
+<div class="block">
+
+<div class="block-label">
+Evaluación de controles
+</div>
+
+<div class="block-title">
+Tres niveles que el auditor debe distinguir
+</div>
+
+<div class="block-text">
+
+Evaluar la eficacia de un control requiere analizar tres niveles diferentes. Una falla en cualquiera de ellos debilita el control.
+
+</div>
+
+<table class="tension" style="margin-top:20px;">
+
+<tr>
+<td class="tension-who">📐</span></td>
+<td class="tension-says"><strong>Diseño adecuado</strong> · El control, en teoría, puede reducir el riesgo si se implementa correctamente. Ejemplo: "Un procedimiento de monitoreo de deriva está documentado."</span>
+</td>
+</tr>
+
+<tr class="hi-row">
+<td class="tension-who">⚙️</span></td>
+<td class="tension-says"><span class="hi">Implementación consistente: El control se ejecuta según lo diseñado. Ejemplo: "Los registros muestran que el monitoreo de deriva se ejecuta semanalmente."</span></span>
+</td>
+</tr>
+
+<tr>
+<td class="tension-who">📊</span></td>
+<td class="tension-says"><strong>Resultado eficaz</strong> · El control realmente reduce el riesgo. Ejemplo: "Las alertas de deriva han llevado a acciones correctivas que mantienen el modelo dentro de umbrales aceptables."</span>
+</td>
+</tr>
+
+</table>
+
+</div>
+
+<div class="divider"></div>
+
+<!-- BLOQUE 7 · CASO PRÁCTICO -->
+
+<div class="block">
+
+<div class="block-label">
+Caso auditor
+</div>
+
+<div class="block-title">
+Control documentado pero no operativo
+</div>
+
+<div class="block-text">
+
+<strong>Escenario:</strong> Una organización declara en la SoA el control "supervisión humana obligatoria en decisiones críticas de IA". En auditoría se observa:
+
+- El procedimiento está documentado y aprobado.
+- No existen registros de revisión humana en los últimos 3 meses.
+- El modelo fue actualizado recientemente sin gestión formal de cambio.
+- El riesgo residual se declara como "aceptable" en la matriz.
+
+</div>
+
+<div class="quote-block">
+
+<div class="quote-text">
+&ldquo;Diseño: adecuado (documentado). Implementación: deficiente (sin registros). Resultado: ineficaz (no se demuestra mitigación).&rdquo;
+</div>
+
+<div class="quote-attr">
+Análisis del auditor
+</div>
+
+</div>
+
+<div class="block-text">
+
+<strong>Clasificación:</strong> No Conformidad Mayor por falla sistémica de operación.
+
+<strong>Cláusulas afectadas:</strong> 8.1 (Control operacional), 6.1.3 (Tratamiento del riesgo).
+
+</div>
+
+</div>
+
+<div class="divider"></div>
+
+<!-- BLOQUE 8 · RESUMEN EJECUTIVO -->
+
+<div class="block">
+
+<div class="block-label">
+Resumen del módulo
+</div>
+
+<div class="block-title">
+Lo que debes llevarte de aquí
+</div>
+
+<table class="tension" style="margin-top:16px;">
+
+<tr>
+<td class="tension-who">1</span></td>
+<td class="tension-says">La operación (8.1) debe estar planificada y controlada con criterios claros y registros de ejecución.</span>
+</td>
+</tr>
+
+<tr class="hi-row">
+<td class="tension-who">2</span></td>
+<td class="tension-says"><span class="hi">La gestión de cambios en IA es crítica: cualquier cambio (modelo, datos, proveedor) debe ser controlado y aprobado.</span></span>
+</td>
+</tr>
+
+<tr>
+<td class="tension-who">3</span></td>
+<td class="tension-says">Los proveedores externos no eximen de responsabilidad. La organización debe supervisarlos.</span>
+</td>
+</tr>
+
+<tr class="hi-row">
+<td class="tension-who">4</span></td>
+<td class="tension-says"><span class="hi">El Anexo A tiene 38 controles en 9 grupos. No es obligatorio implementarlos todos, pero la selección debe justificarse.</span></span>
+</td>
+</tr>
+
+<tr>
+<td class="tension-who">5</span></td>
+<td class="tension-says">El auditor evalúa tres niveles: diseño, implementación y resultado. Una falla en cualquiera debilita el control.</span>
+</td>
+</tr>
+
+</table>
+
+</div>
+
+<!-- CTA -->
+
+<div class="cta-block">
+
+<div class="cta-headline">
+El siguiente paso es auditar<br>
+<span>la Declaración de Aplicabilidad (SoA)</span>
+</div>
+
+<div class="cta-sub">
+Siguiente módulo: <strong>SoA y Evaluación de Eficacia</strong>
+</div>
+
+<div class="cta-buttons">
+    <a href="modulo-5.html" class="cta-button">← Anterior</a>
+    <a href="modulo-7.html" class="cta-button">Continuar →</a>
+</div>
+
+</div>
+
+</div>
+
+<!-- FOOTER -->
+<div id="footer-placeholder"></div>
+<script>
+    fetch('/includes/footer-no-share.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('footer-placeholder').innerHTML = data;
+        });
+</script>
+
+</div>
+</div>
+
+</body>
+<script src="/js/modulo-check-42001.js"></script>
+</html>
