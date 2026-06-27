@@ -1,0 +1,117 @@
+/* ============================================================
+   GRCreal · dossier-checklist.css  (AISLADO)
+   Motor de checklists en estética expediente. Hereda tokens de
+   dossier-core: --ds-deep,--ds-ink,--ds-line,--brand,--mono,--ds-flag.
+   ============================================================ */
+
+/* ---- back link (ESTO ARREGLA el "Volver a checklists" sin maquetar) ---- */
+.chk-back{display:inline-flex;align-items:center;gap:7px;margin:0 0 4px;
+  font-family:var(--mono,monospace);font-size:12.5px;letter-spacing:.04em;
+  color:#7c8790;text-decoration:none;}
+.chk-back:hover{color:var(--ds-deep,#003955);}
+.chk-back:visited{color:#7c8790;}
+
+/* ---- barra de control (vista + nivel + score) ---- */
+.chk-controls{display:flex;flex-wrap:wrap;gap:18px;align-items:center;justify-content:space-between;}
+.chk-group{display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+.chk-group-label{font-family:var(--mono,monospace);font-size:11px;letter-spacing:.08em;
+  text-transform:uppercase;color:#7c8790;}
+.chk-chip{font-family:var(--mono,monospace);font-size:12px;letter-spacing:.03em;cursor:pointer;
+  background:#fff;border:1px solid var(--ds-line,#D7DCDF);color:#5a6675;padding:7px 14px;}
+.chk-chip.on{background:var(--ds-deep,#003955);color:#fff;border-color:var(--ds-deep,#003955);}
+
+/* ---- panel de score / madurez ---- */
+.chk-score{display:grid;grid-template-columns:1.2fr 1fr 1fr 1fr;gap:12px;margin:0 0 8px;}
+.chk-score-card{background:#fff;border:1px solid var(--ds-line,#D7DCDF);padding:16px 16px;}
+.chk-score-card.main{border-top:3px solid var(--brand,#0077B5);}
+.chk-score-num{font-size:30px;font-weight:800;color:var(--ds-deep,#003955);line-height:1;}
+.chk-score-lbl{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:#7c8790;margin-top:5px;}
+.chk-score-mad{font-family:var(--mono,monospace);font-size:12px;font-weight:700;margin-top:6px;}
+.chk-prog{height:10px;background:#e7ecef;border:1px solid var(--ds-line,#D7DCDF);margin-top:10px;}
+.chk-prog > i{display:block;height:100%;background:var(--brand,#0077B5);width:0;transition:width .25s;}
+
+/* niveles de madurez */
+.mad-inicial{color:#991b1b} .mad-basico{color:#d35400} .mad-gestionado{color:#92400e}
+.mad-solido{color:#1e8449} .mad-optimo{color:#0a6e3a}
+
+/* ---- dominios y items ---- */
+.chk-dominio{margin-bottom:24px;}
+.chk-dominio-head{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;
+  padding-bottom:10px;margin-bottom:12px;border-bottom:1px solid var(--ds-line,#D7DCDF);}
+.chk-dominio-tit{font-family:var(--mono,monospace);font-size:12px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--ds-deep,#003955);font-weight:700;display:flex;align-items:baseline;gap:12px;}
+.chk-dominio-ref{color:var(--brand,#0077B5);border:1px solid var(--brand,#0077B5);padding:2px 8px;font-size:11px;}
+.chk-dominio-score{font-family:var(--mono,monospace);font-size:12px;color:#7c8790;}
+
+.chk-item{background:#fff;border:1px solid var(--ds-line,#D7DCDF);border-left:3px solid var(--st,#D7DCDF);
+  padding:14px 16px;margin-bottom:10px;}
+.chk-item-top{display:flex;gap:12px;align-items:flex-start;justify-content:space-between;}
+.chk-item-id{font-family:var(--mono,monospace);font-size:11px;color:var(--brand,#0077B5);
+  border:1px solid var(--ds-line,#D7DCDF);padding:2px 7px;flex-shrink:0;}
+.chk-item-txt{flex:1;}
+.chk-item-name{font-weight:700;color:var(--ds-ink,#10161B);font-size:14.5px;line-height:1.35;}
+.chk-item-desc{font-size:13.5px;color:#3d4751;line-height:1.55;margin-top:5px;}
+.chk-item-nivel{font-family:var(--mono,monospace);font-size:10px;letter-spacing:.06em;text-transform:uppercase;
+  color:#7c8790;border:1px solid var(--ds-line,#D7DCDF);padding:2px 7px;flex-shrink:0;}
+
+/* estados */
+.chk-estados{display:flex;gap:6px;flex-wrap:wrap;margin-top:12px;}
+.chk-est{font-family:var(--mono,monospace);font-size:11.5px;letter-spacing:.02em;cursor:pointer;
+  background:#fff;border:1px solid var(--ds-line,#D7DCDF);color:#5a6675;padding:6px 12px;}
+.chk-est:hover{border-color:#9aa6b2;}
+.chk-est.on[data-v="cumple"]{background:#1e8449;border-color:#1e8449;color:#fff;}
+.chk-est.on[data-v="parcial"]{background:#92400e;border-color:#92400e;color:#fff;}
+.chk-est.on[data-v="nocumple"]{background:#991b1b;border-color:#991b1b;color:#fff;}
+.chk-est.on[data-v="na"]{background:#5a6675;border-color:#5a6675;color:#fff;}
+
+/* color borde izquierdo según estado */
+.st-cumple{--st:#1e8449} .st-parcial{--st:#92400e} .st-nocumple{--st:#991b1b} .st-na{--st:#5a6675}
+
+.chk-evid{margin-top:10px;display:none;}
+.chk-evid.show{display:grid;grid-template-columns:2fr 1fr;gap:10px;}
+.chk-evid input{border:1px solid var(--ds-line,#D7DCDF);background:#fbfcfd;font:inherit;font-size:13px;
+  color:var(--ds-ink,#10161B);padding:8px 10px;}
+.chk-evid input:focus{outline:none;border-color:var(--brand,#0077B5);background:#fff;}
+
+/* ---- brechas ---- */
+.chk-gaps{background:#fff;border:1px solid var(--ds-line,#D7DCDF);border-left:3px solid var(--ds-flag,#B23A2E);
+  padding:16px 18px;}
+.chk-gaps h3{margin:0 0 10px;font-size:14px;color:var(--ds-flag,#B23A2E);font-family:var(--mono,monospace);
+  letter-spacing:.06em;text-transform:uppercase;}
+.chk-gaps ul{margin:0;padding:0;list-style:none;}
+.chk-gaps li{font-size:13.5px;color:#3d4751;padding:6px 0;border-bottom:1px dashed var(--ds-line,#D7DCDF);
+  display:flex;gap:10px;}
+.chk-gaps li:last-child{border-bottom:none;}
+.chk-gaps li b{color:var(--ds-ink,#10161B);font-family:var(--mono,monospace);font-size:12px;flex-shrink:0;}
+.chk-gaps .ok{color:#1e8449;}
+
+/* ---- botones ---- */
+.chk-btn{font-family:var(--mono,monospace);font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+  cursor:pointer;border:1.5px solid var(--ds-deep,#003955);background:var(--ds-deep,#003955);color:#fff;padding:12px 24px;}
+.chk-btn:hover{background:#002a40;}
+.chk-btn.ghost{background:transparent;color:var(--ds-deep,#003955);}
+.chk-btn.ghost:hover{background:#eef3f5;}
+.chk-actions{display:flex;flex-wrap:wrap;gap:10px;}
+
+@media (max-width:760px){
+  .chk-score{grid-template-columns:repeat(2,1fr);}
+  .chk-evid.show{grid-template-columns:1fr;}
+  .chk-controls{flex-direction:column;align-items:flex-start;}
+}
+
+/* ---- v2: dificultad + tooltip de evidencia ---- */
+.chk-item-nivel.diff-facil{color:#1e8449;border-color:#1e8449}
+.chk-item-nivel.diff-medio{color:#92400e;border-color:#92400e}
+.chk-item-nivel.diff-complejo{color:#991b1b;border-color:#991b1b}
+.chk-tip-btn{display:inline-block;margin-top:7px;font-family:var(--mono,monospace);font-size:11px;
+  letter-spacing:.03em;color:var(--brand,#0077B5);background:none;border:none;cursor:pointer;padding:0;}
+.chk-tip-btn:hover{text-decoration:underline;}
+.chk-tip{display:none;margin-top:9px;font-size:13px;color:#3d4751;line-height:1.55;
+  background:#f1f6f9;border-left:2px solid var(--brand,#0077B5);padding:10px 13px;}
+.chk-tip.show{display:block;}
+
+/* ---- aviso de validación (bloqueo de export) ---- */
+.chk-msg{display:none;margin-bottom:14px;padding:13px 16px;font-size:13.5px;line-height:1.55;
+  border:1px solid var(--ds-line,#D7DCDF);}
+.chk-msg.warn{display:block;background:#fdf3f2;border-color:#e3b4ae;color:#8a2b20;border-left:3px solid #B23A2E;}
+.chk-msg b,.chk-msg strong{color:#7a1f16;}
