@@ -3,21 +3,22 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0">
-
 <title>Página no encontrada · GRCreal</title>
-
 <meta name="description" content="La página que buscas no existe. Redirigiendo al inicio de GRCreal.">
-
 <meta name="robots" content="noindex, follow">
-
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="stylesheet" href="/css/marca.css">
+<link rel="stylesheet" href="/css/global.css">
+<link rel="stylesheet" href="/css/dossier-core.css">
+<link rel="stylesheet" href="/css/dossier-articulo.css">
 
 <style>
 /* Estilos específicos para el 404 */
 .error-container {
     text-align: center;
     padding: 60px 20px;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .error-code {
@@ -34,7 +35,7 @@
 .error-title {
     font-size: 28px;
     font-weight: 700;
-    color: var(--ink, #1a2c3e);
+    color: var(--ds-ink, #10161B);
     margin-bottom: 16px;
 }
 
@@ -45,7 +46,7 @@
 .error-desc {
     font-size: 16px;
     line-height: 1.6;
-    color: var(--muted, #555);
+    color: var(--ds-muted, #5a6675);
     max-width: 500px;
     margin: 0 auto 24px auto;
 }
@@ -55,7 +56,7 @@
     max-width: 300px;
     margin: 24px auto 16px auto;
     height: 3px;
-    background: var(--border, #e0e0e0);
+    background: var(--ds-line, #d3dae3);
     overflow: hidden;
     border-radius: 3px;
 }
@@ -65,26 +66,7 @@
     background: var(--brand, #0077B5);
     width: 100%;
     transform-origin: left;
-    /* animation: shrink 5s linear forwards; */
     border-radius: 3px;
-}
-
-@keyframes shrink {
-    from { transform: scaleX(1); }
-    to { transform: scaleX(0); }
-}
-
-.countdown-text {
-    font-family: var(--mono, monospace);
-    font-size: 12px;
-    letter-spacing: 0.1em;
-    color: var(--ghost, #999);
-    margin-bottom: 28px;
-}
-
-.countdown-text span {
-    color: var(--brand, #0077B5);
-    font-weight: bold;
 }
 
 /* Botones */
@@ -125,7 +107,7 @@
     border-radius: 40px;
     font-size: 0.9rem;
     transition: 0.2s;
-    border: 1px solid var(--border, #e0e0e0);
+    border: 1px solid var(--ds-line, #d3dae3);
     font-family: var(--mono, monospace);
     letter-spacing: 0.05em;
 }
@@ -137,7 +119,7 @@
 
 /* Sugerencias */
 .suggestions {
-    border-top: 1px solid var(--border-soft, #eae7e2);
+    border-top: 1px solid var(--ds-line, #d3dae3);
     padding-top: 32px;
     margin-top: 16px;
 }
@@ -147,7 +129,7 @@
     font-size: 10px;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: var(--ghost, #aaa);
+    color: var(--ds-muted, #5a6675);
     margin-bottom: 16px;
 }
 
@@ -163,9 +145,9 @@
     font-size: 11px;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: var(--muted, #666);
+    color: var(--ds-muted, #5a6675);
     text-decoration: none;
-    border: 1px solid var(--border, #e0e0e0);
+    border: 1px solid var(--ds-line, #d3dae3);
     padding: 6px 16px;
     border-radius: 30px;
     transition: all 0.2s;
@@ -175,16 +157,6 @@
     border-color: var(--brand, #0077B5);
     color: var(--brand, #0077B5);
     background: var(--brand-light, #e8f3fa);
-}
-
-/* Ampliar ancho */
-.card-wrapper {
-    max-width: 1280px;
-    margin: 0 auto;
-}
-
-.card {
-    max-width: 100%;
 }
 
 /* Responsive */
@@ -204,37 +176,49 @@
     }
 }
 </style>
-
 </head>
 
 <body class="article-page">
 
-<div class="card-wrapper">
+<div class="card-wrapper ds-page">
 <div class="card">
 
 <div class="accent-bar"></div>
 
-<!-- MENU SUPERIOR SIMPLE -->
-<div style="display: flex; align-items: center; justify-content: space-between; padding: 16px 32px; border-bottom: 1px solid var(--border); background: var(--white);">
-    <div style="font-weight: 700; font-size: 18px; color: var(--brand);">
-        GRC<span style="color: var(--ink);">real</span>
-        
-    </div>
+<!-- MENÚ UNIFICADO -->
+<div id="nav-placeholder"></div>
+<script>
+    fetch('/includes/nav.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('nav-placeholder').outerHTML = data;
+        });
+</script>
 
+<!-- META EXPEDIENTE (igual que artículos) -->
+<div class="ds-meta">
+    <span><span class="dot"></span>GRCreal // expediente: error</span>
+    <span>estado: <strong>página no encontrada</strong></span>
 </div>
 
+<!-- HEADER (igual que artículos) -->
+<div class="header">
+    <div class="tag">Error 404</div>
+    <h1 class="headline">
+        Página <span class="accent">no encontrada</span>
+    </h1>
+    <p class="subline">
+        La URL que buscas no está disponible.<br>
+        <strong>Puede que haya cambiado o que nunca haya existido.</strong>
+    </p>
+</div>
 
-
+<!-- BODY -->
 <div class="body">
 
 <div class="error-container">
 
     <div class="error-code">404</div>
-
-    <div class="error-title">
-        Esta página<br>
-        <span class="accent">no existe.</span>
-    </div>
 
     <p class="error-desc">
         La URL que buscas no está disponible.<br>
@@ -242,11 +226,13 @@
     </p>
 
     <div class="progress-bar-wrap">
-        <div class="progress-bar"></div>
+        <div class="progress-bar" id="progressBar"></div>
     </div>
 
-
-
+    <div class="button-group">
+        <a href="/" class="btn-primary">← Volver al inicio</a>
+        <a href="/articulos/index.html" class="btn-secondary">📝 Artículos</a>
+    </div>
 
     <div class="suggestions">
         <div class="suggestions-label">O explora directamente</div>
@@ -254,55 +240,39 @@
             <a href="/articulos/index.html" class="suggestion-link">📝 Artículos</a>
             <a href="/versus/index.html" class="suggestion-link">⚔️ Versus</a>
             <a href="/checklists/index.html" class="suggestion-link">✅ Checklists</a>
+            <a href="/herramientas/index.html" class="suggestion-link">🛠️ Herramientas</a>
         </div>
     </div>
 
 </div>
 
-</div>
+</div><!-- /body -->
 
 <!-- FOOTER -->
-<div class="footer">
-    <div class="footer-inner">
-        <div class="author-block">
-            <div class="author-avatar">MA</div>
-            <div>
-                <div class="author-name">Miguel Ángel Carriazo · <span>vCISO</span></div>
-                <div class="author-title">Cybersecurity & Infrastructure Architect</div>
-            </div>
-        </div>
-        <a href="https://www.linkedin.com/in/macarriazo/" target="_blank" class="li-btn">
-            <svg class="li-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#0077B5">
-                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-            </svg>
-            <div>
-                <span class="li-main">"Merece la pena la experiencia..."</span>
-                <span class="li-sub">Hablemos en LinkedIn →</span>
-            </div>
-        </a>
-    </div>
-</div>
+<div id="footer-placeholder"></div>
+<script>
+    fetch('/includes/footer-no-share.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('footer-placeholder').innerHTML = data;
+        });
+</script>
 
-</div>
-</div>
+</div><!-- /card -->
+</div><!-- /card-wrapper -->
 
 <script>
+// Animación de la barra de progreso
 let seconds = 5;
 let totalSeconds = 5;
-const counter = document.getElementById('counter');
-const bar = document.querySelector('.progress-bar');
+const bar = document.getElementById('progressBar');
 
 const interval = setInterval(() => {
     seconds--;
-    if (counter) counter.textContent = seconds;
-    
-    // Actualizar barra manualmente
     if (bar) bar.style.transform = `scaleX(${seconds / totalSeconds})`;
-    
-    // Cuando llega a 0, reinicia
     if (seconds <= 0) {
-        seconds = totalSeconds; // Reiniciar contador
-        if (counter) counter.textContent = seconds;
+        seconds = totalSeconds;
+        if (bar) bar.style.transform = `scaleX(1)`;
     }
 }, 1000);
 </script>
