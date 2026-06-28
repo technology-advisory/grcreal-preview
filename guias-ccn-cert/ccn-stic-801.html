@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0">
+<title>CCN-STIC 801 — ENS. Responsabilidades y Funciones · GRCreal</title>
+<meta name="description" content="CCN-STIC 801 (ENS. Responsabilidades y Funciones): qué es, qué contiene, cómo implantarla, su uso en auditoría, mapeo a ISO 27001/NIS2/DORA y checklist. Resumen práctico de GRCreal con enlace oficial.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://grcreal.com/guias-ccn-cert/ccn-stic-801.html">
+<meta property="og:title" content="CCN-STIC 801 — ENS. Responsabilidades y Funciones">
+<meta property="og:description" content="CCN-STIC 801 (ENS. Responsabilidades y Funciones): qué es, qué contiene, cómo implantarla, su uso en auditoría, mapeo a ISO 27001/NIS2/DORA y checklist. Resumen práctico de GRCreal con enlace oficial.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://grcreal.com/guias-ccn-cert/ccn-stic-801.html">
+<meta property="og:image" content="https://grcreal.com/grcreal.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="stylesheet" href="../css/marca.css">
+<link rel="stylesheet" href="../css/articles.css">
+<link rel="stylesheet" href="../css/global.css">
+<link rel="stylesheet" href="../css/dossier-core.css">
+<link rel="stylesheet" href="../css/dossier-articulo.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"CCN-STIC 801 — ENS. Responsabilidades y Funciones","description":"CCN-STIC 801 (ENS. Responsabilidades y Funciones): qué es, qué contiene, cómo implantarla, su uso en auditoría, mapeo a ISO 27001/NIS2/DORA y checklist. Resumen práctico de GRCreal con enlace oficial.","image":"https://grcreal.com/grcreal.png","author":{"@type":"Person","name":"Miguel Ángel Carriazo","url":"https://grcreal.com/sobre-mi/"},"publisher":{"@type":"Organization","name":"GRCreal","logo":{"@type":"ImageObject","url":"https://grcreal.com/favicon-32x32.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://grcreal.com/guias-ccn-cert/ccn-stic-801.html"}}</script>
+<style>
+.ccn-note{font-family:var(--mono,monospace);font-size:11.5px;color:#6b7680;letter-spacing:.01em;margin:0 0 18px;line-height:1.5;}
+.ccn-note a{color:var(--brand-dark,#005a8e);}
+.ccn-banner{display:flex;align-items:flex-start;gap:10px;background:var(--brand-light,#e8f3fa);
+  border:1px solid var(--brand-mid,#cce4f0);border-radius:6px;padding:11px 15px;margin:0 0 14px;
+  font-size:13px;color:var(--brand-dark,#005a8e);line-height:1.5;}
+.ccn-doctable{width:100%;border-collapse:collapse;margin:8px 0 26px;font-size:13.5px;}
+.ccn-doctable thead th{background:#1f6fb2;color:#fff;text-align:left;padding:10px 12px;font-weight:600;font-size:12.5px;}
+.ccn-doctable thead th:nth-child(3),.ccn-doctable thead th:nth-child(4){white-space:nowrap;}
+.ccn-doctable td{border-bottom:1px solid var(--ds-line,#e2e7ec);padding:11px 12px;vertical-align:top;color:var(--ds-ink,#2b3340);}
+.ccn-doctable tr:nth-child(even) td{background:#f4f8fb;}
+.ccn-doc-a{color:var(--brand-dark,#005a8e);text-decoration:none;font-weight:600;display:inline-flex;align-items:center;gap:7px;}
+.ccn-doc-a:hover{text-decoration:underline;}
+.ccn-doc-a .pdf{color:#c0392b;font-weight:700;}
+.ccn-anexos{list-style:none;margin:10px 0 0;padding:0;}
+.ccn-anexos li{position:relative;padding:4px 0 4px 16px;font-size:12.5px;color:#5a6675;}
+.ccn-anexos li:before{content:"\25AA";position:absolute;left:0;color:var(--brand,#0077B5);}
+.ccn-cat{font-size:12.5px;color:#5a6675;}
+.guia-oficial-btn{display:inline-flex;align-items:center;gap:8px;background:var(--brand,#0077B5);color:#fff;
+  text-decoration:none;font-family:var(--mono,monospace);font-size:12.5px;font-weight:600;letter-spacing:.02em;
+  padding:10px 20px;border-radius:13px;margin-top:6px;transition:background .15s;}
+.guia-oficial-btn:hover{background:var(--brand-dark,#005a8e);color:#fff;}
+.guia-map{width:100%;border-collapse:collapse;margin-top:12px;font-size:13px;}
+.guia-map th{background:var(--ds-navy,#14233b);color:#fff;text-align:left;padding:8px 10px;font-size:11px;
+  text-transform:uppercase;letter-spacing:.05em;font-family:var(--mono,monospace);}
+.guia-map td{border:1px solid var(--ds-line,#d3dae3);padding:8px 10px;vertical-align:top;}
+.guia-map tr:nth-child(even) td{background:#f4f8fb;}
+.guia-check{list-style:none;padding:0;margin:12px 0 0;}
+.guia-check li{position:relative;padding:7px 0 7px 28px;border-bottom:1px solid #eef2f6;font-size:14px;color:var(--ds-ink,#2b3340);}
+.guia-check li:before{content:"\2713";position:absolute;left:0;top:6px;width:18px;height:18px;line-height:18px;text-align:center;
+  background:var(--brand-light,#e8f3fa);color:var(--brand-dark,#005a8e);border-radius:4px;font-size:12px;font-weight:700;}
+.guia-ul{margin:12px 0 0;padding-left:20px;}
+.guia-ul li{margin:7px 0;font-size:14px;line-height:1.55;color:var(--ds-ink,#2b3340);}
+.guia-pasos{list-style:none;counter-reset:p;margin:14px 0 0;padding:0;}
+.guia-pasos li{counter-increment:p;position:relative;padding:0 0 16px 44px;margin-bottom:14px;border-bottom:1px solid #eef2f6;}
+.guia-pasos li:last-child{border-bottom:none;}
+.guia-pasos li:before{content:counter(p);position:absolute;left:0;top:0;width:28px;height:28px;line-height:28px;text-align:center;
+  background:var(--brand,#0077B5);color:#fff;border-radius:50%;font-family:var(--mono,monospace);font-size:13px;font-weight:700;}
+.guia-pasos .pt{display:block;font-weight:700;color:var(--ds-navy,#14233b);font-size:14.5px;margin-bottom:3px;}
+.guia-pasos .pd{font-size:13.5px;line-height:1.55;color:var(--ds-ink,#2b3340);}
+.guia-concepts dt{font-weight:700;color:var(--brand-dark,#005a8e);font-size:14px;margin-top:12px;}
+.guia-concepts dd{margin:2px 0 0;font-size:13.5px;line-height:1.55;color:var(--ds-ink,#2b3340);}
+.guia-rel{list-style:none;margin:12px 0 0;padding:0;}
+.guia-rel li{padding:8px 0;border-bottom:1px solid #eef2f6;font-size:13.5px;color:var(--ds-ink,#2b3340);}
+.guia-rel .rn{display:inline-block;background:var(--ds-navy,#14233b);color:#fff;font-family:var(--mono,monospace);
+  font-size:11px;font-weight:700;padding:2px 8px;border-radius:4px;margin-right:8px;}
+.guia-rel a{color:var(--brand-dark,#005a8e);font-weight:600;text-decoration:none;}
+</style>
+</head>
+
+<body class="article-page">
+
+<div class="card-wrapper ds-page">
+<div class="card">
+      <div id="nav-placeholder"></div>
+<script>
+    fetch('/includes/nav.html').then(r=>r.text()).then(d=>{document.getElementById('nav-placeholder').outerHTML=d;});
+</script>
+<div class="accent-bar"></div>
+
+<div class="ds-meta">
+  <span><span class="dot"></span>GRCreal // expediente: guía CCN-STIC</span>
+  <span>referencia: <strong>CCN-STIC 801</strong></span>
+</div>
+
+<div class="header">
+  <a href="/guias-ccn-cert/index.html" class="art-back">← Volver a Guías CCN-CERT</a>
+  <div class="tag">CCN-STIC · Serie 800 · ENS</div>
+  <h1 class="headline">CCN-STIC 801<br><span class="accent">ENS. Responsabilidades y Funciones</span></h1>
+  <p class="subline">Quién responde de qué. Sin esto, el ENS no tiene dueño.</p>
+</div>
+
+<div class="body">
+
+  <div class="ccn-banner">ℹ️ <span><strong>Resumen práctico de GRCreal.</strong> Consulta siempre la versión oficial vigente en el portal del CCN-CERT.</span></div>
+  <p class="ccn-note">Resumen realizado a fecha 29/06/2026 con la información disponible en <a href="https://www.ccn-cert.cni.es/es/guias.html" target="_blank" rel="noopener noreferrer">https://www.ccn-cert.cni.es/es/guias.html</a>. Las fechas de publicación y actualización proceden del portal oficial.</p>
+
+  <table class="ccn-doctable"><thead><tr><th>Documento</th><th>Categoría</th><th>Publicado</th><th>Actualizado</th></tr></thead><tbody><tr><td><a class="ccn-doc-a" href="https://www.ccn-cert.cni.es/es/800-guia-esquema-nacional-de-seguridad/501-ccn-stic-801-responsibilidades-y-funciones-en-el-ens/file.html" target="_blank" rel="noopener noreferrer"><span class="pdf">⬇ PDF</span> CCN-STIC-801 ENS. Responsabilidades y Funciones</a></td><td class="ccn-cat">800 Guías Esquema Nacional de Seguridad</td><td>Abr 2010</td><td>Jun 2025</td></tr></tbody></table>
+
+  <div class="art-layout">
+  <div class="art-main">
+
+  <div class="block" id="s1">
+    <div class="block-label">Qué es</div>
+    <h2 class="block-title">Qué es y para qué vale</h2>
+    <p class="block-text" style="margin-top:10px">La CCN-STIC 801 define el modelo de gobernanza del ENS: los roles obligatorios, qué decide cada uno y cómo deben separarse para que las decisiones de seguridad no recaigan, de facto, en «el de informática». Su actualización de 2025 reordena estos roles alineándolos con los modelos de gobierno de ciberseguridad actuales y con el RD 311/2022.</p>
+    <p class="block-text" style="margin-top:10px">Es, posiblemente, la guía que más errores estructurales evita. El fallo clásico del sector público y de sus proveedores es que la seguridad «sea cosa de sistemas» y que nadie de negocio asuma la responsabilidad de valorar la información y los servicios. La 801 deja claro que esa valoración es una decisión de negocio, no técnica, y que el Responsable de Seguridad no puede ser la misma persona que el Responsable del Sistema. El ENS exige esta separación, y cuando por ausencia justificada de recursos no pueda cumplirse, se deben aplicar medidas compensatorias para garantizar la finalidad del principio de diferenciación de responsabilidades.</p>
+  </div>
+  <div class="divider"></div>
+  <div class="block" id="s2">
+    <div class="block-label">Contenido</div>
+    <h2 class="block-title">Qué contiene la guía</h2>
+    <ul class="guia-ul">
+      <li>Los cuatro roles del ENS: Responsable de la Información, Responsable del Servicio, Responsable de la Seguridad y Responsable del Sistema.</li>
+      <li>La función del Comité de Seguridad y su papel en la gobernanza.</li>
+      <li>La separación obligatoria entre el Responsable de la Seguridad y el Responsable del Sistema.</li>
+      <li>El reparto de decisiones: quién valora, quién aprueba, quién opera, quién supervisa.</li>
+      <li>La articulación de estos roles con la política de seguridad (CCN-STIC 805).</li>
+      <li>En sistemas que tratan datos personales, la integración del Delegado de Protección de Datos como figura asesora.</li>
+      <li>Los bloques de responsabilidad: Gobierno (dirección y responsables de información/servicio), Supervisión (Responsable de Seguridad y DPD) y Operativo (Responsable del Sistema).</li>
+    </ul>
+  </div>
+  <div class="divider"></div>
+  <div class="block" id="s3">
+    <div class="block-label">Conceptos</div>
+    <h2 class="block-title">Conceptos clave que debes manejar</h2>
+    <dl class="guia-concepts">
+      <dt>Responsable de la Información</dt>
+      <dd>Rol de negocio que decide los requisitos de seguridad de la información y la valora. No es un técnico. Puede ser una persona física o un órgano colegiado (Comité de Seguridad de la Información). Establece los niveles de seguridad en las dimensiones C, I, T y A.</dd>
+      <dt>Responsable del Servicio</dt>
+      <dd>Define los niveles de servicio requeridos y valora la dimensión de Disponibilidad. Puede coincidir con el Responsable de la Información.</dd>
+      <dt>Responsable de la Seguridad</dt>
+      <dd>Determina las medidas y supervisa su cumplimiento; debe ser independiente del Responsable del Sistema. Una Instrucción Técnica de Seguridad regulará su certificación. En servicios externalizados, el Responsable de Seguridad actúa como Punto de Contacto (POC).</dd>
+      <dt>Responsable del Sistema</dt>
+      <dd>Opera el sistema y aplica las medidas; no puede coincidir con el Responsable de la Seguridad. En categoría ALTA, puede suspender temporalmente el tratamiento de información si una auditoría aprecia deficiencias graves.</dd>
+    </dl>
+  </div>
+  <div class="divider"></div>
+  <div class="block" id="s4">
+    <div class="block-label">Alcance</div>
+    <h2 class="block-title">A quién aplica y cuándo entra en juego</h2>
+    <div class="block-text">Aplica desde el minuto cero de cualquier adecuación. Antes de valorar, implantar o auditar nada, el ENS exige saber quién responde de qué. Es la base sobre la que se construyen la política (805), la valoración (803) y todo el expediente. La guía es de aplicación a todas las entidades del sector público y, en general, a todas las organizaciones comprendidas en el ámbito de aplicación del ENS (art. 2 del RD 311/2022), incluyendo prestadores privados de servicios o soluciones al sector público.</div>
+  </div>
+  <div class="divider"></div>
+  <div class="block" id="s5">
+    <div class="block-label">Implantación</div>
+    <h2 class="block-title">Cómo lo implanta una empresa, paso a paso</h2>
+    <ol class="guia-pasos">
+      <li><span class="pt">Nombra los cuatro roles por escrito</span><span class="pd">Designa formalmente Responsable de la Información, del Servicio, de la Seguridad y del Sistema. Sin nombramiento documentado, el rol no existe a efectos de auditoría. La dirección de la entidad o el órgano competente debe hacer la designación formal.</span></li>
+      <li><span class="pt">Separa Seguridad de Sistema</span><span class="pd">Asegúrate de que el Responsable de la Seguridad y el del Sistema son personas distintas. Es un requisito, no una recomendación, y un punto que el auditor verifica siempre. Tampoco debe haber dependencia jerárquica entre ambos.</span></li>
+      <li><span class="pt">Sitúa la valoración en negocio</span><span class="pd">El Responsable de la Información (negocio) valora la información; el del Servicio valora la disponibilidad. Nunca dejes esa decisión en manos del técnico.</span></li>
+      <li><span class="pt">Constituye el Comité de Seguridad</span><span class="pd">Crea el Comité, define sus funciones (art. 24 del ENS) y llévalo a acta. Es el órgano donde se aprueban política, riesgos y decisiones relevantes. El Responsable de Seguridad actuará como Secretario.</span></li>
+      <li><span class="pt">Comunica y mantén</span><span class="pd">Comunica los roles a la organización y revísalos cuando cambie la estructura. Roles «de papel» sin vigencia real no sirven.</span></li>
+    </ol>
+  </div>
+  <div class="divider"></div>
+  <div class="block" id="s6">
+    <div class="block-label">Auditoría</div>
+    <h2 class="block-title">Para qué sirve en una auditoría</h2>
+    <ul class="guia-ul">
+      <li>El auditor pedirá los nombramientos formales de los cuatro roles.</li>
+      <li>Comprobará la separación efectiva entre Seguridad y Sistema.</li>
+      <li>Verificará que la valoración la ha hecho negocio, no el técnico.</li>
+      <li>Revisará las actas del Comité de Seguridad como evidencia de gobernanza.</li>
+      <li>Roles sin nombramiento ni acta se traducen en no conformidades.</li>
+    </ul>
+  </div>
+  <div class="divider"></div>
+  <div class="block" id="s7">
+    <div class="block-label">Serie 800</div>
+    <h2 class="block-title">Relación con otras guías de la serie</h2>
+    <ul class="guia-rel">
+      <li><span class="rn">CCN-STIC 805</span><a href="/guias-ccn-cert/ccn-stic-805.html">805</a> — Los roles definidos aquí se formalizan en la Política de Seguridad.</li>
+      <li><span class="rn">CCN-STIC 803</span><a href="/guias-ccn-cert/ccn-stic-803.html">803</a> — El Responsable de la Información y del Servicio son quienes valoran.</li>
+      <li><span class="rn">CCN-STIC 802</span><a href="/guias-ccn-cert/ccn-stic-802.html">802</a> — La auditoría verifica que el modelo de responsabilidades es real y está vigente.</li>
+    </ul>
+  </div>
+  <div class="divider"></div>
+  <div class="block" id="s8">
+    <div class="block-label">Mapeo</div>
+    <h2 class="block-title">Equivalencia con otros marcos</h2>
+    <div class="block-text">Cómo se conecta esta guía con los marcos que probablemente ya manejas:</div>
+    <table class="guia-map">
+      <tr><th>Aspecto en el ENS</th><th>ISO 27001</th><th>NIS2 / DORA</th></tr>
+      <tr><td>Responsable de la Seguridad</td><td>ISO 27001: liderazgo y roles (5.1, 5.3)</td><td>NIS2: responsabilidad del órgano de dirección (art. 20)</td></tr>
+      <tr><td>Comité de Seguridad</td><td>ISO 27001: revisión por la dirección (9.3)</td><td>DORA: órgano de dirección y riesgo TIC (art. 5)</td></tr>
+      <tr><td>Separación de funciones</td><td>ISO 27001: A.5.3 (segregación de funciones)</td><td>DORA: gobernanza y segregación</td></tr>
+      <tr><td>Modelo de gobernanza en tres bloques</td><td>ISO 27001: contexto y liderazgo (4, 5)</td><td>NIS2: estructura de gobierno de ciberseguridad</td></tr>
+    </table>
+  </div>
+  <div class="divider"></div>
+  <div class="block" id="s9">
+    <div class="block-label">Sin humo</div>
+    <h2 class="block-title">Errores típicos</h2>
+    <ul class="guia-ul">
+      <li>Que el Responsable de Seguridad y el del Sistema sean la misma persona (viola el artículo 11 del ENS).</li>
+      <li>Dejar la valoración de la información en manos del área técnica.</li>
+      <li>Roles «de papel» sin nombramiento, acta ni vigencia.</li>
+      <li>No constituir el Comité de Seguridad o no documentar sus decisiones.</li>
+      <li>No considerar al Delegado de Protección de Datos cuando se tratan datos personales.</li>
+      <li>Que el Comité de Seguridad no tenga actas que reflejen las decisiones en materia de seguridad.</li>
+    </ul>
+  </div>
+  <div class="divider"></div>
+  <div class="block" id="s10">
+    <div class="block-label">Checklist</div>
+    <h2 class="block-title">Checklist práctico</h2>
+    <ul class="guia-check">
+      <li>Los cuatro roles ENS están nombrados por escrito.</li>
+      <li>Seguridad y Sistema están separados en personas distintas.</li>
+      <li>Existe Comité de Seguridad con actas.</li>
+      <li>Negocio (no TI) ha valorado la información y los servicios.</li>
+      <li>Los nombramientos están vigentes y comunicados.</li>
+      <li>La política de seguridad refleja el modelo de responsabilidades.</li>
+      <li>En servicios externalizados, el CSP tiene un Punto de Contacto (POC) designado.</li>
+      <li>Cuando se tratan datos personales, el DPD asesora en el análisis de riesgos.</li>
+    </ul>
+  </div>
+  <div class="divider"></div>
+  <div class="block" id="s11">
+    <div class="block-label">Ficha</div>
+    <h2 class="block-title">Ficha y enlace oficial</h2>
+    <div class="block-text">Esta es una lectura práctica de GRCreal, no la guía oficial. Consulta siempre la versión vigente en el portal del CCN-CERT, ya que estas guías se actualizan periódicamente (esta ficha: publicada Abr 2010, actualizada Jun 2025).</div>
+    <a class="guia-oficial-btn" href="https://www.ccn-cert.cni.es/es/800-guia-esquema-nacional-de-seguridad/501-ccn-stic-801-responsibilidades-y-funciones-en-el-ens/file.html" target="_blank" rel="noopener noreferrer">⬇ CCN-STIC 801 en el portal CCN-CERT</a>
+  </div>
+  <div class="divider"></div>
+
+  <!-- Nuevo bloque: El Administrador de Sistemas/Seguridad -->
+  <div class="block" id="s12">
+    <div class="block-label">Administradores</div>
+    <h2 class="block-title">El Administrador de Sistemas y Seguridad</h2>
+    <p class="block-text" style="margin-top:10px">La guía también define la figura del Administrador, que puede depender funcionalmente del Responsable del Sistema o del Responsable de la Seguridad, pero no de ambos simultáneamente.</p>
+    <ul class="guia-ul">
+      <li><strong>Administrador del Sistema</strong>: implementa, gestiona y mantiene las medidas de seguridad aplicables; aplica los Procedimientos Operativos de Seguridad (POS); informa al Responsable del Sistema de cualquier anomalía o vulnerabilidad.</li>
+      <li><strong>Administrador de Seguridad</strong>: comprueba que los controles de seguridad se observan; gestiona autorizaciones y privilegios de usuarios; monitoriza el estado de seguridad; informa al Responsable de la Seguridad.</li>
+      <li>En sistemas complejos pueden existir <strong>administradores delegados</strong>, que dependen funcionalmente del administrador que los designa.</li>
+      <li>El número de personas con derechos de administración debe ser lo más reducido posible, siempre que no menoscabe la usabilidad del sistema.</li>
+      <li>Los administradores no deben tener capacidad para autorizarse a sí mismos ni para modificar datos de explotación si son desarrolladores.</li>
+    </ul>
+  </div>
+  <div class="divider"></div>
+
+  <!-- Nuevo bloque: Concurrencia con RGPD y NIS2 -->
+  <div class="block" id="s13">
+    <div class="block-label">RGPD y NIS2</div>
+    <h2 class="block-title">Concurrencia con otras normativas</h2>
+    <p class="block-text" style="margin-top:10px">La CCN-STIC 801 también aborda cómo encaja el modelo de gobernanza del ENS con otras normas que pueden aplicar a la entidad.</p>
+    <ul class="guia-ul">
+      <li><strong>RGPD</strong>: cuando se tratan datos personales, el Responsable de Seguridad debe contar con el asesoramiento del Delegado de Protección de Datos (DPD). El DPD puede coincidir con el Responsable de Seguridad en organizaciones pequeñas, siempre que se garantice su independencia y ausencia de conflicto de intereses. En estos casos, deberá documentarse la excepción y las medidas que garantizan la independencia del DPD.</li>
+      <li><strong>NIS2</strong>: el Responsable de Seguridad del ENS puede desplegar las funciones del Responsable de Seguridad de la Información exigidas por la Directiva NIS2, cuando cuente con habilitación suficiente. Las funciones deberán tener en cuenta las regulaciones de la Directiva NIS2 y la normativa nacional de transposición.</li>
+      <li><strong>Inteligencia Artificial</strong>: para sistemas de IA de alto riesgo, el Responsable de Seguridad deberá conocer el sistema antes de su implementación y valorar los riesgos de seguridad, en coordinación con el resto de roles (Responsable de la Información, del Servicio, del Sistema y DPD).</li>
+      <li><strong>Infraestructuras Críticas</strong>: cuando el sistema contribuya a servicios esenciales de terceros, deberán añadirse medidas adicionales requeridas por la normativa de infraestructuras críticas (Ley 8/2011, de 28 de abril).</li>
+      <li><strong>Seguridad Física</strong>: el Responsable de Seguridad Física adoptará las medidas que le competan, informando al Responsable de Seguridad de la Información de su grado de implantación, eficacia e incidentes.</li>
+    </ul>
+  </div>
+  <div class="divider"></div>
+
+  <!-- Nuevo bloque: Gestión de riesgos y RACI -->
+  <div class="block" id="s14">
+    <div class="block-label">Riesgos y RACI</div>
+    <h2 class="block-title">Gestión de riesgos y matriz RACI</h2>
+    <p class="block-text" style="margin-top:10px">La guía incluye un proceso detallado de gestión de riesgos y una matriz RACI (Responsible, Accountable, Consulted, Informed) que asigna responsabilidades a cada rol.</p>
+    <ul class="guia-ul">
+      <li><strong>Propietario del riesgo</strong>: el Responsable de la Información es propietario de los riesgos sobre la información; el Responsable del Servicio, de los riesgos sobre los servicios.</li>
+      <li><strong>Monitorización del riesgo</strong>: el Responsable de la Seguridad monitoriza el riesgo y reporta desviaciones significativas.</li>
+      <li><strong>Aceptación del riesgo residual</strong>: debe ser formalizada por los responsables de la información y del servicio antes de que el sistema entre en operación.</li>
+      <li><strong>Matriz RACI</strong>: la guía proporciona una matriz orientativa que asigna responsabilidades (A-Responsable último, R-Ejecuta, C-Consultado, I-Informado) para tareas como valoración, análisis de riesgos, declaración de aplicabilidad, configuración de seguridad, aceptación del riesgo residual y suspensión cautelar del servicio.</li>
+      <li>La suspensión cautelar del servicio debe ser una respuesta ágil y de corta duración; si es prolongada, debe ser aprobada por la Dirección de la organización.</li>
+    </ul>
+  </div>
+  <div class="divider"></div>
+
+  </div><!-- /art-main -->
+
+  <aside class="art-toc">
+    <div class="art-toc-label">Contenido</div>
+    <nav class="art-toc-nav" id="artTocNav">
+      <a href="#s1" data-toc>Qué es y para qué vale</a>
+      <a href="#s2" data-toc>Qué contiene la guía</a>
+      <a href="#s3" data-toc>Conceptos clave</a>
+      <a href="#s4" data-toc>A quién aplica</a>
+      <a href="#s5" data-toc>Cómo se implanta, paso a paso</a>
+      <a href="#s6" data-toc>Para qué sirve en auditoría</a>
+      <a href="#s7" data-toc>Relación con otras guías</a>
+      <a href="#s8" data-toc>Mapeo a otros marcos</a>
+      <a href="#s9" data-toc>Errores típicos</a>
+      <a href="#s10" data-toc>Checklist práctico</a>
+      <a href="#s11" data-toc>Ficha y enlace oficial</a>
+      <a href="#s12" data-toc>Administradores de sistema y seguridad</a>
+      <a href="#s13" data-toc>Concurrencia con RGPD y NIS2</a>
+      <a href="#s14" data-toc>Gestión de riesgos y RACI</a>
+    </nav>
+  </aside>
+
+  </div><!-- /art-layout -->
+</div><!-- /body -->
+
+<div class="art-related">
+  <div class="art-related-label">Sigue en la serie 800</div>
+  <div class="art-related-title">Otras guías CCN-STIC</div>
+  <div class="art-related-grid">
+    <a href="/guias-ccn-cert/ccn-stic-800.html" class="art-related-card"><span class="art-related-pill">CCN-STIC 800</span><h3>Glosario de Términos y Abreviaturas del ENS</h3><p>El diccionario del ENS. Aburrida, sí; imprescindible, también.</p><div class="art-related-meta"><span>Serie 800 · ENS</span></div></a>
+    <a href="/guias-ccn-cert/ccn-stic-802.html" class="art-related-card"><span class="art-related-pill">CCN-STIC 802</span><h3>ENS. Guía de auditorías de cumplimiento</h3><p>La guía que marca cómo te van a auditar. Léela antes de que lo hagan.</p><div class="art-related-meta"><span>Serie 800 · ENS</span></div></a>
+  </div>
+</div>
+
+<div id="footer-placeholder"></div>
+<script>
+    fetch('/includes/footer-no-share.html').then(r=>r.text()).then(d=>{document.getElementById('footer-placeholder').innerHTML=d;});
+    var tl=Array.from(document.querySelectorAll('#artTocNav a'));
+    var ss=tl.map(a=>document.querySelector(a.getAttribute('href')));
+    if('IntersectionObserver' in window){
+      var ob=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){var id='#'+en.target.id;tl.forEach(a=>a.classList.toggle('active',a.getAttribute('href')===id));}});},{rootMargin:'-20% 0px -70% 0px'});
+      ss.forEach(function(s){if(s)ob.observe(s);});
+    }
+</script>
+
+</div>
+</div>
+</body>
+<script src="/js/global.js"></script>
+</html>
+```

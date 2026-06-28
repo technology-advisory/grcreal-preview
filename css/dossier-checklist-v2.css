@@ -5,11 +5,9 @@
    ============================================================ */
 
 /* ---- back link (ESTO ARREGLA el "Volver a checklists" sin maquetar) ---- */
-.chk-back{display:inline-flex;align-items:center;gap:7px;margin:0 0 4px;
-  font-family:var(--mono,monospace);font-size:12.5px;letter-spacing:.04em;
-  color:#7c8790;text-decoration:none;}
-.chk-back:hover{color:var(--ds-deep,#003955);}
-.chk-back:visited{color:#7c8790;}
+/* .chk-back: estilo unificado en marca.css (boton volver corporativo) */
+
+
 
 /* ---- barra de control (vista + nivel + score) ---- */
 .chk-controls{display:flex;flex-wrap:wrap;gap:18px;align-items:center;justify-content:space-between;}

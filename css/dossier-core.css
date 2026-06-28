@@ -113,3 +113,10 @@
 @media (max-width:640px){
   .ds-meta,.ds-page .header,.ds-page .block,.ds-page .cta-block{padding-left:20px;padding-right:20px;}
 }
+
+/* ---- Bloque explicativo de herramienta (por que GRC / normativa) ---- */
+.tool-explica{border:1px solid var(--ds-line,#d3dae3);border-left:4px solid var(--brand,#0077B5);
+  background:#f7fafd;border-radius:6px;padding:14px 16px;margin:0 0 26px;}
+.tool-explica .te-h{font-family:var(--mono,monospace);font-size:11px;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--brand-dark,#005a8e);font-weight:700;margin-bottom:6px;}
+.tool-explica p{margin:0;font-size:13.5px;line-height:1.6;color:var(--ds-ink,#2b3340);}

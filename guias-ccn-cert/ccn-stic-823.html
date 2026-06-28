@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0">
+<title>CCN-STIC 823 — Cloud Computing en el ENS · GRCreal</title>
+<meta name="description" content="CCN-STIC 823 (Cloud Computing en el ENS): qué es, qué contiene, cómo implantarla, su uso en auditoría, mapeo a ISO 27001/NIS2/DORA y checklist. Resumen práctico de GRCreal con enlace oficial.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://grcreal.com/guias-ccn-cert/ccn-stic-823.html">
+<meta property="og:title" content="CCN-STIC 823 — Cloud Computing en el ENS">
+<meta property="og:description" content="CCN-STIC 823 (Cloud Computing en el ENS): qué es, qué contiene, cómo implantarla, su uso en auditoría, mapeo a ISO 27001/NIS2/DORA y checklist. Resumen práctico de GRCreal con enlace oficial.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://grcreal.com/guias-ccn-cert/ccn-stic-823.html">
+<meta property="og:image" content="https://grcreal.com/grcreal.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="stylesheet" href="../css/marca.css">
+<link rel="stylesheet" href="../css/articles.css">
+<link rel="stylesheet" href="../css/global.css">
+<link rel="stylesheet" href="../css/dossier-core.css">
+<link rel="stylesheet" href="../css/dossier-articulo.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"CCN-STIC 823 — Cloud Computing en el ENS","description":"CCN-STIC 823 (Cloud Computing en el ENS): qué es, qué contiene, cómo implantarla, su uso en auditoría, mapeo a ISO 27001/NIS2/DORA y checklist. Resumen práctico de GRCreal con enlace oficial.","image":"https://grcreal.com/grcreal.png","author":{"@type":"Person","name":"Miguel Ángel Carriazo","url":"https://grcreal.com/sobre-mi/"},"publisher":{"@type":"Organization","name":"GRCreal","logo":{"@type":"ImageObject","url":"https://grcreal.com/favicon-32x32.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://grcreal.com/guias-ccn-cert/ccn-stic-823.html"}}</script>
+<style>
+.ccn-note{font-family:var(--mono,monospace);font-size:11.5px;color:#6b7680;letter-spacing:.01em;margin:0 0 18px;line-height:1.5;}
+.ccn-note a{color:var(--brand-dark,#005a8e);}
+.ccn-banner{display:flex;align-items:flex-start;gap:10px;background:var(--brand-light,#e8f3fa);
+  border:1px solid var(--brand-mid,#cce4f0);border-radius:6px;padding:11px 15px;margin:0 0 14px;
+  font-size:13px;color:var(--brand-dark,#005a8e);line-height:1.5;}
+.ccn-doctable{width:100%;border-collapse:collapse;margin:8px 0 26px;font-size:13.5px;}
+.ccn-doctable thead th{background:#1f6fb2;color:#fff;text-align:left;padding:10px 12px;font-weight:600;font-size:12.5px;}
+.ccn-doctable thead th:nth-child(3),.ccn-doctable thead th:nth-child(4){white-space:nowrap;}
+.ccn-doctable td{border-bottom:1px solid var(--ds-line,#e2e7ec);padding:11px 12px;vertical-align:top;color:var(--ds-ink,#2b3340);}
+.ccn-doctable tr:nth-child(even) td{background:#f4f8fb;}
+.ccn-doc-a{color:var(--brand-dark,#005a8e);text-decoration:none;font-weight:600;display:inline-flex;align-items:center;gap:7px;}
+.ccn-doc-a:hover{text-decoration:underline;}
+.ccn-doc-a .pdf{color:#c0392b;font-weight:700;}
+.ccn-anexos{list-style:none;margin:10px 0 0;padding:0;}
+.ccn-anexos li{position:relative;padding:4px 0 4px 16px;font-size:12.5px;color:#5a6675;}
+.ccn-anexos li:before{content:"\25AA";position:absolute;left:0;color:var(--brand,#0077B5);}
+.ccn-cat{font-size:12.5px;color:#5a6675;}
+.guia-oficial-btn{display:inline-flex;align-items:center;gap:8px;background:var(--brand,#0077B5);color:#fff;
+  text-decoration:none;font-family:var(--mono,monospace);font-size:12.5px;font-weight:600;letter-spacing:.02em;
+  padding:10px 20px;border-radius:13px;margin-top:6px;transition:background .15s;}
+.guia-oficial-btn:hover{background:var(--brand-dark,#005a8e);color:#fff;}
+.guia-map{width:100%;border-collapse:collapse;margin-top:12px;font-size:13px;}
+.guia-map th{background:var(--ds-navy,#14233b);color:#fff;text-align:left;padding:8px 10px;font-size:11px;
+  text-transform:uppercase;letter-spacing:.05em;font-family:var(--mono,monospace);}
+.guia-map td{border:1px solid var(--ds-line,#d3dae3);padding:8px 10px;vertical-align:top;}
+.guia-map tr:nth-child(even) td{background:#f4f8fb;}
+.guia-check{list-style:none;padding:0;margin:12px 0 0;}
+.guia-check li{position:relative;padding:7px 0 7px 28px;border-bottom:1px solid #eef2f6;font-size:14px;color:var(--ds-ink,#2b3340);}
+.guia-check li:before{content:"\2713";position:absolute;left:0;top:6px;width:18px;height:18px;line-height:18px;text-align:center;
+  background:var(--brand-light,#e8f3fa);color:var(--brand-dark,#005a8e);border-radius:4px;font-size:12px;font-weight:700;}
+.guia-ul{margin:12px 0 0;padding-left:20px;}
+.guia-ul li{margin:7px 0;font-size:14px;line-height:1.55;color:var(--ds-ink,#2b3340);}
+.guia-pasos{list-style:none;counter-reset:p;margin:14px 0 0;padding:0;}
+.guia-pasos li{counter-increment:p;position:relative;padding:0 0 16px 44px;margin-bottom:14px;border-bottom:1px solid #eef2f6;}
+.guia-pasos li:last-child{border-bottom:none;}
+.guia-pasos li:before{content:counter(p);position:absolute;left:0;top:0;width:28px;height:28px;line-height:28px;text-align:center;
+  background:var(--brand,#0077B5);color:#fff;border-radius:50%;font-family:var(--mono,monospace);font-size:13px;font-weight:700;}
+.guia-pasos .pt{display:block;font-weight:700;color:var(--ds-navy,#14233b);font-size:14.5px;margin-bottom:3px;}
+.guia-pasos .pd{font-size:13.5px;line-height:1.55;color:var(--ds-ink,#2b3340);}
+.guia-concepts dt{font-weight:700;color:var(--brand-dark,#005a8e);font-size:14px;margin-top:12px;}
+.guia-concepts dd{margin:2px 0 0;font-size:13.5px;line-height:1.55;color:var(--ds-ink,#2b3340);}
+.guia-rel{list-style:none;margin:12px 0 0;padding:0;}
+.guia-rel li{padding:8px 0;border-bottom:1px solid #eef2f6;font-size:13.5px;color:var(--ds-ink,#2b3340);}
+.guia-rel .rn{display:inline-block;background:var(--ds-navy,#14233b);color:#fff;font-family:var(--mono,monospace);
+  font-size:11px;font-weight:700;padding:2px 8px;border-radius:4px;margin-right:8px;}
+.guia-rel a{color:var(--brand-dark,#005a8e);font-weight:600;text-decoration:none;}
+</style>
+</head>
+
+<body class="article-page">
+
+<div class="card-wrapper ds-page">
+<div class="card">
+      <div id="nav-placeholder"></div>
+<script>
+    fetch('/includes/nav.html').then(r=>r.text()).then(d=>{document.getElementById('nav-placeholder').outerHTML=d;});
+</script>
+<div class="accent-bar"></div>
+
+<div class="ds-meta">
+  <span><span class="dot"></span>GRCreal // expediente: guía CCN-STIC</span>
+  <span>referencia: <strong>CCN-STIC 823</strong></span>
+</div>
+
+<div class="header">
+  <a href="/guias-ccn-cert/index.html" class="art-back">← Volver a Guías CCN-CERT</a>
+  <div class="tag">CCN-STIC · Serie 800 · ENS</div>
+  <h1 class="headline">CCN-STIC 823<br><span class="accent">Cloud Computing en el ENS</span></h1>
+  <p class="subline">Nube y ENS: el reparto de responsabilidades que casi nadie documenta.</p>
+</div>
+
+<div class="body">
+
+  <div class="ccn-banner">ℹ️ <span><strong>Resumen práctico de GRCreal.</strong> Consulta siempre la versión oficial vigente en el portal del CCN-CERT.</span></div>
+  <p class="ccn-note">Resumen realizado a fecha 29/06/2026 con la información disponible en <a href="https://www.ccn-cert.cni.es/es/guias.html" target="_blank" rel="noopener noreferrer">https://www.ccn-cert.cni.es/es/guias.html</a>. Las fechas de publicación y actualización proceden del portal oficial.</p>
+
+  <table class="ccn-doctable"><thead><tr><th>Documento</th><th>Categoría</th><th>Publicado</th><th>Actualizado</th></tr></thead><tbody><tr><td><a class="ccn-doc-a" href="https://www.ccn-cert.cni.es/es/800-guia-esquema-nacional-de-seguridad/541-ccn-stic-823-seguridad-en-entornos-cloud/file.html" target="_blank" rel="noopener noreferrer"><span class="pdf">⬇ PDF</span> CCN-STIC-823 Cloud Computing en el ENS</a><ul class="ccn-anexos"><li><a class="ccn-doc-a" href="https://www.ccn-cert.cni.es/series-ccn-stic/800-guia-esquema-nacional-de-seguridad/2500-ccn-stic-823-seguridad-en-entornos-cloud-anexo/file.html" target="_blank" rel="noopener noreferrer"><span class="pdf">⬇ PDF</span> Anexo (entornos Cloud)</a></li><li><a class="ccn-doc-a" href="https://www.ccn-cert.cni.es/pdf/guias/series-ccn-stic/800-guia-esquema-nacional-de-seguridad/6401-ccn-stic-823-annex-i-clauses-and-service-level-agreements.html" target="_blank" rel="noopener noreferrer"><span class="pdf">⬇ PDF</span> Annex I: Clauses and Service Level Agreements (versión EN)</a></li><li><a class="ccn-doc-a" href="https://www.ccn-cert.cni.es/es/800-guia-esquema-nacional-de-seguridad/6398-ccn-stic-823-use-of-cloud-services/file.html" target="_blank" rel="noopener noreferrer"><span class="pdf">⬇ PDF</span> Versión en inglés: Use of Cloud services</a></li></ul></td><td class="ccn-cat">800 Guías Esquema Nacional de Seguridad</td><td>Oct 2012</td><td>Sep 2020</td></tr></tbody></table>
+
+  <div class="art-layout">
+  <div class="art-main">
+
+  <div class="block" id="s1">
+    <div class="block-label">Qué es</div>
+    <h2 class="block-title">Qué es y para qué vale</h2>
+    <p class="block-text" style="margin-top:10px">La CCN-STIC 823 aborda cómo aplicar el ENS cuando los sistemas están en la nube: el reparto de responsabilidades entre cliente y proveedor, la conformidad del servicio cloud y las medidas que siguen siendo tuyas aunque «todo esté en el proveedor». Incluye cláusulas y acuerdos de nivel de servicio orientados a la seguridad.</p>
+    <p class="block-text" style="margin-top:10px">Es una guía clave hoy, cuando prácticamente todo es SaaS, PaaS o IaaS. El error más extendido es asumir que la conformidad del proveedor te cubre por completo. No es así: en la nube la responsabilidad es compartida, y hay medidas (configuración, gestión de accesos, protección del dato) que siguen siendo del cliente por mucho que el proveedor esté certificado.</p>
+    <p class="block-text" style="margin-top:10px">La guía se basa en la definición de cloud computing de ISO/IEC 17788 y establece cinco características esenciales: auto-servicio a demanda, amplio acceso a redes, agregación y compartición de recursos, adaptación inmediata y servicio consumido.</p>
+  </div>
+  <div class="divider"></div>
+  <div class="block" id="s2">
+    <div class="block-label">Contenido</div>
+    <h2 class="block-title">Qué contiene la guía</h2>
+    <ul class="guia-ul">
+      <li>El modelo de responsabilidad compartida entre cliente y proveedor cloud.</li>
+      <li>Cómo se acredita la conformidad ENS de un servicio en la nube.</li>
+      <li>Las medidas que permanecen bajo responsabilidad del cliente.</li>
+      <li>Cláusulas de seguridad y Acuerdos de Nivel de Servicio (ANS/SLA) recomendados.</li>
+      <li>Consideraciones para IaaS, PaaS y SaaS.</li>
+      <li>Los modelos de despliegue: nube pública, privada, comunitaria e híbrida.</li>
+      <li>Un decálogo de recomendaciones y un anexo con clausulado tipo para contratación.</li>
+    </ul>
+  </div>
+  <div class="divider"></div>
+  <div class="block" id="s3">
+    <div class="block-label">Conceptos</div>
+    <h2 class="block-title">Conceptos clave que debes manejar</h2>
+    <dl class="guia-concepts">
+      <dt>Responsabilidad compartida</dt>
+      <dd>Reparto de medidas entre cliente y proveedor según el modelo de servicio. El cliente siempre es responsable de la información y los servicios, aunque estén externalizados.</dd>
+      <dt>Conformidad del servicio</dt>
+      <dd>Acreditación de que el servicio cloud cumple el ENS para una categoría dada. Es obligación del contratante exigir la conformidad del CSP.</dd>
+      <dt>IaaS/PaaS/SaaS</dt>
+      <dd>Modelos de servicio que determinan qué controla el cliente y qué el proveedor. IaaS: infraestructura (servidores, almacenamiento); PaaS: plataforma (entornos de desarrollo); SaaS: software (aplicaciones).</dd>
+      <dt>ANS/SLA de seguridad</dt>
+      <dd>Compromisos contractuales de seguridad y nivel de servicio con el proveedor. Incluyen disponibilidad, capacidad, tiempos de respuesta, penalizaciones, etc.</dd>
+      <dt>POC (Punto de Contacto)</dt>
+      <dd>Figura designada por el CSP para canalizar comunicaciones de seguridad e incidentes con el cliente. El Responsable de Seguridad del cliente actúa como POC por su parte.</dd>
+    </ul>
+  </div>
+  <div class="divider"></div>
+  <div class="block" id="s4">
+    <div class="block-label">Alcance</div>
+    <h2 class="block-title">A quién aplica y cuándo entra en juego</h2>
+    <div class="block-text">Aplica a cualquier entidad bajo ENS que use nube pública o híbrida, que hoy son casi todas. Es especialmente relevante al contratar o renovar servicios cloud y al definir la Declaración de Aplicabilidad de sistemas que residen en la nube. También aplica a entidades privadas que presten servicios cloud al sector público, que deben cumplir el ENS.</div>
+  </div>
+  <div class="divider"></div>
+  <div class="block" id="s5">
+    <div class="block-label">Implantación</div>
+    <h2 class="block-title">Cómo lo implanta una empresa, paso a paso</h2>
+    <ol class="guia-pasos">
+      <li><span class="pt">Identifica el modelo y el reparto</span><span class="pd">Determina si es IaaS, PaaS o SaaS y qué medidas asume cada parte. Sin este reparto claro, nadie responde de nada. La responsabilidad última siempre es del cliente.</span></li>
+      <li><span class="pt">Exige conformidad al proveedor</span><span class="pd">Pide evidencia de conformidad ENS del servicio concreto que usas, para tu categoría. «Está en la nube» no es conformidad. La ITS de conformidad del ENS obliga a exigirlo.</span></li>
+      <li><span class="pt">Implanta tus propias medidas</span><span class="pd">Configura, gestiona accesos y protege el dato: esas medidas son tuyas aunque el proveedor esté certificado. La guía 807 aplica para criptografía en la nube.</span></li>
+      <li><span class="pt">Lleva todo al contrato</span><span class="pd">Refleja cláusulas de seguridad y ANS/SLA en el contrato. Lo que no está escrito, no es exigible. Incluye: conformidad ENS, ubicación de datos, confidencialidad, gestión de incidentes, copias de seguridad y finalización del contrato.</span></li>
+      <li><span class="pt">Documéntalo en tu expediente</span><span class="pd">Incluye el reparto de responsabilidades y la conformidad del proveedor en tu Declaración de Aplicabilidad. La guía 823 se integra con la 804 y 808.</span></li>
+    </ol>
+  </div>
+  <div class="divider"></div>
+  <div class="block" id="s6">
+    <div class="block-label">Auditoría</div>
+    <h2 class="block-title">Para qué sirve en una auditoría</h2>
+    <ul class="guia-ul">
+      <li>El auditor revisa el reparto de responsabilidades y la conformidad del proveedor.</li>
+      <li>Comprueba que las medidas «del cliente» están implantadas por ti.</li>
+      <li>Verifica las cláusulas de seguridad y los ANS/SLA del contrato.</li>
+      <li>«Está en cloud certificado» no exime de tus propias medidas.</li>
+      <li>La falta de documentación del reparto es un hallazgo habitual.</li>
+      <li>El auditor verificará la ubicación geográfica de los datos (UE/España según normativa).</li>
+    </ul>
+  </div>
+  <div class="divider"></div>
+  <div class="block" id="s7">
+    <div class="block-label">Serie 800</div>
+    <h2 class="block-title">Relación con otras guías de la serie</h2>
+    <ul class="guia-rel">
+      <li><span class="rn">CCN-STIC 804</span><a href="/guias-ccn-cert/ccn-stic-804.html">804</a> — Las medidas de protección se reparten entre cliente y proveedor.</li>
+      <li><span class="rn">CCN-STIC 807</span><a href="/guias-ccn-cert/ccn-stic-807.html">807</a> — El cifrado y la gestión de claves en cloud requieren atención específica.</li>
+      <li><span class="rn">CCN-STIC 817</span><a href="/guias-ccn-cert/ccn-stic-817.html">817</a> — La detección y respuesta a incidentes implica también al proveedor.</li>
+      <li><span class="rn">CCN-STIC 808</span><a href="/guias-ccn-cert/ccn-stic-808.html">808</a> — La verificación del cumplimiento en cloud se basa en esta guía.</li>
+    </ul>
+  </div>
+  <div class="divider"></div>
+  <div class="block" id="s8">
+    <div class="block-label">Mapeo</div>
+    <h2 class="block-title">Equivalencia con otros marcos</h2>
+    <div class="block-text">Cómo se conecta esta guía con los marcos que probablemente ya manejas:</div>
+    <table class="guia-map">
+      <tr><th>Aspecto en el ENS</th><th>ISO 27001</th><th>NIS2 / DORA</th></tr>
+      <tr><td>Responsabilidad compartida cloud</td><td>ISO 27001: A.5.19–A.5.23 (proveedores) + ISO 27017</td><td>DORA: gestión de riesgo de terceros TIC (art. 28-30)</td></tr>
+      <tr><td>Conformidad del servicio</td><td>Conformidad ENS del proveedor</td><td>NIS2: seguridad de la cadena de suministro</td></tr>
+      <tr><td>ANS/SLA de seguridad</td><td>ISO 27001: acuerdos de servicio (A.5.20)</td><td>DORA: cláusulas contractuales mínimas</td></tr>
+      <tr><td>Ubicación geográfica de datos</td><td>ISO 27001: A.5.34 (privacidad)</td><td>RGPD: transferencias internacionales</td></tr>
+      <tr><td>Gestión de incidentes en cloud</td><td>ISO 27001: A.5.24–A.5.28</td><td>DORA: respuesta a incidentes</td></tr>
+    </table>
+  </div>
+  <div class="divider"></div>
+  <div class="block" id="s9">
+    <div class="block-label">Sin humo</div>
+    <h2 class="block-title">Errores típicos</h2>
+    <ul class="guia-ul">
+      <li>Asumir que la conformidad del proveedor te cubre al 100%.</li>
+      <li>No documentar qué medidas son tuyas y cuáles del proveedor.</li>
+      <li>Contratos sin cláusulas de seguridad ni ANS/SLA.</li>
+      <li>No verificar la conformidad ENS del servicio concreto contratado.</li>
+      <li>No considerar la ubicación geográfica de los datos (UE/España).</li>
+      <li>No designar un POC (Punto de Contacto) en el proveedor.</li>
+    </ul>
+  </div>
+  <div class="divider"></div>
+  <div class="block" id="s10">
+    <div class="block-label">Checklist</div>
+    <h2 class="block-title">Checklist práctico</h2>
+    <ul class="guia-check">
+      <li>Modelo de servicio y reparto de responsabilidades identificados.</li>
+      <li>Conformidad ENS del proveedor verificada para tu categoría.</li>
+      <li>Medidas del cliente implantadas y documentadas.</li>
+      <li>Cláusulas de seguridad y ANS/SLA en el contrato.</li>
+      <li>Reparto reflejado en la Declaración de Aplicabilidad.</li>
+      <li>POC designado por el proveedor.</li>
+      <li>Ubicación geográfica de los datos conforme a la normativa.</li>
+    </ul>
+  </div>
+  <div class="divider"></div>
+  <div class="block" id="s11">
+    <div class="block-label">Ficha</div>
+    <h2 class="block-title">Ficha y enlace oficial</h2>
+    <div class="block-text">Esta es una lectura práctica de GRCreal, no la guía oficial. Consulta siempre la versión vigente en el portal del CCN-CERT, ya que estas guías se actualizan periódicamente (esta ficha: publicada Oct 2012, actualizada Sep 2020).</div>
+    <a class="guia-oficial-btn" href="https://www.ccn-cert.cni.es/es/800-guia-esquema-nacional-de-seguridad/541-ccn-stic-823-seguridad-en-entornos-cloud/file.html" target="_blank" rel="noopener noreferrer">⬇ CCN-STIC 823 en el portal CCN-CERT</a>
+  </div>
+  <div class="divider"></div>
+
+  <!-- Nuevo bloque: Modelos de despliegue y categorías de servicio -->
+  <div class="block" id="s12">
+    <div class="block-label">Modelos</div>
+    <h2 class="block-title">Modelos de despliegue y categorías de servicio</h2>
+    <p class="block-text" style="margin-top:10px">La guía describe los modelos de despliegue y categorías de servicio en la nube:</p>
+    <ul class="guia-ul">
+      <li><strong>Modelos de despliegue</strong>:
+        <ul>
+          <li><strong>Nube pública</strong>: Infraestructura gestionada por terceros, recursos compartidos con múltiples clientes.</li>
+          <li><strong>Nube privada</strong>: Dedicada a un solo cliente. Puede ser on-premise o gestionada por un tercero.</li>
+          <li><strong>Nube híbrida</strong>: Combinación de pública y privada.</li>
+          <li><strong>Nube comunitaria</strong>: Compartida por organizaciones con requisitos comunes (ej. sector público).</li>
+        </ul>
+      </li>
+      <li><strong>Categorías de servicio</strong>:
+        <ul>
+          <li><strong>IaaS (Infrastructure as a Service)</strong>: Recursos de procesamiento y almacenamiento. El cliente controla SO, aplicaciones y componentes de red.</li>
+          <li><strong>PaaS (Platform as a Service)</strong>: Plataforma para desarrollar aplicaciones. El cliente controla aplicaciones y configuración.</li>
+          <li><strong>SaaS (Software as a Service)</strong>: Aplicaciones alojadas por el proveedor. El cliente no administra la infraestructura.</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  <div class="divider"></div>
+
+  <!-- Nuevo bloque: Riesgos y clausulado contractual -->
+  <div class="block" id="s13">
+    <div class="block-label">Riesgos y contratos</div>
+    <h2 class="block-title">Riesgos y clausulado contractual</h2>
+    <p class="block-text" style="margin-top:10px">La adopción de servicios en la nube introduce riesgos que deben controlarse mediante cláusulas contractuales adecuadas:</p>
+    <ul class="guia-ul">
+      <li><strong>Riesgos principales</strong>:
+        <ul>
+          <li>Pérdida de control: el cliente transfiere control al proveedor.</li>
+          <li>Ubicación de datos: debe acordarse que el procesamiento esté sujeto al marco legal del país.</li>
+          <li>Cumplimiento normativo: seguridad e integridad de los datos.</li>
+          <li>Aislamiento de datos: separación de datos entre clientes (multi-tenancy).</li>
+          <li>Portabilidad: capacidad de migrar datos entre proveedores.</li>
+          <li>Acceso de usuarios con privilegios: acordar con el proveedor.</li>
+        </ul>
+      </li>
+      <li><strong>Cláusulas contractuales mínimas (Anexo I)</strong>:
+        <ul>
+          <li>Descripción del servicio y dimensionado.</li>
+          <li>Acuerdos de nivel de servicio (SLA) con indicadores: disponibilidad, capacidad, resolución de incidencias.</li>
+          <li>Responsabilidades y obligaciones (clientes vs proveedor).</li>
+          <li>Gestión de incidentes y registros de actividad.</li>
+          <li>Copias de seguridad y recuperación de datos.</li>
+          <li>Finalización del contrato: devolución y destrucción de datos.</li>
+          <li>Confidencialidad y ubicación geográfica de los datos.</li>
+          <li>Conformidad con el ENS del servicio contratado.</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  <div class="divider"></div>
+
+  <!-- Nuevo bloque: Decálogo de recomendaciones -->
+  <div class="block" id="s14">
+    <div class="block-label">Decálogo</div>
+    <h2 class="block-title">Decálogo de recomendaciones para la nube</h2>
+    <p class="block-text" style="margin-top:10px">La guía incluye un decálogo de recomendaciones para la utilización de servicios en la nube:</p>
+    <ul class="guia-ul">
+      <li><strong>1</strong> — Determinar la categoría del sistema (BÁSICA, MEDIA o ALTA).</li>
+      <li><strong>2</strong> — Elaborar la declaración de aplicabilidad (Anexo II del ENS).</li>
+      <li><strong>3</strong> — Realizar un análisis de riesgos para identificar requisitos adicionales.</li>
+      <li><strong>4</strong> — Acogerse a un Perfil de Cumplimiento Específico (si aplica).</li>
+      <li><strong>5</strong> — Establecer las condiciones contractuales previas a la contratación.</li>
+      <li><strong>6</strong> — Detallar en el contrato servicio, infraestructura, dimensionado, registros, incidentes, copias de seguridad y finalización.</li>
+      <li><strong>7</strong> — Supervisar el cumplimiento de los requisitos legales por parte del CSP.</li>
+      <li><strong>8</strong> — Realizar seguimiento periódico de los SLA establecidos.</li>
+      <li><strong>9</strong> — Planificar revisiones periódicas de la información proporcionada por el CSP (logs, capacidad, almacenamiento).</li>
+      <li><strong>10</strong> — Elaborar una normativa de seguridad específica para los usuarios de la nube.</li>
+    </ul>
+  </div>
+  <div class="divider"></div>
+
+  </div><!-- /art-main -->
+
+  <aside class="art-toc">
+    <div class="art-toc-label">Contenido</div>
+    <nav class="art-toc-nav" id="artTocNav">
+      <a href="#s1" data-toc>Qué es y para qué vale</a>
+      <a href="#s2" data-toc>Qué contiene la guía</a>
+      <a href="#s3" data-toc>Conceptos clave</a>
+      <a href="#s4" data-toc>A quién aplica</a>
+      <a href="#s5" data-toc>Cómo se implanta, paso a paso</a>
+      <a href="#s6" data-toc>Para qué sirve en auditoría</a>
+      <a href="#s7" data-toc>Relación con otras guías</a>
+      <a href="#s8" data-toc>Mapeo a otros marcos</a>
+      <a href="#s9" data-toc>Errores típicos</a>
+      <a href="#s10" data-toc>Checklist práctico</a>
+      <a href="#s11" data-toc>Ficha y enlace oficial</a>
+      <a href="#s12" data-toc>Modelos de despliegue y categorías de servicio</a>
+      <a href="#s13" data-toc>Riesgos y clausulado contractual</a>
+      <a href="#s14" data-toc>Decálogo de recomendaciones</a>
+    </nav>
+  </aside>
+
+  </div><!-- /art-layout -->
+</div><!-- /body -->
+
+<div class="art-related">
+  <div class="art-related-label">Sigue en la serie 800</div>
+  <div class="art-related-title">Otras guías CCN-STIC</div>
+  <div class="art-related-grid">
+    <a href="/guias-ccn-cert/ccn-stic-817.html" class="art-related-card"><span class="art-related-pill">CCN-STIC 817</span><h3>ENS. Gestión de Ciberincidentes</h3><p>Cuando algo pasa: clasificar, notificar y responder. Y LUCÍA.</p><div class="art-related-meta"><span>Serie 800 · ENS</span></div></a>
+    <a href="/guias-ccn-cert/ccn-stic-800.html" class="art-related-card"><span class="art-related-pill">CCN-STIC 800</span><h3>Glosario de Términos y Abreviaturas del ENS</h3><p>El diccionario del ENS. Aburrida, sí; imprescindible, también.</p><div class="art-related-meta"><span>Serie 800 · ENS</span></div></a>
+  </div>
+</div>
+
+<div id="footer-placeholder"></div>
+<script>
+    fetch('/includes/footer-no-share.html').then(r=>r.text()).then(d=>{document.getElementById('footer-placeholder').innerHTML=d;});
+    var tl=Array.from(document.querySelectorAll('#artTocNav a'));
+    var ss=tl.map(a=>document.querySelector(a.getAttribute('href')));
+    if('IntersectionObserver' in window){
+      var ob=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){var id='#'+en.target.id;tl.forEach(a=>a.classList.toggle('active',a.getAttribute('href')===id));}});},{rootMargin:'-20% 0px -70% 0px'});
+      ss.forEach(function(s){if(s)ob.observe(s);});
+    }
+</script>
+
+</div>
+</div>
+</body>
+<script src="/js/global.js"></script>
+</html>

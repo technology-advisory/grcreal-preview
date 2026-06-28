@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0">
+<title>Guías CCN-CERT · Serie CCN-STIC 800 (ENS) explicadas · GRCreal</title>
+<meta name="description" content="Catálogo de las guías CCN-STIC de la serie 800 del CCN-CERT, explicadas en lenguaje práctico, con fechas oficiales, anexos y descarga. Resumen práctico de GRCreal.">
+<link rel="canonical" href="https://grcreal.com/guias-ccn-cert/">
+<meta property="og:title" content="Guías CCN-CERT · Serie CCN-STIC 800 explicadas · GRCreal">
+<meta property="og:description" content="Catálogo de la serie CCN-STIC 800 del ENS, con fechas oficiales, anexos y descarga.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://grcreal.com/guias-ccn-cert/">
+<meta property="og:image" content="https://grcreal.com/grcreal.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="robots" content="index, follow">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="stylesheet" href="/css/marca.css">
+<link rel="stylesheet" href="/css/articles.css">
+<link rel="stylesheet" href="/css/global.css">
+<link rel="stylesheet" href="/css/dossier-core.css">
+<link rel="stylesheet" href="/css/dossier-articulo.css">
+<style>
+.ccn-banner{display:flex;align-items:flex-start;gap:10px;background:var(--brand-light,#e8f3fa);
+  border:1px solid var(--brand-mid,#cce4f0);border-radius:8px;padding:12px 16px;margin:0 0 12px;
+  font-size:13px;color:var(--brand-dark,#005a8e);line-height:1.5;}
+.ccn-note{font-family:var(--mono,monospace);font-size:11.5px;color:#6b7680;margin:0 0 26px;line-height:1.5;}
+.ccn-note a{color:var(--brand-dark,#005a8e);}
+.ccn-sech{font-family:var(--mono,monospace);font-size:11px;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--brand-dark,#005a8e);font-weight:700;margin:30px 0 16px;display:flex;align-items:center;gap:12px;}
+.ccn-sech:after{content:"";flex:1;height:1px;background:var(--ds-line,#e2e7ec);}
+.gc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:16px;}
+.gc{position:relative;display:flex;flex-direction:column;background:#fff;border:1px solid var(--ds-line,#e2e7ec);
+  border-radius:12px;padding:18px 20px 16px;transition:border-color .15s,box-shadow .15s,transform .15s;}
+.gc:hover{border-color:var(--brand,#0077B5);box-shadow:0 8px 24px rgba(15,40,70,.08);transform:translateY(-3px);}
+.gc-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;}
+.gc-num{font-family:var(--mono,monospace);font-size:11px;font-weight:700;letter-spacing:.04em;
+  color:var(--brand-dark,#005a8e);background:var(--brand-light,#e8f3fa);padding:4px 10px;border-radius:20px;}
+.gc-dl{position:relative;z-index:2;width:30px;height:30px;display:flex;align-items:center;justify-content:center;
+  border-radius:8px;color:#9aa5ae;text-decoration:none;font-size:15px;transition:all .15s;}
+.gc-dl:hover{background:var(--brand,#0077B5);color:#fff;}
+.gc-title{font-size:16px;font-weight:800;line-height:1.3;color:var(--ds-navy,#14233b);text-decoration:none;
+  letter-spacing:-.01em;}
+.gc-title:after{content:"";position:absolute;inset:0;z-index:1;}
+.gc:hover .gc-title{color:var(--brand-dark,#005a8e);}
+.gc-sub{margin:8px 0 0;font-size:13px;line-height:1.5;color:#5a6675;flex:1;}
+.gc-foot{display:flex;align-items:center;gap:10px;margin-top:14px;padding-top:12px;border-top:1px solid #eef2f6;}
+.gc-date{font-family:var(--mono,monospace);font-size:11px;color:#8a949d;letter-spacing:.02em;}
+.gc-anx{font-family:var(--mono,monospace);font-size:10.5px;font-weight:700;color:var(--brand-dark,#005a8e);
+  background:var(--brand-light,#e8f3fa);padding:2px 8px;border-radius:20px;margin-left:auto;}
+@media(max-width:560px){.gc-grid{grid-template-columns:1fr;}}
+</style>
+</head>
+
+<body class="article-page">
+
+<div class="card-wrapper ds-page">
+<div class="card">
+      <div id="nav-placeholder"></div>
+<script>
+    fetch('/includes/nav.html').then(r=>r.text()).then(d=>{document.getElementById('nav-placeholder').outerHTML=d;});
+</script>
+<div class="accent-bar"></div>
+
+<div class="ds-meta">
+  <span><span class="dot"></span>GRCreal // expediente: CCN-CERT</span>
+  <span>serie: <strong>CCN-STIC 800 · ENS</strong></span>
+</div>
+
+<div class="header">
+  <div class="tag">Proyecto · Serie 800</div>
+  <h1 class="headline">Guías <span class="accent">CCN-CERT</span></h1>
+  <p class="subline">La serie <strong>CCN-STIC 800</strong> del ENS, explicada y mapeada en lenguaje práctico.<br>El cuerpo doctrinal del Esquema Nacional de Seguridad, sin la jerga.</p>
+</div>
+
+<div class="body">
+
+  <p style="font-size:15px;line-height:1.7;color:var(--ds-ink,#2b3340);margin:0 0 16px">
+    Cada tarjeta lleva a un <strong>resumen práctico</strong>: qué contiene la guía, cómo la implanta una empresa,
+    su uso en auditoría, el mapeo a ISO 27001 / NIS2 / DORA y un checklist. El icono ⬇ descarga el <strong>PDF oficial</strong> del CCN-CERT.
+  </p>
+
+  <div class="ccn-banner">ℹ️ <span><strong>Resumen práctico de GRCreal.</strong> Consulta siempre la versión oficial vigente en el portal del CCN-CERT.</span></div>
+  <p class="ccn-note">Resumen realizado a fecha 29/06/2026 con la información disponible en <a href="https://www.ccn-cert.cni.es/es/guias.html" target="_blank" rel="noopener noreferrer">https://www.ccn-cert.cni.es/es/guias.html</a>.</p>
+
+  <div class="ccn-sech">Ciclo de adecuación al ENS · 800–809</div>
+  <div class="gc-grid"><div class="gc"><div class="gc-top"><span class="gc-num">CCN-STIC 800</span><a class="gc-dl" href="https://www.ccn-cert.cni.es/es/800-guia-esquema-nacional-de-seguridad/499-ccn-stic-800-glosario-de-terminos-y-abreviaturas-del-ens/file.html" target="_blank" rel="noopener noreferrer" title="Descarga oficial (PDF, CCN-CERT)" aria-label="Descarga oficial PDF">⬇</a></div><a class="gc-title" href="/guias-ccn-cert/ccn-stic-800.html">Glosario de Términos y Abreviaturas</a><p class="gc-sub">El diccionario del ENS. Aburrida, sí; imprescindible, también.</p><div class="gc-foot"><span class="gc-date">Actualizada Feb 2016</span></div></div><div class="gc"><div class="gc-top"><span class="gc-num">CCN-STIC 801</span><a class="gc-dl" href="https://www.ccn-cert.cni.es/es/800-guia-esquema-nacional-de-seguridad/501-ccn-stic-801-responsibilidades-y-funciones-en-el-ens/file.html" target="_blank" rel="noopener noreferrer" title="Descarga oficial (PDF, CCN-CERT)" aria-label="Descarga oficial PDF">⬇</a></div><a class="gc-title" href="/guias-ccn-cert/ccn-stic-801.html">ENS. Responsabilidades y Funciones</a><p class="gc-sub">Quién responde de qué. Sin esto, el ENS no tiene dueño.</p><div class="gc-foot"><span class="gc-date">Actualizada Jun 2025</span></div></div><div class="gc"><div class="gc-top"><span class="gc-num">CCN-STIC 802</span><a class="gc-dl" href="https://www.ccn-cert.cni.es/es/800-guia-esquema-nacional-de-seguridad/502-ccn-stic-802-auditoria-del-ens/file.html" target="_blank" rel="noopener noreferrer" title="Descarga oficial (PDF, CCN-CERT)" aria-label="Descarga oficial PDF">⬇</a></div><a class="gc-title" href="/guias-ccn-cert/ccn-stic-802.html">ENS. Guía de auditorías de cumplimiento</a><p class="gc-sub">La guía que marca cómo te van a auditar.</p><div class="gc-foot"><span class="gc-date">Actualizada Abr 2026</span><span class="gc-anx">+1 anexo</span></div></div><div class="gc"><div class="gc-top"><span class="gc-num">CCN-STIC 803</span><a class="gc-dl" href="https://www.ccn-cert.cni.es/es/800-guia-esquema-nacional-de-seguridad/682-ccn-stic-803-valoracion-de-sistemas-en-el-ens-1/file.html" target="_blank" rel="noopener noreferrer" title="Descarga oficial (PDF, CCN-CERT)" aria-label="Descarga oficial PDF">⬇</a></div><a class="gc-title" href="/guias-ccn-cert/ccn-stic-803.html">ENS. Valoración de los sistemas</a><p class="gc-sub">Aquí se decide todo: lo que valores marca las medidas que te tocan.</p><div class="gc-foot"><span class="gc-date">Actualizada Jun 2025</span></div></div><div class="gc"><div class="gc-top"><span class="gc-num">CCN-STIC 804</span><a class="gc-dl" href="https://www.ccn-cert.cni.es/es/800-guia-esquema-nacional-de-seguridad/505-ccn-stic-804-medidas-de-implantancion-del-ens/file.html" target="_blank" rel="noopener noreferrer" title="Descarga oficial (PDF, CCN-CERT)" aria-label="Descarga oficial PDF">⬇</a></div><a class="gc-title" href="/guias-ccn-cert/ccn-stic-804.html">ENS. Medidas de implantación</a><p class="gc-sub">El cómo. Traduce los principios del ENS en medidas reales.</p><div class="gc-foot"><span class="gc-date">Actualizada Jun 2017</span></div></div><div class="gc"><div class="gc-top"><span class="gc-num">CCN-STIC 805</span><a class="gc-dl" href="https://www.ccn-cert.cni.es/es/800-guia-esquema-nacional-de-seguridad/508-ccn-stic-805-politica-de-seguridad-de-la-informacion/file.html" target="_blank" rel="noopener noreferrer" title="Descarga oficial (PDF, CCN-CERT)" aria-label="Descarga oficial PDF">⬇</a></div><a class="gc-title" href="/guias-ccn-cert/ccn-stic-805.html">ENS. Política de Seguridad de la Información</a><p class="gc-sub">El documento que el ENS exige primero. Y el que más se copia mal.</p><div class="gc-foot"><span class="gc-date">Actualizada Jun 2025</span></div></div><div class="gc"><div class="gc-top"><span class="gc-num">CCN-STIC 806</span><a class="gc-dl" href="https://www.ccn-cert.cni.es/es/800-guia-esquema-nacional-de-seguridad/511-ccn-stic-806-plan-de-adecuacion-al-ens/file.html" target="_blank" rel="noopener noreferrer" title="Descarga oficial (PDF, CCN-CERT)" aria-label="Descarga oficial PDF">⬇</a></div><a class="gc-title" href="/guias-ccn-cert/ccn-stic-806.html">Plan de Adecuación al ENS</a><p class="gc-sub">El punto de entrada. Tu hoja de ruta para cumplir el ENS.</p><div class="gc-foot"><span class="gc-date">Actualizada Jun 2020</span></div></div><div class="gc"><div class="gc-top"><span class="gc-num">CCN-STIC 807</span><a class="gc-dl" href="https://www.ccn-cert.cni.es/es/800-guia-esquema-nacional-de-seguridad/513-ccn-stic-807-criptologia-de-empleo-en-el-ens/file.html" target="_blank" rel="noopener noreferrer" title="Descarga oficial (PDF, CCN-CERT)" aria-label="Descarga oficial PDF">⬇</a></div><a class="gc-title" href="/guias-ccn-cert/ccn-stic-807.html">Criptología de empleo en el ENS</a><p class="gc-sub">Qué cifrado vale y cuál no. Aquí no se improvisa.</p><div class="gc-foot"><span class="gc-date">Actualizada May 2022</span><span class="gc-anx">+1 anexo</span></div></div><div class="gc"><div class="gc-top"><span class="gc-num">CCN-STIC 808</span><a class="gc-dl" href="https://www.ccn-cert.cni.es/es/800-guia-esquema-nacional-de-seguridad/518-ccn-stic-808-verificacion-del-cumplimiento-de-las-medidas-en-el-ens/file.html" target="_blank" rel="noopener noreferrer" title="Descarga oficial (PDF, CCN-CERT)" aria-label="Descarga oficial PDF">⬇</a></div><a class="gc-title" href="/guias-ccn-cert/ccn-stic-808.html">ENS. Verificación del cumplimiento</a><p class="gc-sub">Cómo se demuestra que cumples. La guía de la evidencia.</p><div class="gc-foot"><span class="gc-date">Actualizada Abr 2026</span><span class="gc-anx">+1 anexo</span></div></div><div class="gc"><div class="gc-top"><span class="gc-num">CCN-STIC 809</span><a class="gc-dl" href="https://www.ccn-cert.cni.es/es/800-guia-esquema-nacional-de-seguridad/1279-ccn-stic-809-declaracion-de-conformidad-con-el-ens/file.html" target="_blank" rel="noopener noreferrer" title="Descarga oficial (PDF, CCN-CERT)" aria-label="Descarga oficial PDF">⬇</a></div><a class="gc-title" href="/guias-ccn-cert/ccn-stic-809.html">Declaración y Certificación de Conformidad</a><p class="gc-sub">El sello final: declarar o certificar tu conformidad con el ENS.</p><div class="gc-foot"><span class="gc-date">Actualizada Abr 2026</span><span class="gc-anx">+3 anexos</span></div></div></div>
+
+  <div class="ccn-sech">Operación y tecnología</div>
+  <div class="gc-grid"><div class="gc"><div class="gc-top"><span class="gc-num">CCN-STIC 817</span><a class="gc-dl" href="https://www.ccn-cert.cni.es/es/800-guia-esquema-nacional-de-seguridad/988-ccn-stic-817-gestion-de-ciberincidentes/file.html" target="_blank" rel="noopener noreferrer" title="Descarga oficial (PDF, CCN-CERT)" aria-label="Descarga oficial PDF">⬇</a></div><a class="gc-title" href="/guias-ccn-cert/ccn-stic-817.html">ENS. Gestión de Ciberincidentes</a><p class="gc-sub">Cuando algo pasa: clasificar, notificar y responder.</p><div class="gc-foot"><span class="gc-date">Actualizada Abr 2020</span><span class="gc-anx">+1 anexo</span></div></div><div class="gc"><div class="gc-top"><span class="gc-num">CCN-STIC 823</span><a class="gc-dl" href="https://www.ccn-cert.cni.es/es/800-guia-esquema-nacional-de-seguridad/541-ccn-stic-823-seguridad-en-entornos-cloud/file.html" target="_blank" rel="noopener noreferrer" title="Descarga oficial (PDF, CCN-CERT)" aria-label="Descarga oficial PDF">⬇</a></div><a class="gc-title" href="/guias-ccn-cert/ccn-stic-823.html">Cloud Computing en el ENS</a><p class="gc-sub">Nube y ENS: el reparto de responsabilidades que casi nadie documenta.</p><div class="gc-foot"><span class="gc-date">Actualizada Sep 2020</span><span class="gc-anx">+3 anexos</span></div></div></div>
+
+</div><!-- /body -->
+
+<div id="footer-placeholder"></div>
+<script>
+    fetch('/includes/footer-no-share.html').then(r=>r.text()).then(d=>{document.getElementById('footer-placeholder').innerHTML=d;});
+</script>
+
+</div>
+</div>
+</body>
+<script src="/js/global.js"></script>
+</html>

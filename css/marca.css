@@ -772,8 +772,6 @@ body {
   .footer-tags { text-align: left; }
 }
 
-
-
 /* ===== Rescatado de menu.css (hero, novedades banner) ===== */
 .hero-image {
   display: flex;
@@ -818,4 +816,56 @@ body {
   border-bottom: 1px solid #eef2ff;
   font-size: 0.8rem;
   color: #475569;
+}
+
+/* ============================================================
+   Boton "volver" corporativo unificado
+   Rectangulo redondeado, azul corporativo, texto blanco.
+   Usado por: .art-back (articulos/versus/academia), .chk-back
+   (checklists) y .btn-volver (herramientas y genericos).
+   ============================================================ */
+.art-back, .chk-back, .btn-volver{
+  display:inline-flex; align-items:center; gap:7px; width:fit-content;
+  font-family:var(--mono); font-size:12px; font-weight:600; letter-spacing:.04em;
+  color:#fff; background:var(--brand); text-decoration:none;
+  padding:7px 16px; border-radius:14px; border:none; cursor:pointer;
+  margin-bottom:22px; line-height:1; transition:background .15s ease;
+}
+.art-back:hover, .chk-back:hover, .btn-volver:hover{ background:var(--brand-dark); color:#fff; }
+.art-back:visited, .chk-back:visited, .btn-volver:visited{ color:#fff; }
+
+
+/* ============================================================
+   BOTÓN NOVEDADES EN MENÚ (NUEVO)
+   ============================================================ */
+.nav-cta-novedades {
+  background: #c0392b;
+  color: #fff !important;
+  padding: 5px 16px !important;
+  border-radius: 30px !important;
+  font-weight: 600 !important;
+  font-size: 12.5px !important;
+  letter-spacing: .02em !important;
+  transition: background .2s ease, transform .15s ease;
+  text-decoration: none !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  margin-left: 4px !important;
+}
+.nav-cta-novedades:hover {
+  background: #a93226 !important;
+  transform: scale(1.02);
+}
+.nav-cta-novedades .badge-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #ff6b6b;
+  display: inline-block;
+  animation: pulse-dot 2s infinite;
+}
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: .5; transform: scale(1.3); }
 }

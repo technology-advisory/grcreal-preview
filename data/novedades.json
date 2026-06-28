@@ -1,0 +1,59 @@
+{
+  "items": [
+  	  {
+	  "fecha": "15 Junio 2026",
+	  "titulo": "🧠 Lanzamiento de los Quiz GRCreal",
+	  "descripcion": "Nueva sección interactiva con cuestionarios especializados para evaluar y reforzar conocimientos en Seguridad, Riesgo y Cumplimiento. Incluye: ISO/IEC 27001 (Lead Auditor), ISO/IEC 42001 (Gestión de IA), ENS (Esquema Nacional de Seguridad), RGPD/GDPR, ISO 22301 (Continuidad de Negocio), Ransomware Defense y vCISO/GRC. Preguntas aleatorias, explicaciones detalladas y enfoque práctico orientado al mundo real.",
+	  "enlace": "/quiz",
+	  "enlace_texto": "Acceder a los Quiz",
+	  "tipo_enlace": "primary"
+	},
+    {
+      "fecha": "08 Junio 2026",
+      "titulo": "✅ Nuevo checklist para directivos: Gobierno y supervisión GRC",
+      "descripcion": "Un checklist de NIS2 de 40 preguntas, en lenguaje claro, diseñado EXCLUSIVAMENTE para alta dirección.",
+      "enlace": "/checklists/nis2-executivo.html",
+      "enlace_texto": "Acceder checklist NIS2 directivos",
+      "tipo_enlace": "primary"
+    },
+    {
+      "fecha": "02 Junio 2026",
+      "titulo": "📘 Nuevo módulo de formación: ISO/IEC 42001:2023 Lead Auditor",
+      "descripcion": "Curso GRCREAL para auditar Sistemas de Gestión de IA. Aprende a evaluar riesgos, controles y cumplimiento en entornos con inteligencia artificial.",
+      "enlace": "/academia/iso42001-lead-auditor",
+      "enlace_texto": "Ver módulo",
+      "tipo_enlace": "primary"
+    },
+    {
+      "fecha": "24 Mayo 2026",
+      "titulo": "🎓 Nueva sección: Academia GRCreal",
+      "descripcion": "Formación práctica en Seguridad, Riesgo y Cumplimiento. Recursos para profesionales que quieren pasar del cumplimiento al control real.",
+      "enlace": "/academia",
+      "enlace_texto": "Explorar Academia",
+      "tipo_enlace": "outline"
+    },
+    {
+      "fecha": "24 Mayo 2026",
+      "titulo": "✅ Checklist: Preparación para auditorías",
+      "descripcion": "Nueva interfaz: Lista de verificación para auditorías de seguridad. Lista de verificación actualizada para afrontar auditorías de seguridad. Punto por punto, no te dejes nada. Informe PDF más detallado disponible.",
+      "enlace": "/checklists",
+      "enlace_texto": "Ver checklist",
+      "tipo_enlace": ""
+    },
+    {
+      "fecha": "24 Mayo 2026",
+      "titulo": "🖥️ Nueva interfaz gráfica del portal",
+      "descripcion": "Hemos renovado completamente la interfaz del portal. Más intuitiva, más rápida y con una experiencia de usuario mejorada para la gestión de riesgos y cumplimiento."
+    },
+    {
+      "fecha": "Próximamente",
+      "titulo": "❓ Quiz GRCreal",
+      "descripcion": "Nueva sección interactiva para evaluar tus conocimientos en Seguridad, Riesgo y Cumplimiento. Preguntas prácticas, casos reales y resultados inmediatos."
+    },
+    {
+      "fecha": "Próximamente",
+      "titulo": "🛠️ Herramientas GRCreal",
+      "descripcion": "Nueva sección interactiva para acelerar tus análisis de continuidad de negocio (BIA), evaluar riesgos y fortalecer la resiliencia operativa."
+    }
+  ]
+}
