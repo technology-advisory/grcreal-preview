@@ -865,6 +865,12 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://grcreal.com/checklists/ai-act.html</loc>
+    <lastmod>2026-06-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://grcreal.com/checklists/iso22301.html</loc>
     <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
@@ -989,6 +995,12 @@
     <lastmod>2026-06-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://grcreal.com/herramientas/ai-act-clasificador/</loc>
+    <lastmod>2026-06-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://grcreal.com/herramientas/analisis-riesgos/</loc>

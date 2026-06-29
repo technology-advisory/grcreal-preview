@@ -917,46 +917,53 @@ body {
 .nota-destacada {
   margin: 48px 0 32px 0;
   padding: 0;
-  background: #f7f8f9;
-  border-radius: 24px;
-  border-left: 4px solid #cbd5e1;
+  background: #fff;
+  border: 1px solid var(--ds-line, #D7DCDF);
+  border-left: 3px solid var(--ds-deep, #003955);
+  border-radius: 0;
 }
 
 .nota-destacada-inner {
-  padding: 32px 40px;
-  text-align: center;
+  padding: 30px 36px;
+  text-align: left;
+}
+
+.nota-destacada-eyebrow {
+  display: inline-block;
+  font-family: var(--mono, monospace);
+  font-size: 11px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--brand, #0077B5);
+  margin-bottom: 16px;
 }
 
 .nota-destacada p {
-  margin: 0 0 16px 0;
-  font-size: 1rem;
+  margin: 0;
   color: #475569;
-  line-height: 1.6;
-}
-
-.nota-destacada-frase {
-  font-size: 1.2rem !important;
-  font-weight: 600;
-  color: #334155 !important;
-  margin-top: 24px !important;
+  line-height: 1.65;
 }
 
 .nota-destacada-texto {
-  font-size: 1.1rem !important;
-  color: #1e293b !important;
-  margin: 20px 0 !important;
+  font-size: 1.18rem !important;
+  font-weight: 600;
+  color: var(--ds-ink, #10161B) !important;
+  margin: 0 0 16px 0 !important;
+  max-width: 64ch;
 }
 
 .nota-destacada-texto strong {
-  color: #2c3e50;
+  color: var(--ds-deep, #003955);
   font-weight: 700;
 }
 
 .nota-destacada-cierre {
-  font-size: 0.95rem !important;
+  font-size: .95rem !important;
   color: #64748b !important;
-  font-style: italic;
-  margin-top: 16px !important;
+  margin: 0 !important;
+  padding-top: 16px;
+  border-top: 1px solid var(--ds-line, #D7DCDF);
+  max-width: 70ch;
 }
 
 /* ========== CTA FINAL ========== */

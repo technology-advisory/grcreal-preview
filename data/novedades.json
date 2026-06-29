@@ -1,6 +1,22 @@
 {
   "items": [
     {
+      "fecha": "29 Junio 2026",
+      "titulo": "🤖 Nuevo clasificador de riesgo: AI Act",
+      "descripcion": "Herramienta interactiva para determinar el nivel de riesgo de tu sistema de IA según el Reglamento (UE) 2024/1689: prácticas prohibidas (Art. 5), alto riesgo (Anexo III), modelos de propósito general (GPAI) y obligaciones de transparencia (Art. 50). Te orienta sobre qué obligaciones aplican y a partir de cuándo.",
+      "enlace": "/herramientas/ai-act-clasificador/index.html",
+      "enlace_texto": "Abrir clasificador",
+      "tipo_enlace": "primary"
+    },
+    {
+      "fecha": "29 Junio 2026",
+      "titulo": "✅ Nuevo checklist: AI Act (Reglamento UE 2024/1689)",
+      "descripcion": "El Reglamento Europeo de IA organizado por niveles de riesgo: ámbito y rol, alfabetización en IA, prácticas prohibidas, clasificación, obligaciones de proveedor y responsable del despliegue de alto riesgo, GPAI y transparencia. 35 requisitos en 9 secciones, con calendario actualizado tras el AI Omnibus.",
+      "enlace": "/checklists/ai-act.html",
+      "enlace_texto": "Abrir checklist AI Act",
+      "tipo_enlace": "primary"
+    },
+    {
       "fecha": "28 Junio 2026",
       "titulo": "🛡️ Nueva sección: Guías CCN-CERT",
       "descripcion": "Catálogo de la serie CCN-STIC 800 del ENS explicada en lenguaje práctico: qué contiene cada guía, cómo se implanta, su uso en auditoría y el mapeo a ISO 27001, NIS2 y DORA. Incluye descarga directa del PDF oficial del CCN-CERT.",
