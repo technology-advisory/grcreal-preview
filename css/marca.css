@@ -839,7 +839,7 @@ body {
    BOTÓN NOVEDADES EN MENÚ (NUEVO)
    ============================================================ */
 .nav-cta-novedades {
-  background: #c0392b;
+  background: var(--ds-deep, #003955);
   color: #fff !important;
   padding: 5px 16px !important;
   border-radius: 30px !important;
@@ -854,14 +854,14 @@ body {
   margin-left: 4px !important;
 }
 .nav-cta-novedades:hover {
-  background: #a93226 !important;
+  background: var(--brand-dark, #005a8e) !important;
   transform: scale(1.02);
 }
 .nav-cta-novedades .badge-dot {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: #ff6b6b;
+  background: #6fc3ff;
   display: inline-block;
   animation: pulse-dot 2s infinite;
 }
