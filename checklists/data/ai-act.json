@@ -1,0 +1,303 @@
+{
+  "sections": [
+    {
+      "title": "Ámbito y rol · Arts. 2-3",
+      "pymeTitle": "¿Te aplica el Reglamento y como qué actor?",
+      "items": [
+        {
+          "code": "AMB.1",
+          "difficulty": "facil",
+          "text": "Determinado si la organización entra en el ámbito del Reglamento (EU) 2024/1689",
+          "pymeText": "¿Habéis comprobado si el Reglamento de IA os aplica?",
+          "tooltip": "El AI Act tiene alcance extraterritorial (Art. 2): aplica a quien comercialice o ponga en servicio sistemas de IA en la UE, o cuyo output se use en la UE, con independencia de dónde esté establecido el proveedor. Evidencia: análisis de aplicabilidad documentado."
+        },
+        {
+          "code": "AMB.2",
+          "difficulty": "medio",
+          "text": "Identificado el rol de la organización: proveedor, responsable del despliegue (deployer), importador o distribuidor",
+          "pymeText": "¿Sabéis si sois quien desarrolla la IA, quien la usa, quien la importa o quien la distribuye?",
+          "tooltip": "Las obligaciones cambian radicalmente según el rol. El proveedor desarrolla/comercializa; el deployer la usa bajo su autoridad. Un deployer puede convertirse en proveedor si modifica sustancialmente el sistema o lo comercializa con su marca. Evidencia: inventario de sistemas con rol asignado por cada uno."
+        },
+        {
+          "code": "AMB.3",
+          "difficulty": "medio",
+          "text": "Inventario de sistemas de IA en uso o desarrollo elaborado y mantenido",
+          "pymeText": "¿Tenéis una lista de todos los sistemas de IA que usáis o desarrolláis?",
+          "tooltip": "No se puede clasificar ni cumplir sobre lo que no se conoce. Incluir IA propia, de terceros, embebida en productos y modelos de propósito general (GPAI) integrados. Evidencia: registro de sistemas de IA con finalidad, proveedor y datos tratados."
+        },
+        {
+          "code": "AMB.4",
+          "difficulty": "complejo",
+          "text": "Verificado si cada sistema encaja en la definición de «sistema de IA» del Art. 3",
+          "pymeText": "¿Habéis confirmado que lo que usáis es realmente «IA» según la norma?",
+          "tooltip": "No todo software automatizado es IA a efectos del Reglamento. La Comisión publicó directrices sobre la definición de sistema de IA (febrero 2025) para delimitar el alcance. Evidencia: evaluación frente a la definición y las directrices oficiales."
+        }
+      ]
+    },
+    {
+      "title": "Alfabetización en IA · Art. 4",
+      "pymeTitle": "¿Tu gente sabe usar la IA con criterio?",
+      "items": [
+        {
+          "code": "ALF.1",
+          "difficulty": "facil",
+          "text": "Medidas de alfabetización en IA para el personal implementadas (obligación en vigor desde 02/02/2025)",
+          "pymeText": "¿Habéis formado a quien usa IA en vuestra empresa?",
+          "tooltip": "Art. 4: proveedores y deployers deben garantizar un nivel suficiente de alfabetización en IA del personal que la opera, considerando su contexto y los afectados. Está en vigor desde febrero de 2025. Evidencia: plan de formación, registros de asistencia, materiales."
+        },
+        {
+          "code": "ALF.2",
+          "difficulty": "medio",
+          "text": "Alfabetización adaptada al rol, conocimientos técnicos y contexto de uso de cada grupo",
+          "pymeText": "¿La formación se ajusta a lo que hace cada persona?",
+          "tooltip": "No vale un curso genérico para todos. Debe considerar el nivel técnico, la experiencia y las personas/grupos sobre los que se usa la IA. Evidencia: itinerarios formativos diferenciados por perfil."
+        }
+      ]
+    },
+    {
+      "title": "Prácticas prohibidas · Art. 5",
+      "pymeTitle": "¿Usas alguna IA que está directamente prohibida?",
+      "items": [
+        {
+          "code": "PRO.1",
+          "difficulty": "medio",
+          "text": "Verificado que ningún sistema realiza manipulación o engaño dañinos, ni explota vulnerabilidades de personas",
+          "pymeText": "¿Vuestra IA manipula a la gente o se aprovecha de personas vulnerables?",
+          "tooltip": "Las prohibiciones (Art. 5) están en vigor desde el 02/02/2025 y conllevan las multas más altas: hasta 35 M€ o 7 % del volumen de negocio mundial. Evidencia: análisis frente a las directrices de prácticas prohibidas de la Comisión (febrero 2025)."
+        },
+        {
+          "code": "PRO.2",
+          "difficulty": "medio",
+          "text": "Descartado el uso de social scoring y de evaluación/predicción individual del riesgo de delito",
+          "pymeText": "¿Puntuáis o «calificáis» a personas, o predecís quién cometerá un delito?",
+          "tooltip": "Prohibidos el social scoring de personas físicas y la evaluación de riesgo de criminalidad basada en perfilado individual. Evidencia: confirmación documentada de no uso."
+        },
+        {
+          "code": "PRO.3",
+          "difficulty": "complejo",
+          "text": "Descartado scraping no dirigido para bases faciales, reconocimiento de emociones en trabajo/educación y categorización biométrica de rasgos protegidos",
+          "pymeText": "¿Reconocéis emociones en el trabajo o clasificáis a personas por rasgos como raza, religión u orientación?",
+          "tooltip": "Prohibidos: scraping masivo de internet/CCTV para crear bases de reconocimiento facial, reconocimiento de emociones en el trabajo y centros educativos, y categorización biométrica para deducir características protegidas. Evidencia: revisión de sistemas biométricos."
+        },
+        {
+          "code": "PRO.4",
+          "difficulty": "complejo",
+          "text": "Descartada la identificación biométrica remota «en tiempo real» en espacios públicos para fines policiales",
+          "pymeText": "¿Identificáis a personas por la cara en tiempo real en espacios públicos?",
+          "tooltip": "Prohibida (con excepciones tasadas y estrictas para fuerzas del orden). Relevante si se colabora con autoridades o se opera videovigilancia avanzada. Evidencia: análisis de los casos de uso biométrico."
+        },
+        {
+          "code": "PRO.5",
+          "difficulty": "medio",
+          "text": "Verificado que no se genera contenido sexual explícito no consentido ni CSAM (apps de «nudification»)",
+          "pymeText": "¿Vuestra IA podría generar imágenes íntimas falsas sin consentimiento?",
+          "tooltip": "Prohibición incorporada por el «AI Omnibus» (acuerdo político de mayo 2026): sistemas que generan contenido sexual explícito no consentido o material de abuso sexual infantil. Evidencia: controles sobre IA generativa de imágenes."
+        }
+      ]
+    },
+    {
+      "title": "Clasificación de riesgo · Arts. 6 y Anexo III",
+      "pymeTitle": "¿Tu sistema es de «alto riesgo»?",
+      "items": [
+        {
+          "code": "CLA.1",
+          "difficulty": "complejo",
+          "text": "Cada sistema clasificado en uno de los 4 niveles: inaceptable, alto, transparencia (limitado) o mínimo",
+          "pymeText": "¿Habéis clasificado cada sistema según su nivel de riesgo?",
+          "tooltip": "El AI Act es un marco basado en riesgo con 4 niveles. La clasificación determina TODAS las obligaciones. Evidencia: matriz de clasificación por sistema y justificación."
+        },
+        {
+          "code": "CLA.2",
+          "difficulty": "complejo",
+          "text": "Comprobado si el sistema cae en las áreas de alto riesgo del Anexo III",
+          "pymeText": "¿Vuestra IA se usa en RR. HH., crédito, educación, biometría, infraestructuras o servicios esenciales?",
+          "tooltip": "Anexo III: biometría, infraestructuras críticas, educación, empleo/gestión de trabajadores, acceso a servicios esenciales (p. ej. credit scoring), aplicación de la ley, migración/asilo/fronteras y administración de justicia. La Comisión publicó directrices de clasificación de alto riesgo (mayo 2026). Evidencia: análisis frente al Anexo III."
+        },
+        {
+          "code": "CLA.3",
+          "difficulty": "complejo",
+          "text": "Comprobado si el sistema es componente de seguridad de un producto regulado (Anexo I)",
+          "pymeText": "¿La IA es un componente de seguridad de un producto (máquinas, juguetes, sanitario...)?",
+          "tooltip": "La IA embebida como componente de seguridad en productos cubiertos por la legislación de armonización de la UE (Anexo I) también es alto riesgo. Su transición se extiende hasta el 02/08/2028. Evidencia: análisis de producto."
+        },
+        {
+          "code": "CLA.4",
+          "difficulty": "medio",
+          "text": "Identificado el plazo de aplicación que corresponde a cada sistema clasificado",
+          "pymeText": "¿Sabéis para qué fecha tenéis que cumplir con cada sistema?",
+          "tooltip": "Calendario vigente tras el AI Omnibus: prohibiciones y alfabetización (02/02/2025); GPAI y gobernanza (02/08/2025); aplicación general y transparencia Art. 50 (02/08/2026); alto riesgo del Anexo III (02/12/2027); alto riesgo en productos del Anexo I (02/08/2028). Evidencia: hoja de ruta con plazos por sistema."
+        }
+      ]
+    },
+    {
+      "title": "Obligaciones del proveedor de alto riesgo · Arts. 8-17",
+      "pymeTitle": "Si desarrolláis IA de alto riesgo, esto es obligatorio",
+      "items": [
+        {
+          "code": "ALT.1",
+          "difficulty": "complejo",
+          "text": "Sistema de gestión de riesgos continuo establecido a lo largo del ciclo de vida (Art. 9)",
+          "pymeText": "¿Gestionáis los riesgos del sistema durante toda su vida, no solo al principio?",
+          "tooltip": "Proceso iterativo de identificación, evaluación y mitigación de riesgos para salud, seguridad y derechos fundamentales. Evidencia: procedimiento y registro de riesgos del sistema."
+        },
+        {
+          "code": "ALT.2",
+          "difficulty": "complejo",
+          "text": "Gobernanza de datos aplicada: conjuntos de entrenamiento, validación y prueba de calidad y representativos (Art. 10)",
+          "pymeText": "¿Controláis la calidad y los sesgos de los datos con los que se entrena la IA?",
+          "tooltip": "Datos relevantes, representativos, libres de errores en lo posible y con examen de sesgos para minimizar resultados discriminatorios. Evidencia: documentación de gobernanza de datos."
+        },
+        {
+          "code": "ALT.3",
+          "difficulty": "complejo",
+          "text": "Documentación técnica elaborada y mantenida actualizada (Art. 11 · Anexo IV)",
+          "pymeText": "¿Tenéis la documentación técnica completa del sistema?",
+          "tooltip": "Documentación que demuestra el cumplimiento y permite a las autoridades evaluar el sistema. Las pymes y small mid-caps tienen requisitos simplificados (AI Omnibus). Evidencia: expediente técnico conforme al Anexo IV."
+        },
+        {
+          "code": "ALT.4",
+          "difficulty": "medio",
+          "text": "Registro automático de eventos (logging) para garantizar la trazabilidad (Art. 12)",
+          "pymeText": "¿El sistema guarda registros de su actividad para poder rastrear lo que hace?",
+          "tooltip": "Capacidad de registro automático de eventos durante el funcionamiento para asegurar la trazabilidad de los resultados. Evidencia: diseño de logging y política de retención."
+        },
+        {
+          "code": "ALT.5",
+          "difficulty": "medio",
+          "text": "Transparencia e instrucciones de uso claras para el responsable del despliegue (Art. 13)",
+          "pymeText": "¿Entregáis instrucciones claras a quien va a usar el sistema?",
+          "tooltip": "Información suficiente para que el deployer interprete la salida y la use adecuadamente. Evidencia: instrucciones de uso documentadas."
+        },
+        {
+          "code": "ALT.6",
+          "difficulty": "complejo",
+          "text": "Supervisión humana efectiva diseñada e integrada (Art. 14)",
+          "pymeText": "¿Una persona puede vigilar y, si hace falta, parar el sistema?",
+          "tooltip": "Medidas que permiten a personas supervisar, interpretar y, en su caso, anular o detener el sistema. Evidencia: diseño de human oversight y roles asignados."
+        },
+        {
+          "code": "ALT.7",
+          "difficulty": "complejo",
+          "text": "Niveles adecuados de precisión, robustez y ciberseguridad garantizados (Art. 15)",
+          "pymeText": "¿El sistema es preciso, resistente a fallos y seguro frente a ataques?",
+          "tooltip": "Incluye resiliencia frente a errores y frente a intentos de manipulación (p. ej. data poisoning, adversarial). Evidencia: pruebas de precisión, robustez y pruebas de seguridad."
+        },
+        {
+          "code": "ALT.8",
+          "difficulty": "complejo",
+          "text": "Evaluación de la conformidad realizada y marcado CE / declaración UE de conformidad (Arts. 43, 47, 48)",
+          "pymeText": "¿Habéis pasado la evaluación de conformidad antes de poner el sistema en el mercado?",
+          "tooltip": "Según el tipo de sistema, autoevaluación o intervención de organismo notificado, con declaración de conformidad y marcado CE. Evidencia: certificado/declaración de conformidad."
+        },
+        {
+          "code": "ALT.9",
+          "difficulty": "medio",
+          "text": "Registro del sistema en la base de datos de la UE antes de su comercialización (Art. 49)",
+          "pymeText": "¿Habéis registrado el sistema en la base de datos europea?",
+          "tooltip": "Los sistemas de alto riesgo del Anexo III deben registrarse en la base de datos de la UE. Evidencia: justificante de registro."
+        }
+      ]
+    },
+    {
+      "title": "Obligaciones del responsable del despliegue · Art. 26-27",
+      "pymeTitle": "Si solo USÁIS IA de alto riesgo, también tenéis deberes",
+      "items": [
+        {
+          "code": "DEP.1",
+          "difficulty": "medio",
+          "text": "Uso conforme a las instrucciones del proveedor y supervisión humana asignada (Art. 26)",
+          "pymeText": "¿Usáis el sistema como dice el fabricante y hay alguien supervisando?",
+          "tooltip": "El deployer debe seguir las instrucciones, asignar supervisión humana competente y vigilar el funcionamiento. Evidencia: procedimiento de uso y responsable designado."
+        },
+        {
+          "code": "DEP.2",
+          "difficulty": "complejo",
+          "text": "Evaluación de impacto en derechos fundamentales (FRIA) realizada cuando procede (Art. 27)",
+          "pymeText": "¿Habéis evaluado cómo afecta el sistema a los derechos de las personas?",
+          "tooltip": "Obligatoria para ciertos deployers (organismos públicos y servicios esenciales). Complementa, no sustituye, a la EIPD/DPIA del RGPD cuando ambas aplican. Evidencia: informe FRIA."
+        },
+        {
+          "code": "DEP.3",
+          "difficulty": "medio",
+          "text": "Información a las personas afectadas por decisiones del sistema de alto riesgo",
+          "pymeText": "¿Avisáis a las personas cuando una IA influye en decisiones que les afectan?",
+          "tooltip": "Las personas sujetas a decisiones basadas en sistemas de alto riesgo tienen derecho a recibir información. Evidencia: avisos y procedimientos de información."
+        }
+      ]
+    },
+    {
+      "title": "Modelos de propósito general · GPAI · Arts. 53-55",
+      "pymeTitle": "Si proveéis o integráis modelos tipo GPT/LLM",
+      "items": [
+        {
+          "code": "GPA.1",
+          "difficulty": "complejo",
+          "text": "Documentación técnica del modelo y resumen público del contenido de entrenamiento elaborados (Art. 53)",
+          "pymeText": "¿El proveedor del modelo publica su documentación y resumen de datos de entrenamiento?",
+          "tooltip": "Obligaciones de GPAI en vigor desde 02/08/2025: documentación técnica, política de cumplimiento de derechos de autor y resumen público del contenido de entrenamiento (plantilla de la Comisión). Evidencia: documentación del modelo."
+        },
+        {
+          "code": "GPA.2",
+          "difficulty": "medio",
+          "text": "Cumplimiento de la normativa de derechos de autor de la UE en el entrenamiento",
+          "pymeText": "¿Se respetan los derechos de autor en los datos de entrenamiento?",
+          "tooltip": "Política para identificar y respetar las reservas de derechos (incluido opt-out de TDM). El Código de Buenas Prácticas GPAI sirve de guía voluntaria. Evidencia: política de copyright del modelo."
+        },
+        {
+          "code": "GPA.3",
+          "difficulty": "complejo",
+          "text": "Si el modelo presenta riesgo sistémico: evaluación y mitigación de dichos riesgos (Art. 55)",
+          "pymeText": "Si el modelo es muy potente o muy usado, ¿se evalúan sus riesgos sistémicos?",
+          "tooltip": "Modelos muy capaces o de amplio despliegue pueden clasificarse con riesgo sistémico, con obligaciones reforzadas de evaluación, mitigación y notificación de incidentes graves. Evidencia: evaluación de riesgo sistémico."
+        }
+      ]
+    },
+    {
+      "title": "Transparencia · Art. 50",
+      "pymeTitle": "Avisar cuando hay IA de por medio",
+      "items": [
+        {
+          "code": "TRA.1",
+          "difficulty": "facil",
+          "text": "Los usuarios saben que interactúan con una IA (p. ej. chatbots)",
+          "pymeText": "¿Avisáis a la gente cuando habla con un bot y no con una persona?",
+          "tooltip": "Obligación de transparencia (Art. 50), aplicable desde 02/08/2026. Evidencia: avisos visibles en interfaces conversacionales."
+        },
+        {
+          "code": "TRA.2",
+          "difficulty": "medio",
+          "text": "El contenido generado o manipulado por IA (deepfakes, texto informativo) se marca como tal",
+          "pymeText": "¿Etiquetáis las imágenes, audios o textos creados por IA?",
+          "tooltip": "El contenido generado por IA debe ser detectable y, en casos como deepfakes o texto de interés público, marcarse de forma clara. La Comisión publicó el Código de marcado y etiquetado (junio 2026). Evidencia: mecanismo de marcado/etiquetado."
+        }
+      ]
+    },
+    {
+      "title": "Gobernanza y post-mercado · Arts. 72-73",
+      "pymeTitle": "Vigilancia continua y avisos a la autoridad",
+      "items": [
+        {
+          "code": "GOB.1",
+          "difficulty": "medio",
+          "text": "Sistema de seguimiento post-comercialización establecido (Art. 72)",
+          "pymeText": "¿Vigiláis el sistema una vez está en funcionamiento?",
+          "tooltip": "Recogida y análisis sistemático del rendimiento del sistema durante su vida útil. Evidencia: plan de seguimiento post-mercado."
+        },
+        {
+          "code": "GOB.2",
+          "difficulty": "medio",
+          "text": "Procedimiento de notificación de incidentes graves a la autoridad competente (Art. 73)",
+          "pymeText": "¿Sabéis cómo y a quién avisar si el sistema causa un incidente grave?",
+          "tooltip": "Obligación de notificar incidentes graves y mal funcionamiento a la autoridad de vigilancia del mercado. Evidencia: procedimiento de notificación con plazos."
+        },
+        {
+          "code": "GOB.3",
+          "difficulty": "facil",
+          "text": "Identificada la autoridad nacional competente y el punto de contacto",
+          "pymeText": "¿Sabéis qué organismo regula esto en vuestro país?",
+          "tooltip": "Los Estados miembros debían designar autoridades nacionales (notificación y vigilancia de mercado) desde agosto 2025. Evidencia: registro de la autoridad competente aplicable."
+        }
+      ]
+    }
+  ]
+}

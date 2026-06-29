@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0">
+<title>Clasificador de Riesgo AI Act · Reglamento (UE) 2024/1689 · GRCreal</title>
+<meta name="description" content="Herramienta guiada para clasificar tu sistema de IA según el AI Act (Reglamento UE 2024/1689): prohibido, alto riesgo, transparencia o riesgo mínimo. Obligaciones, plazos y artículos aplicables. Sin registro, sin almacenamiento.">
+<meta property="og:title" content="Clasificador de Riesgo AI Act · GRCreal">
+<meta property="og:description" content="Clasifica tu sistema de IA según el AI Act: prohibido, alto riesgo, transparencia o mínimo. Obligaciones, plazos y artículos. Sin registro.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://grcreal.com/herramientas/ai-act-clasificador/">
+<meta property="og:image" content="https://grcreal.com/grcreal.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://grcreal.com/herramientas/ai-act-clasificador/">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="stylesheet" href="../../css/marca.css">
+<link rel="stylesheet" href="../../css/global.css">
+<link rel="stylesheet" href="../../css/dossier-core.css">
+<style>
+/* ===== Clasificador AI Act · dossier (tokens: --ds-deep,--brand,--ds-line,--ds-ink,--mono,--ds-flag) ===== */
+.aia-intro{color:#5a6675;font-size:15px;line-height:1.65;max-width:760px;}
+.aia-note{display:inline-flex;gap:8px;align-items:center;font-family:var(--mono,monospace);font-size:11.5px;
+  color:#1e8449;border:1px solid var(--ds-line,#D7DCDF);padding:6px 12px;margin:14px 0 0;}
+
+/* progreso */
+.aia-prog-wrap{height:8px;background:#e7ecef;border:1px solid var(--ds-line,#D7DCDF);margin:6px 0 6px}
+.aia-prog-wrap > i{display:block;height:100%;background:var(--brand,#0077B5);width:0;transition:width .25s}
+.aia-prog-label{font-family:var(--mono,monospace);font-size:12px;color:#7c8790;margin-bottom:22px}
+
+/* pregunta */
+.aia-step{display:none}
+.aia-step.on{display:block;animation:aiaFade .25s ease}
+@keyframes aiaFade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.aia-q-num{font-family:var(--mono,monospace);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--brand,#0077B5);margin-bottom:8px}
+.aia-q-title{font-size:20px;font-weight:800;color:var(--ds-ink,#10161B);line-height:1.3;margin-bottom:6px}
+.aia-q-help{font-size:13.5px;color:#5a6675;line-height:1.6;margin-bottom:20px;max-width:720px}
+.aia-q-ref{font-family:var(--mono,monospace);font-size:11px;color:#9aa4ad;margin-bottom:18px}
+
+/* opciones */
+.aia-opts{display:grid;gap:10px;max-width:760px}
+.aia-opt{display:flex;gap:12px;align-items:flex-start;background:#fff;border:1px solid var(--ds-line,#D7DCDF);
+  border-left:3px solid var(--ds-line,#D7DCDF);padding:14px 16px;cursor:pointer;text-align:left;font:inherit;
+  transition:border-color .15s,transform .12s,box-shadow .15s;width:100%}
+.aia-opt:hover{border-left-color:var(--brand,#0077B5);transform:translateX(2px);box-shadow:0 4px 14px rgba(0,57,85,.06)}
+.aia-opt b{display:block;font-size:14.5px;color:var(--ds-ink,#10161B);margin-bottom:2px}
+.aia-opt span{font-size:12.5px;color:#7c8790;line-height:1.5}
+.aia-opt .mk{flex-shrink:0;width:20px;height:20px;border:1.5px solid var(--ds-line,#D7DCDF);border-radius:50%;margin-top:2px}
+
+.aia-multi-hint{font-family:var(--mono,monospace);font-size:11px;color:#9aa4ad;margin:0 0 10px}
+.aia-opt.sel{border-left-color:var(--brand,#0077B5);background:#f3f9fc}
+.aia-opt.sel .mk{background:var(--brand,#0077B5);border-color:var(--brand,#0077B5);box-shadow:inset 0 0 0 3px #fff}
+
+/* botones */
+.aia-actions{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:24px}
+.aia-btn{font-family:var(--mono,monospace);font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+  cursor:pointer;border:1.5px solid var(--ds-deep,#003955);background:var(--ds-deep,#003955);color:#fff;padding:13px 26px}
+.aia-btn:hover{background:#002a40}
+.aia-btn:disabled{opacity:.4;cursor:not-allowed}
+.aia-btn.ghost{background:transparent;color:var(--ds-deep,#003955)}
+.aia-btn.ghost:hover{background:#eef3f5}
+
+/* resultado */
+.aia-result{display:none}
+.aia-result.on{display:block}
+.aia-verdict{border:1px solid var(--ds-line,#D7DCDF);border-top:5px solid var(--vc,#003955);background:#fff;padding:26px 28px;margin-bottom:22px}
+.aia-verdict-kicker{font-family:var(--mono,monospace);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#9aa4ad;margin-bottom:8px}
+.aia-verdict-title{font-size:28px;font-weight:800;color:var(--vc,#003955);line-height:1.15;margin-bottom:12px}
+.aia-verdict-desc{font-size:14.5px;color:#3d4751;line-height:1.65}
+.aia-badge{display:inline-block;font-family:var(--mono,monospace);font-size:11px;font-weight:700;letter-spacing:.06em;
+  text-transform:uppercase;color:#fff;background:var(--vc,#003955);padding:5px 12px;margin-bottom:14px}
+
+.aia-sec{border:1px solid var(--ds-line,#D7DCDF);background:#fff;padding:20px 22px;margin-bottom:14px}
+.aia-sec h3{margin:0 0 12px;font-size:13px;font-family:var(--mono,monospace);letter-spacing:.06em;text-transform:uppercase;color:var(--ds-deep,#003955)}
+.aia-sec ul{margin:0;padding-left:20px}
+.aia-sec li{font-size:14px;color:#3d4751;line-height:1.7;margin-bottom:6px}
+.aia-deadline{display:flex;gap:14px;align-items:baseline;flex-wrap:wrap}
+.aia-deadline .d{font-size:24px;font-weight:800;color:var(--ds-deep,#003955)}
+.aia-deadline .t{font-size:13px;color:#5a6675}
+.aia-arts{font-family:var(--mono,monospace);font-size:12px;color:#7c8790;line-height:1.7}
+
+.aia-disc{font-size:12px;color:#9aa4ad;line-height:1.6;margin-top:18px;border-top:1px dashed var(--ds-line,#D7DCDF);padding-top:14px}
+
+@media (max-width:640px){
+  .aia-verdict-title{font-size:23px}
+  .aia-q-title{font-size:18px}
+}
+</style>
+</head>
+<body>
+
+<div class="card-wrapper ds-page">
+<div class="card">
+  <div id="nav-placeholder"></div>
+  <script>
+    fetch('/includes/nav.html')
+      .then(r => r.text())
+      .then(d => { document.getElementById('nav-placeholder').outerHTML = d; });
+  </script>
+  <div class="accent-bar"></div>
+
+  <div class="ds-meta">
+    <span><span class="dot"></span>GRCreal // expediente: herramienta</span>
+    <span>marco: <strong>AI Act</strong></span>
+  </div>
+
+  <div class="header">
+    <a class="chk-back" href="/herramientas/index.html" style="display:inline-block;font-family:var(--mono,monospace);font-size:12px;color:var(--brand,#0077B5);text-decoration:none;margin-bottom:14px">&larr; Volver a herramientas</a>
+    <div class="tag">AI Act · Clasificador de riesgo</div>
+    <h1 class="headline">Clasificador de <span class="accent">Riesgo</span><br><span class="dim">Reglamento (UE) 2024/1689</span></h1>
+    <p class="aia-intro">Responde unas preguntas sobre tu sistema y obtén su <strong>categoría de riesgo según el AI Act</strong> —prohibido, alto riesgo, transparencia o mínimo—, las obligaciones que te aplican, el plazo de cumplimiento y los artículos relevantes. Basado en el texto oficial del Reglamento y las directrices de la Comisión Europea, con el calendario actualizado tras el AI Omnibus (mayo 2026).</p>
+    <div class="aia-note">⚲ Sin registro · sin almacenamiento · orientativo, no es asesoramiento jurídico</div>
+  </div>
+
+  <div class="body">
+
+    <!-- WIZARD -->
+    <div id="aiaWizard">
+      <div class="aia-prog-wrap"><i id="aiaProgBar"></i></div>
+      <div class="aia-prog-label" id="aiaProgLabel">Paso 1</div>
+      <div id="aiaSteps"></div>
+      <div class="aia-actions">
+        <button class="aia-btn ghost" id="aiaBack" onclick="AIA.back()">← Atrás</button>
+        <button class="aia-btn" id="aiaNext" onclick="AIA.next()" style="display:none">Siguiente →</button>
+      </div>
+    </div>
+
+    <!-- RESULT -->
+    <div class="aia-result" id="aiaResult">
+      <div class="aia-verdict" id="aiaVerdict"></div>
+      <div id="aiaDetails"></div>
+      <div class="aia-actions">
+        <button class="aia-btn" onclick="AIA.pdf()">⬇ Exportar informe (PDF)</button>
+        <button class="aia-btn ghost" onclick="AIA.restart()">↺ Empezar de nuevo</button>
+      </div>
+      <div class="aia-disc">
+        Esta clasificación es orientativa y se basa en la información que has facilitado. No constituye asesoramiento jurídico
+        ni una evaluación de conformidad formal. La clasificación definitiva depende del análisis caso por caso frente al texto
+        del Reglamento (UE) 2024/1689, sus anexos y las directrices de la Comisión Europea. Ante la duda, consulta con un profesional.
+      </div>
+    </div>
+
+  </div><!-- /body -->
+
+  <div id="footer-placeholder"></div>
+  <script>
+    fetch('/includes/footer-no-share.html')
+      .then(r => r.text())
+      .then(d => { document.getElementById('footer-placeholder').innerHTML = d; })
+      .catch(() => { document.getElementById('footer-placeholder').innerHTML = '<div class="footer-mini">© GRCreal · Clasificador AI Act · Sin almacenamiento de datos</div>'; });
+  </script>
+
+</div><!-- /card -->
+</div><!-- /card-wrapper -->
+
+<script src="/js/jspdf.umd.min.js"></script>
+<script>
+(function(){
+  "use strict";
+
+  // ---- Definición del flujo ----
+  var STEPS = [
+    {
+      id:"sistema", type:"single", ref:"AI Act · Art. 3",
+      num:"Paso 1 · Definición",
+      title:"¿Es un «sistema de IA» según el Reglamento?",
+      help:"El AI Act define sistema de IA como un sistema basado en máquinas, diseñado para operar con autonomía, que infiere de las entradas que recibe cómo generar salidas (predicciones, contenido, recomendaciones, decisiones). El software puramente determinista o basado en reglas fijas normalmente queda fuera.",
+      opts:[
+        {v:"si", b:"Sí, infiere o aprende de datos", s:"ML, deep learning, IA generativa, modelos estadísticos que infieren resultados"},
+        {v:"no", b:"No, son reglas fijas / software tradicional", s:"Automatizaciones deterministas, hojas de cálculo, lógica condicional simple"}
+      ]
+    },
+    {
+      id:"prohibido", type:"multi", ref:"AI Act · Art. 5 · en vigor desde 02/02/2025",
+      num:"Paso 2 · Prácticas prohibidas",
+      title:"¿El sistema hace alguna de estas cosas?",
+      help:"Marca todas las que apliquen. Si marcas alguna, el sistema podría constituir una práctica prohibida (las multas más altas: hasta 35 M€ o 7 % del volumen de negocio mundial).",
+      opts:[
+        {v:"manip", b:"Manipulación o engaño dañinos / explotación de vulnerabilidades", s:"Técnicas subliminales o que explotan edad, discapacidad o situación social"},
+        {v:"social", b:"Social scoring o predicción individual de criminalidad", s:"Puntuar a personas por su comportamiento; predecir delitos por perfilado"},
+        {v:"biom", b:"Scraping facial masivo, emociones en trabajo/educación o categorización biométrica de rasgos protegidos", s:"Bases faciales por scraping; reconocer emociones de empleados/alumnos; deducir raza, religión, orientación..."},
+        {v:"rbi", b:"Identificación biométrica remota «en tiempo real» en espacios públicos (fines policiales)", s:"Reconocimiento facial en directo en la vía pública"},
+        {v:"nudify", b:"Genera contenido sexual explícito no consentido o CSAM", s:"Apps de «nudification» (prohibición del AI Omnibus, 2026)"},
+        {v:"ninguna", b:"Ninguna de las anteriores", s:"", exclusive:true}
+      ]
+    },
+    {
+      id:"altoriesgo", type:"multi", ref:"AI Act · Art. 6 · Anexos I y III",
+      num:"Paso 3 · Áreas de alto riesgo",
+      title:"¿En qué ámbito se usa el sistema?",
+      help:"Marca todas las que apliquen. Estos son los usos clasificados como alto riesgo por el Reglamento.",
+      opts:[
+        {v:"producto", b:"Componente de seguridad de un producto regulado", s:"Máquinas, juguetes, sanitario, ascensores... (Anexo I)"},
+        {v:"biometria", b:"Biometría", s:"Identificación, categorización biométrica o reconocimiento de emociones (en usos permitidos)"},
+        {v:"infra", b:"Infraestructuras críticas", s:"Gestión y operación de agua, energía, transporte..."},
+        {v:"educacion", b:"Educación y formación profesional", s:"Admisión, evaluación de exámenes, detección de fraude"},
+        {v:"empleo", b:"Empleo y gestión de trabajadores", s:"Cribado de CV, decisiones de contratación, promoción o despido"},
+        {v:"servicios", b:"Acceso a servicios esenciales", s:"Credit scoring, seguros de vida/salud, ayudas públicas, urgencias"},
+        {v:"leyes", b:"Aplicación de la ley / justicia / migración", s:"Evaluación de pruebas, asilo, fronteras, decisiones judiciales"},
+        {v:"ninguna", b:"Ninguno de estos ámbitos", s:"", exclusive:true}
+      ]
+    },
+    {
+      id:"transparencia", type:"multi", ref:"AI Act · Art. 50 · aplicable desde 02/08/2026",
+      num:"Paso 4 · Transparencia",
+      title:"¿El sistema interactúa con personas o genera contenido?",
+      help:"Marca todas las que apliquen. Estos usos no son de alto riesgo por sí solos, pero generan obligaciones de transparencia.",
+      opts:[
+        {v:"chatbot", b:"Interactúa directamente con personas (chatbot, asistente)", s:"Hay que avisar de que se habla con una IA"},
+        {v:"genera", b:"Genera contenido sintético (texto, imagen, audio, vídeo)", s:"El contenido debe ser detectable/marcado como generado por IA"},
+        {v:"deepfake", b:"Produce deepfakes o texto informativo de interés público", s:"Debe etiquetarse de forma clara y visible"},
+        {v:"ninguna", b:"No, ninguna de estas", s:"", exclusive:true}
+      ]
+    },
+    {
+      id:"gpai", type:"single", ref:"AI Act · Arts. 53-55 · en vigor desde 02/08/2025",
+      num:"Paso 5 · Propósito general (GPAI)",
+      title:"¿Eres proveedor de un modelo de IA de propósito general?",
+      help:"Un modelo de propósito general (GPAI) puede realizar tareas muy diversas y sirve de base a muchos sistemas (p. ej. grandes modelos de lenguaje). Esto aplica a quien DESARROLLA/comercializa el modelo, no a quien solo lo usa integrado.",
+      opts:[
+        {v:"si", b:"Sí, desarrollo o comercializo un modelo GPAI", s:"Tengo obligaciones específicas de GPAI además de la clasificación anterior"},
+        {v:"no", b:"No, solo uso o integro modelos de terceros", s:"Mis obligaciones derivan de la clasificación de los pasos anteriores"}
+      ]
+    }
+  ];
+
+  var state = { i:0, ans:{} };
+  STEPS.forEach(function(s){ state.ans[s.id] = (s.type==="multi") ? [] : null; });
+
+  var elSteps = document.getElementById("aiaSteps");
+
+  function render(){
+    elSteps.innerHTML = "";
+    STEPS.forEach(function(step, idx){
+      var d = document.createElement("div");
+      d.className = "aia-step" + (idx===state.i ? " on" : "");
+      var multiHint = step.type==="multi" ? '<div class="aia-multi-hint">Selección múltiple — marca todas las que apliquen</div>' : '';
+      var opts = step.opts.map(function(o){
+        var sel = step.type==="multi" ? (state.ans[step.id].indexOf(o.v)>=0) : (state.ans[step.id]===o.v);
+        return '<button class="aia-opt'+(sel?' sel':'')+'" data-step="'+step.id+'" data-v="'+o.v+'">'+
+               '<span class="mk"></span><span><b>'+o.b+'</b>'+(o.s?'<span>'+o.s+'</span>':'')+'</span></button>';
+      }).join("");
+      d.innerHTML =
+        '<div class="aia-q-num">'+step.num+'</div>'+
+        '<div class="aia-q-title">'+step.title+'</div>'+
+        '<div class="aia-q-help">'+step.help+'</div>'+
+        '<div class="aia-q-ref">'+step.ref+'</div>'+
+        multiHint+
+        '<div class="aia-opts">'+opts+'</div>';
+      elSteps.appendChild(d);
+    });
+    elSteps.querySelectorAll(".aia-opt").forEach(function(btn){
+      btn.onclick = function(){ choose(btn.getAttribute("data-step"), btn.getAttribute("data-v")); };
+    });
+    updateChrome();
+  }
+
+  function choose(stepId, v){
+    var step = STEPS.filter(function(s){return s.id===stepId;})[0];
+    if(step.type==="single"){
+      state.ans[stepId] = v;
+      render();
+      setTimeout(advance, 180);
+    } else {
+      var arr = state.ans[stepId];
+      var opt = step.opts.filter(function(o){return o.v===v;})[0];
+      if(opt.exclusive){
+        state.ans[stepId] = (arr.length===1 && arr[0]===v) ? [] : [v];
+      } else {
+        arr = arr.filter(function(x){
+          var ox = step.opts.filter(function(o){return o.v===x;})[0];
+          return !(ox && ox.exclusive);
+        });
+        var k = arr.indexOf(v);
+        if(k>=0) arr.splice(k,1); else arr.push(v);
+        state.ans[stepId] = arr;
+      }
+      render();
+    }
+  }
+
+  function updateChrome(){
+    var pct = Math.round(((state.i) / STEPS.length) * 100);
+    document.getElementById("aiaProgBar").style.width = pct + "%";
+    document.getElementById("aiaProgLabel").textContent = "Paso " + (state.i+1) + " de " + STEPS.length;
+    document.getElementById("aiaBack").style.visibility = state.i===0 ? "hidden" : "visible";
+    var step = STEPS[state.i];
+    var nextBtn = document.getElementById("aiaNext");
+    if(step.type==="multi"){
+      nextBtn.style.display = "inline-block";
+      nextBtn.disabled = state.ans[step.id].length===0;
+      nextBtn.textContent = (state.i===STEPS.length-1) ? "Ver resultado →" : "Siguiente →";
+    } else {
+      nextBtn.style.display = "none";
+    }
+  }
+
+  function advance(){
+    if(state.i < STEPS.length-1){ state.i++; render(); }
+    else { finish(); }
+  }
+
+  var AIA = {
+    next: function(){ advance(); },
+    back: function(){ if(state.i>0){ state.i--; render(); } },
+    restart: function(){
+      state.i = 0;
+      STEPS.forEach(function(s){ state.ans[s.id] = (s.type==="multi") ? [] : null; });
+      document.getElementById("aiaResult").classList.remove("on");
+      document.getElementById("aiaWizard").style.display = "block";
+      render();
+      window.scrollTo({top:0,behavior:"smooth"});
+    },
+    pdf: function(){ exportPdf(); }
+  };
+  window.AIA = AIA;
+
+  // ---- Motor de clasificación ----
+  function classify(){
+    var a = state.ans;
+    var prohib = a.prohibido.filter(function(x){return x!=="ninguna";});
+    var alto = a.altoriesgo.filter(function(x){return x!=="ninguna";});
+    var transp = a.transparencia.filter(function(x){return x!=="ninguna";});
+
+    if(a.sistema==="no"){
+      return {key:"fuera"};
+    }
+    if(prohib.length>0){
+      return {key:"prohibido", prohib:prohib, gpai:a.gpai==="si"};
+    }
+    if(alto.length>0){
+      var soloProducto = alto.length===1 && alto[0]==="producto";
+      return {key:"alto", alto:alto, soloProducto:soloProducto, transp:transp, gpai:a.gpai==="si"};
+    }
+    if(transp.length>0){
+      return {key:"transparencia", transp:transp, gpai:a.gpai==="si"};
+    }
+    return {key:"minimo", gpai:a.gpai==="si"};
+  }
+
+  var COLORS = {
+    fuera:"#5a6675", prohibido:"#991b1b", alto:"#b45309",
+    transparencia:"#0077B5", minimo:"#1e8449"
+  };
+
+  var GPAI_BLOCK = {
+    h:"Además: obligaciones GPAI · Arts. 53-55",
+    items:[
+      "Documentación técnica del modelo y resumen público del contenido de entrenamiento (plantilla de la Comisión).",
+      "Política de cumplimiento de los derechos de autor de la UE (incluidas las reservas de TDM).",
+      "Si el modelo presenta riesgo sistémico: evaluación, mitigación y notificación de incidentes graves (Art. 55).",
+      "El Código de Buenas Prácticas GPAI sirve como guía voluntaria de cumplimiento."
+    ],
+    arts:"En vigor desde 02/08/2025."
+  };
+
+  function buildResult(r){
+    var verdict = {}, secs = [];
+    if(r.key==="fuera"){
+      verdict = {kicker:"Resultado de la clasificación", badge:"Fuera de ámbito", title:"Probablemente fuera del ámbito del AI Act",
+        desc:"Según lo indicado, no se trataría de un «sistema de IA» en el sentido del Art. 3 (software determinista o basado en reglas fijas). El Reglamento no le aplicaría. Aun así, revisa la definición y las directrices de la Comisión, porque el matiz está en si el sistema «infiere»."};
+      secs.push({h:"Qué hacer", items:["Documentar el análisis frente a la definición del Art. 3 y a las directrices oficiales de sistema de IA.","Reevaluar si el sistema incorpora componentes de aprendizaje o inferencia en el futuro."]});
+    }
+    else if(r.key==="prohibido"){
+      var pmap = {
+        manip:"Manipulación/engaño dañinos o explotación de vulnerabilidades",
+        social:"Social scoring o predicción individual de criminalidad",
+        biom:"Scraping facial masivo, emociones en trabajo/educación o categorización biométrica de rasgos protegidos",
+        rbi:"Identificación biométrica remota en tiempo real en espacios públicos",
+        nudify:"Generación de contenido sexual no consentido / CSAM"
+      };
+      verdict = {kicker:"Resultado de la clasificación", badge:"Riesgo inaceptable", title:"Práctica prohibida (Art. 5)",
+        desc:"El sistema encaja en una o varias prácticas prohibidas por el AI Act. Estas prácticas están <strong>prohibidas desde el 2 de febrero de 2025</strong> y conllevan las sanciones más altas del Reglamento. No pueden comercializarse ni ponerse en servicio en la UE."};
+      secs.push({h:"Prácticas señaladas", items:r.prohib.map(function(x){return pmap[x];})});
+      secs.push({h:"Qué hacer", items:[
+        "Detener o rediseñar el sistema para eliminar la práctica prohibida.",
+        "Revisar el caso frente a las directrices de prácticas prohibidas de la Comisión (febrero 2025); algunas tienen excepciones tasadas.",
+        "Documentar la decisión y, si hay dudas, obtener asesoramiento jurídico antes de cualquier despliegue."
+      ]});
+      secs.push({type:"deadline", d:"02/02/2025", t:"Prohibición ya en vigor"});
+      secs.push({type:"penalty", txt:"Hasta 35 M€ o 7 % del volumen de negocio anual mundial (la mayor de ambas)."});
+      secs.push({type:"arts", txt:"Arts. 5 y 99 · Directrices de la Comisión sobre prácticas prohibidas (02/2025)."});
+    }
+    else if(r.key==="alto"){
+      var amap = {
+        producto:"Componente de seguridad de producto regulado (Anexo I)",
+        biometria:"Biometría", infra:"Infraestructuras críticas", educacion:"Educación y formación profesional",
+        empleo:"Empleo y gestión de trabajadores", servicios:"Acceso a servicios esenciales (crédito, seguros, ayudas)",
+        leyes:"Aplicación de la ley, justicia, migración"
+      };
+      verdict = {kicker:"Resultado de la clasificación", badge:"Alto riesgo", title:"Sistema de alto riesgo",
+        desc:"El sistema entra en una de las áreas de alto riesgo del Reglamento. Está sujeto a las <strong>obligaciones más exigentes</strong> antes de poder comercializarse o ponerse en servicio, y requiere evaluación de conformidad."};
+      secs.push({h:"Ámbitos señalados", items:r.alto.map(function(x){return amap[x];})});
+      secs.push({h:"Obligaciones del proveedor (Arts. 8-17)", items:[
+        "Sistema de gestión de riesgos continuo (Art. 9).",
+        "Gobernanza de datos: conjuntos representativos y examen de sesgos (Art. 10).",
+        "Documentación técnica conforme al Anexo IV (Art. 11).",
+        "Registro automático de eventos / trazabilidad (Art. 12).",
+        "Transparencia e instrucciones de uso al deployer (Art. 13).",
+        "Supervisión humana efectiva (Art. 14).",
+        "Precisión, robustez y ciberseguridad (Art. 15).",
+        "Evaluación de la conformidad, marcado CE y registro en la base de datos de la UE (Arts. 43, 48, 49)."
+      ]});
+      secs.push({h:"Obligaciones del responsable del despliegue (Arts. 26-27)", items:[
+        "Uso conforme a las instrucciones y supervisión humana competente.",
+        "Evaluación de impacto en derechos fundamentales (FRIA) cuando proceda.",
+        "Información a las personas afectadas por las decisiones."
+      ]});
+      if(r.soloProducto){
+        secs.push({type:"deadline", d:"02/08/2028", t:"Alto riesgo embebido en productos regulados (Anexo I) — plazo extendido por el AI Omnibus"});
+      } else {
+        secs.push({type:"deadline", d:"02/12/2027", t:"Alto riesgo en áreas del Anexo III (biometría, empleo, servicios esenciales...) — plazo fijado por el AI Omnibus"});
+      }
+      secs.push({type:"penalty", txt:"Incumplimiento de obligaciones de alto riesgo: hasta 15 M€ o 3 % del volumen de negocio anual mundial."});
+      secs.push({type:"arts", txt:"Arts. 6, 8-17, 26-27, 43, 48, 49 · Anexos I, III y IV · Directrices de clasificación de alto riesgo (05/2026)."});
+      if(r.transp && r.transp.length>0){
+        secs.push({h:"Además: transparencia (Art. 50)", items:["El sistema también genera obligaciones de transparencia (interacción/contenido sintético): avisos a usuarios y marcado de contenido generado por IA."]});
+      }
+    }
+    else if(r.key==="transparencia"){
+      var tmap = {
+        chatbot:"Interacción directa con personas (chatbot/asistente): avisar de que es una IA.",
+        genera:"Generación de contenido sintético: hacerlo detectable/marcado como generado por IA.",
+        deepfake:"Deepfakes o texto informativo de interés público: etiquetado claro y visible."
+      };
+      verdict = {kicker:"Resultado de la clasificación", badge:"Riesgo de transparencia", title:"Riesgo limitado · obligaciones de transparencia",
+        desc:"El sistema no es de alto riesgo, pero sí está sujeto a <strong>obligaciones de transparencia</strong> del Art. 50: las personas deben saber cuándo interactúan con una IA o cuándo el contenido es generado o manipulado por IA."};
+      secs.push({h:"Obligaciones que aplican", items:r.transp.map(function(x){return tmap[x];})});
+      secs.push({type:"deadline", d:"02/08/2026", t:"Aplicación de las obligaciones de transparencia (Art. 50)"});
+      secs.push({type:"arts", txt:"Art. 50 · Código de marcado y etiquetado de contenido generado por IA (06/2026)."});
+    }
+    else { // minimo
+      verdict = {kicker:"Resultado de la clasificación", badge:"Riesgo mínimo", title:"Riesgo mínimo o nulo",
+        desc:"Según lo indicado, el sistema no entra en prácticas prohibidas, ni en alto riesgo, ni en obligaciones de transparencia. El AI Act <strong>no impone obligaciones específicas</strong> a esta categoría, donde se sitúa la gran mayoría de sistemas de IA (p. ej. filtros antispam, IA en videojuegos)."};
+      secs.push({h:"Recomendado (buenas prácticas)", items:[
+        "Mantener el inventario de IA y reevaluar si cambia la finalidad del sistema.",
+        "Cumplir la obligación de alfabetización en IA del personal (Art. 4, ya en vigor).",
+        "Considerar la adhesión voluntaria al AI Pact y a códigos de conducta."
+      ]});
+      secs.push({type:"arts", txt:"Art. 4 (alfabetización en IA, en vigor desde 02/02/2025)."});
+    }
+
+    if(r.gpai){ secs.push({h:GPAI_BLOCK.h, items:GPAI_BLOCK.items, foot:GPAI_BLOCK.arts}); }
+    return {verdict:verdict, secs:secs};
+  }
+
+  function finish(){
+    var r = classify();
+    var out = buildResult(r);
+    var color = COLORS[r.key] || "#003955";
+
+    var v = document.getElementById("aiaVerdict");
+    v.style.setProperty("--vc", color);
+    v.innerHTML =
+      '<div class="aia-verdict-kicker">'+out.verdict.kicker+'</div>'+
+      '<div class="aia-badge" style="--vc:'+color+'">'+out.verdict.badge+'</div>'+
+      '<div class="aia-verdict-title">'+out.verdict.title+'</div>'+
+      '<div class="aia-verdict-desc">'+out.verdict.desc+'</div>';
+
+    var det = document.getElementById("aiaDetails");
+    det.innerHTML = "";
+    out.secs.forEach(function(s){
+      var box = document.createElement("div");
+      box.className = "aia-sec";
+      if(s.type==="deadline"){
+        box.innerHTML = '<h3>Plazo de cumplimiento</h3><div class="aia-deadline"><span class="d">'+s.d+'</span><span class="t">'+s.t+'</span></div>';
+      } else if(s.type==="penalty"){
+        box.innerHTML = '<h3>Sanción máxima</h3><div class="aia-deadline"><span class="t" style="font-size:14px;color:#3d4751">'+s.txt+'</span></div>';
+      } else if(s.type==="arts"){
+        box.innerHTML = '<h3>Base legal</h3><div class="aia-arts">'+s.txt+'</div>';
+      } else {
+        var foot = s.foot ? '<div class="aia-arts" style="margin-top:10px">'+s.foot+'</div>' : '';
+        box.innerHTML = '<h3>'+s.h+'</h3><ul>'+s.items.map(function(i){return '<li>'+i+'</li>';}).join("")+'</ul>'+foot;
+      }
+      det.appendChild(box);
+    });
+
+    document.getElementById("aiaWizard").style.display = "none";
+    document.getElementById("aiaResult").classList.add("on");
+    window.scrollTo({top:0,behavior:"smooth"});
+    AIA._last = {r:r, out:out};
+  }
+
+  // ---- Export PDF ----
+  function exportPdf(){
+    if(!AIA._last){ return; }
+    try{
+      var jsPDF = window.jspdf.jsPDF;
+      var doc = new jsPDF({unit:"pt", format:"a4"});
+      var W = doc.internal.pageSize.getWidth(), M = 48, y = 56;
+      var out = AIA._last.out;
+
+      doc.setFont("helvetica","bold"); doc.setFontSize(9); doc.setTextColor(120);
+      doc.text("GRCREAL · CLASIFICADOR AI ACT · REGLAMENTO (UE) 2024/1689", M, y); y += 22;
+      doc.setTextColor(20); doc.setFontSize(18);
+      y = wrap(doc, out.verdict.title, M, y, W-2*M, 22);
+      doc.setFont("helvetica","normal"); doc.setFontSize(10); doc.setTextColor(80); y += 4;
+      y = wrap(doc, "Categoría: " + out.verdict.badge, M, y, W-2*M, 15); y += 6;
+      y = wrap(doc, stripTags(out.verdict.desc), M, y, W-2*M, 15); y += 10;
+
+      out.secs.forEach(function(s){
+        if(y > 740){ doc.addPage(); y = 56; }
+        doc.setFont("helvetica","bold"); doc.setFontSize(11); doc.setTextColor(0,57,85);
+        var head = s.type==="deadline"?"Plazo de cumplimiento":s.type==="penalty"?"Sanción máxima":s.type==="arts"?"Base legal":s.h;
+        doc.text(head, M, y); y += 16;
+        doc.setFont("helvetica","normal"); doc.setFontSize(10); doc.setTextColor(50);
+        if(s.type==="deadline"){ y = wrap(doc, s.d + " — " + s.t, M, y, W-2*M, 14); }
+        else if(s.type==="penalty"||s.type==="arts"){ y = wrap(doc, s.txt, M, y, W-2*M, 14); }
+        else {
+          s.items.forEach(function(it){
+            if(y > 760){ doc.addPage(); y = 56; }
+            y = wrap(doc, "•  " + it, M, y, W-2*M, 14);
+          });
+          if(s.foot){ y = wrap(doc, s.foot, M, y, W-2*M, 14); }
+        }
+        y += 10;
+      });
+
+      if(y > 720){ doc.addPage(); y = 56; }
+      doc.setFontSize(8); doc.setTextColor(150);
+      y += 10;
+      y = wrap(doc, "Orientativo. No constituye asesoramiento jurídico ni evaluación de conformidad formal. Basado en el Reglamento (UE) 2024/1689 y directrices de la Comisión Europea. Calendario actualizado tras el AI Omnibus (mayo 2026). Generado en grcreal.com", M, y, W-2*M, 11);
+
+      doc.save("clasificacion-ai-act-grcreal.pdf");
+    }catch(e){
+      alert("No se pudo generar el PDF. Usa la opción de imprimir del navegador.");
+    }
+  }
+  function wrap(doc, text, x, y, maxw, lh){
+    var lines = doc.splitTextToSize(text, maxw);
+    lines.forEach(function(ln){ doc.text(ln, x, y); y += lh; });
+    return y;
+  }
+  function stripTags(s){ return s.replace(/<[^>]+>/g,""); }
+
+  render();
+})();
+</script>
+</body>
+</html>

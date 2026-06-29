@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0">
+<title>Checklist AI Act · Reglamento (UE) 2024/1689 · GRCreal</title>
+<meta name="description" content="Checklist interactivo del Reglamento de IA (AI Act, UE 2024/1689). Ámbito, prácticas prohibidas, clasificación de riesgo, alto riesgo, GPAI y transparencia. Vista Auditor/Pyme, scoring y export. Sin registro.">
+<meta property="og:title" content="Checklist AI Act · Reglamento (UE) 2024/1689 · GRCreal">
+<meta property="og:description" content="Checklist interactivo del Reglamento de IA (AI Act). Clasificación de riesgo, obligaciones de alto riesgo, GPAI y transparencia. Sin registro.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://grcreal.com/checklists/ai-act.html">
+<meta property="og:image" content="https://grcreal.com/grcreal.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://grcreal.com/checklists/ai-act.html">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="stylesheet" href="../css/marca.css">
+<link rel="stylesheet" href="../css/global.css">
+<link rel="stylesheet" href="../css/dossier-core.css">
+<link rel="stylesheet" href="../css/dossier-checklist-v2.css">
+</head>
+<body>
+
+
+<div class="card-wrapper ds-page">
+<div class="card">
+      <div id="nav-placeholder"></div>
+<script>
+    fetch('/includes/nav.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('nav-placeholder').outerHTML = data;
+        });
+</script>
+  <div class="accent-bar"></div>
+
+  <div class="ds-meta">
+    <span><span class="dot"></span>GRCreal // expediente: checklist</span>
+    <span>marco: <strong>AI Act</strong></span>
+  </div>
+
+  <div class="header">
+    <a class="chk-back" href="/checklists/index.html">&larr; Volver a checklists</a>
+    <div class="tag">AI Act · Checklist interactivo</div>
+    <h1 class="headline">Checklist <span class="accent">AI Act</span><br><span class="dim">Reglamento (UE) 2024/1689</span></h1>
+    <p class="subline">Reglamento Europeo de Inteligencia Artificial. Ámbito, prácticas prohibidas, clasificación de riesgo, obligaciones de alto riesgo, GPAI y transparencia.<br><strong>Sin registro. Sin almacenamiento de datos.</strong></p>
+  </div>
+
+  <div class="body">
+    <div class="block">
+      <div class="block-text" style="color:#5a6675">Checklist orientativo basado en el texto oficial del Reglamento y las directrices de la Comisión Europea. Refleja el calendario vigente tras el <strong>AI Omnibus</strong> (acuerdo político de mayo 2026). Alterna entre vista <strong>Auditor</strong> y <strong>Pyme</strong> y filtra por dificultad. No sustituye a asesoramiento jurídico ni a una evaluación de conformidad formal. Los datos no se almacenan.</div>
+    </div>
+    <div class="block">
+      <div class="block-label">Configuración</div>
+      <div class="chk-controls" id="chkControls"></div>
+    </div>
+    <div class="block">
+      <div class="block-label">Estado de cumplimiento</div>
+      <div class="chk-score" id="chkScore"></div>
+    </div>
+    <div class="block">
+      <div class="block-label">Requisitos</div>
+      <div id="chkRoot"></div>
+    </div>
+    <div class="block">
+      <div class="block-label">Resumen de brechas</div>
+      <div class="chk-gaps" id="chkGaps"></div>
+      <div class="chk-msg" id="chkMsg"></div>
+      <div class="chk-actions" style="margin-top:18px">
+        <button class="chk-btn" onclick="CHK.pdf()">⬇ Exportar informe (PDF)</button>
+        <button class="chk-btn ghost" onclick="CHK.reset()">↺ Reiniciar</button>
+      </div>
+    </div>
+  </div><!-- /body -->
+
+  <!-- FOOTER -->
+    <div id="footer-placeholder"></div>
+    <script>
+        fetch('/includes/footer-no-share.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            })
+            .catch(() => {
+                document.getElementById('footer-placeholder').innerHTML = '<div class="footer-mini">© GRCreal · Checklist AI Act · Sin almacenamiento de datos</div>';
+            });
+    </script>
+
+</div><!-- /card -->
+</div><!-- /card-wrapper -->
+
+<script src="/js/jspdf.umd.min.js"></script>
+<script>
+  window.CHECKLIST_SRC = "/checklists/data/ai-act.json";
+  window.CHECKLIST_MARCO = "AI Act";
+  window.CHECKLIST_NORMA = "Reglamento (UE) 2024/1689";
+</script>
+<script src="/js/checklist-v2.js" defer></script>
+</body>
+</html>

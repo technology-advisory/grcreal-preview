@@ -91,6 +91,22 @@
   margin-left: auto;
   color: var(--brand, #0077B5);
 }
+.article-card .art-cta {
+  font-family: var(--mono, monospace);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: var(--brand, #0077B5);
+}
+.article-card--static {
+  cursor: default;
+}
+.article-card--static:hover {
+  border-color: var(--border-soft, #eae7e2);
+  box-shadow: none;
+  transform: none;
+}
 .nota-destacada {
   margin: 30px 0 16px;
   padding: 24px 28px;
@@ -106,6 +122,17 @@
 }
 .nota-destacada strong {
   color: var(--brand-dark, #005a8e);
+}
+.nota-linkedin {
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
+  color: var(--brand, #0077B5);
+  transition: color .15s ease, transform .15s ease;
+}
+.nota-linkedin:hover {
+  color: var(--brand-dark, #005a8e);
+  transform: translateY(-1px);
 }
 @media (max-width: 640px) {
   .articles-grid {
@@ -157,9 +184,12 @@
   <!-- NOTA DESTACADA -->
   <div class="nota-destacada">
     <p>
-      <strong>¿Quieres estar al día?</strong> Esta página se actualiza cada vez que publico
-      contenido nuevo. Si quieres enterarte en el momento, sígueme en
-      <a href="https://www.linkedin.com/in/macarriazo/" target="_blank" rel="noopener noreferrer"><strong>LinkedIn</strong></a>.
+      <strong>Mejora continua.</strong> GRCreal se actualiza de forma constante con nuevo
+      contenido, herramientas y recursos sobre Seguridad, Riesgo y Cumplimiento. Sigue las
+      últimas incorporaciones también en
+      <a href="https://www.linkedin.com/in/macarriazo/" target="_blank" rel="noopener noreferrer" class="nota-linkedin" aria-label="LinkedIn de GRCreal">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM7.12 20.45H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+      </a>
     </p>
   </div>
 
@@ -201,18 +231,23 @@
         return;
       }
 
-      grid.innerHTML = data.items.map(item => `
-        <a href="${item.enlace}" class="article-card">
-          <div class="art-tag">${item.tag || 'Novedad'}</div>
+      grid.innerHTML = data.items.map(item => {
+        const tieneEnlace = item.enlace && item.enlace !== '';
+        const cta = item.enlace_texto || 'Ver más';
+        const inner = `
+          <div class="art-tag">${item.fecha || 'Novedad'}</div>
           <div class="art-title">${item.titulo}</div>
           <div class="art-desc">${item.descripcion}</div>
+          ${tieneEnlace ? `
           <div class="art-meta">
-            <span>${item.fecha || ''}</span>
-            ${item.badge ? `<span class="art-badge">${item.badge}</span>` : ''}
+            <span class="art-cta">${cta}</span>
             <span class="art-arrow">→</span>
-          </div>
-        </a>
-      `).join('');
+          </div>` : ''}
+        `;
+        return tieneEnlace
+          ? `<a href="${item.enlace}" class="article-card">${inner}</a>`
+          : `<div class="article-card article-card--static">${inner}</div>`;
+      }).join('');
     })
     .catch(error => {
       console.error('Error cargando novedades:', error);

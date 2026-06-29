@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Curso AI Act · Reglamento (UE) 2024/1689 · GRCreal Academy</title>
+
+<meta name="description" content="Curso práctico sobre el Reglamento Europeo de IA (AI Act, UE 2024/1689). Niveles de riesgo, prácticas prohibidas, alto riesgo, GPAI, transparencia y calendario de cumplimiento actualizado tras el AI Omnibus.">
+
+<meta name="robots" content="index, follow">
+
+<link rel="canonical" href="https://grcreal.com/academia/ai-act/">
+<meta property="og:title" content="Curso AI Act · GRCreal Academy">
+<meta property="og:description" content="El Reglamento Europeo de IA explicado en lenguaje práctico: riesgo, obligaciones y plazos reales.">
+<meta property="og:type" content="website">
+
+<meta property="og:image" content="https://grcreal.com/grcreal.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="../../css/marca.css">
+<link rel="stylesheet" href="../../css/dossier-core.css">
+<link rel="stylesheet" href="../../css/dossier-academia.css">
+<link rel="icon" href="/favicon.ico" sizes="any">
+
+<style>
+
+/* ── HERO ── */
+
+.course-hero {
+padding: 48px 0 36px;
+border-bottom: 1px solid var(--border);
+margin-bottom: 40px;
+}
+
+.course-eyebrow {
+font-family: var(--mono);
+font-size: 10px;
+letter-spacing: .2em;
+text-transform: uppercase;
+color: var(--brand);
+margin-bottom: 14px;
+}
+
+.course-title {
+    font-size: 66px;
+    font-weight: bold;
+    line-height: 1.05;
+    color: var(--ink);
+    letter-spacing: -0.5px;
+    margin-bottom: 20px;
+}
+
+.course-title .accent {
+    color: var(--brand, #0077B5);
+}
+
+.course-desc {
+font-size: 16px;
+line-height: 1.85;
+color: var(--muted);
+max-width: 100%;
+margin-bottom: 28px;
+}
+
+.course-meta {
+display: flex;
+gap: 24px;
+flex-wrap: wrap;
+}
+
+.meta-item {
+display: flex;
+align-items: center;
+gap: 8px;
+font-family: var(--mono);
+font-size: 11px;
+letter-spacing: .1em;
+text-transform: uppercase;
+color: var(--muted);
+}
+
+.meta-dot {
+width: 6px;
+height: 6px;
+border-radius: 50%;
+background: var(--brand);
+flex-shrink: 0;
+}
+
+/* ── NAVIGATION PATH ── */
+
+.nav-path {
+display: flex;
+align-items: center;
+gap: 0;
+flex-wrap: wrap;
+margin-bottom: 48px;
+padding: 28px;
+background: var(--surface);
+border: 1px solid var(--border);
+overflow-x: auto;
+}
+
+.nav-step {
+display: flex;
+align-items: center;
+gap: 0;
+}
+
+.nav-step-label {
+font-family: var(--mono);
+font-size: 10px;
+letter-spacing: .14em;
+text-transform: uppercase;
+color: var(--muted);
+padding: 8px 16px;
+border: 1px solid var(--border);
+background: #fff;
+white-space: nowrap;
+}
+
+.nav-step-label.active {
+background: var(--brand);
+color: #fff;
+border-color: var(--brand);
+}
+
+.nav-step-label.cycle {
+background: var(--ink);
+color: #fff;
+border-color: var(--ink);
+}
+
+.nav-arrow {
+font-size: 14px;
+color: var(--muted);
+padding: 0 6px;
+}
+
+/* ── MODULE GRID ── */
+
+.module-section-title {
+font-family: var(--mono);
+font-size: 10px;
+letter-spacing: .2em;
+text-transform: uppercase;
+color: var(--muted);
+margin-bottom: 20px;
+padding-bottom: 12px;
+border-bottom: 1px solid var(--border);
+}
+
+.module-grid {
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+gap: 16px;
+margin-bottom: 48px;
+}
+
+.module-card {
+background: #fff;
+border: 1px solid var(--border);
+border-radius: 16px;
+padding: 24px;
+text-decoration: none;
+display: flex;
+align-items: flex-start;
+gap: 20px;
+transition: all .2s ease;
+position: relative;
+}
+
+.module-card:hover {
+background: var(--brand-light);
+transform: translateY(-2px);
+}
+
+.module-card:hover .module-arrow {
+transform: translateX(4px);
+color: var(--brand);
+}
+
+.module-card.locked {
+opacity: 0.7;
+cursor: not-allowed;
+background: #fafafa;
+}
+
+.module-card.locked:hover {
+background: #fafafa;
+transform: none;
+}
+
+.module-card.locked .module-arrow {
+color: var(--ghost);
+transform: none;
+}
+
+.lock-badge {
+position: absolute;
+top: 12px;
+right: 16px;
+font-size: 11px;
+color: var(--ghost);
+font-family: var(--mono);
+}
+
+.locked-message {
+font-size: 11px;
+color: var(--brand);
+margin-top: 6px;
+font-family: var(--mono);
+letter-spacing: 0.5px;
+display: flex;
+align-items: center;
+gap: 4px;
+}
+
+.module-number {
+font-family: var(--mono);
+font-size: 11px;
+font-weight: 700;
+color: var(--brand);
+background: var(--brand-light);
+border: 1px solid rgba(0,119,181,0.15);
+width: 36px;
+height: 36px;
+display: flex;
+align-items: center;
+justify-content: center;
+flex-shrink: 0;
+border-radius: 8px;
+}
+
+.module-card.locked .module-number {
+opacity: 0.5;
+}
+
+.module-content {
+flex: 1;
+}
+
+.module-tag {
+font-family: var(--mono);
+font-size: 9px;
+letter-spacing: .16em;
+text-transform: uppercase;
+color: var(--muted);
+margin-bottom: 6px;
+}
+
+.module-name {
+font-size: 15px;
+font-weight: 700;
+color: var(--ink);
+margin-bottom: 6px;
+line-height: 1.3;
+}
+
+.module-desc {
+font-size: 13px;
+line-height: 1.7;
+color: var(--muted);
+}
+
+.module-arrow {
+font-size: 16px;
+color: var(--muted);
+transition: all .2s ease;
+margin-top: 2px;
+}
+
+/* ── WHAT YOU LEARN ── */
+
+.learn-grid {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 16px;
+margin-bottom: 48px;
+}
+
+.learn-card {
+padding: 24px;
+border: 1px solid var(--border);
+background: var(--surface);
+border-radius: 12px;
+}
+
+.learn-icon {
+font-size: 22px;
+margin-bottom: 12px;
+}
+
+.learn-title {
+font-size: 13px;
+font-weight: 700;
+color: var(--ink);
+margin-bottom: 8px;
+}
+
+.learn-text {
+font-size: 13px;
+line-height: 1.7;
+color: var(--muted);
+}
+
+/* ── DISCLAIMER ── */
+
+.disclaimer-box {
+padding: 24px 28px;
+border-left: 4px solid var(--ink);
+background: var(--surface);
+margin-bottom: 40px;
+border-radius: 12px;
+}
+
+.disclaimer-box p {
+font-size: 13px;
+line-height: 1.8;
+color: var(--muted);
+margin: 0;
+}
+
+.disclaimer-box strong {
+color: var(--ink);
+}
+
+/* ── START CTA ── */
+
+.start-block {
+padding: 40px;
+background: var(--ink);
+color: #fff;
+display: flex;
+align-items: center;
+justify-content: space-between;
+gap: 32px;
+flex-wrap: wrap;
+margin-bottom: 0;
+border-radius: 16px;
+}
+
+.start-text .start-title {
+font-size: 22px;
+font-weight: 700;
+margin-bottom: 8px;
+}
+
+.start-text .start-sub {
+font-size: 14px;
+opacity: .8;
+}
+
+.start-btn {
+display: inline-block;
+background: var(--brand);
+color: #fff;
+text-decoration: none;
+padding: 14px 32px;
+font-family: var(--mono);
+font-size: 11px;
+font-weight: 700;
+letter-spacing: .12em;
+text-transform: uppercase;
+transition: opacity .2s;
+white-space: nowrap;
+border-radius: 40px;
+}
+
+.start-btn:hover {
+opacity: .85;
+}
+
+/* ── RESPONSIVE ── */
+
+@media(max-width: 720px) {
+    .course-title {
+        font-size: 42px;
+    }
+    .module-grid {
+        grid-template-columns: 1fr;
+    }
+    .learn-grid {
+        grid-template-columns: 1fr;
+    }
+    .start-block {
+        flex-direction: column;
+        text-align: center;
+    }
+    .nav-path {
+        gap: 4px;
+    }
+    .header {
+        padding: 24px 24px 16px 24px;
+    }
+    .body {
+        padding: 0 24px 32px 24px;
+    }
+}
+
+.card-wrapper {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.card {
+    max-width: 100%;
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<div class="card-wrapper ds-page">
+<div class="card">
+      <div id="nav-placeholder"></div>
+<script>
+    fetch('/includes/nav.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('nav-placeholder').outerHTML = data;
+        });
+</script>
+
+<div class="accent-bar"></div>
+
+<div class="ds-meta">
+  <span><span class="dot"></span>GRCreal // expediente: academia</span>
+  <span>curso: <strong>AI Act · Reglamento (UE) 2024/1689</strong></span>
+</div>
+
+<a href="/academia/index.html" class="art-back" style="margin:18px 56px 0;">← Volver a Academia</a>
+
+<!-- HERO -->
+
+<div class="header">
+
+<div class="course-hero">
+
+<div class="course-eyebrow">
+GRCreal Academy · Reglamento (UE) 2024/1689
+</div>
+
+<h1 class="course-title">
+AI Act<br>
+<span class="accent">El Reglamento Europeo de IA</span>
+</h1>
+
+<p class="course-desc">
+El Reglamento de IA explicado como lo necesita un practicante: qué exige, a quién, en qué plazos y con qué consecuencias. De los cuatro niveles de riesgo a las obligaciones de alto riesgo, GPAI y transparencia. Con el calendario actualizado tras el <strong>AI Omnibus</strong> (acuerdo político de mayo 2026), que casi nadie ha incorporado todavía. Sin humo: texto oficial y directrices de la Comisión Europea.
+</p>
+
+<div class="course-meta">
+<div class="meta-item">
+<div class="meta-dot"></div>
+6 módulos
+</div>
+<div class="meta-item">
+<div class="meta-dot"></div>
+Reglamento (UE) 2024/1689
+</div>
+<div class="meta-item">
+<div class="meta-dot"></div>
+Enfoque práctico
+</div>
+<div class="meta-item">
+<div class="meta-dot"></div>
+Por Miguel Angel Carriazo · vCISO
+</div>
+</div>
+
+</div>
+
+</div>
+
+<div class="body academia-body">
+
+<!-- NAVIGATION PATH -->
+
+<h2 class="module-section-title">
+Cómo se razona el AI Act
+</h2>
+
+<div class="nav-path">
+
+<div class="nav-step">
+<div class="nav-step-label">¿Es IA?</div>
+<div class="nav-arrow">→</div>
+</div>
+
+<div class="nav-step">
+<div class="nav-step-label cycle">¿PROHIBIDO?</div>
+<div class="nav-arrow">→</div>
+</div>
+
+<div class="nav-step">
+<div class="nav-step-label cycle">¿ALTO RIESGO?</div>
+<div class="nav-arrow">→</div>
+</div>
+
+<div class="nav-step">
+<div class="nav-step-label cycle">¿TRANSPARENCIA?</div>
+<div class="nav-arrow">→</div>
+</div>
+
+<div class="nav-step">
+<div class="nav-step-label">MÍNIMO</div>
+</div>
+
+</div>
+
+<!-- MODULE GRID -->
+
+<h2 class="module-section-title">
+Módulos del curso
+</h2>
+
+<div class="module-grid">
+
+<a href="modulo-1.html" class="module-card">
+<div class="module-number">01</div>
+<div class="module-content">
+<div class="module-tag">Fundamentos</div>
+<div class="module-name">Qué es el AI Act y a quién aplica</div>
+<div class="module-desc">El primer reglamento integral de IA del mundo: por qué existe, su enfoque basado en riesgo, el alcance extraterritorial y los roles (proveedor, deployer, importador, distribuidor).</div>
+</div>
+<div class="module-arrow">→</div>
+</a>
+
+<a href="modulo-2.html" class="module-card">
+<div class="module-number">02</div>
+<div class="module-content">
+<div class="module-tag">Clasificación</div>
+<div class="module-name">Los 4 niveles de riesgo y el calendario real</div>
+<div class="module-desc">Prohibido, alto riesgo, transparencia y mínimo: cómo se clasifica un sistema y qué fechas aplican de verdad tras el AI Omnibus (02/12/2027 y 02/08/2028 para alto riesgo).</div>
+</div>
+<div class="module-arrow">→</div>
+</a>
+
+<!-- MODULO 3 (EN PREPARACIÓN) -->
+<div class="module-card locked">
+<div class="lock-badge">🔒</div>
+<div class="module-number">03</div>
+<div class="module-content">
+<div class="module-tag">Prohibiciones</div>
+<div class="module-name">Prácticas prohibidas (Art. 5)</div>
+<div class="module-desc">Las ocho prácticas prohibidas más la prohibición de «nudification», con ejemplos y zonas grises.</div>
+<div class="locked-message">En preparación</div>
+</div>
+<div class="module-arrow">→</div>
+</div>
+
+<!-- MODULO 4 (EN PREPARACIÓN) -->
+<div class="module-card locked">
+<div class="lock-badge">🔒</div>
+<div class="module-number">04</div>
+<div class="module-content">
+<div class="module-tag">Alto riesgo</div>
+<div class="module-name">Obligaciones de alto riesgo (Arts. 8-27)</div>
+<div class="module-desc">Gestión de riesgos, gobernanza de datos, documentación técnica, supervisión humana, conformidad, FRIA.</div>
+<div class="locked-message">En preparación</div>
+</div>
+<div class="module-arrow">→</div>
+</div>
+
+<!-- MODULO 5 (EN PREPARACIÓN) -->
+<div class="module-card locked">
+<div class="lock-badge">🔒</div>
+<div class="module-number">05</div>
+<div class="module-content">
+<div class="module-tag">GPAI · Transparencia</div>
+<div class="module-name">Modelos de propósito general y Art. 50</div>
+<div class="module-desc">Obligaciones GPAI, riesgo sistémico, copyright y las reglas de transparencia para IA generativa.</div>
+<div class="locked-message">En preparación</div>
+</div>
+<div class="module-arrow">→</div>
+</div>
+
+<!-- MODULO 6 (EN PREPARACIÓN) -->
+<div class="module-card locked">
+<div class="lock-badge">🔒</div>
+<div class="module-number">06</div>
+<div class="module-content">
+<div class="module-tag">Gobernanza</div>
+<div class="module-name">Gobernanza, sanciones y relación con ISO 42001</div>
+<div class="module-desc">AI Office, autoridades nacionales, régimen sancionador y cómo ISO 42001 ayuda a demostrar cumplimiento.</div>
+<div class="locked-message">En preparación</div>
+</div>
+<div class="module-arrow">→</div>
+</div>
+
+</div>
+
+<!-- QUE APRENDERÁS -->
+
+<h2 class="module-section-title">
+Qué vas a aprender
+</h2>
+
+<div class="learn-grid">
+
+<div class="learn-card">
+<div class="learn-icon">⚖️</div>
+<div class="learn-title">Clasificar de verdad</div>
+<div class="learn-text">Cómo determinar si un sistema es prohibido, de alto riesgo, de transparencia o mínimo — y por qué la clasificación lo decide todo.</div>
+</div>
+
+<div class="learn-card">
+<div class="learn-icon">📅</div>
+<div class="learn-title">Plazos reales</div>
+<div class="learn-text">El calendario actualizado tras el AI Omnibus: qué ya está en vigor y qué llega en 2027 y 2028, sin repetir fechas obsoletas.</div>
+</div>
+
+<div class="learn-card">
+<div class="learn-icon">🌍</div>
+<div class="learn-title">Alcance y roles</div>
+<div class="learn-text">A quién aplica (incluido fuera de la UE) y qué obligaciones cambian según seas proveedor o deployer.</div>
+</div>
+
+<div class="learn-card">
+<div class="learn-icon">🚫</div>
+<div class="learn-title">Lo que no se puede hacer</div>
+<div class="learn-text">Las prácticas prohibidas y las multas más altas del Reglamento — hasta 35 M€ o el 7 % del volumen mundial.</div>
+</div>
+
+<div class="learn-card">
+<div class="learn-icon">🔗</div>
+<div class="learn-title">AI Act + ISO 42001</div>
+<div class="learn-text">Cómo encaja la norma de gestión de IA con la obligación legal, y por qué tenerlas alineadas ahorra trabajo.</div>
+</div>
+
+<div class="learn-card">
+<div class="learn-icon">🛠️</div>
+<div class="learn-title">Aplicarlo ya</div>
+<div class="learn-text">Enlaza con el clasificador de riesgo y el checklist AI Act de GRCreal para pasar de la teoría a tu organización.</div>
+</div>
+
+</div>
+
+<!-- DISCLAIMER -->
+
+<div class="disclaimer-box">
+<p>
+<strong>Nota sobre este contenido.</strong> Esta guía de estudio está elaborada a partir del texto oficial del Reglamento (UE) 2024/1689, de las directrices publicadas por la Comisión Europea y de la experiencia directa en gobierno de IA y cumplimiento.
+No reproduce contenido de terceros: los textos, ejemplos y estructuras son de elaboración propia.
+No constituye asesoramiento jurídico. Para decisiones con efecto legal, consulta el texto del Reglamento y a un profesional.
+</p>
+</div>
+
+<!-- START CTA -->
+
+<div class="start-block">
+<div class="start-text">
+<div class="start-title">Empieza por el principio.</div>
+<div class="start-sub">Módulo 1 · Qué es el AI Act y a quién aplica</div>
+</div>
+<a href="modulo-1.html" class="start-btn">
+Comenzar →
+</a>
+</div>
+
+</div>
+
+<!-- FOOTER -->
+<div id="footer-placeholder"></div>
+<script>
+    fetch('/includes/footer-no-share.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('footer-placeholder').innerHTML = data;
+        });
+</script>
+
+</div>
+</div>
+
+
+</body>
+</html>

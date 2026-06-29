@@ -22,6 +22,9 @@
       texto: "La mayoría de plantillas GRC son formularios vacíos disfrazados de metodología.<br><br><strong>GRCreal Tools busca otra cosa: herramientas que funcionan con los datos reales de tu organización y producen outputs que aguantan una auditoría.</strong><br><br>Porque rellenar plantillas no es gestionar el riesgo."
     },
     tools: [
+      { id:"ai-act-clasificador", titulo:"Clasificador de Riesgo · AI Act", tag:"Reglamento (UE) 2024/1689 · IA",
+        descripcion:"Responde unas preguntas sobre tu sistema y obtén su categoría de riesgo según el AI Act —prohibido, alto riesgo, transparencia o mínimo—, las obligaciones aplicables, el plazo de cumplimiento y los artículos relevantes.",
+        badges:["AI Act","Anexo III","GPAI","Art. 5","Art. 50"], enlace:"ai-act-clasificador/index.html", bloqueado:false },
       { id:"bia", titulo:"BIA · Business Impact Analysis", tag:"ISO 22301 · Continuidad",
         descripcion:"Procesos críticos, dependencias e impacto real de una interrupción. Calcula RTO, RPO y MTD desde datos operacionales.",
         badges:["ISO 22301","RTO/RPO","MTD","Criticidad"], enlace:"bia/index.html", bloqueado:true },
