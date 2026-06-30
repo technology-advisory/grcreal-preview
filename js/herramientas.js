@@ -27,19 +27,19 @@
         badges:["AI Act","Anexo III","GPAI","Art. 5","Art. 50"], enlace:"ai-act-clasificador/index.html", bloqueado:false },
       { id:"bia", titulo:"BIA · Business Impact Analysis", tag:"ISO 22301 · Continuidad",
         descripcion:"Procesos críticos, dependencias e impacto real de una interrupción. Calcula RTO, RPO y MTD desde datos operacionales.",
-        badges:["ISO 22301","RTO/RPO","MTD","Criticidad"], enlace:"bia/index.html", bloqueado:true },
+        badges:["ISO 22301","RTO/RPO","MTD","Criticidad"], enlace:"bia/index.html", bloqueado:false },
       { id:"analisis-riesgos", titulo:"Análisis de Riesgos", tag:"ISO 27005 · Gestión del Riesgo",
         descripcion:"Identifica, evalúa y prioriza riesgos con matriz 5×5. Asigna propietario y tratamiento y exporta el registro listo para el SGSI.",
-        badges:["ISO 27005","ISO 27001","P×I","Risk Register"], enlace:"analisis-riesgos/index.html", bloqueado:true },
+        badges:["ISO 27005","ISO 27001","P×I","Risk Register"], enlace:"analisis-riesgos/index.html", bloqueado:false },
       { id:"plan-tratamiento", titulo:"Plan de Tratamiento de Riesgos", tag:"ISO 27001 · Anexo A · SoA",
         descripcion:"Convierte el registro de riesgos en decisiones concretas: controles del Anexo A, responsables, plazos y evidencias. Output al SoA.",
-        badges:["ISO 27001","Anexo A","SoA","PTR"], enlace:"plan-tratamiento/index.html", bloqueado:true },
+        badges:["ISO 27001","Anexo A","SoA","PTR"], enlace:"plan-tratamiento/index.html", bloqueado:false },
       { id:"matriz-dependencias", titulo:"Matriz de Dependencias", tag:"ISO 22301 · Arquitectura",
         descripcion:"Mapea dependencias entre procesos, sistemas e infraestructura. Detecta puntos únicos de fallo que no salen en el organigrama.",
-        badges:["Dependencias","SPOF","Resiliencia"], enlace:"matriz-dependencias/index.html", bloqueado:true },
+        badges:["Dependencias","SPOF","Resiliencia"], enlace:"matriz-dependencias/index.html", bloqueado:false },
       { id:"gestion-proveedores", titulo:"Gestión de Proveedores", tag:"ISO 27001 · A.5.19 · NIS2",
         descripcion:"Evalúa el riesgo de tu cadena de suministro. Clasifica por criticidad, controla cláusulas y genera evidencias para auditoría de terceros.",
-        badges:["A.5.19","NIS2","Third Party Risk","Due Diligence"], enlace:"gestion-proveedores/index.html", bloqueado:true }
+        badges:["A.5.19","NIS2","Third Party Risk","Due Diligence"], enlace:"gestion-proveedores/index.html", bloqueado:false }
     ]
   };
 

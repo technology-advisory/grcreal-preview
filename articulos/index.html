@@ -88,8 +88,6 @@
         <span style="font-family:var(--mono); font-size:10px;">Más filtros:</span>
         <select id="monthFilter" class="ctrl-btn" onchange="applyFilters()">
           <option value="all">Mes</option>
-          <option value="2026-05">Mayo 2026</option>
-          <option value="2026-04">Abril 2026</option>
         </select>
         <button class="ctrl-btn" id="sortBtn" onclick="toggleSort()">↓ Nuevos</button>
       </div>
@@ -101,6 +99,8 @@
         No hay artículos en esta categoría todavía.
       </div>
     </div>
+
+    <nav class="articles-pagination" id="articlesPagination" aria-label="Paginación de artículos"></nav>
 
   </div><!-- /body -->
 
@@ -122,6 +122,7 @@
 // ==============================
 let articulosData = [];
 let currentCategory = "all";
+let currentPage = 1;
 let sortMode = "newest";
 
 // ==============================
@@ -143,6 +144,33 @@ function parseSpanishDate(text) {
 // ==============================
 // RENDERIZAR ARTÍCULOS
 // ==============================
+function poblarMeses() {
+  const select = document.getElementById("monthFilter");
+  if (!select) return;
+  const nombresMes = ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
+  // Recopilar año-mes únicos de los artículos publicados
+  const claves = new Set();
+  articulosData.forEach(a => {
+    const d = parseSpanishDate(a.date);
+    if (!isNaN(d)) {
+      const y = d.getFullYear();
+      const m = String(d.getMonth() + 1).padStart(2, '0');
+      claves.add(`${y}-${m}`);
+    }
+  });
+  // Ordenar descendente (más reciente primero)
+  const ordenadas = Array.from(claves).sort((a, b) => b.localeCompare(a));
+  // Reconstruir el select conservando el placeholder
+  select.innerHTML = '<option value="all">Mes</option>';
+  ordenadas.forEach(clave => {
+    const [y, m] = clave.split('-');
+    const opt = document.createElement('option');
+    opt.value = clave;
+    opt.textContent = `${nombresMes[parseInt(m, 10) - 1]} ${y}`;
+    select.appendChild(opt);
+  });
+}
+
 function renderArticles() {
   const selectedMonth = document.getElementById("monthFilter")?.value || "all";
   const grid = document.getElementById("articlesGrid");
@@ -168,10 +196,19 @@ function renderArticles() {
   // Generar HTML
   if (filtered.length === 0) {
     grid.innerHTML = '<div class="no-results" style="display:block;">No hay artículos en esta categoría todavía.</div>';
+    const pag = document.getElementById("articlesPagination");
+    if (pag) pag.innerHTML = '';
     return;
   }
-  
-  grid.innerHTML = filtered.map(articulo => `
+
+  // Paginación: 16 por página
+  const PER_PAGE = 16;
+  const totalPages = Math.ceil(filtered.length / PER_PAGE);
+  if (currentPage > totalPages) currentPage = 1;
+  const start = (currentPage - 1) * PER_PAGE;
+  const pageItems = filtered.slice(start, start + PER_PAGE);
+
+  grid.innerHTML = pageItems.map(articulo => `
     <div class="article-card" data-cat="${articulo.cat}" onclick="location.href='${articulo.url}'">
       <div class="article-meta">${articulo.meta}</div>
       <div class="article-title">${articulo.title}${articulo.badge ? `<span class="article-badge">${articulo.badge}</span>` : ''}</div>
@@ -180,6 +217,29 @@ function renderArticles() {
       <a href="${articulo.url}" class="article-link">Leer artículo →</a>
     </div>
   `).join('');
+
+  renderPagination(totalPages);
+}
+
+function renderPagination(totalPages) {
+  const pag = document.getElementById("articlesPagination");
+  if (!pag) return;
+  if (totalPages <= 1) { pag.innerHTML = ''; return; }
+
+  let html = '';
+  html += `<button class="page-btn page-arrow" ${currentPage === 1 ? 'disabled' : ''} onclick="goToPage(${currentPage - 1})" aria-label="Anterior">←</button>`;
+  for (let i = 1; i <= totalPages; i++) {
+    html += `<button class="page-btn${i === currentPage ? ' active' : ''}" onclick="goToPage(${i})">${i}</button>`;
+  }
+  html += `<button class="page-btn page-arrow" ${currentPage === totalPages ? 'disabled' : ''} onclick="goToPage(${currentPage + 1})" aria-label="Siguiente">→</button>`;
+  pag.innerHTML = html;
+}
+
+function goToPage(n) {
+  currentPage = n;
+  renderArticles();
+  const grid = document.getElementById("articlesGrid");
+  if (grid) grid.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
 // ==============================
@@ -202,6 +262,7 @@ function filterArticles(cat, btn) {
 function toggleSort() {
   const btn = document.getElementById("sortBtn");
   sortMode = sortMode === "newest" ? "oldest" : "newest";
+  currentPage = 1;
   btn.innerText = sortMode === "newest" ? "↓ Nuevos" : "↑ Más antiguos";
   renderArticles();
 }
@@ -223,6 +284,9 @@ async function cargarArticulos() {
 
     // Solo artículos publicados
     articulosData = todos.filter(a => a.published === true);
+
+    // Rellenar el desplegable de meses automáticamente según las fechas
+    poblarMeses();
     
     // Actualizar contadores en botones
     const counts = {};

@@ -1,9 +1,25 @@
 {
   "features": [
-    { "icono": "⚡", "titulo": "Listas para usar", "texto": "Sin configuración ni registro. Abres, rellenas, exportas." },
-    { "icono": "📐", "titulo": "Metodología integrada", "texto": "Cada herramienta sigue su marco: ISO 27001, 22301, 27005, ENS, NIS2." },
-    { "icono": "🔗", "titulo": "Trazabilidad entre ellas", "texto": "El output de una alimenta a la siguiente." },
-    { "icono": "📤", "titulo": "Exportación real", "texto": "Documentación válida para auditoría, no plantillas vacías." }
+    {
+      "icono": "⚡",
+      "titulo": "Listas para usar",
+      "texto": "Sin configuración ni registro. Abres, rellenas, exportas."
+    },
+    {
+      "icono": "📐",
+      "titulo": "Metodología integrada",
+      "texto": "Cada herramienta sigue su marco: ISO 27001, 22301, 27005, ENS, NIS2."
+    },
+    {
+      "icono": "🔗",
+      "titulo": "Trazabilidad entre ellas",
+      "texto": "El output de una alimenta a la siguiente."
+    },
+    {
+      "icono": "📤",
+      "titulo": "Exportación real",
+      "texto": "Documentación válida para auditoría, no plantillas vacías."
+    }
   ],
   "nota": {
     "texto": "La mayoría de plantillas GRC son formularios vacíos disfrazados de metodología.<br><br><strong>GRCreal Tools busca otra cosa: herramientas que funcionan con los datos reales de tu organización y producen outputs que aguantan una auditoría.</strong><br><br>Porque rellenar plantillas no es gestionar el riesgo."
@@ -14,7 +30,13 @@
       "titulo": "Clasificador de Riesgo · AI Act",
       "tag": "Reglamento (UE) 2024/1689 · IA",
       "descripcion": "Responde unas preguntas sobre tu sistema y obtén su categoría de riesgo según el AI Act —prohibido, alto riesgo, transparencia o mínimo—, las obligaciones aplicables, el plazo de cumplimiento y los artículos relevantes. Calendario actualizado tras el AI Omnibus (mayo 2026).",
-      "badges": ["AI Act", "Anexo III", "GPAI", "Art. 5", "Art. 50"],
+      "badges": [
+        "AI Act",
+        "Anexo III",
+        "GPAI",
+        "Art. 5",
+        "Art. 50"
+      ],
       "enlace": "ai-act-clasificador/index.html",
       "bloqueado": false
     },
@@ -23,45 +45,69 @@
       "titulo": "BIA · Business Impact Analysis",
       "tag": "ISO 22301 · Continuidad",
       "descripcion": "Procesos críticos, dependencias e impacto real de una interrupción. Calcula RTO, RPO y MTD desde datos operacionales.",
-      "badges": ["ISO 22301", "RTO/RPO", "MTD", "Criticidad"],
+      "badges": [
+        "ISO 22301",
+        "RTO/RPO",
+        "MTD",
+        "Criticidad"
+      ],
       "enlace": "bia/index.html",
-      "bloqueado": true
+      "bloqueado": false
     },
     {
       "id": "analisis-riesgos",
       "titulo": "Análisis de Riesgos",
       "tag": "ISO 27005 · Gestión del Riesgo",
       "descripcion": "Identifica, evalúa y prioriza riesgos con matriz 5×5. Asigna propietario y tratamiento y exporta el registro listo para el SGSI.",
-      "badges": ["ISO 27005", "ISO 27001", "P×I", "Risk Register"],
+      "badges": [
+        "ISO 27005",
+        "ISO 27001",
+        "P×I",
+        "Risk Register"
+      ],
       "enlace": "analisis-riesgos/index.html",
-      "bloqueado": true
+      "bloqueado": false
     },
     {
       "id": "plan-tratamiento",
       "titulo": "Plan de Tratamiento de Riesgos",
       "tag": "ISO 27001 · Anexo A · SoA",
       "descripcion": "Convierte el registro de riesgos en decisiones concretas: controles del Anexo A, responsables, plazos y evidencias. Output al SoA.",
-      "badges": ["ISO 27001", "Anexo A", "SoA", "PTR"],
+      "badges": [
+        "ISO 27001",
+        "Anexo A",
+        "SoA",
+        "PTR"
+      ],
       "enlace": "plan-tratamiento/index.html",
-      "bloqueado": true
+      "bloqueado": false
     },
     {
       "id": "matriz-dependencias",
       "titulo": "Matriz de Dependencias",
       "tag": "ISO 22301 · Arquitectura",
       "descripcion": "Mapea dependencias entre procesos, sistemas e infraestructura. Detecta puntos únicos de fallo que no salen en el organigrama.",
-      "badges": ["Dependencias", "SPOF", "Resiliencia"],
+      "badges": [
+        "Dependencias",
+        "SPOF",
+        "Resiliencia"
+      ],
       "enlace": "matriz-dependencias/index.html",
-      "bloqueado": true
+      "bloqueado": false
     },
     {
       "id": "gestion-proveedores",
       "titulo": "Gestión de Proveedores",
       "tag": "ISO 27001 · A.5.19 · NIS2",
       "descripcion": "Evalúa el riesgo de tu cadena de suministro. Clasifica por criticidad, controla cláusulas y genera evidencias para auditoría de terceros.",
-      "badges": ["A.5.19", "NIS2", "Third Party Risk", "Due Diligence"],
+      "badges": [
+        "A.5.19",
+        "NIS2",
+        "Third Party Risk",
+        "Due Diligence"
+      ],
       "enlace": "gestion-proveedores/index.html",
-      "bloqueado": true
+      "bloqueado": false
     }
   ]
 }

@@ -3,15 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0">
-<title>Quiz · ISO 22301 Lead Auditor · GRCreal</title>
-<meta name="description" content="Pon a prueba tu conocimiento como auditor ISO 22301. 20 preguntas aleatorias sobre evidencias, hallazgos y no conformidades en continuidad de negocio (BCMS).">
+<title>Quiz · Reglamento DORA · Resiliencia Operativa Digital · GRCreal</title>
+<meta name="description" content="Pon a prueba tu conocimiento del Reglamento DORA. Preguntas aleatorias sobre gestión de riesgos TIC, notificación de incidentes, pruebas de resiliencia, riesgo de terceros y supervisión del sector financiero.">
 <meta name="robots" content="index, follow">
-<meta property="og:title" content="Quiz ISO 22301 Lead Auditor · GRCreal">
-<meta property="og:description" content="Auditoría ISO 22301: Sistemas de Gestión de Continuidad de Negocio (BCMS).">
+<meta property="og:title" content="Quiz Reglamento DORA · GRCreal">
+<meta property="og:description" content="Quiz sobre el Reglamento DORA: resiliencia operativa digital del sector financiero de la UE.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://grcreal.com/quiz/iso22301_lead_auditor.html">
+<meta property="og:url" content="https://grcreal.com/quiz/dora.html">
 <meta property="og:image" content="https://grcreal.com/grcreal.png">
-<link rel="canonical" href="https://grcreal.com/quiz/iso22301_lead_auditor.html">
+<link rel="canonical" href="https://grcreal.com/quiz/dora.html">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="stylesheet" href="../css/marca.css">
 <link rel="stylesheet" href="../css/global.css">
@@ -121,6 +121,12 @@
 .modal-celebration .modal-btn:hover {
   background: #f0f0f0;
 }
+
+/* Ajuste para opciones verdaderero/falso */
+.opt-btn {
+  justify-content: flex-start;
+  gap: 16px;
+}
 </style>
 </head>
 
@@ -141,7 +147,7 @@
 
   <div class="ds-meta">
     <span><span class="dot"></span>GRCreal // expediente: quiz</span>
-    <span>marco: <strong>ISO 22301</strong></span>
+    <span>marco: <strong>DORA</strong></span>
   </div>
 
   <a href="/quiz/index.html" class="art-back" style="margin:18px 0 0 48px;">← Volver al catálogo</a>
@@ -150,7 +156,7 @@
   <!-- NAV -->
   <div class="quiz-nav">
     <span class="quiz-logo">GRCreal</span>
-    <span class="quiz-badge" id="nav-badge">ISO 22301 Lead Auditor · Quiz</span>
+    <span class="quiz-badge" id="nav-badge">Reglamento DORA · Quiz</span>
   </div>
 
   <!-- PANTALLA QUIZ -->
@@ -161,7 +167,7 @@
         <div class="progress-bar" id="progress-bar" style="width:0%"></div>
       </div>
       <div class="q-tags">
-        <span class="q-tag topic" id="q-topic-tag">ISO 22301:2019 · BCMS</span>
+        <span class="q-tag topic" id="q-topic-tag">Reglamento (UE) 2022/2554 · DORA</span>
       </div>
       <div class="q-text fade-up" id="q-text"></div>
       <div id="options-container"></div>
@@ -219,15 +225,15 @@
       <h3>ISO/IEC 27001</h3>
       <p>Gestión de la seguridad de la información. Controles, riesgos, SoA y ciclo PDCA.</p>
     </a>
-    <a href="/quiz/iso42001.html" class="art-related-card">
-      <span class="art-related-pill">IA</span>
-      <h3>ISO/IEC 42001</h3>
-      <p>Sistemas de Gestión de Inteligencia Artificial. Evaluación de impacto, sesgos, transparencia y riesgos éticos.</p>
-    </a>
     <a href="/quiz/ens.html" class="art-related-card">
       <span class="art-related-pill">Administración Pública</span>
       <h3>ENS (Esquema Nacional de Seguridad)</h3>
       <p>Esquema Nacional de Seguridad. Categorías, medidas y auditoría en AA.PP.</p>
+    </a>
+    <a href="/quiz/rgpd_gdpr.html" class="art-related-card">
+      <span class="art-related-pill">Protección de datos</span>
+      <h3>RGPD / GDPR</h3>
+      <p>Reglamento europeo de protección de datos personales. Bases, derechos y DPO.</p>
     </a>
   </div>
 </div>
@@ -276,9 +282,11 @@ const LETTERS = ['A', 'B', 'C', 'D'];
 // Cargar JSON y empezar quiz
 async function startQuiz() {
   try {
-    // Cambiamos el nombre del JSON a ISO22301_lead_auditor.json (según solicitud)
-    const response = await fetch('./data/iso22301_lead_auditor.json');
-    if (!response.ok) throw new Error('No se encontró el archivo JSON de preguntas (iso22301_lead_auditor.json)');
+    // Cargar el JSON de DORA
+    const response = await fetch('./data/dora.json');
+    if (!response.ok) {
+      throw new Error('No se pudo cargar el archivo JSON. Asegúrate de que existe en /quiz/data/dora.json');
+    }
     QUIZ_DATA = await response.json();
     
     // Validación mínima de estructura
@@ -286,7 +294,7 @@ async function startQuiz() {
       throw new Error('Estructura inválida en JSON: falta array preguntas');
     }
     
-    // Seleccionar 20 preguntas ALEATORIAS del pool (idealmente tener al menos 40 para variedad)
+    // Seleccionar 20 preguntas ALEATORIAS del pool (mínimo 40 para variedad)
     const shuffledPool = [...QUIZ_DATA.preguntas];
     shuffle(shuffledPool);
     S.questions = shuffledPool.slice(0, TOTAL_QUESTIONS);
@@ -297,13 +305,13 @@ async function startQuiz() {
     S.answered = false;
     
     document.getElementById('nav-badge').textContent = QUIZ_DATA.titulo + ' · Quiz';
-    document.getElementById('q-topic-tag').textContent = QUIZ_DATA.tema || 'ISO 22301:2019 · Continuidad de Negocio';
+    document.getElementById('q-topic-tag').textContent = QUIZ_DATA.tema || 'Reglamento (UE) 2022/2554 · DORA';
     
     show('quiz');
     renderQ();
   } catch (error) {
     console.error('Error:', error);
-    document.getElementById('q-text').innerHTML = '⚠️ Error al cargar las preguntas.<br><br>Asegúrate de que el archivo JSON existe en:<br><code>/quiz/data/ISO22301_lead_auditor.json</code> o <code>ISO23001_lead_auditor.json</code><br><br>Detalle: ' + error.message;
+    document.getElementById('q-text').innerHTML = '⚠️ Error al cargar las preguntas.<br><br>Asegúrate de que el archivo JSON existe en:<br><code>/quiz/data/dora.json</code><br><br>Detalle: ' + error.message;
     document.getElementById('options-container').innerHTML = '<button class="cta-quiz" onclick="location.reload()">Reintentar</button>';
   }
 }
@@ -386,14 +394,14 @@ function showResult() {
   const pct = Math.round((S.score / S.questions.length) * 100);
   let nivel, emoji;
   
-  if (pct >= 90) { nivel = 'Lead Auditor Experto (BCMS)'; emoji = '🏆'; }
-  else if (pct >= 70) { nivel = 'Lead Auditor Senior'; emoji = '⭐'; }
+  if (pct >= 90) { nivel = 'Lead Auditor Experto en IA'; emoji = '🏆🤖'; }
+  else if (pct >= 70) { nivel = 'Lead Auditor Senior en IA'; emoji = '⭐'; }
   else if (pct >= 50) { nivel = 'Auditor en formación'; emoji = '📚'; }
   else { nivel = 'a seguir estudiando'; emoji = '💪'; }
 
   document.getElementById('result-headline').innerHTML = `${emoji} Resultado: <span class="accent">${nivel}</span>`;
   document.getElementById('result-score').textContent = `${S.score}/${S.questions.length}`;
-  document.getElementById('result-label').textContent = QUIZ_DATA.titulo || 'ISO 22301 Lead Auditor';
+  document.getElementById('result-label').textContent = QUIZ_DATA.titulo || 'Quiz DORA';
   document.getElementById('result-pct').textContent = `${pct}% de acierto`;
 
   const list = document.getElementById('history-list');
@@ -402,7 +410,7 @@ function showResult() {
     list.insertAdjacentHTML('beforeend', `
       <div class="history-item">
         <span class="history-icon">${h.ok ? '✅' : '❌'}</span>
-        <span>${h.text}</span>
+        <span>${h.text.length > 100 ? h.text.substring(0, 100) + '...' : h.text}</span>
       </div>
     `);
   });
@@ -424,23 +432,21 @@ function showResultModal(pct) {
   modalScore.textContent = `${pct}% de acierto`;
   
   if (pct >= 70) {
-    // Celebración
     modalContent.classList.add('modal-celebration');
-    modalIcon.textContent = '🏆🎉📋';
+    modalIcon.textContent = '🏆🤖🎉';
     modalTitle.textContent = '¡Enhorabuena!';
     if (pct >= 90) {
-      modalMessage.textContent = 'Dominas la auditoría ISO 22301. Capacidad experta en continuidad de negocio.';
+      modalMessage.textContent = 'Dominas el Reglamento DORA: gestión de riesgos TIC, notificación de incidentes, pruebas de resiliencia y riesgo de terceros.';
     } else if (pct >= 80) {
-      modalMessage.textContent = 'Muy buen resultado. Sólido conocimiento en BCMS y requisitos de continuidad.';
+      modalMessage.textContent = 'Muy buen resultado. Tienes un sólido conocimiento sobre requisitos y controles de IA.';
     } else {
-      modalMessage.textContent = 'Buen trabajo. Vas por buen camino para certificarte como Lead Auditor.';
+      modalMessage.textContent = 'Buen trabajo. Vas por buen camino para certificarte como Lead Auditor en IA.';
     }
   } else {
-    // Ánimo
     modalContent.classList.remove('modal-celebration');
-    modalIcon.textContent = '💪📘';
+    modalIcon.textContent = '💪📘🤖';
     modalTitle.textContent = '¡Sigue practicando!';
-    modalMessage.textContent = 'Has hecho un gran esfuerzo. Revisa las explicaciones y vuelve a intentarlo para afianzar conceptos de ISO 22301.';
+    modalMessage.textContent = 'Has hecho un gran esfuerzo. Revisa las explicaciones y vuelve a intentarlo para afianzar los conceptos de DORA.';
   }
   
   modal.classList.add('active');

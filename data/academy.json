@@ -95,7 +95,7 @@
         "Crisis",
         "Resilience"
       ],
-      "enlace": "iso23001-internal-auditor/index.html",
+      "enlace": "iso22301-internal-auditor/index.html",
       "bloqueado": false,
       "proximamente": false,
       "estado": "activo"
@@ -129,10 +129,10 @@
         "Art. 5",
         "Transparencia"
       ],
-      "bloqueado": true,
-      "proximamente": true,
-      "estado": "proximo",
-      "mensaje_bloqueo": "Curso en preparación · disponible próximamente"
+      "bloqueado": false,
+      "proximamente": false,
+      "estado": "activo",
+      "enlace": "ai-act/index.html"
     }
   ]
 }

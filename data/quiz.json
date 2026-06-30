@@ -17,6 +17,14 @@
       "activo": true
     },
     {
+      "id": "ai-act",
+      "titulo": "AI Act",
+      "pagina": "ai-act.html",
+      "tag": "IA · Reglamento (UE) 2024/1689",
+      "descripcion": "Reglamento Europeo de IA. Niveles de riesgo, prácticas prohibidas, obligaciones de alto riesgo, GPAI, transparencia y calendario.",
+      "activo": true
+    },
+    {
       "id": "ens",
       "titulo": "ENS (Esquema Nacional de Seguridad)",
       "pagina": "ens.html",
@@ -30,7 +38,7 @@
       "pagina": "nis2.html",
       "tag": "Directiva europea",
       "descripcion": "Resiliencia de redes y sistemas. Sectores esenciales, notificación y sanciones.",
-      "activo": false
+      "activo": true
     },
     {
       "id": "rgpd",
@@ -54,7 +62,7 @@
       "pagina": "dora.html",
       "tag": "Sector financiero",
       "descripcion": "Resiliencia operativa digital en el sector financiero europeo.",
-      "activo": false
+      "activo": true
     },
     {
       "id": "ransomware",

@@ -2,6 +2,14 @@
   "items": [
     {
       "fecha": "29 Junio 2026",
+      "titulo": "🎓 Nuevo curso: AI Act (Reglamento UE 2024/1689)",
+      "descripcion": "Curso completo de 6 módulos sobre el Reglamento Europeo de IA, explicado para practicantes: qué es y a quién aplica, los 4 niveles de riesgo y el calendario real tras el AI Omnibus, prácticas prohibidas (Art. 5), obligaciones de alto riesgo (Arts. 8-27), GPAI y transparencia (Art. 50), y gobernanza, sanciones y su relación con ISO 42001.",
+      "enlace": "/academia/ai-act/index.html",
+      "enlace_texto": "Acceder al curso AI Act",
+      "tipo_enlace": "primary"
+    },
+    {
+      "fecha": "29 Junio 2026",
       "titulo": "🤖 Nuevo clasificador de riesgo: AI Act",
       "descripcion": "Herramienta interactiva para determinar el nivel de riesgo de tu sistema de IA según el Reglamento (UE) 2024/1689: prácticas prohibidas (Art. 5), alto riesgo (Anexo III), modelos de propósito general (GPAI) y obligaciones de transparencia (Art. 50). Te orienta sobre qué obligaciones aplican y a partir de cuándo.",
       "enlace": "/herramientas/ai-act-clasificador/index.html",

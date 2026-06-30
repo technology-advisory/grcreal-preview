@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0">
+<title>Auditoría del BCMS · ISO 22301 Lead Auditor · GRCreal Academy</title>
+<meta name="description" content="Módulo 9 ISO 22301 Lead Auditor. Cómo ejecutar auditorías internas del BCMS según ISO 19011: programa, plan, muestreo, evidencia, hallazgos y cierre.">
+<meta property="og:title" content="Auditoría del BCMS · ISO 22301 Lead Auditor · GRCreal Academy">
+<meta property="og:description" content="Módulo 9 ISO 22301 Lead Auditor. Cómo ejecutar auditorías internas del BCMS según ISO 19011: programa, plan, muestreo, evidencia, hallazgos y cierre.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://grcreal.com/academia/iso22301-internal-auditor/modulo-9.html">
+<meta property="og:image" content="https://grcreal.com/grcreal.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://grcreal.com/academia/iso22301-internal-auditor/modulo-9.html">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="stylesheet" href="../../css/marca.css">
+<link rel="stylesheet" href="../../css/academia.css">
+<link rel="stylesheet" href="../../css/dossier-core.css">
+<link rel="stylesheet" href="../../css/dossier-academia.css">
+<style>
+.cta-buttons { display: flex; gap: 16px; justify-content: center; margin-top: 8px; flex-wrap: wrap; }
+.cta-button { display: inline-block; background: var(--brand, #0077B5); color: white; text-decoration: none; font-weight: 600; padding: 12px 28px; border-radius: 40px; font-size: 1rem; transition: 0.2s background; box-shadow: 0 5px 12px rgba(0,0,0,0.05); }
+.cta-button:hover { background: var(--brand-dark, #005a8e); }
+.course-home-btn { background: var(--brand-light, #e8f3fa); color: var(--brand, #0077B5); padding: 6px 14px; border-radius: 40px; text-decoration: none; font-size: 0.85rem; font-weight: 600; margin-left: 12px; transition: 0.2s; }
+.course-home-btn:hover { background: var(--brand-mid, #cce4f0); }
+</style>
+</head>
+<body class="article-page">
+
+<div class="card-wrapper ds-page">
+<div class="card">
+      <div id="nav-placeholder"></div>
+<script>
+    fetch('/includes/nav.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('nav-placeholder').outerHTML = data;
+        });
+</script>
+<div class="accent-bar"></div>
+
+<div class="ds-meta">
+  <span><span class="dot"></span>GRCreal // expediente: academia</span>
+  <span>curso: <strong>ISO 22301 Internal Auditor</strong></span>
+</div>
+<nav class="academy-module-menu">
+<a href="/academia/iso22301-internal-auditor/index.html" class="academy-course-logo">ISO 22301 <span>Lead Auditor</span></a>
+<div class="academy-course-links">
+<span class="module-badge">Módulo 9 · Auditoría del BCMS</span>
+<a href="/academia/iso22301-internal-auditor/index.html" class="course-home-btn">⌂ Curso</a>
+</div>
+</nav>
+<div class="header">
+<div class="tag">ISO 19011 · PROGRAMA · PLAN DE AUDITORÍA · EVIDENCIA · CIERRE</div>
+<div class="article-date">Módulo 9</div>
+<h1 class="headline">Auditoría <span class="accent">del BCMS</span></h1>
+<p class="subline">Auditar continuidad no es rellenar checklists.<br><strong>Es recopilar evidencia, evaluarla y emitir un juicio defendible.</strong></p>
+</div>
+<div class="body">
+
+<!-- BLOQUE 1 · PRINCIPIOS DE AUDITORÍA -->
+<div class="block">
+<div class="block-label">ISO 19011</div>
+<div class="block-title">Los 7 principios de auditoría</div>
+<div class="block-text">ISO 19011 establece siete principios que todo auditor debe aplicar. No son sugerencias. Son requisitos de comportamiento y método que garantizan la calidad de la auditoría del BCMS.</div>
+<table class="tension" style="margin-top:20px;">
+<tr><td class="tension-who">1</td><td class="tension-says"><strong>Integridad.</strong> Ser honesto, responsable y ético. Resistir influencias sobre el juicio. La base del profesionalismo.</td></tr>
+<tr class="hi-row"><td class="tension-who">2</td><td class="tension-says"><span class="hi">Presentación justa. Informar de manera veraz, precisa y completa. Reportar obstáculos y opiniones divergentes.</span></td></tr>
+<tr><td class="tension-who">3</td><td class="tension-says"><strong>Diligencia profesional.</strong> Aplicar el criterio y la atención necesaria según la importancia de la tarea. No concluir sin evidencia suficiente.</td></tr>
+<tr class="hi-row"><td class="tension-who">4</td><td class="tension-says"><span class="hi">Confidencialidad. Proteger la información obtenida durante la auditoría. No usarla indebidamente.</span></td></tr>
+<tr><td class="tension-who">5</td><td class="tension-says"><strong>Independencia.</strong> Ser imparcial y estar libre de prejuicios o conflictos de interés. No auditar el propio trabajo.</td></tr>
+<tr class="hi-row"><td class="tension-who">6</td><td class="tension-says"><span class="hi">Enfoque basado en la evidencia. Las conclusiones deben basarse en evidencias verificables, no en opiniones. Triangulación.</span></td></tr>
+<tr><td class="tension-who">7</td><td class="tension-says"><strong>Enfoque basado en riesgos.</strong> Considerar los riesgos y oportunidades que afectan al logro de los objetivos de la auditoría. Priorizar muestreo.</td></tr>
+</table>
+</div>
+<div class="divider"></div>
+
+<!-- BLOQUE 2 · PROGRAMA DE AUDITORÍA -->
+<div class="block">
+<div class="block-label">Cláusula 9.2 / ISO 19011</div>
+<div class="block-title">El programa de auditoría del BCMS</div>
+<div class="block-text">Un programa de auditoría es el conjunto de una o más auditorías planificadas para un período de tiempo determinado. El auditor verifica que el programa esté alineado con los riesgos del BCMS.</div>
+<div class="quote-block"><div class="quote-text">&ldquo;Un programa de auditoría que no prioriza por riesgo es un calendario, no una estrategia de control.&rdquo;</div><div class="quote-attr">ISO 19011 aplicada a BCMS</div></div>
+<table class="tension" style="margin-top:20px;">
+<tr><td class="tension-who">📋</td><td class="tension-says"><strong>Qué verificar</strong> · ¿El programa cubre todos los procesos críticos del BCMS? ¿La frecuencia es adecuada al riesgo? ¿Hay recursos asignados?</td></tr>
+<tr class="hi-row"><td class="tension-who">🔄</td><td class="tension-says"><span class="hi">Priorización: Procesos con RTO más críticos deben auditarse con mayor frecuencia. Cambios recientes (nuevos sistemas, reestructuraciones) también disparan auditoría.</span></td></tr>
+</table>
+</div>
+<div class="divider"></div>
+
+<!-- BLOQUE 3 · PLAN DE AUDITORÍA -->
+<div class="block">
+<div class="block-label">Planificación</div>
+<div class="block-title">El plan de auditoría: de la intención a la ejecución</div>
+<div class="block-text">El plan de auditoría convierte el programa en una auditoría ejecutable. Define objetivos, criterios, alcance, métodos, muestreo, roles y agenda.</div>
+<table class="tension" style="margin-top:20px;">
+<tr><td class="tension-who">🎯</td><td class="tension-says"><strong>Objetivos</strong> · ¿Qué se quiere lograr? Ejemplo: "Evaluar la conformidad del BIA y los RTO definidos."</td></tr>
+<tr class="hi-row"><td class="tension-who">📏</td><td class="tension-says"><span class="hi">Alcance: ¿Qué procesos, ubicaciones y período se auditan? ¿Las exclusiones están justificadas?</span></td></tr>
+<tr><td class="tension-who">📋</td><td class="tension-says"><strong>Criterios</strong> · ¿Contra qué se audita? (ISO 22301, política de continuidad, procedimientos internos, requisitos legales).</td></tr>
+<tr class="hi-row"><td class="tension-who">🔍</td><td class="tension-says"><span class="hi">Métodos: ¿Documentos, entrevistas, observación de simulacros? ¿Auditoría presencial, remota o mixta?</span></td></tr>
+</table>
+</div>
+<div class="divider"></div>
+
+<!-- BLOQUE 4 · MUESTREO BASADO EN RIESGO -->
+<div class="block">
+<div class="block-label">Muestreo</div>
+<div class="block-title">Cómo seleccionar la muestra en auditoría de BCMS</div>
+<div class="block-text">El auditor no puede revisarlo todo. Debe seleccionar una muestra basada en riesgo que sea representativa y justificable.</div>
+<table class="tension" style="margin-top:20px;">
+<tr><td class="tension-who">🎯</td><td class="tension-says"><strong>Criterios de priorización</strong> · Procesos con RTO más cortos, sistemas críticos, proveedores estratégicos, cambios recientes, incidentes previos, resultados de simulacros fallidos.</td></tr>
+<tr class="hi-row"><td class="tension-who">📊</td><td class="tension-says"><span class="hi">Tamaño de muestra: Debe ser suficiente para detectar fallos significativos. Si el riesgo es alto, la muestra debe ser mayor. Si se detectan fallos, se amplía.</span></td></tr>
+</table>
+<div class="block-text" style="margin-top:20px;"><strong>Ejemplo:</strong> Si se audita el control "ejecución de simulacros", no se revisa uno solo. Se revisan los últimos 2 años, se verifican informes, acciones derivadas y verificación de eficacia.</div>
+</div>
+<div class="divider"></div>
+
+<!-- BLOQUE 5 · OBTENCIÓN DE EVIDENCIA -->
+<div class="block">
+<div class="block-label">C4</div>
+<div class="block-title">Evidencia suficiente y apropiada</div>
+<div class="block-text">La evidencia debe ser suficiente (cantidad) y apropiada (calidad, relevancia y confiabilidad) para sostener los hallazgos.</div>
+<div class="quote-block"><div class="quote-text">&ldquo;Una entrevista sin registros no es evidencia. Un registro sin verificación no es suficiente.&rdquo;</div><div class="quote-attr">Regla del auditor</div></div>
+<table class="tension" style="margin-top:20px;">
+<tr><td class="tension-who">📄</td><td class="tension-says"><strong>Evidencia documental</strong> · BIA, evaluaciones de riesgos, estrategias, planes de continuidad, programas de ejercicios, informes de simulacros.</td></tr>
+<tr class="hi-row"><td class="tension-who">💬</td><td class="tension-says"><span class="hi">Evidencia testimonial: Entrevistas. Deben triangularse con documentos o registros. Una entrevista sola es débil.</span></td></tr>
+<tr><td class="tension-who">🔧</td><td class="tension-says"><strong>Evidencia operacional</strong> · Registros de activación de planes, tiempos de respuesta reales, logs de comunicación en crisis, actas de equipos de respuesta.</td></tr>
+</table>
+</div>
+<div class="divider"></div>
+
+<!-- BLOQUE 6 · TRIANGULACIÓN -->
+<div class="block">
+<div class="block-label">Método</div>
+<div class="block-title">Triangulación: reducir sesgo, aumentar certeza</div>
+<div class="block-text">Triangular es validar un hecho con al menos dos o tres fuentes independientes. Es la mejor práctica para convertir información en evidencia robusta.</div>
+<table class="tension" style="margin-top:20px;">
+<tr><td class="tension-who">1️⃣</td><td class="tension-says"><strong>Documento</strong> · El procedimiento dice que se realiza un simulacro anual.</td></tr>
+<tr class="hi-row"><td class="tension-who">2️⃣</td><td class="tension-says"><span class="hi">Entrevista: El responsable confirma que se realizó.</span></td></tr>
+<tr><td class="tension-who">3️⃣</td><td class="tension-says"><strong>Registro</strong> · Se revisa el informe del simulacro y se confirma la ejecución y los resultados.</td></tr>
+</table>
+<div class="block-text" style="margin-top:20px;">Si solo existe el documento (1) pero no hay registros (3), la evidencia es insuficiente. Si solo existe la entrevista (2) pero no hay registros (3), la evidencia es débil.</div>
+</div>
+<div class="divider"></div>
+
+<!-- BLOQUE 7 · REUNIÓN DE APERTURA Y CIERRE -->
+<div class="block">
+<div class="block-label">Comunicación</div>
+<div class="block-title">Reuniones de apertura y cierre</div>
+<div class="block-text">La reunión de apertura alinea expectativas y reduce tensiones. La reunión de cierre presenta hallazgos y conclusiones al auditado.</div>
+<div class="quote-block"><div class="quote-text">&ldquo;En el cierre no debe haber sorpresas. Los hallazgos críticos deben haberse comunicado durante la auditoría.&rdquo;</div><div class="quote-attr">Buena práctica de auditoría</div></div>
+<table class="tension" style="margin-top:20px;">
+<tr><td class="tension-who">📢</td><td class="tension-says"><strong>Apertura</strong> · Confirmar plan, presentar equipo, explicar métodos, confirmar confidencialidad, acordar canales de comunicación.</td></tr>
+<tr class="hi-row"><td class="tension-who">📝</td><td class="tension-says"><span class="hi">Cierre: Presentar hallazgos (conformidades, NC, OM), explicar conclusiones, acordar plazos para acciones correctivas, aclarar que la auditoría se basa en una muestra.</span></td></tr>
+</table>
+</div>
+<div class="divider"></div>
+
+<!-- BLOQUE 8 · INFORME DE AUDITORÍA -->
+<div class="block">
+<div class="block-label">Entregable</div>
+<div class="block-title">El informe de auditoría del BCMS</div>
+<div class="block-text">El informe debe proporcionar un registro completo, preciso, conciso y claro de la auditoría.</div>
+<table class="tension" style="margin-top:20px;">
+<tr><td class="tension-who">📋</td><td class="tension-says"><strong>Contenido mínimo</strong> · Objetivos, alcance, criterios, equipo auditor, fechas, hallazgos (con evidencia), conclusiones, declaración de muestreo.</td></tr>
+<tr class="hi-row"><td class="tension-who">📤</td><td class="tension-says"><span class="hi">Distribución: Al cliente de auditoría, al auditado y a otras partes interesadas según lo acordado. Confidencialidad garantizada.</span></td></tr>
+</table>
+</div>
+<div class="divider"></div>
+
+<!-- BLOQUE 9 · SEGUIMIENTO DE AUDITORÍA -->
+<div class="block">
+<div class="block-label">Post-auditoría</div>
+<div class="block-title">Seguimiento y cierre de acciones</div>
+<div class="block-text">La auditoría no termina con el informe. El auditor debe verificar que las acciones correctivas se implementan y son eficaces.</div>
+<table class="tension" style="margin-top:20px;">
+<tr><td class="tension-who">🔁</td><td class="tension-says"><strong>Qué verificar</strong> · ¿El auditado implementó las acciones en el plazo acordado? ¿Hay evidencia? ¿La acción correctiva elimina la causa raíz?</td></tr>
+<tr class="hi-row"><td class="tension-who">✅</td><td class="tension-says"><span class="hi">Verificación de eficacia: Nueva medición, nuevo muestreo o auditoría de seguimiento. Sin eficacia verificada, la NC no se cierra.</span></td></tr>
+</table>
+</div>
+<div class="divider"></div>
+
+<!-- BLOQUE 10 · CASO PRÁCTICO -->
+<div class="block">
+<div class="block-label">Caso auditor</div>
+<div class="block-title">Auditoría completa del BCMS</div>
+<div class="block-text"><strong>Escenario:</strong> Eres el auditor líder designado para auditar el BCMS de una empresa financiera.</div>
+<div class="block-text"><strong>Tu plan de auditoría incluye:</strong><br>1. Verificar que el BIA (8.2.2) está actualizado y los RTO son realistas.<br>2. Auditar la evaluación de riesgos de incidentes disruptivos (8.2.3).<br>3. Verificar que las estrategias (8.3) son viables técnica y financieramente.<br>4. Auditar los planes de continuidad (8.4): ¿están actualizados? ¿accesibles offline?<br>5. Verificar el programa de ejercicios (8.5): ¿se realizaron? ¿hay informes? ¿se actuó?</div>
+<div class="quote-block"><div class="quote-text">&ldquo;El auditor no necesita ser experto en procesos financieros. Necesita verificar que la organización puede sobrevivir a una crisis.&rdquo;</div><div class="quote-attr">Enfoque del caso</div></div>
+<div class="block-text"><strong>Posibles hallazgos:</strong> BIA desactualizado (8.2.2), RTO no realistas, estrategias no validadas, falta de simulacros (8.5), planes no accesibles offline (7.5).</div>
+</div>
+<div class="divider"></div>
+
+<!-- BLOQUE 11 · RESUMEN EJECUTIVO -->
+<div class="block">
+<div class="block-label">Resumen del módulo</div>
+<div class="block-title">Lo que debes llevarte de aquí</div>
+<table class="tension" style="margin-top:16px;">
+<tr><td class="tension-who">1</td><td class="tension-says">Los 7 principios de auditoría (ISO 19011) aplican al BCMS: integridad, independencia, evidencia, riesgos, etc.</td></tr>
+<tr class="hi-row"><td class="tension-who">2</td><td class="tension-says"><span class="hi">El programa de auditoría debe priorizar por riesgo: procesos con RTO más críticos, cambios recientes, incidentes previos.</span></td></tr>
+<tr><td class="tension-who">3</td><td class="tension-says">El plan de auditoría define objetivos, alcance, criterios, métodos y muestreo. Sin plan claro, la auditoría es improvisación.</td></tr>
+<tr class="hi-row"><td class="tension-who">4</td><td class="tension-says"><span class="hi">La evidencia debe ser suficiente, apropiada y triangulada (documento + entrevista + registro).</span></td></tr>
+<tr><td class="tension-who">5</td><td class="tension-says">El informe debe ser completo, preciso y claro. El seguimiento verifica eficacia de acciones correctivas.</td></tr>
+</table>
+</div>
+
+<!-- CTA -->
+<div class="cta-block">
+<div class="cta-headline">Has completado 9 módulos.<br><span>El siguiente es el módulo 10.</span></div>
+<div class="cta-sub">Siguiente: <strong>Auditoría de Planes y Ejercicios</strong></div>
+<div class="cta-buttons"><a href="modulo-8.html" class="cta-button">← Anterior</a><a href="modulo-10.html" class="cta-button">Continuar →</a></div>
+</div>
+
+</div>
+<div id="footer-placeholder"></div>
+<script>
+    fetch('/includes/footer-no-share.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('footer-placeholder').innerHTML = data;
+        });
+</script>
+</div>
+</div>
+</body>
+<script src="/js/modulo-check-22301.js"></script>
+</html>
