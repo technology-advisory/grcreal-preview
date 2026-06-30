@@ -38,7 +38,7 @@
         "Art. 50"
       ],
       "enlace": "ai-act-clasificador/index.html",
-      "bloqueado": false
+      "bloqueado": true
     },
     {
       "id": "bia",
@@ -52,7 +52,7 @@
         "Criticidad"
       ],
       "enlace": "bia/index.html",
-      "bloqueado": false
+      "bloqueado": true
     },
     {
       "id": "analisis-riesgos",
@@ -66,7 +66,7 @@
         "Risk Register"
       ],
       "enlace": "analisis-riesgos/index.html",
-      "bloqueado": false
+      "bloqueado": true
     },
     {
       "id": "plan-tratamiento",
@@ -80,7 +80,7 @@
         "PTR"
       ],
       "enlace": "plan-tratamiento/index.html",
-      "bloqueado": false
+      "bloqueado": true
     },
     {
       "id": "matriz-dependencias",
@@ -93,7 +93,7 @@
         "Resiliencia"
       ],
       "enlace": "matriz-dependencias/index.html",
-      "bloqueado": false
+      "bloqueado": true
     },
     {
       "id": "gestion-proveedores",
@@ -107,7 +107,7 @@
         "Due Diligence"
       ],
       "enlace": "gestion-proveedores/index.html",
-      "bloqueado": false
+      "bloqueado": true
     }
   ]
 }
