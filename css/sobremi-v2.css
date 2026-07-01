@@ -1,5 +1,6 @@
 /* ============================================
-   SOBREMI.CSS — Rediseño moderno, sin foto
+   SOBREMI.CSS — Rediseño moderno + foto
+   VERSIÓN FINAL
    ============================================ */
 
 .sm-hero {
@@ -19,9 +20,29 @@
 
 .sm-hero-top {
   display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 48px;
+  margin-bottom: 22px;
+}
+.sm-hero-content {
+  display: flex;
   align-items: center;
   gap: 22px;
-  margin-bottom: 22px;
+  flex: 1;
+}
+.sm-hero-foto {
+  flex-shrink: 0;
+}
+.sm-hero-foto img {
+  width: 200px;
+  height: 240px;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 8px;
+  display: block;
+  border: 3px solid var(--brand, #0077B5);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
 }
 .sm-monogram {
   width: 64px; height: 64px;
@@ -123,5 +144,7 @@
 @media (max-width: 760px) {
   .sm-hero, .sm-section, .sm-cta { padding-left: 20px; padding-right: 20px; }
   .sm-areas-grid, .sm-resp-grid, .sm-cert-grid { grid-template-columns: 1fr; }
-  .sm-hero-top { flex-direction: column; align-items: flex-start; }
+  .sm-hero-top { flex-direction: column; align-items: center; gap: 24px; }
+  .sm-hero-content { flex-direction: column; align-items: center; text-align: center; }
+  .sm-hero-foto img { width: 160px; height: 200px; }
 }
